@@ -1,0 +1,20 @@
+{
+    "name": "hsmaan1986/jugaad_patches",
+    "description": "Jugaad Patches composer file",
+    "type": "drupal-module",
+    "license": "GPL-2.0-or-later",
+    "minimum-stability": "stable",
+    "require": {
+        "endroid/qr-code": "^4.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Harinder\\JugaadPatches\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Harinder Maan"
+        }
+    ]
+}
