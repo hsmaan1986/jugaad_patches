@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_addtoanyblock
+    - paragraphs.paragraphs_type.share_with_your_network
+  module:
+    - block_field
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_addtoanyblock
+id: paragraph.share_with_your_network.field_addtoanyblock
+field_name: field_addtoanyblock
+entity_type: paragraph
+bundle: share_with_your_network
+label: addtoanyblock
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  selection: blocks
+  selection_settings:
+    plugin_ids:
+      addtoany_block: addtoany_block
+field_type: block_field

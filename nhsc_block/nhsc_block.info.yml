@@ -1,0 +1,16 @@
+name: 'NHSC Block'
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - 'autologout:autologout'
+  - 'datalayer:datalayer'
+  - 'drupal:block'
+  - 'drupal:field'
+  - 'drupal:system'
+  - 'drupal:user'
+  - 'drupal:views'
+  - 'metatag:metatag'
+  - 'paragraphs:paragraphs'
+  - 'parallax_scroller:parallax_scroller'
+  - 'rng:rng'
+version: 9.x-1.0

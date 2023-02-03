@@ -1,0 +1,20 @@
+name: 'NHSC full panel'
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - autologout
+  - block
+  - datalayer
+  - entity_browser
+  - field
+  - field_permissions
+  - file
+  - image
+  - metatag
+  - options
+  - paragraphs
+  - rng
+  - svg_image
+  - system
+  - user
+  - views

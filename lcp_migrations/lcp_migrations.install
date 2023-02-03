@@ -1,0 +1,57 @@
+<?php
+
+/**
+ * @file
+ * Contains lcp_migrations.install.
+ */
+
+/**
+ * Add terms to Blog Tag vocabulary.
+ */
+function lcp_migrations_update_8001() {
+  $helper = \Drupal::service('lcp_nestle_content.helper');
+  $terms = [
+    'Archives',
+    'Anniversaries',
+    'Factories',
+    'Rowntree’s',
+    'York',
+    'History',
+    'Nestlé',
+    'Old Factories',
+    'People',
+    'Production',
+    'After Eight',
+    'Brands',
+    'Confectionery',
+    'Films',
+    'Packaging',
+    'Previously Unseen',
+    'Royal',
+    'Sustainability',
+    'Polo',
+    'Health and Wellness',
+    'Black Magic',
+    'Smarties',
+    'Technology',
+    'As Seen On TV',
+    'Family History',
+    'Youth Employment',
+    'Milk',
+    'Nestlé Worldwide',
+    'Living Wage',
+    'Yorkie',
+    'The World Wars',
+    'Tutbury',
+    'Halifax',
+    'Quality Street',
+    'Nesquik',
+    'Nescafé',
+    'Kit Kat',
+    'Animal Bar',
+    'Fruit Pastilles ＆ Gums',
+    'Beverages',
+  ];
+  $vocabulary = 'blog_tag';
+  $helper->createTaxonomyTerms($vocabulary, $terms);
+}

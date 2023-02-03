@@ -1,0 +1,6 @@
+services:
+  atitude_webmeeting.client:
+    class: GuzzleHttp\Client
+    factory: atitude_webmeeting.client.factory:get
+  atitude_webmeeting.client.factory:
+    class: Drupal\atitude_webmeeting\ClientFactory

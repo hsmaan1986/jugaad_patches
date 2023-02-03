@@ -1,0 +1,184 @@
+.ons__card-product {
+  border-radius: 6px;
+  border: 1px solid $gray-0;
+  width: 300px;
+  font-family: $lato-regular;
+  font-weight: 400;
+  margin: 0 0 25px;
+  transition: $ease-0;
+  &:hover {
+    background: $color-4;
+  }
+
+  .ons__card-product__title {
+    text-transform: uppercase;
+    padding: 15px 15px 0;
+    font-size: 16px;
+    line-height: 20px;
+
+    a {
+      font-size: 1em;
+      min-height: 42px;
+      display: block;
+      font-family: $lato-regular;
+      font-weight: 700;
+      color: $color-1;
+      text-decoration: none;
+      transition: $ease-0;
+      &:hover {
+        color: $color-0;
+      }
+    }
+  }
+  .ons__card-product__content {
+    padding: 5px 10px 5px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .ons__card-product__content__img {
+      display: flex;
+      width: 40%;
+      margin: 0 5%;
+      height: auto;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      img {
+        width: 90%;
+        height: 90%;
+        object-fit: contain;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+      }
+    }
+    .ons__card-product__infos {
+      width: 50%;
+      dl {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 60px 84px;
+        color: $gray-1;
+        margin-bottom: 6px;
+
+        dt,
+        dd {
+          padding: 6px 0;
+          &:not(:last-of-type) {
+            border-bottom: 1px solid $gray-1;
+          }
+        }
+        dt {
+          font-size: 9px;
+          display: flex;
+          align-items: flex-end;
+        }
+        dd {
+          font-size: 16px;
+          font-family: $lato-black;
+          .unit {
+            font-size: 9px;
+          }
+          .percentil {
+            font-size: 12px;
+          }
+          &.ons__card-product__infos__flavours {
+            position: relative;
+            .ons__checkbox--arrow {
+              &:checked {
+                ~ .ons__card-product__infos__flavours__list {
+                  pointer-events: initial;
+                  transform: translate(0, 0);
+                  opacity: 1;
+                  ul {
+                    opacity: 1;
+                    li {
+                      list-style-image: none;
+                    }
+                  }
+                }
+              }
+            }
+            .ons__card-product__infos__flavours__list {
+              position: absolute;
+              top: 100%;
+              width: 144px;
+              left: -60px;
+              background: $white;
+              border: 1px solid $gray-0;
+              padding: 5px;
+              max-height: 90px;
+              transition: $ease-0;
+              opacity: 0;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              transform: translate(0, -100%);
+              pointer-events: none;
+
+              ul {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                margin: 0;
+                padding: 0;
+                transition: $ease-0;
+                opacity: 0;
+                width: 100%;
+                list-style: none;
+
+                li {
+                  flex: 0 0 48%;
+                  line-height: 1.1;
+                  font-size: 9px;
+                  height: 20px;
+                  display: flex;
+                  align-items: center;
+                }
+              }
+            }
+          }
+        }
+      }
+      .ons__card-product__intolerance {
+        display: flex;
+        flex-direction: row;
+        .ons__card-product__intolerance__badget {
+          &:not(:first-of-type) {
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+  }
+  .ons__card-product__footer {
+    padding: 10px;
+    border-top: 1px solid $gray-0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+
+    &--result {
+      justify-content: flex-end;
+    }
+
+    .ons__checkbox input + label {
+      margin-bottom: 0;
+    }
+
+    .ons__card-product__footer__find {
+      color: $color-0;
+      transition: $ease-0;
+      text-decoration: underline;
+      &:hover {
+        color: darken($color-0, $amount: 30);
+      }
+    }
+  }
+}

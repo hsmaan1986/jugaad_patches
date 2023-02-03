@@ -1,0 +1,5 @@
+hcp_site_switcher.config_form:
+  route_name: hcp_site_switcher.config_form
+  title: 'HCP Site Switcher'
+  description: 'Configure Site Switcher Module.'
+  parent: system.admin_config_system

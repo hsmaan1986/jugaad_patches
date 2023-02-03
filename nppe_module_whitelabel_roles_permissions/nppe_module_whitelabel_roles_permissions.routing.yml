@@ -1,0 +1,7 @@
+nppe_module_whitelabel_roles_permissions.settings_form:
+  path: '/admin/config/system/nppe_module_whitelabel_roles_permissions'
+  defaults:
+    _title: 'Whitelable roles and permission'
+    _form: '\Drupal\nppe_module_whitelabel_roles_permissions\Form\RolesSettingsForm'
+  requirements:
+    _permission: 'administer Whitelabel Roles and permissions'

@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_follow_url
+    - node.type.latest_linkedin_post
+  module:
+    - datalayer
+    - link
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_follow_url
+id: node.latest_linkedin_post.field_follow_url
+field_name: field_follow_url
+entity_type: node
+bundle: latest_linkedin_post
+label: 'Follow URL'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

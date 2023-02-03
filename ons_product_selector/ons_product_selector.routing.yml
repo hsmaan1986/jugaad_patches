@@ -1,0 +1,164 @@
+ons_product_selector:
+  path: '/ons_product_selector/ajax/products'
+  defaults:
+    _title: 'Products'
+    _controller: '\Drupal\ons_product_selector\Controller\ProductsController::productDetails'
+  requirements:
+    _permission: 'access content'
+
+ons_product_selector_card:
+    path: '/ons_product_selector/ajax/product_cards'
+    defaults:
+      _title: 'Product Cards'
+      _controller: '\Drupal\ons_product_selector\Controller\OnsProductCardController::content'
+    requirements:
+      _permission: 'access content'
+ons_product_selector_card_json:
+  path: '/ons_product_selector/ajax/product_cards_json'
+  defaults:
+    _title: 'Product Cards'
+    _controller: '\Drupal\ons_product_selector\Controller\OnsProductCardController::content_json'
+  requirements:
+    _permission: 'access content'
+
+ons_product_selector_products:
+  path: '/ons_product_selector/ajax/products_json'
+  defaults:
+    _title: 'Product Cards'
+    _controller: '\Drupal\ons_product_selector\Controller\OnsProductCardController::products_json'
+  requirements:
+    _permission: 'access content'
+
+ons_product_selector.prod_info:
+  path: '/ons_product_selector/ajax/prod_info'
+  defaults:
+    _title: 'ONS Product Selector prod_info json'
+    _controller: '\Drupal\ons_product_selector\Controller\OnsProductSettings::prod_info'
+  requirements:
+    _permission: 'access content'
+
+ons_product_selector.dri:
+  path: '/ons_product_selector/ajax/dri'
+  defaults:
+    _title: 'ONS Product Selector dri json'
+    _controller: '\Drupal\ons_product_selector\Controller\OnsProductSettings::dri'
+  requirements:
+    _permission: 'access content'
+
+ons_product_selector.order:
+  path: '/ajax/product_order'
+  defaults:
+    _controller: '\Drupal\ons_product_selector\Controller\OnsProductSettings::product_order'
+  requirements:
+    _permission: 'access content'
+
+ons_product_selector.settings:
+  path: '/admin/config/system/ons_product_selector'
+  defaults:
+    _title: 'ONS Product Selector Settings'
+    _form: '\Drupal\ons_product_selector\Form\OnsProductSettingsForm'
+  requirements:
+    _permission: 'administer site configuration'
+
+ons_product_selector.calculator.hub:
+  path: '/ons_product_selector/calc/calculators'
+  defaults:
+    _title: 'ONS Calculators'
+    _controller: '\Drupal\ons_product_selector\Controller\OnsCalculatorsController::render'
+  requirements:
+    _permission: 'access content'
+
+ons_product_selector.calculator.patient_data:
+  path: '/ons_product_selector/calc/patient_data'
+  defaults:
+    _title: 'ONS Product Selector Settings'
+    _controller: '\Drupal\ons_product_selector\Controller\OnsPatientDataController::render'
+  requirements:
+    _permission: 'access content'
+
+ons_product_selector.calculator.patient_data_form:
+  path: '/ons_product_selector/form/patient_data'
+  defaults:
+    _form: '\Drupal\ons_product_selector\Form\OnsPatientDataForm'
+    _title: 'Patient Data'
+  requirements:
+    _permission: 'access content'
+
+ons_product_selector.calculator.patient_location:
+  path: '/ons_product_selector/calc/patient_location'
+  defaults:
+    _title: 'ONS Product Selector Settings'
+    _controller: '\Drupal\ons_product_selector\Controller\OnsPatientLocationController::render'
+  requirements:
+    _permission: 'access content'
+
+ons_product_selector.calculator.patient_screening_tool:
+  path: '/ons_product_selector/calc/patient_screening_tool'
+  defaults:
+    _title: 'ONS Product Selector Settings'
+    _controller: '\Drupal\ons_product_selector\Controller\OnsScreeningToolController::render'
+  requirements:
+    _permission: 'access content'
+
+ons_product_selector.calculator.confirm_malnutricion_risk_with_mna:
+  path: '/ons_product_selector/calc/confirm_malnutricion_risk_with_mna'
+  defaults:
+    _controller: '\Drupal\ons_product_selector\Controller\OnsMnaController::render'
+  requirements:
+    _permission: 'access content'
+
+
+ons_product_selector.calculator.check_dysphagia_risk_with_eat_10:
+  path: '/ons_product_selector/calc/check_dysphagia_risk_with_eat_10'
+  defaults:
+    _controller: '\Drupal\ons_product_selector\Controller\OnsDysphagiaController::render'
+  requirements:
+    _permission: 'access content'
+
+ons_product_selector.calculator.calculate_nutritional_needs:
+  path: '/ons_product_selector/calc/calculate_nutritional_needs'
+  defaults:
+    _controller: '\Drupal\ons_product_selector\Controller\OnsNutritionalNeedsController::render'
+  requirements:
+    _permission: 'access content'
+
+ons_product_selector.calculator.results:
+  path: '/ons_product_selector/calc/results'
+  defaults:
+    _controller: '\Drupal\ons_product_selector\Controller\OnsResultsController::render'
+  requirements:
+    _permission: 'access content'
+
+ons_product_selector.calculator.must:
+  path: '/ons_product_selector/calc/must'
+  defaults:
+    _controller: '\Drupal\ons_product_selector\Controller\OnsMustController::render'
+  requirements:
+    _permission: 'access content'
+
+ons_product_selector.calculator.nrs_2002:
+  path: '/ons_product_selector/calc/nrs_2002'
+  defaults:
+    _controller: '\Drupal\ons_product_selector\Controller\OnsNrsController::render'
+  requirements:
+    _permission: 'access content'
+
+ons_product_selector.calculator.malnutrition:
+  path: '/ons_product_selector/calc/malnutrition'
+  defaults:
+    _controller: '\Drupal\ons_product_selector\Controller\OnsMalnutritionController::render'
+  requirements:
+    _permission: 'access content'
+ons_product_selector.calculator.sendmail:
+  path: '/ons_product_selector/calculator/sendmail'
+  defaults:
+    _controller: '\Drupal\ons_product_selector\Controller\OnsCalculatorController::send_mail'
+  requirements:
+    _permission: 'access content'
+
+ons_product_selector.taxonomy_list:
+  path: '/ons_product_selector/taxonomyList'
+  defaults:
+    _controller: '\Drupal\ons_product_selector\Controller\OnsCalculatorController::listTaxonomies'
+  requirements:
+    _user_is_logged_in: 'TRUE'

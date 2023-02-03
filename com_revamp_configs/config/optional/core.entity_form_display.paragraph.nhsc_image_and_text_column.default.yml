@@ -1,0 +1,133 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.image_browser
+    - field.field.paragraph.nhsc_image_and_text_column.field_align
+    - field.field.paragraph.nhsc_image_and_text_column.field_background_color
+    - field.field.paragraph.nhsc_image_and_text_column.field_body
+    - field.field.paragraph.nhsc_image_and_text_column.field_nhs_logo
+    - field.field.paragraph.nhsc_image_and_text_column.field_nhsc_colour
+    - field.field.paragraph.nhsc_image_and_text_column.field_nhsc_column_heading
+    - field.field.paragraph.nhsc_image_and_text_column.field_nhsc_column_heading_color
+    - field.field.paragraph.nhsc_image_and_text_column.field_nhsc_column_image
+    - field.field.paragraph.nhsc_image_and_text_column.field_nhsc_column_link
+    - field.field.paragraph.nhsc_image_and_text_column.field_nhsc_column_text
+    - field.field.paragraph.nhsc_image_and_text_column.field_nhsc_heading_underline
+    - field.field.paragraph.nhsc_image_and_text_column.field_nhsc_reverse_columns
+    - field.field.paragraph.nhsc_image_and_text_column.field_nhsc_video
+    - field.field.paragraph.nhsc_image_and_text_column.field_percentage_width
+    - field.field.paragraph.nhsc_image_and_text_column.field_title
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.nhsc_image_and_text_column
+  module:
+    - entity_browser
+    - file
+    - link
+    - svg_image
+    - text
+id: paragraph.nhsc_image_and_text_column.default
+targetEntityType: paragraph
+bundle: nhsc_image_and_text_column
+mode: default
+content:
+  field_align:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_body:
+    weight: 6
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_nhs_logo:
+    type: entity_browser_file
+    weight: 0
+    settings:
+      entity_browser: image_browser
+      field_widget_edit: true
+      field_widget_remove: true
+      view_mode: default
+      preview_image_style: thumbnail
+      open: true
+      field_widget_replace: false
+      selection_mode: selection_append
+    region: content
+    third_party_settings: {  }
+  field_nhsc_colour:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_nhsc_column_heading:
+    type: string_textarea
+    weight: 5
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_nhsc_column_image:
+    type: image_image
+    weight: 2
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    region: content
+    third_party_settings: {  }
+  field_nhsc_column_link:
+    weight: 7
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_nhsc_heading_underline:
+    weight: 10
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_nhsc_reverse_columns:
+    weight: 9
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_nhsc_video:
+    weight: 4
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_percentage_width:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  field_background_color: true
+  field_nhsc_column_heading_color: true
+  field_nhsc_column_text: true
+  status: true
+  uid: true

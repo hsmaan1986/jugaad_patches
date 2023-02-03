@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_content_heading.field_heading
+    - paragraphs.paragraphs_type.nhsc_content_heading
+  module:
+    - text
+id: paragraph.nhsc_content_heading.default
+targetEntityType: paragraph
+bundle: nhsc_content_heading
+mode: default
+content:
+  field_heading:
+    weight: 101
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

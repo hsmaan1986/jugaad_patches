@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_nhsc_full_page_video
+    - paragraphs.paragraphs_type.nhsc_full_page_video
+  module:
+    - datalayer
+    - video_embed_field
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_nhsc_full_page_video
+id: paragraph.nhsc_full_page_video.field_nhsc_full_page_video
+field_name: field_nhsc_full_page_video
+entity_type: paragraph
+bundle: nhsc_full_page_video
+label: 'nhsc full page video'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_providers:
+    vimeo: vimeo
+    youtube: youtube
+    youtube_playlist: youtube_playlist
+field_type: video_embed_field

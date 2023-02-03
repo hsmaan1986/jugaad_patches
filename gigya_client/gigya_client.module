@@ -1,0 +1,180 @@
+<?php
+
+const GIGYA_SETTINGS_KEY = 'gigya_client.settings';
+$config = \Drupal::config(GIGYA_SETTINGS_KEY);
+
+
+/**
+ * Implements hook_gigya_global_parameters_alter().
+ */
+function gigya_client_gigya_global_parameters_alter(array &$gigya_global_parameters) {
+  $gigya_global_parameters['bypassCookiePolicy'] = 'never';
+}
+
+/**
+ * Implements hook_gigya_lang_alter().
+ */
+function gigya_client_gigya_lang_alter(&$lang) {
+    $config_lang = \Drupal::config(GIGYA_SETTINGS_KEY)->get('gigya_client.gigya_lang') ? \Drupal::config(GIGYA_SETTINGS_KEY)->get('gigya_client.gigya_lang') : \Drupal::languageManager()->getCurrentLanguage()->getId();;
+    $config_lang_2 = \Drupal::config(GIGYA_SETTINGS_KEY)->get('gigya_client.gigya_lang_2');
+    $pageURL = \Drupal::request()->getHost() .  \Drupal::request()->getRequestUri() ;
+
+    if(isset($_GET['lang'])){
+        $lang = $_GET['lang'];
+    }elseif(!empty($config_lang)){
+        $lang = $config_lang;
+    }
+
+    if(!empty($config_lang_2)){
+        if(strpos($pageURL,'/'.$config_lang_2.'/') !== FALSE){
+            $lang = $config_lang_2;
+        }
+    }
+    else {
+        $lang = $config_lang;
+    }
+}
+
+
+/**
+ * Implements hook_gigya_raas_settings_alter().
+ */
+function gigya_client_gigya_raas_settings_alter(array &$raas_login, array &$raas_register) {
+
+    $config_raas_login_screenset = \Drupal::config(GIGYA_SETTINGS_KEY)->get('gigya_client.raas_login_screenset');
+    $config_raas_login_startscreen = \Drupal::config(GIGYA_SETTINGS_KEY)->get('gigya_client.raas_login_startscreen');
+    $config_raas_register_screenset = \Drupal::config(GIGYA_SETTINGS_KEY)->get('gigya_client.raas_register_screenset');
+    $config_raas_register_startscreen = \Drupal::config(GIGYA_SETTINGS_KEY)->get('gigya_client.raas_register_startscreen');
+
+
+    //extra settings
+    $gigya_thankyou_screen = \Drupal::config(GIGYA_SETTINGS_KEY)->get("gigya_client.gigya_thankyou_screen");
+    $gigya_thankyou_page_alias = \Drupal::config(GIGYA_SETTINGS_KEY)->get("gigya_client.gigya_thankyou_page_alias");
+    $gigya_reset_pwd_screen = \Drupal::config(GIGYA_SETTINGS_KEY)->get("gigya_client.gigya_reset_pwd_screen");
+    $gigya_reset_pwd_alias = \Drupal::config(GIGYA_SETTINGS_KEY)->get("gigya_client.gigya_reset_pwd_alias");
+    $gigya_request_pwd_screen = \Drupal::config(GIGYA_SETTINGS_KEY)->get("gigya_client.gigya_request_pwd_screen");
+    $gigya_request_pwd_alias = \Drupal::config(GIGYA_SETTINGS_KEY)->get("gigya_client.gigya_request_pwd_alias");
+
+
+
+    if(!empty($config_raas_login_screenset)){
+        $raas_login['screenSet'] = $config_raas_login_screenset;
+    }
+
+    if(!empty($config_raas_login_startscreen)){
+        $raas_login['startScreen'] = $config_raas_login_startscreen;
+    }
+
+    if(!empty($config_raas_register_screenset)){
+        $raas_register['screenSet'] = $config_raas_register_screenset;
+    }
+
+    if(!empty($config_raas_register_startscreen)){
+        $raas_register['startScreen'] = $config_raas_register_startscreen;
+    }
+
+    //other pages
+    //get the current page and test for a match to
+    $pageURL = \Drupal::request()->getHost() .  \Drupal::request()->getRequestUri() ;
+
+    if(strpos($pageURL,$gigya_thankyou_page_alias) !== FALSE || strpos($gigya_thankyou_page_alias, $pageURL) !== FALSE){
+        if(!empty($gigya_thankyou_screen)){
+            $raas_login['startScreen'] = $gigya_thankyou_screen;
+        }
+    }
+
+    if(strpos($pageURL,$gigya_reset_pwd_alias) !== FALSE || strpos($gigya_reset_pwd_alias, $pageURL) !== FALSE){
+        if(!empty($gigya_reset_pwd_screen)){
+            $raas_login['startScreen'] = $gigya_reset_pwd_screen;
+        }
+    }
+
+    if(strpos($pageURL,$gigya_request_pwd_alias) !== FALSE || strpos($gigya_request_pwd_alias, $pageURL) !== FALSE){
+        if(!empty($gigya_request_pwd_screen)){
+            $raas_login['startScreen'] = $gigya_request_pwd_screen;
+        }
+    }
+
+}
+
+
+/**
+ * Implements hook_gigya_raas_profile_settings_alter().
+ */
+function gigya_client_gigya_raas_profile_settings_alter(array &$raas_profile) {
+
+    $config_raas_profile_screenset = \Drupal::config(GIGYA_SETTINGS_KEY)->get('gigya_client.raas_profile_screenset');
+    $config_raas_profile_startscreen = \Drupal::config(GIGYA_SETTINGS_KEY)->get('gigya_client.raas_profile_startscreen');
+    $gigya_change_pwd_screen = \Drupal::config(GIGYA_SETTINGS_KEY)->get("gigya_client.gigya_change_pwd_screen");
+    $gigya_change_pwd_alias = \Drupal::config(GIGYA_SETTINGS_KEY)->get("gigya_client.gigya_change_pwd_alias");
+	$gigya_update_interest_alias = \Drupal::config(GIGYA_SETTINGS_KEY)->get("gigya_client.gigya_update_interest_alias");
+	$gigya_interest_screen_id = \Drupal::config(GIGYA_SETTINGS_KEY)->get("gigya_client.gigya_interest_screen_id");
+
+	$gigya_update_preferences_alias = \Drupal::config(GIGYA_SETTINGS_KEY)->get("gigya_client.gigya_update_preferences_alias");
+	$gigya_update_preferences_id = \Drupal::config(GIGYA_SETTINGS_KEY)->get("gigya_client.gigya_update_preferences_id");
+
+    //get the current page and test for a match to
+    $pageURL = \Drupal::request()->getHost() .  \Drupal::request()->getRequestUri() ;
+
+    if(!empty($config_raas_profile_screenset)){
+        $raas_profile['screenSet'] = $config_raas_profile_screenset;
+    }
+
+    if(!empty($config_raas_profile_startscreen)){
+        $raas_profile['startScreen'] = $config_raas_profile_startscreen;
+    }
+
+    if(strpos($pageURL,$gigya_change_pwd_alias) !== FALSE || strpos($gigya_change_pwd_alias, $pageURL) !== FALSE){
+
+        if(!empty($gigya_change_pwd_screen)){
+            $raas_profile['startScreen'] = $gigya_change_pwd_screen;
+        }
+    }
+
+	if(strpos($pageURL,$gigya_update_interest_alias) !== FALSE || strpos($gigya_update_interest_alias, $pageURL) !== FALSE){
+
+		if(!empty($gigya_interest_screen_id)) {
+			$raas_profile['startScreen'] = $gigya_interest_screen_id;
+		}
+	}
+
+	if(strpos($pageURL,$gigya_update_preferences_alias) !== FALSE || strpos($gigya_update_preferences_alias, $pageURL) !== FALSE){
+
+		if(!empty($gigya_update_preferences_id)) {
+			$raas_profile['startScreen'] = $gigya_update_preferences_id;
+		}
+	}
+
+
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function gigya_client_page_attachments(array  &$attachments)
+{
+    $attachments['#attached']['library'][] = 'gigya_client/style';
+    $attachments['#attached']['library'][] = 'gigya_client/scripts';
+}
+
+function gigya_client_library_info_alter(&$libraries, $extension)
+{
+  if ($extension == 'gigya_client' && isset($libraries['style']))
+  {
+    $default_stylesheet = \Drupal::config(GIGYA_SETTINGS_KEY)->get("gigya_client.gigya_default_stylesheet");
+
+    if(!empty($default_stylesheet))
+    {
+      $libraries['style']['css']['base']['libraries/css/' . $default_stylesheet] = array();
+    }
+  }
+}
+
+function gigya_client_page_attachments_alter(array &$page) {
+
+    $gigya_second_language = \Drupal::config(GIGYA_SETTINGS_KEY)->get('gigya_client.gigya_lang_2');
+    $gigya_client_config_values = ['second_lang' => $gigya_second_language];
+
+    $page['#attached']['drupalSettings']['gigya_client'] = $gigya_client_config_values;
+
+}

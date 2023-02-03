@@ -1,0 +1,74 @@
+
+use Drupal\hcp_reward_system\Plugin\RewardBase;
+
+
+/**
+ * Provides a custom behavior for the Rewards System.
+ *
+ * @Reward(
+ *   id = "custom_behavior",
+ *    label = @Translation("Custom Behavior"),
+ *   description = @Translation("Custom Behavior.")
+ *)
+ */
+class CustomBehavior extends RewardBase {
+  /**
+
+//YOUR CUSTOM METHODS
+
+
+/**
+ * {inheritdoc}
+ */
+public function validate($user) {
+
+
+//YOUR CUSTOM VALIDATION
+
+  return $valid;
+}
+
+/**
+ * {inheritdoc}
+ */
+public function giveRewardToUser($user) {
+
+    parent::giveRewardToUser($user);
+
+
+    //YOUR CUSTOM BEHAVIOR
+
+
+  return true;
+}
+
+
+
+
+      /**
+       * {@inheritdoc}
+       */
+      public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
+
+
+      //YOUR CUSTOM PARAMS OR FIELDS
+
+        $form['custom_field'] = [
+          '#type' => 'textfield',
+          '#title' => t('custom_field'),
+          '#default_value' => $this->configuration['custom_field'],
+          '#required' => TRUE,
+        ];
+
+
+        return $form;
+      }
+
+      /**
+       * {@inheritdoc}
+       */
+      public function submitConfigurationForm(array &$form, FormStateInterface $form_state) {
+        parent::submitConfigurationForm($form, $form_state);
+        $this->configuration['custom_field'] = $form_state->getValue('custom_field');
+      }
+}

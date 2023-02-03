@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: nhsc_heading_and_description_wit
+label: 'NHSC heading and description with border'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

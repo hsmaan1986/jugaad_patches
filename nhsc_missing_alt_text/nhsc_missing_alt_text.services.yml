@@ -1,0 +1,3 @@
+services:
+  nhsc_missing_alt_text.update:
+    class: Drupal\nhsc_missing_alt_text\MissingAltTextService

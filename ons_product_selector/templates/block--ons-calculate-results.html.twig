@@ -1,0 +1,300 @@
+<div class="calculator calculator--result" id="result" style="background-color:#fff">
+	<h2 class="calculator__title">{{ "Result"|t }}</h2>
+	<ul class="calculator--result__buttons">
+		<li>
+			<a href="javascript: window.print();">
+				<span class="icon-print"></span>
+				{{ "Print"|t }}</a>
+		</li>
+		<li id="sendMail">
+			<a href="javascript: openSendEmail();">
+				<span class="icon-email"></span>
+				{{ "Send by mail"|t }}</a>
+			<div id="sendMailContent">
+				<div id="mailStatus"></div>
+				<form id="sendMailForm">
+					<label for="email">{{ "Email:"|t }}
+					</label><input type="text" name="email">
+					<button id="sendMailButton">{{ "Send Mail"|t }}</button>
+				</form>
+			</div>
+		</li>
+		<li id="resultDownload">
+			<a href="#">
+				<span class="icon-download"></span>
+				{{ "Download"|t }}</a>
+		</li>
+	</ul>
+
+	{% if data.patient_data %}
+		<div class="calculator--result__bmiBox">
+			<div class="calculator--result__bmiBox__result">
+				{% if data.patient_data.bmi > 0 %}
+					<img src="/modules/custom/ons_product_selector/front-end/Content/img/{{ data.img_body }}">
+					<div class="text">
+						<span class="text--label">{{ 'BMI'|t }}</span>
+						<span class="text--result">{{ data.patient_data.bmi }}</span>
+					</div>
+				{% else %}
+					<div class="text">
+						<span class="text--label">{{ 'Can not calculate BMI without Height'|t }}</span>
+					</div>
+
+				{% endif %}
+			</div>
+			<div class="calculator--result__bmiBox__infos">
+				<div class="short-infos">
+					<div class="info">
+						<span>{{ 'Age'|t }}</span>
+						{{ data.patient_data.patient_age }}
+						{{ 'years'|t }}
+					</div>
+					<div class="info">
+						{% if data.patient_data.calcType == 'cc' %}
+							<span>{{ 'CC'|t }}</span>
+							{% if data.patient_data.patient_cc == "greater31" %}
+								{{ "Greater than 31cm" | t }}
+							{% else %}
+								{{ "Less than 31cm" | t }}
+							{% endif %}
+						{% else %}
+							<span>{{ 'Height'|t }}</span>
+							{{ data.patient_data.patient_height }}
+							{{ 'cm'|t }}
+						{% endif %}
+					</div>
+					<div class="info">
+						<span>{{ 'Weight'|t }}</span>
+						{{ data.patient_data.patient_weight }}
+						{{ 'kg'|t }}
+					</div>
+
+				</div>
+				{% if data.calc_version == 'V1' or data.calc_version == 'V3' %}
+					<div class="info">
+						{% if data.patient_data.weightloss != 'false' %}
+							<span>{{ 'Weight loss during the last 3 months'|t }}</span>
+							{{ data.patient_data.weightloss }}{{ 'Kg' |t }}
+						{% endif %}
+					</div>
+				{% endif %}
+				{% if data.calc_version == 'V2' %}
+					<div class="info">
+						<span>{{ 'Weight loss during last 1 month'|t }}</span>
+						{{ data.patient_data.patient_weight_past }}{{ 'Kg' |t }}
+					</div>
+					<div class="info">
+						<span>{{ 'Weight loss during last 6 month'|t }}</span>
+						{{ data.patient_data.patient_weight_past_2 }}{{ 'Kg' |t }}
+					</div>
+				{% endif %}
+			</div>
+		</div>
+	{% endif %}
+	{% if data.products %}
+		<section class="ons__result ons__result--recommandation ons__result--recommandation-result">
+			<h2 class="ons__title ons__title--recommandation-result">{{"OUR RECOMMENDATION"|t}}</h2>
+			<div class="ons__container">
+				{% for key, product in data.products %}
+					<div class="ons__card-product">
+						<h2 class="ons__card-product__title">
+							<a href="{{product.path}}" target="_blank">{{ product.title|replace({'®': '<sup>®</sup>'})|raw }}</a>
+						</h2>
+						<div class="ons__card-product__content">
+							<div class="ons__card-product__content__img">
+								<img src="{{file_url(product.productImage)}}" alt="" width="260" height="285">
+							</div>
+							<div class="ons__card-product__infos">
+								<dl>
+									<dt>{{ 'Energy*'|t }}</dt>
+									<dd>{{ product.field_ons_kcal }}</dd>
+									<dt>{{ 'Protein*'|t }}</dt>
+									<dd>{{ product.field_ons_protein }}</dd>
+									<dt>{{ 'P/CHO/F%*'|t }}</dt>
+									<dd>
+										<span class="percentil">{{ product.field_ons_p_cho_f_ }}</span>
+									</dd>
+									<dt>{{"Format"|t}}</dt>
+									<dd>
+										<span class="percentil">{{ product.field_ons_format_size|raw }}</span>
+									</dd>
+									<dt>{{"Flavours"|t}}
+									</dt>
+									<dd class="ons__card-product__infos__flavours">
+										<input type="checkbox" id="checkbox__flavours-{{key}}" name="checkbox__flavours" class="ons__checkbox--arrow">
+										<label for="checkbox__flavours-{{key}}">{{product.field_ons_flavours|length}}</label>
+										<div class="ons__card-product__infos__flavours__list">
+											<ul>
+												{% for flavour in product.field_ons_flavours %}
+													<li>{{ flavour }}</li>
+												{% endfor %}
+											</ul>
+										</div>
+									</dd>
+								</dl>
+
+								<div class="ons__card-product__intolerance">
+									{% for intolerance in product.field_ons_intolerance %}
+										<div class="ons__card-product__intolerance__badget">
+											<image width="35" height="30" src="{{ file_url(intolerance) }}"></image>
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+					<div class="ons__card-product__footer ons__card-product__footer--result">
+						<a href="{{product.path}}" target="_blank" class="ons__card-product__footer__find">>{{"Find out more"|t}}</a>
+					</div>
+				</div>
+			{% endfor %}
+			<p>{{ data.disclaimer | raw }}</p>
+		</div>
+	</section>
+{% endif %}
+{% if data.mna or data.eat_10  or data.must or data.nrs2002 or data.calc_version == 'V2' %}
+	<div class="calculator--result__resultInfos">
+		<p class="calculator--result__resultInfos__title">{{ 'Score and recommendation'|t }}</p>
+		<div class="calculator--result__resultInfos__boxes">
+			{% if data.calc_version == 'V2' %}
+				<div class="box">
+					<p class="title">{{data.calculatorV2.title}}</p>
+					{% if data.calculatorV2.message %}
+						<p>{{data.calculatorV2.message}}</p>
+					{% endif %}
+					<p>{{"Use the HAS diagnostic criteria to confirm or not a malnutrition in your patient:"|t}}
+						<a href="{{"https://www.has-sante.fr/upload/docs/application/pdf/2019-11/fiche_outil_diagnostic_denutrition.pdf"|t}}" target="_blank">{{"https://www.has-sante.fr/upload/docs/application/pdf/2019-11/fiche_outil_diagnostic_denutrition.pdf"|t}}</a>
+					</p>
+
+
+				</div>
+			{% endif %}
+
+			{% if data.mna and data.calc_version != 'V2' %}
+				<div class="box">
+					<p class="title">{{ 'MNA<sup>®</sup> Score'|t }}</p>
+					<p>{{ data.mna.score }}</p>
+					<p class="title">{{ data.mna.message.title }}</p>
+					<p>
+						{% autoescape %}
+							{{ data.mna.message.message | raw }}
+						{% endautoescape %}
+					</p>
+				</div>
+			{% endif %}
+			{% if data.must %}
+				<div class="box">
+					<p class="title">{{ 'MUST Score'|t }}</p>
+					<p>{{ data.must.score }}</p>
+					<p class="title">{{ data.must.message.title }}</p>
+					<p>
+						{% autoescape %}
+							{{ data.must.message.message | raw }}
+						{% endautoescape %}
+					</p>
+				</div>
+			{% endif %}
+			{% if data.nrs2002 %}
+				<div class="box">
+					<p class="title">{{ 'NRS-2002 Score'|t }}</p>
+					<p>{{ data.nrs2002.score }}</p>
+					<p class="title">{{ data.nrs2002.message.title }}</p>
+					<p>
+						{% autoescape %}
+							{{ data.nrs2002.message.message | raw }}
+						{% endautoescape %}
+					</p>
+				</div>
+			{% endif %}
+			{% if data.eat_10 %}
+				<div class="box">
+					<p class="title">{{ 'EAT-10 Score'|t }}</p>
+					<p>{{ data.eat_10.score }}</p>
+					<p>
+						{% autoescape %}
+							{{ data.eat_10.message | raw }}
+						{% endautoescape %}
+					</p>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+{% endif %}
+{% if data.nutritional_needs %}
+	<div class="calculator--result__resultInfos">
+		<p class="calculator--result__resultInfos__title">{{ 'Nutritional needs'|t }}</p>
+		<p class="calculator--result__resultInfos__subTitle">{{"According to the data facilitated, the average daily energy, protein and micronutrients needs are the following:"|t}}</p>
+		<div class="calculator--result__resultInfos__boxes">
+			<div class="box">
+				<p class="title">{{ 'Caloric needs'|t }}</p>
+				<p>{{ data.nutritional_needs.daily_caloric }}
+					{{ "kcal/day"|t }}</p>
+			</div>
+			<div class="box">
+				<p class="title">{{ 'Protein needs'|t }}</p>
+				<p>{{ data.nutritional_needs.daily_protein }}
+					{{ "g/day"|t }}</p>
+			</div>
+
+			{% if data.nutritional_needs.dri.gender|length %}
+				<div class="box">
+					<p class="title">{{ 'Vitamins'|t }}</p>
+					<ul>
+						{% for el in data.nutritional_needs.dri %}
+							{% if el.type == 'Vitamins' %}
+								<li>
+									<span>{{ el.title }}
+										{{ el.unit }}</span>
+									<span class="value">{{ el.value }}</span>
+								</li>
+							{% endif %}
+						{% endfor %}
+					</ul>
+				</div>
+				<div class="box">
+					<p class="title">{{ 'Minerals'|t }}</p>
+					<ul>
+						{% for el in data.nutritional_needs.dri %}
+							{% if el.type == 'Minerals' %}
+								<li>
+									<span>{{ el.title }}
+										{{ el.unit }}</span>
+									<span class="value">{{ el.value }}</span>
+								</li>
+							{% endif %}
+						{% endfor %}
+					</ul>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+	<div class="calculator--result__nutrionalReference">
+		<div class="ons__tabs">
+			<div class="ons__tabsLink">
+				{{ 'References'|t }}
+			</div>
+			<div class="ons__tabsContent">
+				{{'<p>
+				<strong>NOTES:</strong>
+				This table (taken from the DRI reports, see www.nap.edu) presents Recommended Dietary Allowances (RDAs) in bold type and Adequate Intakes (AIs) in ordinary type followed by an asterisk (*). An RDA is the average daily dietary intake level sufficient to meet the nutrient requirements of nearly all (97–98 percent) healthy individuals in a group. It is calculated from an Estimated Average Requirement (EAR). If sufficient scientific evidence is not available to establish an EAR, and thus calculate an RDA, an AI is usually developed. For healthy breastfed infants, an AI is the mean intake. The AI for other life-stage and gender groups is believed to cover the needs of all healthy individuals in the groups, but lack of data or uncertainty in the data prevent being able to specify with confidence the percentage of individuals covered by this intake.
+        </p>
+        <p>
+          <strong>SOURCES:</strong>
+          Dietary Reference Intakes for Calcium, Phosphorous, Magnesium, Vitamin D, and Fluoride (1997); Dietary Reference Intakes for Thiamin, Riboflavin, Niacin, Vitamin B6, Folate, Vitamin B12, Pantothenic Acid, Biotin, and Choline (1998); Dietary Reference Intakes for Vitamin C, Vitamin E, Selenium, and Carotenoids (2000); Dietary Reference Intakes for Vitamin A, Vitamin K, Arsenic, Boron, Chromium, Copper, Iodine, Iron, Manganese, Molybdenum, Nickel, Silicon, Vanadium, and Zinc (2001); Dietary Reference Intakes for Water, Potassium, Sodium, Chloride, and Sulfate (2005); Dietary Reference Intakes for Calcium and Vitamin D (2011); and Dietary Reference Intakes for Sodium and Potassium (2019). These reports may be accessed via www​.nap.edu.
+        </p>
+        <ul>
+          <li><strong>A.</strong> As retinol activity equivalents (RAEs). 1 RAE = 1 μg retinol, 12 μg β-carotene, 24 μg α-carotene, or 24 μg β-cryptoxanthin. The RAE for dietary provitamin A carotenoids is two-fold greater than retinol equivalents (REs), whereas the RAE for preformed vitamin A is the same as RE.</li>
+          <li><strong>B.</strong> As cholecalciferol. 1 μg cholecalciferol = 40 IU vitamin D.</li>
+          <li><strong>C.</strong> Under the assumption of minimal sunlight.</li>
+          <li><strong>D.</strong> As α-tocopherol. α-tocopherol includes RRR-α-tocopherol, the only form of α-tocopherol that occurs naturally in foods, and the 2R-stereoisomeric forms of α-tocopherol (RRR-, RSR-, RRS-, and RSS-α-tocopherol) that occur in fortified foods and supplements. It does not include the 2S-stereoisomeric forms of α-tocopherol (SRR-, SSR-, SRS-, and SSS-α-tocopherol), also found in fortified foods and supplements.</li>
+          <li><strong>E.</strong> As niacin equivalents (NE). 1 mg of niacin = 60 mg of tryptophan; 0–6 months = preformed niacin (not NE).</li>
+          <li><strong>F.</strong> As dietary folate equivalents (DFE). 1 DFE = 1 μg food folate = 0.6 μg of folic acid from fortified food or as a supplement consumed with food = 0.5 μg of a supplement taken on an empty stomach.</li>
+          <li><strong>G.</strong> Although AIs have been set for choline, there are few data to assess whether a dietary supply of choline is needed at all stages of the life cycle, and it may be that the choline requirement can be met by endogenous synthesis at some of these stages.</li>
+          <li><strong>H.</strong> Because 10 to 30 percent of older people may malabsorb food-bound B12, it is advisable for those older than 50 years to meet their RDA mainly by consuming foods fortified with B12 or a supplement containing B12.</li>
+          <li><strong>I.</strong> In view of evidence linking folate intake with neural tube defects in the fetus, it is recommended that all women capable of becoming pregnant consume 400 μg from supplements or fortified foods in addition to intake of food folate from a varied diet.</li>
+          <li><strong>J.</strong> Life-stage groups for infants were 0–5.9 and 6–11.9 months.</li>
+        </ul>'|t }}
+			</div>
+		</div>
+	</div>
+{% endif %}
+<a href="/" class="calculator--result__btnBack btn btn-primary">{{ 'BACK HOME'|t }}</a></div>

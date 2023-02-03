@@ -1,0 +1,10 @@
+
+nhsc_fix_missing_labels:
+  version: 1.x
+  js:
+    js/nhsc_fix_missing_labels.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings

@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.ccg_list
+id: taxonomy_term.ccg_list
+target_entity_type_id: taxonomy_term
+target_bundle: ccg_list
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,17 @@
+services:
+  nhsc_user_profile_via.event_subscriber:
+    class: Drupal\nhsc_user_profile_via\EventSubscriber\RedirectAnonymousSubscriber
+    arguments: []
+    tags:
+      - { name: event_subscriber }
+
+  nhsc_user_profile_via.check_cookie:
+    class: Drupal\nhsc_user_profile_via\EventSubscriber\CheckCookieSubscriber
+    arguments: []
+    tags:
+      - { name: event_subscriber }
+
+  nhsc_user_profile_via.route_subscriber:
+    class: Drupal\nhsc_user_profile_via\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }

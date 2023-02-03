@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_downloadable_pdf
+    - paragraphs.paragraphs_type.nhsc_tabs
+  module:
+    - datalayer
+    - file
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_downloadable_pdf
+id: paragraph.nhsc_tabs.field_downloadable_pdf
+field_name: field_downloadable_pdf
+entity_type: paragraph
+bundle: nhsc_tabs
+label: 'Download PDF'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: file-downloads
+  file_extensions: 'txt pdf'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

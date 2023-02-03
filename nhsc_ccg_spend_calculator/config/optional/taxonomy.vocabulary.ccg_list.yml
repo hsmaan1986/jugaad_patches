@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'CCG List'
+vid: ccg_list
+description: ''
+weight: 0

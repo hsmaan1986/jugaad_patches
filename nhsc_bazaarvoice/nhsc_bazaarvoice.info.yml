@@ -1,0 +1,8 @@
+name: nhsc_bazaarvoice
+type: module
+description: "Configure Bazaarvoice for this website"
+core_version_requirement: ^8 || ^9
+version: 8.x-1.0
+configure: nhsc_bazaarvoice.settings
+dependencies:
+  - field

@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: nhsc_card_item
+label: 'NHSC Card Item'
+icon_uuid: null
+icon_default: null
+description: 'This is the card item for the NHSC Cards Component.'
+behavior_plugins: {  }

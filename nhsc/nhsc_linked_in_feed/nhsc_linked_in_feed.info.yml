@@ -1,0 +1,10 @@
+name: 'Get Linkedin Feed'
+type: module
+description: 'Provides functionality for import posts from Linkedin page of Company in Drupal nodes.'
+core_version_requirement: ^8 || ^9
+package: Social
+configure: nhsc_linked_in_feed.config_form
+dependencies:
+  - drupal:link
+  - drupal:image
+  - drupal:node

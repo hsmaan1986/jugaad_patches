@@ -1,0 +1,14 @@
+hcp-site-switcher-js:
+  js:
+    js/purify.min.js: {}
+    js/hcp-site-content-switcher.js: {}
+    js/jquery.cookie.js: {}
+    js/jquery.fancybox.2.1.5.pack.js: {}
+  css:
+    theme:
+      css/jquery.fancybox.2.1.5.css: {}
+      css/site-switcher-new.css: {}
+  dependencies:
+    - core/jquery
+    - jquery_ui_datepicker/datepicker
+    - core/jquery.ui.datepicker

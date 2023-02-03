@@ -1,0 +1,53 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.share_with_your_network.field_addtoanyblock
+    - field.field.paragraph.share_with_your_network.field_rs
+    - field.field.paragraph.share_with_your_network.field_share_heading
+    - field.field.paragraph.share_with_your_network.field_share_heading_right
+    - paragraphs.paragraphs_type.share_with_your_network
+  module:
+    - block_field
+id: paragraph.share_with_your_network.default
+targetEntityType: paragraph
+bundle: share_with_your_network
+mode: default
+content:
+  field_addtoanyblock:
+    type: block_field
+    weight: 2
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_rs:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_share_heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_share_heading_right:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  addtoany: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  search_api_excerpt: true

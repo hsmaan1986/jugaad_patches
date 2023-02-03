@@ -1,0 +1,31 @@
+name: 'ONS Product Selector'
+type: module
+description: 'Provides Product Selector content type and related configuration. '
+package: ONS-Modules
+configure: ons_product_selector.settings
+dependencies:
+  - 'ctools:ctools'
+  - 'datalayer:datalayer'
+  - 'drupal:block'
+  - 'drupal:block_content'
+  - 'drupal:content_moderation'
+  - 'drupal:field'
+  - 'drupal:file'
+  - 'drupal:image'
+  - 'drupal:language'
+  - 'drupal:media'
+  - 'drupal:menu_ui'
+  - 'drupal:node'
+  - 'drupal:path'
+  - 'drupal:taxonomy'
+  - 'drupal:text'
+  - 'drupal:user'
+  - 'drupal:views'
+  - 'dynamic_entity_reference:dynamic_entity_reference'
+  - 'field_permissions:field_permissions'
+  - 'lightning_core:lightning_core'
+  - 'lightning_workflow:lightning_workflow'
+  - 'metatag:metatag'
+  - 'rng:rng'
+version: 8.x-1.3
+core_version_requirement: '^8.9 || ^9'

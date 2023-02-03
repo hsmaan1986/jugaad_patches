@@ -1,0 +1,23 @@
+uuid: 729830e8-a4ef-4339-9787-1310a2a0e1c9
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_field
+    - field_permissions
+    - paragraphs
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: paragraph.field_office_search
+field_name: field_office_search
+entity_type: paragraph
+type: block_field
+settings: {  }
+module: block_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,217 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - lcp_migrations
+id: node_story
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: default
+label: 'Import Story content'
+source:
+  plugin: json_parser_multiple
+  data_fetcher_plugin: file
+  data_parser_plugin: json
+  content_type: NSE_Story
+  item_selector: /
+  fields:
+    -
+      name: uid
+      label: ID
+      selector: uid
+    -
+      name: html_title
+      label: 'HTML Title'
+      selector: NSE_HTMLTitle
+    -
+      name: title
+      label: Title
+      selector: Title
+    -
+      name: subtitle
+      label: Subtitle
+      selector: NSE_HTMLSubTitle
+    -
+      name: body
+      label: Body
+      selector: NSE_HTMLContent
+    -
+      name: image
+      label: Image
+      selector: NSE_ImageLarge
+    -
+      name: created
+      label: Created
+      selector: Created
+    -
+      name: modified
+      label: Modified
+      selector: Modified
+    -
+      name: published_on
+      label: 'Published on'
+      selector: NCP_Date
+    -
+      name: story_category
+      label: 'Story Category'
+      selector: NSE_StoryCategory
+    -
+      name: introduction_text
+      label: 'Introduction text'
+      selector: NSE_IntroductionText
+    -
+      name: read_time
+      label: 'Read time'
+      selector: NSE_ReadingTime
+    -
+      name: flip_over
+      label: 'Flip Over'
+      selector: NSE_FlipOver
+    -
+      name: topic1
+      label: 'Topic 1'
+      selector: NSE_FilterKey1
+    -
+      name: topic2
+      label: 'Topic 2'
+      selector: NSE_FilterKey2
+    -
+      name: topic3
+      label: 'Topic 3'
+      selector: NSE_FilterKey3
+    -
+      name: seo_keywords
+      label: 'SEO keywords'
+      selector: 'NSE_SEO_Keywords'
+    -
+      name: seo_description
+      label: 'SEO description'
+      selector: 'NSE_SEO_Description'
+    -
+      name: seo_noindex
+      label: 'SEO noindex'
+      selector: 'NSE_SEO_NoIndex'
+    -
+      name: seo_canonical_url
+      label: 'SEO Canonical Url'
+      selector: 'NSE_CanonicalLink'
+    -
+      name: twitter_description
+      label: 'Twitter description'
+      selector: 'NSE_TwitterDescription'
+    -
+      name: twitter_image
+      label: 'Twitter image'
+      selector: 'NSE_TwitterImage'
+    -
+      name: publishing_start_date
+      label: 'Publishing Start Date'
+      selector: 'PublishingStartDate'
+    -
+      name: publishing_expiration_date
+      label: 'Publishing Expiration Date'
+      selector: 'PublishingExpirationDate'
+  ids:
+    uid:
+      type: string
+process:
+  title:
+    -
+      plugin: get
+      source:
+        - html_title
+        - title
+    -
+      plugin: callback
+      callable: array_filter
+    -
+      plugin: callback
+      callable: current
+    -
+      plugin: skip_on_empty
+      method: row
+  field_subtitle: subtitle
+  field_alternative_title: subtitle
+  field_introduction_text: introduction_text
+  body/format:
+    plugin: default_value
+    default_value: rich_text
+  body/value:
+    plugin: nestle_inline_images
+    source: body
+  body/summary: seo_description
+  field_read_time: read_time
+  field_flip_over:
+    plugin: static_map
+    source: flip_over
+    map:
+      'False': 0
+      'True': 1
+    default_value: 'False'
+  field_story_category:
+    -
+      plugin: explode
+      source: story_category
+      delimiter: '|'
+    -
+      plugin: extract
+      index:
+        - 0
+    -
+      plugin: entity_lookup
+      value_key: name
+      bundle_key: vid
+      bundle: story_categories
+      entity_type: taxonomy_term
+      ignore_case: true
+  field_topic:
+    plugin: entity_lookup
+    source:
+      - topic1
+      - topic2
+      - topic3
+    value_key: name
+    bundle_key: vid
+    bundle: topic
+    entity_type: taxonomy_term
+    ignore_case: true
+  field_image/target_id:
+    plugin: image_from_html
+    source: image
+  field_image/alt: title
+  field_image/title: title
+  created:
+    plugin: callback
+    source: created
+    callable: strtotime
+  changed:
+    plugin: callback
+    source: modified
+    callable: strtotime
+  published_at:
+    plugin: callback
+    source: published_on
+    callable: strtotime
+  status:
+    plugin: default_value
+    default_value: 1
+  uid:
+    plugin: default_value
+    default_value: 1
+  type:
+    plugin: default_value
+    default_value: story
+  path/0/pathauto:
+    plugin: default_value
+    default_value: 0
+  path/0/alias: uid
+  field_meta_tags: metatags
+  scheduled_transition_date: transition_dates
+  scheduled_transition_state: transition_states
+  moderation_state: moderation_state
+destination:
+  plugin: 'entity:node'
+migration_dependencies: null

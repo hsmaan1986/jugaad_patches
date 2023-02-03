@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_duality_slider.field_nhsc_duality_slider
+    - paragraphs.paragraphs_type.nhsc_duality_slider
+  module:
+    - zurb_twentytwenty
+id: paragraph.nhsc_duality_slider.default
+targetEntityType: paragraph
+bundle: nhsc_duality_slider
+mode: default
+content:
+  field_nhsc_duality_slider:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      default_offset_pct: '0.5'
+      orientation: horizontal
+      before_label: ''
+      after_label: ''
+      no_overlay: '1'
+      move_slider_on_hover: '1'
+      move_with_handle_only: '1'
+      click_to_move: 0
+    third_party_settings: {  }
+    type: twentytwenty_field_formatter
+    region: content
+hidden:
+  addtoany: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  search_api_excerpt: true

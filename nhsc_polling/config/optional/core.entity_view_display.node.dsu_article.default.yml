@@ -1,0 +1,407 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.dsu_article.body
+    - field.field.node.dsu_article.field_article_type_
+    - field.field.node.dsu_article.field_author_list
+    - field.field.node.dsu_article.field_background_color
+    - field.field.node.dsu_article.field_comments
+    - field.field.node.dsu_article.field_continue_body
+    - field.field.node.dsu_article.field_documents
+    - field.field.node.dsu_article.field_dsu_category
+    - field.field.node.dsu_article.field_dsu_file_attachments
+    - field.field.node.dsu_article.field_dsu_published_date
+    - field.field.node.dsu_article.field_dsu_related_content
+    - field.field.node.dsu_article.field_dsu_slider
+    - field.field.node.dsu_article.field_dsu_subtitle
+    - field.field.node.dsu_article.field_dsu_tags
+    - field.field.node.dsu_article.field_end_body
+    - field.field.node.dsu_article.field_featured
+    - field.field.node.dsu_article.field_image
+    - field.field.node.dsu_article.field_make_poll_sticky
+    - field.field.node.dsu_article.field_medic
+    - field.field.node.dsu_article.field_meta_tags
+    - field.field.node.dsu_article.field_poll
+    - field.field.node.dsu_article.field_presenter_list
+    - field.field.node.dsu_article.field_presenters
+    - field.field.node.dsu_article.field_rating
+    - field.field.node.dsu_article.field_second_image
+    - field.field.node.dsu_article.field_vote
+    - field.field.node.dsu_article.panelizer
+    - image.style.slick
+    - node.type.dsu_article
+  module:
+    - comment
+    - entity_reference_revisions
+    - file
+    - fivestar
+    - image
+    - metatag
+    - panelizer
+    - text
+    - user
+    - votingapi_widgets
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+    displays:
+      default:
+        blocks:
+          148b5d45-8f0e-4536-991e-9334ff942363:
+            id: 'entity_field:node:uid'
+            label: 'Authored by'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: author
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: content
+            weight: 0
+          b438e2cd-1b02-4923-b601-071787ed0ec6:
+            id: 'entity_field:node:created'
+            label: 'Authored on'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: timestamp
+              settings:
+                date_format: medium
+                custom_date_format: ''
+                timezone: ''
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: content
+            weight: 0
+          8742ce64-7d50-492e-a2eb-fdcd41d702d6:
+            id: 'entity_field:node:body'
+            label: Body
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: text_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: content
+            weight: 3
+          0bb63b5e-0998-4b96-800f-192d1cb2835d:
+            id: 'entity_field:node:field_dsu_category'
+            label: Category
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: entity_reference_label
+              settings:
+                link: true
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: content
+            weight: 4
+          5f8513e7-85b3-497a-9ce2-31c46cffa823:
+            id: 'entity_field:node:field_dsu_file_attachments'
+            label: 'File attachments'
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: entity_reference_revisions_entity_view
+              settings:
+                view_mode: default
+                link: ''
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: content
+            weight: 7
+          5ecd03c5-a949-4950-8cfc-9d8a1eab6767:
+            id: 'entity_field:node:field_dsu_image'
+            label: Image
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: entity_reference_revisions_entity_view
+              settings:
+                view_mode: default
+                link: ''
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: content
+            weight: 1
+          62604507-6906-43e2-a033-5875d6552c0f:
+            id: 'entity_field:node:field_dsu_slider'
+            label: Slider
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: entity_reference_revisions_entity_view
+              settings:
+                view_mode: default
+                link: ''
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: content
+            weight: 0
+          82a4b33c-2593-4a5e-b2b5-e9fe9cb2f02d:
+            id: 'entity_field:node:field_dsu_subtitle'
+            label: Subtitle
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: string
+              settings:
+                link_to_entity: false
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: content
+            weight: 2
+          af2621f0-1fa8-403b-8cc4-3c8f8b2737ae:
+            id: 'entity_field:node:field_dsu_tags'
+            label: Tags
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: entity_reference_label
+              settings:
+                link: true
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: content
+            weight: 5
+          0882239a-648c-425f-be82-f73717ad106e:
+            id: 'entity_field:node:field_rating'
+            label: Rating
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: fivestar_stars
+              settings:
+                fivestar_widget: modules/contrib/fivestar/widgets/basic/basic.css
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            region: content
+            weight: 6
+        id: panels_variant
+        label: Default
+        weight: 0
+        layout: layout_onecol
+        layout_settings: {  }
+        page_title: '[node:title]'
+        storage_type: ''
+        storage_id: ''
+        builder: ipe
+        pattern: panelizer
+id: node.dsu_article.default
+targetEntityType: node
+bundle: dsu_article
+mode: default
+content:
+  body:
+    type: text_default
+    weight: 3
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  content_moderation_control:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_author_list:
+    type: entity_reference_revisions_entity_view
+    weight: 9
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_background_color:
+    weight: 15
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_comments:
+    weight: 12
+    label: hidden
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    type: comment_default
+    region: content
+  field_continue_body:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_documents:
+    weight: 10
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_dsu_category:
+    type: entity_reference_label
+    weight: 7
+    region: content
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_dsu_subtitle:
+    type: string
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_dsu_tags:
+    type: entity_reference_label
+    weight: 8
+    region: content
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_end_body:
+    weight: 6
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_medic:
+    weight: 2
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_meta_tags:
+    weight: 16
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
+  field_poll:
+    weight: 18
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_presenter_list:
+    weight: 14
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_rating:
+    weight: 11
+    label: hidden
+    settings:
+      fivestar_widget: modules/contrib/fivestar/widgets/basic/basic.css
+      text_format: average
+      display_format: average
+    third_party_settings: {  }
+    type: fivestar_stars
+    region: content
+  field_second_image:
+    weight: 5
+    label: hidden
+    settings:
+      image_style: slick
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_vote:
+    weight: 17
+    label: hidden
+    settings:
+      style: fontawesome-stars
+      readonly: 0
+      show_results: 0
+      values: {  }
+      show_own_vote: false
+    third_party_settings: {  }
+    type: voting_api_formatter
+    region: content
+  links:
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_article_type_: true
+  field_dsu_file_attachments: true
+  field_dsu_published_date: true
+  field_dsu_related_content: true
+  field_dsu_slider: true
+  field_featured: true
+  field_image: true
+  field_make_poll_sticky: true
+  field_presenters: true
+  langcode: true
+  panelizer: true
+  search_api_excerpt: true

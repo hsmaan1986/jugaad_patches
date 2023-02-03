@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Contains hcp_webinar_enroll.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function hcp_webinar_enroll_theme() {
+  return [
+    'enroll' => [
+      'render element' => 'children',
+    ],
+    'enroll_block' => [
+      'variables' => array('url' => NULL, 'user' => NULL, 'node' => NULL, 'status' => NULL),
+          'template' => 'enroll_block',
+    ],
+  ];
+}

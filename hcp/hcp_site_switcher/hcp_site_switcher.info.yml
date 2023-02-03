@@ -1,0 +1,9 @@
+name: 'HCP Site Switcher'
+type: module
+description: 'Toggles HCP Content'
+core_version_requirement: ^8 || ^9
+package: 'hcp'
+configure: hcp_site_switcher.config_form
+dependencies:
+  - drupal:locale
+  - config_translation

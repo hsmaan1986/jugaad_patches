@@ -1,0 +1,21 @@
+status: true
+dependencies:
+  config:
+    - block_content.type.site_switcher
+    - field.storage.block_content.field_add_site_switcher
+id: block_content.site_switcher.field_add_site_switcher
+field_name: field_add_site_switcher
+entity_type: block_content
+bundle: site_switcher
+label: 'Add Site Switcher'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

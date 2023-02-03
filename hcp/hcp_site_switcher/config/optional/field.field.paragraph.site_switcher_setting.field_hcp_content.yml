@@ -1,0 +1,23 @@
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hcp_content
+    - paragraphs.paragraphs_type.site_switcher_setting
+_core:
+  default_config_hash: FeRAiU7y1ZcZytQ0IVV2jLtTpNU58ihoPit_wkoigsM
+id: paragraph.site_switcher_setting.field_hcp_content
+field_name: field_hcp_content
+entity_type: paragraph
+bundle: site_switcher_setting
+label: 'HCP Content'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'true'
+  off_label: 'false'
+field_type: boolean

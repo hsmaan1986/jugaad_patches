@@ -1,0 +1,8 @@
+kwit-library:
+  version: 1.0.0
+  js:
+    https://kwit.pl/assets/kwit_brandwidget_button.js: {type: external, minified: true}
+kwit-connector:
+  version: 1.0.0
+  js:
+    js/kwit-connector.js: {}

@@ -1,0 +1,17 @@
+name: 'Gigya Sign Up form block'
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - block
+  - datalayer
+  - entity_reference_revisions
+  - field
+  - field_permissions
+  - image
+  - node
+  - paragraphs
+  - rng
+  - system
+  - text
+  - user
+  - views

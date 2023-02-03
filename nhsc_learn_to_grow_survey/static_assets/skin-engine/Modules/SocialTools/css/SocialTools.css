@@ -1,0 +1,106 @@
+.SocialToolsButton {
+  background: #ffffff url("images/shareIcon.png") no-repeat;
+  display: block;
+  height: 34px;
+  max-width: 34px;
+  background-size: 34px;
+  float: left;
+}
+.SocialToolsLabels {
+  /*display: none;*/
+
+  float: left;
+}
+/*.globalcount {float: right;  }*/
+section[class^="SocialTools"] {
+  width: 100%;
+}
+section[class^="SocialTools"] div {
+  width: 100%;
+}
+section[class^="SocialTools"] div.SocialHeader {
+  margin-bottom: 10px;
+}
+section[class^="SocialTools"] div.sep {
+  clear: both;
+}
+section[class^="SocialTools"] div.bkg {
+  padding-top: 7px;
+  border-bottom: 1px #cdcfcc solid;
+}
+section[class^="SocialTools"] div.labelsocialbuttontooltip {
+  display: none;
+}
+section[class^="SocialTools"] ul {
+  width: 100%;
+}
+section[class^="SocialTools"] ul li {
+  width: 17%;
+  max-width: 97px;
+  float: left;
+  list-style-type: none;
+  list-style-position: outside;
+  margin-right: 4px;
+  left: 0!important;
+  list-style-image: none!important;
+  padding-top: 0!important;
+  position: initial;
+  margin-bottom: 4px;
+}
+section[class^="SocialTools"] ul li a {
+  width: 100%;
+  display: block;
+  height: 34px;
+}
+section[class^="SocialTools"] ul li.facebook {
+  background: #3354a0 url("images/facebook.png") no-repeat;
+}
+section[class^="SocialTools"] ul li.twitter {
+  background: #60afda url("images/twitter.png") no-repeat;
+}
+section[class^="SocialTools"] ul li.linkedin {
+  background: #2d96cc url("images/linkedin.png") no-repeat;
+}
+section[class^="SocialTools"] ul li.googleplus {
+  background: #dc2a18 url("images/googleplus.png") no-repeat;
+}
+section[class^="SocialTools"] ul li.whatsapp {
+  background: #71d336 url("images/whatsapp.png") no-repeat;
+  background-size: contain;
+}
+section[class^="SocialTools"] ul li.weibo {
+  background: #d72928 url("images/weibo.png") no-repeat;
+}
+section[class^="SocialTools"] ul li.sohu {
+  background: #ffffff url("images/sohu.png") no-repeat;
+}
+section[class^="SocialTools"] ul li.qq {
+  background: #128abc url("images/qq.png") no-repeat;
+}
+section[class^="SocialTools"] ul li.renren {
+  background: #ffffff url("images/renren.png") no-repeat;
+}
+section[class^="SocialTools"] ul li.sendpage {
+  background: #8c8c8c url("images/sendpage.png") no-repeat;
+}
+section[class^="SocialTools"] ul li.globalcount {
+  width: auto;
+  margin-right: 0;
+  text-align: center;
+  display: none;
+}
+section[class^="SocialTools"] ul div:first-child {
+  font-size: 16px;
+}
+section[class^="SocialTools"] ul div {
+  font-size: 10px;
+}
+section[class^="SocialToolsBlogPostItem"] ul li {
+  max-width: 60px;
+}
+section[class^="SocialToolsBlogPostItem"] ul li.globalcount div:first-child {
+  font-size: 13px;
+}
+section[class^="SocialToolsBlogPostItem"] ul li.globalcount div {
+  font-size: 10px;
+}

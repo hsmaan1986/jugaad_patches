@@ -1,0 +1,34 @@
+
+# Point menu items definition
+entity.point.collection:
+  title: 'Point list'
+  route_name: entity.point.collection
+  description: 'List Point entities'
+  parent: system.admin_structure
+  weight: 100
+
+
+# Point type menu items definition
+entity.point_type.collection:
+  title: 'Point type'
+  route_name: entity.point_type.collection
+  description: 'List Point type (bundles)'
+  parent: system.admin_structure
+  weight: 99
+
+hcp_reward_system.reward_system_form:
+  title: 'Reward System'
+  route_name: hcp_reward_system.reward_system_form
+  description: 'Setup you rewads behiavors'
+  parent: system.admin_config_system
+  weight: 99
+
+
+# Achivements entity menu items definition
+entity.achivements_entity.collection:
+  title: 'Achivements entity'
+  route_name: entity.achivements_entity.collection
+  description: 'List Achivements entity (bundles)'
+  parent: system.admin_structure
+  weight: 99
+

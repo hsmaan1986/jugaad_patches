@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_nhsc_slider_content
+    - paragraphs.paragraphs_type.nhsc_image_content_slider_top
+  module:
+    - text
+id: paragraph.nhsc_image_content_slider_top.field_nhsc_slider_content
+field_name: field_nhsc_slider_content
+entity_type: paragraph
+bundle: nhsc_image_content_slider_top
+label: 'NHSC slider content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

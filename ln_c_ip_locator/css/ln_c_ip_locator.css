@@ -1,0 +1,45 @@
+
+.ip_locator_popup .logo {
+  width: 190px;
+}
+.ip_locator_popup .popup-body {
+  text-align: center;
+}
+.ip_locator_popup .popup-body p {
+  margin: 20px auto;
+}
+.ip_locator_popup .popup-body .button-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.ip_locator_popup a {
+  font-size: 16px;
+  line-height: 100%;
+  padding: 0.6875rem 1.5625rem;
+  background-color: #1b7bb7;
+  color: #ffffff !important;
+  --btn-raise: 10px;
+  clip-path: polygon(var(--btn-raise) 0, calc(100% - var(--btn-raise)) 0, 100% 50%, calc(100% - var(--btn-raise)) 100%, var(--btn-raise) 100%, 0 50%);
+  text-transform: uppercase;
+  margin-right: 2.1875rem;
+  outline: none !important;
+}
+.ui-dialog-titlebar.ui-corner-all.ui-widget-header.ui-helper-clearfix {
+  display: none;
+}
+.ui-widget.ui-widget-content {
+  border: none;
+  position: relative;
+  max-width: 620px !important;
+  width: 100% !important;
+  text-align: center;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+}
+@media screen and (max-width: 768px) {
+  .ui-widget.ui-widget-content { width: calc(100% - 30px)!important;
+  }
+
+}

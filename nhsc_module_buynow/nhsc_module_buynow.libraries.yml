@@ -1,0 +1,22 @@
+nhsc_module_buynow:
+  js:
+    https://brand-ecommerce-assets.fusepump.com/bootstraper/bootstraper.js: {async: true, type: external}
+    js/range.js: {}
+    js/product.js: {}
+  css:
+    theme:
+      css/button.css: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+nhsc_module_buynow_v2:
+  js:
+    https://re-cdn.fusepump.com/buynow/1.1.0/lightbox/clickAndCollect/app.min.js: {async: true, type: external}
+    js/range.js: {}
+    js/product.js: {}
+  css:
+    theme:
+      css/button.css: {}
+  dependencies:
+    - core/drupal
+    - core/jquery

@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_nhsc_video
+    - paragraphs.paragraphs_type.nhsc_image_and_text_column
+  module:
+    - datalayer
+    - file
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_nhsc_video
+id: paragraph.nhsc_image_and_text_column.field_nhsc_video
+field_name: field_nhsc_video
+entity_type: paragraph
+bundle: nhsc_image_and_text_column
+label: Video
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: videos
+  file_extensions: mp4
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

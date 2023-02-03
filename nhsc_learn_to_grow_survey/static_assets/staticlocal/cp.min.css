@@ -1,0 +1,2775 @@
+/*-------------NHS Design Refactor-----------*/
+
+h2{
+   font-size: 1.8em!important;
+   font-weight: lighter!important;
+}
+#static_header{
+    display:none;
+}
+.page-content{
+    display:none !important;
+}
+.inner-wrapper{
+    margin-top: 0px;
+}
+.inner-header{
+    display:none !important;
+}
+#header{
+    display: none;
+}
+.nhs-copyright {
+   background: transparent url("../asset-library/PublishingImages/info/logo-header.png") no-repeat 35px 0 !important;
+}
+
+
+button.button{
+   border:none;
+   padding:12px;
+   margin-bottom:-20px;
+   min-height: 60px;
+   padding-right: 0px;
+   background: url("../asset-library/PublishingImages/cerebral-palsy/arrow-button.png") no-repeat right;
+   background-position: right;
+   cursor: pointer;
+
+}
+
+
+
+h1{
+    font-size:30px !important;
+    line-height:30px;
+    margin-top:35px;
+    font-family: "Dosis-Bold", "LatoWeb";
+}
+h1 .satisfy{
+    font-size:34px !important;
+    line-height:34px;
+}
+.satisfy{
+    font-family: satisfy;
+}
+h3{
+    font-size: 32px !important;
+    line-height: 32px !important;
+    font-family: satisfy;
+    font-weight: 100;
+}
+h4{
+    font-size: 18px !important;
+    line-height: 32px !important;
+}
+h5{
+    font-size: 18px !important;
+    line-height: 32px !important;
+    text-decoration: dashed;
+}
+p{
+    font-size: 17px !important;
+    line-height: 30px !important;
+}
+
+
+.cp-banner h1 .satisfy{
+   line-height: 70px;
+}
+
+/*-------------Global Colors-----------*/
+.pink .title,.pink .blocquote{
+   color:#f7567c;
+}
+
+.content-page.pink .blocquote .quote{
+   color: #f7567c;
+}
+.green.content-page .blocquote .quote{
+   color: #3ebba3;
+}
+.blue.content-page .blocquote .quote{
+   color: #5f87d7;
+}
+
+.green .title,.green .blocquote{
+   color: #3ebba3;
+}
+.blue .title, .blue .blocquote{
+   color: #5f87d7 ;
+}
+
+
+.blue .tabs_default{
+   background-color: #e9eff9;
+   background-image: url("../asset-library/PublishingImages/cerebral-palsy/backgrounds/tab-background-1.jpg");
+   background-repeat: no-repeat;
+}
+
+.green .tabs_default{
+   background-color: #e6f6f3;
+   background-image: url("../asset-library/PublishingImages/cerebral-palsy/backgrounds/tab-background-3.jpg");
+   background-repeat: no-repeat;
+}
+
+.pink .tabs_default{
+   background-color: #fee9ee;
+   background-image: url("../asset-library/PublishingImages/cerebral-palsy/backgrounds/tab-background-2.jpg");
+   background-repeat: no-repeat;
+}
+
+/*-------------Tabs-----------*/
+.tabs > DIV {
+    margin-top: 10px;
+    background: white !important;
+}
+
+.tabs UL.horizontal {
+    list-style: none outside none;
+    margin: 0;
+}
+.tabs ul LI {
+    background: white;
+    width: 32%;
+    margin: -1px 10px 0 0;
+    display: inline-block;
+    text-transform:uppercase border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    text-transform:uppercase;
+    /* border-bottom: 2px dashed white; */
+}
+/* .tabs.large ul LI {
+   width: 18%;
+   height: 70px;
+} */
+
+.tabs .tab h1{
+   margin-bottom: 35px;
+   margin-top: 0px;
+}
+
+.tabs A {
+    color: white;
+    display: block;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 16px;
+    padding: 14px 24px;
+    text-decoration: none;
+    padding-left: 15px;
+    font-family: "Dosis-Bold", "LatoWeb";
+}
+
+.tabs .tab A {
+    padding: inherit;
+    display: initial;
+}
+
+.tabs ul LI:hover {
+    opacity: 0.9;
+}
+.tabs .tab ul LI:hover {
+    opacity: 1;
+}
+.blue .tabs .active A {
+    background: white;
+    color: #5f87d7;
+}
+.green .tabs ul LI:hover {
+    border-bottom: 2px solid #3ebba3;
+}
+.green .tabs .active A {
+    background: white;
+    color: #3ebba3;
+}
+.pink .tabs ul LI:hover {
+    border-bottom: 2px solid #f7567c;
+}
+.pink .tabs .active A {
+    background: white;
+    color: #f7567c;
+}
+.blue .tabs ul LI {
+   background: #5f87d7;
+   color:white !important;
+   border-bottom: 2px solid #5f87d7;
+}
+.black .tabs ul LI {
+   background: black;
+   color:white !important;
+   border-bottom: 2px solid black;
+}
+.pink .tabs ul LI {
+   background: #f7567c ;
+    color:white !important;
+    border-bottom: 2px solid #f7567c;
+}
+.green .tabs ul LI {
+   background: #3ebba3;
+   color:white !important;
+   border-bottom: 2px solid #3ebba3;
+}
+.grey .tabs ul LI {
+   background: #757982 ;
+    color:white !important;
+}
+.tabs ul LI.active {
+   border-bottom: 2px dashed #d2d2d2;
+   background: #ffffff;
+}
+.tabs ul LI.active:hover {
+   border-bottom: 2px dashed #d2d2d2;
+   background: #ffffff;
+   opacity:1;
+   cursor: default;
+}
+.tabs .nwe-drag{
+    display: none !important;
+}
+.tabs .five li{
+   width: 22%
+}
+.tabs .five li{
+   width: 24%;
+   margin:-1px 8px 0 0;
+}
+.tabs .tab {
+   padding:50px;
+   padding-top: 20px;
+}
+.tabs .tab img{
+   margin: 0 auto;
+   display: block;
+}
+
+.tab .references ol {
+   margin-left: 0px;
+}
+
+.tab .references ul {
+   margin-left: 0px;
+}
+
+.new_col_50_2 .blocquote p{
+   font-family: satisfy;
+   font-size: 28px !important;
+   font-weight: 400;
+}
+
+.new_col_50_1 .blocquote p{
+   font-family: satisfy;
+   font-size: 28px !important;
+   font-weight: 400;
+}
+
+.new_col_50_1 .blocquote{
+   margin-top: 6%;
+}
+
+.new_col_50_2 .blocquote{
+   margin-top: 6%;
+}
+
+.cp-main-content img{
+   margin: 0 auto;
+   display: block;
+}
+
+.tabs .tab h3 {
+   text-align: center;
+}
+
+.tabs .tab .background{
+   padding-top: 30px;
+   padding-left: 40px;
+   padding-right: 40px;
+   padding-bottom: 30px;
+}
+.tabs .tab p, .tabs .tab ol{
+   margin-bottom:20px;
+}
+
+.tabs .tab a, .cp-main-content a{
+   color: #5f87d7 !important;
+   font-family: 'LatoWeb',sans-serif;
+}
+
+.tabs .tab ul li{
+   background: none;
+   color: inherit !important;
+   width: 100%;
+   border-bottom: inherit;
+   text-transform: inherit;
+   line-height: 30px !important;
+   padding-left: 1.5em;
+   font-size: 17px !important;
+}
+
+.tabs .tab ul{
+   padding-bottom:20px;
+}
+.references a{
+   color: inherit !important;
+   font-size: inherit;
+   font-weight: inherit;
+   line-height: inherit;
+   padding: inherit;
+   text-align: inherit !important;
+   display: initial !important;
+   text-transform: inherit !important;
+}
+.green .tabs .tab ul li::before {
+ content: "\2022 ";
+ color: #3ebba3;
+}
+.blue .tabs .tab ul li::before {
+ content: "\2022 ";
+ color: #5f87d7;
+}
+.pink .tabs .tab ul li::before {
+ content: "\2022 ";
+ color: #f7567c;
+}
+.tabs .tab ul LI:hover {
+    border-bottom: inherit;
+}
+
+/*-------------Background-----------*/
+.background{
+   padding-top: 25px;
+   padding-bottom: 25px;
+}
+
+.pink .background{
+   background-color:#fee9ee;
+}
+.green .background{
+   background-color:#c9ede6;
+}
+.blue .background{
+   background-color:#d1dcf3;
+}
+
+/*-------------Fonts-----------*/
+@font-face {
+    font-family: 'Lato-Regular';
+    src: url('https://www.nestlehealthscience.es/staticlocal/fonts/Lato-Regular.eot');
+    src: url('https://www.nestlehealthscience.es/staticlocal/fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'), url('https://www.nestlehealthscience.es/staticlocal/fonts/Lato-Regular.woff') format('woff'), url('https://www.nestlehealthscience.es/staticlocal/fonts/Lato-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Lato-Black';
+    src: url('https://www.nestlehealthscience.es/staticlocal/fonts/Lato-Black.eot');
+    src: url('https://www.nestlehealthscience.es/staticlocal/fonts/Lato-Black.eot?#iefix') format('embedded-opentype'), url('fonts/Lato-Black.woff') format('woff'), url('https://www.nestlehealthscience.es/staticlocal/fonts/Lato-Black.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Dosis-Bold';
+    src: url('https://www.nestlehealthscience.es/staticlocal/fonts/dosis-bold.eot');
+    src: url('https://www.nestlehealthscience.es/staticlocal/fonts/dosis-bold.eot?#iefix') format('embedded-opentype'), url('fonts/dosis-bold.woff') format('woff'), url('https://www.nestlehealthscience.es/staticlocal/fonts/dosis-bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/*-------------Testimonial blocks-----------*/
+.testimonial-pic {
+    margin: 0 auto;
+    display: block;
+    margin-top: -75px;
+    max-width: 150px;
+    position:absolute;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+}
+.testimonial{
+    background-color: #fee9ee;
+    position:relative;
+    text-align: center;
+    padding: 20px;
+    padding-bottom: 50px;
+    margin-top: 50px;
+    border: 2px dashed #dbdbdb;
+   border-radius: 8px;
+   min-height: 465px;
+   margin: 0 auto;
+   max-width: 350px;
+}
+.testimonial .title{
+    font-size: 48px;
+    line-height: 48px;
+    margin-bottom: 20px;
+    font-family: Satisfy;
+    padding-top: 60px;
+}
+
+.hcp .testimonial .title{
+    font-size: 35px;
+}
+
+.testimonial .sub-title{
+    font-family: "Lato-Black", "LatoWeb";
+    text-transform: uppercase;
+    color: #9a8990;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: bold;
+    max-width: 210px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    line-height: 25px;
+    min-height: 150px;
+}
+.blocquote{
+    font-weight: Bold;
+    font-size: 18px;
+    line-height: 18px;
+    padding-bottom: 41px;
+    text-align: center;
+    line-height: 25px;
+}
+.blocquote .quote{
+    font-size: 72px;
+    margin-top: 20px;
+}
+.quotation .text-wrapper {
+    color:white;
+    font-size: 28px;
+    font-family: satisfy;
+   max-width: 750px;
+   margin: 0 auto;
+   text-align: center;
+   padding-top: 3%;
+   font-size: 33px;
+}
+.blue .testimonial{
+   background-color: #d9e2f5;
+}
+.green .testimonial{
+   background-color: #d1efe9;
+}
+.blocquote.big{
+   font-weight: normal;
+}
+.blocquote.big p{
+   font-size: 25px !important;
+}
+
+
+
+/*-------------Footer-----------*/
+.footer .sup-banner .title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 25px;
+    padding-top: 61px;
+    font-weight: 600;
+    color:#757982 !important;
+    font-family: "Dosis-Bold","LatoWeb";
+}
+
+.footer-wrapper {
+   position: relative;
+   max-width: 1200px;
+   margin-left: auto;
+   margin-right: auto
+}
+#footer{
+   display:none;
+}
+.extra-footer{
+   border-top:solid 6px #00b0d2;
+   font-size: 0.875em;
+   color: #565859;
+   text-align: left;
+}
+.extra-footer .sep-color{
+   width:100%;
+   height:6px;
+   background-color: #e38105;
+   margin-top: 3px
+}
+.extra-footer .inner-extra-footer {
+   padding:20px;
+   max-width: 1200px;
+}
+
+.sup-banner .title .button {
+   margin-left: 25px;
+   width: 300px;
+   display: block;
+   float: right;
+   margin-right: 80px;
+   margin-top: -8px;
+}
+.footer .logo{
+   margin: 0 auto;
+   display: block;
+   margin-top: 52px;
+   margin-bottom: 26px;
+   width: 30%;
+}
+.footer .sup-banner{
+    background-image: url('https://www.nestlehealthscience.es/asset-library/PublishingImages/pocs/sub-banner.jpg');
+    min-height: 159px;
+}
+.sub-footer{
+   border-top: 1px solid #fda88d;
+   margin-top: 80px;
+   padding-top: 20px;
+}
+.copyrights {
+   width: 305px;
+   display: inline-block;
+   margin: 20px 0 0 20px;
+   vertical-align: top
+}
+.nhs-copyright {
+   display: block;
+   width: 251px;
+   height: 53px;
+   text-indent: 100%;
+   white-space: nowrap;
+   overflow: hidden;
+}
+.nhs-copyright {
+   background: transparent url('../skin-engine-shared/NHSSkin/css/images/logo.png') no-repeat 0 0
+}
+.nhs-copyright-sentence {
+   font-size: 12px;
+   margin: 0px 0 0 0px;
+}
+.links {
+   list-style-type: none;
+   margin-top: 15px;
+   margin-left: 50px;
+}
+.links ul {
+   list-style-type: none;
+   list-style-image: none
+}
+.links li {
+   vertical-align: top;
+   font-size: 15px;
+}
+.right-block-links {
+   list-style-type: none;
+   margin-top: 15px;
+   margin-left: 50px;
+   padding-top:0px;
+   font-size: 15px;
+}
+.right-block-links ul {
+   list-style-type: none;
+   list-style-image: none
+}
+.right-block-links li {
+   margin-bottom: 20px;
+   vertical-align: top;
+}
+.right-block-links li a {
+   color: inherit;
+   text-decoration: underline;
+}
+
+.links li a{
+   color:#7a838b
+}
+.links{
+   width: 23%;
+   float: left;
+   text-transform: uppercase;
+}
+.center-block{
+   width: 40%;
+   margin-right: 30px;
+   float:left;
+   margin-bottom: 50px;
+}
+.links li{
+   width:auto;
+   margin-right:40px;
+   border-bottom: 2px dashed #d2d2d2;
+   line-height: 34px;
+}
+.copyrights{
+   margin-top:19px;
+   margin: 0 auto;
+   display: block;
+}
+.extra-links{
+   text-align:center;
+   padding-bottom: 41px;
+}
+.extra-links a{
+   margin:0 17px;
+   text-decoration:underline
+}
+.infinity{
+   width:30px;
+   vertical-align: middle;
+}
+.social{
+   display: none
+}
+.sep-color-orange{
+   width: 100%;
+   height: 6px;
+   background-color: #e38105;
+   margin-top: 3px;
+}
+.sep-color-blue{
+   width: 100%;
+   height: 6px;
+   background-color: #1e427d;
+   margin-top: 3px;
+}
+.nhs-copyright-sentence2 {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: center;
+    display:inline-block;
+    color: #babdc3;
+}
+
+
+
+/*-------------Buttons-----------*/
+.button{
+    border-radius: 4px !important;
+    font-size: 18px !important;
+    line-height: 16px;
+    text-transform: uppercase !important;
+    min-width: 204px;
+    opacity: 1;
+    box-shadow: 1px 3px #c7c7c7;
+    box-shadow: 0px 3px 0px rgba(51,47,48,0.75);
+    font-family: "Dosis-Bold", "LatoWeb";
+}
+
+.button:hover {
+    opacity: 0.9;
+    margin-top:1px;
+    box-shadow: 0px 2px 0px rgba(51,47,48,0.75);
+
+}
+.button:active {
+    opacity: 1;
+    box-shadow: inset 0px 3px 0px 0px rgba(51,47,48,0.2);
+}
+
+.button div{
+   line-height: 20px;
+   margin-right: 35px;
+}
+
+
+.nav-button .grey{
+   color:#757982;
+}
+.homepage-banner .title{
+   color:white;
+}
+
+/*-------------Header-----------*/
+.cp-header .cp-nav ul li:hover{
+   background-color: white;
+}
+.cp-header .cp-nav ul li:hover ul{
+   background-color: white;
+   min-width: 180px !important;
+}
+.cp-header .cp-nav ul li ul li:hover {
+   background-color: white;
+}
+.cp-header .cp-nav ul li a{
+   color: #9a8990 !important;
+   font-size: 1.1em;
+   font-weight: bold;
+   font-family: "Dosis-Bold", "LatoWeb";
+}
+.cp-header .cp-nav>ul>li>a{
+   padding-top: 30px;
+   padding-bottom:10px;
+   font-family: "Dosis-Bold", "LatoWeb";
+}
+.cp-header .cp-nav ul li .cart-picture{
+   display:inline-block;
+   width:54px;
+   height:64px;
+   background: transparent url('https://www.nestlehealthscience.es/img/cart.jpg') no-repeat 0px 0px;
+}
+.cp-header .cp-nav .search{
+   min-width: inherit;
+   background-color: inherit !important;
+   max-height: 60px;
+   display: none;
+}
+.search-input{
+   border: none;
+   margin-top: 10px;
+}
+.search-input .button{
+   float: right;
+   margin-right: 25px;
+   padding: 5px 8px;
+}
+.search-input input{
+   padding: 8px 20px;
+   line-height: 28px;
+   background: transparent;
+   border: none;
+   text-transform: uppercase;
+   font-weight: 700;
+   width: 420px;
+}
+.cp-header .cp-nav ul.sub{
+   margin-top: 0px;
+}
+.cp-header .logo h1 img{
+   max-width: 150px;
+   margin-top: 15px;
+}
+.cp-header .logo {
+   float: left;
+}
+.cp-header{
+   max-width: 1280px;
+   margin:0px auto;
+   text-align: center;
+}
+.cp-header a{
+   vertical-align: middle;
+   display: inline-block;
+}
+.cp-header h1{
+   display:inline
+}
+.cp-header .cp-nav{
+   float:right;
+   padding-top: 50px;
+}
+.cp-header .cp-nav ul{
+   list-style-type:none;
+   margin-top: 20px;
+}
+.cp-header .cp-nav ul li{
+   text-align:center;
+   color: #8a8c8e;
+   display:inline-block;
+   vertical-align:middle;
+   min-width: 130px;
+}
+.yellow .cp-header .cp-nav ul li.active {
+   border-bottom:4px solid #ffcc00;
+}
+.green .cp-header .cp-nav ul li.active {
+   border-bottom:4px solid #3ebba3;
+}
+.blue .cp-header .cp-nav ul li.active {
+   border-bottom:4px solid #5f87d7;
+}
+.pink .cp-header .cp-nav ul li.active {
+   border-bottom:4px solid #f7567c;
+}
+
+.cp-header .cp-nav ul li.grey.active {
+   border-bottom: 4px solid #757982;
+}
+
+.cp-header .cp-nav ul li.yellow a span{
+   color: #ffcc00;
+}
+.cp-header .cp-nav ul li.green a span{
+   color: #3ebba3;
+}
+.cp-header .cp-nav ul li.pink a span{
+   color: #f7567c;
+}
+.cp-header .cp-nav ul li.blue a span{
+   color: #5f87d7 ;
+}
+.cp-header .cp-nav ul li.grey a span{
+   color: #9a8990 ;
+}
+ul li.green ul.sub li a {
+   color: #3ebba3 !important;
+}
+ul li.pink ul.sub li a {
+   color: #f7567c !important;
+}
+ul li.blue ul.sub li a {
+   color: #5f87d7 !important;
+}
+.search-sub{
+   min-height: 65px;
+   position: absolute;
+   width: 100%;
+   z-index: 10;
+   background-color: #f3f1f2E1 !important;
+}
+
+/*-----------------SubNav----------------------*/
+ul.primary li:last-child a {
+   border-right: none;
+}
+ul.primary li a:hover {
+   color: #003e7e;
+}
+/* subs */
+ul.sub {
+   position: absolute;
+   z-index: 200;
+   width: 35%;
+   display:none;
+    margin-top: 0px;
+}
+ul.sub li {
+   float: none;
+   margin: 0;
+   display: block !important;
+   min-width: 180px !important;
+   background-color:  white;
+}
+ul.sub li a {
+   border-bottom: 1px dotted #ccc;
+   border-right: none;
+   color: #003e7e;
+   padding-top: 10px;
+   padding-bottom: 10px;
+}
+ul.sub li:last-child a {
+   border-bottom: none;
+}
+ul.sub li a:hover {
+   color: #003e7e;
+}
+/* sub display*/
+ul.primary li:hover ul {
+   display: block;
+   max-width: 139px;
+}
+/* keeps the tab background white */
+ul.primary li:hover a {
+   color: #9a8990;
+   text-shadow: none;
+}
+
+
+
+
+/*-------------------------Titles Blocks-----------------------*/
+.titles-block{
+    min-height: 159px;
+    margin-left: 50px;
+}
+.titles-block .title {
+    font-family: satisfy;
+    font-size: 28px;
+    padding-top: 30px;
+}
+.titles-block .sub-title {
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding-top: 8px;
+    line-height: 30px;
+}
+
+/*-------------------------Parallax-----------------------*/
+section {
+    position: relative;
+    overflow: hidden;
+}
+.section-main {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+.section-main#home {
+    z-index: 1;
+}
+.overlay {
+    position: relative;
+    z-index: 2;
+}
+.bg-image {
+    position: absolute !important;
+    top: 50%;
+    left: 0px;
+    width: 100%;
+    height: 85vh !important;
+    min-height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.homepage-banner .text-wrapper{
+    min-height:380px;
+    min-width:380px;
+    background: rgba(255, 115, 150, 0.5);
+   /* For browsers that do not support gradients */
+    background: url("https://www.nestlehealthscience.es/asset-library/PublishingImages/cerebral-palsy/hallow.png") no-repeat,linear-gradient(to bottom right, rgba(247, 65, 97, 0.7), rgba(95, 135, 215,0.7));
+    position:absolute;
+    top:5%;
+    left:3%;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+.homepage-banner .text-wrapper .title{
+    max-width:300px;
+    margin:0 auto;
+    margin-top:40px;
+    margin-bottom:20px;
+    text-transform:uppercase;
+    font-weight:bold;
+    font-size:26px
+}
+.homepage-banner .text-wrapper .sub-title{
+    max-width:250px;
+    margin:0 auto;
+    margin-top:20px;
+    margin-bottom:40px;
+    font-family: satisfy;
+    font-size:28px;
+}
+.homepage-banner .text-wrapper .caption{
+    max-width:150px;
+    margin:0 auto;
+    margin-top:40px;
+    margin-bottom:40px;
+    font-size:15px;
+    color: #e4e2e2;
+}
+
+
+.homepage-hcp-banner .text-wrapper{
+    min-height:380px;
+    min-width:380px;
+    background: rgba(255, 115, 150, 0.5);
+   /* For browsers that do not support gradients */
+    background: linear-gradient(to bottom right, rgba(115, 139, 255, 0.3), rgba(1, 148, 87, 0.5));
+    position:absolute;
+    top:5%;
+    left:3%;
+    color: white;
+    text-align: center;
+}
+.homepage-hcp-banner .text-wrapper .title{
+    max-width:300px;
+    margin:0 auto;
+    margin-top:40px;
+    margin-bottom:20px;
+    text-transform:uppercase;
+    font-weight:bold;
+    font-size:26px
+}
+.homepage-hcp-banner .text-wrapper .sub-title{
+   max-width: 250px;
+   margin: 0 auto;
+   margin-top: 10px;
+   margin-bottom: 20px;
+   font-family: satisfy;
+   font-size: 28px;
+   line-height: 33px;
+}
+.homepage-hcp-banner .text-wrapper .caption{
+    max-width:150px;
+    margin:0 auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-size:15px
+}
+
+
+.inner-wrapper {
+    max-width: 1280px;
+    border: none;
+}
+.cp-banner .text-wrapper{
+    position:absolute;
+    color: white;
+    text-align: center;
+    left: 0;
+    right: 0;
+}
+.cp-banner .text-wrapper .title{
+    max-width:300px;
+    margin:0 auto;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    text-transform:uppercase;
+    font-weight:bold;
+    font-size: 25px;
+}
+.cp-banner .text-wrapper .sub-title{
+    max-width:250px;
+    margin:0 auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-family: satisfy;
+    font-size: 30px;
+}
+.cp-banner .text-wrapper .caption{
+    max-width:150px;
+    margin:0 auto;
+    margin-top:40px;
+    margin-bottom:40px;
+    font-size:12px
+}
+#col_3_3_3_3, #col_6_6{
+    max-width:980px;
+    margin:0 auto;
+    display:block
+}
+.new_col_50{
+   width: 41%;
+   margin-left: 5%;
+   float: left;
+   text-align: center;
+}
+.new_col_50_2{
+   width: 50%;
+   float: right;
+   text-align: center;
+}
+.cp_mainContent{
+    max-width:980px;
+    margin:0 auto;
+    display:block;
+}
+.cp_mainContent .blocquote{
+   font-weight: 300;
+   font-size: 28px;
+   line-height: 30px;
+   padding-bottom: 15px;
+   font-family: satisfy;
+   text-align: initial;
+   margin-top: 12%;
+}
+.cp_mainContent .blocquote .quote{
+    font-size: 72px;
+    margin-top: 20px;
+    text-align: center;
+}
+/*-----------------CTA Bar---------------------*/
+.cp_cta_bar.top{
+   background-color: #003e7e;
+}
+.cp_cta_bar.bottom{
+   background-color: #00b0d2;
+}
+.cp_cta_bar.top .inner-content{
+   max-width: 980px;
+   margin:3px auto;
+}
+.cp_cta_bar.middle .inner-content{
+   max-width: 980px;
+   margin:10px auto;
+   margin-top:50px;
+}
+.cp_cta_bar.bottom .inner-content{
+   max-width: 980px;
+   margin:10px auto;
+}
+.cp_cta_bar .item{
+   float:left;
+   margin-right:3px;
+   width:33%;
+}
+.cp_cta_bar .item:last-child{
+   float:right;
+   margin-right:0;
+}
+.cp_cta_bar .notice{
+   font-weight: bold;
+   color:white;
+   display: block;
+   margin-bottom:20px;
+}
+.cp_cta_bar .image-wrapper{
+   position: relative;
+   display: block
+}
+.cp_cta_bar .image-wrapper .caption{
+   position: absolute;
+   left:0px;
+   bottom: 10px;
+   color: white;
+   text-transform: uppercase;
+   width: 100%;
+   text-align: center;
+   font-weight: bold;
+}
+.cp_cta_bar .description{
+   color: white;
+   margin-top: 10px;
+   display: inline-block;
+   text-align: center;
+   width: 100%;
+}
+.cp_cta_bar .title{
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 900;
+    font-size: 22px;
+}
+.cp_cta_bar .sub-title{
+   text-align: center;
+   font-family: satisfy;
+   font-size: 28px;
+   margin-bottom: 20px;
+}
+.cp_cta_bar .logo{
+   margin: 0 auto;
+   display: block;
+}
+.cp_cta_bar .caption {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.cp_cta_bar .button-block{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.sub-banner .title {
+    text-align: center;
+    font-family: satisfy;
+    font-size: 28px;
+    padding-top: 30px;
+    font-size: 48px;
+   line-height: 48px;
+   max-width: 1280px;
+   text-align: center;
+   margin: 0 auto;
+}
+.sub-banner .sub-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding-top: 8px;
+}
+.cp_cta_bar .title {
+   color:#757982 !important;
+}
+.cp_cta_bar .item .image-wrapper img {
+   max-width: 325px;
+}
+
+.pink .cp_mainContent .blocquote,  .pink .cp_cta_bar .sub-title{
+   color:#f7567c !important;
+}
+
+.green .cp_mainContent .blocquote,  .green .cp_cta_bar .sub-title{
+   color:#3ebba3 !important;
+}
+
+.blue .cp_mainContent .blocquote,  .blue .cp_cta_bar .sub-title{
+   color:#5f87d7 !important;
+}
+
+/*-------------Hopmepage specific-----------*/
+.homepage-banner .text-wrapper .title{
+ color:white !important;
+ font-family: "Dosis-Bold", "LatoWeb";
+}
+.homepage-hcp-banner .text-wrapper .title{
+ color:white !important;
+}
+.cp-main-content{
+   padding-left:20px;
+   padding-right:20px;
+}
+
+.cp-main-content ol, .tab ol {
+   padding-left: 1.5em;
+   font-size: 17px !important;
+   line-height: 30px !important;
+   margin-left: 30px;
+}
+
+
+.cp-main-content ul li{
+   background: none;
+   color: inherit !important;
+   padding-left: 1.5em;
+   list-style: none;
+}
+
+.cp-main-content ul li{
+   background: none;
+   color: inherit !important;
+   width: inherit;
+   margin: inherit;
+   border-radius: inherit;
+   text-transform: inherit;
+    padding-left: 1.5em;
+    font-size: 17px !important;
+    line-height: 30px !important;
+
+}
+
+.cp-main-content ul{
+   padding-bottom:20px;
+}
+
+.green .cp-main-content ul li::before {
+ content: "\2022";
+ color: #3ebba3;
+}
+.green .cp-main-content ul li::before {
+ content: "\2022";
+ color: #3ebba3;
+}
+.green .cp-main-content ul li::before {
+ content: "\2022";
+ color: #3ebba3;
+}
+.blue .cp-main-content ul li::before {
+   content: "\2022";
+   color: cornflowerblue;
+  }
+  .blue .cp-main-content ul li::before {
+   content: "\2022";
+   color: cornflowerblue;
+  }
+  .blue .cp-main-content ul li::before {
+   content: "\2022";
+   color: cornflowerblue;
+  }
+
+  .black .cp-main-content ul li::before {
+   content: "\2022";
+   color: black;
+  }
+  .black .cp-main-content ul li::before {
+   content: "\2022";
+   color: black;
+  }
+  .black .cp-main-content ul li::before {
+   content: "\2022";
+   color: black;
+  }
+
+.references, .references ol, .references ul{
+    font-size: 12px !important;
+    line-height: 15px !important;
+    margin-left: 0px;
+}
+/*-----------------Remember section---------------------*/
+
+.cp_remember h3{
+   text-align:center;
+   margin-bottom: 40px;
+}
+
+.cp_remember.top{
+   background-color: #003e7e;
+}
+.cp_remember.bottom{
+   background-color: #00b0d2;
+}
+.cp_remember.top .inner-content{
+   max-width: 980px;
+   margin:3px auto;
+}
+.cp_remember.middle .inner-content{
+   max-width: 980px;
+   margin:10px auto;
+   margin-top:50px;
+   margin-bottom: 50px;
+}
+.cp_remember.bottom .inner-content{
+   max-width: 980px;
+   margin:10px auto;
+}
+.cp_remember .item{
+   float:left;
+   margin-right:3px;
+   width:33%;
+}
+.cp_remember .item:last-child{
+   float:right;
+   margin-right:0;
+}
+.cp_remember .notice{
+   font-weight: bold;
+   color:white;
+   display: block;
+   margin-bottom:20px;
+}
+.cp_remember .image-wrapper{
+   position: relative;
+   display: block;
+   text-align: center;
+}
+.cp_remember .description{
+   color: white;
+   margin-top: 10px;
+   display: inline-block;
+   text-align: center;
+   width: 100%;
+}
+.cp_remember .content{margin-top: 20px;margin-bottom: 20px;}
+.cp_remember .caption{font-weight: 600;}
+.cp_remember .sub-title{
+   font-weight: 600;
+   margin-top: 20px;
+}
+
+
+.pink .cp_remember .sub-title {
+   color:#f7567c !important;
+}
+.green .cp_remember .sub-title {
+   color:#3ebba3 !important;
+}
+.blue .cp_remember .sub-title {
+   color:#5f87d7 !important;
+}
+
+.grey-background{
+   background-color:#f3f1f2 !important;
+}
+
+
+/*-----------------Third section---------------------*/
+
+.cp_third h3{
+   text-align:center;
+   margin-bottom: 40px;
+}
+
+.cp_third.top{
+   background-color: #003e7e;
+}
+.cp_third.bottom{
+   background-color: #00b0d2;
+}
+.cp_third.top .inner-content{
+   max-width: 980px;
+   margin:3px auto;
+}
+.cp_third.middle .inner-content{
+   max-width: 980px;
+   margin:10px auto;
+   margin-top:50px;
+   margin-bottom: 50px;
+}
+.cp_third.bottom .inner-content{
+   max-width: 980px;
+   margin:10px auto;
+}
+.cp_third .item{
+   float:left;
+   margin-right:3px;
+   width:33%;
+}
+.cp_third .item:last-child{
+   float:right;
+   margin-right:0;
+}
+.cp_third .notice{
+   font-weight: bold;
+   color:white;
+   display: block;
+   margin-bottom:20px;
+}
+.cp_third .image-wrapper{
+   position: relative;
+   display: block;
+   text-align: center;
+   padding: 0px 15px;
+}
+.cp_third .description{
+   color: white;
+   margin-top: 10px;
+   display: inline-block;
+   text-align: center;
+   width: 100%;
+}
+.cp_third .content{margin-top: 20px;margin-bottom: 20px;}
+.cp_third .caption{font-weight: 600;}
+.cp_third .sub-title{
+   font-weight: 600;
+   margin-top: 20px;
+}
+
+.AudienceToggleBox .button{
+   background-color: #f7567c;
+   max-width: 180px;
+   margin-left: 0px;
+   padding: 10px;
+}
+
+.AudienceToggleBox .button:hover{
+   background-color: #f7567c;
+
+}
+.yellow .button {
+    background-color: #f7567c !important;
+    color: white;
+    width: 250px;
+}
+
+.pink .button {
+    background-color: #f7567c !important;
+    color: white;
+    width: 80%;
+}
+.blue .button{
+    background-color: #5f87d7 !important;
+    color: white;
+    width: 80%;
+}
+.green .button{
+    background-color: #3ebba3 !important;
+    color: white;
+    width: 80%;
+}
+
+.button.grey{
+    background-color: #757982 !important;
+}
+
+.footer .button, .button.pink {
+   background-color:#f7567c !important;
+}
+
+.button.blue {
+   background-color:#5f87d7 !important;
+}
+
+
+
+.tabs .tab li:hover{
+   border-bottom: none;
+}
+.refreneces a{
+   text-align: none !important;
+}
+
+.search-input a span{
+   background: none;
+   width: 240px;
+}
+
+.search-input a span img{
+   float: right;
+   margin-right: 10px;
+   margin-top: -4px;
+}
+.single-portfolio li {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   display: inline;
+   margin-left: 5px;
+   background-color: #f7567c;
+   padding: 5px;
+   border-radius: 4px;
+   color: white;
+   text-transform: capitalize;
+   cursor: pointer;
+}
+
+.section-main-content-start{
+   text-align: center;
+}
+
+table.nhs_table tr th{
+       color: white;
+       height: 46px;
+       text-transform: uppercase;
+}
+
+
+.pink table.nhs_table tr th{
+   background:#f7567c !important;
+}
+
+.green table.nhs_table tr th{
+   background:#3ebba3 !important;
+}
+
+.blue table.nhs_table tr th{
+   background:#5f87d7 !important;
+}
+
+
+/*---------------------------------------- NOT MOBILE-----------------------------------------*/
+@media only screen and (min-device-width: 480px){
+    #mobile-logo{
+       display:none !important;
+   }
+}
+
+
+.pink .cp_third .sub-title {
+   color:#f7567c !important;
+}
+.green .cp_third .sub-title {
+   color:#3ebba3 !important;
+}
+.blue .cp_third .sub-title {
+   color:#5f87d7 !important;
+}
+
+
+
+@media only screen and (max-width: 480px){
+    .cp_remember .item{
+       float: none;
+       width: 100%;
+       margin: 0px;
+       margin-bottom: 30px;
+   }
+   .cp_remember .logo{
+       width: inherit;
+   }
+   .cp_remember img{
+       max-width:100px;
+   }
+   .cp_remember{
+      margin-left:10px;
+      margin-right:10px;
+   }
+
+   .cp_third .item{
+       float: none;
+       width: 100%;
+       margin: 0px;
+       margin-bottom: 30px;
+   }
+   .cp_third .logo{
+       width: inherit;
+   }
+
+   .cp_third{
+      margin-left:10px;
+      margin-right:10px;
+   }
+
+    .cp-header .cp-nav ul li a span{
+       color: white !important;
+   }
+   .cp-header .cp-nav ul li.active {
+       border-bottom: inherit !important;
+   }
+
+    .quotation .text-wrapper {
+        padding: 20px;
+   }
+
+   .titles-block {
+      margin-left: 0px;
+   }
+
+   .cp_cta_bar.middle {
+       padding: 0px 20px;
+   }
+
+   .tabs .tab {
+       padding: 20px;
+   }
+   .tabs .tab ul li{
+       padding-left: inherit;
+   }
+   .search-input a span img {
+       max-width: 24px;
+   }
+}
+
+
+/*----------------------------------------TABLETS-----------------------------------------*/
+@media only screen and (max-width: 768px) and (min-width: 480px){
+    .cp_remember .image-wrapper img{
+       width: 100%;
+   }
+    .cp_remember .item{
+       width:32% !important;
+   }
+    .cp_remember.top,.cp_remember.middle,.cp_remember.bottom {
+       width: 100%;
+   }
+    .cp_remember .item {
+       margin-right: 12px;
+   }
+    .cp-header .logo {
+        text-align: center;
+   }
+}
+
+/*---------------------------------------- Skrollr stylesheet used to dynamically create the data attributes-----------------------------------------*/
+#bg-image {
+    -skrollr-animation-name:animation1;
+}
+@-skrollr-keyframes animation1 {
+    center {
+        transform: translate3d(0px, -50%, 0px);
+   }
+    top-bottom {
+        transform: translate3d(0px, -25%, 0px);
+   }
+   /*Same as*/
+    bottom-top {
+        transform: translate3d(0px, -75%, 0px);
+   }
+}
+
+
+
+
+
+
+#li-all {
+    -skrollr-animation-name:animation3;
+}
+@-skrollr-keyframes animation3 {
+    target {*}
+}
+
+#li-art {
+    -skrollr-animation-name:animation4;
+}
+@-skrollr-keyframes animation4 {
+    target {.art}
+}
+
+#li-accessories {
+    -skrollr-animation-name:animation5;
+}
+@-skrollr-keyframes animation5 {
+    target {.accessories}
+}
+
+
+#li-design {
+    -skrollr-animation-name:animation6;
+}
+@-skrollr-keyframes animation6 {
+    target {.design}
+}
+
+
+#li-fashion {
+    -skrollr-animation-name:animation7;
+}
+@-skrollr-keyframes animation7 {
+    target {.fashion}
+}
+
+
+.portfolio-ajax-hidden-div{
+    -skrollr-animation-name:animation8;
+}
+@-skrollr-keyframes animation8 {
+    action {portfolioInitItem}
+}
+
+#section-main-content-start{
+    -skrollr-animation-name:animation9;
+}
+@-skrollr-keyframes animation9 {
+    action {portfolio}
+}
+
+#sub-title-1{
+    -skrollr-animation-name:animation10;
+}
+@-skrollr-keyframes animation10 {
+   wow-delay{0.5s}
+   wow-iteration{infinite}
+   wow-duration{10s}
+}
+
+
+#sub-title-2{
+    -skrollr-animation-name:animation11;
+}
+@-skrollr-keyframes animation11 {
+   wow-delay{0s}
+   wow-iteration{infinite}
+   wow-duration{10s}
+}
+
+
+
+
+
+
+/*---------------------------------------- CSS Images references-----------------------------------------*/
+.homepage-banner .banner {
+ background-image: url("../asset-library/PublishingImages/cerebral-palsy/banners/homepage-banner.jpg");
+ height: 85vh !important;
+}
+
+.homepage-hcp-banner .banner {
+ background-image: url("../asset-library/PublishingImages/cerebral-palsy/banners/homepage-hcp-banner.jpg");
+ height: 70vh !important;
+}
+
+.journey-banner .banner {
+   background-image: url("../asset-library/PublishingImages/cerebral-palsy/banners/banner-3.jpg");
+   height: 30vh !important;
+}
+
+.cerebral-palsy-banner .banner {
+   background-image: url("../asset-library/PublishingImages/cerebral-palsy/banners/banner-1.jpg");
+   height: 30vh !important;
+}
+
+.hcp .cerebral-palsy-banner .banner {
+   background-image: url("../asset-library/PublishingImages/cerebral-palsy/banners/banner-4.jpg");
+   height: 30vh !important;
+}
+
+.real-stories-banner .banner {
+   background-image: url("../asset-library/PublishingImages/cerebral-palsy/banners/banner-real-stories.png");
+   height: 30vh !important;
+}
+
+.real-stories-banner .banner.resource {
+   background-color: #757982 !important;
+   height: 30vh !important;
+   background-image: inherit;
+}
+
+
+.real-stories-banner h1{
+   color: white;
+}
+
+.real-stories-banner .text-wrapper{
+   color: #757982 !important;
+   padding-top: 4%;
+}
+
+
+
+.nutrition-banner .banner {
+   background-image: url("../asset-library/PublishingImages/cerebral-palsy/banners/banner-2.jpg");
+   height: 30vh !important;
+}
+.trucos-banner .banner {
+   background-image: url("../asset-library/PublishingImages/cerebral-palsy/banners/banner-3.jpg");
+   height: 30vh !important;
+}
+.diagnostico-banner .banner {
+   background-image: url("../asset-library/PublishingImages/cerebral-palsy/banners/banner-3.jpg");
+   height: 30vh !important;
+}
+
+.quotation{
+   background-image: url("../asset-library/PublishingImages/cerebral-palsy/backgrounds/background.jpg");
+   min-height: 199px;
+}
+.quotation-hcp{
+   background-image: url("../asset-library/PublishingImages/cerebral-palsy/backgrounds/background-hcp.jpg");
+   min-height: 199px;
+}
+
+
+
+
+.cp_cta_bar.middle{background-image: url("../asset-library/PublishingImages/cerebral-palsy/backgrounds/cta-background.jpg") }
+
+.sub-banner{
+   background-image: url('../asset-library/PublishingImages/cerebral-palsy/backgrounds/sub-banner.jpg');
+   min-height: 159px;
+   margin-bottom: 50px;
+   background-size: 100%;
+}
+
+.sub-hcp-banner{
+   background-image: url('../asset-library/PublishingImages/cerebral-palsy/backgrounds/sub-banner-blue.jpg');
+   min-height: 159px;
+}
+
+.footer .sup-banner{
+   background-image: url('../asset-library/PublishingImages/cerebral-palsy/backgrounds/sub-banner.jpg');
+   min-height: 159px;
+}
+
+.footer .sup-banner-hcp-1{
+   background-image: url('../asset-library/PublishingImages/cerebral-palsy/backgrounds/sub-banner-blue.jpg');
+}
+
+.footer .sup-banner-hcp-2{
+   background-image: url('../asset-library/PublishingImages/cerebral-palsy/backgrounds/sub-banner-white.jpg');
+}
+
+
+
+.tabs_default{
+   z-index: 6;
+   padding-top: 150px;
+   padding-left: 20px;
+   padding-right: 20px;
+   padding-bottom: 20px;
+   background-image: url("../asset-library/PublishingImages/cerebral-palsy/backgrounds/tab-background-1.jpg")
+}
+
+
+/* ====================================================
+   Portfolio Styles
+=======================================================*/
+
+.portfolio-ajax-hidden-div,
+.ov-hidden,
+.popup-body,
+.single-imodule .ic-module-content {
+ overflow: hidden;
+}
+
+
+.portfolio {
+ background: #ffffff;
+}
+.portfolio .section-common-space {
+ padding: 90px 0px 106px;
+}
+.portfolio.portfolio-v3 {
+ background: #f8f8f8;
+ border-top: 1px solid rgba(0, 0, 0, 0.08);
+ border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+.portfolio-v2 .portfolio-meta i {
+ font-size: 21px;
+}
+.portfolio-v2 .portfolio-meta h3 {
+ font-size: 12px;
+}
+.portfolio .section-heading {
+ margin-bottom: 50px;
+}
+.portfolio-category-wrap {
+ margin-bottom: 75px;
+ border-radius: 1px;
+}
+.portfolio-category {
+ display: inline-block;
+ padding: 0 15px;
+ background-color: #f8f8f8;
+ border-radius: 3px;
+ display: none;
+}
+.portfolio-category li {
+ font-family: 'Roboto', sans-serif;
+ font-weight: 400;
+ font-size: 13px;
+ color: #B3B3B3;
+ line-height: 1.2;
+ display: inline-block;
+ float: left;
+ padding: 19px 15px;
+ margin-right: 17px;
+ border-bottom: 3px solid transparent;
+ list-style: none;
+ cursor: pointer;
+ text-transform: uppercase;
+}
+.portfolio-category li:last-child {
+ margin-right: 0;
+}
+.portfolio-category li.active {
+ font-weight: 700;
+ color: #ff5252;
+ border-bottom-color: #ff5252;
+}
+.protfolio-items {
+ overflow: hidden;
+ margin-bottom: 30px;
+ -webkit-transition: all .6s ease;
+ transition: all .6s ease;
+ -webkit-transition-delay: .6s;
+ transition-delay: .6s;
+}
+.portfolio-item {
+ margin-bottom: 30px;
+ position: relative;
+}
+.portfolio-item .pf-overlay {
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ left: 0;
+ top: 0;
+ opacity: 0;
+ filter: alpha(opacity=0);
+ visibility: hidden;
+ background-color: rgba(51, 51, 51, 0.9);
+ -webkit-transition: all .2s;
+ transition: all .2s;
+}
+.protfolio-image img {
+ width: 90%;
+}
+.protfolio-image,
+.portfolio-meta {
+ z-index: 1;
+}
+.portfolio-meta {
+ position: absolute;
+ width: 100%;
+ left: 0;
+ bottom: 36%;
+ opacity: 0;
+ filter: alpha(opacity=0);
+ visibility: hidden;
+ -webkit-transition: all .2s;
+ transition: all .2s;
+}
+.portfolio-meta i {
+ color: #ff5252;
+ font-size: 30px;
+ margin-bottom: 7px;
+}
+.portfolio-meta h3 {
+ font-family: 'Roboto', sans-serif;
+ font-weight: 700;
+ font-size: 15px;
+ color: #fff;
+ text-transform: uppercase;
+}
+.protfolio-items .mix {
+ display: none;
+}
+.portfolio-ajax-hidden-div {
+ height: 1px;
+ overflow: hidden;
+ padding-top: 1px;
+ margin-top: -2px;
+}
+/* portfolio v3*/
+.portfolio-v3 .space-lr-5 {
+ margin-right: -5px;
+ margin-left: -5px;
+}
+.portfolio-v3 .protfolio-items {
+ margin-bottom: 57px;
+}
+.portfolio-v3 .protfolio-items div[class^="col-"] {
+ padding-right: 5px;
+ padding-left: 5px;
+}
+.portfolio-v3 .portfolio-item {
+ margin-bottom: 10px;
+}
+
+._hcp-link,
+._patient-link{
+   position: fixed !important;
+   top: 280px !important;
+   right: 20px !important;
+   color: #5f595c !important;
+   text-decoration: none !important;
+   z-index: 1000 !important;
+   padding: 10px 10px 10px 10px !important;
+   background: rgba(243, 241, 242, 0.75);
+   background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.58));
+   font-size: 15px;
+   width: 200px;
+   font-family: "Dosis-Bold", "LatoWeb";
+}
+
+._hcp-link .close,.SocialToolsWidget .close,
+._patient-link .close,.SocialToolsWidget .close
+{
+   position: absolute;
+   color: white;
+   top: -10px;
+   left: -10px;
+   max-width: 35px;
+   cursor: pointer;
+}
+
+._hcp-link .doctor,
+._patient-link .doctor
+{
+   float: left;
+   margin-right: 15px;
+   max-width: 45px;
+}
+
+._hcp-link .title,
+._patient-link .title{
+   line-height: 16px;
+   padding-top: 10px;
+   display: block;
+   color: inherit;
+}
+
+._hcp-link .sub-title,
+._patient-link .sub-title
+{
+   font-size: 12px;
+   line-height: 10px;
+}
+
+._hcp-link._top_link,
+._patient-link._top_link
+{
+   position: absolute !important;
+   top: 5px !important;
+   width: 19%;
+}
+
+._patient-link._top_link{
+    width:8%;
+}
+
+._hcp-link._top_link .title,
+._patient-link._top_link .title
+{
+   color: #9a8990;
+}
+
+._hcp-link._top_link .doctor,
+._patient-link._top_link .doctor
+{
+   float: none;
+   max-width: 28px;
+}
+
+._hcp-link._top_link .doctor,
+._patient-link._top_link .doctor,
+._hcp-link._top_link .title,
+._patient-link._top_link .title{
+    display: inline-block;
+    vertical-align: middle;
+    padding-top: 0px;
+}
+
+
+._next-link{
+   position: fixed !important;
+   bottom: 50px !important;
+   right: 20px !important;
+   color: #5f595c !important;
+   text-decoration: none !important;
+   z-index: 1000 !important;
+   padding: 10px 10px 10px 10px !important;
+   background: rgba(243, 241, 242, 0.75);
+   background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.58));
+   font-size: 15px;
+   width: 220px;
+   font-family: "Dosis-Bold", "LatoWeb";
+}
+
+._next-link .close{
+   position: absolute;
+   color: white;
+   top: -10px;
+   left: -10px;
+   max-width: 35px;
+}
+
+._next-link .image{
+   float: left;
+   margin-right: 15px;
+   max-width: 45px;
+   margin-top: 2px;
+}
+
+._next-link .title{
+   line-height: 10px;
+   padding-top: 2px;
+   display: block;
+   color: inherit;
+
+}
+
+._next-link .sub-title{
+   font-size: 12px;
+   line-height: 10px;
+}
+
+._next-link._top_link{
+   position: absolute !important;
+   top: 5px !important;
+   width: 150px;
+}
+
+._next-link._top_link .title{
+   color: #9a8990;
+}
+
+._next-link._top_link .image{
+   max-width: 28px;
+}
+
+._next-link.journey{
+   background-color: #5f87d7 !important;
+   color: white !important;
+   background: url("../asset-library/PublishingImages/cerebral-palsy/arrow-button.png") no-repeat right;
+}
+
+._next-link.cp{
+   background-color: #f7567c !important;
+   color: white !important;
+   background: url("../asset-library/PublishingImages/cerebral-palsy/arrow-button-left.png") no-repeat left;
+   left: 20px !important;
+   padding-left: 35px !important;
+}
+
+._next-link.nutrition{
+   background-color: #3ebba3 !important;
+   color: white !important;
+   background: url("../asset-library/PublishingImages/cerebral-palsy/arrow-button.png") no-repeat right;
+}
+
+._next-link.journey-left{
+   background-color: #5f87d7 !important;
+   color: white !important;
+   background: url("../asset-library/PublishingImages/cerebral-palsy/arrow-button-left.png") no-repeat left;
+   left: 20px !important;
+   padding-left: 35px !important;
+}
+
+section.SocialToolsWidget {
+   position: fixed !important;
+   bottom: 140px;
+   right: 0px;
+   width: 210px;
+   z-index: 500;
+   background: rgba(243, 241, 242, 0.75);
+   background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.58));
+   padding: 15px;
+   right: 20px;
+   overflow: visible;
+}
+
+section[class^="SocialTools"] ul li {
+   max-width: 35px;
+   border-radius: 5px;
+}
+
+section[class^="SocialTools"] ul li.sendpage {
+   display: none;
+}
+
+section[class^="SocialTools"] div.SocialHeader {
+   font-weight: bold;
+}
+
+.BrandProductZone .link {
+   padding: 15px 25px;
+   font-weight: bold;
+   font-size: .813em;
+   -moz-border-radius: 6px;
+   -webkit-border-radius: 6px;
+   border-radius: 6px;
+   text-transform: uppercase;
+   position: relative;
+   max-width: 200px;
+   margin: 0 auto;
+}
+
+.blue .BrandProductZone .link {
+   border: 1px solid #5f87d7;
+   color: #5f87d7;
+   }
+.green .BrandProductZone .link{
+   border: 1px solid #3ebba3;
+   color: #3ebba3;
+   }
+.pink .BrandProductZone .link{
+   border: 1px solid #f7567c;
+   color: #f7567c;
+   }
+.green .BrandProductZone .products .product .title {
+   color: #3ebba3;
+}
+.blue .BrandProductZone .products .product .title {
+   color: #5f87d7;
+}
+.pink .BrandProductZone .products .product .title {
+   color: #f7567c;
+}
+
+.BrandProductZone .text-wrapper .title {
+       color: #4e4f51;
+       font-family: dosis-bold;
+}
+.green .BrandProductZone{
+   background-color: #e6f6f3;
+   background-image: url("../asset-library/PublishingImages/cerebral-palsy/backgrounds/tab-background-3.jpg");
+   background-repeat: no-repeat;
+   padding-top: 30px;
+   padding-bottom: 30px;
+}
+
+.blue .BrandProductZone{
+   background-color: #e9eff9;
+   background-image: url("../asset-library/PublishingImages/cerebral-palsy/backgrounds/tab-background-1.jpg");
+   background-repeat: no-repeat;
+   padding-top: 30px;
+   padding-bottom: 30px;
+}
+
+.pink .BrandProductZone{
+   background-color: #fee9ee;
+   background-image: url("../asset-library/PublishingImages/cerebral-palsy/backgrounds/tab-background-2.jpg");
+   background-repeat: no-repeat;
+   padding-top: 30px;
+   padding-bottom: 30px;
+}
+
+.tabs ul.horizontal li a:before {
+   margin-right: 5px;
+   background-image: url("../asset-library/PublishingImages/cerebral-palsy/bullet.png");
+   background-size: 13px 13px;
+   display: inline-block;
+   width: 13px;
+   height: 13px;
+   content: "";
+   }
+
+.new_col_50_2 img{
+   margin-top: 4px;
+}
+
+.cp_remember{
+   border: 2px dashed #dbdbdb;
+   border-radius: 8px;
+}
+
+.green .cp-header .cp-nav ul li ul li.active {
+   border-bottom: none;
+}
+
+.green .cp-header .cp-nav ul li ul li.active a {
+   border-bottom: 4px solid #d4dedc;
+}
+
+.nwe-panel-adorner.nwe-design-lock {
+   display:none
+}
+
+.homepage-banner .overlay {min-height:500px; min-height: calc(100vh - 100px)}
+
+.inner-content h3 {width:100%;clear:both;}
+.inner-content {
+   display:flex;
+   flex-wrap: wrap;
+}
+.inner-content .item {
+   box-sizing:border-box;
+   margin:0.5%;
+   /*max-width:32%;*/
+   width:32%;
+   display: flex;
+   flex-grow: 1;
+}
+
+.cp_cta_bar .inner-content{
+   display: block;
+}
+
+#down-arrow{
+   max-width: 10px;
+}
+
+.pointer{
+   cursor: pointer;
+}
+
+.br-bar{
+   max-width: 150px;
+}
+
+.follow-youtube{
+   max-width: 110px;
+}
+
+.cp-banner .text-wrapper img{
+   margin-top: 20px;
+}
+.inner-content.two .item {
+   max-width: 49%;
+   width: 49%;
+}
+
+.tabs .tab a.centered-link, .cp_mainContent a.centered-link {
+   margin: 0 auto;
+   display: block;
+   text-transform: uppercase;
+   text-decoration: underline;
+   text-align: center;
+   font-family: "Dosis-Bold", "LatoWeb";
+}
+
+.green .tabs .tab a.centered-link, .green  .cp_mainContent a.centered-link {
+   color: #3ebba3 !important;
+}
+.pink .tabs .tab a.centered-link,.pink  .cp_mainContent a.centered-link {
+   color: #f7567c !important;
+}
+.blue .tabs .tab a.centered-link,.blue .cp_mainContent a.centered-link {
+   color: #5f87d7 !important;
+}
+
+.left-section{
+   float: left;
+   max-width: 48%;
+}
+
+.right-section{
+   float: right;
+   max-width: 48%;
+}
+
+.fifty-fifty{
+   width: 100%;
+   display: table;
+   margin-bottom: 20px;
+}
+
+img.desktop{
+   display:block !important;
+}
+
+img.mobile{
+   display:none !important;
+}
+
+span.arrow{
+   width: 15px;
+   height: 25px;
+   background: transparent url("../asset-library/PublishingImages/cerebral-palsy/arrow-button.png") no-repeat;
+   float: right;
+   background-position: 0px 0px;
+   opacity: 0.7;
+   padding-right: 20px;
+   margin-top: 4px;
+}
+
+.cp_mainContent .sub-title{
+   text-align: left;
+   text-transform: uppercase;
+   font-weight: bold;
+   font-family: dosis-bold;
+}
+
+.green .cp_mainContent .sub-title{
+   color: #3ebba3;
+}
+.pink .cp_mainContent .sub-title{
+   color: #f7567c;
+}
+.blue .cp_mainContent .sub-title{
+   color: #5f87d7 ;
+}
+
+.resources-link{
+   font-size: 20px !important;
+   font-weight: bold;
+   color: black !important;
+}
+
+.resources-link p a {
+   text-transform: lowercase;
+   color: #9a8990 !important;
+   text-decoration: underline;
+}
+
+.portfolio-item li{
+   display: none;
+}
+
+.product-zone-tab-1, .product-zone-tab-2, .product-zone-tab-3, .product-zone-tab-4{
+   margin-bottom: 0px;
+}
+
+.tabs .owl-theme .owl-controls .owl-page span {
+   background: #4dc0aa;
+}
+
+.product-zone-tab-1 .owl-wrapper, .product-zone-tab-1 .owl-wrapper .owl-item{
+   width:100% !important;
+}
+
+.BrandProductZone a[href="#"]{
+   cursor: default !important;
+}
+.BrandProductZone a[href="#"].link{
+   display:none;
+}
+.references ol li,.references ul li {
+word-wrap: break-word;
+}
+.references ol {
+   list-style-type: unset;
+   }
+/*----------------------------------------MOBILE-----------------------------------------*/
+
+@media only screen and (max-width: 480px){
+    .cp_cta_bar .item{
+       float: none;
+       width: 100%;
+       margin: 0px;
+       margin-bottom: 30px;
+   }
+   /*-----------------Header----------------------*/
+    .cp-header .cp-nav ul{
+       text-align: center;
+       width: 100%;
+       margin-top: 0px;
+   }
+    .cp-header .cp-nav ul li{
+       margin-bottom: 15px;
+       width: 49%;
+   }
+    .cp-header{
+       text-align: center;
+   }
+    .cp-header .logo{
+       width: 95%;
+       margin: 0 auto;
+       display: block;
+   }
+    .cp-header .cp-nav ul li:hover ul{
+       display:none;
+   }
+    .cp-header {
+       margin-bottom: 0px !important;
+   }
+   .banner .text-wrapper img{
+       width: inherit;
+   }
+   .cp_cta_bar .logo{
+       width: inherit;
+   }
+
+   ._hcp-link._top_link{
+        width: 74%;
+   }
+
+    ._patient-link._top_link{
+        width: 30%;
+    }
+
+   .new_col_50{width: 90% !important;margin: 0 auto;padding-left: 20px;padding-right: 20px;}
+   .new_col_50_2{width: 100% !important;float: left !important;padding-top: 20px;}
+   .cp_cta_bar .caption {
+     margin-top: 0px;
+   }
+
+    .links{
+       width: 80%;
+       line-height: 45px;
+       font-size: 20px;
+       text-align: center;
+       margin-top: 30px;
+       font-weight: bold;
+   }
+
+   .footer .logo {
+       max-width  :60%;
+       padding-top :40px;
+   }
+
+   .footer .sup-banner {
+       min-height: 275px !important;
+   }
+
+   .sup-banner .title .button{
+       margin: 0 auto;
+       float: inherit;
+       margin-top: 50px;
+   }
+
+   .nhs-copyright-sentence2 {
+       width: 90%;
+       display: block;
+   }
+
+   .right-block-links{
+       width: 80%;
+       text-align: center;
+   }
+
+   .center-block{
+       width: 100%;
+       margin-right:20px;
+   }
+
+   .footer .logo {
+       padding-top: 20px;
+   }
+
+   .sub-footer{
+       display: block;
+       margin: 0 auto;
+   }
+
+   .homepage-banner .text-wrapper{
+       width: 95%;
+   }
+
+   .homepage-hcp-banner .text-wrapper{
+       width: 95%;
+   }
+    .cp-header .cp-nav ul li:hover{
+       background-color: inherit;
+   }
+
+   .inner-content .item {
+       max-width: 100%;
+       width: 80%;
+   }
+
+   img.desktop{
+       display:none !important;
+   }
+
+   img.mobile{
+       display:block !important;
+   }
+
+   section.SocialToolsWidget {
+       display:none;
+   }
+
+}
+
+
+@media only screen and (max-device-width:480px), (max-device-width: 480px){
+ .cp-header .nav-button{
+       background-color: #f7567c;
+       display: block;
+       width: 80px;
+       height: 80px;
+       position: relative;
+       float: left;
+       text-decoration: none;
+   }
+
+   .cp-header .menu-icon{
+       display: block;
+       width: 23px;
+       height: 17px;
+       background: url("../skin-engine-shared/NHSSkin/css/images/layout.png") no-repeat;
+       position: absolute;
+       top: 0;
+       bottom: 20px;
+       left: 0;
+       right: 0;
+       margin: auto;
+   }
+
+   .cp-header .menu-icon{
+       width: 14px;
+       height: 10px;
+       background: url("../skin-engine-shared/NHSSkin/css/images/layout.png") -23px 0 no-repeat;
+       bottom: 0;
+       display: block;
+
+       position: absolute;
+       top: 0;
+       left: 0;
+       right: 0;
+       margin: auto;
+   }
+
+   .cp-header .menu-label.open {
+       font-size: 10px;
+       width: auto;
+       bottom: -12px;
+       display: block;
+   }
+   .cp-header .menu-label.close {
+       display: none;
+       margin-top: 55px;
+   }
+
+   .cp-header .cp-nav ul li {
+       width: 100% !important;
+       background-color: #f7567c !important;
+   }
+
+   .cp-header .cp-nav>ul>li>a {
+       color: white !important;
+   }
+   .cp-header .cp-nav ul li {
+       margin-bottom: -1px !important;
+   }
+   #desktop-logo{display:none !important;}
+   #mobile-logo{
+   width: 77%;
+   max-height: 80px;
+   padding-top: -24px;
+   /* padding-bottom: 6px; */
+   float: right;
+   }
+
+   #mobile-logo >img{
+    width: 30%;
+}
+
+   .primary{display: none;}
+
+   .cp-header .cp-nav {
+       float: none;
+       width: 100%;
+       padding-top: 0px;
+   }
+   .tabs ul LI {
+       width  :100% !important;
+       border-bottom: 2px dashed white !important;
+   }
+   .cp-banner .text-wrapper img{
+       max-width: 140px;
+   }
+
+   .left-section, .right-section{
+       float: left;
+       width: 100%;
+   }
+
+   ul.sub{
+       //display: block;
+       position: relative;
+       max-width: inherit !important;
+   }
+
+
+   ul li ul.sub li a {
+       color: white !important;
+       padding-top: 30px;
+       padding-bottom: 10px;
+       font-family: "Dosis-Bold", "LatoWeb";
+       width: 100%;
+       border-bottom: none;
+   }
+
+   ul li.green ul.sub li a {
+       color: white !important;
+   }
+
+   .tabs .tab .background {
+       padding-left: 10px;
+       padding-right: 10px;
+   }
+   .new_col_50 {
+       padding-left: 12px;
+   }
+
+   table.nhs_table tr td{
+       font-size: 9px;
+       max-width: 77px;
+   }
+
+   ._next-link{
+       display:none;
+   }
+
+
+}
+
+.realstories-subtitle{
+   font-family: satisfy;
+   padding-top: 30px;
+   font-size: 35px;
+   line-height: 48px;
+   max-width: 1280px;
+   text-align: center;
+   margin: 0 auto;
+   font-weight: 100;
+   color: #f7567c;
+}
+
+.rectsection{
+   border: 1px solid black;
+   padding: 15px!important;
+   text-align: center;
+}
+.tabspacing ul li {
+ 
+   list-style-type: disc;
+    list-style-position: inside;
+    padding: 10px 0 10px 20px;
+    text-indent: -1.2em;
+}
+.tabspacing ul {
+   padding-bottom: 0px!important;
+}
+.tabspacing {
+   padding: 15px!important;
+}
+.tabspacing ul li::before {
+   margin-right: 10px;
+}
+
+@media only screen and (max-device-width:414px), (max-device-width: 414px){
+   #mobile-logo >img{
+      width: 27%;
+   }
+}
+
+@media only screen and (max-device-width:375px), (max-device-width: 375px){
+   #mobile-logo >img{
+      width: 30%;
+   }
+}
+
+@media only screen and (max-device-width:320px), (max-device-width: 320px){
+   #mobile-logo >img{
+      width: 36%;
+   }
+
+   #mobile-logo{
+       width: 75%;
+   }
+}
+
+/*----------------------------------------TABLETS-----------------------------------------*/
+@media only screen and (max-width: 768px) and (min-width: 480px){
+    .cp_cta_bar .image-wrapper img{
+       width: 100%;
+   }
+    .cp_cta_bar .item{
+       width:32% !important;
+   }
+    .cp_cta_bar.top,.cp_cta_bar.middle,.cp_cta_bar.bottom {
+       width: 100%;
+   }
+    .cp_cta_bar .item {
+       margin-right: 12px;
+   }
+    .cp-header .logo {
+        text-align: center;
+   }
+
+   ._hcp-link._top_link{
+        width: 35%;
+   }
+
+    ._patient-link._top_link{
+        width: 15%;
+    }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 769px){
+    ._hcp-link._top_link{
+        width: 25%;
+   }
+
+    ._patient-link._top_link{
+        width: 10%;
+    }
+}

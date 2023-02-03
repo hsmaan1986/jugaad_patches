@@ -1,0 +1,105 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.press_release.body
+    - field.field.node.press_release.field_allcomponents
+    - field.field.node.press_release.field_brand_business_area
+    - field.field.node.press_release.field_brand_business_category
+    - field.field.node.press_release.field_brand_segment
+    - field.field.node.press_release.field_data_layer_brand
+    - field.field.node.press_release.field_date
+    - field.field.node.press_release.field_image
+    - field.field.node.press_release.field_meta_tags
+    - field.field.node.press_release.field_press_category
+    - field.field.node.press_release.field_site_switcher_settings
+    - field.field.node.press_release.field_weight2
+    - node.type.press_release
+  module:
+    - datetime
+    - entity_reference_revisions
+    - image
+    - metatag
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.press_release.default
+targetEntityType: node
+bundle: press_release
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_allcomponents:
+    type: entity_reference_revisions_entity_view
+    weight: 5
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_date:
+    weight: 2
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: dd_month_yyyy
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_image:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_meta_tags:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
+  field_weight2:
+    weight: 6
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_brand_business_area: true
+  field_brand_business_category: true
+  field_brand_segment: true
+  field_data_layer_brand: true
+  field_press_category: true
+  field_site_switcher_settings: true
+  langcode: true
+  search_api_excerpt: true

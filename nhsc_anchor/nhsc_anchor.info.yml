@@ -1,0 +1,15 @@
+name: 'NHSC Anchor'
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - 'autologout:autologout'
+  - 'drupal:block'
+  - 'drupal:field'
+  - 'drupal:system'
+  - 'drupal:user'
+  - 'drupal:views'
+  - 'facets:facets'
+  - 'metatag:metatag'
+  - 'paragraphs:paragraphs'
+  - 'rng:rng'
+version: 8.x-1.0

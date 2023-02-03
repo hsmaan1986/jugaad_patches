@@ -1,0 +1,28 @@
+nhsc_mega_menu.config:
+  type: config_object
+  label: 'My module basic settings'
+  mapping:
+    content_types:
+      label: 'Select a content type'
+      type: text
+    nhsc_mega_menu_name:
+      label: 'Overwrite Content Type Name'
+      type: text
+    nhsc_mega_menu_url:
+      label: 'NHSc Mega Menu URL'
+      type: text
+    mega_menu_filter_name:
+      label: 'Filter brands label text'
+      type: text
+    mega_menu_choose_name:
+      label: 'Choose Therapie label text'
+      type: text
+    mega_menu_filter_for:
+      label: 'Filtrar Por label text'
+      type: text
+    mega_menu_submit:
+      label: 'Filter Submit Text'
+      type: text
+    mega_menu_reset:
+      label: 'Filter Reset Text'
+      type: text

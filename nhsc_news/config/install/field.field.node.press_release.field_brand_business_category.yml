@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_brand_business_category
+    - node.type.press_release
+    - taxonomy.vocabulary.business_category
+  content:
+    - 'taxonomy_term:business_category:ceb1f367-b9ec-4019-b704-8545777ee963'
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: 'Business Category'
+id: node.press_release.field_brand_business_category
+field_name: field_brand_business_category
+entity_type: node
+bundle: press_release
+label: 'Brand Business Category'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: ceb1f367-b9ec-4019-b704-8545777ee963
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      business_category: business_category
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

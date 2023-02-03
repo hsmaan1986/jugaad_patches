@@ -1,0 +1,26 @@
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_flavour_selector
+    - paragraphs.paragraphs_type.nhsc_product_gallery_and_intro
+  module:
+    - block_field
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_flavour_selector
+id: paragraph.nhsc_product_gallery_and_intro.field_flavour_selector
+field_name: field_flavour_selector
+entity_type: paragraph
+bundle: nhsc_product_gallery_and_intro
+label: 'Flavour Selector'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  plugin_ids:
+    nhsc_flavor_selector: nhsc_flavor_selector
+field_type: block_field

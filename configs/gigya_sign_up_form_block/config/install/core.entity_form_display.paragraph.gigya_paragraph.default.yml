@@ -1,0 +1,75 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.gigya_paragraph.field_color_code_gigya_bg
+    - field.field.paragraph.gigya_paragraph.field_desktop_background_image
+    - field.field.paragraph.gigya_paragraph.field_free_sample_pack
+    - field.field.paragraph.gigya_paragraph.field_gigya_block
+    - field.field.paragraph.gigya_paragraph.field_left_page_intro
+    - field.field.paragraph.gigya_paragraph.field_mobile_background_image
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.gigya_paragraph
+  module:
+    - image
+    - text
+id: paragraph.gigya_paragraph.default
+targetEntityType: paragraph
+bundle: gigya_paragraph
+mode: default
+content:
+  field_color_code_gigya_bg:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_desktop_background_image:
+    type: image_image
+    weight: 1
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    region: content
+    third_party_settings: {  }
+  field_free_sample_pack:
+    type: image_image
+    weight: 5
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    region: content
+    third_party_settings: {  }
+  field_gigya_block:
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_left_page_intro:
+    weight: 3
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  field_mobile_background_image:
+    type: image_image
+    weight: 2
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

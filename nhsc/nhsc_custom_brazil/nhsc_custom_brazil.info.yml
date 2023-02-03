@@ -1,0 +1,5 @@
+name: 'NHSc Custom Brazil'
+type: module
+description: 'Customisations for NHSc Brazil'
+core_version_requirement: ^8 || ^9
+package: 'Nestle Heath Sciences'

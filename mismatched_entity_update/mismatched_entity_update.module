@@ -1,0 +1,59 @@
+<?php
+
+/**
+ * @file
+ * Contains mismatched_entity_update.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function mismatched_entity_update_help($route_name, RouteMatchInterface $route_match) {
+    switch ($route_name) {
+        // Main module help for the mismatched_entity_update module.
+        case 'help.page.mismatched_entity_update':
+            $output = '';
+            $output .= '<h3>' . t('About') . '</h3>';
+            $output .= '<p>' . t('Mismatched entity update via updb') . '</p>';
+            return $output;
+
+        default:
+    }
+}
+
+/**
+ * Implements hook_update_N().
+ */
+function mismatched_entity_update_update_8006() {
+
+    $entity_type_manager = \Drupal::entityTypeManager();
+    $entity_type_manager->clearCachedDefinitions();
+
+    $entity_type_ids = [];
+    $change_summary = \Drupal::service('entity.definition_update_manager')->getChangeSummary();
+    foreach ($change_summary as $entity_type_id => $change_list) {
+        $entity_type = $entity_type_manager->getDefinition($entity_type_id);
+        \Drupal::entityDefinitionUpdateManager()->installEntityType($entity_type);
+        $entity_type_ids[] = $entity_type_id;
+    }
+    drupal_flush_all_caches();
+
+    return t("Installed/Updated the entity type(s): @entity_type_ids", [
+        '@entity_type_ids' => implode(', ', $entity_type_ids),
+    ]);
+}
+
+/**
+ * Implements hook_update_N().
+ */
+function mismatched_entity_update_update_8007() {
+
+    $type_manager = \Drupal::entityTypeManager();
+    $type_manager->clearCachedDefinitions();
+    $entity_type = $type_manager->getDefinition('paragraph');
+    \Drupal::entityDefinitionUpdateManager()->installEntityType($entity_type);
+
+    return t('Installed the MY ENTITY entity type');
+}

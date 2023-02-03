@@ -1,0 +1,42 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.search_solr
+  module:
+    - rng
+    - system
+    - views
+  theme:
+    - nhsc_com
+id: exposedformsearch_solrpage_1
+theme: nhsc_com
+region: search
+weight: 0
+provider: null
+plugin: 'views_exposed_filter_block:search_solr-page_1'
+settings:
+  id: 'views_exposed_filter_block:search_solr-page_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+visibility:
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1629901952'
+    negate: false
+    context_mapping: {  }
+    enable: false
+  rng_current_time:
+    id: rng_current_time
+    date: '1629901952'
+    negate: false
+    context_mapping: {  }
+    enable: false
+  request_path:
+    id: request_path
+    pages: /search
+    negate: true

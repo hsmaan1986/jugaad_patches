@@ -1,0 +1,10 @@
+nhsc-ccg-spend-calculator-assets:
+  js:
+    js/jquery.fancybox.2.1.5.pack.js: {}
+    js/nhsc_ccg_spend_calculator.js: {}
+  css:
+    theme:
+      css/jquery.fancybox.2.1.5.css: {}
+  dependencies:
+    - core/jquery
+    - jquery_ui_datepicker/datepicker

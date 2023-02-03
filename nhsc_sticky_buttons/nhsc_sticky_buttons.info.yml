@@ -1,0 +1,11 @@
+name: NHSc Sticky Buttons
+type: module
+description: This module helps to display social website information using drupal blocks.
+# core_version_requirement: ^8 || ^9
+package: Custom
+dependencies:
+  - fontawesome:fontawesome
+  - drupal:block
+  - ln_fusepump
+  - nhsc_kwit
+core_version_requirement: ^8 || ^9

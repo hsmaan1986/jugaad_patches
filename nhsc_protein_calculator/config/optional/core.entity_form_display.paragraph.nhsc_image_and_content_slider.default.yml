@@ -1,0 +1,68 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_image_and_content_slider.field_heading
+    - field.field.paragraph.nhsc_image_and_content_slider.field_nhsc_heading_font
+    - field.field.paragraph.nhsc_image_and_content_slider.field_nhsc_slider_content
+    - field.field.paragraph.nhsc_image_and_content_slider.field_nhsc_slider_heading
+    - field.field.paragraph.nhsc_image_and_content_slider.field_nhsc_slider_image
+    - field.field.paragraph.nhsc_image_and_content_slider.field_nhsc_slider_position
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.nhsc_image_and_content_slider
+  module:
+    - image
+    - text
+id: paragraph.nhsc_image_and_content_slider.default
+targetEntityType: paragraph
+bundle: nhsc_image_and_content_slider
+mode: default
+content:
+  field_heading:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_nhsc_heading_font:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_nhsc_slider_content:
+    weight: 4
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_nhsc_slider_heading:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_nhsc_slider_image:
+    type: image_image
+    weight: 0
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    region: content
+    third_party_settings: {  }
+  field_nhsc_slider_position:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

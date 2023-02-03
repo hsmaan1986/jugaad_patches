@@ -1,0 +1,7 @@
+name: 'nppe_auth_redirect_module'
+type: module
+description: 'Security module to enable/disable login'
+core_version_requirement: ^8 || ^9
+package: 'NPPE'
+dependencies:
+  - user

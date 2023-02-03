@@ -1,0 +1,25 @@
+uuid: 15fa82cc-ac28-4f6f-88c6-886db84ddb9e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.ccg_product_information
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_title
+id: paragraph.ccg_product_information.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: ccg_product_information
+label: 'Product Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

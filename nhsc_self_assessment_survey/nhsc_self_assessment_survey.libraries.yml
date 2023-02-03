@@ -1,0 +1,7 @@
+self-assessment-survey-form:
+  js:
+    js/self-assessment-survey.js: {}
+    js/self-assessment-survey-data-layer.js: {}
+  css:
+    theme:
+      css/nhsc_self_assessment_survey.css: {}

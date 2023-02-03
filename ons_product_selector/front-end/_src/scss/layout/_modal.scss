@@ -1,0 +1,218 @@
+.ons__modal {
+  background: rgba($gray-1, 0.4);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  display: none;
+  top: 100vh;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 9999;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  transform: translateZ(0);
+  animation: entrada-baixo 0.5s;
+  &.on {
+    top: 0;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  &__content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background: $white;
+    overflow: auto;
+    font-family: $lato-regular;
+    .ons__modal__header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      background: $white;
+      z-index: 2;
+      .ons__btn--close {
+        margin-left: auto;
+        margin-right: 10px;
+        margin-top: 10px;
+      }
+    }
+    .ons__modal__products {
+      overflow: hidden;
+      margin-top: 86px;
+      width: 810px;
+      img {
+        width: 100%;
+      }
+      p {
+        font-size: 12px;
+      }
+      > div {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 30%);
+        gap: 0 30px;
+        grid-template-areas: ". . .";
+        margin-bottom: 35px;
+      }
+      .ons__modal__specificity__product {
+        dl {
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(2, auto);
+          color: $gray-1;
+          margin-bottom: 0;
+
+          dt,
+          dd {
+            padding: 10px 0;
+          }
+          dt {
+            font-size: 12px;
+            display: flex;
+            align-items: flex-end;
+          }
+          dd {
+            font-size: 16px;
+            text-align: right;
+          }
+        }
+      }
+      .ons__modal__pipcode__product {
+        border-bottom: 1px solid $gray-0;
+        padding-bottom: 15px;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      .ons__modal__link__product {
+        &--info {
+          text-align: center;
+
+          img {
+            width: 80%;
+          }
+
+          [data-field="title"] {
+            text-transform: uppercase;
+            color: $color-2;
+            font-family: $lato-bold;
+            font-size: 16px;
+            line-height: 1.5;
+          }
+
+          a {
+            color: $color-0;
+            font-family: $lato-regular;
+            font-size: 16px;
+            line-height: 1.5;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+        &--find {
+          color: $color-0;
+          transition: $ease-0;
+          text-decoration: none;
+          &:hover {
+            color: darken($color-0, $amount: 30);
+          }
+          &.off {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  
+  @media #{$min-xs} {
+    padding: 20px 0;
+    &__content {
+      top: 20px;
+      bottom: 20px;
+      width: 750px;
+      padding: 20px;
+      border-radius: 6px;
+      overflow-y: auto;
+      .ons__modal__header {
+        position: relative;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        background: $white;
+        .ons__btn--close {
+          margin-left: auto;
+          margin-right: 0;
+          margin-top: 0;
+        }
+      }
+      .ons__modal__products {
+        margin-top: 0;
+        width: 100%;
+      }
+      &::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+        background: #666;
+        border-radius: 0 6px 6px 0;
+      }
+      &::-webkit-scrollbar-button {
+        width: 8px;
+        height: 8px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: #e1e1e1;
+        border: 0px solid #f1f1f1;
+        border-radius: 6px;
+      }
+      &::-webkit-scrollbar-thumb:hover {
+        background: #f1f1f1;
+      }
+      &::-webkit-scrollbar-thumb:active {
+        background: #808080;
+      }
+      &::-webkit-scrollbar-track {
+        background: #666;
+        border: 0px none #f1f1f1;
+        border-radius: 8px;
+      }
+      &::-webkit-scrollbar-track:hover {
+        background: #666666;
+      }
+      &::-webkit-scrollbar-track:active {
+        background: #333333;
+      }
+      &::-webkit-scrollbar-corner {
+        background: rgba(0, 0, 0, 0);
+      }
+    }
+  }
+  @media #{$min-md} {
+    &__content {
+      width: 810px;
+    }
+  }
+}
+
+@keyframes entrada-baixo {
+  from {
+    opacity: 0;
+    transform: translateY(250px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

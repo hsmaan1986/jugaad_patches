@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * Implements hook_page_attachments().
+ */
+function nhsc_popup_page_attachments(&$variables){
+  // Get the url of the page that renders the gygia form.
+  $gygia_form_url = \Drupal::config('nhsc_popup.adminsettings')->get('url_name');
+  $variables['#attached']['library'][] = 'nhsc_popup/nhsc_popup';
+  $variables['#attached']['drupalSettings']['nhsc_popup']['url_name'] = $gygia_form_url;
+
+}
+
+/**
+ * Implements hook_help().
+ */
+function nhsc_popup_help($route_name, RouteMatchInterface $route_match)
+{
+  switch ($route_name) {
+    case 'help.page.nhsc_popup':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provides easily configurable popup block which is shown to the user who are about to close
+        browser tab/window.') . '</p>';
+      return $output;
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function nhsc_popup_preprocess_page(array &$page) {
+  $config = \Drupal::config('nhsc_popup.adminsettings');
+  /*$current_user = User::load(\Drupal::currentUser()->id());
+  if ($config->get('roles') == NULL) {
+    $checkRole = !empty(array_intersect(array_filter($config->get('roles')), $current_user->getRoles()));
+  } else {
+    $checkRole = TRUE;
+  }
+  if ($checkRole) {*/
+    $page['#attached']['library'][] = 'nhsc_popup/nhsc_popup';
+    $exitpopup_html = $config->get('nhsc_popup_html');
+    $exitpopup_css = $config->get('nhsc_popup_css');
+    $exitpopup_delay = $config->get('nhsc_popup_delay');
+    $exitpopup_width = $config->get('nhsc_popup_width');
+    $exitpopup_height = $config->get('nhsc_popup_height');
+    $exitpopup_cookie_exp = $config->get('nhsc_popup_cookie_exp');
+    // Binding the php variables to drupal settings.
+    $page['#attached']['drupalSettings']['drupal_nhsc_popup_html'] = $exitpopup_html;
+    $page['#attached']['drupalSettings']['drupal_nhsc_popup_css'] = $exitpopup_css;
+    $page['#attached']['drupalSettings']['drupal_nhsc_popup_width'] = $exitpopup_width;
+    $page['#attached']['drupalSettings']['drupal_nhsc_popup_height'] = $exitpopup_height;
+    $page['#attached']['drupalSettings']['drupal_nhsc_popup_cookie_exp'] = $exitpopup_cookie_exp;
+    $page['#attached']['drupalSettings']['drupal_nhsc_popup_delay'] = $exitpopup_delay;
+  //}
+}
+

@@ -1,0 +1,5 @@
+gigya_client.settings:
+  title: 'Gigya client'
+  parent: system.admin_config_services
+  description: 'Configure gigya.'
+  route_name: gigya_client.settings

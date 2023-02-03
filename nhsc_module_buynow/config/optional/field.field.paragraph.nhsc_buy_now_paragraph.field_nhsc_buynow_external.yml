@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_nhsc_buynow_external
+    - paragraphs.paragraphs_type.nhsc_buy_now_paragraph
+id: paragraph.nhsc_buy_now_paragraph.field_nhsc_buynow_external
+field_name: field_nhsc_buynow_external
+entity_type: paragraph
+bundle: nhsc_buy_now_paragraph
+label: 'Buy Now External URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

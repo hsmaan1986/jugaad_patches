@@ -1,0 +1,6 @@
+name: NHSC Flavor Selector
+type: module
+description: Nestle Health Science Flavor Selector.
+core_version_requirement: ^8 || ^9
+package: 'Custom'
+configure: nhsc_flavor_selector.settings

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Language
+vid: language
+description: 'List of languages'
+weight: 0

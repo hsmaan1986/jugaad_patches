@@ -1,0 +1,10 @@
+uuid: ef58dbb7-95f9-42c2-afb4-39adc46b323e
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: aA_Ci-uxG9QJwIws6Jti9XGOwplzIrOXTUAnWA17zKs
+id: menu_description
+label: 'Menu Description'
+revision: 0
+description: 'Use this to add a description for the dropdown menu.'

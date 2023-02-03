@@ -1,0 +1,42 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_people.field_nhsc_people_image
+    - field.field.paragraph.nhsc_people.field_nhsc_people_text
+    - field.field.paragraph.nhsc_people.field_nhsc_people_title
+    - paragraphs.paragraphs_type.nhsc_people
+  module:
+    - image
+id: paragraph.nhsc_people.default
+targetEntityType: paragraph
+bundle: nhsc_people
+mode: default
+content:
+  field_nhsc_people_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_nhsc_people_text:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_nhsc_people_title:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true

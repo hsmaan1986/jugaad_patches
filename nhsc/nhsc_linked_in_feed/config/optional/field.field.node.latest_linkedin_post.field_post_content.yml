@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_post_content
+    - node.type.latest_linkedin_post
+  module:
+    - text
+id: node.latest_linkedin_post.field_post_content
+field_name: field_post_content
+entity_type: node
+bundle: latest_linkedin_post
+label: 'Post Content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

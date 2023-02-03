@@ -1,0 +1,192 @@
+<div id="overlay">
+	<div class="spinner"></div>
+</div>
+<form id="onsSearch" method="get">
+{% if taxonomies.hide_advanced %}
+	<section class="ons__filters">
+		<div class="ons__filters__header">
+			<h1 class="ons__title ons__title--header">{{'Or use product filters'|t}}</h1>
+			<input type="checkbox" id="checkbox__advanced" autocomplete='off' name="checkbox__advanced" class="ons__checkbox--arrow ons__checkbox--arrow-advanced">
+			<label for="checkbox__advanced">{{'More filters'|t}}</label>
+			<div class="ons__filters__advanced--options">
+				{% for key, item in taxonomies.advanced_search %}
+					<div class="ons__filters__advanced--list">
+						<h3 class="ons__title ons__title--list">{{key}}</h3>
+						<ul>
+							{% for filters in item %}
+								{% if filters.count > 0 %}
+								<li>
+									<div class="ons__checkbox">
+										<input type="checkbox" name="{{filters.formName}}[]" data-id="checkboxSearch" autocomplete='off' value="{{filters.tid}}" id="{{filters.formName}}-{{filters.name|replace({' ': '_'})}}">
+										<label for="{{filters.formName}}-{{filters.name|replace({' ': '_'})}}">{{filters.name}}
+											<span>({{ filters.count }})</span>
+										</label>
+									</div>
+								</li>
+								{% endif %}
+							{% endfor %}
+						</ul>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+{% endif %}
+{% if taxonomies.hide_filters %}
+	<section class="ons__combobox">
+		<div class="ons__combobox__list">
+			{% for key, item in taxonomies.simple_filters %}
+				<a class="ons__combobox__link" data-content="content__{{key|lower|replace({' ': '_'})}}">{{key}}</a>
+			{% endfor %}
+		</div>
+		<div class="ons__combobox__content">
+			{% for key, item in taxonomies.simple_filters %}
+				<div id="content__{{key|lower|replace({' ': '_'})}}" class="ons__filters__combobox--options">
+
+					<ul>
+						{% for kfilter, filters in item %}
+							{% if filters.count > 0 %}
+							<li>
+								<div class="ons__checkbox">
+                  <input type="checkbox" data-id="checkboxSearch" autocomplete='off' id="{{filters.formName}}-{{filters.name|replace({' ': '_'})}}" value="{{filters.tid}}" name="{{filters.formName|replace({' ': '_'})}}[]">
+
+
+									<label for="{{filters.formName}}-{{filters.name|replace({' ': '_'})}}">{{filters.name}}
+
+
+										<span>({{ filters.count }})</span>
+									</label>
+								</div>
+							</li>
+							{% endif %}
+						{% endfor %}
+					</ul>
+				</div>
+			{% endfor %}
+		</div>
+	</section>
+{% endif %}
+</form>
+{% if taxonomies.disable_compare %}
+
+<div class="ons__modal">
+	<div class="ons__modal__content">
+		<div class="ons__modal__header">
+			<a href="" class="ons__btn--close">{{"Close"|t}}
+
+				<span>X</span>
+			</a>
+			<h2 class="ons__title ons__title--modal">{{"Compare Products"|t}}</h2>
+		</div>
+		<div class="ons__modal__products">
+			<div class="ons__modal__select">
+				<div class="ons__modal__select--item">
+					<a class="ons__combobox__link ons__combobox__link--modal" data-content="compareProd-one">{{"Select our product"|t}}</a>
+					<div class="ons__combobox__link--options" id="compareProd-one"></div>
+				</div>
+				<div class="ons__modal__select--item">
+					<a class="ons__combobox__link ons__combobox__link--modal" data-content="compareProd-two">{{"Select our product"|t}}</a>
+					<div class="ons__combobox__link--options" id="compareProd-two"></div>
+				</div>
+				<div class="ons__modal__select--item">
+					<a class="ons__combobox__link ons__combobox__link--modal" data-content="compareProd-three">{{"Select our product"|t}}</a>
+					<div class="ons__combobox__link--options" id="compareProd-three"></div>
+				</div>
+			</div>
+			<div class="ons__modal__image__product">
+				<img src="" class="ons__card-product__content__img" data-field="field_ons_product" data-key="0">
+				<img src="" class="ons__card-product__content__img" data-field="field_ons_product" data-key="1">
+				<img src="" class="ons__card-product__content__img" data-field="field_ons_product" data-key="2">
+			</div>
+			<h3 class="ons__title ons__title__modal--infos">{{"Description"|t}}</h3>
+			<div class="ons__modal__description__product">
+				<div class="ons__modal__description__product--info">
+					<p data-field="field_ons_description"></p>
+				</div>
+				<div class="ons__modal__description__product--info">
+					<p data-field="field_ons_description"></p>
+				</div>
+				<div class="ons__modal__description__product--info">
+					<p data-field="field_ons_description"></p>
+				</div>
+			</div>
+			<h3 class="ons__title ons__title__modal--infos">{{"Specificity"|t}}</h3>
+			<div class="ons__modal__specificity__product">
+				<div class="ons__modal__specificity__product--info">
+					<dl>
+						<dt>{{"Format"|t}}</dt>
+						<dd data-field="field_ons_format_size">-</dd>
+						<dt>{{"Kcal"|t}}</dt>
+						<dd data-field="field_ons_kcal">-</dd>
+						<dt>{{"Protein"|t}}</dt>
+						<dd data-field="field_ons_protein">-</dd>
+					</dl>
+				</div>
+				<div class="ons__modal__specificity__product--info">
+					<dl>
+						<dt>{{"Format"|t}}</dt>
+						<dd data-field="field_ons_format_size">-</dd>
+						<dt>{{"Kcal"|t}}</dt>
+						<dd data-field="field_ons_kcal">-</dd>
+						<dt>{{"Protein"|t}}</dt>
+						<dd data-field="field_ons_protein">-</dd>
+					</dl>
+				</div>
+				<div class="ons__modal__specificity__product--info">
+					<dl>
+						<dt>{{"Format"|t}}</dt>
+						<dd data-field="field_ons_format_size">-</dd>
+						<dt>{{"Kcal"|t}}</dt>
+						<dd data-field="field_ons_kcal">-</dd>
+						<dt>{{"Protein"|t}}</dt>
+						<dd data-field="field_ons_protein">-</dd>
+					</dl>
+				</div>
+			</div>
+			<h3 class="ons__title ons__title__modal--infos">{{"Flavors"|t}}</h3>
+			<div class="ons__modal__flavours__product">
+				<div class="ons__modal__flavours__product--info">
+					<p data-field="field_ons_flavours"></p>
+				</div>
+				<div class="ons__modal__flavours__product--info">
+					<p data-field="field_ons_flavours"></p>
+				</div>
+				<div class="ons__modal__flavours__product--info">
+					<p data-field="field_ons_flavours"></p>
+				</div>
+			</div>
+			<h3 class="ons__title ons__title__modal--infos pip_code">{{"PIP code"|t}}</h3>
+			<div class="ons__modal__pipcode__product pip_code">
+				<div class="ons__modal__pipcode__product--info">
+					<p data-field="field_ons_pipcode"></p>
+				</div>
+				<div class="ons__modal__pipcode__product--info">
+					<p data-field="field_ons_pipcode"></p>
+				</div>
+				<div class="ons__modal__pipcode__product--info">
+					<p data-field="field_ons_pipcode"></p>
+				</div>
+			</div>
+			<div class="ons__modal__link__product">
+				<div class="ons__modal__link__product--info">
+          <img src="" class="ons__modal__link__product--image" data-field="field_ons_product" data-key="0">
+
+					<div data-field="title"></div>
+					<a href="javascript: void(0);" data-field="path"></a>
+				</div>
+				<div class="ons__modal__link__product--info">
+          <img src="" class="ons__modal__link__product--image" data-field="field_ons_product" data-key="1">
+
+					<div data-field="title"></div>
+					<a href="javascript: void(0);" data-field="path"></a>
+				</div>
+				<div class="ons__modal__link__product--info">
+          <img src="" class="ons__modal__link__product--image" data-field="field_ons_product" data-key="2">
+					<div data-field="title"></div>
+					<a href="javascript: void(0);" data-field="path"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endif %}

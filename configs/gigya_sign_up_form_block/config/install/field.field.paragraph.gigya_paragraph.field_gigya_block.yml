@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_gigya_block
+    - paragraphs.paragraphs_type.gigya_paragraph
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_gigya_block
+id: paragraph.gigya_paragraph.field_gigya_block
+field_name: field_gigya_block
+entity_type: paragraph
+bundle: gigya_paragraph
+label: 'Gigya Block'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:block'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

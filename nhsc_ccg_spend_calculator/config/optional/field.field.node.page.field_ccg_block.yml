@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ccg_block
+    - node.type.page
+  module:
+    - block_field
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_ccg_block
+id: node.page.field_ccg_block
+field_name: field_ccg_block
+entity_type: node
+bundle: page
+label: 'CCG Block'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  plugin_ids:
+    nhsc_ccg_spend_calculator: nhsc_ccg_spend_calculator
+field_type: block_field

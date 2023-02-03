@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.menu_quick_links
+    - field.field.block_content.menu_quick_links.body
+    - field.field.block_content.menu_quick_links.field_components
+  module:
+    - entity_reference_revisions
+    - text
+_core:
+  default_config_hash: UUB0A1vX9qYvcoXqTxKQhIB95H7Y4dQ3xD6HdQ8fB64
+id: block_content.menu_quick_links.default
+targetEntityType: block_content
+bundle: menu_quick_links
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_components:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true
+  search_api_excerpt: true

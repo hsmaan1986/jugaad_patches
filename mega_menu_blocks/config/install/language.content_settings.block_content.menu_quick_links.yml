@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.menu_quick_links
+id: block_content.menu_quick_links
+target_entity_type_id: block_content
+target_bundle: menu_quick_links
+default_langcode: site_default
+language_alterable: false

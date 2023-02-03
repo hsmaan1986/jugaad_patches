@@ -1,0 +1,52 @@
+<?php
+
+/**
+ * @file
+ * Contains nhsc_mega_menu.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function nhsc_mega_menu_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the nhsc_mega_menu module.
+    case 'help.page.nhsc_mega_menu':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('NHSc Mega Menu - Website') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function nhsc_mega_menu_theme($existing, $type, $theme, $path) {
+  return [
+    'nhsc_mega_menu_block' => [
+      'variables' => [
+        'data' => NULL,
+        'filters' => NULL,
+        'config_settings' => NULL,
+      ],
+      'template' => 'block--nhsc_mega_menu',
+    ],
+  ];
+}
+
+function nhsc_mega_menu_page_attachments(array &$attachments) {
+
+  $config = \Drupal::config('nhsc_mega_menu.config');
+  $menuPosition = $config->get('mega_menu_position');
+  $menuBackText = $config->get('mega_menu_back_text');
+
+  $attachments['#attached']['library'][] = 'nhsc_mega_menu/nhsc_mega_menu';
+  $attachments['#attached']['drupalSettings']['menuPosition'] = $menuPosition;
+  $attachments['#attached']['drupalSettings']['menuBackText'] = $menuBackText;
+
+}

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: menu_quick_links
+label: 'Menu Quick Links'
+revision: 0
+description: 'Use this to add quick links to the dropdown menu.'

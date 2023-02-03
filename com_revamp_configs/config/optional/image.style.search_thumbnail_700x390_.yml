@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: search_thumbnail_700x390_
+label: 'Search Thumbnail (700x390)'
+effects:
+  b4ee6fa9-8fff-4de0-8905-091ce6d0b2f2:
+    uuid: b4ee6fa9-8fff-4de0-8905-091ce6d0b2f2
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 700
+      height: 390
+      anchor: center-center

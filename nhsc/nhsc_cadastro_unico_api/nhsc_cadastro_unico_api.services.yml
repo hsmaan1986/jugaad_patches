@@ -1,0 +1,4 @@
+services:
+  nhsc_cadastro_unico_api:
+    class: Drupal\nhsc_cadastro_unico_api\ApiService
+    arguments: []

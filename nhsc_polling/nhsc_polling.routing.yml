@@ -1,0 +1,13 @@
+poll.poll_reports:
+  path: '/admin/content/poll/report'
+  defaults:
+    _title: 'Poll Report'
+  requirements:
+    _permission: 'administer polls'
+
+poll.poll_reports_export:
+  path: '/admin/content/poll/report/export'
+  defaults:
+    _title: 'Poll Report Export'
+  requirements:
+    _permission: 'administer polls'

@@ -1,0 +1,8 @@
+uuid: 85ba88c6-9826-4751-a203-e25b9726f776
+langcode: en
+status: true
+dependencies: {  }
+name: 'Area of Interest'
+vid: area_of_interest
+description: ''
+weight: 0

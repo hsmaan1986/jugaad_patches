@@ -1,0 +1,18 @@
+{% if (buynow_rangebtn_status is empty) or (buynow_rangebtn_status =='0') %}
+{% else %} 
+  
+  {% if (buynow_rangebtn_id is not empty ) %}
+  
+   <div class="range-buy-now-button-container">
+    <a id="{{ buynow_rangebtn_buttonid }}" class="btn buynow productrange nhsc-module-buynow-range-button {{ buynow_rangebtn_class }}" href="#">{{ buynow_rangebtn_label }}</a>
+   </div>
+
+   {% else %}
+     {% if (buynow_rangebtn_ext_url is not empty) %}
+     	 <div class="range-buy-now-button-container">
+	   		 <a id="{{ buynow_rangebtn_buttonid }}" class="btn buynow productrange {{ buynow_rangebtn_class }}" href="{{buynow_rangebtn_ext_url}}" target="_blank">{{ buynow_rangebtn_label }}</a>
+	   </div>
+     {% endif %}
+   {% endif %}
+
+{% endif %}

@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_full_page_image.field_nhsc_image_full_page
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.nhsc_full_page_image
+  module:
+    - svg_image
+id: paragraph.nhsc_full_page_image.default
+targetEntityType: paragraph
+bundle: nhsc_full_page_image
+mode: default
+content:
+  field_nhsc_image_full_page:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+hidden:
+  created: true
+  status: true

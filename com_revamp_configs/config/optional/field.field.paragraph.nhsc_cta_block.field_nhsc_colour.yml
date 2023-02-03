@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_nhsc_colour
+    - paragraphs.paragraphs_type.nhsc_cta_block
+    - taxonomy.vocabulary.nhsc_colours
+id: paragraph.nhsc_cta_block.field_nhsc_colour
+field_name: field_nhsc_colour
+entity_type: paragraph
+bundle: nhsc_cta_block
+label: 'Background Colour'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      nhsc_colours: nhsc_colours
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

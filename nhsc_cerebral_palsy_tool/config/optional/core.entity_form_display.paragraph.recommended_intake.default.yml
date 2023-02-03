@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.recommended_intake.field_cerebral_palsy_icon
+    - field.field.paragraph.recommended_intake.field_cerebral_palsy_percentage
+    - paragraphs.paragraphs_type.recommended_intake
+id: paragraph.recommended_intake.default
+targetEntityType: paragraph
+bundle: recommended_intake
+mode: default
+content:
+  field_cerebral_palsy_icon:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_cerebral_palsy_percentage:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

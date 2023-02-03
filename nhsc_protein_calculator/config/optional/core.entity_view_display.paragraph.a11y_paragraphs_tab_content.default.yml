@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.a11y_paragraphs_tab_content.field_a11y_para_tabs_text_area
+    - field.field.paragraph.a11y_paragraphs_tab_content.field_nhsc_tab_slider
+    - paragraphs.paragraphs_type.a11y_paragraphs_tab_content
+  module:
+    - entity_reference_revisions
+id: paragraph.a11y_paragraphs_tab_content.default
+targetEntityType: paragraph
+bundle: a11y_paragraphs_tab_content
+mode: default
+content:
+  field_nhsc_tab_slider:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_a11y_para_tabs_text_area: true
+  search_api_excerpt: true

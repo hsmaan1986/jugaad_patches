@@ -1,0 +1,10 @@
+{
+  "name": "drupal/nhsc_kwit",
+  "description": "Adds the integration from Drupal to Kwit.",
+  "type": "drupal-module",
+  "keywords": [
+    "content",
+    "paragraphs",
+    "frontend"
+  ]
+}

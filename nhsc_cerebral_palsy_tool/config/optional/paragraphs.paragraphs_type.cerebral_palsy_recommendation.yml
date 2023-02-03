@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: cerebral_palsy_recommendation
+label: 'Cerebral Palsy Recommendation'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

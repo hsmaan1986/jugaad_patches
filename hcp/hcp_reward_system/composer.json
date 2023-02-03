@@ -1,0 +1,14 @@
+{
+  "name": "drupal/hcp_reward_system",
+  "type": "drupal-module",
+  "description": "Reward system with points management and auto-generated certificates  depending on customized  achievements behaviors.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/hcp_reward_system",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/hcp_reward_system",
+    "source": "http://cgit.drupalcode.org/hcp_reward_system"
+  },
+  "require": { }
+}

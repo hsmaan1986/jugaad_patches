@@ -1,0 +1,17 @@
+hcp_notification.config:
+  type: config_object
+  mapping:
+    configuration:
+      type: sequence
+      sequence:
+        type: sequence
+        mapping:
+          enabled:
+            type: string
+            label: Enabled
+          subject:
+            type: string
+            label: Mail subject
+          body:
+            type: string
+            label: Mail body

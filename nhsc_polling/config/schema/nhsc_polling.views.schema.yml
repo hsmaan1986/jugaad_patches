@@ -1,0 +1,7 @@
+views.filter_value.poll_question_filter:
+  type: mapping
+  label: 'Poll Question'
+  mapping:
+    state:
+      type: string
+      label: 'Question'

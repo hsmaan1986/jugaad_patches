@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_inline_heading_and_descript.field_inline_description
+    - field.field.paragraph.nhsc_inline_heading_and_descript.field_inline_heading
+    - field.field.paragraph.nhsc_inline_heading_and_descript.field_second_description
+    - paragraphs.paragraphs_type.nhsc_inline_heading_and_descript
+id: paragraph.nhsc_inline_heading_and_descript.default
+targetEntityType: paragraph
+bundle: nhsc_inline_heading_and_descript
+mode: default
+content:
+  field_inline_description:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_inline_heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_second_description:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+hidden:
+  addtoany: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  search_api_excerpt: true

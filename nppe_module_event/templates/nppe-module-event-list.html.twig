@@ -1,0 +1,108 @@
+{{ attach_library('nppe_module_event/nppe_module_event') }}
+{% set current_pag_date = paginationCurrent|date('U')|format_date('events_date_format') %}
+
+<div class="m-b-lg" id="page-title-wrapper">
+    <h1 class="page-title-text" id="free-sample-page-title">{{  'Event Calendar' | t }} - {% trans %}{{ current_pag_date|placeholder|striptags }} {% endtrans %}</h1>
+</div>
+
+<div class="table-responsive">
+      <div class="col-lg-12">
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 hide-mobile event-list__nav">
+              {% if paginationBack is not null %}
+                  <a class="pull-right" href="/event/list/{{ paginationBack }}">{{ '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Anterior' | t }}</a>
+              {% endif %}
+          </div>
+
+          <div class="col-md-4 col-xs-8 event-list__current-month">{% trans %}{{ current_pag_date|placeholder|striptags }} {% endtrans %}</div>
+
+
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 hide-mobile event-list__nav">
+              {% if paginationNext is not null %}
+                  <a class="pull-left" href="/event/list/{{ paginationNext }}">{{ 'Frente <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>' | t }}</a>
+              {% endif %}
+          </div>
+          </div>
+
+          <div class="col-xs-1 col-sm-2 col-md-2 col-lg-2 event-list__filter-container">
+              <div class="dropdown">
+                  <button class="event-list__filter-btn btn btn-primary dropdown-toggle pull-right" type="button" data-toggle="dropdown">
+                      <span class="hide-mobile">{{ 'Filter' | t }}</span>
+                      <span class="caret"></span>
+                  </button>
+                  <ul class="event-list__dropdown dropdown-menu">
+                      <li><a href="/event/list/{{ paginationCurrent | date('Y-m') }}">{{ '--All--' | t }}</a></li>
+
+                      {% for key, event in eventType %}
+                          <li>
+                              <a href="/event/list/{{ paginationCurrent | date('Y-m') }}/{{ key }}">{{ event | t }}</a>
+                          </li>
+                      {% endfor %}
+                  </ul>
+              </div>
+          </div>
+      </div>
+
+
+    <table class="table event-table">
+        <tbody>
+        {% if data | length > 0 %}
+
+            {% for row in data %}
+
+                <tr>
+                    <td>
+                        <span class="event-list__date">{{ row['field_start_date'] | date("l") |t}}</span>
+                        <span class="event-list__month">{{ row['field_start_date'] | date("F") | t | capitalize }} </span>
+                        <span class="event-list__day">{{ row['field_start_date'] | date("j") | t}}</span>
+                    </td>
+                    <td class="event-list__text hide-mobile">{{ row['field_duration'] | t }}</td>
+                    <td class="event-list__text hide-mobile">
+
+                        {% if eventType[row['field_event_type']] == 'Webaulas' %}
+                            <span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span>
+                        {% else %}
+                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                        {% endif %}
+
+                    </td>
+                    <td class="event-list__text">
+                      <div class="event-list__mini-info show-mobile">
+
+                        {% if eventType[row['field_event_type']] == 'Webaulas' %}
+                            <span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span>
+                        {% else %}
+                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                        {% endif %}
+
+                        {{ row['field_duration'] | t }}
+
+                      </div>
+                      <span class='event-list__name'>
+                        <a class="event-list__name--link" href="/node/{{ row['nid'] }}">
+                            {{ row['field_event_name'] | t }}
+                        </a>
+
+                          {% for tag in row['field_tags'] %}
+                              <span class="webinar-tags-tagitem">
+                            <a href="#" hreflang="en">{{ tag | t }}</a>
+                          </span>
+                          {% endfor %}
+
+                      </span>
+                    </td>
+                </tr>
+
+            {% endfor %}
+
+        {% else %}
+
+            <tr>
+                <td colspan="4" style="text-align: center">
+                    {{ 'No events found' | t }}
+                </td>
+            </tr>
+
+        {% endif %}
+        </tbody>
+    </table>
+</div>

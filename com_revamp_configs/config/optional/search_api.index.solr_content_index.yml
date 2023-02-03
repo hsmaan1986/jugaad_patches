@@ -1,0 +1,587 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_solr
+    - paragraphs
+    - node
+    - taxonomy
+    - search_api
+  config:
+    - field.storage.node.field_allcomponents
+    - field.storage.paragraph.bp_unrestricted
+    - field.storage.node.body
+    - field.storage.node.field_category
+    - field.storage.node.field_nhsc_expertise_category
+    - field.storage.node.field_nhsc_brand_components
+    - field.storage.node.field_page_components
+    - field.storage.node.field_title
+    - field.storage.node.field_press_category
+    - field.storage.node.field_area_of_interest
+    - field.storage.node.field_nhsc_brands
+    - field.storage.node.field_nhsc_page_content_top
+    - field.storage.node.field_nhsc_section
+    - field.storage.node.field_section
+    - field.storage.paragraph.field_heading
+    - field.storage.paragraph.field_nhsc_section_text
+    - field.storage.paragraph.field_nhs_brand_detail_copy
+    - field.storage.paragraph.field_nhs_brand_detail_intro
+    - field.storage.paragraph.field_nhsc_column_text_item
+    - field.storage.paragraph.field_nhs_heading_text
+    - field.storage.paragraph.field_nhsc_tools_resources_item
+    - field.storage.paragraph.field_title
+    - search_api.server.open_solr
+    - core.entity_view_mode.node.full
+third_party_settings:
+  search_api_solr:
+    finalize: false
+    commit_before_finalize: false
+    commit_after_finalize: false
+    multilingual:
+      limit_to_content_language: false
+      include_language_independent: true
+    highlighter:
+      maxAnalyzedChars: 51200
+      fragmenter: gap
+      regex:
+        slop: 0.5
+        pattern: blank
+        maxAnalyzedChars: 10000
+      usePhraseHighlighter: true
+      highlightMultiTerm: true
+      preserveMulti: false
+      highlight:
+        mergeContiguous: false
+        requireFieldMatch: false
+        snippets: 3
+        fragsize: 0
+    mlt:
+      mintf: 1
+      mindf: 1
+      maxdf: 0
+      maxdfpct: 0
+      minwl: 0
+      maxwl: 0
+      maxqt: 100
+      maxntp: 2000
+      boost: false
+      interestingTerms: none
+    term_modifiers:
+      slop: 3
+      fuzzy: 1
+    advanced:
+      index_prefix: ''
+      collection: ''
+      timezone: ''
+id: solr_content_index
+name: 'Solr content index'
+description: ''
+read_only: false
+field_settings:
+  body:
+    label: Body
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.body
+  body_1:
+    label: 'Related Brands » Content » Body'
+    datasource_id: 'entity:node'
+    property_path: 'field_nhsc_brands:entity:body'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.body
+        - field.storage.node.field_nhsc_brands
+      module:
+        - node
+  bp_unrestricted:
+    label: 'all components » Paragraph » Unrestricted'
+    datasource_id: 'entity:node'
+    property_path: 'field_allcomponents:entity:bp_unrestricted'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_allcomponents
+        - field.storage.paragraph.bp_unrestricted
+      module:
+        - paragraphs
+  description:
+    label: 'Press category » Taxonomy term » Description'
+    datasource_id: 'entity:node'
+    property_path: 'field_press_category:entity:description'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_press_category
+      module:
+        - taxonomy
+  field_area_of_interest:
+    label: 'Related Brands » Content » Area of Interest'
+    datasource_id: 'entity:node'
+    property_path: 'field_nhsc_brands:entity:field_area_of_interest'
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_area_of_interest
+        - field.storage.node.field_nhsc_brands
+      module:
+        - node
+  field_category:
+    label: Category
+    datasource_id: 'entity:node'
+    property_path: field_category
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_category
+  field_heading:
+    label: Heading
+    datasource_id: 'entity:paragraph'
+    property_path: field_heading
+    type: string
+    boost: !!float 2
+    dependencies:
+      config:
+        - field.storage.paragraph.field_heading
+  field_nhs_brand_detail_copy:
+    label: 'NHS Brand Detail Copy'
+    datasource_id: 'entity:paragraph'
+    property_path: field_nhs_brand_detail_copy
+    type: text
+    dependencies:
+      config:
+        - field.storage.paragraph.field_nhs_brand_detail_copy
+  field_nhs_brand_detail_intro:
+    label: 'NHS Brand Detail Intro'
+    datasource_id: 'entity:paragraph'
+    property_path: field_nhs_brand_detail_intro
+    type: text
+    dependencies:
+      config:
+        - field.storage.paragraph.field_nhs_brand_detail_intro
+  field_nhs_heading_text:
+    label: 'NHS heading text'
+    datasource_id: 'entity:paragraph'
+    property_path: field_nhs_heading_text
+    type: string
+    dependencies:
+      config:
+        - field.storage.paragraph.field_nhs_heading_text
+  field_nhsc_brand_components:
+    label: 'NHSC Brand components'
+    datasource_id: 'entity:node'
+    property_path: field_nhsc_brand_components
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_nhsc_brand_components
+  field_nhsc_column_text_item:
+    label: 'NHSC Column text item'
+    datasource_id: 'entity:paragraph'
+    property_path: field_nhsc_column_text_item
+    type: text
+    dependencies:
+      config:
+        - field.storage.paragraph.field_nhsc_column_text_item
+  field_nhsc_page_content_top:
+    label: 'Related Brands » Content » NHSC Page Content top'
+    datasource_id: 'entity:node'
+    property_path: 'field_nhsc_brands:entity:field_nhsc_page_content_top'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_nhsc_brands
+        - field.storage.node.field_nhsc_page_content_top
+      module:
+        - node
+  field_nhsc_section:
+    label: Section
+    datasource_id: 'entity:node'
+    property_path: field_nhsc_section
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_nhsc_section
+  field_nhsc_section_text:
+    label: 'Main heading'
+    datasource_id: 'entity:paragraph'
+    property_path: field_nhsc_section_text
+    type: text
+    dependencies:
+      config:
+        - field.storage.paragraph.field_nhsc_section_text
+  field_nhsc_tools_resources_title:
+    label: 'Tool and Resource » Paragraph » Title'
+    datasource_id: 'entity:paragraph'
+    property_path: 'field_nhsc_tools_resources_item:entity:field_title'
+    type: text
+    dependencies:
+      config:
+        - field.storage.paragraph.field_nhsc_tools_resources_item
+        - field.storage.paragraph.field_title
+      module:
+        - paragraphs
+  field_page_components:
+    label: 'Page components'
+    datasource_id: 'entity:node'
+    property_path: field_page_components
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_page_components
+  field_section:
+    label: Section
+    datasource_id: 'entity:node'
+    property_path: field_section
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_section
+  field_title:
+    label: 'Page Title'
+    datasource_id: 'entity:node'
+    property_path: field_title
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_title
+  name:
+    label: 'Expertise Category » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_nhsc_expertise_category:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_nhsc_expertise_category
+      module:
+        - taxonomy
+  name_1:
+    label: 'Press category » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_press_category:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_press_category
+      module:
+        - taxonomy
+  node_grants:
+    label: 'Node access information'
+    property_path: search_api_node_grants
+    type: string
+    indexed_locked: true
+    type_locked: true
+    hidden: true
+  rendered_item:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        anonymous: anonymous
+      view_mode:
+        'entity:node':
+          article: full
+          brand: full
+          dsu_component_page: full
+          event: full
+          expertise: full
+          landing_page: full
+          page: full
+          partners: full
+          press_release: full
+          product: full
+        'entity:paragraph':
+          bazaar: default
+          block_reference: default
+          bp_accordion: default
+          bp_accordion_section: default
+          bp_blank: ''
+          bp_block: ''
+          bp_carousel: ''
+          bp_column_wrapper: ''
+          bp_columns: ''
+          bp_columns_three_uneven: ''
+          bp_columns_two_uneven: ''
+          bp_image: ''
+          bp_modal: ''
+          bp_simple: ''
+          bp_tab_section: ''
+          bp_tabs: ''
+          bp_view: ''
+          bp_webform: ''
+          brand_data_layer_information: ''
+          buy_now_kwit: ''
+          cerebral_palsy_buttons: ''
+          cerebral_palsy_card: ''
+          cerebral_palsy_conditional_card: ''
+          cerebral_palsy_more_information: ''
+          cerebral_palsy_recommendation: ''
+          hcp_site_switcher: ''
+          image: ''
+          image_body: ''
+          layout_25_25_50: ''
+          layout_25_50_25: ''
+          layout_25_75: ''
+          layout_33_66: ''
+          layout_50_25_25: ''
+          layout_66_33: ''
+          layout_75_25: ''
+          layout_columns_1: ''
+          layout_columns_2: ''
+          layout_columns_20: ''
+          layout_columns_3: ''
+          layout_columns_4: ''
+          masthead: ''
+          masthead_webaulas: ''
+          nhs_brand_detail_component: default
+          nhs_office_search: ''
+          nhsc_about_us_banner: ''
+          nhsc_accordion: ''
+          nhsc_accordion_item: ''
+          nhsc_anchor: ''
+          nhsc_banner_component: ''
+          nhsc_banner_video: ''
+          nhsc_biography_caption: ''
+          nhsc_block: ''
+          nhsc_brand_accordion: default
+          nhsc_brand_accordion_group: ''
+          nhsc_brand_hero_banner: ''
+          nhsc_brand_links: ''
+          nhsc_brand_product_line: ''
+          nhsc_breadcrumb: ''
+          nhsc_button: ''
+          nhsc_buy_now_paragraph: ''
+          nhsc_card_item: ''
+          nhsc_cards: ''
+          nhsc_carousel: ''
+          nhsc_carousel_image_item: ''
+          nhsc_carousel_video_item: ''
+          nhsc_color_columns: ''
+          nhsc_column_component: ''
+          nhsc_column_items: ''
+          nhsc_comparison_table: ''
+          nhsc_content_banner: ''
+          nhsc_content_heading: ''
+          nhsc_content_slider: ''
+          nhsc_copy_and_button: ''
+          nhsc_cta_banner: ''
+          nhsc_cta_block: ''
+          nhsc_custom_flexible_grids: ''
+          nhsc_document_download_and_text: ''
+          nhsc_duality_slider: ''
+          nhsc_expandable_paragraph: ''
+          nhsc_faq: ''
+          nhsc_flexible_grid: ''
+          nhsc_flexible_grid_item: ''
+          nhsc_full_banner: ''
+          nhsc_full_page_image: ''
+          nhsc_heading_and_button: ''
+          nhsc_heading_and_dropdown: ''
+          nhsc_heading_block: ''
+          nhsc_health_management_landing: ''
+          nhsc_hero_banner: ''
+          nhsc_hover_component: ''
+          nhsc_hover_items: ''
+          nhsc_image_and_content_slider: ''
+          nhsc_image_and_text_column: ''
+          nhsc_image_content_slider_top: ''
+          nhsc_info_icons: ''
+          nhsc_link_card: ''
+          nhsc_link_card_container: ''
+          nhsc_logo_componant: ''
+          nhsc_menu_block: ''
+          nhsc_menu_quick_link_item: ''
+          nhsc_microsite_banner: ''
+          nhsc_microsite_body: ''
+          nhsc_microsite_intro: ''
+          nhsc_mobile_expand: ''
+          nhsc_mobile_expand_component: ''
+          nhsc_multi_column: ''
+          nhsc_multiple_faq: ''
+          nhsc_multiple_faq_item: ''
+          nhsc_nutritional_table: ''
+          nhsc_paragraph_icon: ''
+          nhsc_parallax_item: ''
+          nhsc_parallax_section: ''
+          nhsc_people: ''
+          nhsc_plain_content: ''
+          nhsc_product_comparison: ''
+          nhsc_product_comparison_items: ''
+          nhsc_product_comparison_labels: ''
+          nhsc_product_gallery_and_intro: ''
+          nhsc_product_specifications: ''
+          nhsc_product_warning: ''
+          nhsc_read_more: ''
+          nhsc_related_products: ''
+          nhsc_section_navigation: ''
+          nhsc_separator_line: ''
+          nhsc_small_icon_and_heading: ''
+          nhsc_sub_category_component: ''
+          nhsc_tabs: ''
+          nhsc_tags: ''
+          nhsc_text_and_image: ''
+          nhsc_text_block: ''
+          nhsc_text_slider: ''
+          nhsc_thumbnail_items: ''
+          nhsc_thumbnail_slider: ''
+          nhsc_title_with_icons: ''
+          nhsc_tools_and_resource_item: ''
+          nhsc_tools_and_resources: ''
+          nhsc_uneven_columns: default
+          nhsc_video: default
+          nhsc_view: default
+          plain_text: ''
+          presenter: ''
+          product_group: ''
+          product_selector_section: ''
+          recipe_group: ''
+          recipe_items: ''
+          recommended_intake: ''
+          section_title_and_description: ''
+          share_with_your_network: ''
+          simple: ''
+          site_switcher_setting: ''
+          slider: ''
+          slider_items: ''
+          tab_item: ''
+          tag_links: ''
+          topics_and_formats: ''
+          vitaflo_tag_links: ''
+  status:
+    label: Published
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: string
+    boost: !!float 2
+    dependencies:
+      module:
+        - node
+  title_1:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: string
+    dependencies:
+      module:
+        - node
+  type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
+    dependencies:
+      module:
+        - node
+  uid:
+    label: uid
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
+  url:
+    label: URI
+    property_path: search_api_url
+    type: string
+    configuration:
+      absolute: false
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - article
+        - brand
+        - dsu_component_page
+        - event
+        - expertise
+        - landing_page
+        - page
+        - partners
+        - press_release
+        - product
+    languages:
+      default: true
+      selected: {  }
+  'entity:paragraph':
+    bundles:
+      default: true
+      selected: {  }
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  content_access:
+    weights:
+      preprocess_query: -30
+  html_filter:
+    all_fields: true
+    fields:
+      - body
+      - body_1
+      - bp_unrestricted
+      - description
+      - field_heading
+      - field_nhs_brand_detail_copy
+      - field_nhs_brand_detail_intro
+      - field_nhs_heading_text
+      - field_nhsc_column_text_item
+      - field_nhsc_page_content_top
+      - field_nhsc_section_text
+      - field_nhsc_tools_resources_title
+      - field_section
+      - field_title
+      - name
+      - name_1
+      - rendered_item
+      - title
+      - title_1
+      - type
+      - url
+    title: true
+    alt: true
+    tags:
+      b: 2
+      h1: 5
+      h2: 3
+      h3: 2
+      strong: 2
+    weights:
+      preprocess_index: -15
+      preprocess_query: -15
+  language_with_fallback: {  }
+  rendered_item: {  }
+  solr_boost_more_recent:
+    boosts: {  }
+    weights:
+      preprocess_query: 0
+  solr_date_range:
+    weights:
+      preprocess_index: 0
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  track_changes_in_references: true
+  cron_limit: 50
+server: open_solr

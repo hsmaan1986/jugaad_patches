@@ -1,0 +1,15 @@
+accordion:
+  css:
+    theme:
+      css/style.css: {}
+  js:
+    js/advise-booking-scripts.js: {}
+  dependencies:
+      - core/jquery
+      - jquery_ui_accordion/accordion
+form:
+  css:
+    theme:
+      css/style.css: {}
+  js:
+    js/advise-booking-scripts.js: {}

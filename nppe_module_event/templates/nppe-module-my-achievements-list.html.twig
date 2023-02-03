@@ -1,0 +1,155 @@
+{{ attach_library('nppe_module_event/nppe_module_event') }}
+<div class="row">
+    {% for key, blockdetails in blockdata.category %}
+        {% if  blockdetails.certificate_key == 'helping' %}
+            {% set credit = 28 + 4 + 4 + 4 %}
+        {% else %}
+            {% set credit = 0 %}
+        {% endif %}
+
+        {% for key, event in data %}
+            {% if event['field_credit_type'] == blockdetails.code %}
+                {% if event['field_event_name'] == 'Manejo de medicações' or event['field_event_name'] == 'Organização de cuidados' or event['field_event_name'] == 'Infecção: prevenção e cuidados' %}
+                {% else %}
+                    {% if event['field_webinarview'] >= 0 %}
+                        {% set credit = credit + event['field_credit'] %}
+                    {% endif %}
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+
+        {% set final_certificate_name = "Avante" %}
+        {% if  blockdetails.certificate_key == 'helping' %}
+            {% set final_certificate_name = "Avante Helping Care" %}
+        {% elseif  blockdetails.certificate_key == 'avante' %}
+            {% set final_certificate_name = "Avante Hospitalar" %}
+        {% endif %}
+
+        <section
+                class="views-element-container block block-views block-views-blockupcoming-webinars-extension-course-block-1 clearfix col-md-6"
+                id="block-views-block-upcoming-webinars-extension-course-block-1"
+                data-block-plugin-id="views_block:upcoming_webinars_extension_course-block_1">
+            <div class="form-group">
+                <div class="upcomingWebaulas upcomingBlock extensionCourse view view-upcoming-webinars-extension-course view-id-upcoming_webinars_extension_course view-display-id-block_1 js-view-dom-id-03086914b66ecb13f3c507ba497ea51070bf7d715a7a81a4350856cb96584df6">
+                    <div class="view-header">
+                        <div class="squareBlock">
+                            <div class="box">
+                                <div class="field field--name-field-image field--type-image field--label-hidden field--item">
+                                    <img src="/sites/default/files/{{ blockdetails.image }}" alt="{{ blockdetails.alt | t }}"
+                                         class="img-responsive" height="102" width="78">
+                                </div>
+                                <div>
+                                    <h1>{{ credit }}</h1>
+                                    <h1>{{ 'CREDITS' | t }}</h1>
+                                </div>
+                                <div class="field field--name-field-title field--type-string field--label-hidden field--item">
+                                    {{ blockdetails.name | t }}
+                                </div>
+                                <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item">
+                                    <p>{{ blockdata.partner | t }} {{ blockdetails.code | t }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% if credit >= blockdetails.certificate_total %}
+                {% set last_event = data|last %}
+                <form action="/certificate/pdf/{{ blockdetails.certificate_key }}" method="POST" target="_blank" >
+                    <input type="hidden" name="class_end_date" value="{{ blockdetails.class_end_date }}">
+                    <input type="submit" value="{{ "Download do certificado final"|t }} {{ final_certificate_name }}" class="certificate__block">
+                </form>
+            {% else %}
+                    {% if "now"|date('Y-m-d') >= blockdetails.class_end_date|date('Y-m-d') %}
+                        <form action="#" method="POST">
+                            <input type="button" value="{{ "Aulas"|t }} {{ blockdetails.class_end_date|date('Y') }} {{ "finalizadas"|t }}" class="certificate__block certificate__block_text">
+                        </form>
+                    {% else %}
+                        <form action="#" method="POST" >
+                            <input type="button" value="{{ blockdetails.certificate_total  - credit }} {{ "points away from course certificate"|t }}" class="certificate__block certificate__block_text">
+                        </form>
+                    {% endif %}
+            {% endif %}
+
+
+            <ul>
+                {% if  blockdetails.certificate_key == 'helping' %}
+                    <li style="list-style: none; margin-bottom: 10px;">
+                     <span style="color: #465e82; font-family: 'Lato', sans-serif; font-size: 14px; line-height: 18px; text-align: left;">
+                        03/10/2018
+                     </span>
+                        <br/>
+                        <p class="event-list__name" style="display: inline-block;">
+                            Manejo de medicações <span class="event-overview__event-title--credits"> + 4 </span>
+                        <form action="/certificate/pdf/helping-certificate" method="POST" target="_blank" class="change-form-to-a-tag">
+                            <input type="hidden" name="id" value="253">
+                            <input type="submit" value=" Download de certificado" class="event-list__name change-form-to-a-tag">
+                        </form>
+                        </p> 
+                    </li>
+                    <li style="list-style: none; margin-bottom: 10px;">
+                     <span style="color: #465e82; font-family: 'Lato', sans-serif; font-size: 14px; line-height: 18px; text-align: left;">
+                        30/10/2018
+                     </span>
+                        <br/>
+                        <p class="event-list__name" style="display: inline-block;">
+                            Organização de cuidados <span class="event-overview__event-title--credits"> + 4 </span>
+                        <form action="/certificate/pdf/helping-certificate" method="POST" target="_blank" class="change-form-to-a-tag">
+                            <input type="hidden" name="id" value="255">
+                            <input type="submit" value=" Download de certificado" class="event-list__name change-form-to-a-tag">
+                        </form>
+                        </p>
+                    </li>
+                    <li style="list-style: none; margin-bottom: 10px;">
+                     <span style="color: #465e82; font-family: 'Lato', sans-serif; font-size: 14px; line-height: 18px; text-align: left;">
+                        13/11/2018
+                     </span>
+                        <br/>
+                        <p class="event-list__name" style="display: inline-block;">
+                            Infecção: prevenção e cuidados <span class="event-overview__event-title--credits"> + 4 </span>
+                        <form action="/certificate/pdf/helping-certificate" method="POST" target="_blank" class="change-form-to-a-tag">
+                            <input type="hidden" name="id" value="254">
+                            <input type="submit" value=" Download de certificado" class="event-list__name change-form-to-a-tag">
+                        </form>
+                        </p>
+                    </li>
+                {% endif %}
+
+                {% for key, event in data %}
+                    {% if event['field_credit_type'] == blockdetails.code %}
+
+                        {% if event['field_event_name'] == 'Manejo de medicações' or event['field_event_name'] == 'Organização de cuidados' or event['field_event_name'] == 'Infecção: prevenção e cuidados'%}
+                        {% else %}
+
+                            <li style="list-style: none; margin-bottom: 10px;">
+                            <span style="color: #465e82; font-family: 'Lato', sans-serif; font-size: 14px; line-height: 18px; text-align: left;">{{ event['field_event_credit_type'] }}
+                                {{ event['field_start_date'] | date("d/m/Y") }}
+                            </span>
+                                <br/>
+                                <p class="event-list__name" style="display: inline-block;">
+                                    {{ event['field_event_name'] }}
+                                    {% if event['field_webinarview'] >= 0 %}
+                                    <span class="event-overview__event-title--credits">
+                                          + {{ event['field_credit'] }}
+                                        </span>
+                                    {% if  blockdetails.certificate_key == 'helping' %}
+                                <form action="/certificate/pdf/helping-certificate" method="POST" target="_blank" class="change-form-to-a-tag">
+                                    <input type="hidden" name="id" value="{{ event['nid'] }}">
+                                    <input type="submit" value=" Download de certificado" class="event-list__name change-form-to-a-tag">
+                                </form>
+                                {% elseif  blockdetails.certificate_key == 'avante' %}
+                                    <form action="/certificate/pdf/avante-certificate" method="POST" target="_blank" class="change-form-to-a-tag">
+                                        <input type="hidden" name="id" value="{{ event['nid'] }}">
+                                        <input type="submit" value=" Download de certificado" class="event-list__name change-form-to-a-tag">
+                                    </form>
+                                {% endif %}
+                                {% endif %}
+                                </p>
+                            </li>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </section>
+    {% endfor %}

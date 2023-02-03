@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.menu_description
+    - field.storage.block_content.body
+  module:
+    - text
+_core:
+  default_config_hash: AKyIgA6iZNlqrTUIwoLcuKflXh2L09K-WU5z_3ldMBM
+id: block_content.menu_description.body
+field_name: body
+entity_type: block_content
+bundle: menu_description
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

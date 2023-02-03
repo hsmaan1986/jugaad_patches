@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: site_switcher_setting
+label: 'HCP Site Switcher Setting'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

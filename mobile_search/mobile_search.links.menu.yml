@@ -1,0 +1,6 @@
+mobile_search.settings:
+  title: 'Mobile Search Settings'
+  route_name: mobile_search.settings
+  description: 'Mobile Search Settings'
+  parent: system.admin_config_system
+  weight: 99

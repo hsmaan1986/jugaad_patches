@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * @file
+ * Contains nhsc_mega_menu.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_help().
+ */
+function nhsc_fix_missing_labels_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the nhsc_fix_missing_labels module.
+    case 'help.page.nhsc_fix_missing_labels':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('NHSc Fix Missing Labels - Website') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+function nhsc_fix_missing_labels_page_attachments(array &$attachments) {
+
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node instanceof NodeInterface) {
+
+    if ($node->getType() == "micro_site" || $node->getType() == "scrapper" ) {
+
+      $attachments['#attached']['library'][] = 'nhsc_fix_missing_labels/nhsc_fix_missing_labels';
+
+    }
+  }
+
+}

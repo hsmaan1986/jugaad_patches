@@ -1,0 +1,56 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.linkedin_feed.field_linkedin_company_id
+    - field.field.node.linkedin_feed.field_linkedin_company_name
+    - field.field.node.linkedin_feed.field_linkedin_description
+    - field.field.node.linkedin_feed.field_linkedin_eyebrowurl
+    - field.field.node.linkedin_feed.field_linkedin_local_image
+    - field.field.node.linkedin_feed.field_linkedin_company_logo
+    - field.field.node.linkedin_feed.field_linkedin_feed_content
+    - field.field.node.linkedin_feed.field_linkedin_feed_id
+    - field.field.node.linkedin_feed.field_linkedin_shortenedurl
+    - field.field.node.linkedin_feed.field_linkedin_submittedimageurl
+    - field.field.node.linkedin_feed.field_linkedin_submittedurl
+    - field.field.node.linkedin_feed.field_linkedin_thumbnailurl
+    - field.field.node.linkedin_feed.field_linkedin_feed_url
+    - field.field.node.linkedin_feed.field_linkedin_timestamp
+    - field.field.node.linkedin_feed.field_linkedin_title
+    - field.field.node.linkedin_feed.field_linkedin_followers
+    - field.field.node.linkedin_feed.field_linkedin_follow_button
+    - node.type.linkedin_feed
+  module:
+    - text
+    - user
+id: node.linkedin_feed.default
+targetEntityType: node
+bundle: linkedin_feed
+mode: default
+content:
+  field_linkedin_feed_content:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  field_linkedin_company_id: true
+  field_linkedin_company_name: true
+  field_linkedin_description: true
+  field_linkedin_eyebrowurl: true
+  field_linkedin_local_image: true
+  field_linkedin_feed_id: true
+  field_linkedin_shortenedurl: true
+  field_linkedin_submittedimageurl: true
+  field_linkedin_submittedurl: true
+  field_linkedin_thumbnailurl: true
+  field_linkedin_timestamp: true
+  field_linkedin_title: true
+  field_linkedin_followers: true
+  field_linkedin_company_logo: true
+  field_linkedin_feed_url: true
+  field_linkedin_follow_button: true
+  langcode: true
+  links: true

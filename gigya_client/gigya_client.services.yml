@@ -1,0 +1,9 @@
+services:
+  user_profile_redirect_subscriber:
+    class: Drupal\gigya_client\EventSubscriber\UserProfileRedirectSubscriber
+    tags:
+    - { name: event_subscriber }
+  disable_drupal_profile_subscriber:
+    class: Drupal\gigya_client\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }

@@ -1,0 +1,186 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.elearning.field_background_color
+    - field.field.node.elearning.field_credit
+    - field.field.node.elearning.field_description
+    - field.field.node.elearning.field_documents
+    - field.field.node.elearning.field_dsu_published_date
+    - field.field.node.elearning.field_dsu_tags
+    - field.field.node.elearning.field_iframe
+    - field.field.node.elearning.field_iframe_height
+    - field.field.node.elearning.field_image
+    - field.field.node.elearning.field_make_poll_sticky
+    - field.field.node.elearning.field_medic
+    - field.field.node.elearning.field_meta_tags
+    - field.field.node.elearning.field_poll
+    - field.field.node.elearning.field_presenter_list
+    - field.field.node.elearning.field_rating
+    - field.field.node.elearning.field_vote
+    - node.type.elearning
+  module:
+    - datetime
+    - entity_reference_revisions
+    - file
+    - fivestar
+    - image
+    - metatag
+    - panelizer
+    - text
+    - user
+    - votingapi_widgets
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.elearning.default
+targetEntityType: node
+bundle: elearning
+mode: default
+content:
+  content_moderation_control:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_background_color:
+    weight: 6
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_credit:
+    weight: 7
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_description:
+    weight: 8
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_documents:
+    weight: 2
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_dsu_published_date:
+    weight: 10
+    label: hidden
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_dsu_tags:
+    weight: 11
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_iframe:
+    weight: 12
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_iframe_height:
+    weight: 13
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_image:
+    weight: 3
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_medic:
+    weight: 5
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_meta_tags:
+    weight: 14
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
+  field_poll:
+    weight: 16
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_presenter_list:
+    weight: 9
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_rating:
+    weight: 4
+    label: hidden
+    settings:
+      fivestar_widget: modules/contrib/fivestar/widgets/basic/basic.css
+      text_format: average
+      display_format: average
+    third_party_settings: {  }
+    type: fivestar_stars
+    region: content
+  field_vote:
+    weight: 15
+    label: hidden
+    settings:
+      style: fontawesome-stars
+      readonly: 0
+      show_results: 0
+      values: {  }
+      show_own_vote: false
+    third_party_settings: {  }
+    type: voting_api_formatter
+    region: content
+  links:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_make_poll_sticky: true
+  langcode: true
+  search_api_excerpt: true

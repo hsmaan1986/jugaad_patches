@@ -1,0 +1,30 @@
+
+ln_c_ip_locator.index:
+  title: 'Geolocation Redirection'
+  parent: dsu_c_core.settings
+  description: 'Allows the configuration of geolocation redirection.'
+  route_name: geolocation.settings
+
+popupconfig.settings:
+  title: 'Popup block'
+  parent: ln_c_ip_locator.index
+  description: 'Allows the configuration of geolocation redirection.'
+  route_name: popupconfig.settings
+
+ln_c_ip_locator.overview:
+  title: 'Overview'
+  parent: ln_c_ip_locator.index
+  description: 'Provides an overview of country based relocation settings.'
+  route_name: ln_c_ip_locator.overview
+
+cdnserviceconfig.settings:
+  title: 'CDN Service'
+  parent: ln_c_ip_locator.index
+  description: 'CDN service settings.'
+  route_name: cdnserviceconfig.settings
+
+gioipserviceconfig.settings:
+  title: 'Third Party Geo IP Location Services'
+  parent: ln_c_ip_locator.index
+  description: 'Third Party Geo IP Location service settings.'
+  route_name: gioipserviceconfig.settings

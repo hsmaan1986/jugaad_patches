@@ -1,0 +1,5 @@
+name: 'HCP Account Notification'
+type: module
+description: 'Email notification for graduate to update their account from student to HCP.'
+core_version_requirement: ^8 || ^9
+package: 'hcp'

@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.pc_protein_calculator_food.field_pc_food_desc
+    - field.field.paragraph.pc_protein_calculator_food.field_pc_food_gram_suffix
+    - field.field.paragraph.pc_protein_calculator_food.field_pc_food_grams
+    - field.field.paragraph.pc_protein_calculator_food.field_pc_food_image
+    - field.field.paragraph.pc_protein_calculator_food.field_pc_food_label
+    - field.field.paragraph.pc_protein_calculator_food.field_pc_food_title
+    - paragraphs.paragraphs_type.pc_protein_calculator_food
+id: paragraph.pc_protein_calculator_food.default
+targetEntityType: paragraph
+bundle: pc_protein_calculator_food
+mode: default
+content: {  }
+hidden:
+  addtoany: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_pc_food_desc: true
+  field_pc_food_gram_suffix: true
+  field_pc_food_grams: true
+  field_pc_food_image: true
+  field_pc_food_label: true
+  field_pc_food_title: true
+  search_api_excerpt: true

@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: nhsc_heading_and_dropdown
+label: 'NHSC Heading and Dropdown'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

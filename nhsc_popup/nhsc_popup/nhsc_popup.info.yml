@@ -1,0 +1,8 @@
+name: NHSC Popup
+type: module
+description: Module for a Block to Popup a form.
+core_version_requirement: ^8 || ^9
+package: Custom
+dependencies:
+  - block
+  - gigya

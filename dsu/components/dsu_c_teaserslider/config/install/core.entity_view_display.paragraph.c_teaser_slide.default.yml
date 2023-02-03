@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.c_teaser_slide.field_c_teaserslider_image
+    - field.field.paragraph.c_teaser_slide.field_image_caption
+    - image.style.teaser_card_220x220_
+    - paragraphs.paragraphs_type.c_teaser_slide
+  module:
+    - media
+id: paragraph.c_teaser_slide.default
+targetEntityType: paragraph
+bundle: c_teaser_slide
+mode: default
+content:
+  field_c_teaserslider_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: teaser_card_220x220_
+      image_link: ''
+    third_party_settings: {  }
+    type: media_thumbnail
+    region: content
+  field_image_caption:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

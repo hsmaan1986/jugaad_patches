@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * @file
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function nhsc_flavor_selector_help($route_name, RouteMatchInterface $route_match)
+{
+    switch ($route_name) {
+        // Main module help for the nppe_module_winning_api module.
+        case 'help.page.nhsc_flavor_selector':
+            $output = '';
+            $output .= '<h3>' . t('About') . '</h3>';
+            $output .= '<p>' . t('Nestle Health Science Flavor Selector.') . '</p>';
+            return $output;
+
+        default:
+    }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function nhsc_flavor_selector_theme()
+{
+    return [
+        'nhsc_flavor_selector' => [
+            'variables' => [
+                'form' => NULL,
+            ],
+            'template' => 'nhsc-flavor-selector',
+        ],
+    ];
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function nhsc_flavor_selector_page_attachments(array &$page) {
+    $page['#attached']['library'][] = 'nhsc_flavor_selector/flavor-selector-js';
+}

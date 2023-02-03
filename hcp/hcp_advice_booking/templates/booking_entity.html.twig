@@ -1,0 +1,22 @@
+{#
+/**
+ * @file booking_entity.html.twig
+ * Default theme implementation to present Advice Booking data.
+ *
+ * This template is used when viewing Advice Booking pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_booking_entity()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('booking_entity') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

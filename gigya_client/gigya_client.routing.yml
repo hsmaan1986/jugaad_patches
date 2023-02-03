@@ -1,0 +1,21 @@
+gigya_client.settings:
+  path: '/admin/config/services/gigya-client'
+  defaults:
+    _form: '\Drupal\gigya_client\Form\GigyaSettingsForm'
+    _title:  'Gigya client'
+  requirements:
+    _permission: 'administer site configuration'
+
+gigya_client.send_email:
+  path: '/gigya/api/send_email/{locale}'
+  defaults:
+      _controller: Drupal\gigya_client\Controller\EmailController::sendEmail
+  requirements:
+   _permission: 'access content'
+gigya_client.encryption_settings:
+  path: '/admin/config/services/gigya-client/key'
+  defaults:
+    _form: '\Drupal\gigya_client\Form\EncryptionSettingForm'
+    _title:  'Gigya encryption key config'
+  requirements:
+    _permission: 'administer site configuration'

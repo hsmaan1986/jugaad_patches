@@ -1,0 +1,12 @@
+name: field_flavour_selector
+type: module
+core_version_requirement: ^8 || ^9
+dependencies:
+  - block
+  - block_field
+  - field
+  - field_permissions
+  - paragraphs
+  - rng
+  - system
+  - views

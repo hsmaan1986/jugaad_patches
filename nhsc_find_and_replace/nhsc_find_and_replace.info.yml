@@ -1,0 +1,6 @@
+name: 'NHSc Find and Replace'
+type: module
+description: 'NHSc Find all images and add class to the image tag'
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: 'Custom'

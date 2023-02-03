@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ * Update scripts for the Schema Item List module.
+ */
+
+use Drupal\metatag\Entity\MetatagDefaults;
+
+/**
+ * Implementions of hook_update_N().
+ */
+
+/**
+ * Update item list id.
+ *
+ * The "schema_faq_page" and "schema_faq_page_element" meta tags are renamed
+ * to the correct "schema_faq_page_item_list_element".
+ */
+function schema_faq_page_update_8101() {
+  /* @var $configs Drupal\metatag\Entity\MetatagDefaults */
+  $configs = MetatagDefaults::loadMultiple();
+
+  foreach ($configs as $config) {
+    $tags = $config->get('tags');
+
+    if (array_key_exists("schema_faq_page_element", $tags)) {
+      $tags['schema_faq_page_item_list_element'] = $tags['schema_faq_page_element'];
+      unset($tags['schema_faq_page_element']);
+      $config->set("tags", $tags);
+      $config->save();
+    }
+    if (array_key_exists("schema_faq_page", $tags)) {
+      $tags['schema_faq_page_item_list_element'] = $tags['schema_faq_page'];
+      unset($tags['schema_faq_page']);
+      $config->set("tags", $tags);
+      $config->save();
+    }
+  }
+}

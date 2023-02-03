@@ -1,0 +1,19 @@
+add point entities:
+  title: 'Create new Point entities'
+
+administer point entities:
+  title: 'Administer Point entities'
+  description: 'Allow to access the administration form to configure Point entities.'
+  restrict access: true
+
+delete point entities:
+  title: 'Delete Point entities'
+
+edit point entities:
+  title: 'Edit Point entities'
+
+view published point entities:
+  title: 'View published Point entities'
+
+view unpublished point entities:
+  title: 'View unpublished Point entities'

@@ -1,0 +1,171 @@
+{% if intro_copy %}
+    <div class="doNotPrint">
+        {{ intro_copy | raw}}
+    </div>
+{% endif %}
+
+{% if form %}
+    {{ form }}
+{% endif %}
+
+<div class="comiss-has-error">
+
+</div>
+
+<div class="print-result" style="font-size: 12px; margin: 0; padding: 0 20px;">
+    <h2 style="font-size: 20px; margin: 0 0 20px 0; padding: 0; color: #f59c38 !important;">{{ survey_title }}</h2>
+
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 0 0 20px 0; padding: 0;">
+        <tbody>
+        <tr>
+            <td style="width: 49%;">{{ 'Last name'|t }}</td>
+            <td style="width: 2%;"></td>
+            <td style="width: 49%;">{{ 'First name'|t }}</td>
+
+        </tr>
+        <tr>
+            <td style="border: 1px solid #ccc; height: 30px;"></td>
+            <td></td>
+            <td style="border: 1px solid #ccc; height: 30px;"></td>
+
+        </tr>
+        <tr>
+            <td>{{ 'Age'|t }}</td>
+            <td></td>
+            <td>{{ 'Date'|t }}</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #ccc; height: 30px;"></td>
+            <td></td>
+            <td style="border: 1px solid #ccc; height: 30px;"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h3 style="font-size: 16px; margin: 0 0 20px 0; padding: 0; font-weight: normal; color: #f59c38 !important;">{{ purpose_title }}</h3>
+    {% if purpose_copy %}
+        <p>{{ purpose_copy|raw }}</p>
+    {% endif %}
+
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 0 0 20px 0; padding: 0;">
+        <thead>
+        <tr>
+            <th colspan="2" style="font-size: 16px;">{{ 'Symptom'|t }}</th>
+            <th style="text-align: center; font-size: 16px;">{{ 'Score'|t }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for response in responses %}
+            <tr>
+                <td style="padding: 5px 0; border-top: 1px solid #cccccc; vertical-align: top; color: #f59c38 !important; font-weight: bold;git s">{{ response.question }}</td>
+                <td style="padding: 5px 0 5px 5px; border-top: 1px solid #cccccc; vertical-align: top;">
+                    <div class="answer-text-{{ loop.index }}">Text Answer</div>
+                </td>
+                <td style="padding: 5px 0; border-top: 1px solid #cccccc; vertical-align: top; text-align: center;">
+                    <div class="answer-score-{{ loop.index }}">0</div>
+                </td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td colspan="2" align="right" style="border-top: 2px solid #cccccc; padding-top: 5px; color: #f59c38 !important; font-size: 16px;">
+                {{ 'Final result'|t }}
+            </td>
+            <td align="center" style="border-top: 2px solid #cccccc; padding-top: 5px;">
+                <strong style="color: #f59c38 !important; font-size: 16px;"><span class="final-results">0</span></strong>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h3 style="font-size: 16px; margin: 0 0 20px 0; padding: 0; font-weight: normal; color: #f59c38 !important;">{{ reading_results_title }}</h3>
+    {% if reading_results_copy %}
+        <div style="margin-bottom: 20px">
+            {{ reading_results_copy|raw }}
+        </div>
+    {% endif %}
+
+    {{ form_print_footer | raw }}
+
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 20px 0 0 0; padding: 0;">
+        <tr>
+            <td style="width: 30%;" align="left">
+                <img alt="company-logo" src="{{ footer_logo|raw }}" />
+            </td>
+            <td style="width: 70%;" align="right">
+                {{ copy_right_text }}
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+<div
+        class="modal fade doNotPrint"
+        id="comiss-results-modal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myModalLabel"
+        aria-hidden="true"
+>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <a type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></a>
+
+            <div class="modal-body comiss-score-modal-body">
+
+
+
+                <div class="score-panel row">
+                    <div class="col-md-12">
+                        <div class="title">{{ 'Final Score'|t }}</div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="score">
+                            <span class="score-result"></span>
+                            <span class="score-total"></span>
+                        </div>
+                    </div>
+
+                    <div class="score-copy col-md-8">
+                        <div class="row">
+                            <div class="score-copy-content col-md-12">
+
+                            </div>
+                            <div class="score-pdf-download col-md-12">
+                                <a class="button comiss_print" id="print-comiss-resuts" href="#">{{ 'Print'|t }}</a>
+                            </div>
+                            <div class="score-cta-buttons col-md-12">
+                                <div class="row">
+                                    <div class="score-cta-buttons-first col-md-6">
+                                    </div>
+                                    <div class="score-cta-buttons-second col-md-6">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style type="text/css" media="print">
+    .doNotPrint,
+    .page-header,
+    .feature-section,
+    .alert,
+    .region-banner,
+    #block-views-block-view-people-block-1,
+    .off-canvas-wrapper,
+    header,
+    footer,
+    form
+    { display: none !important; }
+    .mainContent .container {
+        margin-top: 0 !important;
+    }
+</style>

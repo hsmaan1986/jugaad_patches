@@ -1,0 +1,56 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.image_browser
+    - field.field.paragraph.a11y_paragraphs_tabs_panel.field_a11y_para_tabs_tab_content
+    - field.field.paragraph.a11y_paragraphs_tabs_panel.field_a11y_para_tabs_tab_title
+    - field.field.paragraph.a11y_paragraphs_tabs_panel.field_tab_image
+    - paragraphs.paragraphs_type.a11y_paragraphs_tabs_panel
+  module:
+    - entity_browser
+    - paragraphs
+    - text
+id: paragraph.a11y_paragraphs_tabs_panel.default
+targetEntityType: paragraph
+bundle: a11y_paragraphs_tabs_panel
+mode: default
+content:
+  field_a11y_para_tabs_tab_content:
+    weight: 2
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
+    region: content
+  field_a11y_para_tabs_tab_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_tab_image:
+    type: entity_browser_file
+    weight: 1
+    settings:
+      entity_browser: image_browser
+      field_widget_edit: true
+      field_widget_remove: true
+      view_mode: default
+      preview_image_style: thumbnail
+      open: true
+      field_widget_replace: false
+      selection_mode: selection_append
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

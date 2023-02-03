@@ -1,0 +1,94 @@
+<div class="calculator calculator--patientData">
+	<h2 class="calculator__title">{{"Patient Data"|t}}</h2>
+	<form method="post" id="patient_data" action="{{data.action}}">
+		<div class="calculator__form-group calculator__short-item">
+			<label for="patient-age">{{"Age"|t}}</label>
+			<select name="patient_age" id="patient-age">
+				{% for i in range(18,99) %}
+					<option value="{{i}}" {{data.patient_age == i ? "selected"}}>{{ i }}</option>
+				{% endfor %}
+			</select>
+			<span class="custom-placeholder">{{"years"|t}}</span>
+		</div>
+		<input type="radio" name="calcType" value="bmi" id="usebmi" {{data.calcType == 'bmi' ? 'checked'}}/>
+		<div id="bmi">
+			<div class="calculator__form-group calculator__short-item">
+				<label for="patient-height">{{"Height"|t}}</label>
+				<input type="text" placeholder="160" name="patient_height" value="{{data.patient_height}}" id="patient-height"/>
+				<span class="custom-placeholder">{{"cm"|t}}</span>
+			</div>
+			<div class="calculator__form-group  calculator__short-item">
+				<label for="patient-weight">{{"Current Weight"|t}}</label>
+				<input type="text" placeholder="66" name="patient_weight" id="patient-weight" value="{{data.patient_weight}}"/>
+				<span class="custom-placeholder">{{"kg"|t}}</span>
+			</div>
+			<div class="bmi-result">
+				<div class="text">
+					<span class="text--label">{{"BMI RESULT"|t}}</span>
+					<span class="text--result"></span>
+				</div>
+			</div>
+			<label class="toogle-type toogle-type--cc" for="usecc" style="display:none;">
+				<span>{{"Cannot measure Height and Weight? Use calf circumference."|t}}</span>
+			</label>
+		</div>
+		<input type="radio" id="usecc" value="cc" name="calcType" {{data.calcType != 'bmi' ? 'checked'}}/>
+		<div id="calf-circumference">
+			<div class="calculator__form-group calculator__form-group--calf-circumference">
+				<label>{{"Calf Circumference (CC)"|t}}</label>
+				<div class="calculator__form-group calculator__form-group--radio">
+					<div class="item">
+						<input type="radio" name="patient_cc" id="patient_cc_greater_31" value="greater31" {{data.patient_cc == 'greater31' ? 'checked' }}>
+						<label for="patient_cc_greater_31">
+							{{"CC 31 or greater"|t}}
+						</label>
+					</div>
+					<div class="item">
+						<input type="radio" name="patient_cc" id="patient_cc_less_31" value="less31" {{data.patient_cc == 'less31' ? 'checked' }}>
+						<label for="patient_cc_less_31">
+							{{"CC less than 31"|t}}
+						</label>
+					</div>
+				</div>
+			</div>
+			<label class="toogle-type toogle-type--bmi" for="usebmi">
+				<span>{{"Use BMI"|t}}</span>
+			</label>
+			<div class="calculator__form-group  calculator__short-item">
+				<label for="patient-weight">{{"Weight"|t}}</label>
+				<input type="text" placeholder="66" name="patient_weight_cc" id="patient-weight-cc" value="{{data.patient_weight}}"/>
+				<span class="custom-placeholder">{{"kg"|t}}</span>
+			</div>
+		</div>
+		{% if data.calc_version == 'V1' or data.calc_version == 'V3' %}
+			<div class="calculator__form-group">
+				<label for="patient-weight-past">{{"Weight 3-6 months ago"|t}}</label>
+				<input type="text" name="patient_weight_past" placeholder="{{"Same weight"|t}}" id="patient-weight-past" value="{{data.patient_weight_past}}"/><br/>
+			</div>
+		{% endif %}
+		{% if data.calc_version == 'V2' %}
+			<div class="calculator__form-group">
+				<label for="patient-weight-past">{{"Weight 1 month ago"|t}}</label>
+				<input type="text" name="patient_weight_past_1" placeholder="{{"Same weight"|t}}" id="patient-weight-past" value="{{data.patient_weight_past}}"/><br/>
+			</div>
+			<div class="calculator__form-group weight-form">
+				<label for="patient-weight-past">{{"Weight 3 months ago"|t}}</label>
+				<input type="text" name="patient_weight_past_3" placeholder="{{"Same weight"|t}}" id="patient-weight-past" value="{{data.patient_weight_past}}"/><br/>
+			</div>
+			<div class="calculator__form-group">
+				<label for="patient-weight-past">{{"Weight 6 months ago"|t}}</label>
+				<input type="text" name="patient_weight_past_6" placeholder="{{"Same weight"|t}}" id="patient-weight-past" value="{{data.patient_weight_past}}"/><br/>
+			</div>
+		{% endif %}
+		<div class="calculator__form-group" id="illnessCombo">
+			<label for="illness">{{"Illness"|t}}</label>
+			<select name="illness" id="illness">
+				<option value="0">{{"No illness"|t}}</option>
+
+				{% for pathology in data.pathologies %}
+					<option value="{{pathology.tid}}">{{pathology.name}}</option>
+				{% endfor %}
+			</select>
+		</div>
+	</form>
+</div>

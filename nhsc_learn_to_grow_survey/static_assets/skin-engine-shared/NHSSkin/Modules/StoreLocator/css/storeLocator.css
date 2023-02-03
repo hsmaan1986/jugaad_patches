@@ -1,0 +1,135 @@
+﻿
+.StoreLocator{text-align:center;color:#757982;}
+.StoreLocator .title{font-size:1.563em;margin-bottom:50px}
+.StoreLocator .filters{width:50%;margin: 0 auto;}
+.StoreLocator .filters .filter{margin-bottom:30px;text-align:left}
+.StoreLocator .filters .select_filter{display: block;visibility:hidden;font-weight:bold;color:red;}
+.StoreLocator #nbDigitError{display: block;visibility:hidden;font-weight:bold;color:red;}
+.StoreLocator .filters label{display:block;margin-bottom:10px;font-weight:bold}
+.StoreLocator input{width:100%;color:#757982;border: 1px solid #e6e6e6;-moz-border-radius: 4px;-webkit-border-radius: 4px;border-radius: 4px;padding:10px;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+.StoreLocator select{width: 100%;color:#757982;border: 1px solid #e6e6e6;-moz-border-radius: 4px;-webkit-border-radius: 4px;border-radius: 4px;padding: 10px;font-family:'LatoWeb';font-size:16px;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+.StoreLocator a.button{display:inline-block;}
+.StoreLocator #storeLocatorSearch{margin:10px 0 50px 0;}
+.StoreLocator #storeLocatorClear{margin:10px 0 50px 0;margin-top: 40px; padding: 10px 25px; font-weight: bold; font-size: 0.813em;text-transform: uppercase;text-decoration: underline;}
+.StoreLocator .results{display:none}
+.StoreLocator .results .header{margin-bottom:40px}
+.StoreLocator .results .header .result_label{font-size:1.563em;font-weight:bold;color:#00a2ca;float:left}
+.StoreLocator .results .header .button{float:right}
+.StoreLocator .results .header #storeLocatorShowMap{margin-right:20px}
+.StoreLocator .results.map .header #storeLocatorShowMap{opacity:0.5}
+.StoreLocator .results.list .header #storeLocatorShowList{opacity:0.5}
+
+.StoreLocator .resultList{display: none;clear: both;}
+.StoreLocator .resultListView #pagingControlsUp{display:none}
+ .StoreLocator .resultListView #pagingControlsDown{display:none}
+.StoreLocator .resultListView #mobilePagingControls{display:none}
+.StoreLocator .list .resultList{display:block}
+.StoreLocator .results.list .pagination{display:block}
+.StoreLocator .map .GMap{display:block}
+.StoreLocator .resultList .result{background-color:#e6edf2;width:48.5%;margin-bottom:25px;text-align: left; min-height:210px}
+.StoreLocator .resultList .result .inner-result{padding:20px}
+.StoreLocator .resultList .result span{display:block}
+.StoreLocator .resultList .result .title{font-size:1em;margin-bottom:20px;color:#00a2ca;font-weight:bold}
+.StoreLocator .resultList .result:nth-child(odd){float:left}
+.StoreLocator .resultList .result:nth-child(even){float:right}
+.StoreLocator .pagingControlsUp #pagingControlsUp{ display: block;float: right;}
+.StoreLocator .pagingControlsDown #pagingControlsDown {display: block;float: right;vertical-align: bottom;}
+.StoreLocator .mobilePagingControls #mobilePagingControls{ display: block;}
+
+.StoreLocator .GMap {
+    display:none;
+        position: relative;
+        padding-bottom: 60%;
+        overflow: hidden;
+    }
+.StoreLocator .GMap iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+.StoreLocator .marker_content{text-align:left;font-size:16px;font-family:'LatoWeb',sans-serif;color:#757982;padding: 10px;}
+.StoreLocator .marker_content span, .StoreLocator .marker_content a{display:block;margin-bottom:2px}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .StoreLocator .filters {
+        width: 100%;
+    }
+    .StoreLocator .resultList .result{width:100%;}
+    .StoreLocator .resultList .result:nth-child(odd){float:none}
+    .StoreLocator .resultList .result:nth-child(even){float:none}
+
+    .StoreLocator .GMap {
+        padding-bottom: 100%;
+    }
+}
+
+
+.paginate {
+  display: block;
+  width: 100%;
+  }
+
+
+  .paginate.pag2 li a {
+  display: block;
+  float: left;
+  color: #585858;
+  text-decoration: none;
+  padding: 6px 11px;
+  margin-right: 6px;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  background-color: #eee;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#eee));
+  background-image: -webkit-linear-gradient(top, #f7f7f7, #eee);
+  background-image: -moz-linear-gradient(top, #f7f7f7, #eee);
+  background-image: -ms-linear-gradient(top, #f7f7f7, #eee);
+  background-image: -o-linear-gradient(top, #f7f7f7, #eee);
+  background-image: linear-gradient(top, #f7f7f7, #eee);
+  -webkit-box-shadow: 2px 2px 4px -1px rgba(0,0,0, .55);
+  -moz-box-shadow: 2px 2px 4px -1px rgba(0,0,0, .55);
+  box-shadow: 2px 2px 4px -1px rgba(0,0,0, .55);
+  width:30px
+  }
+  .paginate.pag2 li a:hover {
+  color: #3280dc;
+  }
+  .paginate.pag2 li a:active {
+  //position: relative;
+  //top: 1px;
+  -webkit-box-shadow: 1px 1px 3px -1px rgba(0,0,0, .55);
+  -moz-box-shadow: 1px 1px 3px -1px rgba(0,0,0, .55);
+  box-shadow: 1px 1px 3px -1px rgba(0,0,0, .55);
+  width:30px
+  }
+
+  /** paginationfix **/
+  .paginationfix:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
+  .paginationfix { display: inline-block; }
+
+  ul { list-style: none; }
+
+  .currentPage{
+  display: block;
+  float: left;
+  color: #585858;
+  text-decoration: none;
+  padding: 6px 11px;
+  margin-right: 6px;
+  border-radius: 3px;
+  width:30px;
+  background-color: white !important;
+  background-image: none !important;
+  border: 1px solid #ddd;
+  }
+
+   .pagerPoint{
+    float: left;
+  }
+
+   #navButtons {
+       float: right;
+   }

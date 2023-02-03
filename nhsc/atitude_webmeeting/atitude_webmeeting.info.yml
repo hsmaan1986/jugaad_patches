@@ -1,0 +1,5 @@
+name: 'atitude_webmeeting'
+type: module
+description: 'Atitude Webmeetting API Service Drupal Integration.'
+core_version_requirement: ^8 || ^9
+package: 'Custom'

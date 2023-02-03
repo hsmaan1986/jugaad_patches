@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_accept_terms
+  module:
+    - user
+id: user.user.field_accept_terms
+field_name: field_accept_terms
+entity_type: user
+bundle: user
+label: 'Agreement to Nestlé Policies and Terms'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

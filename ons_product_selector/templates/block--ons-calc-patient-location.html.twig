@@ -1,0 +1,16 @@
+<div class="calculator calculator--patientLocation" id="patient-location">
+	<h2 class="calculator__title">{{"Patient Location"|t}}</h2>
+	<form method="post" id="patient_location" action="{{data.action}}">
+		<div class="calculator__form-group calculator__form-group--radio">
+		  <p>{{"Location"|t}}</p>
+			<div class="item">
+				<input type="radio" name="patient_location" value="home" id="patient-home" {{data.patient_location == 'home' ? 'checked'}} required />
+				<label for="patient-home">{{"Patient Location Home"|t}}</label>
+			</div>
+			<div class="item">
+				<input type="radio" name="patient_location" value="hospital" id="patient-hospital" {{data.patient_location == 'hospital' ? 'checked'}} required />
+				<label for="patient-hospital">{{"Hospital"|t}}</label>
+			</div>
+		</div>
+	</form>
+</div>

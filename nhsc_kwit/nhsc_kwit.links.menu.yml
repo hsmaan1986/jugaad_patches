@@ -1,0 +1,5 @@
+nhsc_kwit.config:
+  route_name: nhsc_kwit.config
+  title: Kwit Module Configurations
+  description: 'Configure your kwit settings'
+  parent: system.admin_config_system

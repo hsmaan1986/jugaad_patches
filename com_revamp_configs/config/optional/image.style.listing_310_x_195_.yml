@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: listing_310_x_195_
+label: 'Listing (310 x 195)'
+effects:
+  58c1004c-bed5-4082-bf03-44510814dbb0:
+    uuid: 58c1004c-bed5-4082-bf03-44510814dbb0
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 310
+      height: 195
+      anchor: right-center

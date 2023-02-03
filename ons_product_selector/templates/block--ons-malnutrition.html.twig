@@ -1,0 +1,7 @@
+<form method="POST" action="{{ data.currentUrl }}" id="malnutrition">
+{% for field, value in data %}
+  {% for key, val in value %}
+    <input type="hidden" name="{{key}}" value="{{val}}" />
+  {% endfor %}
+{% endfor %}
+</form>

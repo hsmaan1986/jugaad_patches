@@ -1,0 +1,599 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page.body
+    - field.field.node.page.field_brand_business_area
+    - field.field.node.page.field_brand_business_category
+    - field.field.node.page.field_brand_segment
+    - field.field.node.page.field_category
+    - field.field.node.page.field_data
+    - field.field.node.page.field_field_nhsc_content_padding
+    - field.field.node.page.field_file
+    - field.field.node.page.field_make_poll_sticky
+    - field.field.node.page.field_media
+    - field.field.node.page.field_meta_tags
+    - field.field.node.page.field_nhsc_background_image
+    - field.field.node.page.field_nhsc_content_image
+    - field.field.node.page.field_nhsc_context_and_video
+    - field.field.node.page.field_nhsc_faq_section
+    - field.field.node.page.field_nhsc_footnote
+    - field.field.node.page.field_nhsc_master_about_banner
+    - field.field.node.page.field_nhsc_master_banner
+    - field.field.node.page.field_nhsc_master_bio_caption
+    - field.field.node.page.field_nhsc_master_block
+    - field.field.node.page.field_nhsc_master_button
+    - field.field.node.page.field_nhsc_master_content_column
+    - field.field.node.page.field_nhsc_master_copy_and_butto
+    - field.field.node.page.field_nhsc_master_expandable
+    - field.field.node.page.field_nhsc_master_health_landing
+    - field.field.node.page.field_nhsc_master_image_and_text
+    - field.field.node.page.field_nhsc_master_info_icons
+    - field.field.node.page.field_nhsc_master_logo
+    - field.field.node.page.field_nhsc_master_paragraph_icon
+    - field.field.node.page.field_nhsc_master_people_compone
+    - field.field.node.page.field_nhsc_master_subcategory
+    - field.field.node.page.field_nhsc_master_text_and_image
+    - field.field.node.page.field_nhsc_master_top_slider
+    - field.field.node.page.field_nhsc_page_background_color
+    - field.field.node.page.field_nhsc_page_border
+    - field.field.node.page.field_nhsc_page_content
+    - field.field.node.page.field_nhsc_page_content_bottom
+    - field.field.node.page.field_nhsc_page_content_top
+    - field.field.node.page.field_nhsc_section
+    - field.field.node.page.field_nhsc_text_slider
+    - field.field.node.page.field_optimised_image
+    - field.field.node.page.field_page_components
+    - field.field.node.page.field_phone_number
+    - field.field.node.page.field_poll
+    - field.field.node.page.field_protein_facts
+    - field.field.node.page.field_section
+    - field.field.node.page.field_site_switcher_settings
+    - field.field.node.page.field_subtitle
+    - field.field.node.page.field_template
+    - field.field.node.page.field_test
+    - field.field.node.page.field_un_optimised_image
+    - field.field.node.page.layout_selection
+    - node.type.page
+  module:
+    - entity_reference_revisions
+    - layout_builder
+    - layout_builder_restrictions
+    - layout_discovery
+    - layout_library
+    - metatag
+    - panelizer
+    - svg_image
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          fb1e626a-09d8-487c-8007-1b10e1b440e7:
+            uuid: fb1e626a-09d8-487c-8007-1b10e1b440e7
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:page:content_moderation_control'
+            additional: {  }
+            weight: 0
+          39199c31-be35-4564-92a2-f2b7787c39ff:
+            uuid: 39199c31-be35-4564-92a2-f2b7787c39ff
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:page:field_subtitle'
+              formatter:
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+                type: text_default
+            additional: {  }
+            weight: 1
+          b2ec38c0-893a-451e-b45f-edcc5fed34cc:
+            uuid: b2ec38c0-893a-451e-b45f-edcc5fed34cc
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:page:field_nhsc_master_bio_caption'
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: hidden
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+            additional: {  }
+            weight: 2
+          70b296b8-5160-4930-9ea1-be10b5363af2:
+            uuid: 70b296b8-5160-4930-9ea1-be10b5363af2
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:page:field_nhsc_master_about_banner'
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: hidden
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+            additional: {  }
+            weight: 3
+          51d0489c-9824-4038-8b96-7507395bcc32:
+            uuid: 51d0489c-9824-4038-8b96-7507395bcc32
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:page:body'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+            additional: {  }
+            weight: 4
+          dde0970d-9c7b-414b-8a47-d0bbca282dea:
+            uuid: dde0970d-9c7b-414b-8a47-d0bbca282dea
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:page:field_nhsc_master_logo'
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: hidden
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+            additional: {  }
+            weight: 5
+          3f5b46f3-7c03-4bbc-96f9-c6179233dc9d:
+            uuid: 3f5b46f3-7c03-4bbc-96f9-c6179233dc9d
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:page:links'
+            additional: {  }
+            weight: 6
+          3148d213-3a68-4c79-858b-040a23d1dbdd:
+            uuid: 3148d213-3a68-4c79-858b-040a23d1dbdd
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:page:field_meta_tags'
+              formatter:
+                type: metatag_empty_formatter
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            additional: {  }
+            weight: 7
+          54626068-5f4d-4e7f-bf76-2d5a15de3d54:
+            uuid: 54626068-5f4d-4e7f-bf76-2d5a15de3d54
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:page:field_nhsc_context_and_video'
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: hidden
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+            additional: {  }
+            weight: 8
+          07982095-d40c-45e2-a6e9-24e25d126402:
+            uuid: 07982095-d40c-45e2-a6e9-24e25d126402
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:page:field_nhsc_master_health_landing'
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: hidden
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+            additional: {  }
+            weight: 9
+          8bfaea1f-6817-4e10-b6b0-c0ca4117e075:
+            uuid: 8bfaea1f-6817-4e10-b6b0-c0ca4117e075
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:page:field_nhsc_master_subcategory'
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: hidden
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+            additional: {  }
+            weight: 10
+          99edf14d-fd18-4388-a6f1-c35c1ed3a688:
+            uuid: 99edf14d-fd18-4388-a6f1-c35c1ed3a688
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:page:field_page_components'
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: hidden
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+            additional: {  }
+            weight: 11
+          c1eacc38-be70-4656-af24-e9af50a09bf2:
+            uuid: c1eacc38-be70-4656-af24-e9af50a09bf2
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:page:field_nhsc_master_block'
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: hidden
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+            additional: {  }
+            weight: 12
+          bee10e04-5a02-4754-9e05-53cbe2f17ab0:
+            uuid: bee10e04-5a02-4754-9e05-53cbe2f17ab0
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:page:field_media'
+              formatter:
+                type: entity_reference_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                  link: false
+                third_party_settings: {  }
+            additional: {  }
+            weight: 13
+          23693a95-a568-4306-9319-6a0467817a63:
+            uuid: 23693a95-a568-4306-9319-6a0467817a63
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:page:field_test'
+              formatter:
+                type: entity_reference_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                  link: false
+                third_party_settings: {  }
+            additional: {  }
+            weight: 14
+          93747499-e7e9-43c8-9271-185afe492002:
+            uuid: 93747499-e7e9-43c8-9271-185afe492002
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:page:field_optimised_image'
+              formatter:
+                label: above
+                settings:
+                  image_style: ''
+                  image_link: ''
+                third_party_settings: {  }
+                type: image
+            additional: {  }
+            weight: 15
+          dc6db265-5178-4f2e-9ceb-8109d439d9fe:
+            uuid: dc6db265-5178-4f2e-9ceb-8109d439d9fe
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:page:field_un_optimised_image'
+              formatter:
+                label: above
+                settings:
+                  image_style: ''
+                  image_link: ''
+                third_party_settings: {  }
+                type: image
+            additional: {  }
+            weight: 16
+          ad62ce26-1437-44f7-aa7c-9c558f1de327:
+            uuid: ad62ce26-1437-44f7-aa7c-9c558f1de327
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:page:field_phone_number'
+              formatter:
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+                type: basic_string
+            additional: {  }
+            weight: 17
+          6aa30e75-5313-43c9-bbf0-0e4ce2260cdd:
+            uuid: 6aa30e75-5313-43c9-bbf0-0e4ce2260cdd
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:page:field_protein_facts'
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+            additional: {  }
+            weight: 18
+        third_party_settings: {  }
+    allow_custom: false
+  layout_library:
+    enable: true
+  layout_builder_restrictions:
+    entity_view_mode_restriction:
+      allowed_layouts: {  }
+      whitelisted_blocks: {  }
+      blacklisted_blocks: {  }
+    allowed_block_categories: {  }
+id: node.page.default
+targetEntityType: node
+bundle: page
+mode: default
+content:
+  addtoany:
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  body:
+    label: hidden
+    type: text_default
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  content_moderation_control:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_media:
+    type: entity_reference_entity_view
+    weight: 102
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_meta_tags:
+    type: metatag_empty_formatter
+    region: content
+    weight: 7
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_nhsc_context_and_video:
+    type: entity_reference_revisions_entity_view
+    weight: 8
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_nhsc_master_about_banner:
+    type: entity_reference_revisions_entity_view
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_nhsc_master_bio_caption:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_nhsc_master_block:
+    type: entity_reference_revisions_entity_view
+    weight: 12
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_nhsc_master_health_landing:
+    type: entity_reference_revisions_entity_view
+    weight: 9
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_nhsc_master_logo:
+    type: entity_reference_revisions_entity_view
+    weight: 5
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_nhsc_master_subcategory:
+    type: entity_reference_revisions_entity_view
+    weight: 10
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_optimised_image:
+    weight: 104
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_page_components:
+    type: entity_reference_revisions_entity_view
+    weight: 11
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_phone_number:
+    weight: 106
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_protein_facts:
+    type: entity_reference_revisions_entity_view
+    weight: 107
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_subtitle:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_test:
+    type: entity_reference_entity_view
+    weight: 103
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_un_optimised_image:
+    weight: 105
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  links:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_brand_business_area: true
+  field_brand_business_category: true
+  field_brand_segment: true
+  field_category: true
+  field_data: true
+  field_field_nhsc_content_padding: true
+  field_file: true
+  field_make_poll_sticky: true
+  field_nhsc_background_image: true
+  field_nhsc_content_image: true
+  field_nhsc_faq_section: true
+  field_nhsc_footnote: true
+  field_nhsc_master_banner: true
+  field_nhsc_master_button: true
+  field_nhsc_master_content_column: true
+  field_nhsc_master_copy_and_butto: true
+  field_nhsc_master_expandable: true
+  field_nhsc_master_image_and_text: true
+  field_nhsc_master_info_icons: true
+  field_nhsc_master_paragraph_icon: true
+  field_nhsc_master_people_compone: true
+  field_nhsc_master_text_and_image: true
+  field_nhsc_master_top_slider: true
+  field_nhsc_page_background_color: true
+  field_nhsc_page_border: true
+  field_nhsc_page_content: true
+  field_nhsc_page_content_bottom: true
+  field_nhsc_page_content_top: true
+  field_nhsc_section: true
+  field_nhsc_text_slider: true
+  field_poll: true
+  field_section: true
+  field_site_switcher_settings: true
+  field_template: true
+  langcode: true
+  layout_selection: true
+  search_api_excerpt: true

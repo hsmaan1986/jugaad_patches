@@ -1,0 +1,5 @@
+hcp_calculators.settings_form:
+  route_name: hcp_calculators.settings_form
+  title: "HCP Calculators"
+  description: 'Configure HCP Calculators'
+  parent: system.admin_config_system

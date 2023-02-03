@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_buy_now_kwit
+    - node.type.product
+  module:
+    - nhsc_kwit
+id: node.product.field_buy_now_kwit
+field_name: field_buy_now_kwit
+entity_type: node
+bundle: product
+label: 'Buy Now Kwit'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: field_kwit

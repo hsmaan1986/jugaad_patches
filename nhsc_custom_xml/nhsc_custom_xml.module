@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains nhsc_custom_xml.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function nhsc_custom_xml_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the nhsc_custom_xml module.
+    case 'help.page.nhsc_custom_xml':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('NHSc Custom XML') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function nhsc_custom_xml_theme($existing, $type, $theme, $path) {
+  return [
+      'my_template' => [
+          'variables' => ['test_var' => NULL],
+      ],
+  ];
+}

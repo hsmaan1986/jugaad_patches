@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hcp
+    - paragraphs.paragraphs_type.nhsc_tools_and_resource_item
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_hcp
+id: paragraph.nhsc_tools_and_resource_item.field_hcp
+field_name: field_hcp
+entity_type: paragraph
+bundle: nhsc_tools_and_resource_item
+label: 'HCP Content'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

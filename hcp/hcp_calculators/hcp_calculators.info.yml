@@ -1,0 +1,7 @@
+name: "HCP Calculators"
+type: module
+description: "Provides blocks for the calculators"
+package: "HCP"
+core_version_requirement: ^8 || ^9
+version: 8.x-1.0
+configure: hcp_calculators.settings_form

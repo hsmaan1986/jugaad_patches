@@ -1,0 +1,74 @@
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.site_switcher_setting.field_content_type
+    - field.field.paragraph.site_switcher_setting.field_hcp_content
+    - field.field.paragraph.site_switcher_setting.field_hcp_modal_copy
+    - field.field.paragraph.site_switcher_setting.field_hcp_no_label
+    - field.field.paragraph.site_switcher_setting.field_hcp_redirect_url
+    - field.field.paragraph.site_switcher_setting.field_hcp_yes_label
+    - paragraphs.paragraphs_type.site_switcher_setting
+  module:
+    - options
+    - text
+_core:
+  default_config_hash: NKFEbR4e5mY7qkZisxd_fdEq9OZbaxrZOaNF19HSGnU
+id: paragraph.site_switcher_setting.default
+targetEntityType: paragraph
+bundle: site_switcher_setting
+mode: default
+content:
+  field_content_type:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_hcp_content:
+    weight: 0
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_hcp_modal_copy:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_hcp_no_label:
+    weight: 5
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_hcp_redirect_url:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_hcp_yes_label:
+    weight: 4
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  addtoany: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  search_api_excerpt: true

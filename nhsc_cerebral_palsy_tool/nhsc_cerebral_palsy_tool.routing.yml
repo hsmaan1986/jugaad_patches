@@ -1,0 +1,7 @@
+nhsc_cerebral_palsy_tool.settings_form:
+  path: '/admin/config/nhsc_cerebral_palsy_tool/form/settings'
+  defaults:
+    _form: '\Drupal\nhsc_cerebral_palsy_tool\Form\SettingsForm'
+    _title: 'SettingsForm'
+  requirements:
+    _access: 'TRUE'

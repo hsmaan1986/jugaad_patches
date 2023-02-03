@@ -1,0 +1,15 @@
+hcp_site_switcher.config_form:
+  path: '/admin/config/system/hcp_site_switcher'
+  defaults:
+    _form: '\Drupal\hcp_site_switcher\Form\ConfigForm'
+    _title: 'HCP Site Content Switcher Config'
+  requirements:
+    _permission: 'administer site configuration'
+
+hcp_site_switcher.site-switch-redirect-check:
+  path: '/ajax/switch-redirect-checker'
+  defaults:
+    _controller: '\Drupal\hcp_site_switcher\Controller\SiteToggleController::checkRedirect'
+    _format: 'json'
+  requirements:
+    _access: 'TRUE'

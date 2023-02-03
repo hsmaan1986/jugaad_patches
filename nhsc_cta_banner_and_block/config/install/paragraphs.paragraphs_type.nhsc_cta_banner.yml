@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: nhsc_cta_banner
+label: 'NHSC CTA Banner'
+icon_uuid: null
+icon_default: null
+description: 'This spans the full width and contains a background image, heading, text and a link.'
+behavior_plugins: {  }

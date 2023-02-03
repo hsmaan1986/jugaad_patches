@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: nhsc_parallax_section
+label: 'NHSC Parallax Section'
+icon_uuid: null
+icon_default: null
+description: 'Add a parallax section to the page.'
+behavior_plugins: {  }

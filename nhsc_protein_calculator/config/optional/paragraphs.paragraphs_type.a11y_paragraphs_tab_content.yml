@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: a11y_paragraphs_tab_content
+label: 'A11Y Paragraphs Tab Content'
+icon_uuid: null
+icon_default: null
+description: 'Adds a text field to your A11Y Paragraphs Tabs Content Panel.'
+behavior_plugins: {  }

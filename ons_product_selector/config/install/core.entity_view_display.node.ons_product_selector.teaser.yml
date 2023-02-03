@@ -1,0 +1,65 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.ons_product_selector.field_meta_tag_ons_pro
+    - field.field.node.ons_product_selector.field_ons_description
+    - field.field.node.ons_product_selector.field_ons_energy
+    - field.field.node.ons_product_selector.field_ons_flavours
+    - field.field.node.ons_product_selector.field_ons_format_search
+    - field.field.node.ons_product_selector.field_ons_format_size
+    - field.field.node.ons_product_selector.field_ons_ingredient
+    - field.field.node.ons_product_selector.field_ons_intolerance
+    - field.field.node.ons_product_selector.field_ons_kcal
+    - field.field.node.ons_product_selector.field_ons_low_glycemic_index
+    - field.field.node.ons_product_selector.field_ons_p_cho_f_
+    - field.field.node.ons_product_selector.field_ons_pathology
+    - field.field.node.ons_product_selector.field_ons_pipcode
+    - field.field.node.ons_product_selector.field_ons_product
+    - field.field.node.ons_product_selector.field_ons_protein
+    - field.field.node.ons_product_selector.field_ons_protein_search
+    - field.field.node.ons_product_selector.field_ons_taste
+    - field.field.node.ons_product_selector.field_ons_type
+    - node.type.ons_product_selector
+  module:
+    - user
+id: node.ons_product_selector.teaser
+targetEntityType: node
+bundle: ons_product_selector
+mode: teaser
+content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_meta_tag_ons_pro: true
+  field_ons_description: true
+  field_ons_energy: true
+  field_ons_flavours: true
+  field_ons_format_search: true
+  field_ons_format_size: true
+  field_ons_ingredient: true
+  field_ons_intolerance: true
+  field_ons_kcal: true
+  field_ons_low_glycemic_index: true
+  field_ons_p_cho_f_: true
+  field_ons_pathology: true
+  field_ons_pipcode: true
+  field_ons_product: true
+  field_ons_protein: true
+  field_ons_protein_search: true
+  field_ons_taste: true
+  field_ons_type: true
+  langcode: true
+  search_api_excerpt: true

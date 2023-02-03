@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - nhsc_kwit
+    - node
+id: node.field_buy_now_kwit
+field_name: field_buy_now_kwit
+entity_type: node
+type: field_kwit
+settings: {  }
+module: nhsc_kwit
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

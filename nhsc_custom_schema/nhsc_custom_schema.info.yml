@@ -1,0 +1,4 @@
+name: Schema.org Custom Verbs for NHSC
+type: module
+description: "Adds Schema.org/Products, FAQPage & Medical Condition  to the JSON LD array."
+core_version_requirement: ^8 || ^9

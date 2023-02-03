@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_nhsc_carousel_interval
+    - paragraphs.paragraphs_type.nhsc_carousel
+  module:
+    - options
+id: paragraph.nhsc_carousel.field_nhsc_carousel_interval
+field_name: field_nhsc_carousel_interval
+entity_type: paragraph
+bundle: nhsc_carousel
+label: Interval
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: '5000'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

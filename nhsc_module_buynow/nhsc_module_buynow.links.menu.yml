@@ -1,0 +1,5 @@
+nhsc_module_buynow.settings_form:
+  route_name: nhsc_module_buynow.settings_form
+  title: Buy Now Management
+  description: 'Configure your buy now settings'
+  parent: system.admin_config_system

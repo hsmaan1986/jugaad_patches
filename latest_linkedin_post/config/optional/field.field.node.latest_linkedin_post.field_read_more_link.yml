@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_read_more_link
+    - node.type.latest_linkedin_post
+  module:
+    - datalayer
+    - link
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_read_more_link
+id: node.latest_linkedin_post.field_read_more_link
+field_name: field_read_more_link
+entity_type: node
+bundle: latest_linkedin_post
+label: 'Read More Link'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

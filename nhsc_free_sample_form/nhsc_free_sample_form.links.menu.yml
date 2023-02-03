@@ -1,0 +1,6 @@
+nhsc_free_sample_form.links.config_form:
+  route_name: nhsc_free_sample_form.config_form
+  title: "Nhsc Free Sample Settings"
+  description: 'Nhsc Free Sample settings forms.'
+  parent: system.admin_config_system
+

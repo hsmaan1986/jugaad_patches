@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * @file
+ * Contains hcp_advice_booking.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function hcp_certificates_theme()
+{
+    return [
+        'hcp_certificate' => [
+            'variables' => ['date' => NULL, 'name' => NULL],
+        ],
+        'page__hcp_certificates' => [
+            'base hook' => 'page'
+        ],
+    ];
+
+}
+
+
+function hcp_certificates_theme_suggestions_hcp_certificate_alter(array &$suggestions, array $variables)
+{
+    if ($route = \Drupal::routeMatch()->getRouteName()) {
+        if ($route == 'hcp_certificates.html') {
+            $route_match = \Drupal::service('current_route_match');
+            $key = $route_match->getParameter('key');
+            $suggestions[] = 'hcp_certificate__' . $key;
+        }
+    }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function hcp_certificates_theme_suggestions_page_alter(array &$suggestions, array $variables)
+{
+    if ($route = \Drupal::routeMatch()->getRouteName()) {
+        if ($route == 'hcp_certificates.html') {
+            $suggestions[] = 'page__hcp_certificates';
+        }
+    }
+}

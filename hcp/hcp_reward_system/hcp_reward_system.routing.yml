@@ -1,0 +1,46 @@
+hcp_reward_system.reward_system_form:
+  path: '/admin/config/hcp_reward_system/rewardsystem'
+  defaults:
+    _form: '\Drupal\hcp_reward_system\Form\RewardSystemForm'
+    _title: 'RewardSystemForm'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+hcp_reward_system.achivement_add:
+  path: '/admin/config/hcp_reward_system/achivements/add'
+  defaults:
+    _entity_form: achivements_entity.add
+    _title: 'Add achivements_entity'
+  requirements:
+    _permission: 'administer administration pages'
+
+hcp_reward_system.achivement_edit_form:
+  path: '/admin/config/hcp_reward_system/achivements/{achivements_entity}'
+  defaults:
+    _entity_form: achivements_entity.edit
+    _title: 'Edit achivements_entity'
+  requirements:
+    _permission: 'administer image styles'
+hcp_reward_system.reward_add_form:
+  path: '/admin/config/hcp_reward_system/achivements/{achivements_entity}/add/{reward}'
+  defaults:
+    _form: '\Drupal\hcp_reward_system\Form\RewardAddForm'
+    _title: 'Add reward'
+  requirements:
+    _permission: 'access administration pages'
+
+hcp_reward_system.reward_edit_form:
+  path: '/admin/config/hcp_reward_system/achivements/{achivements_entity}/rewards/{reward}'
+  defaults:
+    _form: '\Drupal\hcp_reward_system\Form\RewardEditForm'
+    _title: 'Edit reward'
+  requirements:
+    _permission: 'access administration pages'
+hcp_reward_system.reward_delete:
+  path: '/admin/config/hcp_reward_system/achivements/{achivements_entity}/rewards/{reward}/delete'
+  defaults:
+    _form: '\Drupal\hcp_reward_system\Form\RewardDeleteForm'
+    _title: 'Delete reward'
+  requirements:
+    _permission: 'administer administration pages'

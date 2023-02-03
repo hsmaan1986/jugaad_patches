@@ -1,0 +1,464 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_nhsc_carousel_slides
+    - paragraphs.paragraphs_type.nhsc_carousel
+    - paragraphs.paragraphs_type.nhsc_carousel_image_item
+    - paragraphs.paragraphs_type.nhsc_carousel_video_item
+  module:
+    - entity_reference_revisions
+id: paragraph.nhsc_carousel.field_nhsc_carousel_slides
+field_name: field_nhsc_carousel_slides
+entity_type: paragraph
+bundle: nhsc_carousel
+label: Slides
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      nhsc_carousel_image_item: nhsc_carousel_image_item
+      nhsc_carousel_video_item: nhsc_carousel_video_item
+    target_bundles_drag_drop:
+      bazaar:
+        weight: 147
+        enabled: false
+      block_reference:
+        weight: 148
+        enabled: false
+      bp_accordion:
+        weight: 149
+        enabled: false
+      bp_accordion_section:
+        weight: 150
+        enabled: false
+      bp_blank:
+        weight: 151
+        enabled: false
+      bp_block:
+        weight: 152
+        enabled: false
+      bp_carousel:
+        weight: 153
+        enabled: false
+      bp_column_wrapper:
+        weight: 154
+        enabled: false
+      bp_columns:
+        weight: 155
+        enabled: false
+      bp_columns_three_uneven:
+        weight: 156
+        enabled: false
+      bp_columns_two_uneven:
+        weight: 157
+        enabled: false
+      bp_image:
+        weight: 158
+        enabled: false
+      bp_modal:
+        weight: 159
+        enabled: false
+      bp_simple:
+        weight: 160
+        enabled: false
+      bp_tab_section:
+        weight: 161
+        enabled: false
+      bp_tabs:
+        weight: 162
+        enabled: false
+      bp_view:
+        weight: 163
+        enabled: false
+      bp_webform:
+        weight: 164
+        enabled: false
+      brand_data_layer_information:
+        weight: 165
+        enabled: false
+      buy_now_kwit:
+        weight: 166
+        enabled: false
+      cerebral_palsy_buttons:
+        weight: 167
+        enabled: false
+      cerebral_palsy_card:
+        weight: 168
+        enabled: false
+      cerebral_palsy_conditional_card:
+        weight: 169
+        enabled: false
+      cerebral_palsy_more_information:
+        weight: 170
+        enabled: false
+      cerebral_palsy_recommendation:
+        weight: 171
+        enabled: false
+      hcp_site_switcher:
+        weight: 172
+        enabled: false
+      image:
+        weight: 173
+        enabled: false
+      image_body:
+        weight: 174
+        enabled: false
+      layout_25_25_50:
+        weight: 175
+        enabled: false
+      layout_25_50_25:
+        weight: 176
+        enabled: false
+      layout_25_75:
+        weight: 177
+        enabled: false
+      layout_33_66:
+        weight: 178
+        enabled: false
+      layout_50_25_25:
+        weight: 179
+        enabled: false
+      layout_66_33:
+        weight: 180
+        enabled: false
+      layout_75_25:
+        weight: 181
+        enabled: false
+      layout_columns_1:
+        weight: 182
+        enabled: false
+      layout_columns_2:
+        weight: 183
+        enabled: false
+      layout_columns_20:
+        weight: 184
+        enabled: false
+      layout_columns_3:
+        weight: 185
+        enabled: false
+      layout_columns_4:
+        weight: 186
+        enabled: false
+      masthead:
+        weight: 187
+        enabled: false
+      masthead_webaulas:
+        weight: 188
+        enabled: false
+      nhs_office_search:
+        weight: 189
+        enabled: false
+      nhsc_about_us_banner:
+        weight: 190
+        enabled: false
+      nhsc_accordion:
+        weight: 191
+        enabled: false
+      nhsc_accordion_item:
+        weight: 192
+        enabled: false
+      nhsc_banner_component:
+        weight: 193
+        enabled: false
+      nhsc_banner_video:
+        weight: 194
+        enabled: false
+      nhsc_biography_caption:
+        weight: 195
+        enabled: false
+      nhsc_block:
+        weight: 196
+        enabled: false
+      nhsc_brand_accordion:
+        weight: 197
+        enabled: false
+      nhsc_brand_accordion_group:
+        weight: 198
+        enabled: false
+      nhsc_brand_hero_banner:
+        weight: 199
+        enabled: false
+      nhsc_brand_product_line:
+        weight: 200
+        enabled: false
+      nhsc_button:
+        weight: 201
+        enabled: false
+      nhsc_buy_now_paragraph:
+        weight: 202
+        enabled: false
+      nhsc_carousel:
+        weight: 203
+        enabled: false
+      nhsc_carousel_image_item:
+        enabled: true
+        weight: 146
+      nhsc_carousel_video_item:
+        enabled: true
+        weight: 204
+      nhsc_color_columns:
+        weight: 205
+        enabled: false
+      nhsc_column_component:
+        weight: 206
+        enabled: false
+      nhsc_column_items:
+        weight: 207
+        enabled: false
+      nhsc_comparison_table:
+        weight: 208
+        enabled: false
+      nhsc_content_banner:
+        weight: 209
+        enabled: false
+      nhsc_content_heading:
+        weight: 210
+        enabled: false
+      nhsc_content_slider:
+        weight: 211
+        enabled: false
+      nhsc_copy_and_button:
+        weight: 212
+        enabled: false
+      nhsc_cta_banner:
+        weight: 213
+        enabled: false
+      nhsc_cta_block:
+        weight: 214
+        enabled: false
+      nhsc_custom_flexible_grids:
+        weight: 215
+        enabled: false
+      nhsc_document_download_and_text:
+        weight: 216
+        enabled: false
+      nhsc_duality_slider:
+        weight: 217
+        enabled: false
+      nhsc_expandable_paragraph:
+        weight: 218
+        enabled: false
+      nhsc_faq:
+        weight: 219
+        enabled: false
+      nhsc_flexible_grid:
+        weight: 220
+        enabled: false
+      nhsc_flexible_grid_item:
+        weight: 221
+        enabled: false
+      nhsc_full_banner:
+        weight: 222
+        enabled: false
+      nhsc_full_page_image:
+        weight: 223
+        enabled: false
+      nhsc_full_page_video:
+        weight: 224
+        enabled: false
+      nhsc_heading_block:
+        weight: 225
+        enabled: false
+      nhsc_health_management_landing:
+        weight: 226
+        enabled: false
+      nhsc_hero_banner:
+        weight: 227
+        enabled: false
+      nhsc_hover_component:
+        weight: 228
+        enabled: false
+      nhsc_hover_items:
+        weight: 229
+        enabled: false
+      nhsc_image_and_content_slider:
+        weight: 230
+        enabled: false
+      nhsc_image_and_text_column:
+        weight: 231
+        enabled: false
+      nhsc_image_content_slider_top:
+        weight: 232
+        enabled: false
+      nhsc_info_icons:
+        weight: 233
+        enabled: false
+      nhsc_link_card:
+        weight: 234
+        enabled: false
+      nhsc_link_card_container:
+        weight: 235
+        enabled: false
+      nhsc_logo_componant:
+        weight: 236
+        enabled: false
+      nhsc_menu_block:
+        weight: 237
+        enabled: false
+      nhsc_menu_quick_link_item:
+        weight: 238
+        enabled: false
+      nhsc_microsite_banner:
+        weight: 239
+        enabled: false
+      nhsc_microsite_body:
+        weight: 240
+        enabled: false
+      nhsc_microsite_intro:
+        weight: 241
+        enabled: false
+      nhsc_mobile_expand:
+        weight: 242
+        enabled: false
+      nhsc_mobile_expand_component:
+        weight: 243
+        enabled: false
+      nhsc_multi_column:
+        weight: 244
+        enabled: false
+      nhsc_multiple_faq:
+        weight: 245
+        enabled: false
+      nhsc_multiple_faq_item:
+        weight: 246
+        enabled: false
+      nhsc_nutritional_table:
+        weight: 247
+        enabled: false
+      nhsc_paragraph_icon:
+        weight: 248
+        enabled: false
+      nhsc_parallax_item:
+        weight: 249
+        enabled: false
+      nhsc_parallax_section:
+        weight: 250
+        enabled: false
+      nhsc_people:
+        weight: 251
+        enabled: false
+      nhsc_plain_content:
+        weight: 252
+        enabled: false
+      nhsc_product_comparison:
+        weight: 253
+        enabled: false
+      nhsc_product_comparison_items:
+        weight: 254
+        enabled: false
+      nhsc_product_comparison_labels:
+        weight: 255
+        enabled: false
+      nhsc_product_gallery_and_intro:
+        weight: 256
+        enabled: false
+      nhsc_product_specifications:
+        weight: 257
+        enabled: false
+      nhsc_product_warning:
+        weight: 258
+        enabled: false
+      nhsc_read_more:
+        weight: 259
+        enabled: false
+      nhsc_related_products:
+        weight: 260
+        enabled: false
+      nhsc_section_navigation:
+        weight: 261
+        enabled: false
+      nhsc_separator_line:
+        weight: 262
+        enabled: false
+      nhsc_small_icon_and_heading:
+        weight: 263
+        enabled: false
+      nhsc_sub_category_component:
+        weight: 264
+        enabled: false
+      nhsc_tabs:
+        weight: 265
+        enabled: false
+      nhsc_tags:
+        weight: 266
+        enabled: false
+      nhsc_text_and_image:
+        weight: 267
+        enabled: false
+      nhsc_text_slider:
+        weight: 268
+        enabled: false
+      nhsc_thumbnail_items:
+        weight: 269
+        enabled: false
+      nhsc_thumbnail_slider:
+        weight: 270
+        enabled: false
+      nhsc_title_with_icons:
+        weight: 271
+        enabled: false
+      nhsc_uneven_columns:
+        weight: 272
+        enabled: false
+      nhsc_video:
+        weight: 273
+        enabled: false
+      nhsc_video_js:
+        weight: 274
+        enabled: false
+      plain_text:
+        weight: 275
+        enabled: false
+      presenter:
+        weight: 276
+        enabled: false
+      product_group:
+        weight: 277
+        enabled: false
+      product_selector_section:
+        weight: 278
+        enabled: false
+      recipe_group:
+        weight: 279
+        enabled: false
+      recipe_items:
+        weight: 280
+        enabled: false
+      recommended_intake:
+        weight: 281
+        enabled: false
+      section_title_and_description:
+        weight: 282
+        enabled: false
+      simple:
+        weight: 283
+        enabled: false
+      site_switcher_setting:
+        weight: 284
+        enabled: false
+      slider:
+        weight: 285
+        enabled: false
+      slider_items:
+        weight: 286
+        enabled: false
+      tab_item:
+        weight: 287
+        enabled: false
+      tag_links:
+        weight: 288
+        enabled: false
+      topics_and_formats:
+        weight: 289
+        enabled: false
+      vitaflo_tag_links:
+        weight: 290
+        enabled: false
+field_type: entity_reference_revisions

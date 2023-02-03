@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * @file
+ * Contains dsu_c_teaserslider.module.
+ */
+
+/**
+ * Implements hook_preprocess_HOOK() for paragraph.html.twig.
+ */
+function dsu_c_teaserslider_preprocess_paragraph(&$variables) {
+  // Load the css file when the rendered element is a Map.
+  $variables['#attached']['library'][] = 'dsu_c_teaserslider/general';
+}
+
+/**
+ * Implements hook_theme.
+ */
+function dsu_c_teaserslider_theme($existing, $type, $theme, $path) {
+  return [
+    'paragraph__c_teaserslider' => [
+      'template' => 'paragraph--c-teaserslider',
+      'base hook' => 'paragraphs',
+    ],
+  ];
+}

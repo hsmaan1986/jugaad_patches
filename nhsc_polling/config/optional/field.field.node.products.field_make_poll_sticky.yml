@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_make_poll_sticky
+    - node.type.products
+id: node.products.field_make_poll_sticky
+field_name: field_make_poll_sticky
+entity_type: node
+bundle: products
+label: 'Make Poll Sticky'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

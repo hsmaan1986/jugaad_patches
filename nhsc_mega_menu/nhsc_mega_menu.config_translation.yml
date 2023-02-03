@@ -1,0 +1,5 @@
+nhsc_mega_menu.default_form:
+  title: 'NHSc Mega Menu Settings'
+  base_route_name: nhsc_mega_menu.default_form
+  names:
+    - nhsc_mega_menu.config

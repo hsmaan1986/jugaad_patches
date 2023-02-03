@@ -1,0 +1,184 @@
+<?php
+
+/**
+ * @file
+ * Cadastro Unico Authenticator
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_help().
+ */
+function nhsc_cadastro_unico_api_help($route_name, RouteMatchInterface $route_match) {
+    switch ($route_name) {
+        // Main module help for the nhsc_cadastro_unico_api module.
+        case 'help.page.nhsc_cadastro_unico_api':
+            $output = '';
+            $output .= '<h3>' . t('About') . '</h3>';
+            $output .= '<p>' . t('Cadastro Unico API') . '</p>';
+            return $output;
+
+        default:
+    }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function nhsc_cadastro_unico_api_form_alter(&$form, FormStateInterface $form_state, $form_id)
+{
+    switch ($form_id) {
+        case "user_form":
+            $form['#cache'] = ['max-age' => 0];
+            $form['actions']['submit']['#submit'][] = 'nhsc_cadastro_unico_api_user_form_submit';
+            break;
+        case "user_pass":
+            $form['name']['#title'] = t('Email address');
+
+            $form['actions']['submit']['#submit'][] = 'nhsc_cadastro_unico_api_password_reset_submit';
+            break;
+        case "nhsc_user_profile_register_form":
+            array_unshift($form['#validate'], 'nhsc_cadastro_unico_api_register_form_validate');
+            break;
+        case "user_login_form":
+            $form['#validate'][] = 'nhsc_cadastro_unico_api_user_login_form_validate';
+            array_unshift($form['#submit'], 'nhsc_cadastro_unico_api_user_login_form_submit');
+            break;
+    }
+}
+
+/**
+ * Check the api to see if the user is already registered.
+ */
+function nhsc_cadastro_unico_api_register_form_validate(&$form, FormStateInterface $form_state) {
+    $values = $form_state->getValues();
+    $api = \Drupal::service('nhsc_cadastro_unico_api');
+    $registered = $api->isRegistered($values['email']);
+
+    if ($registered) {
+        $url = Url::fromRoute('nhsc_user_profile.register_next');
+        $form_state->set('redirect', $url);
+    }
+}
+
+/**
+ * Check the api to see if the user is already registered.
+ */
+function nhsc_cadastro_unico_api_user_form_submit(&$form, FormStateInterface $form_state) {
+    $values = $form_state->getValues();
+    $api = \Drupal::service('nhsc_cadastro_unico_api');
+    $uid = \Drupal::currentUser()->id();
+    $email = \Drupal::currentUser()->getEmail();
+    $profile = \Drupal::service('user.data')->get('nhsc_user_profile', $uid, 'user_profile');
+
+    $user_data = $api->getUser($email);
+    $user_data->Nome = sprintf('%s %s', $values['field_first_name'][0]['value'], $values['field_last_name'][0]['value']);
+    $user_data->Email = $email;
+    $user_data->CPF = $values['field_identification_number'][0]['value'];
+    $user_data->DataNascimento = $values['field_birth_date'][0]['value']->format('Y-m-d');
+
+    $street_number  = $values['field_address_number'][0]['value'];
+    $street_name    = $values['field_address_street'][0]['value'];
+    $city           = $values['field_address_state'][0]['value'];
+    $state          = $values['field_address_city'][0]['value'];
+    $zip            = $values['field_address_zip'][0]['value'];
+
+    $address        = $street_number .', ' . $street_name . ', ' .$city. ', ' .$state. ', ' . $zip;
+
+    $attributes['atributos'] = [
+
+        'Atributo' => [
+            [
+                'CodigoVisitante' => $user_data->Codigo,
+                'NomeAtributo' => 'id_sexo',
+                'Valor' => $values['field_gender'][0]['value']
+            ], // sex
+
+            [
+                'CodigoVisitante' => $user_data->Codigo,
+                'NomeAtributo' => 'id_receber_newsletter',
+                'Valor' => true
+            ], // receive news letters
+
+            [
+                'CodigoVisitante' => $user_data->Codigo,
+                'NomeAtributo' => 'fg_politica_privacidade',
+                'Valor' => true,
+            ], //  private policy checkbo
+
+            [
+                'CodigoVisitante' => $user_data->Codigo,
+                'NomeAtributo' => 'dc_numero',
+                'Valor' => $street_number
+            ], // street number
+
+            [
+                'CodigoVisitante' => $user_data->Codigo,
+                'NomeAtributo' => 'sg_estado',
+                'Valor' => $street_name
+            ],
+
+            [
+                'CodigoVisitante' => $user_data->Codigo,
+                'NomeAtributo' => 'nu_cep',
+                'Valor' => $zip
+            ],
+
+            [
+                'CodigoVisitante' => $user_data->Codigo,
+                'NomeAtributo' => 'dc_cidade',
+                'Valor' => $city
+            ],
+
+            [
+                'CodigoVisitante' => $user_data->Codigo,
+                'NomeAtributo' => 'dc_endereco',
+                'Valor' => $address
+            ],
+        ]
+
+    ];
+
+    \Drupal::logger('nhsc_cadastro_unico_api')->error('CodigoVisitante: '.$user_data->Codigo);
+
+
+    $api->updateUser($user_data, $profile);
+    $api->saveAttributes($attributes);
+}
+
+/**
+ * Check the api to see if the user is already registered.
+ */
+function nhsc_cadastro_unico_api_user_login_form_validate(&$form, FormStateInterface $form_state) {
+    $values = $form_state->getValues();
+    $api = \Drupal::service('nhsc_cadastro_unico_api');
+
+    if ($token = $api->validate($values['name'], $values['pass'])) {
+        $form_state->set('token', $token);
+    } else {
+        $form_state->set('token', null);
+    }
+}
+
+/**
+ * Check the api to see if the user is already registered.
+ */
+function nhsc_cadastro_unico_api_user_login_form_submit(&$form, FormStateInterface $form_state) {
+    $token = $form_state->get('token');
+    $session = \Drupal::request()->getSession();
+    $session->set('cadastro_unico_token', $token);
+}
+
+/**
+ * Override password reset function.
+ */
+function nhsc_cadastro_unico_api_password_reset_submit(&$form, FormStateInterface $form_state) {
+    $api = \Drupal::service('nhsc_cadastro_unico_api');
+    $api->sendPasswordResetEmail($form_state->getValue('name')); // send forgot password
+    // message
+    \Drupal::messenger()->addMessage(t('Further instructions have been sent to your e-mail address.'), 'status');
+    $form_state->setRedirect('user.page'); // redirect to login
+}

@@ -1,0 +1,4 @@
+required:
+  - views.view.content
+  - field.storage.node.field_ons_product
+  - field.storage.taxonomy_term.field_image_intolerance

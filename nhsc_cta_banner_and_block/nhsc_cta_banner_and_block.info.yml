@@ -1,0 +1,20 @@
+name: 'NHSC CTA Banner and Block'
+description: 'This adds 2 CTA components, CTA Banner with a background image, title, text and link as well as CTA Block with title and link.'
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - 'autologout:autologout'
+  - 'drupal:block'
+  - 'drupal:field'
+  - 'drupal:link'
+  - 'drupal:system'
+  - 'drupal:user'
+  - 'drupal:views'
+  - 'field_permissions:field_permissions'
+  - 'link_attributes:link_attributes'
+  - 'metatag:metatag'
+  - 'paragraphs:paragraphs'
+  - 'parallax_scroller:parallax_scroller'
+  - 'rng:rng'
+  - 'svg_image:svg_image'
+version: 9.x-1.0

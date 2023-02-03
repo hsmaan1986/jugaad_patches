@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'NHSC Colours'
+vid: nhsc_colours
+description: 'NHSC approved colours'
+weight: 0

@@ -1,0 +1,113 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_nhsc_view
+    - paragraphs.paragraphs_type.nhsc_view
+  module:
+    - datalayer
+    - viewsreference
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_nhsc_view
+id: paragraph.nhsc_view.field_nhsc_view
+field_name: field_nhsc_view
+entity_type: paragraph
+bundle: nhsc_view
+label: View
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:view'
+  handler_settings:
+    target_bundles: null
+    auto_create: 0
+  plugin_types:
+    block: block
+    default: 0
+    entity_reference: 0
+    page: 0
+    entity_browser: 0
+    embed: 0
+    feed: 0
+    attachment: 0
+  preselect_views:
+    admin_email: 0
+    all_files: 0
+    all_media: 0
+    all_paragraphs: 0
+    articles: 0
+    block_content: 0
+    comment: 0
+    comments_recent: 0
+    contact_messages: 0
+    content: 0
+    cow_s_milk_protein_allergy_slider: 0
+    custom_article_list_: 0
+    faqs_display: 0
+    file_entity_browser: 0
+    file_management: 0
+    frontpage: 0
+    impact_listing: 0
+    latest_news: 0
+    leadership_team: 0
+    marcas_menu_view: 0
+    master_text_slider_block: 0
+    media: 0
+    media_library: 0
+    menu_brands: 0
+    moderation_history: 0
+    more_products: 0
+    new_articles: 0
+    nhsc_banner_buttons: 0
+    nhsc_bottom_buttons: 0
+    nhsc_faq_block: 0
+    nhsc_master_banner_block: 0
+    nhsc_master_brands: 0
+    nhsc_master_copy_and_button: 0
+    nhsc_master_copy_and_image: 0
+    nhsc_master_icons_block: 0
+    nhsc_master_paragraph_icon: 0
+    nhsc_master_people_slider: 0
+    nhsc_master_text_slider_new_view: 0
+    nhsc_new_master_image_slider: 0
+    nhsc_new_master_image_slider_top: 0
+    nppe_store_locator: 0
+    nppe_where_to_buy: 0
+    office_locations: 0
+    our_brands: 0
+    our_expertise: 0
+    our_expertise_brands: 0
+    press_release: 0
+    previous_events: 0
+    product_list: 0
+    product_taxonomy: 0
+    redirect: 0
+    redirect_404: 0
+    related_content_2: 0
+    related_products: 0
+    rng_registrations_1: 0
+    rng_registrations_2: 0
+    rng_registrations_node: 0
+    search: 0
+    search_press_releases: 0
+    search_solr: 0
+    search_suggestions: 0
+    search_vitaflo: 0
+    slick_x: 0
+    story_article: 0
+    taxonomy_term: 0
+    test_slider: 0
+    todos_menu_view: 0
+    upcoming_events: 0
+    user_admin_people: 0
+    view_people: 0
+    watchdog: 0
+    webform_submissions: 0
+    who_s_new: 0
+    who_s_online: 0
+field_type: viewsreference

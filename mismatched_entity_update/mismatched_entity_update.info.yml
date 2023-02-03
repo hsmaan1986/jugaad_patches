@@ -1,0 +1,5 @@
+name: 'Mismatched entity update'
+type: module
+description: 'Mismatched entity update via updb'
+core_version_requirement: ^8.8 || ^9
+package: 'Custom'

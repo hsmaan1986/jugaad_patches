@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - rng
+    - ultimenu
+  theme:
+    - nhsc_master
+id: ultimenumainnavigation
+theme: nhsc_master
+region: header
+weight: 0
+provider: null
+plugin: 'ultimenu_block:ultimenu-main'
+settings:
+  id: 'ultimenu_block:ultimenu-main'
+  label: 'Ultimenu: Main navigation'
+  provider: ultimenu
+  label_display: '0'
+  ajaxify: true
+  regions: {  }
+  skin: ''
+  submenu: false
+  orientation: ultimenu--htb
+  submenu_position: top
+  canvas_off: '#header'
+  canvas_on: '#main-wrapper, .featured-top, .site-footer'
+  canvas_skin: scalein
+visibility:
+  rng_current_time:
+    id: rng_current_time
+    date: '1623753436'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1623753436'
+    negate: false
+    context_mapping: {  }

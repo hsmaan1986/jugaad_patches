@@ -1,0 +1,51 @@
+<?php
+
+/**
+ * @file
+ * Contains nhsc_linked_in_feed.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function nhsc_linked_in_feed_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the nhsc_linked_in_feed module.
+    case 'help.page.nhsc_linked_in_feed':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('This module provides import posts from Linkedin Company page through Linkedin API by Cron for Drupal 8.') . '</p>';
+      $output .= '<p>' . t('Before you start the installation process you must register on Linkedin, create page for your Company and your own application.') . '</p>';
+      $output .= '<p>' . t('You will get "Client ID", "Client Secret".') . '</p>';
+      $output .= '<p>' . t('Also add callback url on the Linkedin authentication page.') . '</p>';
+      $output .= '<p>' . t('Callback url you can find in the module settings /admin/config/content/nhsc_linked_in_feed') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_cron().
+ */
+function nhsc_linked_in_feed_cron() {
+  \Drupal::service('nhsc_linked_in_feed.base')->getAll();
+}
+
+/**
+ * Implements hook_mail().
+ */
+function nhsc_linked_in_feed_mail($key, &$message, $params) {
+  $options = [
+    'langcode' => $message['langcode'],
+  ];
+  switch ($key) {
+    case 'linkedin_token_expiry':
+      $message['from'] = \Drupal::config('system.site')->get('mail');
+      $message['subject'] = t('Linkedin access token will be expired: @time_to_expiry', ['@time_to_expiry' => $params['time_to_expiry']], $options);
+      $message['body'][] = $params['message'];
+      break;
+  }
+}

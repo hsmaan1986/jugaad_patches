@@ -1,0 +1,177 @@
+<div class="calculator-container">
+
+{% set validation_msg = "'You must fill in all fields'"|t %}
+    <!-- 1 Main titles of this calculator -->
+    <div class="calculator-title calculator-title-large calculator-title-center">
+      {% if title|length %}
+        <h1>
+          {{ title }}
+        </h1>
+      {% endif %}
+    </div>
+
+    <div class="spacer"></div>
+
+    <!-- 2 Main form of calculator -->
+    <form class="calculator-form" id="bmicalc-form" action="">
+
+        <div class="calculator-tab">
+
+            <div class="container-50">
+                <label class="text-label" for="bmicalc-height">
+                    {{ height_field}}
+                </label>
+                <input class="input-text js-input"
+                       type=number
+                       placeholder="{{ height_placeholder }}"
+                       name="bmicalc-height"
+                       id="js-bmicalc-height"
+                       required="required"
+                       oninvalid="this.setCustomValidity({{ validation_msg }})"
+                       onchange="this.setCustomValidity('')"
+                >
+            </div>
+
+            <div class="container-50">
+                <label class="text-label" for="bmicalc-weight">
+                    {{weight_field}}
+                </label>
+                <input class="input-text js-input"
+                       type=number
+                       placeholder="{{ weight_placeholder }}"
+                       name="bmicalc-weight"
+                       id="js-bmicalc-weight"
+                       required="required"
+                       oninvalid="this.setCustomValidity({{ validation_msg }})"
+                       onchange="this.setCustomValidity('')"
+                >
+            </div>
+
+            <div class="spacer"></div>
+
+            <div class="container-fullwidth container-result">
+
+                <div class="result-text result-medium" id="js-bmi-novalue">
+                    {{ 'Preencha os campos acima' |t }}
+                </div>
+
+                <div id="js-bmi-hasvalue">
+
+                    <!-- Result of BMI calculation -->
+                    <div class="result-text result-large" id="js-bmi-result">
+                        0
+                    </div>
+
+                    <!-- Classification 1 - Low Weight (Severe)-->
+                    <div class="bmi-results" id="js-bmi-severelowweight">
+                        <div class="result-text result-medium">
+                            {{ 'Abaixo do Peso  (Severo)' |t }}
+                        </div>
+                        <div class="result-text result-verysmall">
+                            {{ 'abaixo 16' |t }}
+                        </div>
+                    </div>
+
+                    <!-- Classification 2 - Low Weight (Mild) -->
+                    <div class="bmi-results" id="js-bmi-mildlowweight">
+                        <div class="result-text result-medium">
+                            {{ 'Abaixo do Peso (Moderado)' |t }}
+                        </div>
+                        <div class="result-text result-verysmall">
+                            {{ 'de 16,0 até 16,9' |t }}
+                        </div>
+                    </div>
+
+                    <!-- Classification 3 - Low Weight (Light) -->
+                    <div class="bmi-results" id="js-bmi-lightlowweight">
+                        <div class="result-text result-medium">
+                            {{ 'Abaixo do Peso (Leve)' |t }}
+                        </div>
+                        <div class="result-text result-verysmall">
+                            {{ 'de 17,0 até 18,4' |t }}
+                        </div>
+                    </div>
+
+                    <!-- Classification 4 - Normal/Eutrophic -->
+                    <div class="bmi-results" id="js-bmi-normal">
+                        <div class="result-text result-medium">
+                            {{ 'Normal/Eutrófico' |t }}
+                        </div>
+                        <div class="result-text result-verysmall">
+                            {{ 'de 18,5 até 24,9' |t }}
+                        </div>
+                    </div>
+
+                    <!-- Classification 5 - Pre-Obese / Overweight-->
+                    <div class="bmi-results" id="js-bmi-overweight">
+                        <div class="result-text result-medium">
+                            {{ 'Pré-Obesidade / Sobrepeso' |t }}
+                        </div>
+                        <div class="result-text result-verysmall">
+                            {{ 'de 25,0 até 29,9' |t }}
+                        </div>
+                    </div>
+
+                    <!-- Classification 6 - Obesity Grade I -->
+                    <div class="bmi-results" id="js-bmi-obesity1">
+                        <div class="result-text result-medium">
+                            {{ 'Obesidade Grau I' |t }}
+                        </div>
+                        <div class="result-text result-verysmall">
+                            {{ 'de 30,0 até 34,9' |t }}
+                        </div>
+                    </div>
+
+                    <!-- Classification 7 - Obesity Grade II -->
+                    <div class="bmi-results" id="js-bmi-obesity2">
+                        <div class="result-text result-medium">
+                            {{ 'Obesidade Grau II' |t }}
+                        </div>
+                        <div class="result-text result-verysmall">
+                            {{ 'de 35,0 até 39,9' |t }}
+                        </div>
+                    </div>
+
+                    <!-- Classification 8 - Obesity Grade III -->
+                    <div class="bmi-results" id="js-bmi-obesity3">
+                        <div class="result-text result-medium">
+                            {{ 'Obesidade Grau III' |t }}
+                        </div>
+                        <div class="result-text result-verysmall">
+                            {{ '40 ou acima' |t }}
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="container-fullwidth container-center">
+              <span class="calculator-fineprint">
+                  {{ legal }}
+              </span>
+            </div>
+
+            <div class="buttons-container">
+                <div class="buttons-center">
+                    <button class="calculator-button calculator-button-blue" type="submit">
+                        {{ calculate_btn }}
+                    </button>
+                </div>
+            </div>
+
+            <div class="spacer"></div>
+
+        </div>
+
+        <div class="buttons-container" id="bmi-resetcontainer">
+            <div class="buttons-center">
+                <button class="calculator-button calculator-button-white" type="button" onclick="resetForm()">
+                    {{ 'Restabelecer' |t }}
+                </button>
+            </div>
+        </div>
+
+    </form>
+
+</div>

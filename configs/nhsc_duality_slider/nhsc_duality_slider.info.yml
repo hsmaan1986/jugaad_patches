@@ -1,0 +1,19 @@
+name: 'NHSC duality slider'
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - autologout
+  - block
+  - datalayer
+  - field
+  - field_permissions
+  - file
+  - image
+  - metatag
+  - paragraphs
+  - rng
+  - svg_image
+  - system
+  - user
+  - views
+  - zurb_twentytwenty

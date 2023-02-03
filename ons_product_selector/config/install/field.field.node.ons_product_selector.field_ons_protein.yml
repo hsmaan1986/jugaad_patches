@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ons_protein
+    - node.type.ons_product_selector
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_ons_protein
+id: node.ons_product_selector.field_ons_protein
+field_name: field_ons_protein
+entity_type: node
+bundle: ons_product_selector
+label: Protein
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

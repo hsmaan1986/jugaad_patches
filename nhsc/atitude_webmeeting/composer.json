@@ -1,0 +1,14 @@
+{
+  "name": "drupal/atitude_webmeeting",
+  "type": "drupal-module",
+  "description": "Atitude Webmeetting API Service Drupal Integration",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/atitude_webmeeting",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/atitude_webmeeting",
+    "source": "http://cgit.drupalcode.org/atitude_webmeeting"
+  },
+  "require": { }
+}

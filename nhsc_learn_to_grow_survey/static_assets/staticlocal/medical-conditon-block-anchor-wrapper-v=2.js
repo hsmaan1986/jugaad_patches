@@ -1,0 +1,2 @@
+$(document).ready(function(){$('.MedicalConditionPushBlock').each(function(){if($(this).find('.links a').attr("href")!=null){$(this).wrap("<a href='"+$(this).find('.links a').attr("href")+"'></a>");}
+else{$(this).wrap("<a href='"+$(this).find('.title a').attr("href")+"'></a>");}});});

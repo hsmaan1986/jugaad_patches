@@ -1,0 +1,41 @@
+{
+	"textures": [
+		{
+			"image": "vitaflo_logo.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 480,
+				"h": 392
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "Vitaflo_Logo@4x.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 478,
+						"h": 390
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 478,
+						"h": 390
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 478,
+						"h": 390
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:a763f5896a4d80084932b7fbe8657bc4:7c9a6268bc65c2fdd23e352bde4c690e:c529488cf24512b0ce39136afa73adff$"
+	}
+}

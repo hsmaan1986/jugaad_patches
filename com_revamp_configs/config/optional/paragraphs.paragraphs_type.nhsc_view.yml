@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: nhsc_view
+label: 'NHSC View'
+icon_uuid: null
+icon_default: null
+description: 'Insert a view with the option of a filter.'
+behavior_plugins: {  }

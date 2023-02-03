@@ -1,0 +1,19 @@
+add advice booking entities:
+  title: 'Create new Advice Booking entities'
+
+administer advice booking entities:
+  title: 'Administer Advice Booking entities'
+  description: 'Allow to access the administration form to configure Advice Booking entities.'
+  restrict access: true
+
+delete advice booking entities:
+  title: 'Delete Advice Booking entities'
+
+edit advice booking entities:
+  title: 'Edit Advice Booking entities'
+
+view published advice booking entities:
+  title: 'View published Advice Booking entities'
+
+view unpublished advice booking entities:
+  title: 'View unpublished Advice Booking entities'

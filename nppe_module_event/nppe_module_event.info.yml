@@ -1,0 +1,10 @@
+name: nppe_module_event
+type: module
+description: Nestle Health Science Events.
+core_version_requirement: ^8 || ^9
+package: RNG
+version: 8.x-1.1
+configure: nppe_module_event.settings
+dependencies:
+  - rng
+  - hcp_certificates

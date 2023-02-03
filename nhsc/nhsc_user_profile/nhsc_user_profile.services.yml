@@ -1,0 +1,6 @@
+services:
+  nhsc_user_profile.event_subscriber:
+    class: Drupal\nhsc_user_profile\EventSubscriber\RedirectAnonymousSubscriber
+    arguments: []
+    tags:
+      - { name: event_subscriber }

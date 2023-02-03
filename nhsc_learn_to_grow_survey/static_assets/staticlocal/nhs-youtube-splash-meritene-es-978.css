@@ -1,0 +1,9 @@
+#MeriteneYoutubeSplashScreen{text-align:center;}
+#MeriteneYoutubeSplashScreen .youtube-outer-wrapper{width:100%;padding:0% 0%;margin: 0 auto;}
+#MeriteneYoutubeSplashScreen .button{margin-bottom:20px;display:inline-block}
+
+#MeriteneYoutubeSplashScreen img{margin:20px}
+
+@media only screen and (max-device-height : 500px)  {
+   #MeriteneYoutubeSplashScreen img{width: 50%;}
+}

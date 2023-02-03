@@ -1,0 +1,80 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.cerebral_palsy_tool.field_author
+    - field.field.taxonomy_term.cerebral_palsy_tool.field_author_image
+    - field.field.taxonomy_term.cerebral_palsy_tool.field_cerebral_palsy_button_icon
+    - field.field.taxonomy_term.cerebral_palsy_tool.field_cerebral_palsy_paragraphs
+    - field.field.taxonomy_term.cerebral_palsy_tool.field_image
+    - field.field.taxonomy_term.cerebral_palsy_tool.field_title
+    - taxonomy.vocabulary.cerebral_palsy_tool
+  module:
+    - entity_reference_revisions
+    - image
+    - text
+id: taxonomy_term.cerebral_palsy_tool.default
+targetEntityType: taxonomy_term
+bundle: cerebral_palsy_tool
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_author:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_author_image:
+    weight: 4
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_cerebral_palsy_button_icon:
+    weight: 6
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_cerebral_palsy_paragraphs:
+    type: entity_reference_revisions_entity_view
+    weight: 5
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_image:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

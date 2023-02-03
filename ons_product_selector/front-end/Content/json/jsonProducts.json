@@ -1,0 +1,3348 @@
+[
+    {
+      "nid": "1767",
+      "formName": null,
+      "uuid": "4424a99d-4245-4c0b-a3b1-a76c4b522b04",
+      "vid": "5258",
+      "langcode": "en",
+      "type": [
+        "ons_product_selector"
+      ],
+      "revision_timestamp": "1595273683",
+      "revision_uid": [
+        "1"
+      ],
+      "revision_log": null,
+      "status": "1",
+      "uid": [
+        "1"
+      ],
+      "title": "Resource® 2.0",
+      "created": "1594919270",
+      "changed": "1595273683",
+      "promote": "1",
+      "sticky": "0",
+      "default_langcode": "1",
+      "revision_default": "1",
+      "revision_translation_affected": "1",
+      "moderation_state": "published",
+      "metatag": null,
+      "path": "/node/1767",
+      "content_translation_source": "und",
+      "content_translation_outdated": "0",
+      "field_ons_description": "RESOURCE® 2.0 is a great tasting nutrient dense supplement. It is nutritionally formulated for the dietary management of individuals with unintended weight loss, malnutrition, for those requiring wound healing or are fluid restricted/volume sensitive",
+      "field_ons_energy": [
+        "2572"
+      ],
+      "field_ons_flavours": [
+        {
+          "tid": "2579",
+          "formName": "flavour",
+          "uuid": "7f62dcc4-e9c4-40d1-9477-3bc49243da3b",
+          "revision_id": "2579",
+          "langcode": "en",
+          "vid": [
+            "flavour"
+          ],
+          "revision_created": "1594919739",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Multi-flavoured",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1594919739",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1594919739"
+        }
+      ],
+      "field_ons_format_search": [
+        "2557"
+      ],
+      "field_ons_format_size": "200ml",
+      "field_ons_ingredient": [
+        "2551"
+      ],
+      "field_ons_intolerance": [
+        {
+          "tid": "2552",
+          "formName": "intolerance",
+          "uuid": "61f28048-bf33-45ec-b577-fdd7f4371d19",
+          "revision_id": "2552",
+          "langcode": "en",
+          "vid": [
+            "intolerance"
+          ],
+          "revision_created": "1594247861",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Fiber-free",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1596231355",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1594247861",
+          "field_image_intolerance": [
+            {
+              "target_id": "5473",
+              "alt": "Fiber-free",
+              "title": "",
+              "width": "34",
+              "height": "52",
+              "url": "https://dev-ef5-nhsc.pantheonsite.io/sites/default/files/2020-07/fiber_free.png"
+            }
+          ]
+        },
+        {
+          "tid": "2553",
+          "formName": "intolerance",
+          "uuid": "f7e42ddd-9cbc-46a4-86f2-8ee5f82a789f",
+          "revision_id": "2553",
+          "langcode": "en",
+          "vid": [
+            "intolerance"
+          ],
+          "revision_created": "1594247871",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Gluten-free",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1596231372",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1594247871",
+          "field_image_intolerance": [
+            {
+              "target_id": "5474",
+              "alt": "Gluten-free",
+              "title": "",
+              "width": "32",
+              "height": "52",
+              "url": "https://dev-ef5-nhsc.pantheonsite.io/sites/default/files/2020-07/gluten_free.png"
+            }
+          ]
+        }
+      ],
+      "field_ons_kcal": "2.0",
+      "field_ons_low_glycemic_index": [
+        "2556"
+      ],
+      "field_ons_pathology": [
+        "2566"
+      ],
+      "field_ons_pipcode": "000-000",
+      "field_ons_product": [
+        {
+          "nid": "1785",
+          "formName": null,
+          "uuid": "ac8b19ed-761e-416f-bc87-c511b50577ca",
+          "vid": "5256",
+          "langcode": "en",
+          "type": [
+            "product"
+          ],
+          "revision_timestamp": "1594923589",
+          "revision_uid": [
+            "1"
+          ],
+          "revision_log": null,
+          "status": "1",
+          "uid": [
+            "1"
+          ],
+          "title": "Resource® 2.0",
+          "created": "1594923291",
+          "changed": "1594923589",
+          "promote": "1",
+          "sticky": "0",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "moderation_state": null,
+          "metatag": null,
+          "path": "/node/1785",
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "body": null,
+          "field_brand_business_area": [
+            "891"
+          ],
+          "field_brand_business_category": [
+            "896"
+          ],
+          "field_brand_segment": [
+            "886"
+          ],
+          "field_bv_product_id": null,
+          "field_fusepump_id": null,
+          "field_images": [
+            {
+              "target_id": "5472",
+              "alt": "Resource® 2.0",
+              "title": "",
+              "width": "260",
+              "height": "285",
+              "url": "https://dev-ef5-nhsc.pantheonsite.io/sites/default/files/2020-07/resource_2.0-aardbei.jpg"
+            }
+          ],
+          "field_meta_tags": null,
+          "field_nhsc_product_components": null,
+          "field_product_summary": null,
+          "field_site_switcher_settings": null
+        }
+      ],
+      "field_ons_protein": "9",
+      "field_ons_protein_search": [
+        "2576"
+      ],
+      "field_ons_p_cho_f_": "18/43/39",
+      "field_ons_taste": [
+        "2563"
+      ],
+      "field_ons_type": [
+        "2544"
+      ]
+    },
+    {
+      "nid": "1783",
+      "formName": null,
+      "uuid": "73a51fa5-ebdf-43ab-99d9-7ef4df63f8e8",
+      "vid": "5271",
+      "langcode": "en",
+      "type": [
+        "ons_product_selector"
+      ],
+      "revision_timestamp": "1596224385",
+      "revision_uid": [
+        "1"
+      ],
+      "revision_log": null,
+      "status": "1",
+      "uid": [
+        "1"
+      ],
+      "title": "Resource® ULTRA",
+      "created": "1594922838",
+      "changed": "1596224385",
+      "promote": "1",
+      "sticky": "0",
+      "default_langcode": "1",
+      "revision_default": "1",
+      "revision_translation_affected": "1",
+      "moderation_state": "published",
+      "metatag": null,
+      "path": "/node/1783",
+      "content_translation_source": "und",
+      "content_translation_outdated": "0",
+      "field_ons_description": null,
+      "field_ons_energy": [
+        "2573"
+      ],
+      "field_ons_flavours": [
+        {
+          "tid": "2579",
+          "formName": "flavour",
+          "uuid": "7f62dcc4-e9c4-40d1-9477-3bc49243da3b",
+          "revision_id": "2579",
+          "langcode": "en",
+          "vid": [
+            "flavour"
+          ],
+          "revision_created": "1594919739",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Multi-flavoured",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1594919739",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1594919739"
+        }
+      ],
+      "field_ons_format_search": [
+        "2557"
+      ],
+      "field_ons_format_size": "200ml/125ml ",
+      "field_ons_ingredient": [
+        "2551"
+      ],
+      "field_ons_kcal": "2.25",
+      "field_ons_pipcode": "000-000",
+      "field_ons_product": [
+        {
+          "nid": "1785",
+          "formName": null,
+          "uuid": "ac8b19ed-761e-416f-bc87-c511b50577ca",
+          "vid": "5256",
+          "langcode": "en",
+          "type": [
+            "product"
+          ],
+          "revision_timestamp": "1594923589",
+          "revision_uid": [
+            "1"
+          ],
+          "revision_log": null,
+          "status": "1",
+          "uid": [
+            "1"
+          ],
+          "title": "Resource® 2.0",
+          "created": "1594923291",
+          "changed": "1594923589",
+          "promote": "1",
+          "sticky": "0",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "moderation_state": null,
+          "metatag": null,
+          "path": "/node/1785",
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "body": null,
+          "field_brand_business_area": [
+            "891"
+          ],
+          "field_brand_business_category": [
+            "896"
+          ],
+          "field_brand_segment": [
+            "886"
+          ],
+          "field_bv_product_id": null,
+          "field_fusepump_id": null,
+          "field_images": [
+            {
+              "target_id": "5472",
+              "alt": "Resource® 2.0",
+              "title": "",
+              "width": "260",
+              "height": "285",
+              "url": "https://dev-ef5-nhsc.pantheonsite.io/sites/default/files/2020-07/resource_2.0-aardbei.jpg"
+            }
+          ],
+          "field_meta_tags": null,
+          "field_nhsc_product_components": null,
+          "field_product_summary": null,
+          "field_site_switcher_settings": null
+        }
+      ],
+      "field_ons_protein": "14",
+      "field_ons_protein_search": [
+        "2577"
+      ],
+      "field_ons_p_cho_f_": "25/39/36",
+      "field_ons_taste": [
+        "2563"
+      ],
+      "field_ons_type": [
+        "2544"
+      ],
+      "field_ons_intolerance": null
+    },
+    {
+      "nid": "1784",
+      "formName": null,
+      "uuid": "97bddb8a-bbc7-452f-a354-e8c124a5b0f3",
+      "vid": "5270",
+      "langcode": "en",
+      "type": [
+        "ons_product_selector"
+      ],
+      "revision_timestamp": "1596224358",
+      "revision_uid": [
+        "1"
+      ],
+      "revision_log": null,
+      "status": "1",
+      "uid": [
+        "1"
+      ],
+      "title": "Resource® Soup",
+      "created": "1594922929",
+      "changed": "1596224358",
+      "promote": "1",
+      "sticky": "0",
+      "default_langcode": "1",
+      "revision_default": "1",
+      "revision_translation_affected": "1",
+      "moderation_state": "published",
+      "metatag": null,
+      "path": "/node/1784",
+      "content_translation_source": "und",
+      "content_translation_outdated": "0",
+      "field_ons_description": null,
+      "field_ons_energy": [
+        "2571"
+      ],
+      "field_ons_flavours": [
+        {
+          "tid": "2579",
+          "formName": "flavour",
+          "uuid": "7f62dcc4-e9c4-40d1-9477-3bc49243da3b",
+          "revision_id": "2579",
+          "langcode": "en",
+          "vid": [
+            "flavour"
+          ],
+          "revision_created": "1594919739",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Multi-flavoured",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1594919739",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1594919739"
+        }
+      ],
+      "field_ons_format_search": [
+        "2559"
+      ],
+      "field_ons_format_size": "200g",
+      "field_ons_ingredient": [
+        "2551"
+      ],
+      "field_ons_kcal": "1.5",
+      "field_ons_pathology": [
+        "2568"
+      ],
+      "field_ons_pipcode": "000-000",
+      "field_ons_product": [
+        {
+          "nid": "1785",
+          "formName": null,
+          "uuid": "ac8b19ed-761e-416f-bc87-c511b50577ca",
+          "vid": "5256",
+          "langcode": "en",
+          "type": [
+            "product"
+          ],
+          "revision_timestamp": "1594923589",
+          "revision_uid": [
+            "1"
+          ],
+          "revision_log": null,
+          "status": "1",
+          "uid": [
+            "1"
+          ],
+          "title": "Resource® 2.0",
+          "created": "1594923291",
+          "changed": "1594923589",
+          "promote": "1",
+          "sticky": "0",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "moderation_state": null,
+          "metatag": null,
+          "path": "/node/1785",
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "body": null,
+          "field_brand_business_area": [
+            "891"
+          ],
+          "field_brand_business_category": [
+            "896"
+          ],
+          "field_brand_segment": [
+            "886"
+          ],
+          "field_bv_product_id": null,
+          "field_fusepump_id": null,
+          "field_images": [
+            {
+              "target_id": "5472",
+              "alt": "Resource® 2.0",
+              "title": "",
+              "width": "260",
+              "height": "285",
+              "url": "https://dev-ef5-nhsc.pantheonsite.io/sites/default/files/2020-07/resource_2.0-aardbei.jpg"
+            }
+          ],
+          "field_meta_tags": null,
+          "field_nhsc_product_components": null,
+          "field_product_summary": null,
+          "field_site_switcher_settings": null
+        }
+      ],
+      "field_ons_protein": "7",
+      "field_ons_protein_search": [
+        "2576"
+      ],
+      "field_ons_p_cho_f_": "18/52/30",
+      "field_ons_taste": [
+        "2562"
+      ],
+      "field_ons_type": [
+        "2547"
+      ],
+      "field_ons_intolerance": null
+    },
+    {
+      "nid": "1786",
+      "formName": null,
+      "uuid": "ba7b4a05-93fe-4fff-b9f6-77442c4154af",
+      "vid": "5272",
+      "langcode": "en",
+      "type": [
+        "ons_product_selector"
+      ],
+      "revision_timestamp": "1596378241",
+      "revision_uid": [
+        "1"
+      ],
+      "revision_log": null,
+      "status": "1",
+      "uid": [
+        "1"
+      ],
+      "title": "Resource® 2.0 Fiber",
+      "created": "1596378101",
+      "changed": "1596378241",
+      "promote": "1",
+      "sticky": "0",
+      "default_langcode": "1",
+      "revision_default": "1",
+      "revision_translation_affected": "1",
+      "moderation_state": "published",
+      "metatag": null,
+      "path": "/node/1786",
+      "content_translation_source": "und",
+      "content_translation_outdated": "0",
+      "field_ons_description": null,
+      "field_ons_energy": [
+        "2572"
+      ],
+      "field_ons_flavours": [
+        {
+          "tid": "2579",
+          "formName": "flavour",
+          "uuid": "7f62dcc4-e9c4-40d1-9477-3bc49243da3b",
+          "revision_id": "2579",
+          "langcode": "en",
+          "vid": [
+            "flavour"
+          ],
+          "revision_created": "1594919739",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Multi-flavoured",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1594919739",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1594919739"
+        }
+      ],
+      "field_ons_format_search": [
+        "2557"
+      ],
+      "field_ons_format_size": "200ml",
+      "field_ons_ingredient": [
+        "2549"
+      ],
+      "field_ons_kcal": "2.0",
+      "field_ons_pipcode": "000-000",
+      "field_ons_product": [
+        {
+          "nid": "1785",
+          "formName": null,
+          "uuid": "ac8b19ed-761e-416f-bc87-c511b50577ca",
+          "vid": "5256",
+          "langcode": "en",
+          "type": [
+            "product"
+          ],
+          "revision_timestamp": "1594923589",
+          "revision_uid": [
+            "1"
+          ],
+          "revision_log": null,
+          "status": "1",
+          "uid": [
+            "1"
+          ],
+          "title": "Resource® 2.0",
+          "created": "1594923291",
+          "changed": "1594923589",
+          "promote": "1",
+          "sticky": "0",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "moderation_state": null,
+          "metatag": null,
+          "path": "/node/1785",
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "body": null,
+          "field_brand_business_area": [
+            "891"
+          ],
+          "field_brand_business_category": [
+            "896"
+          ],
+          "field_brand_segment": [
+            "886"
+          ],
+          "field_bv_product_id": null,
+          "field_fusepump_id": null,
+          "field_images": [
+            {
+              "target_id": "5472",
+              "alt": "Resource® 2.0",
+              "title": "",
+              "width": "260",
+              "height": "285",
+              "url": "https://dev-ef5-nhsc.pantheonsite.io/sites/default/files/2020-07/resource_2.0-aardbei.jpg"
+            }
+          ],
+          "field_meta_tags": null,
+          "field_nhsc_product_components": null,
+          "field_product_summary": null,
+          "field_site_switcher_settings": null
+        }
+      ],
+      "field_ons_protein": "9",
+      "field_ons_protein_search": [
+        "2576"
+      ],
+      "field_ons_p_cho_f_": "18/43/39",
+      "field_ons_taste": [
+        "2563"
+      ],
+      "field_ons_type": [
+        "2544"
+      ],
+      "field_ons_intolerance": null
+    },
+    {
+      "nid": "1787",
+      "formName": null,
+      "uuid": "e7e4b3c9-29d6-47b6-8251-8cbc0c050a88",
+      "vid": "5273",
+      "langcode": "en",
+      "type": [
+        "ons_product_selector"
+      ],
+      "revision_timestamp": "1596378401",
+      "revision_uid": [
+        "1"
+      ],
+      "revision_log": null,
+      "status": "1",
+      "uid": [
+        "1"
+      ],
+      "title": "Resource® Dessert 2.0",
+      "created": "1596378298",
+      "changed": "1596378401",
+      "promote": "1",
+      "sticky": "0",
+      "default_langcode": "1",
+      "revision_default": "1",
+      "revision_translation_affected": "1",
+      "moderation_state": "published",
+      "metatag": null,
+      "path": "/node/1787",
+      "content_translation_source": "und",
+      "content_translation_outdated": "0",
+      "field_ons_description": null,
+      "field_ons_energy": [
+        "2572"
+      ],
+      "field_ons_flavours": [
+        {
+          "tid": "2579",
+          "formName": "flavour",
+          "uuid": "7f62dcc4-e9c4-40d1-9477-3bc49243da3b",
+          "revision_id": "2579",
+          "langcode": "en",
+          "vid": [
+            "flavour"
+          ],
+          "revision_created": "1594919739",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Multi-flavoured",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1594919739",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1594919739"
+        }
+      ],
+      "field_ons_format_search": [
+        "2559"
+      ],
+      "field_ons_format_size": "125g",
+      "field_ons_ingredient": [
+        "2551"
+      ],
+      "field_ons_intolerance": [
+        {
+          "tid": "2552",
+          "formName": "intolerance",
+          "uuid": "61f28048-bf33-45ec-b577-fdd7f4371d19",
+          "revision_id": "2552",
+          "langcode": "en",
+          "vid": [
+            "intolerance"
+          ],
+          "revision_created": "1594247861",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Fiber-free",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1596231355",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1594247861",
+          "field_image_intolerance": [
+            {
+              "target_id": "5473",
+              "alt": "Fiber-free",
+              "title": "",
+              "width": "34",
+              "height": "52",
+              "url": "https://dev-ef5-nhsc.pantheonsite.io/sites/default/files/2020-07/fiber_free.png"
+            }
+          ]
+        }
+      ],
+      "field_ons_kcal": "2.0",
+      "field_ons_pipcode": "000-000",
+      "field_ons_product": [
+        {
+          "nid": "1785",
+          "formName": null,
+          "uuid": "ac8b19ed-761e-416f-bc87-c511b50577ca",
+          "vid": "5256",
+          "langcode": "en",
+          "type": [
+            "product"
+          ],
+          "revision_timestamp": "1594923589",
+          "revision_uid": [
+            "1"
+          ],
+          "revision_log": null,
+          "status": "1",
+          "uid": [
+            "1"
+          ],
+          "title": "Resource® 2.0",
+          "created": "1594923291",
+          "changed": "1594923589",
+          "promote": "1",
+          "sticky": "0",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "moderation_state": null,
+          "metatag": null,
+          "path": "/node/1785",
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "body": null,
+          "field_brand_business_area": [
+            "891"
+          ],
+          "field_brand_business_category": [
+            "896"
+          ],
+          "field_brand_segment": [
+            "886"
+          ],
+          "field_bv_product_id": null,
+          "field_fusepump_id": null,
+          "field_images": [
+            {
+              "target_id": "5472",
+              "alt": "Resource® 2.0",
+              "title": "",
+              "width": "260",
+              "height": "285",
+              "url": "https://dev-ef5-nhsc.pantheonsite.io/sites/default/files/2020-07/resource_2.0-aardbei.jpg"
+            }
+          ],
+          "field_meta_tags": null,
+          "field_nhsc_product_components": null,
+          "field_product_summary": null,
+          "field_site_switcher_settings": null
+        }
+      ],
+      "field_ons_protein": "10",
+      "field_ons_protein_search": [
+        "2576"
+      ],
+      "field_ons_p_cho_f_": "20/37/43",
+      "field_ons_taste": [
+        "2563"
+      ],
+      "field_ons_type": [
+        "2542"
+      ]
+    },
+    {
+      "nid": "1788",
+      "formName": null,
+      "uuid": "5f16184a-141b-418c-805f-7307517da68d",
+      "vid": "5274",
+      "langcode": "en",
+      "type": [
+        "ons_product_selector"
+      ],
+      "revision_timestamp": "1596378545",
+      "revision_uid": [
+        "1"
+      ],
+      "revision_log": null,
+      "status": "1",
+      "uid": [
+        "1"
+      ],
+      "title": "Resource® Dessert Gourmand",
+      "created": "1596378458",
+      "changed": "1596378545",
+      "promote": "1",
+      "sticky": "0",
+      "default_langcode": "1",
+      "revision_default": "1",
+      "revision_translation_affected": "1",
+      "moderation_state": "published",
+      "metatag": null,
+      "path": "/node/1788",
+      "content_translation_source": "und",
+      "content_translation_outdated": "0",
+      "field_ons_description": null,
+      "field_ons_energy": [
+        "2571"
+      ],
+      "field_ons_flavours": [
+        {
+          "tid": "2579",
+          "formName": "flavour",
+          "uuid": "7f62dcc4-e9c4-40d1-9477-3bc49243da3b",
+          "revision_id": "2579",
+          "langcode": "en",
+          "vid": [
+            "flavour"
+          ],
+          "revision_created": "1594919739",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Multi-flavoured",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1594919739",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1594919739"
+        }
+      ],
+      "field_ons_format_search": [
+        "2559"
+      ],
+      "field_ons_format_size": "125g",
+      "field_ons_ingredient": [
+        "2551"
+      ],
+      "field_ons_intolerance": [
+        {
+          "tid": "2552",
+          "formName": "intolerance",
+          "uuid": "61f28048-bf33-45ec-b577-fdd7f4371d19",
+          "revision_id": "2552",
+          "langcode": "en",
+          "vid": [
+            "intolerance"
+          ],
+          "revision_created": "1594247861",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Fiber-free",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1596231355",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1594247861",
+          "field_image_intolerance": [
+            {
+              "target_id": "5473",
+              "alt": "Fiber-free",
+              "title": "",
+              "width": "34",
+              "height": "52",
+              "url": "https://dev-ef5-nhsc.pantheonsite.io/sites/default/files/2020-07/fiber_free.png"
+            }
+          ]
+        }
+      ],
+      "field_ons_kcal": "1.5",
+      "field_ons_pipcode": "000-000",
+      "field_ons_product": [
+        {
+          "nid": "1785",
+          "formName": null,
+          "uuid": "ac8b19ed-761e-416f-bc87-c511b50577ca",
+          "vid": "5256",
+          "langcode": "en",
+          "type": [
+            "product"
+          ],
+          "revision_timestamp": "1594923589",
+          "revision_uid": [
+            "1"
+          ],
+          "revision_log": null,
+          "status": "1",
+          "uid": [
+            "1"
+          ],
+          "title": "Resource® 2.0",
+          "created": "1594923291",
+          "changed": "1594923589",
+          "promote": "1",
+          "sticky": "0",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "moderation_state": null,
+          "metatag": null,
+          "path": "/node/1785",
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "body": null,
+          "field_brand_business_area": [
+            "891"
+          ],
+          "field_brand_business_category": [
+            "896"
+          ],
+          "field_brand_segment": [
+            "886"
+          ],
+          "field_bv_product_id": null,
+          "field_fusepump_id": null,
+          "field_images": [
+            {
+              "target_id": "5472",
+              "alt": "Resource® 2.0",
+              "title": "",
+              "width": "260",
+              "height": "285",
+              "url": "https://dev-ef5-nhsc.pantheonsite.io/sites/default/files/2020-07/resource_2.0-aardbei.jpg"
+            }
+          ],
+          "field_meta_tags": null,
+          "field_nhsc_product_components": null,
+          "field_product_summary": null,
+          "field_site_switcher_settings": null
+        }
+      ],
+      "field_ons_protein": "9",
+      "field_ons_protein_search": [
+        "2576"
+      ],
+      "field_ons_p_cho_f_": "24/46/30",
+      "field_ons_taste": [
+        "2563"
+      ],
+      "field_ons_type": [
+        "2542"
+      ]
+    },
+    {
+      "nid": "1789",
+      "formName": null,
+      "uuid": "032e1bb1-0c51-433b-915c-2253cb69b502",
+      "vid": "5275",
+      "langcode": "en",
+      "type": [
+        "ons_product_selector"
+      ],
+      "revision_timestamp": "1596378704",
+      "revision_uid": [
+        "1"
+      ],
+      "revision_log": null,
+      "status": "1",
+      "uid": [
+        "1"
+      ],
+      "title": "Resource® Energy",
+      "created": "1596378600",
+      "changed": "1596378704",
+      "promote": "1",
+      "sticky": "0",
+      "default_langcode": "1",
+      "revision_default": "1",
+      "revision_translation_affected": "1",
+      "moderation_state": "published",
+      "metatag": null,
+      "path": "/node/1789",
+      "content_translation_source": "und",
+      "content_translation_outdated": "0",
+      "field_ons_description": null,
+      "field_ons_energy": [
+        "2571"
+      ],
+      "field_ons_flavours": [
+        {
+          "tid": "2579",
+          "formName": "flavour",
+          "uuid": "7f62dcc4-e9c4-40d1-9477-3bc49243da3b",
+          "revision_id": "2579",
+          "langcode": "en",
+          "vid": [
+            "flavour"
+          ],
+          "revision_created": "1594919739",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Multi-flavoured",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1594919739",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1594919739"
+        }
+      ],
+      "field_ons_format_search": [
+        "2557"
+      ],
+      "field_ons_format_size": "200ml",
+      "field_ons_ingredient": [
+        "2551"
+      ],
+      "field_ons_intolerance": [
+        {
+          "tid": "2552",
+          "formName": "intolerance",
+          "uuid": "61f28048-bf33-45ec-b577-fdd7f4371d19",
+          "revision_id": "2552",
+          "langcode": "en",
+          "vid": [
+            "intolerance"
+          ],
+          "revision_created": "1594247861",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Fiber-free",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1596231355",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1594247861",
+          "field_image_intolerance": [
+            {
+              "target_id": "5473",
+              "alt": "Fiber-free",
+              "title": "",
+              "width": "34",
+              "height": "52",
+              "url": "https://dev-ef5-nhsc.pantheonsite.io/sites/default/files/2020-07/fiber_free.png"
+            }
+          ]
+        }
+      ],
+      "field_ons_kcal": "1.5",
+      "field_ons_pipcode": "000-000",
+      "field_ons_product": [
+        {
+          "nid": "1785",
+          "formName": null,
+          "uuid": "ac8b19ed-761e-416f-bc87-c511b50577ca",
+          "vid": "5256",
+          "langcode": "en",
+          "type": [
+            "product"
+          ],
+          "revision_timestamp": "1594923589",
+          "revision_uid": [
+            "1"
+          ],
+          "revision_log": null,
+          "status": "1",
+          "uid": [
+            "1"
+          ],
+          "title": "Resource® 2.0",
+          "created": "1594923291",
+          "changed": "1594923589",
+          "promote": "1",
+          "sticky": "0",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "moderation_state": null,
+          "metatag": null,
+          "path": "/node/1785",
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "body": null,
+          "field_brand_business_area": [
+            "891"
+          ],
+          "field_brand_business_category": [
+            "896"
+          ],
+          "field_brand_segment": [
+            "886"
+          ],
+          "field_bv_product_id": null,
+          "field_fusepump_id": null,
+          "field_images": [
+            {
+              "target_id": "5472",
+              "alt": "Resource® 2.0",
+              "title": "",
+              "width": "260",
+              "height": "285",
+              "url": "https://dev-ef5-nhsc.pantheonsite.io/sites/default/files/2020-07/resource_2.0-aardbei.jpg"
+            }
+          ],
+          "field_meta_tags": null,
+          "field_nhsc_product_components": null,
+          "field_product_summary": null,
+          "field_site_switcher_settings": null
+        }
+      ],
+      "field_ons_protein": "5.6",
+      "field_ons_protein_search": [
+        "2575"
+      ],
+      "field_ons_p_cho_f_": "15/55/30",
+      "field_ons_type": [
+        "2544"
+      ]
+    },
+    {
+      "nid": "1790",
+      "formName": null,
+      "uuid": "e61226c7-b0f0-4b80-a096-4c806482814a",
+      "vid": "5276",
+      "langcode": "en",
+      "type": [
+        "ons_product_selector"
+      ],
+      "revision_timestamp": "1596378929",
+      "revision_uid": [
+        "1"
+      ],
+      "revision_log": null,
+      "status": "1",
+      "uid": [
+        "1"
+      ],
+      "title": "Resource® HP/HC",
+      "created": "1596378717",
+      "changed": "1596378929",
+      "promote": "1",
+      "sticky": "0",
+      "default_langcode": "1",
+      "revision_default": "1",
+      "revision_translation_affected": "1",
+      "moderation_state": "published",
+      "metatag": null,
+      "path": "/node/1790",
+      "content_translation_source": "und",
+      "content_translation_outdated": "0",
+      "field_ons_description": "RESOURCE® HP/HC is a high-protein, high energy supplement specifically formulated for those with an elevated need for protein and calories",
+      "field_ons_energy": [
+        "2572"
+      ],
+      "field_ons_flavours": [
+        {
+          "tid": "2579",
+          "formName": "flavour",
+          "uuid": "7f62dcc4-e9c4-40d1-9477-3bc49243da3b",
+          "revision_id": "2579",
+          "langcode": "en",
+          "vid": [
+            "flavour"
+          ],
+          "revision_created": "1594919739",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Multi-flavoured",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1594919739",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1594919739"
+        }
+      ],
+      "field_ons_format_search": [
+        "2557"
+      ],
+      "field_ons_format_size": "200ml/300ml",
+      "field_ons_ingredient": [
+        "2551"
+      ],
+      "field_ons_intolerance": [
+        {
+          "tid": "2552",
+          "formName": "intolerance",
+          "uuid": "61f28048-bf33-45ec-b577-fdd7f4371d19",
+          "revision_id": "2552",
+          "langcode": "en",
+          "vid": [
+            "intolerance"
+          ],
+          "revision_created": "1594247861",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Fiber-free",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1596231355",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1594247861",
+          "field_image_intolerance": [
+            {
+              "target_id": "5473",
+              "alt": "Fiber-free",
+              "title": "",
+              "width": "34",
+              "height": "52",
+              "url": "https://dev-ef5-nhsc.pantheonsite.io/sites/default/files/2020-07/fiber_free.png"
+            }
+          ]
+        }
+      ],
+      "field_ons_kcal": "1.6",
+      "field_ons_pipcode": "000-000",
+      "field_ons_product": [
+        {
+          "nid": "1785",
+          "formName": null,
+          "uuid": "ac8b19ed-761e-416f-bc87-c511b50577ca",
+          "vid": "5256",
+          "langcode": "en",
+          "type": [
+            "product"
+          ],
+          "revision_timestamp": "1594923589",
+          "revision_uid": [
+            "1"
+          ],
+          "revision_log": null,
+          "status": "1",
+          "uid": [
+            "1"
+          ],
+          "title": "Resource® 2.0",
+          "created": "1594923291",
+          "changed": "1594923589",
+          "promote": "1",
+          "sticky": "0",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "moderation_state": null,
+          "metatag": null,
+          "path": "/node/1785",
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "body": null,
+          "field_brand_business_area": [
+            "891"
+          ],
+          "field_brand_business_category": [
+            "896"
+          ],
+          "field_brand_segment": [
+            "886"
+          ],
+          "field_bv_product_id": null,
+          "field_fusepump_id": null,
+          "field_images": [
+            {
+              "target_id": "5472",
+              "alt": "Resource® 2.0",
+              "title": "",
+              "width": "260",
+              "height": "285",
+              "url": "https://dev-ef5-nhsc.pantheonsite.io/sites/default/files/2020-07/resource_2.0-aardbei.jpg"
+            }
+          ],
+          "field_meta_tags": null,
+          "field_nhsc_product_components": null,
+          "field_product_summary": null,
+          "field_site_switcher_settings": null
+        }
+      ],
+      "field_ons_protein": "10",
+      "field_ons_protein_search": [
+        "2576"
+      ],
+      "field_ons_p_cho_f_": "25/40/35",
+      "field_ons_taste": [
+        "2563"
+      ],
+      "field_ons_type": [
+        "2544"
+      ]
+    },
+    {
+      "nid": "1791",
+      "formName": null,
+      "uuid": "d657d7dc-ca9c-4763-9ea0-85bc0640b8b3",
+      "vid": "5282",
+      "langcode": "en",
+      "type": [
+        "ons_product_selector"
+      ],
+      "revision_timestamp": "1596380299",
+      "revision_uid": [
+        "1"
+      ],
+      "revision_log": null,
+      "status": "1",
+      "uid": [
+        "1"
+      ],
+      "title": "Resource® Senior Activ",
+      "created": "1596378967",
+      "changed": "1596380299",
+      "promote": "1",
+      "sticky": "0",
+      "default_langcode": "1",
+      "revision_default": "1",
+      "revision_translation_affected": "1",
+      "moderation_state": "published",
+      "metatag": null,
+      "path": "/node/1791",
+      "content_translation_source": "und",
+      "content_translation_outdated": "0",
+      "field_ons_description": "RESOURCE® SeniorActiv is specifically formulated to target the nutritional needs of the elderly when they require increased energy and strength, such as following a fall or fracture or for the management of undernutrition and frailty",
+      "field_ons_energy": [
+        "2571"
+      ],
+      "field_ons_flavours": [
+        {
+          "tid": "2579",
+          "formName": "flavour",
+          "uuid": "7f62dcc4-e9c4-40d1-9477-3bc49243da3b",
+          "revision_id": "2579",
+          "langcode": "en",
+          "vid": [
+            "flavour"
+          ],
+          "revision_created": "1594919739",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Multi-flavoured",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1594919739",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1594919739"
+        }
+      ],
+      "field_ons_format_search": [
+        "2557"
+      ],
+      "field_ons_format_size": "200ml",
+      "field_ons_ingredient": [
+        "2548",
+        "2550",
+        "2551"
+      ],
+      "field_ons_kcal": "1.5",
+      "field_ons_low_glycemic_index": [
+        "2556"
+      ],
+      "field_ons_pipcode": "000-000",
+      "field_ons_product": [
+        {
+          "nid": "1785",
+          "formName": null,
+          "uuid": "ac8b19ed-761e-416f-bc87-c511b50577ca",
+          "vid": "5256",
+          "langcode": "en",
+          "type": [
+            "product"
+          ],
+          "revision_timestamp": "1594923589",
+          "revision_uid": [
+            "1"
+          ],
+          "revision_log": null,
+          "status": "1",
+          "uid": [
+            "1"
+          ],
+          "title": "Resource® 2.0",
+          "created": "1594923291",
+          "changed": "1594923589",
+          "promote": "1",
+          "sticky": "0",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "moderation_state": null,
+          "metatag": null,
+          "path": "/node/1785",
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "body": null,
+          "field_brand_business_area": [
+            "891"
+          ],
+          "field_brand_business_category": [
+            "896"
+          ],
+          "field_brand_segment": [
+            "886"
+          ],
+          "field_bv_product_id": null,
+          "field_fusepump_id": null,
+          "field_images": [
+            {
+              "target_id": "5472",
+              "alt": "Resource® 2.0",
+              "title": "",
+              "width": "260",
+              "height": "285",
+              "url": "https://dev-ef5-nhsc.pantheonsite.io/sites/default/files/2020-07/resource_2.0-aardbei.jpg"
+            }
+          ],
+          "field_meta_tags": null,
+          "field_nhsc_product_components": null,
+          "field_product_summary": null,
+          "field_site_switcher_settings": null
+        }
+      ],
+      "field_ons_protein": "10",
+      "field_ons_protein_search": [
+        "2576"
+      ],
+      "field_ons_p_cho_f_": "27/32/39",
+      "field_ons_taste": [
+        "2563"
+      ],
+      "field_ons_type": [
+        "2544"
+      ],
+      "field_ons_intolerance": null
+    },
+    {
+      "nid": "1792",
+      "formName": null,
+      "uuid": "389adbf8-4b71-4d91-befe-bfc17750d5aa",
+      "vid": "5278",
+      "langcode": "en",
+      "type": [
+        "ons_product_selector"
+      ],
+      "revision_timestamp": "1596379378",
+      "revision_uid": [
+        "1"
+      ],
+      "revision_log": null,
+      "status": "1",
+      "uid": [
+        "1"
+      ],
+      "title": "Resource® Diabet",
+      "created": "1596379262",
+      "changed": "1596379378",
+      "promote": "1",
+      "sticky": "0",
+      "default_langcode": "1",
+      "revision_default": "1",
+      "revision_translation_affected": "1",
+      "moderation_state": "published",
+      "metatag": null,
+      "path": "/node/1792",
+      "content_translation_source": "und",
+      "content_translation_outdated": "0",
+      "field_ons_description": null,
+      "field_ons_energy": [
+        "2571"
+      ],
+      "field_ons_flavours": [
+        {
+          "tid": "2579",
+          "formName": "flavour",
+          "uuid": "7f62dcc4-e9c4-40d1-9477-3bc49243da3b",
+          "revision_id": "2579",
+          "langcode": "en",
+          "vid": [
+            "flavour"
+          ],
+          "revision_created": "1594919739",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Multi-flavoured",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1594919739",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1594919739"
+        }
+      ],
+      "field_ons_format_search": [
+        "2557"
+      ],
+      "field_ons_format_size": "200ml",
+      "field_ons_ingredient": [
+        "2549"
+      ],
+      "field_ons_kcal": "1.0",
+      "field_ons_low_glycemic_index": [
+        "2555"
+      ],
+      "field_ons_pipcode": "000-000",
+      "field_ons_product": [
+        {
+          "nid": "1785",
+          "formName": null,
+          "uuid": "ac8b19ed-761e-416f-bc87-c511b50577ca",
+          "vid": "5256",
+          "langcode": "en",
+          "type": [
+            "product"
+          ],
+          "revision_timestamp": "1594923589",
+          "revision_uid": [
+            "1"
+          ],
+          "revision_log": null,
+          "status": "1",
+          "uid": [
+            "1"
+          ],
+          "title": "Resource® 2.0",
+          "created": "1594923291",
+          "changed": "1594923589",
+          "promote": "1",
+          "sticky": "0",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "moderation_state": null,
+          "metatag": null,
+          "path": "/node/1785",
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "body": null,
+          "field_brand_business_area": [
+            "891"
+          ],
+          "field_brand_business_category": [
+            "896"
+          ],
+          "field_brand_segment": [
+            "886"
+          ],
+          "field_bv_product_id": null,
+          "field_fusepump_id": null,
+          "field_images": [
+            {
+              "target_id": "5472",
+              "alt": "Resource® 2.0",
+              "title": "",
+              "width": "260",
+              "height": "285",
+              "url": "https://dev-ef5-nhsc.pantheonsite.io/sites/default/files/2020-07/resource_2.0-aardbei.jpg"
+            }
+          ],
+          "field_meta_tags": null,
+          "field_nhsc_product_components": null,
+          "field_product_summary": null,
+          "field_site_switcher_settings": null
+        }
+      ],
+      "field_ons_protein": "7",
+      "field_ons_protein_search": [
+        "2576"
+      ],
+      "field_ons_p_cho_f_": "28/44/24",
+      "field_ons_taste": [
+        "2563"
+      ],
+      "field_ons_type": [
+        "2544"
+      ],
+      "field_ons_intolerance": null
+    },
+    {
+      "nid": "1794",
+      "formName": null,
+      "uuid": "f06ae195-b2cc-415f-a2fc-e09af0fa3a99",
+      "vid": "5280",
+      "langcode": "en",
+      "type": [
+        "ons_product_selector"
+      ],
+      "revision_timestamp": "1596379932",
+      "revision_uid": [
+        "1"
+      ],
+      "revision_log": null,
+      "status": "1",
+      "uid": [
+        "1"
+      ],
+      "title": "Resource® Diabet Plus",
+      "created": "1596379844",
+      "changed": "1596379932",
+      "promote": "1",
+      "sticky": "0",
+      "default_langcode": "1",
+      "revision_default": "1",
+      "revision_translation_affected": "1",
+      "moderation_state": "published",
+      "metatag": null,
+      "path": "/node/1794",
+      "content_translation_source": "und",
+      "content_translation_outdated": "0",
+      "field_ons_description": null,
+      "field_ons_energy": [
+        "2572"
+      ],
+      "field_ons_flavours": [
+        {
+          "tid": "2579",
+          "formName": "flavour",
+          "uuid": "7f62dcc4-e9c4-40d1-9477-3bc49243da3b",
+          "revision_id": "2579",
+          "langcode": "en",
+          "vid": [
+            "flavour"
+          ],
+          "revision_created": "1594919739",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Multi-flavoured",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1594919739",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1594919739"
+        }
+      ],
+      "field_ons_format_search": [
+        "2557"
+      ],
+      "field_ons_format_size": "200ml",
+      "field_ons_ingredient": [
+        "2549"
+      ],
+      "field_ons_kcal": "1.6",
+      "field_ons_low_glycemic_index": [
+        "2555"
+      ],
+      "field_ons_pipcode": "000-000",
+      "field_ons_product": [
+        {
+          "nid": "1785",
+          "formName": null,
+          "uuid": "ac8b19ed-761e-416f-bc87-c511b50577ca",
+          "vid": "5256",
+          "langcode": "en",
+          "type": [
+            "product"
+          ],
+          "revision_timestamp": "1594923589",
+          "revision_uid": [
+            "1"
+          ],
+          "revision_log": null,
+          "status": "1",
+          "uid": [
+            "1"
+          ],
+          "title": "Resource® 2.0",
+          "created": "1594923291",
+          "changed": "1594923589",
+          "promote": "1",
+          "sticky": "0",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "moderation_state": null,
+          "metatag": null,
+          "path": "/node/1785",
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "body": null,
+          "field_brand_business_area": [
+            "891"
+          ],
+          "field_brand_business_category": [
+            "896"
+          ],
+          "field_brand_segment": [
+            "886"
+          ],
+          "field_bv_product_id": null,
+          "field_fusepump_id": null,
+          "field_images": [
+            {
+              "target_id": "5472",
+              "alt": "Resource® 2.0",
+              "title": "",
+              "width": "260",
+              "height": "285",
+              "url": "https://dev-ef5-nhsc.pantheonsite.io/sites/default/files/2020-07/resource_2.0-aardbei.jpg"
+            }
+          ],
+          "field_meta_tags": null,
+          "field_nhsc_product_components": null,
+          "field_product_summary": null,
+          "field_site_switcher_settings": null
+        }
+      ],
+      "field_ons_protein": "9",
+      "field_ons_protein_search": [
+        "2576"
+      ],
+      "field_ons_p_cho_f_": "23/39/35",
+      "field_ons_taste": [
+        "2563"
+      ],
+      "field_ons_type": [
+        "2544"
+      ],
+      "field_ons_intolerance": null
+    },
+    {
+      "nid": "1795",
+      "formName": null,
+      "uuid": "72039950-9efb-488a-b3e0-597f3cc89eab",
+      "vid": "5281",
+      "langcode": "en",
+      "type": [
+        "ons_product_selector"
+      ],
+      "revision_timestamp": "1596380126",
+      "revision_uid": [
+        "1"
+      ],
+      "revision_log": null,
+      "status": "1",
+      "uid": [
+        "1"
+      ],
+      "title": "Resource® Protein",
+      "created": "1596379960",
+      "changed": "1596380126",
+      "promote": "1",
+      "sticky": "0",
+      "default_langcode": "1",
+      "revision_default": "1",
+      "revision_translation_affected": "1",
+      "moderation_state": "published",
+      "metatag": null,
+      "path": "/node/1795",
+      "content_translation_source": "und",
+      "content_translation_outdated": "0",
+      "field_ons_description": "RESOURCE® Protein is a high protein supplement specifically formulated for those with additional protein requirements",
+      "field_ons_energy": [
+        "2571"
+      ],
+      "field_ons_flavours": [
+        {
+          "tid": "2579",
+          "formName": "flavour",
+          "uuid": "7f62dcc4-e9c4-40d1-9477-3bc49243da3b",
+          "revision_id": "2579",
+          "langcode": "en",
+          "vid": [
+            "flavour"
+          ],
+          "revision_created": "1594919739",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Multi-flavoured",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1594919739",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1594919739"
+        }
+      ],
+      "field_ons_format_search": [
+        "2557"
+      ],
+      "field_ons_format_size": "200ml",
+      "field_ons_ingredient": [
+        "2551"
+      ],
+      "field_ons_intolerance": [
+        {
+          "tid": "2552",
+          "formName": "intolerance",
+          "uuid": "61f28048-bf33-45ec-b577-fdd7f4371d19",
+          "revision_id": "2552",
+          "langcode": "en",
+          "vid": [
+            "intolerance"
+          ],
+          "revision_created": "1594247861",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Fiber-free",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1596231355",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1594247861",
+          "field_image_intolerance": [
+            {
+              "target_id": "5473",
+              "alt": "Fiber-free",
+              "title": "",
+              "width": "34",
+              "height": "52",
+              "url": "https://dev-ef5-nhsc.pantheonsite.io/sites/default/files/2020-07/fiber_free.png"
+            }
+          ]
+        }
+      ],
+      "field_ons_kcal": "1.25",
+      "field_ons_pipcode": "000-000",
+      "field_ons_product": [
+        {
+          "nid": "1793",
+          "formName": null,
+          "uuid": "e657dbe5-3f17-45a4-a4e5-f4011cb65ecc",
+          "vid": "5279",
+          "langcode": "en",
+          "type": [
+            "product"
+          ],
+          "revision_timestamp": "1596379806",
+          "revision_uid": [
+            "1"
+          ],
+          "revision_log": null,
+          "status": "1",
+          "uid": [
+            "1"
+          ],
+          "title": "Resource® Protein",
+          "created": "1596379645",
+          "changed": "1596379806",
+          "promote": "1",
+          "sticky": "0",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "moderation_state": null,
+          "metatag": null,
+          "path": "/node/1793",
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "body": null,
+          "field_brand_business_area": [
+            "891"
+          ],
+          "field_brand_business_category": [
+            "896"
+          ],
+          "field_brand_segment": [
+            "886"
+          ],
+          "field_bv_product_id": null,
+          "field_fusepump_id": null,
+          "field_images": [
+            {
+              "target_id": "5476",
+              "alt": "Resource® Protein",
+              "title": "",
+              "width": "260",
+              "height": "285",
+              "url": "https://dev-ef5-nhsc.pantheonsite.io/sites/default/files/2020-08/Resource_Protein-vanille_0.jpg"
+            }
+          ],
+          "field_meta_tags": null,
+          "field_nhsc_product_components": null,
+          "field_product_summary": null,
+          "field_site_switcher_settings": null
+        }
+      ],
+      "field_ons_protein": "9.4",
+      "field_ons_protein_search": [
+        "2576"
+      ],
+      "field_ons_p_cho_f_": "30/45/25",
+      "field_ons_taste": [
+        "2563"
+      ],
+      "field_ons_type": [
+        "2544"
+      ]
+    },
+    {
+      "nid": "1796",
+      "formName": null,
+      "uuid": "d88a05db-3086-4323-8423-698ff158e198",
+      "vid": "5283",
+      "langcode": "en",
+      "type": [
+        "ons_product_selector"
+      ],
+      "revision_timestamp": "1596380417",
+      "revision_uid": [
+        "1"
+      ],
+      "revision_log": null,
+      "status": "1",
+      "uid": [
+        "1"
+      ],
+      "title": "Resource® Protein Fibre",
+      "created": "1596380321",
+      "changed": "1596380417",
+      "promote": "1",
+      "sticky": "0",
+      "default_langcode": "1",
+      "revision_default": "1",
+      "revision_translation_affected": "1",
+      "moderation_state": "published",
+      "metatag": null,
+      "path": "/node/1796",
+      "content_translation_source": "und",
+      "content_translation_outdated": "0",
+      "field_ons_description": null,
+      "field_ons_energy": [
+        "2571"
+      ],
+      "field_ons_flavours": [
+        {
+          "tid": "2579",
+          "formName": "flavour",
+          "uuid": "7f62dcc4-e9c4-40d1-9477-3bc49243da3b",
+          "revision_id": "2579",
+          "langcode": "en",
+          "vid": [
+            "flavour"
+          ],
+          "revision_created": "1594919739",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Multi-flavoured",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1594919739",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1594919739"
+        }
+      ],
+      "field_ons_format_search": [
+        "2557"
+      ],
+      "field_ons_format_size": "200ml",
+      "field_ons_ingredient": [
+        "2549"
+      ],
+      "field_ons_kcal": "1.25",
+      "field_ons_pipcode": "000-000",
+      "field_ons_product": [
+        {
+          "nid": "1793",
+          "formName": null,
+          "uuid": "e657dbe5-3f17-45a4-a4e5-f4011cb65ecc",
+          "vid": "5279",
+          "langcode": "en",
+          "type": [
+            "product"
+          ],
+          "revision_timestamp": "1596379806",
+          "revision_uid": [
+            "1"
+          ],
+          "revision_log": null,
+          "status": "1",
+          "uid": [
+            "1"
+          ],
+          "title": "Resource® Protein",
+          "created": "1596379645",
+          "changed": "1596379806",
+          "promote": "1",
+          "sticky": "0",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "moderation_state": null,
+          "metatag": null,
+          "path": "/node/1793",
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "body": null,
+          "field_brand_business_area": [
+            "891"
+          ],
+          "field_brand_business_category": [
+            "896"
+          ],
+          "field_brand_segment": [
+            "886"
+          ],
+          "field_bv_product_id": null,
+          "field_fusepump_id": null,
+          "field_images": [
+            {
+              "target_id": "5476",
+              "alt": "Resource® Protein",
+              "title": "",
+              "width": "260",
+              "height": "285",
+              "url": "https://dev-ef5-nhsc.pantheonsite.io/sites/default/files/2020-08/Resource_Protein-vanille_0.jpg"
+            }
+          ],
+          "field_meta_tags": null,
+          "field_nhsc_product_components": null,
+          "field_product_summary": null,
+          "field_site_switcher_settings": null
+        }
+      ],
+      "field_ons_protein": "9.4",
+      "field_ons_protein_search": [
+        "2576"
+      ],
+      "field_ons_p_cho_f_": "30/41/24",
+      "field_ons_taste": [
+        "2563"
+      ],
+      "field_ons_type": [
+        "2544"
+      ],
+      "field_ons_intolerance": null
+    },
+    {
+      "nid": "1797",
+      "formName": null,
+      "uuid": "08b805ce-9247-4744-a12a-875fe823a723",
+      "vid": "5284",
+      "langcode": "en",
+      "type": [
+        "ons_product_selector"
+      ],
+      "revision_timestamp": "1596380540",
+      "revision_uid": [
+        "1"
+      ],
+      "revision_log": null,
+      "status": "1",
+      "uid": [
+        "1"
+      ],
+      "title": "Resource® Support Plus",
+      "created": "1596380427",
+      "changed": "1596380540",
+      "promote": "1",
+      "sticky": "0",
+      "default_langcode": "1",
+      "revision_default": "1",
+      "revision_translation_affected": "1",
+      "moderation_state": "published",
+      "metatag": null,
+      "path": "/node/1797",
+      "content_translation_source": "und",
+      "content_translation_outdated": "0",
+      "field_ons_description": "RESOURCE® Support Plus is a high protein, high-calorie supplement specifically formulated for the increased nutritional needs of cancer/oncology patients",
+      "field_ons_energy": [
+        "2572"
+      ],
+      "field_ons_flavours": [
+        {
+          "tid": "2579",
+          "formName": "flavour",
+          "uuid": "7f62dcc4-e9c4-40d1-9477-3bc49243da3b",
+          "revision_id": "2579",
+          "langcode": "en",
+          "vid": [
+            "flavour"
+          ],
+          "revision_created": "1594919739",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Multi-flavoured",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1594919739",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1594919739"
+        }
+      ],
+      "field_ons_format_search": [
+        "2557"
+      ],
+      "field_ons_format_size": "125ml",
+      "field_ons_ingredient": [
+        "2549",
+        "2580",
+        "2551"
+      ],
+      "field_ons_kcal": "2",
+      "field_ons_pipcode": "000-000",
+      "field_ons_product": [
+        {
+          "nid": "1793",
+          "formName": null,
+          "uuid": "e657dbe5-3f17-45a4-a4e5-f4011cb65ecc",
+          "vid": "5279",
+          "langcode": "en",
+          "type": [
+            "product"
+          ],
+          "revision_timestamp": "1596379806",
+          "revision_uid": [
+            "1"
+          ],
+          "revision_log": null,
+          "status": "1",
+          "uid": [
+            "1"
+          ],
+          "title": "Resource® Protein",
+          "created": "1596379645",
+          "changed": "1596379806",
+          "promote": "1",
+          "sticky": "0",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "moderation_state": null,
+          "metatag": null,
+          "path": "/node/1793",
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "body": null,
+          "field_brand_business_area": [
+            "891"
+          ],
+          "field_brand_business_category": [
+            "896"
+          ],
+          "field_brand_segment": [
+            "886"
+          ],
+          "field_bv_product_id": null,
+          "field_fusepump_id": null,
+          "field_images": [
+            {
+              "target_id": "5476",
+              "alt": "Resource® Protein",
+              "title": "",
+              "width": "260",
+              "height": "285",
+              "url": "https://dev-ef5-nhsc.pantheonsite.io/sites/default/files/2020-08/Resource_Protein-vanille_0.jpg"
+            }
+          ],
+          "field_meta_tags": null,
+          "field_nhsc_product_components": null,
+          "field_product_summary": null,
+          "field_site_switcher_settings": null
+        }
+      ],
+      "field_ons_protein": "9.2",
+      "field_ons_protein_search": [
+        "2576"
+      ],
+      "field_ons_p_cho_f_": "18/41/39",
+      "field_ons_taste": [
+        "2561",
+        "2563"
+      ],
+      "field_ons_type": [
+        "2544"
+      ],
+      "field_ons_intolerance": null
+    },
+    {
+      "nid": "1798",
+      "formName": null,
+      "uuid": "2d34a956-1805-4c8b-8aed-4dbf7b0de955",
+      "vid": "5291",
+      "langcode": "en",
+      "type": [
+        "ons_product_selector"
+      ],
+      "revision_timestamp": "1596481180",
+      "revision_uid": [
+        "1"
+      ],
+      "revision_log": null,
+      "status": "1",
+      "uid": [
+        "1"
+      ],
+      "title": "Resource® Repair",
+      "created": "1596380560",
+      "changed": "1596481180",
+      "promote": "1",
+      "sticky": "0",
+      "default_langcode": "1",
+      "revision_default": "1",
+      "revision_translation_affected": "1",
+      "moderation_state": "published",
+      "metatag": null,
+      "path": "/node/1798",
+      "content_translation_source": "und",
+      "content_translation_outdated": "0",
+      "field_ons_description": "Resource® Repair is for the dietary management of patients with malnutrition or at risk of malnutrition and with wounds and difficult wound healing. ",
+      "field_ons_energy": [
+        "2571"
+      ],
+      "field_ons_flavours": [
+        {
+          "tid": "2588",
+          "formName": "flavour",
+          "uuid": "042999a0-5fd6-4ccc-866f-9faab8f057a7",
+          "revision_id": "2588",
+          "langcode": "en",
+          "vid": [
+            "flavour"
+          ],
+          "revision_created": "1596479385",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Coffee",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1596479385",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1596479385"
+        },
+        {
+          "tid": "140",
+          "formName": "flavour",
+          "uuid": "711ceff2-5cbf-4807-a6c5-62768bb59df4",
+          "revision_id": "140",
+          "langcode": "en",
+          "vid": [
+            "flavour"
+          ],
+          "revision_created": null,
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Vanilla",
+          "description": null,
+          "weight": "8",
+          "parent": [
+            "0"
+          ],
+          "changed": "1561318574",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": null,
+          "content_translation_outdated": null,
+          "content_translation_created": null
+        }
+      ],
+      "field_ons_format_search": [
+        "2557"
+      ],
+      "field_ons_format_size": "200ml",
+      "field_ons_ingredient": [
+        "2551"
+      ],
+      "field_ons_intolerance": [
+        {
+          "tid": "2552",
+          "formName": "intolerance",
+          "uuid": "61f28048-bf33-45ec-b577-fdd7f4371d19",
+          "revision_id": "2552",
+          "langcode": "en",
+          "vid": [
+            "intolerance"
+          ],
+          "revision_created": "1594247861",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Fiber-free",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1596231355",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1594247861",
+          "field_image_intolerance": [
+            {
+              "target_id": "5473",
+              "alt": "Fiber-free",
+              "title": "",
+              "width": "34",
+              "height": "52",
+              "url": "https://dev-ef5-nhsc.pantheonsite.io/sites/default/files/2020-07/fiber_free.png"
+            }
+          ]
+        },
+        {
+          "tid": "2553",
+          "formName": "intolerance",
+          "uuid": "f7e42ddd-9cbc-46a4-86f2-8ee5f82a789f",
+          "revision_id": "2553",
+          "langcode": "en",
+          "vid": [
+            "intolerance"
+          ],
+          "revision_created": "1594247871",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Gluten-free",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1596231372",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1594247871",
+          "field_image_intolerance": [
+            {
+              "target_id": "5474",
+              "alt": "Gluten-free",
+              "title": "",
+              "width": "32",
+              "height": "52",
+              "url": "https://dev-ef5-nhsc.pantheonsite.io/sites/default/files/2020-07/gluten_free.png"
+            }
+          ]
+        }
+      ],
+      "field_ons_kcal": "1.27",
+      "field_ons_low_glycemic_index": [
+        "2556"
+      ],
+      "field_ons_pathology": [
+        "2608",
+        "2609"
+      ],
+      "field_ons_pipcode": "000-000",
+      "field_ons_product": [
+        {
+          "nid": "1793",
+          "formName": null,
+          "uuid": "e657dbe5-3f17-45a4-a4e5-f4011cb65ecc",
+          "vid": "5279",
+          "langcode": "en",
+          "type": [
+            "product"
+          ],
+          "revision_timestamp": "1596379806",
+          "revision_uid": [
+            "1"
+          ],
+          "revision_log": null,
+          "status": "1",
+          "uid": [
+            "1"
+          ],
+          "title": "Resource® Protein",
+          "created": "1596379645",
+          "changed": "1596379806",
+          "promote": "1",
+          "sticky": "0",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "moderation_state": null,
+          "metatag": null,
+          "path": "/node/1793",
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "body": null,
+          "field_brand_business_area": [
+            "891"
+          ],
+          "field_brand_business_category": [
+            "896"
+          ],
+          "field_brand_segment": [
+            "886"
+          ],
+          "field_bv_product_id": null,
+          "field_fusepump_id": null,
+          "field_images": [
+            {
+              "target_id": "5476",
+              "alt": "Resource® Protein",
+              "title": "",
+              "width": "260",
+              "height": "285",
+              "url": "https://dev-ef5-nhsc.pantheonsite.io/sites/default/files/2020-08/Resource_Protein-vanille_0.jpg"
+            }
+          ],
+          "field_meta_tags": null,
+          "field_nhsc_product_components": null,
+          "field_product_summary": null,
+          "field_site_switcher_settings": null
+        }
+      ],
+      "field_ons_protein": "9",
+      "field_ons_protein_search": [
+        "2576"
+      ],
+      "field_ons_p_cho_f_": "28/51/21",
+      "field_ons_taste": [
+        "2563"
+      ],
+      "field_ons_type": [
+        "2544"
+      ]
+    },
+    {
+      "nid": "1799",
+      "formName": null,
+      "uuid": "edff701a-ac0c-4e52-9866-6499c82ee3e3",
+      "vid": "5290",
+      "langcode": "en",
+      "type": [
+        "ons_product_selector"
+      ],
+      "revision_timestamp": "1596481019",
+      "revision_uid": [
+        "1"
+      ],
+      "revision_log": null,
+      "status": "1",
+      "uid": [
+        "1"
+      ],
+      "title": "Resource® ThickenUp Clear",
+      "created": "1596380746",
+      "changed": "1596481019",
+      "promote": "1",
+      "sticky": "0",
+      "default_langcode": "1",
+      "revision_default": "1",
+      "revision_translation_affected": "1",
+      "moderation_state": "published",
+      "metatag": null,
+      "path": "/node/1799",
+      "content_translation_source": "und",
+      "content_translation_outdated": "0",
+      "field_ons_description": "Resource® ThickenUp® Clear is a powder thickener used to modify the consistency of food and drink, both hot and cold, without changing the flavor or color.",
+      "field_ons_energy": [
+        "2574"
+      ],
+      "field_ons_flavours": [
+        {
+          "tid": "2593",
+          "formName": "flavour",
+          "uuid": "9535cc04-8c41-4350-b534-d3b02a550cbe",
+          "revision_id": "2593",
+          "langcode": "en",
+          "vid": [
+            "flavour"
+          ],
+          "revision_created": "1596479451",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Neutral",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1596479451",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1596479451"
+        }
+      ],
+      "field_ons_format_search": [
+        "2558",
+        "2560"
+      ],
+      "field_ons_format_size": "127g/24 sticks",
+      "field_ons_intolerance": [
+        {
+          "tid": "2553",
+          "formName": "intolerance",
+          "uuid": "f7e42ddd-9cbc-46a4-86f2-8ee5f82a789f",
+          "revision_id": "2553",
+          "langcode": "en",
+          "vid": [
+            "intolerance"
+          ],
+          "revision_created": "1594247871",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Gluten-free",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1596231372",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1594247871",
+          "field_image_intolerance": [
+            {
+              "target_id": "5474",
+              "alt": "Gluten-free",
+              "title": "",
+              "width": "32",
+              "height": "52",
+              "url": "https://dev-ef5-nhsc.pantheonsite.io/sites/default/files/2020-07/gluten_free.png"
+            }
+          ]
+        },
+        {
+          "tid": "2554",
+          "formName": "intolerance",
+          "uuid": "f14b7497-8592-4dc6-9944-19c15b4a60c1",
+          "revision_id": "2554",
+          "langcode": "en",
+          "vid": [
+            "intolerance"
+          ],
+          "revision_created": "1594247881",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Lactose-free",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1596231391",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1594247881",
+          "field_image_intolerance": [
+            {
+              "target_id": "5475",
+              "alt": "Lactose-free",
+              "title": "",
+              "width": "34",
+              "height": "52",
+              "url": "https://dev-ef5-nhsc.pantheonsite.io/sites/default/files/2020-07/lactose_free.png"
+            }
+          ]
+        }
+      ],
+      "field_ons_kcal": "1.5",
+      "field_ons_low_glycemic_index": [
+        "2555"
+      ],
+      "field_ons_pathology": [
+        "2564",
+        "2566",
+        "2568",
+        "2604"
+      ],
+      "field_ons_pipcode": "000-000",
+      "field_ons_product": [
+        {
+          "nid": "1793",
+          "formName": null,
+          "uuid": "e657dbe5-3f17-45a4-a4e5-f4011cb65ecc",
+          "vid": "5279",
+          "langcode": "en",
+          "type": [
+            "product"
+          ],
+          "revision_timestamp": "1596379806",
+          "revision_uid": [
+            "1"
+          ],
+          "revision_log": null,
+          "status": "1",
+          "uid": [
+            "1"
+          ],
+          "title": "Resource® Protein",
+          "created": "1596379645",
+          "changed": "1596379806",
+          "promote": "1",
+          "sticky": "0",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "moderation_state": null,
+          "metatag": null,
+          "path": "/node/1793",
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "body": null,
+          "field_brand_business_area": [
+            "891"
+          ],
+          "field_brand_business_category": [
+            "896"
+          ],
+          "field_brand_segment": [
+            "886"
+          ],
+          "field_bv_product_id": null,
+          "field_fusepump_id": null,
+          "field_images": [
+            {
+              "target_id": "5476",
+              "alt": "Resource® Protein",
+              "title": "",
+              "width": "260",
+              "height": "285",
+              "url": "https://dev-ef5-nhsc.pantheonsite.io/sites/default/files/2020-08/Resource_Protein-vanille_0.jpg"
+            }
+          ],
+          "field_meta_tags": null,
+          "field_nhsc_product_components": null,
+          "field_product_summary": null,
+          "field_site_switcher_settings": null
+        }
+      ],
+      "field_ons_protein": "0",
+      "field_ons_p_cho_f_": "n/a",
+      "field_ons_taste": [
+        "2561"
+      ],
+      "field_ons_type": [
+        "2545"
+      ]
+    },
+    {
+      "nid": "1800",
+      "formName": null,
+      "uuid": "1ff1d14e-9494-4e48-ab70-ce91818f35b7",
+      "vid": "5289",
+      "langcode": "en",
+      "type": [
+        "ons_product_selector"
+      ],
+      "revision_timestamp": "1596480786",
+      "revision_uid": [
+        "1"
+      ],
+      "revision_log": null,
+      "status": "1",
+      "uid": [
+        "1"
+      ],
+      "title": "Resource® Fruit",
+      "created": "1596380845",
+      "changed": "1596480786",
+      "promote": "1",
+      "sticky": "0",
+      "default_langcode": "1",
+      "revision_default": "1",
+      "revision_translation_affected": "1",
+      "moderation_state": "published",
+      "metatag": null,
+      "path": "/node/1800",
+      "content_translation_source": "und",
+      "content_translation_outdated": "0",
+      "field_ons_description": "Resource® Fruit is for the dietary management of patients with malnutrition or at risk of malnutrition.",
+      "field_ons_energy": [
+        "2571"
+      ],
+      "field_ons_flavours": [
+        {
+          "tid": "2581",
+          "formName": "flavour",
+          "uuid": "fbf91666-ff98-4b54-9373-c92bfd9403c1",
+          "revision_id": "2581",
+          "langcode": "en",
+          "vid": [
+            "flavour"
+          ],
+          "revision_created": "1596479232",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Apple",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1596479232",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1596479232"
+        },
+        {
+          "tid": "2584",
+          "formName": "flavour",
+          "uuid": "c5853661-737a-46ef-9cec-a432cd77fc83",
+          "revision_id": "2584",
+          "langcode": "en",
+          "vid": [
+            "flavour"
+          ],
+          "revision_created": "1596479293",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Blackcurrant",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1596479293",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1596479293"
+        },
+        {
+          "tid": "2590",
+          "formName": "flavour",
+          "uuid": "d5115dd4-1147-469a-a099-2d48bbc45c31",
+          "revision_id": "2590",
+          "langcode": "en",
+          "vid": [
+            "flavour"
+          ],
+          "revision_created": "1596479414",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Grape",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1596479414",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1596479414"
+        },
+        {
+          "tid": "2594",
+          "formName": "flavour",
+          "uuid": "5b357218-901b-4512-a691-f017e0a7b900",
+          "revision_id": "2594",
+          "langcode": "en",
+          "vid": [
+            "flavour"
+          ],
+          "revision_created": "1596479503",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Orange",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1596479503",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1596479503"
+        },
+        {
+          "tid": "2596",
+          "formName": "flavour",
+          "uuid": "216b6551-c6d1-4ac5-9715-835f761c7bc2",
+          "revision_id": "2596",
+          "langcode": "en",
+          "vid": [
+            "flavour"
+          ],
+          "revision_created": "1596479775",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Pear-Cherry",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1596479775",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1596479775"
+        },
+        {
+          "tid": "2597",
+          "formName": "flavour",
+          "uuid": "b8b18ac4-0c8f-4cbc-9391-746ead656715",
+          "revision_id": "2597",
+          "langcode": "en",
+          "vid": [
+            "flavour"
+          ],
+          "revision_created": "1596479788",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Pineapple",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1596479788",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1596479788"
+        },
+        {
+          "tid": "2599",
+          "formName": "flavour",
+          "uuid": "16954f81-524c-444a-8fbe-d5db8e8a8680",
+          "revision_id": "2599",
+          "langcode": "en",
+          "vid": [
+            "flavour"
+          ],
+          "revision_created": "1596480269",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Raspberry",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1596480269",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1596480269"
+        }
+      ],
+      "field_ons_format_search": [
+        "2557"
+      ],
+      "field_ons_format_size": "200ml",
+      "field_ons_ingredient": [
+        "2551"
+      ],
+      "field_ons_intolerance": [
+        {
+          "tid": "2552",
+          "formName": "intolerance",
+          "uuid": "61f28048-bf33-45ec-b577-fdd7f4371d19",
+          "revision_id": "2552",
+          "langcode": "en",
+          "vid": [
+            "intolerance"
+          ],
+          "revision_created": "1594247861",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Fiber-free",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1596231355",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1594247861",
+          "field_image_intolerance": [
+            {
+              "target_id": "5473",
+              "alt": "Fiber-free",
+              "title": "",
+              "width": "34",
+              "height": "52",
+              "url": "https://dev-ef5-nhsc.pantheonsite.io/sites/default/files/2020-07/fiber_free.png"
+            }
+          ]
+        },
+        {
+          "tid": "2553",
+          "formName": "intolerance",
+          "uuid": "f7e42ddd-9cbc-46a4-86f2-8ee5f82a789f",
+          "revision_id": "2553",
+          "langcode": "en",
+          "vid": [
+            "intolerance"
+          ],
+          "revision_created": "1594247871",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Gluten-free",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1596231372",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1594247871",
+          "field_image_intolerance": [
+            {
+              "target_id": "5474",
+              "alt": "Gluten-free",
+              "title": "",
+              "width": "32",
+              "height": "52",
+              "url": "https://dev-ef5-nhsc.pantheonsite.io/sites/default/files/2020-07/gluten_free.png"
+            }
+          ]
+        },
+        {
+          "tid": "2554",
+          "formName": "intolerance",
+          "uuid": "f14b7497-8592-4dc6-9944-19c15b4a60c1",
+          "revision_id": "2554",
+          "langcode": "en",
+          "vid": [
+            "intolerance"
+          ],
+          "revision_created": "1594247881",
+          "revision_log_message": null,
+          "status": "1",
+          "name": "Lactose-free",
+          "description": null,
+          "weight": "0",
+          "parent": [
+            "0"
+          ],
+          "changed": "1596231391",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "metatag": null,
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "content_translation_uid": [
+            "1"
+          ],
+          "content_translation_created": "1594247881",
+          "field_image_intolerance": [
+            {
+              "target_id": "5475",
+              "alt": "Lactose-free",
+              "title": "",
+              "width": "34",
+              "height": "52",
+              "url": "https://dev-ef5-nhsc.pantheonsite.io/sites/default/files/2020-07/lactose_free.png"
+            }
+          ]
+        }
+      ],
+      "field_ons_kcal": "1.5",
+      "field_ons_low_glycemic_index": [
+        "2556"
+      ],
+      "field_ons_pathology": [
+        "2564"
+      ],
+      "field_ons_pipcode": "000-000",
+      "field_ons_product": [
+        {
+          "nid": "1793",
+          "formName": null,
+          "uuid": "e657dbe5-3f17-45a4-a4e5-f4011cb65ecc",
+          "vid": "5279",
+          "langcode": "en",
+          "type": [
+            "product"
+          ],
+          "revision_timestamp": "1596379806",
+          "revision_uid": [
+            "1"
+          ],
+          "revision_log": null,
+          "status": "1",
+          "uid": [
+            "1"
+          ],
+          "title": "Resource® Protein",
+          "created": "1596379645",
+          "changed": "1596379806",
+          "promote": "1",
+          "sticky": "0",
+          "default_langcode": "1",
+          "revision_default": "1",
+          "revision_translation_affected": "1",
+          "moderation_state": null,
+          "metatag": null,
+          "path": "/node/1793",
+          "content_translation_source": "und",
+          "content_translation_outdated": "0",
+          "body": null,
+          "field_brand_business_area": [
+            "891"
+          ],
+          "field_brand_business_category": [
+            "896"
+          ],
+          "field_brand_segment": [
+            "886"
+          ],
+          "field_bv_product_id": null,
+          "field_fusepump_id": null,
+          "field_images": [
+            {
+              "target_id": "5476",
+              "alt": "Resource® Protein",
+              "title": "",
+              "width": "260",
+              "height": "285",
+              "url": "https://dev-ef5-nhsc.pantheonsite.io/sites/default/files/2020-08/Resource_Protein-vanille_0.jpg"
+            }
+          ],
+          "field_meta_tags": null,
+          "field_nhsc_product_components": null,
+          "field_product_summary": null,
+          "field_site_switcher_settings": null
+        }
+      ],
+      "field_ons_protein": "4",
+      "field_ons_protein_search": [
+        "2575"
+      ],
+      "field_ons_p_cho_f_": "11/89/0",
+      "field_ons_taste": [
+        "2563"
+      ],
+      "field_ons_type": [
+        "2543"
+      ]
+    }
+  ]

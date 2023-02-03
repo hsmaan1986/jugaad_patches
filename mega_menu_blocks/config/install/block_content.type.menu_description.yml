@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: menu_description
+label: 'Menu Description'
+revision: 0
+description: 'Use this to add a description for the dropdown menu.'

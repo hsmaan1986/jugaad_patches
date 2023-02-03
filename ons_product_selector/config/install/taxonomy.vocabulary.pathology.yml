@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Pathology
+vid: pathology
+description: ''
+weight: 0

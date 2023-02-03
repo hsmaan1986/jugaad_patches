@@ -1,0 +1,6 @@
+ons_product_selector.config:
+    title: 'ONS Product Selector Settings'
+    description: 'Provides Product Selector Settings'
+    parent: system.admin_config_system
+    route_name: ons_product_selector.settings
+    weight: 100

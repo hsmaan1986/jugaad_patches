@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function mobile_search_help($route_name, RouteMatchInterface $route_match)
+{
+    switch ($route_name) {
+        //
+        case 'help.page.mobile_search':
+            $output = '';
+            $output .= '<h3>' . t('About') . '</h3>';
+            $output .= '<p>' . t('Nestle Health Science Mobile Search.') . '</p>';
+            return $output;
+
+        default:
+    }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function mobile_search_theme()
+{
+    return [
+        'nhsc_mobile_search' => [
+            'variables' => [
+                'form' => NULL,
+                'url' => NULL,
+            ],
+            'template' => 'nhsc-mobile-search',
+        ],
+    ];
+}

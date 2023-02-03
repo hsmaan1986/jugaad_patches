@@ -1,0 +1,9 @@
+hcp_calculators:
+  js:
+    js/hcp_calculator.js: {}
+  css:
+    theme:
+      css/hcp_calculator.css: {}
+  dependencies:
+    - core/drupal
+    - core/drupal.form

@@ -1,0 +1,13 @@
+.AudienceToggleBox {
+    display: none;
+    position: relative;
+    background: transparent url(images/toggle-background.jpg) no-repeat 0 0;
+    width: 620px;
+    height: auto;
+    min-height: 408px;
+    text-align: center;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    background-size: cover;
+}

@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.site_switcher
+    - field.field.block_content.site_switcher.field_add_site_switcher
+  module:
+    - toggle_editable_fields
+id: block_content.site_switcher.default
+targetEntityType: block_content
+bundle: site_switcher
+mode: default
+content:
+  field_add_site_switcher:
+    weight: 1
+    label: hidden
+    settings:
+      'on': 'On'
+      'off': 'Off'
+      size: normal
+      onstyle: success
+      offstyle: default
+      height: null
+      width: null
+    third_party_settings: {  }
+    type: toggle_editable_formatter
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true

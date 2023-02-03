@@ -1,0 +1,375 @@
+{#
+/**
+ * @file
+ * Block containing bmi calculator
+ */
+#}
+<div class="calculator-container">
+
+    <!-- 1 Main titles of this calculator -->
+    <div class="calculator-title calculator-title-medium calculator-title-center">
+      {% if title1|length %}
+        <h1>
+            {{ title1 }}
+        </h1>
+      {% endif %}
+    </div>
+    <div class="calculator-title calculator-title-large calculator-title-center">
+        {{ title2 }}
+    </div>
+
+    <!-- 2 Main form of calculator -->
+    <form class="calculator-form" id="nrscalc-form" action="">
+
+        <!-- Form indicators -->
+        <div class="calculator-indicators">
+            <span class="calculator-step js-calculator-step">1</span>
+            <span class="calculator-step js-calculator-step">2</span>
+            <span class="calculator-step js-calculator-step">3</span>
+            <span class="calculator-step js-calculator-step">4</span>
+            <span class="calculator-step js-calculator-step"><i class="fas fa-angle-right"></i></span>
+        </div>
+
+
+        <!-- STEP 1 - INITIAL ASSESSMENT -->
+        <div class="calculator-tab js-calculator-tab">
+
+            <div class="form-step-title">
+                {{ step1_title }}
+            </div>
+
+            <!-- Question 1 -->
+            <div class="container-fullwidth container-border">
+                <div class="container-80 input-question">
+                    {{ question1 }}
+                </div>
+                <div class="container-20">
+                    <label class="input-switch">
+                        <input class="input-checkbox js-input" name="nrs-question1" id="nrs-question1" type="checkbox">
+                        <span class="input-slider round"></span>
+                        <span class="switch-label"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="container-fullwidth">
+                <div class="container-80 input-question">
+                    {{ question2 }}
+                </div>
+                <div class="container-20">
+                    <label class="input-switch">
+                        <input class="input-checkbox js-input" name="nrs-question2" id="nrs-question2" type="checkbox">
+                        <span class="input-slider round"></span>
+                        <span class="switch-label"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="container-fullwidth">
+                <div class="container-80 input-question">
+                    {{ question3 }}
+                </div>
+                <div class="container-20">
+                    <label class="input-switch">
+                        <input class="input-checkbox js-input" name="nrs-question3" id="nrs-question3" type="checkbox">
+                        <span class="input-slider round"></span>
+                        <span class="switch-label"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="container-fullwidth">
+                <div class="container-80 input-question">
+                    {{ question4 }}
+                </div>
+                <div class="container-20">
+                    <label class="input-switch">
+                        <input class="input-checkbox js-input" name="nrs-question4" id="nrs-question4" type="checkbox">
+                        <span class="input-slider round"></span>
+                        <span class="switch-label"></span>
+                    </label>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- STEP 2 - NUTRITIONAL IMPAIRMENT -->
+        <div class="calculator-tab js-calculator-tab">
+
+            <div class="form-step-title">
+                {{ step2_title }}
+            </div>
+
+            <!-- Question 5 -->
+
+            <!-- Option 1 -->
+            <div class="container-fullwidth container-border">
+                <div class="container-table">
+                    <div class="container-20 input-severity container-tablecell">
+                        <span>{{ q5_option1_part1 }}</span>
+                    </div>
+                    <div class="container-60 input-description container-tablecell">
+                        {{ q5_option1_part2 }}
+                    </div>
+                    <div class="container-20 container-tablecell">
+                        <input class="input-radio js-input" type="radio" id="nrs-question5-1" name="nrs-question5" value="0" checked>
+                        <label for="nrs-question5-1"></label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Option 2 -->
+            <div class="container-fullwidth container-border">
+                <div class="container-table">
+                    <div class="container-20 input-severity container-tablecell">
+                        <span>{{ q5_option2_part1 }}</span>
+                    </div>
+                    <div class="container-60 input-description container-tablecell">
+                        {{ q5_option2_part2 }}
+                    </div>
+                    <div class="container-20 container-tablecell">
+                        <input class="input-radio js-input" type="radio" id="nrs-question5-2" name="nrs-question5" value="1">
+                        <label for="nrs-question5-2"></label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Option 3 -->
+            <div class="container-fullwidth container-border">
+                <div class="container-table">
+                    <div class="container-20 input-severity container-tablecell">
+                        <span>{{ q5_option3_part1 }}</span>
+                    </div>
+                    <div class="container-60 input-description container-tablecell">
+                        {{ q5_option3_part2 }}
+                    </div>
+                    <div class="container-20 container-tablecell">
+                        <input class="input-radio js-input" type="radio" id="nrs-question5-3" name="nrs-question5" value="2">
+                        <label for="nrs-question5-3"></label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Option 4 -->
+            <div class="container-fullwidth">
+                <div class="container-table">
+                    <div class="container-20 input-severity container-tablecell">
+                        <span>{{ q5_option4_part1 }}</span>
+                    </div>
+                    <div class="container-60 input-description container-tablecell">
+                        {{ q5_option4_part2 }}
+                    </div>
+                    <div class="container-20 container-tablecell">
+                        <input class="input-radio js-input" type="radio" id="nrs-question5-4" name="nrs-question5" value="3">
+                        <label for="nrs-question5-4"></label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- STEP 3 - SEVERITY OF DISEASE -->
+        <div class="calculator-tab js-calculator-tab">
+
+            <div class="form-step-title">
+                {{ step3_title }}
+            </div>
+
+            <!-- Question 6 -->
+
+            <!-- Option 1 -->
+            <div class="container-fullwidth container-border">
+                <div class="container-table">
+                    <div class="container-20 input-severity container-tablecell">
+                        <span>{{ q6_option1_part1 }}</span>
+                    </div>
+                    <div class="container-60 input-description container-tablecell">
+                        {{ q6_option1_part2 }}
+                    </div>
+                    <div class="container-20 container-tablecell">
+                        <input class="input-radio js-input" type="radio" id="nrs-question6-1" name="nrs-question6" value="0" checked>
+                        <label for="nrs-question6-1"></label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Option 2 -->
+            <div class="container-fullwidth container-border">
+                <div class="container-table">
+                    <div class="container-20 input-severity container-tablecell">
+                        <span>{{ q6_option2_part1 }}</span>
+                    </div>
+                    <div class="container-60 input-description container-tablecell">
+                        {{ q6_option2_part2 }}
+                    </div>
+                    <div class="container-20 container-tablecell">
+                        <input class="input-radio js-input" type="radio" id="nrs-question6-2" name="nrs-question6" value="1">
+                        <label for="nrs-question6-2"></label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Option 3 -->
+            <div class="container-fullwidth container-border">
+                <div class="container-table">
+                    <div class="container-20 input-severity container-tablecell">
+                        <span>{{ q6_option3_part1 }}</span>
+                    </div>
+                    <div class="container-60 input-description container-tablecell">
+                        {{ q6_option3_part2 }}
+                    </div>
+                    <div class="container-20 container-tablecell">
+                        <input class="input-radio js-input" type="radio" id="nrs-question6-3" name="nrs-question6" value="2">
+                        <label for="nrs-question6-3"></label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Option 4 -->
+            <div class="container-fullwidth">
+                <div class="container-table">
+                    <div class="container-20 input-severity container-tablecell">
+                        <span>{{ q6_option4_part1 }}</span>
+                    </div>
+                    <div class="container-60 input-description container-tablecell">
+                        {{ q6_option4_part2 }}
+                    </div>
+                    <div class="container-20 container-tablecell">
+                        <input class="input-radio js-input" type="radio" id="nrs-question6-4" name="nrs-question6" value="3">
+                        <label for="nrs-question6-4"></label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- STEP 4 - AGE -->
+        <div class="calculator-tab js-calculator-tab">
+
+            <div class="form-step-title">
+                {{ step4_title }}
+            </div>
+
+            <div class="container-fullwidth container-border">
+                <div class="container-80 input-question">
+                    {{ question_7 }}
+                </div>
+                <div class="container-20">
+                    <label class="input-switch">
+                        <input class="input-checkbox js-input" name="nrs-question7" id="nrs-question7" type="checkbox">
+                        <span class="input-slider round"></span>
+                        <span class="switch-label"></span>
+                    </label>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- STEP 5 - RESULT -->
+        <div class="calculator-tab js-calculator-tab" id="js-results">
+
+            <div class="form-step-title">
+                {{ step5_title }}
+            </div>
+
+            <div class="spacer"></div>
+
+            <div class="container-fullwidth container-result">
+
+                <div class="result-text result-large" id="js-nrs-result">
+                    0
+                </div>
+
+                <!-- Classification 1 - At Risk -->
+                <div class="nrs-results" id="js-nrs-atrisk">
+                    <div class="result-text result-small">
+                        {{ classification1_part1 }}
+                    </div>
+                    <div class="result-text result-medium">
+                        {{ classification1_part2 }}
+                    </div>
+                </div>
+
+                <!-- Classification 2 - Not At Risk -->
+                <div class="nrs-results" id="js-nrs-norisk">
+                    <div class="result-text result-small">
+                        {{ classification2_part1 }}
+                    </div>
+                    <div class="result-text result-medium">
+                        {{ classification2_part2 }}
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="container-fullwidth container-center">
+                <span class="calculator-fineprint">{{ legal }}</span>
+            </div>
+
+            <div class="spacer"></div>
+
+            <div class="buttons-container">
+                <div class="buttons-center">
+                    <button class="calculator-button calculator-button-white" type="button" onclick="resetForm()">
+                        {{ reset_btn }}
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ALTERNATIVE RESULT -->
+        <div class="calculator-tab" id="nrs-alternative-result">
+
+            <div class="form-step-title">
+                {{ step5_title }}
+            </div>
+
+            <div class="spacer"></div>
+
+            <div class="container-fullwidth container-result">
+                <div class="result-text result-medium">
+                    {{ alternative_part1 }}
+                    <br>
+                </div>
+                <div class="result-text result-medium">
+                    {{ alternative_part2 }}
+                </div>
+            </div>
+
+            <div class="spacer"></div>
+
+            <div class="buttons-container">
+                <div class="buttons-center">
+                    <button class="calculator-button calculator-button-white" type="button" onclick="resetForm()">
+                        {{ reset_btn }}
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Form navigation buttons -->
+        <div class="buttons-container" id="js-navigation-buttons">
+
+            <div class="buttons-center">
+                <button class="calculator-button calculator-button-blue" type="button" id="prevBtn" onclick="nextPrev(-1)">
+                    <i class="fas fa-arrow-left"></i> {{ 'Anterior' |t }}
+                </button>
+                <button class="calculator-button calculator-button-blue" type="button" id="nextBtn" onclick="nextPrev(1)">
+                    {{ 'Próximo' |t }} <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+        </div>
+
+
+    </form>
+
+</div>

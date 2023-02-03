@@ -1,0 +1,208 @@
+@page
+    {
+	size:auto;   /* auto is the initial value */
+	margin:0mm;  /* this affects the margin in the printer settings */
+    }
+
+.cf:before ,.cf:after {
+		content:"";
+		display:table;
+		}
+.cf:after  {clear:both;}
+
+* html, p, h1, h2, h3, h4, h5, h6, ul, ol, li, blockquote, q, td, tr, table, div, dl, dd, dt, a, input, textarea, button, form, span, img, fieldset, figure, figcaption {
+		margin:0;
+		padding:0;
+		}
+
+fieldset {border:0}
+
+body {
+	background-color:#b7b7b7;
+	color:#808080;
+	font-family:Arial;
+	margin:0;
+	padding:0;
+	}
+
+.container {
+	max-width:960px;
+	position:relative;
+	font-size:11pt;
+	margin:auto;
+	background-color:#ffffff;
+	-webkit-print-color-adjust: exact;
+	box-shadow: inset 0 0 0 1000px #ffffff;
+	}
+
+.inner_container {
+	margin-left:40px;
+	padding-bottom:35px;
+	}
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+	.inner_container {
+		margin-left:10px;
+		padding-bottom:25px;
+	}
+}
+
+.header {
+	color:#3C4A89;
+	margin-top:0px;
+	padding-top:30px;
+	margin-bottom:20px;
+	}
+.header h1 {
+	font-size:15pt;
+	font-weight:bold;
+	float:left;
+	width:40%;
+	}
+.header span {font-size:13pt;}
+.header img {
+	float:right;
+	margin-right:30px;
+	}
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+	.header {padding-top:10px;}
+	.header h1,.header span {display:inline-block;font-size:11pt;}
+	.header img {
+		margin-right:10px;
+		padding-right:10px;
+		width:40%;
+	}
+}
+.container p {
+	margin-top:10px;
+	margin-bottom:10px;
+	margin-left:30px;
+	font-size:10pt;
+	}
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+	.container p {
+		margin-left:15px;
+		margin-right:15px;
+	}
+}
+
+.pi_lastname {
+	width:280px;
+	float:left;
+	}
+.pi_firstname {
+	width:240px;
+	float:left;
+	}
+.pi_gender {
+	width:125px;
+	float:left;
+	}
+.pi_age {
+	width:140px;
+	float:left;
+	}
+.pi_date {
+	float:left;
+	}
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+	.pi_lastname,.pi_firstname, .pi_gender, .pi_age , .pi_date {
+		width:20%;
+	}
+}
+
+.highlight {
+	padding-left:10px;
+	padding-top:5px;
+	padding-bottom:5px;
+	background-color:#3d4a8a;
+	color:#ffffff;
+	font-size:11pt;
+	margin-bottom:5px;
+	font-weight:bold;
+	-webkit-print-color-adjust: exact;
+	box-shadow: inset 0 0 0 1000px #3d4a8a;
+	}
+.highlight.grey {
+	font-weight:normal;
+	background-color:#e6e3ef;
+	-webkit-print-color-adjust: exact;
+	box-shadow: inset 0 0 0 1000px #e6e3ef;
+	color:#808080;
+	padding-left:30px;
+}
+.personalinfo {
+	font-weight:normal;
+	background-color:#e4e3ee;
+	-webkit-print-color-adjust: exact;
+	box-shadow: inset 0 0 0 1000px #e4e3ee;
+	color:#3C4A89;
+	padding-left:30px;
+	margin-bottom:10px;
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+	.highlight.grey, .personalinfo {
+		padding-left:15px;
+	}
+}
+
+.questionnaire {padding-left:10px;}
+
+.questiong, .questiond {width:49%;}
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+	.questiong, .questiond {width:100%;}
+}
+
+.questiong {
+	float:left;
+	clear:both;
+	}
+.questiond {float:right;}
+.question {
+	padding-bottom:20px;
+	font-size:10pt;
+	}
+.question input{
+	position:relative;
+	bottom:30px;
+	right:80px;
+	float:right;
+	}
+.question .number {
+	color:#3C4A89;
+	font-size:11pt;
+	font-weight:bold;
+	padding-left:5px;
+	padding-right:5px;
+	}
+.question .title {
+	color:#3C4A89;
+	font-size:10pt;
+	font-weight:bold;
+	}
+.question .choice {
+	margin-left:15px;
+	padding-top:10px;
+	}
+.question .choice span{
+	display:block;
+	}
+
+input,#saveaswithflash {
+	text-align:center;
+	vertical-align: middle;
+	width:27px;
+	height:27px;
+	border: solid 2px #e6e3ef;
+  	box-shadow: 3px 3px 0 0 #3C4A89;
+	-moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+	}
+
+#saveaswithbutton, #saveaswithflash {
+	width: 150px;
+	height:30px;
+	margin-left:50px;
+	margin-top:5px;
+	margin-bottom:10px;
+}

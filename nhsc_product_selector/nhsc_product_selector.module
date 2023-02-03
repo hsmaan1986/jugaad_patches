@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * @file
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function nhsc_product_selector_help($route_name, RouteMatchInterface $route_match)
+{
+    switch ($route_name) {
+        // Main module help for the nppe_module_winning_api module.
+        case 'help.page.nhsc_product_selector':
+            $output = '';
+            $output .= '<h3>' . t('About') . '</h3>';
+            $output .= '<p>' . t('Nestle Health Science Product Selector.') . '</p>';
+            return $output;
+
+        default:
+    }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function nhsc_product_selector_theme()
+{
+    return [
+        'nhsc_product_selector' => [
+            'variables' => [
+                'form' => NULL,
+            ],
+            'template' => 'nhsc-product-selector',
+        ],
+    ];
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function nhsc_product_selector_page_attachments(array &$page) {
+    $page['#attached']['library'][] = 'nhsc_product_selector/product-selector-css';
+}

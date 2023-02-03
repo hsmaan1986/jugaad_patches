@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_nhsc_view_filter
+    - paragraphs.paragraphs_type.nhsc_view
+    - taxonomy.vocabulary.expertise_category
+    - taxonomy.vocabulary.press_category
+    - taxonomy.vocabulary.type_of_partners
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_nhsc_view_filter
+id: paragraph.nhsc_view.field_nhsc_view_filter
+field_name: field_nhsc_view_filter
+entity_type: paragraph
+bundle: nhsc_view
+label: Filter
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      expertise_category: expertise_category
+      press_category: press_category
+      type_of_partners: type_of_partners
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: expertise_category
+field_type: entity_reference

@@ -1,0 +1,5 @@
+nppe_module_event.settings:
+  route_name: nppe_module_event.settings
+  title: "Webinar Settings"
+  description: 'Webinar Streaming and credit settings.'
+  parent: system.admin_config_system

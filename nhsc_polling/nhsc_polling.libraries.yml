@@ -1,0 +1,3 @@
+nhsc_polling:
+  js:
+    js/nhsc_polling.js: {}

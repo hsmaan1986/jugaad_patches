@@ -1,0 +1,136 @@
+<?php
+
+/**
+ * @file
+ * Provides primary Drupal hook implementations.
+ *
+ * Adds a JavaScript snippet to selected page responses to trigger the
+ * Bazzarvoice module.
+ *
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\field\Entity\FieldStorageConfig;
+
+/**
+ * Implements template_preprocess_field().
+ */
+function nhsc_bazaarvoice_preprocess_field(&$variables, $hook) {
+
+  $element = $variables['element'];
+  if ($element['#field_type'] == 'bazaarvoice_product_id') {
+    $variables['#attached']['library'][] = 'nhsc_bazaarvoice/bazaarvoice_product_id';
+    $variables['#attached']['drupalSettings']['bazaarvoice']['ratings']['productIds'][] = $element[0]['#product_id'];
+    $variables['#attached']['drupalSettings']['bazaarvoice']['review']['productId'] = $element[0]['#product_id'];
+  }
+}
+
+/**
+ * Implements template_preprocess_views_view_field().
+ */
+function nhsc_bazaarvoice_preprocess_views_view_field(&$variables) {
+  static $productIds;
+
+  if (!isset($productIds)) {
+    $productIds = array();
+  }
+
+  $field_definition = isset($variables['field']) && isset($variables['field']->definition)? $variables['field']->definition: array();
+  $config_name =  isset($field_definition['field_name'])? "field.storage.node." . $field_definition['field_name']: NULL;
+  $field =  isset($config_name)? \Drupal::config($config_name)->get(): array();
+
+  if (isset($field['type']) && $field['type'] == 'bazaarvoice_product_id') {
+    $value = $variables['field']->getValue($variables['row']);
+    $productIds[] = $value;
+
+    $format_type = $variables['field']->options['type'];
+    
+    $variables['#attached']['library'][] = 'nhsc_bazaarvoice/bazaarvoice_product_id';
+
+    $variables['#attached']['drupalSettings']['bazaarvoice']['ratings']['productIds'] = $productIds;
+    $variables['#attached']['drupalSettings']['bazaarvoice']['review']['productId'] = $value;
+  }
+}
+
+/**
+ * Dynamicly include the Bazzarvoice JS based on the site configuration.
+ *
+ * @param array $libraries
+ *   An associative array of libraries registered by $extension. Keyed by
+ *   internal library name and passed by reference.
+ * @param string $extension
+ *   Can either be 'core' or the machine name of the extension that registered
+ *   the libraries.
+ *
+ * @see \Drupal\Core\Asset\LibraryDiscoveryParser::parseLibraryInfo()
+ */
+function nhsc_bazaarvoice_library_info_alter(&$libraries, $extension) {
+  /*
+  if ($extension == 'nhsc_bazaarvoice') {
+    $environ = \Drupal::config('nhsc_bazaarvoice.settings')->get('bazaarvoice_env');
+    $client_name = \Drupal::config('nhsc_bazaarvoice.settings')->get('bazaarvoice_client_name');
+
+    if ($environ == 'production') {
+      $environment = '';
+    } else {
+      $environment = '/bvstaging';
+    }
+
+    $js_path = sprintf("%s/static/%s/en_GB/bvapi.js", $environment, $client_name);
+
+    $bazaarvoice_url = "https://display.ugc.bazaarvoice.com" . $js_path;
+
+    unset($libraries['bazaarvoice']['js']);
+    $libraries['bazaarvoice']['js'][$bazaarvoice_url] = array(
+      'type' => "external",
+      'minified' => true,
+    );
+  }*/
+}
+
+/**
+ * Implements hook_theme().
+ */
+function nhsc_bazaarvoice_theme() {
+  return array(
+    'bazaarvoice_product_review' => array(
+      'variables' => array(
+        'product_id' => NULL,
+      ),
+    ),
+    'bazaarvoice_product_rating' => array(
+      'variables' => array(
+        'product_id' => NULL,
+      ),
+    ),
+  );
+}
+
+function nhsc_bazaarvoice_library_info_build() {
+
+    $environ = \Drupal::config('nhsc_bazaarvoice.settings')->get('bazaarvoice_env');
+    $client_name = \Drupal::config('nhsc_bazaarvoice.settings')->get('bazaarvoice_client_name');
+    $locale = \Drupal::config('nhsc_bazaarvoice.settings')->get('bazaarvoice_locale');
+
+    \Drupal::logger('nhsc_bazaarvoice_library_info_build1')->error(json_encode($environ));
+
+    $js_path = sprintf("deployments/%s/main_site/%s/%s/bv.js", $client_name , $environ, $locale);
+
+    $bazaarvoice_url = "https://apps.bazaarvoice.com/" . $js_path;
+
+    unset($libraries['bazaarvoice']['js']);
+    $libraries['bazaarvoice']['js'][$bazaarvoice_url] = [
+    'version' => '1.x',
+    'header' => true,
+    'js' => [
+      $bazaarvoice_url => [
+        'type' => 'external',
+        'attributes' => [
+          'async' => true,
+        ],
+      ],
+    ],
+  ];
+
+  return $libraries;
+}

@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - rng
+    - we_megamenu
+  theme:
+    - nhsc_com
+id: mainnavigationrevamp
+theme: nhsc_com
+region: menu
+weight: 0
+provider: null
+plugin: 'we_megamenu_block:main-navigation-revamp'
+settings:
+  id: 'we_megamenu_block:main-navigation-revamp'
+  label: 'Main navigation Revamp'
+  provider: we_megamenu
+  label_display: '0'
+visibility:
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1629840129'
+    negate: false
+    context_mapping: {  }
+  rng_current_time:
+    id: rng_current_time
+    date: '1629840129'
+    negate: false
+    context_mapping: {  }

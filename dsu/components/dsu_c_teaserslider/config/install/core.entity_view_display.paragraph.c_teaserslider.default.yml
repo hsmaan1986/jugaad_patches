@@ -1,0 +1,53 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.c_teaserslider.field_background_image
+    - field.field.paragraph.c_teaserslider.field_c_teaser_slide
+    - field.field.paragraph.c_teaserslider.field_classy_paragraph_style
+    - image.style.teaser_background_image_1920x795_
+    - paragraphs.paragraphs_type.c_teaserslider
+  module:
+    - media
+    - slick_paragraphs
+id: paragraph.c_teaserslider.default
+targetEntityType: paragraph
+bundle: c_teaserslider
+mode: default
+content:
+  field_background_image:
+    weight: 2
+    label: hidden
+    settings:
+      image_style: teaser_background_image_1920x795_
+      image_link: ''
+    third_party_settings: {  }
+    type: media_thumbnail
+    region: content
+  field_c_teaser_slide:
+    type: slick_paragraphs_vanilla
+    weight: 3
+    label: hidden
+    settings:
+      optionset: default
+      skin: ''
+      view_mode: default
+      cache: 0
+      override: true
+      overridables:
+        autoplay: autoplay
+        infinite: infinite
+        arrows: '0'
+        dots: '0'
+        draggable: '0'
+        mouseWheel: '0'
+        randomize: '0'
+        variableWidth: '0'
+      current_view_mode: default
+      skin_arrows: ''
+      skin_dots: ''
+      style: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_classy_paragraph_style: true

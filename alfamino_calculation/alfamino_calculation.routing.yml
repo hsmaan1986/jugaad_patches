@@ -1,0 +1,15 @@
+alfamino_calculation.home:
+  path: '/markalar/alfamino/hesaplama'
+  defaults:
+    _title: 'Alfamino Hesapla'
+    _controller: '\Drupal\alfamino_calculation\Controller\AlfaminoCalculationController::build'
+  requirements:
+    _permission: 'access content'
+
+alfamino_calculation.settings_form:
+  path: '/admin/config/system/alfamino-calculation'
+  defaults:
+    _title: 'alfamino_calculation settings'
+    _form: 'Drupal\alfamino_calculation\Form\SettingsForm'
+  requirements:
+    _permission: 'administer alfamino_calculation configuration'

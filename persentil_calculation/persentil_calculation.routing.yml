@@ -1,0 +1,15 @@
+persentil_calculation.home:
+  path: '/markalar/persentil/hesaplama'
+  defaults:
+    _title: 'Persentil Hesaplayıcı'
+    _controller: '\Drupal\persentil_calculation\Controller\PersentilCalculationController::build'
+  requirements:
+    _permission: 'access content'
+
+persentil_calculation.settings_form:
+  path: '/admin/config/system/persentil-calculation'
+  defaults:
+    _title: 'persentil_calculation settings'
+    _form: 'Drupal\persentil_calculation\Form\SettingsForm'
+  requirements:
+    _permission: 'administer persentil_calculation configuration'

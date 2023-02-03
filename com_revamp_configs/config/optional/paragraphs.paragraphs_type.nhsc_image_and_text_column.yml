@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: nhsc_image_and_text_column
+label: 'NHSC Image and Text column'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

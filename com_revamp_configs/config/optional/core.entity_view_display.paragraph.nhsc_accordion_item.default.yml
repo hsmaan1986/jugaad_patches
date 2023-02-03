@@ -1,0 +1,90 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_accordion_item.field_body
+    - field.field.paragraph.nhsc_accordion_item.field_cta
+    - field.field.paragraph.nhsc_accordion_item.field_nhsc_accordion_components
+    - field.field.paragraph.nhsc_accordion_item.field_nhsc_id
+    - field.field.paragraph.nhsc_accordion_item.field_nhsc_show_expanded
+    - field.field.paragraph.nhsc_accordion_item.field_section_anchor
+    - field.field.paragraph.nhsc_accordion_item.field_title
+    - paragraphs.paragraphs_type.nhsc_accordion_item
+  module:
+    - entity_reference_revisions
+    - link
+    - text
+id: paragraph.nhsc_accordion_item.default
+targetEntityType: paragraph
+bundle: nhsc_accordion_item
+mode: default
+content:
+  field_body:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_cta:
+    weight: 4
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_nhsc_accordion_components:
+    type: entity_reference_revisions_entity_view
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_nhsc_id:
+    weight: 6
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_nhsc_show_expanded:
+    weight: 2
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_section_anchor:
+    type: entity_reference_revisions_entity_view
+    weight: 5
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  addtoany: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  search_api_excerpt: true

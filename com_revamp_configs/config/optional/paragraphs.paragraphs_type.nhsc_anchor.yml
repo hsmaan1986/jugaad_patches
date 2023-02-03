@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: nhsc_anchor
+label: 'NHSC Anchor'
+icon_uuid: null
+icon_default: null
+description: 'This adds a page anchor to the page that can be used to navigate to.'
+behavior_plugins: {  }

@@ -1,0 +1,7 @@
+name: WhiteLabel Roles and Permissions
+type: module
+description: Creates whitelabel roles and permissions. Run drush recreate-config 'machine_name' to reinstall module config
+configure: nppe_module_whitelabel_roles_permissions.settings_form
+package: Custom
+version: 1.2
+core_version_requirement: ^8 || ^9

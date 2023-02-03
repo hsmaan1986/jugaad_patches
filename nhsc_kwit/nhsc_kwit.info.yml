@@ -1,0 +1,6 @@
+name: 'Kwit connector'
+version: 8.x-1.1.0
+description: 'Adds the integration from Drupal to Kwit.'
+type: module
+core_version_requirement: ^8 || ^9
+configure: nhsc_kwit.config

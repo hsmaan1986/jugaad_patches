@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_nhsc_video
+    - paragraphs.paragraphs_type.nhsc_carousel_video_item
+  module:
+    - datalayer
+    - file
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_nhsc_video
+id: paragraph.nhsc_carousel_video_item.field_nhsc_video
+field_name: field_nhsc_video
+entity_type: paragraph
+bundle: nhsc_carousel_video_item
+label: Video
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: videos
+  file_extensions: mp4
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

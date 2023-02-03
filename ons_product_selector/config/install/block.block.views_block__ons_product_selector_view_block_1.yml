@@ -1,0 +1,49 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - node
+    - rng
+  theme:
+    - nhsc_master
+id: views_block__ons_product_selector_view_block_1
+theme: nhsc_master
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:ons_product_selector_view-block_1'
+settings:
+  id: 'views_block:ons_product_selector_view-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  rng_current_time:
+    id: rng_current_time
+    date: '1594839124'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1594839124'
+    negate: false
+    context_mapping: {  }
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      ons_product_selector: ons_product_selector
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  node_type:
+    id: node_type
+    bundles:
+      ons_product_selector: ons_product_selector
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

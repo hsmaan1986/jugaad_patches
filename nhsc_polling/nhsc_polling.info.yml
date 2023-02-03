@@ -1,0 +1,8 @@
+name: NHSC Polling
+type: module
+description: 'Adds polling feature'
+core_version_requirement: ^8 || ^9
+package: 'Custom'
+configure: poll.settings
+dependencies:
+  - poll:poll

@@ -1,0 +1,7 @@
+name: 'NHSc Webfrom Email Handler'
+type: module
+description: 'Module to add custom validation on Email Field'
+core_version_requirement: ^8 || ^9
+package: 'Nestle Heath Sciences'
+dependencies:
+  - webform

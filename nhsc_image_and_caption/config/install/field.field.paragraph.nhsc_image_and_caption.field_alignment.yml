@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_alignment
+    - paragraphs.paragraphs_type.nhsc_image_and_caption
+  module:
+    - datalayer
+    - options
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_alignment
+id: paragraph.nhsc_image_and_caption.field_alignment
+field_name: field_alignment
+entity_type: paragraph
+bundle: nhsc_image_and_caption
+label: alignment
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: left-align
+default_value_callback: ''
+settings: {  }
+field_type: list_string

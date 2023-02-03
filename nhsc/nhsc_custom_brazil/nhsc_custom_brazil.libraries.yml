@@ -1,0 +1,28 @@
+address-autofill:
+  js:
+    js/addressAutofill.js: {}
+  dependencies:
+    - core/jquery
+
+date-picker-css:
+  css:
+    theme:
+      css/site-datepicker.css: {}
+date-picker-js:
+  js:
+    js/site-datepicker.js: {}
+  dependencies:
+    - core/jquery
+    - jquery_ui_datepicker/datepicker
+
+cadastro-user-check:
+  js:
+    js/cadastroUserCheck.js: {}
+  dependencies:
+  - core/jquery
+
+brazil-custom-ajax:
+  js:
+    js/customAjax.js: {}
+  dependencies:
+  - core/jquery

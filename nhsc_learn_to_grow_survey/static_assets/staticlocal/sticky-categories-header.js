@@ -1,0 +1,1 @@
+$(document).ready(function(){window.onscroll=function(){stickyHeader()};var header=$("#category-list");var sticky=header.offset();function stickyHeader(){if(window.pageYOffset>sticky.top){header.addClass("sticky");}else{header.removeClass("sticky");}}});

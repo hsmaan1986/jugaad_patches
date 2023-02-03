@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: nhsc_tabs
+label: 'NHSC Tabs'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,4 @@
+nhsc_sticky_buttons:
+  version: 1.x
+  js:
+    js/nhsc-sticky-buttons.js: {}

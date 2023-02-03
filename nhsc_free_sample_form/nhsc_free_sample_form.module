@@ -1,0 +1,64 @@
+<?php
+use Drupal\Core\Form\Form;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\Entity\NodeType;
+use Drupal\user\Entity\User;
+use Drupal\Core\Form\FormState;
+use Drupal\Core\Form\ConfigFormBase;
+use Drupal\Core\Url;
+use Drupal\Core\Entity;
+use Drupal\Core\Entity\EntityInterface;
+
+function nhsc_free_sample_form_form_alter(&$form,$form_state,$form_id)
+{
+	$config_webform_id = "free_sample_webform";
+	$config = \Drupal::config('nhsc_free_sample_form.settings');
+	if($config->get('webform_key')!="")
+	{  
+	  $config_webform_id = $config->get('webform_key');
+	}
+	$hidden_field_name = 'checkbox_hide_show';
+	$customProductHideClass = 'hide-product-class-custom';
+	$webform_id = "webform_submission_".$config_webform_id."_add_form";
+	if(strpos($form_id,$webform_id) === 0)
+	{
+		$array['count'] = 0;
+		$array['count_key'] = 0;		
+		$user_id =\Drupal::currentUser()->id();		 
+		$webform_submission = \Drupal::entityTypeManager()->getStorage(
+		'webform_submission')->loadByProperties(['uid' => $user_id,
+		'webform_id'=>$config_webform_id
+		]);	 		
+		if(!empty($webform_submission))
+		{	
+			foreach ($webform_submission as $key=>$value)
+			{
+				$string = $value->getElementData($hidden_field_name);
+				$string = str_replace('edit-','',$string);
+				$string = str_replace('-','_',$string);
+				$array[$key] = explode(",",$string);
+				$temp = count(explode(",",$string));
+				if($temp>$array['count'])
+				{	
+					$array['count'] = $temp;
+					$array['count_key'] = $key;
+				}
+			}
+		}	
+		/*disableProduct($array);*/
+		if($array['count']>0)
+		{	
+			$key = $array['count_key'];
+			$productArray_to_disable = $array[$key];
+			for ($i=0; $i <count($productArray_to_disable);$i++)
+			{ 
+				$container_id = $productArray_to_disable[$i];
+				if(is_array($form['elements']['main_form_container']['form_wrapper']['first_form_tab']['first_tab_container_hide_show'][$container_id]['#attributes']['class']))
+				{
+					array_push($form['elements']['main_form_container']['form_wrapper']['first_form_tab']['first_tab_container_hide_show'][$container_id]['#attributes']['class'],$customProductHideClass);
+				}	
+			}
+			$form['elements']['main_form_container']['checkbox_hide_show']['#default_value'] = implode($productArray_to_disable,',');
+		}	
+	}
+}

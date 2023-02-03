@@ -1,0 +1,183 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.ons_product_selector.field_meta_tag_ons_pro
+    - field.field.node.ons_product_selector.field_ons_description
+    - field.field.node.ons_product_selector.field_ons_energy
+    - field.field.node.ons_product_selector.field_ons_flavours
+    - field.field.node.ons_product_selector.field_ons_format_search
+    - field.field.node.ons_product_selector.field_ons_format_size
+    - field.field.node.ons_product_selector.field_ons_ingredient
+    - field.field.node.ons_product_selector.field_ons_intolerance
+    - field.field.node.ons_product_selector.field_ons_kcal
+    - field.field.node.ons_product_selector.field_ons_low_glycemic_index
+    - field.field.node.ons_product_selector.field_ons_p_cho_f_
+    - field.field.node.ons_product_selector.field_ons_pathology
+    - field.field.node.ons_product_selector.field_ons_pipcode
+    - field.field.node.ons_product_selector.field_ons_product
+    - field.field.node.ons_product_selector.field_ons_protein
+    - field.field.node.ons_product_selector.field_ons_protein_search
+    - field.field.node.ons_product_selector.field_ons_taste
+    - field.field.node.ons_product_selector.field_ons_type
+    - node.type.ons_product_selector
+  module:
+    - dynamic_entity_reference
+    - user
+id: node.ons_product_selector.default
+targetEntityType: node
+bundle: ons_product_selector
+mode: default
+content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_ons_description:
+    weight: 128
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_ons_energy:
+    weight: 145
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_ons_flavours:
+    weight: 149
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_ons_format_search:
+    weight: 150
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_ons_format_size:
+    weight: 131
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_ons_ingredient:
+    weight: 151
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_ons_intolerance:
+    weight: 152
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_ons_kcal:
+    weight: 135
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_ons_low_glycemic_index:
+    weight: 154
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_ons_p_cho_f_:
+    weight: 137
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_ons_pathology:
+    weight: 146
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_ons_pipcode:
+    weight: 139
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_ons_product:
+    weight: 140
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: dynamic_entity_reference_label
+    region: content
+  field_ons_protein:
+    weight: 141
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_ons_protein_search:
+    weight: 147
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_ons_taste:
+    weight: 153
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_ons_type:
+    weight: 148
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_meta_tag_ons_pro: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,240 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.user.user_profile_institution
+    - field.field.user.user.field_accept_terms
+    - field.field.user.user.field_address_additional
+    - field.field.user.user.field_address_city
+    - field.field.user.user.field_address_country
+    - field.field.user.user.field_address_number
+    - field.field.user.user.field_address_state
+    - field.field.user.user.field_address_street
+    - field.field.user.user.field_address_zip
+    - field.field.user.user.field_birth_date
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_gender
+    - field.field.user.user.field_graduation_date
+    - field.field.user.user.field_hcp_id_number
+    - field.field.user.user.field_honorific
+    - field.field.user.user.field_identification_number
+    - field.field.user.user.field_institution_additional
+    - field.field.user.user.field_institution_address_city
+    - field.field.user.user.field_institution_address_number
+    - field.field.user.user.field_institution_address_state
+    - field.field.user.user.field_institution_address_street
+    - field.field.user.user.field_institution_address_zip
+    - field.field.user.user.field_institution_beds
+    - field.field.user.user.field_institution_country
+    - field.field.user.user.field_institution_id_number
+    - field.field.user.user.field_institution_name
+    - field.field.user.user.field_institution_professionals
+    - field.field.user.user.field_institution_type
+    - field.field.user.user.field_last_name
+    - field.field.user.user.field_medical_institute
+    - field.field.user.user.field_opt_in_communication
+    - field.field.user.user.field_patients
+    - field.field.user.user.field_receive_visits
+    - field.field.user.user.field_speciality
+    - field.field.user.user.field_telephone_number
+    - field.field.user.user.field_university_name
+    - field.field.user.user.user_picture
+    - field.field.user.user.field_profile_complete
+    - field.field.user.user.field_privacy_policy
+  module:
+    - datetime
+    - user
+_core:
+  default_config_hash: CI0CWCGtg5GSYrdFa6Fcjh5bEAMPra5ELF-taT-ZWQ0
+id: user.user.user_profile_institution
+targetEntityType: user
+bundle: user
+mode: user_profile_institution
+content:
+  field_accept_terms:
+    weight: 19
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_birth_date:
+    type: datetime_default
+    weight: 17
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_first_name:
+    type: string_textfield
+    weight: 14
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_gender:
+    weight: 16
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_honorific:
+    type: string_textfield
+    weight: 13
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_identification_number:
+    type: string_textfield
+    weight: 18
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_institution_additional:
+    type: string_textarea
+    weight: 6
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_institution_address_city:
+    type: string_textfield
+    weight: 7
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_institution_address_number:
+    type: string_textfield
+    weight: 5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_institution_address_state:
+    type: string_textfield
+    weight: 8
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_institution_address_street:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_institution_address_zip:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_institution_beds:
+    type: number
+    weight: 11
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_institution_country:
+    type: string_textfield
+    weight: 9
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_institution_id_number:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_institution_name:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_institution_professionals:
+    type: number
+    weight: 12
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_institution_type:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_last_name:
+    type: string_textfield
+    weight: 15
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_opt_in_communication:
+    weight: 20
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_telephone_number:
+    type: string_textfield
+    weight: 10
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_patients:
+      weight: 16
+      settings: {  }
+      third_party_settings: {  }
+      type: options_select
+      region: content
+hidden:
+  account: true
+  contact: true
+  field_address_additional: true
+  field_address_city: true
+  field_address_country: true
+  field_address_number: true
+  field_address_state: true
+  field_address_street: true
+  field_address_zip: true
+  field_graduation_date: true
+  field_hcp_id_number: true
+  field_medical_institute: true
+  field_receive_visits: true
+  field_speciality: true
+  field_university_name: true
+  langcode: true
+  language: true
+  path: true
+  timezone: true
+  user_picture: true

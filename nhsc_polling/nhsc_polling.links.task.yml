@@ -1,0 +1,14 @@
+poll.list:
+  title: 'Poll Overview'
+  route_name: poll.poll_list
+  parent_id: poll.poll_overview
+
+poll.reports:
+  title: 'Poll Reports'
+  route_name: poll.poll_reports
+  parent_id: poll.poll_overview
+
+poll.poll_reports_export:
+  title: 'Export Poll Votes'
+  route_name: poll.poll_reports_export
+  parent_id: poll.poll_overview

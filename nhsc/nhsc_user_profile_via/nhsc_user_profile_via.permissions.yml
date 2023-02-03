@@ -1,0 +1,7 @@
+
+access user profile:
+  title: 'Access user profile'
+  description: 'Allow access to the user profile pages'
+access user registration:
+  title: 'Access user registration'
+  description: 'Allow access to the user registration pages'

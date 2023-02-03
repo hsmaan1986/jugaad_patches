@@ -1,0 +1,361 @@
+{{ attach_library('alfamino_calculation/alfamino_calculation') }}
+<div class="alfamino_header">
+<h1>Alfamino ile Günlük Enerji Miktarını Hesaplama</h1>
+<h2>Bebeğin günlük enerji ihtiyacının ne kadarını anne sütü dışındaki gıdalardan alabileceğinin hesaplanmasını sağlar.</h2>
+</div>
+<div id="alfamino_image" class="container">
+	<div class="row">
+		<img src="/modules/custom/alfamino_calculation/templates/images/alfamino_img1.png" alt="Hesaplama Modulu">
+		<img src="/modules/custom/alfamino_calculation/templates/images/alfamino_img2.png" alt="Hesaplama Modulu3">
+	</div>
+</div>
+<div class="container--tabs">
+	<section class="row container-tabs-row">
+		<ul class="nav nav-tabs">
+			<li class="active">
+				<a href="#tab-1">Hesaplama</a>
+			</li>
+			<li class="">
+				<a href="#tab-2">Raporlama ve geri ödeme ilkeleri</a>
+			</li>
+			<li class="">
+				<a href="#tab-3">ICD kodları</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div id="tab-1" class="tab-pane active">
+				<form id="alfamino-calculator">
+					<div class="age-kg">
+						<div>
+							<label>Yaş (Ay)</label>
+							<select id="age" class="editable">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+								<option value="13">13</option>
+								<option value="14">14</option>
+								<option value="15">15</option>
+								<option value="16">16</option>
+								<option value="17">17</option>
+								<option value="18">18</option>
+								<option value="19">19</option>
+								<option value="20">20</option>
+								<option value="21">21</option>
+								<option value="22">22</option>
+								<option value="23">23</option>
+								<option value="24">24</option>
+							</select>
+						</div>
+						<div>
+							<label>Kilo</label><input id="kilo" class="editable" min="0" type="number" required>
+						</div>
+						<div>
+							<label>Cinsiyet</label>
+							<select id="gender" class="editable">
+								<option value="m">Erkek</option>
+								<option value="f">Kız</option>
+							</select>
+						</div>
+					</div>
+					<div class="information">
+						<div class="information-div">
+							<label>Kilogram başına alması gereken Kcal</label><input id="cal-per-kilogram" type="number" required>
+						</div>
+						<div class="information-div">
+							<label>Günlük Toplam Kalori İhtiyacı</label><input id="daily-calorie-needs" type="number" required>
+						</div>
+						<div class="information-div">
+							<label>Günlük ihtiyacın Alfamino<sup>®</sup>  ile karşılanacak yüzdesi</label>
+							<select id="percentage-of-use-of-alfamino-for-daily-use" class="editable">
+								<option value="0.4">40%</option>
+								<option value="0.5">50%</option>
+								<option value="0.6" selected>60%</option>
+								<option value="0.7">70%</option>
+								<option value="0.8">80%</option>
+								<option value="0.9">90%</option>
+								<option value="1">100%</option>
+							</select>
+						</div>
+						<div class="information-div">
+							<label>Alfamino<sup>®</sup>  ile karşılanacak günlük kalori miktarı</label>
+							<input id="daily-calories-to-be-met-with-alfamino" required>
+						</div>
+						<div class="information-div">
+							<label>Alfamino<sup>®</sup>  gr / gün</label><input id="alfamino-gr-per-day" required>
+						</div>
+						<div class="information-div">
+							<label>Alfamino<sup>®</sup>  ölçek / gün</label><input id="alfamino-scale-per-day" required>
+						</div>
+						<div class="information-div">
+							<label>Tavsiye edilen Öğün x Ölçek</label><input id="alfamino-recomended-meal-scale" required>
+						</div>
+						<div class="information-div">
+							<label>Alfamino<sup>®</sup>  kutu / ay</label><input id="alfamino-box-per-day" required>
+						</div>
+						<div class="button">
+							<button type="reset">Yenile<img src="/modules/custom/alfamino_calculation/templates/images/loading.svg" alt="Yenile"></button>
+							<button class="bt_print" data-document="report">Rapor Al</button>
+						</div>
+					</div>
+				</form>
+
+				<div id="alfamino-result">
+					<ul>
+						<li>
+							<b>Etken madde kodu:</b>
+							SGKG17</li>
+						<li>
+							<b>ICD 10:</b>
+							<span class="type-code">T 78.1</span>
+							–
+							<span class="type-text">Ters gıda reaksiyonları diğer, başka yerde sınıflandırılmamış</span>
+						</li>
+						<li>
+							<b>Teşhis kodu:</b>
+							<strong>15.4</strong>
+							Barsak operasyonunundan dolayı oluşan malabsorbsiyonlar ve malnütrisyonlar.
+							<strong>İlk iki yaşta inek sütü alerjisi</strong>. Doğuştan metabolik ve kalıtsal hastalıklar.</li>
+						<li>
+							<b>Açıklama*:</b>
+							İnek sütü alerjisi tanısı ile takip edilen hastanın özel tıbbi  amaçlı diyet gıda kullanması gerekmektedir.</li>
+						<li>Günlük kalori ihtiyacının
+							<b>%<span class="percentage-of-use-of-alfamino-for-daily-use">90'ü</span>
+							</b>
+							olan
+							<b>
+								<span class="daily-calories-to-be-met-with-alfamino">216</span>
+							</b>
+							kcal
+							<b>Similac Alimentum 400 gr</b>
+							isimli mamadan günlük
+							<b>
+								<span class="alfamino-gr-per-day">41</span>
+							</b>
+							gr olacak şekilde karşılanacaktır.
+							<b>
+								<span class="alfamino-recomended-meal-scale"></span>
+							</b>
+							pozolojide aylık
+							<b>
+								<span class="alfamino-box-per-day">4</span>
+							</b>
+							kutu ürün tüketimi olacaktır.</li>
+						<li>
+							<b>Ürün ismi: Similac Alimentum 400 gr</b>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div id="tab-2" class="tab-pane">
+				<h3>Geri Ödeme Kriterleri</h3>
+				<p>
+					<b>Raporda belirtilmesi gereken İnek Sütü Proteini Alerjisi teşhis kodu:</b>
+				</p>
+				<ul>
+					<li>15.4 Bağırsak operasyonunundan dolayı oluşan malabsorbsiyonlar ve malnütrisyonlar.</li>
+					<li>İlk iki yaşta inek sütü alerjisi. Doğuştan metabolik ve kalıtsal hastalıklar. (K52.2) (T78.1)</li>
+				</ul>
+				<p>
+					<b>Raporlama:</b>
+				</p>
+				<ul>
+					<li>Tek uzman hekimli sağlık raporu olarak düzenlenmesi gereklidir.</li>
+					<li>Uzman hekim raporuna dayanılarak tüm hekimler tarafından reçete edilebilir.</li>
+				</ul>
+				<div class="report">
+					<div class="row">
+						<div class="col-md-5 report-first">
+							<ul>
+								<li>Çocuk veya erişkin gastroenteroloji</li>
+								<li>Çocuk veya erişkin alerji ve klinik immünoloji</li>
+								<li>Çocuk metabolizma hastalıkları</li>
+							</ul>
+							<p>uzman hekimlerinden biri olmalıdır.</p>
+						</div>
+						<div class="col-md-3 report-second">
+							<img src="/modules/custom/alfamino_calculation/templates/images/report1.svg" alt="Report">
+						</div>
+						<div class="col-md-4 report-first">
+							<ul>
+								<li>Çocuk sağlığı ve hastalıkları uzmanı ya da</li>
+								<li>İç hastalıkları</li>
+							</ul>
+							<p>uzman hekimlerinden biri olmalıdır.</p>
+						</div>
+					</div>
+				</div>
+				<p>
+					<b>Rapor Süresi:</b>
+				</p>
+				<ul>
+					<li>1 YIL / Hasta Katılım Payı YOK</li>
+				</ul>
+				<p>
+					<b>Raporda yer alması gerekenler:</b>
+				</p>
+				<ul>
+					<li>Günlük kalori ihtiyacı, günlük mama ihtiyacı(gr), aylık tüketim miktarı(kutu), ürün ismi.</li>
+				</ul>
+			</div>
+			<div id="tab-3" class="tab-pane">
+				<h4>Doğuştan metabolik ve kalıtsal hastalıklar ilk iki yaşta inek sütü alerjesi tanı - teşhis kodları</h4>
+				<div class="table-responsive">
+					<table id="table-icd">
+						<tr>
+							<th>ICD - 10 Kodu (Hastalık)</th>
+							<th>Eski Teshiş Kodu</th>
+							<th>Yeni Teshiş Kodu</th>
+							<th>Teshiş</th>
+						</tr>
+						<tr class="tr-bg">
+							<td>
+								<p>
+									<b>G71.0</b>
+									Musküler distrofi</p>
+								<p>
+									<b>K91.2</b>
+									Malabsorbsiyon cerrahi sonrası, başka yerde sınıflanmamış</p>
+								<div>
+									<p>
+										<b>K52.2</b>
+										Alerjik ve dietetik gastroenterit ve kolit (yalnızca inek sütü alerjisi için)</p>
+									<p>
+										<b>T78.1</b>
+										Ters gıda reaksiyonları diğer, başka yerde sınıflanmamış (yalnızda inek sütü alerjisi için)</p>
+								</div>
+								<p>
+									<b>E88.8*</b>
+									Metabolik bozukluklar diğer tanımlanmamış</p>
+								<p>
+									<b>E70-72, E74-E77, E79-E80**</b>
+								</p>
+							</td>
+							<td>15.04</td>
+							<td>199</td>
+							<td>Doğuştan metabolik ve kalıtsal hastalıklar, bağırsak operasyonlarından dolayı oluşan malabsorbsiyonlar ve malnütrisyonlar. İlk iki yaşta inek sütü alerjisi.</td>
+						</tr>
+					</table>
+				</div>
+				<div class="table-icd-condition">
+					<p>*Doğuştan metabolik hastalığı olanlarda malnütrisyonlar koşulu aranmaz</p>
+					<p>**Enteral beslenme ürünleri (E70.3, E74.9, E80.3, E80.4, E80.5, E80.6, E80.7, E88.0, E88.2 ve E88.9) kodlarında muafiyet kapsamında bulunmamaktadır.</p>
+				</div>
+				<!-- Trigger/Open The Modal -->
+				<button class="button-icd">Rapor örneği</button>
+
+			</div>
+		</div>
+	</section>
+</div>
+<div id="result-modal" class="modal">
+	<div class="modal-content-icd table-responsive">
+		<span class="close-icd">&times;</span>
+		<h3>İLAÇ KULLANIM RAPORU</h3>
+		<table class="table-report-first">
+			<tr>
+				<td>Hastanın Adı Soyadı:</td>
+				<td>Rapor Tarihi:</td>
+			</tr>
+			<tr>
+				<td>Doğum Tarihi:</td>
+				<td>Bilgi İşlem No:</td>
+			</tr>
+			<tr>
+				<td>Sosyal Güvencesi:</td>
+				<td>Poliklinik/Klinik:</td>
+			</tr>
+			<tr>
+				<td>Sicil No:</td>
+				<td>Hasta Pol. Protokol No Tarihi:</td>
+			</tr>
+			<tr>
+				<td>T.C. Kimlik No:</td>
+				<td>Sağ. Kur. Defter No:</td>
+			</tr>
+			<tr>
+				<td>Rapor Takip No:</td>
+				<td>Rapor Düzenleme Tarihi</td>
+			</tr>
+		</table>
+		<table class="table-report-second">
+			<tr>
+				<th colspan="6">TANILAR:</th>
+			</tr>
+			<tr>
+				<td colspan="6">K 52.2 - Alerjik ve dietetik gastroenterit ve kolit</td>
+			</tr>
+			<tr>
+				<th colspan="6">TEŞHİSLER:</th>
+			</tr>
+			<tr>
+				<td colspan="6">199 Doğuştan metabolik ve kalıtsal hastalıklar, bağırsak operasyonlarından dolayı oluşan malabsorbsiyonlar ve malnütrisyonlar. İlk iki yaşta inek sütü alerjisi</td>
+			</tr>
+			<tr class="table-report-medicine">
+				<th>İLACIN ETKEN MADDE İSMİ</th>
+				<td>Doz</td>
+				<td>Doz Birim</td>
+				<td>Periyod</td>
+				<td>Periyod Birim</td>
+				<td>Açıklama</td>
+			</tr>
+			<tr>
+				<td>SGKG91 Alfamino Doğumdan İtibaren Özel Tıbbi Amaçlı Diyet Gıda 400g Toz/Kutu</td>
+				<td class="alfamino-recomended-meal-scale"></td>
+				<td>Ölçek x Öğün</td>
+				<td>1</td>
+				<td>Gün</td>
+				<td>Açıklama</td>
+			</tr>
+			<tr>
+				<th colspan="6">KARAR / AÇIKLAMA</th>
+			</tr>
+			<tr>
+				<td colspan="6">İnek sütü alerjisi tanısı ile takip edilen hastanın özel tıbbi amaçlı gıda kullanması gerekmektedir.
+					Günlük kalori ihtiyacının
+					<b>
+						%<span class="percentage-of-use-of-alfamino-for-daily-use">90'ü</span>
+					</b>
+					olan
+					<b>
+						<span class="daily-calories-to-be-met-with-alfamino">216</span>
+					</b>
+					kcal
+					<b class="alfamino-formula-color">
+					Alfamino 400 gr
+					</b>
+					isimli mamadan günlük
+					<b>
+						<span class="alfamino-gr-per-day">41</span>
+					</b>
+					g olacak şekilde karşılanması uygundur.
+					<b>
+						<span class="alfamino-recomended-meal-scale"></span>
+					</b>
+					pozolojide aylık
+					<b>
+						<span class="alfamino-box-per-day">4</span>
+					</b>
+					kutu ürün tüketimi olacaktır.
+				</td>
+			</tr>
+		</table>
+		<table class="table-report-third">
+			<tr>
+				<td>Üye</td>
+			</tr>
+			<tr>
+				<td>Başhekim - Mühür - İmza</td>
+			</tr>
+		</table>
+	</div>
+</div>

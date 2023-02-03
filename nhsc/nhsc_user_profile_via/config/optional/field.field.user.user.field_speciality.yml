@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_speciality
+  module:
+    - user
+id: user.user.field_speciality
+field_name: field_speciality
+entity_type: user
+bundle: user
+label: Speciality
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

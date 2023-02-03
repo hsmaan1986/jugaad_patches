@@ -1,0 +1,4 @@
+nppe_module_event:
+  css:
+    theme:
+      css/nppe_module_event.css: {}

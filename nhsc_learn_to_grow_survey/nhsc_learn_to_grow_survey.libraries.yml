@@ -1,0 +1,34 @@
+learn-to-grow-survey-form:
+  js:
+    js/learn-to-grow-survey.js: {}
+  css:
+    theme:
+      css/learn-to-grow-survey.css: {}
+
+learn-to-grow-survey-static-assets:
+  js:
+    js/learn-to-grow-survey.js: {}
+    static_assets/static-engine/js/jquery-migrate-1.4.0.js: {}
+    static_assets/skin-engine-shared/NHSSkin/js/nhs-v2.js: {}
+    static_assets/skin-engine-shared/NHSSkin/js/owl.carousel.js: {}
+    static_assets/skin-engine-shared/NHSSkin/js/jquery.fancybox.2.1.5.pack.js: {}
+    static_assets/skin-engine-shared/NHSSkin/js/nhs-readmore.js: {}
+    static_assets/skin-engine-shared/NHSSkin/js/placeholders.min.js: {}
+    static_assets/staticlocal/aprendiendo-a-crecer.js: {}
+    static_assets/staticlocal/aprendiendo-a-crecer-tooltips.js: {}
+    static_assets/staticlocal/jenga-custom-carousel.js: {}
+    static_assets/staticlocal/html2pdf.bundle.min.js: {}
+    static_assets/staticlocal/pdf-logic.js: {}
+    static_assets/staticlocal/aprendiendo-a-crecer-results.js: {}
+  css:
+    theme:
+      static_assets/skin-engine-shared/NHSSkin/css/nhs-layout-v2.min.css: {}
+      static_assets/skin-engine-shared/NHSSkin/css/print.css: {}
+      static_assets/skin-engine-shared/NHSSkin/css/owl.carousel.css: {}
+      static_assets/skin-engine-shared/NHSSkin/css/owl.theme.css: {}
+      static_assets/skin-engine-shared/NHSSkin/css/jquery.fancybox.2.1.5.css: {}
+      static_assets/staticlocal/aprendiendo-a-crecer.css: {}
+      static_assets/staticlocal/logos-change.css: {}
+      static_assets/staticlocal/nhs-december-2016-fix.css: {}
+      static_assets/staticlocal/nhs-es-custom-12.css: {}
+      static_assets/staticlocal/fix-bullet-padding.css: {}

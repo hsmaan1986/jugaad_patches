@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.leadership_profile.body
+    - field.field.node.leadership_profile.field_leader_image
+    - field.field.node.leadership_profile.field_leader_name
+    - field.field.node.leadership_profile.field_leader_role
+    - field.field.node.leadership_profile.field_link
+    - node.type.leadership_profile
+  module:
+    - user
+id: node.leadership_profile.teaser
+targetEntityType: node
+bundle: leadership_profile
+mode: teaser
+content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_leader_image: true
+  field_leader_name: true
+  field_leader_role: true
+  field_link: true
+  langcode: true
+  search_api_excerpt: true

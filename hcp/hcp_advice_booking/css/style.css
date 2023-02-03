@@ -1,0 +1,237 @@
+.booking-form {
+    width: 100%;
+    max-width: 560px;
+    padding: 10px;
+    display: block;
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+
+.booking-form .date-confirm {
+    background-color: #e6edf2;
+    padding: 40px !important;
+    margin-bottom: 20px;
+}
+
+.booking-form .date-confirm h2 {
+    display: block;
+    color: #465e82;
+    font-family: 'LatoBold', sans-serif;
+    text-align: center;
+    font-size: 2.25em;
+    line-height: 1.2em;
+}
+
+.booking-form .form-title h3 {
+    display: block;
+    color: #465e82;
+    font-family: 'Lato', sans-serif;
+    margin: 0px 0 30px 0;
+    text-align: center;
+}
+
+.booking-form .form-title h3:before {
+    content: "\e109";
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-size: 0.82em;
+    padding-right: 10px;
+}
+
+.booking-form .form-submit {
+    border: 2px solid #00a2ca;
+    background-color: #00a2ca;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 15px;
+    line-height: 19px;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-transition: .2s;
+    transition: .2s;
+    margin: 4px;
+}
+
+.booking-form .form-submit:hover {
+    background-color: #ffffff;
+    color: #00a2ca;
+}
+
+.booking-form button#edit-back:before {
+    content: "\e091";
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    padding-right: 5px;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.booking-form .actions {
+    text-align: center;
+    margin: 20px;
+}
+
+.booking-form label {
+    color: #465e82;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    line-height: 19px;
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+}
+
+.booking-form .about-select, .where-select, .booking-form .phone-text {
+    max-width: 290px!important;
+    margin: 5px auto;
+}
+
+.booking-form .phone-text input {
+    border-radius: 0;
+    border: 1px solid #32425C;
+    z-index: 5;
+    position: relative;
+    background-color: transparent;
+}
+
+.booking-form .select-wrapper select {
+    border: 2px solid #adb8c8;
+    border-radius: 2px;
+    background-color: #ffffff;
+    padding: 5px 10px;
+    width: 100%;
+    display: block;
+    color: #465e82;
+    font-family: 'LatoBold', sans-serif;
+    font-size: 13px;
+    line-height: 17px;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+    height: 40px;
+    font-weight: bold;
+}
+
+.booking-form .select-wrapper:after {
+    content: "\e252";
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-size: 9px;
+    padding-right: 15px;
+    color: #95989a;
+    top: 20px;
+}
+
+.booking-form .thank-you {
+    background: #84af68;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.45em;
+    color: #fff;
+    font-family: "LatoRegular", sans-serif;
+}
+
+.booking-form p {
+    text-align: center;
+    font-size: 1em;
+    margin: 20px 0;
+    color: #95989a;
+}
+
+button#edit-home {
+    margin: auto;
+    display: block;
+}
+
+.booking-year-accordion {
+    max-width: 768px;
+    margin: auto;
+}
+
+.ui-accordion .ui-accordion-header {
+    background: none;
+    padding: 0px;
+    font-family: "LatoBold", sans-serif;
+    border: none;
+    color: #32425c;
+    outline: none !important;
+}
+
+.ui-accordion .ui-icon {
+    float: right;
+    margin: initial;
+    text-indent: initial;
+    top: initial;
+    height: auto;
+    width: auto;
+    background: none;
+}
+
+.month-title .ui-icon {
+    font-size: 0.8em;
+}
+
+.ui-icon:before, .ui-icon:before,
+.ui-state-active .ui-icon:before, .ui-button:active .ui-icon:before {
+    color: #32425c;
+    content: "\e252";
+    font-family: 'Glyphicons Halflings';
+    display: block;
+    position: relative;
+    background: none;
+}
+
+.booking-year-accordion > h3.month-title {
+    font-size: 2.4em;
+    padding: 30px;
+    border-bottom: solid 1px #f3f3f3;
+    font-family: "LatoBlack", sans-serif;
+}
+
+.booking-day-accordion > h3.day-title {
+    font-size: 1.65em;
+    padding: 10px 30px;
+    border-bottom: solid 1px #f3f3f3;
+    text-transform: uppercase;
+    font-family: "LatoBlack", sans-serif;
+}
+.booking-day-accordion .ui-accordion-content {
+    border: none;
+    padding: 10px 30px;
+}
+
+.ui-widget.ui-widget-content {
+    border: none;
+    padding: 0px;
+}
+
+.slot {
+    font-family: "LatoBlack", sans-serif;
+    font-size: 1.2em;
+    padding-bottom: 20px;
+    color: #4d6587;
+}
+
+a.slot-link {
+    color: #5bc0de;
+    font-family: "LatoBlack", sans-serif;
+}
+
+a.slot-link:before {
+    content: "\e109";
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-size: 0.82em;
+    padding-right: 5px;
+    color: #32425c;
+}
+
+.day-title span {
+    display: block;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding-top: 5px;
+    color: #c8c8ca;
+}

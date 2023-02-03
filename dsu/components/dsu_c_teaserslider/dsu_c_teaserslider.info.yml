@@ -1,0 +1,16 @@
+name: 'Teaser Card/Slider (Experimental)'
+description: 'Includes configurations for Teaser Card Block Paragraph type and related field settings.'
+type: module
+core_version_requirement: ^8 || ^9
+libraries:
+  - dsu_c_teaserslider/general
+dependencies:
+  - entity_browser
+  - field
+  - image
+  - media
+  - paragraphs
+  - dsu:dsu_c_core
+  - slick_paragraphs
+  - entity_reference_revisions
+package: DSU

@@ -1,0 +1,15 @@
+.hasDatepicker{
+    width:100%!important;
+}
+
+@media (min-width: 768px){
+    .form-item-birth-date-date {
+        display: block!important;
+        margin-bottom: 15px!important;
+    }
+}
+
+#user-form #edit-field-birth-date-0-value {
+    float: left;
+    width: 65%;
+}

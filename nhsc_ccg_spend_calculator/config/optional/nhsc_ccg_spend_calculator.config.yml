@@ -1,0 +1,9 @@
+ccg_currency: £
+ccg_footer_copy: "<p>References:</p>\r\n\r\n<p>1. Annual prescription data from October 2018.</p>\r\n\r\n<p>2. Data on file.</p>\r\n\r\n<p>*Versus the market leading competitors (Neocate LCP<sup>®</sup>, Neocate Syneo<sup>®</sup>, Nutramigen with LGG<sup>®</sup>&nbsp;and Aptamil Pepti<sup>®</sup>)</p>\r\n"
+product1_title: 'SMA® Alfamino®'
+product2_title: 'SMA® Althera®'
+product1_image:
+  - '18310'
+product2_image:
+  - '18311'
+ccg_csv_delimiter: ','

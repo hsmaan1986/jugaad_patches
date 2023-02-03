@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Cerebral palsy sub-category'
+vid: cerebral_palsy_sub_category
+description: ''
+weight: 0

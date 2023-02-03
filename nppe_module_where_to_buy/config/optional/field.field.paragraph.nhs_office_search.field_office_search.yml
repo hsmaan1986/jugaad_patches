@@ -1,0 +1,25 @@
+uuid: 33297b49-7375-4dd8-9fa5-3f700b5de576
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_office_search
+    - paragraphs.paragraphs_type.nhs_office_search
+  module:
+    - block_field
+id: paragraph.nhs_office_search.field_office_search
+field_name: field_office_search
+entity_type: paragraph
+bundle: nhs_office_search
+label: 'Office Search'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    plugin_id: office_search_block
+    settings: {  }
+default_value_callback: ''
+settings:
+  plugin_ids: {  }
+field_type: block_field

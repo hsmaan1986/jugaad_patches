@@ -1,0 +1,9 @@
+alfamino_calculation:
+  css:
+    component:
+      css/alfamino-calculation.min.css: {}
+  js:
+    js/alfamino-calculation.js: {}
+    js/alfamino-calculation-tabs.js: {}
+  dependencies:
+    - core/jquery

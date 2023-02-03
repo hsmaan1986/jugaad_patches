@@ -1,0 +1,7 @@
+lcp_migrations.configurations:
+  path: '/admin/config/nestle/migrations'
+  defaults:
+    _title: 'Migrations Configurations'
+    _form: '\Drupal\lcp_migrations\Form\MigrationsConfigurations'
+  requirements:
+    _permission: 'administer site configuration'

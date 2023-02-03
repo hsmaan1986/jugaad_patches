@@ -1,0 +1,4 @@
+services:
+  nhsc_linked_in_feed.base:
+    class: '\Drupal\nhsc_linked_in_feed\GetLinkedinFeedBase'
+    arguments: ['@entity_type.manager', '@config.factory']

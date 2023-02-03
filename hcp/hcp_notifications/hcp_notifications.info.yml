@@ -1,0 +1,5 @@
+name: 'HCP Notifications'
+type: module
+description: 'Email notifications for content publishing.'
+core_version_requirement: ^8 || ^9
+package: 'hcp'

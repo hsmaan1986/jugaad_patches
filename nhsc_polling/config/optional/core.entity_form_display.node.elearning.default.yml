@@ -1,0 +1,241 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.image_browser
+    - field.field.node.elearning.field_background_color
+    - field.field.node.elearning.field_credit
+    - field.field.node.elearning.field_description
+    - field.field.node.elearning.field_documents
+    - field.field.node.elearning.field_dsu_published_date
+    - field.field.node.elearning.field_dsu_tags
+    - field.field.node.elearning.field_iframe
+    - field.field.node.elearning.field_iframe_height
+    - field.field.node.elearning.field_image
+    - field.field.node.elearning.field_make_poll_sticky
+    - field.field.node.elearning.field_medic
+    - field.field.node.elearning.field_meta_tags
+    - field.field.node.elearning.field_poll
+    - field.field.node.elearning.field_presenter_list
+    - field.field.node.elearning.field_rating
+    - field.field.node.elearning.field_vote
+    - node.type.elearning
+    - workflows.workflow.editorial
+  module:
+    - content_moderation
+    - datetime
+    - entity_browser
+    - file
+    - fivestar
+    - metatag
+    - paragraphs
+    - path
+    - text
+    - votingapi_widgets
+id: node.elearning.default
+targetEntityType: node
+bundle: elearning
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_background_color:
+    weight: 128
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_credit:
+    weight: 129
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_description:
+    weight: 130
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_documents:
+    weight: 123
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_dsu_published_date:
+    weight: 132
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_dsu_tags:
+    weight: 133
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_iframe:
+    weight: 134
+    settings:
+      size: 200
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_iframe_height:
+    weight: 135
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_image:
+    type: entity_browser_file
+    weight: 124
+    settings:
+      entity_browser: image_browser
+      field_widget_edit: true
+      field_widget_remove: true
+      view_mode: default
+      preview_image_style: thumbnail
+      open: true
+      selection_mode: selection_append
+      field_widget_replace: false
+    region: content
+    third_party_settings: {  }
+  field_make_poll_sticky:
+    weight: 139
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_medic:
+    weight: 127
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_meta_tags:
+    weight: 136
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
+  field_poll:
+    weight: 138
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_presenter_list:
+    weight: 131
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
+    region: content
+  field_rating:
+    weight: 126
+    settings:
+      fivestar_widget: modules/contrib/fivestar/widgets/basic/basic.css
+      display_format: average
+      text_format: none
+    third_party_settings: {  }
+    type: fivestar_stars
+    region: content
+  field_vote:
+    weight: 137
+    settings:
+      show_initial_vote: 0
+    third_party_settings: {  }
+    type: voting_api_widget
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 15
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 120
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 16
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 50
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

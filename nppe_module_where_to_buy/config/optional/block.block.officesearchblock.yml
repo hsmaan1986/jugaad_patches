@@ -1,0 +1,33 @@
+uuid: 8c86c1dd-85c0-4963-8014-b1100dd44b5d
+langcode: en
+status: false
+dependencies:
+  module:
+    - nppe_module_where_to_buy
+    - rng
+  theme:
+    - nhsc_master
+id: officesearchblock
+theme: nhsc_master
+region: content
+weight: 0
+provider: null
+plugin: office_search_block
+settings:
+  id: office_search_block
+  label: 'Office Search Block'
+  provider: nppe_module_where_to_buy
+  label_display: '0'
+visibility:
+  rng_current_time:
+    id: rng_current_time
+    date: '1557824619'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1557824619'
+    negate: false
+    context_mapping: {  }

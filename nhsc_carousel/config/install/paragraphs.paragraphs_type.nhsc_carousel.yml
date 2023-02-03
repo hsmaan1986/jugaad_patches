@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: nhsc_carousel
+label: 'NHSC Carousel'
+icon_uuid: null
+icon_default: null
+description: 'This is for adding a carousel that can have a text, images and videos.'
+behavior_plugins: {  }

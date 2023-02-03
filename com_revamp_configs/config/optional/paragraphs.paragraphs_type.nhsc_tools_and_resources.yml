@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: nhsc_tools_and_resources
+label: 'NHSC Tools and Resources'
+icon_uuid: null
+icon_default: null
+description: 'This is for linking to various tools and resources.'
+behavior_plugins: {  }

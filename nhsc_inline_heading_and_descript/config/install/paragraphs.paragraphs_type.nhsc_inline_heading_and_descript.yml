@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: nhsc_inline_heading_and_descript
+label: 'NHSC inline heading and description'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

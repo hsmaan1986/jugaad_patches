@@ -1,0 +1,73 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.dynamic_surveys.field_survey_type
+    - node.type.dynamic_surveys
+  module:
+    - block_field
+    - flexiform
+third_party_settings:
+  flexiform:
+    enhancer:
+      multiple_entities:
+        id: multiple_entities
+      page_exposure:
+        id: page_exposure
+      submit_button_ajax:
+        ajax:
+          'actions::submit':
+            enabled: false
+            response: refresh
+          'actions::preview':
+            enabled: false
+            response: refresh
+        id: submit_button_ajax
+      submit_button_label:
+        label:
+          'actions::submit': ''
+          'actions::preview': ''
+        id: submit_button_label
+      submit_button_redirect:
+        redirect:
+          'actions::submit': ''
+          'actions::preview': ''
+        id: submit_button_redirect
+      submit_button_rules:
+        id: submit_button_rules
+        'actions::submit':
+          rules: {  }
+        'actions::preview':
+          rules: {  }
+id: node.dynamic_surveys.default
+targetEntityType: node
+bundle: dynamic_surveys
+mode: default
+content:
+  field_survey_type:
+    weight: 1
+    settings:
+      plugin_id: ''
+      settings: {  }
+      configuration_form: full
+    third_party_settings: {  }
+    type: block_field_default
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  moderation_state: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true
+  url_redirects: true

@@ -1,0 +1,29 @@
+name: 'NHSC News'
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - autologout
+  - block
+  - content_translation
+  - datalayer
+  - datetime
+  - dsu_c_core
+  - dsu_core
+  - dynamic_entity_reference
+  - entity_reference_revisions
+  - field
+  - image
+  - language
+  - menu_ui
+  - metatag
+  - nhsc_image_and_text_column
+  - node
+  - path
+  - rng
+  - svg_image
+  - system
+  - taxonomy
+  - text
+  - user
+  - views
+version: 8.x-1.0

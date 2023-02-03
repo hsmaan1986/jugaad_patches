@@ -1,0 +1,13 @@
+
+nhsc_find_and_replace:
+  version: 1.x
+  js:
+    js/nhsc_find_and_replace.js: {}
+  css:
+    theme:
+      css/nhsc_find_and_replace.css: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings

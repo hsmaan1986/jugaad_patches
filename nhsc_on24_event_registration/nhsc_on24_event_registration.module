@@ -1,0 +1,140 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
+use GuzzleHttp\Exception\RequestException;
+use Drupal\node\NodeInterface;
+use Drupal\user\Entity\User;
+
+/**
+ * Implements hook_help().
+ * @param
+ * @param
+ */
+function nhsc_on24_event_registration_help($route_name, RouteMatchInterface $route_match) {
+	switch ($route_name) {
+		// Main module help for the nppe_module_winning_api module.
+		case 'help.page.nhsc_on24_event_registration':
+			$output = '';
+			$output .= '<h3>' . t('About') . '</h3>';
+			$output .= '<p>' . t('Nestle Health Science ON 24 Events.') . '</p>';
+			return $output;
+
+		default:
+	}
+}
+
+function nhsc_on24_event_registration_form_alter (&$form, FormStateInterface $form_state, $form_id) {
+
+	if ($form_id === "rng_quick_register_block_form") {
+		$form['#submit'][] = 'on24_submit';
+	}
+}
+
+function on24_submit(array $form, FormStateInterface $form_state) {
+
+
+	$client     = \Drupal::httpClient();
+	$config     = \Drupal::config('nhsc_on24_event_registration.settings');
+
+	// get on24 configs
+	$endpoint       = $config->get('endpoint');
+	$log_reg_hits   = $config->get('log_reg_hits');
+	$re_cookie      = $config->get('re_cookie');
+	$auto_reg       = $config->get('auto_reg');
+	$session_id     = $config->get('session_id');
+	$site_key       = $config->get('site_key');
+
+	// get node info
+	$event_id   = '';
+
+	$node = \Drupal::routeMatch()->getParameter('node');
+	if ($node instanceof NodeInterface) {
+		// You can get nid and anything else you need from the node object.
+		$nid = $node->id();
+
+		if( $node->type->entity->label() === 'Event' ) {
+			$event_id   = $node->get('field_webinar_key')->getString();
+		}
+
+	}
+
+	//get user
+	$user       = User::load(Drupal::currentUser()->id());
+
+	$firstname  = $user->get('field_first_name')->value;
+	$lastname   = $user->get('field_last_name')->value;
+	$email      = $user->get('mail')->value;
+	$job_title  = '';
+	$address_street1  = $user->get('field_address_number')->value .' '. $user->get('field_address_street')->value;
+	$city       = $user->get('field_address_city')->value;
+	$state      = $user->get('field_address_state')->value;
+	$zip        = $user->get('field_address_zip')->value;
+	$country    = $user->get('field_address_country')->value;
+	$work_phone = $user->get('field_telephone_number')->value;
+
+	$params = [
+		'form_params' => [
+			'sourcepage' => 'register',
+			'logreghits' => $log_reg_hits,
+			'recookie' => $re_cookie,
+			'autoreg' => $auto_reg,
+			'eventid' => $event_id,
+			'sessionid' => $session_id,
+			'key' => $site_key,
+			'firstname' => $firstname,
+			'lastname' => $lastname,
+			'email' => $email,
+			'job_title' => $job_title,
+			'address_street1' => $address_street1,
+			'city' => $city,
+			'state' => $state,
+			'zip' => $zip,
+			'country' => $country,
+			'work_phone' => $work_phone,
+		],
+		'headers' => [
+			'Content-type' => 'application/x-www-form-urlencoded',
+		],
+	];
+
+
+	try {
+		$response = $client->post($endpoint, $params);
+
+		if ($response->getStatusCode() === 200){
+			$data = $response->getBody();
+
+			// get the tag in the responce
+			$pattern = "/<center[^>]*>(.*)<\/center>/s";
+			// If a match is found, store the results in $match
+			if (preg_match($pattern, $data, $match)) {
+
+				// get url of webinar
+				preg_match('/href=["\']?([^"\'>]+)["\']?/', $match[1], $match_url);
+
+				Drupal::service('messenger')->addMessage(
+					t('Please click on <strong><a href="@link" target="_blank">this link</a></strong> to access the webinar',
+					['@link' => $match_url[1]])
+				);
+
+			}else{
+				Drupal::logger('nhsc_on24_event_registration')->error('Unable to register for event on ON 24');
+				Drupal::service('messenger')->addError(t('Unable to register for event on ON 24'));
+			}
+
+			Drupal::logger('nhsc_on24_event_registration')->notice($data);
+		}else{
+			Drupal::service('messenger')->addError(t('Unable to register for event on ON 24'));
+			Drupal::logger('nhsc_on24_event_registration')->error('Unable to register for event on ON 24');
+		}
+
+
+	}
+	catch (RequestException $e) {
+		Drupal::service('messenger')->addError(t('Unable to register for event on ON 24'));
+		Drupal::logger('nhsc_on24_event_registration')->error($e->getMessage());
+
+	}
+
+}

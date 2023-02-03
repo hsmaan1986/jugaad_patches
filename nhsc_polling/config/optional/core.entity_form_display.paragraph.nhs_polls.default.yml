@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhs_polls.field_poll
+    - paragraphs.paragraphs_type.nhs_polls
+id: paragraph.nhs_polls.default
+targetEntityType: paragraph
+bundle: nhs_polls
+mode: default
+content:
+  field_poll:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true

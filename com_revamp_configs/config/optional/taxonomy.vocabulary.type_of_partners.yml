@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Type of Partners'
+vid: type_of_partners
+description: ''
+weight: 0

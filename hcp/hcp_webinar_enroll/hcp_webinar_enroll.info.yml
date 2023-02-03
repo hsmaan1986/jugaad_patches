@@ -1,0 +1,5 @@
+name: 'hcp_webinar_enroll'
+type: module
+description: 'Webinar Enroll'
+core_version_requirement: ^8 || ^9
+package: 'HCP'

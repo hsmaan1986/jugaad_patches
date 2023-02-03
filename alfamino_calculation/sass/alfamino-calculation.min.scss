@@ -1,0 +1,742 @@
+#alfamino-calculator {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #454545;
+  font-size: 20px;
+  display: flex;
+  @media (max-width: 576px) {
+    display: block;
+  }
+
+  .age-kg{
+    display: inline-block;
+    float: left;
+    div{
+      display: block;
+      label{
+        display: block;
+        margin-left: 15px;
+      }
+    }
+  }
+
+  .information{
+    display: inline-block;
+    .information-div{
+      border-bottom: 1px solid transparent;
+      border-image: linear-gradient(0.25turn,#fff,#fff,rgba(56,2,155,0));
+      border-image-slice: 1;
+      width:100%;
+      text-transform: capitalize;
+      //padding-bottom: 10px
+    }
+
+    .button{
+      button{
+        position: relative;
+        box-shadow: 2px 2px 4px #4750539e;
+      }
+      display: block;
+      img{
+        max-width: 28px;
+        position: absolute;
+        /* right: 38px; */
+        left: auto;
+        right: auto;
+        left: 74px;
+      }
+    }
+
+    @media (min-width: 576px) {
+      // margin-left: 45px;
+      // overflow: hidden;
+      // width: 70%;
+      // margin: auto;
+      // left: 0;
+      // right: auto;
+      display: block;
+      margin-left: 170px;
+    }
+  }
+
+  div {
+    @media (min-width: 576px) {
+      display: flex;
+    }
+
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+
+    label{
+      color: #fff;
+    }
+  }
+
+  input,
+  select {
+    @media (max-width: 576px) {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    width: 150px;
+    min-width: 150px;
+    border-radius: 8px;
+    //box-shadow: 1px 6px 6px rgba(32,33,36,.28);
+    border: none;
+    padding: 6px 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: #f6b8a4;
+    box-shadow: 2px 2px 4px #66818a inset;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:not(.editable) {
+      pointer-events: none;
+      background-color: #eee;
+      margin-left: 120px;
+      box-shadow: 2px 2px 4px #66818a inset;
+      font-size: 20px;
+      @media (max-width: 576px) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  button {
+    @media (max-width: 576px) {
+      width: 100%;
+      margin-top: 10px;
+    }
+    cursor: pointer;
+    border-radius: 7px;
+    box-shadow: 0 1px 6px rgba(32,33,36,.28);
+    border: 2px solid;
+    padding: 3px 3px 3px 10px;
+    //width: 16%;
+    margin-top: 30px;
+    color: #fff;
+    background-color: #f1ac96;
+    text-align: left;
+    line-height: bold;
+    font-weight: bold;
+    width: 115px;
+
+
+    @media (min-width: 576px) {
+      &:first-child {
+        margin-right: 10px;
+      }
+
+      &:last-child {
+        margin-left: 10px;
+      }
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+  }
+}
+
+
+#alfamino-result {
+  display: none;
+
+  ul {
+    list-style: none;
+  }
+}
+
+@media print {
+
+  header,
+  h1,
+  .region-breadcrumb,
+  #alfamino-calculator {
+    display: none;
+  }
+
+  #alfamino-result {
+    display: block;
+  }
+}
+
+@page {
+  margin: 0.5cm;
+}
+
+//tabs
+.container--tabs {
+	margin: 2rem;
+  padding: 3px;
+  background-color: #f6b8a4;
+  border-radius: 25px;
+  display: -ms-flexbox;
+  max-width: 80%;
+  margin: auto;
+  overflow: hidden;
+
+  ul.nav.nav-tabs:after {
+      content: "";
+      background: aqua;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+  }
+  ul.nav.nav-tabs {
+      position: relative;
+  }
+    ul.nav.nav-tabs:after {
+      content: "";
+      width: 100%;
+      height: 10px;
+      bottom: -11px;
+      position: absolute;
+      box-shadow: 0px -4px 5px;
+  }
+	.nav-tabs {
+		float: left;
+		width: 100%;
+		margin: 0;
+		list-style-type: none;
+		border-bottom: 1px solid #ddd;
+    display: flex;
+    overflow: hidden;
+    padding: 0;
+    width: 100%;
+    border-radius: 25px;
+
+    @media (max-width: 576px) {
+      display: block;
+    }
+
+		> li {
+			float: left;
+			//margin-bottom: -1px;
+      flex: 1;
+      //margin-right: 5px;
+      display: flex;
+      width: 100%;
+
+			> a {
+				float: left;
+				margin-right: 2px;
+				line-height: 1.42857143;
+				//padding: 10px;
+				border: 1px solid transparent;
+        background-color: #fff;
+        color: #f6b8a4;
+        width: 100%;
+        text-align: center;
+        font-size: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        //height: 15vh;
+        @media (max-width: 576px) {
+          font-size: 20px;
+          //height: 15vh;
+        }
+
+				&:hover {
+					border-color: #eee #eee #ddd;
+          color: #fff;
+				}
+			}
+
+			&.active {
+				> a,
+				> a:hover,
+				> a:focus {
+					color: #fff;
+					cursor: default;
+					background-color: #f6b8a4;
+					border-bottom-color: transparent;
+          border: none;
+          font-size: 30px;
+          @media (max-width: 576px) {
+            font-size: 20px;
+          }
+				}
+			}
+		}
+	}
+
+	.tab-content {
+		float: left;
+		width: 100%;
+
+		> .tab-pane {
+			display: none;
+      h3{
+        color: #d47e6d;
+        font-size: 35px;
+      }
+      h4{
+        color: #fff;
+        font-size: 30px;
+        line-height: inherit;
+        max-width: 80%;
+        @media (max-width: 576px) {
+          font-size: 20px;
+        }
+      }
+      p{
+        color: #fff;
+        margin-top: 15px;
+        font-size: 28px;
+
+        @media (max-width: 576px) {
+          margin-top: 5px;
+          font-size: 20px;
+        }
+      }
+
+      ul{
+        color: #fff;
+        font-size: 20px;
+        @media (max-width: 576px){
+          font-size: 15px;
+        }
+      }
+			&.active {
+				display: block;
+				padding: 2.5% 3.5%;
+				//background-color: #efefef;
+			}
+
+      tr{
+        p{
+          color: #af786a;
+        }
+      }
+
+      .button-icd{
+        // cursor: pointer;
+        // border-radius: 13px;
+        // box-shadow: 0 1px 6px rgba(32,33,36,.28);
+        // border: 2px solid;
+        // padding: 10px 16px 10px 16px;
+        // margin-top: 30px;
+        // color: #c4b0d5;
+        // background-color: #fff;
+        // text-align: left;
+        cursor: pointer;
+        border-radius: 8px;
+        /* box-shadow: 0 1px 6px rgba(32,33,36,.28); */
+        border: 1px solid;
+        padding: 5px 10px 6px 5px;
+        margin-top: 30px;
+        color: #f3b7a4;
+        background-color: #fff;
+        text-align: left;
+        font-size: 18px;
+        font-weight: 900;
+        /* border: none; */
+        box-shadow: 2px 2px 7px #4750539e;
+
+        @media (max-width: 576px) {
+          margin-top: 10px;
+        }
+      }
+
+      //Raporlama ve Geri Odeme ilkeleri
+      .report{
+        margin-top: 25px;
+
+        .report-first{
+          ul{
+            background-color: #de8d7f;
+            border: 1px solid #fff;
+            border-radius: 25px;
+            padding-bottom: 15px;
+            padding-top: 15px;
+            font-size: 18px;
+            //line-height: 2;
+            @media screen and (max-width: 767px){
+              margin-top: 15px;
+            }
+          }
+          small{
+            color: #de8d7f;
+          }
+          p{
+            font-size: 18px;
+            margin-top: 0;
+            padding-left: 10px;
+            color: #de8d7f;
+            font-weight: bold;
+          }
+        }
+
+        .report-second{
+          img{
+            width: 100%;
+            height: 110px;
+          }
+        }
+      }
+      .table-icd-condition{
+        margin-top: 10px;
+        max-width: 80%;
+        p{
+          font-size: 21px;
+          margin: 0;
+          line-height: initial;
+        }
+      }
+      // .modal-content{
+      //   h3{
+      //     text-align: center;
+      //     color: #848383;
+      //   }
+      // }
+      @media screen and (max-width: 767px){
+        .table-responsive{
+          border: none;
+        }
+      }
+		}
+
+		> .active {
+			display: block;
+		}
+	}
+  .container-tabs-row{
+    width: 100%;
+    margin: 0;
+  }
+}
+
+//table icd kodlari
+#table-icd {
+  border-collapse: collapse;
+  border-radius: 1em;
+  overflow: hidden;
+  max-width: 80%;
+
+  tr{
+    background: #facfbc;
+    color: #a97164;
+    th, td{
+      border-right: 1px solid #a87264;
+    }
+    th{
+      font-size: 20px;
+      white-space: nowrap;
+      padding: 17px;
+    }
+  }
+
+  .tr-bg{
+    background: #fae6dd;
+    td{
+      p{
+      font-size: 18px;
+      padding-left: 15px;
+      padding-right: 15px;
+      }
+      p:nth-child(5){
+        margin-bottom: 25px;
+      }
+    }
+    td:nth-child(2), td:nth-child(3),td:nth-child(4){
+      padding-right: 15px;
+      padding-left: 15px;
+      font-weight: 700;
+    }
+    div{
+      background-color: #fff;
+      padding: 10px 0;
+      p{
+        color: #af786a;
+      }
+    }
+  }
+  tr td:last-child, tr th:last-child{
+    border-right:none;
+  }
+}
+
+//pop up
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  display: flex;
+  align-items: center;
+  //background: transparent;
+  /* Modal Content */
+  .modal-content-icd {
+    //background-image: url(../templates/images/ÖRNEKTİR.svg) !important;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    top: 10%;
+    overflow: scroll;
+    height: 80vh;
+    background-position: center;
+    margin-top: 10vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 60% auto;
+    background-blend-mode: luminosity;
+
+    @media (max-width: 576px) {
+      width: 90%;
+    }
+
+    .table-report-first{
+      width: 100%;
+      margin-top: 25px;
+
+      td,tr{
+        color: #494948;
+        padding-left: 25px;
+        border: 1px solid #494948;
+        text-align: left;
+        width: 50%;
+        @media (max-width: 576px){
+          min-width: 202px !important;
+        }
+      }
+    }
+    .table-report-second{
+      width: 100%;
+      margin-top: 10px;
+      tr{
+        //border-bottom: 1px solid;
+        //display: block;
+        padding-left: 0 !important;
+        padding-top: 10px;
+      }
+      th{
+        margin-top: 10px;
+        display: block;
+      }
+      td{
+        border-top: 1px solid;
+      }
+
+      td,tr,th{
+        color: #494948;
+        padding-left: 25px;
+        //border-bottom: 1px solid #848383;
+      }
+      .table-report-medicine{
+        td{
+          border-top: none;
+          text-align: center;
+        }
+      }
+    }
+    .table-report-second tbody tr:nth-child(8){
+      border-bottom: none;
+    }
+    .table-report-third{
+      width: 100%;
+      margin-top: 10px;
+      color: #494948;
+      tr{
+        border: 1px solid;
+        text-align: center;
+        margin-bottom: 15px;
+        display: block;
+      }
+      td{
+        line-height: 30px;
+        min-height: 100px;
+        display: block;
+        @media (max-width: 576px){
+          min-width: 400px;
+        }
+      }
+    }
+    /* The Close Button */
+    .close-icd{
+      font-size: 35px;
+      color: #fff;
+      background-color: #f6b8a4;
+      padding: 0px 8px 0 8px;
+      cursor: pointer;
+      width: 70px;
+      height: 70px;
+      border: none;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+      border-radius: 50%;
+      box-shadow: 2px 2px 2px 2px #ccc;
+      border: 1px solid #fff;
+
+      &:hover{
+        opacity: 1;
+      }
+
+      // &:before, &:after{
+      //   position: absolute;
+      //   left: 15px;
+      //   content: ' ';
+      //   height: 33px;
+      //   width: 2px;
+      //   background-color: #333;
+      // }
+      // &:before {
+      //   transform: rotate(45deg);
+      // }
+      // &:after{
+      //   transform: rotate(-45deg);
+      // }
+    }
+
+    h3{
+      text-align: center;
+      color: #494948;
+    }
+  }
+}
+
+.alfamino-formula-color{
+  color: red;
+}
+
+#alfamino_image{
+  padding: 20px;
+  /* background-color: #c4b0d5; */
+  /* border-radius: 25px; */
+  display: -ms-flexbox;
+  max-width: 85%;
+  margin: auto;
+  overflow: hidden;
+  .row{
+    img:nth-child(2){
+      position: absolute;
+      left: auto;
+      right: 0;
+      @media (max-width: 576px) {
+        position: relative;
+      }
+    }
+  }
+}
+
+//alfamino page-header
+.alfamino_header{
+  h1,h2{
+    text-align: center;
+  }
+  h1{
+    border-bottom: 0;
+    font-size: 36px;
+    color: #00738e;
+    margin-bottom: 20px;
+    @media screen and (max-width: 991px){
+      font-size: 28px;
+    }
+  }
+  h2{
+    font-size: 20px;
+    color: #223d4e;
+    @media screen and (max-width: 991px){
+      font-size: 18px;
+    }
+  }
+  margin: 50px 0;
+}
+
+//print css:
+@media only print {
+	.container--tabs{
+		display: none;
+	}
+	// body.report #header {
+	// 	position: absolute;
+	// 	top: 1cm;
+	// 	max-width: 16cm;
+	// 	margin-left: -1cm;
+	// 	background: transparent
+	// }
+	// body.report #print-header {
+	// 	display: block;
+	// 	max-width: 16cm
+	// }
+	// body.report [data-role="footer"],
+	// body.report #hesaplama_logo,
+	// body.report #main_nav,
+	// body.report #abbott_logo,
+	// body.report #alimentum_logo,
+	// body.report #overlay {
+	// 	display: none
+	// }
+	// body.report #calculator {
+	// 	display: none
+	// }
+	// body.report #hesaplama {
+	// 	position: static;
+	// 	width: 100%;
+	// 	max-width: none;
+	// 	min-height: 0 !important;
+	// 	height: auto;
+	// 	margin: 0;
+	// 	padding: 0;
+	// 	background: transparent
+	// }
+	// body.report #hesaplama .content {
+	// 	position: static;
+	// 	width: 100%;
+	// 	max-width: none;
+	// 	height: auto;
+	// 	margin: 0;
+	// 	padding: 0;
+	// 	background: transparent
+	// }
+	// body.report #hesaplama [data-role="main"] {
+	// 	width: 100%;
+	// 	max-width: none;
+	// 	margin: 0;
+	// 	padding: 0;
+	// 	background: transparent;
+	// 	border: 0;
+	// 	box-shadow: none
+	// }
+	// body.report #hesaplama #report-wrapper {
+	// 	position: static;
+	// 	width: auto;
+	// 	max-width: none;
+	// 	height: auto;
+	// 	margin: 0;
+	// 	padding: 0
+	// }
+	// body.report #hesaplama #report {
+	// 	margin: 0;
+	// 	padding: 0;
+	// 	border: 0;
+	// 	width: auto;
+	// 	max-width: none;
+	// 	height: auto
+	// }
+	// body.report #hesaplama .bt_close_modal,
+	// body.report #hesaplama .bt_print {
+	// 	display: none
+	// }
+}
+
+.region-banner{
+  .page-header{
+    display: none;
+  }
+}

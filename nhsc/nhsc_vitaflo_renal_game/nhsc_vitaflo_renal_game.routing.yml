@@ -1,0 +1,7 @@
+nhsc_vitaflo_renal_game.game_page:
+  path: '/foodsmash'
+  defaults:
+    _controller: '\Drupal\nhsc_vitaflo_renal_game\Controller\GameController::gamePage'
+    _title: "Vitaflo's Food Smash Game"
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,1 @@
+var oldSrc='/skin-engine-shared/NHSSkin/css/images/logo.png';var newSrc='/asset-library/PublishingImages/info/logo-header.png';$('img[src="'+oldSrc+'"]').attr('src',newSrc);

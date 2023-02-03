@@ -1,0 +1,58 @@
+
+.xowl-wrapper-outer {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin-bottom: -46px;
+    margin-top: -10px;
+}
+div.xowl-prev {
+    color: #fff;
+    display: inline-block;
+    zoom: 1;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    background: 0 0;
+    filter: Alpha(Opacity=60);
+    opacity: .6;
+    width: 30px;
+    height: 50px;
+    position: absolute;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    top: 0;
+    bottom: 37px;
+    margin: auto 0;
+	
+}
+div.xowl-prev {
+    background: transparent url("../asset-library/PublishingImages/health-managment/disfagia/layout.png") no-repeat -189px -11px;
+    left: 0;
+}
+
+.xowl-wrapper-inner {margin-left:30px;height: 64px;margin-top: 7px;}
+
+.xwrap {
+    display: block;
+    height: auto;
+    margin-right: 20px;
+    float: right;
+    font-weight: bold;
+}
+
+.xwrapR {
+    display: block;
+    width: 100%;
+    float: left;
+    height: auto;
+    margin-left: 806px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    float: right; 
+	font-weight: bold;
+}

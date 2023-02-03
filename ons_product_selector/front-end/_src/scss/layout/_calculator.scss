@@ -1,0 +1,39 @@
+html .container {
+  .ons__calculator {
+    margin-top: -20px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    .ons__calculator__header {
+      .error {
+        color: $color-danger;
+        font-size: 12px;
+        padding-top: 5px;
+      }
+    }
+
+    .ons__sub-ons__title {
+      text-align: center;
+      margin: 20px auto 40px;
+    }
+
+    .ons__calculator__buttons {
+      padding: 20px 0;
+      display: grid;
+      grid-template-columns: repeat(1, auto);
+      grid-gap: 20px;
+    }
+
+    .ons__btn {
+      margin-left: auto;
+    }
+
+    @media #{$min-xs} {
+      .ons__calculator__buttons {
+        grid-template-columns: repeat(3, auto);
+      }
+    }
+  }
+}

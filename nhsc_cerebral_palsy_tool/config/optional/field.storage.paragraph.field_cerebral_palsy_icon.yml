@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_cerebral_palsy_icon
+field_name: field_cerebral_palsy_icon
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: lipids
+      label: Lipids
+    -
+      value: fiber
+      label: Fiber
+    -
+      value: carbohydrates
+      label: Carbohydrates
+    -
+      value: protein
+      label: Protein
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

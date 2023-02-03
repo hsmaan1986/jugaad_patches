@@ -1,0 +1,7 @@
+name: Dynamic Survey Symptom Checker
+type: module
+description: Dynamic Survey for Symptom Checker
+core_version_requirement: ^8 || ^9
+dependencies:
+  - options
+  - webform

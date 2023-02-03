@@ -1,0 +1,23 @@
+uuid: 9a602cf1-83bb-47f9-964f-c40c6a8ac298
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_store_type
+    - node.type.store
+  module:
+    - options
+id: node.store.field_store_type
+field_name: field_store_type
+entity_type: node
+bundle: store
+label: 'Store Type'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: store
+default_value_callback: ''
+settings: {  }
+field_type: list_string

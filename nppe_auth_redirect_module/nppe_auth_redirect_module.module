@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains nppe_auth_redirect_module.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function nppe_auth_redirect_module_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the nppe_auth_redirect_module module.
+    case 'help.page.nppe_auth_redirect_module':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Security module to enable/disable login') . '</p>';
+      return $output;
+
+    default:
+  }
+}

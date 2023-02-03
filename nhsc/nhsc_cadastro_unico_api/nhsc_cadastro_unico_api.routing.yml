@@ -1,0 +1,49 @@
+nhsc_cadastro_unico_api.admin:
+  path: '/admin/config/system/nhsc-auth-cadastro-unico'
+  defaults:
+    _form:  '\Drupal\nhsc_cadastro_unico_api\Form\ConfigForm'
+    _title: 'Cadastro Unico Authenticator'
+  requirements:
+    _permission: 'administer site configuration'
+nhsc_cadastro_unico_api.address-callback:
+  path: '/ajax/address-search/{search_text}'
+  defaults:
+    _controller: '\Drupal\nhsc_cadastro_unico_api\Controller\CadastroUnicoController::addressAutocomplete'
+    _format: 'json'
+  requirements:
+    _access: 'TRUE'
+nhsc_cadastro_unico_api.password_reset_form:
+  path: '/password/reset/{token}'
+  defaults:
+    _form: '\Drupal\nhsc_cadastro_unico_api\Form\PasswordResetForm'
+    _title: 'Reset Password'
+  requirements:
+    _access: 'TRUE'
+nhsc_cadastro_unico_api.user_confirm:
+  path: '/user/confirm/{token}'
+  defaults:
+    _controller: '\Drupal\nhsc_cadastro_unico_api\Controller\CadastroUnicoController::confirmUser'
+    _title: 'Reset Password'
+  requirements:
+    _access: 'TRUE'
+nhsc_cadastro_unico_api.error:
+  path: '/api/error'
+  defaults:
+    _controller: '\Drupal\nhsc_cadastro_unico_api\Controller\CadastroUnicoController::error'
+    _title: 'Error'
+  requirements:
+    _access: 'TRUE'
+nhsc_cadastro_unico_api.user_check_email-callback:
+  path: '/ajax/cpf-email-checker/{email}'
+  defaults:
+    _controller: '\Drupal\nhsc_cadastro_unico_api\Controller\CadastroUnicoController::cadastroUserCheck'
+    _format: 'json'
+  requirements:
+    _access: 'TRUE'
+nhsc_cadastro_unico_api.user_check_cpf-callback:
+  path: '/ajax/cpf-checker/{cpf}'
+  defaults:
+    _controller: '\Drupal\nhsc_cadastro_unico_api\Controller\CadastroUnicoController::cadastroUserCheckCPF'
+    _format: 'json'
+  requirements:
+    _access: 'TRUE'

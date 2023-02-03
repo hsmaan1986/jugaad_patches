@@ -1,0 +1,15 @@
+excluded:
+  - autologout.role.content_manager_whitelabel_
+  - block.block.bootstrap_barrio_views_block__nhsc_banner_buttons_block_1
+  - block.block.bootstrap_barrio_views_block__nhsc_bottom_buttons_block_1
+  - block.block.bootstrap_barrio_views_block__nhsc_faq_block_block_1
+  - block.block.bootstrap_barrio_views_block__nhsc_master_icons_block_block_1
+  - block.block.bootstrap_barrio_views_block__nhsc_master_people_slider_block_1
+  - block.block.bootstrap_barrio_views_block__nhsc_new_master_image_slider_top_block_1
+  - block.block.bootstrap_barrio_views_block__people_slider_block_1
+  - facets.facet_source.search_api__views_block__events__block_1
+  - facets.facet_source.search_api__views_block__previous_events__block_1
+  - metatag.metatag_defaults.taxonomy_term__pathology
+  - user.role.content_manager_whitelabel_
+  - views.view.custom_article_list_
+required: true

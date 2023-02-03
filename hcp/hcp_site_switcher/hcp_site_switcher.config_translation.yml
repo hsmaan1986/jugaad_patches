@@ -1,0 +1,5 @@
+hcp_site_switcher.config_form:
+  title: 'HCP Site Switcher basic settings'
+  base_route_name: hcp_site_switcher.config_form
+  names:
+    - hcp_site_switcher.config

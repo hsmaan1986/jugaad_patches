@@ -1,0 +1,56 @@
+geolocation.settings:
+  path: '/admin/config/lightnest/ipredirection'
+  defaults:
+    _form: '\Drupal\ln_c_ip_locator\Form\IPRedirectionConfForm'
+    _title: 'Geolocation Redirection'
+  requirements:
+    _role: 'administrator'
+  options:
+    _admin_route: TRUE
+
+popupconfig.settings:
+  path: '/admin/config/lightnest/ipredirection/popupblock'
+  defaults:
+    _form: '\Drupal\ln_c_ip_locator\Form\PopUpBlockConfForm'
+    _title: 'Popup block confiugration'
+  requirements:
+    _role: 'administrator'
+  options:
+    _admin_route: TRUE
+
+cdnserviceconfig.settings:
+  path: '/admin/config/lightnest/ipredirection/countrycode'
+  defaults:
+    _form: '\Drupal\ln_c_ip_locator\Form\IPCountryHeaderForm'
+    _title: 'CDN Service configuration'
+  requirements:
+    _role: 'administrator'
+  options:
+    _admin_route: TRUE
+
+gioipserviceconfig.settings:
+  path: '/admin/config/lightnest/ipredirection/gioipcountrycode'
+  defaults:
+    _form: '\Drupal\ln_c_ip_locator\Form\GeoIPCountryHeaderForm'
+    _title: 'Third Party Geo IP Location configuration'
+  requirements:
+    _role: 'administrator'
+  options:
+    _admin_route: TRUE
+
+ln_c_ip_locator.overview:
+  path: '/admin/config/lightnest/ipredirection/overview'
+  defaults:
+    _controller: '\Drupal\ln_c_ip_locator\Controller\IPLocatorController::getConfigOverview'
+    _title: 'Overview'
+  requirements:
+    _role: 'administrator'
+  options:
+    _admin_route: TRUE
+
+ln_c_ip_locator.ping:
+  path: '/cdnping'
+  defaults:
+    _controller: '\Drupal\ln_c_ip_locator\Controller\IPLocatorController::ping'
+  requirements:
+    _permission: 'access content'

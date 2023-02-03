@@ -1,0 +1,7 @@
+name: 'Lightnest Geolocation redirection configurations'
+description: 'Provides Geolocation based redirections and related configuration.'
+type: module
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: 'Lightnest Components'
+configure: geolocation.settings

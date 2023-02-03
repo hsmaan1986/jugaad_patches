@@ -1,0 +1,6 @@
+services:
+  nhsc_missing_alt_text.commands:
+    class: \Drupal\nhsc_missing_alt_text\Commands\MissingAltTextDrushCommands
+    tags:
+      - { name: drush.command }
+    arguments: ['@entity_type.manager', '@logger.factory']

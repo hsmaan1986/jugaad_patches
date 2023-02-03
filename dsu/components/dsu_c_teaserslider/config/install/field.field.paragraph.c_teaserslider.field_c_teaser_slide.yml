@@ -1,0 +1,72 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_c_teaser_slide
+    - paragraphs.paragraphs_type.c_teaser_slide
+    - paragraphs.paragraphs_type.c_teaserslider
+  module:
+    - entity_reference_revisions
+id: paragraph.c_teaserslider.field_c_teaser_slide
+field_name: field_c_teaser_slide
+entity_type: paragraph
+bundle: c_teaserslider
+label: 'Teaser Slide'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      c_teaser_slide: c_teaser_slide
+    target_bundles_drag_drop:
+      c_hero_slider:
+        weight: 16
+        enabled: false
+      c_image:
+        weight: 17
+        enabled: false
+      c_map:
+        weight: 18
+        enabled: false
+      c_sideimagetext:
+        weight: 19
+        enabled: false
+      c_slide:
+        weight: 20
+        enabled: false
+      c_slider:
+        weight: 21
+        enabled: false
+      c_teaser_slide:
+        enabled: true
+        weight: 22
+      c_teaserslider:
+        weight: 23
+        enabled: false
+      c_text:
+        weight: 24
+        enabled: false
+      free_text_wysiwyg_block:
+        weight: 25
+        enabled: false
+      layout_columns_1:
+        weight: 26
+        enabled: false
+      layout_columns_2:
+        weight: 27
+        enabled: false
+      layout_columns_3:
+        weight: 28
+        enabled: false
+      layout_columns_4:
+        weight: 29
+        enabled: false
+      product_listing_block:
+        weight: 30
+        enabled: false
+field_type: entity_reference_revisions

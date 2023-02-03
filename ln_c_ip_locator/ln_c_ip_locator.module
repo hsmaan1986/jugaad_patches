@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Contains ln_c_ip_locator.module.
+ */
+
+/**
+ * Implements hook_page_bottom().
+ */
+function ln_c_ip_locator_page_bottom(array &$page_bottom) {
+  $theme = \Drupal::service('theme.manager')->getActiveTheme();
+  $is_front = \Drupal::service('path.matcher')->isFrontPage();
+  if ($is_front && $block = \Drupal::service('plugin.manager.block')->createInstance('ip_locator', [])) {
+    $page_bottom['ip_locator'] = $block->build();
+    $page_bottom['ip_locator']['#prefix'] = '<div class="ip_locator_popup hidden">';
+    $page_bottom['ip_locator']['#suffix'] = '</div>';
+  }
+}

@@ -1,0 +1,79 @@
+<div class="ccg-cost-savings-calculator wrapper">
+    <div class="inner">
+        {{ form }}
+    </div>
+</div>
+
+
+{# -- modal area -- #}
+{% set ccg_footer_copy = calculatorData['ccg_footer_copy']%}
+
+
+<div class="ccg-modal ">
+    <div class="popup-outer-wrapper">
+        <div class="popup-inner-wrapper container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-12">
+                    <div class="ccg-spending text-center">
+                        <p>
+                            <span class="city"></span> {{ 'spend'|t }} <span class="total-spent red"></span> {{ 'per year on specialist infant formulas for cows\' milk allergy<sup>1</sup>'|t }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="cso text-center">
+                        <p>
+                            {{ 'The cost saving opportunity<sup>2</sup> for'|t }} <span class="city"></span> {{ 'with'|t }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-12 product-info">
+                    <div class="col-md-6">
+                        <div class="product-title text-center">
+                            <span class="product1"></span>
+                        </div>
+                        <div class="product-image text-center">
+                            <img id="product1image" />
+                        </div>
+                        <div class="product-cost text-center">
+                            {{ 'Est.'|t }} <span class="product1cost"></span> {{ 'per year'|t }}
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="product-title text-center">
+                            <span class="product2"></span>
+                        </div>
+                        <div class="product-image text-center">
+                            <img id="product2image" />
+                        </div>
+                        <div class="product-cost text-center">
+                            {{ 'Est.'|t }} <span class="product2cost"></span> {{ 'per year'|t }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-12 text-center">
+                    <p>
+                        {{ 'Est.'|t }} <span id="totalproductcost"></span> {{ 'per year'|t }}
+                    </p>
+                    <p>
+                        {{ 'with both'|t }} <span class="product1"></span> {{ 'and'|t }} <span class="product2"></span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 ccg-footer">
+                    {{ ccg_footer_copy |raw }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

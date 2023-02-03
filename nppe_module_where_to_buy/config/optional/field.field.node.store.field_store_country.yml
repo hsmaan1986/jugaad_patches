@@ -1,0 +1,122 @@
+uuid: 6c37d1bc-c894-47ff-8a25-8fc4a0f22b79
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_store_country
+    - node.type.store
+    - taxonomy.vocabulary.locations
+  module:
+    - dynamic_entity_reference
+id: node.store.field_store_country
+field_name: field_store_country
+entity_type: node
+bundle: store
+label: 'Store Country'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  taxonomy_term:
+    handler: 'default:taxonomy_term'
+    handler_settings:
+      target_bundles:
+        locations: locations
+      sort:
+        field: name
+        direction: asc
+      auto_create: false
+      auto_create_bundle: ''
+  booking_entity:
+    handler: 'default:booking_entity'
+    handler_settings: {  }
+  comment:
+    handler: 'default:comment'
+    handler_settings: {  }
+  consumer:
+    handler: 'default:consumer'
+    handler_settings: {  }
+  contact_message:
+    handler: 'default:contact_message'
+    handler_settings: {  }
+  node:
+    handler: 'default:node'
+    handler_settings: {  }
+  content_moderation_state:
+    handler: 'default:content_moderation_state'
+    handler_settings: {  }
+  crop:
+    handler: 'default:crop'
+    handler_settings: {  }
+  block_content:
+    handler: 'default:block_content'
+    handler_settings: {  }
+  menu_link_content:
+    handler: 'default:menu_link_content'
+    handler_settings: {  }
+  courier_email:
+    handler: 'default:courier_email'
+    handler_settings: {  }
+  rng_rule:
+    handler: 'default:rng_rule'
+    handler_settings: {  }
+  rng_rule_component:
+    handler: 'default:rng_rule_component'
+    handler_settings: {  }
+  file:
+    handler: 'default:file'
+    handler_settings: {  }
+  courier_template_collection:
+    handler: 'default:courier_template_collection'
+    handler_settings: {  }
+  media:
+    handler: 'default:media'
+    handler_settings: {  }
+  courier_message_queue_item:
+    handler: 'default:courier_message_queue_item'
+    handler_settings: {  }
+  oauth2_token:
+    handler: 'default:oauth2_token'
+    handler_settings: {  }
+  paragraph:
+    handler: 'default:paragraph'
+    handler_settings: {  }
+  point:
+    handler: 'default:point'
+    handler_settings: {  }
+  redirect:
+    handler: 'default:redirect'
+    handler_settings: {  }
+  registrant:
+    handler: 'default:registrant'
+    handler_settings: {  }
+  registration:
+    handler: 'default:registration'
+    handler_settings: {  }
+  registration_group:
+    handler: 'default:registration_group'
+    handler_settings: {  }
+  rng_rule_scheduler:
+    handler: 'default:rng_rule_scheduler'
+    handler_settings: {  }
+  search_api_task:
+    handler: 'default:search_api_task'
+    handler_settings: {  }
+  shortcut:
+    handler: 'default:shortcut'
+    handler_settings: {  }
+  user:
+    handler: 'default:user'
+    handler_settings: {  }
+  vote:
+    handler: 'default:vote'
+    handler_settings: {  }
+  vote_result:
+    handler: 'default:vote_result'
+    handler_settings: {  }
+  webform_submission:
+    handler: 'default:webform_submission'
+    handler_settings: {  }
+field_type: dynamic_entity_reference

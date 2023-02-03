@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cerebral_palsy_type
+    - paragraphs.paragraphs_type.cerebral_palsy_buttons
+  module:
+    - options
+id: paragraph.cerebral_palsy_buttons.field_cerebral_palsy_type
+field_name: field_cerebral_palsy_type
+entity_type: paragraph
+bundle: cerebral_palsy_buttons
+label: Type
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

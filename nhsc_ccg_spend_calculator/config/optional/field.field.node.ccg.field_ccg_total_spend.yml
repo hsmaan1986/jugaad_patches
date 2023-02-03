@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ccg_total_spend
+    - node.type.ccg
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_ccg_total_spend
+id: node.ccg.field_ccg_total_spend
+field_name: field_ccg_total_spend
+entity_type: node
+bundle: ccg
+label: 'CCG Total Spend'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

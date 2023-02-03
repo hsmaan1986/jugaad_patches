@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_choose_partners
+    - node.type.partners
+    - taxonomy.vocabulary.type_of_partners
+id: node.partners.field_choose_partners
+field_name: field_choose_partners
+entity_type: node
+bundle: partners
+label: 'Choose partners'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      type_of_partners: type_of_partners
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

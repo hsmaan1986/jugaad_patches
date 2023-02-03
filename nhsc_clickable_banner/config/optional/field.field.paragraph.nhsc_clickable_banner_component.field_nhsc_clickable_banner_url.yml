@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_nhsc_clickable_banner_url
+    - paragraphs.paragraphs_type.nhsc_clickable_banner_component
+  module:
+    - datalayer
+    - text
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_nhsc_clickable_banner_url
+id: paragraph.nhsc_clickable_banner_component.field_nhsc_clickable_banner_url
+field_name: field_nhsc_clickable_banner_url
+entity_type: paragraph
+bundle: nhsc_clickable_banner_component
+label: 'nhsc clickable banner url'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

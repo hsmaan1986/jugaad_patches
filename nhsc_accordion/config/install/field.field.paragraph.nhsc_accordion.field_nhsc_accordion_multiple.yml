@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_nhsc_accordion_multiple
+    - paragraphs.paragraphs_type.nhsc_accordion
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_nhsc_accordion_multiple
+id: paragraph.nhsc_accordion.field_nhsc_accordion_multiple
+field_name: field_nhsc_accordion_multiple
+entity_type: paragraph
+bundle: nhsc_accordion
+label: 'Open multiple'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

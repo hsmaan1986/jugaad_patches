@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_menu_quick_link_item.field_cta
+    - field.field.paragraph.nhsc_menu_quick_link_item.field_image
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.nhsc_menu_quick_link_item
+  module:
+    - link
+    - svg_image
+id: paragraph.nhsc_menu_quick_link_item.default
+targetEntityType: paragraph
+bundle: nhsc_menu_quick_link_item
+mode: default
+content:
+  field_cta:
+    weight: 1
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_image:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+hidden:
+  created: true
+  status: true

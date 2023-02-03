@@ -1,0 +1,26 @@
+div#gigya-raas-register-div_content{
+    margin: auto !important;
+    max-width: 800px;
+}
+
+div#gigya-raas-login-div{
+    /*max-width: 600px;*/
+    /*margin: 0 auto;*/
+}
+
+div#gigya-raas-profile-div{
+    /*max-width: 800px;*/
+    /*margin: 0 auto;*/
+}
+
+h1#gigya-raas-register-div_content_caption,
+h1#gigya-raas-login-div_content_caption {
+  background:white!important;
+}
+
+.views-row .desktop img {
+  width: 100%;
+}
+.pet-menu-tabs ul li {
+  margin-bottom:0!important;
+}

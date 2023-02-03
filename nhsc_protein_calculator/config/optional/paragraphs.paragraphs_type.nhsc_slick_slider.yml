@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: nhsc_slick_slider
+label: 'NHSc Slick Slider'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

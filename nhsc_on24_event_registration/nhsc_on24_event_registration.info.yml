@@ -1,0 +1,8 @@
+name: NHSc ON24 Event Registration
+type: module
+description: This module add the ON24 API registrations on events
+package: Custom
+dependencies:
+  - rng
+configure: nhsc_on24_event_registration.settings
+core_version_requirement: ^8 || ^9

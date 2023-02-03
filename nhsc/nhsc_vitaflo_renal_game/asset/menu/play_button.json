@@ -1,0 +1,41 @@
+{
+	"textures": [
+		{
+			"image": "play_button.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 924,
+				"h": 288
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "Asset 6@4x.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1143,
+						"h": 505
+					},
+					"spriteSourceSize": {
+						"x": 110,
+						"y": 109,
+						"w": 922,
+						"h": 286
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 922,
+						"h": 286
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:84595824fe3d48f160c0955a658c2ac5:943466ed9e4da82e2048572ec1b1db3a:416e97c0ce082451e90d8ec3b67437d9$"
+	}
+}

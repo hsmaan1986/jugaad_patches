@@ -1,0 +1,17 @@
+ustatus: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hcp_redirect_url
+    - paragraphs.paragraphs_type.site_switcher_setting
+id: paragraph.site_switcher_setting.field_hcp_redirect_url
+field_name: field_hcp_redirect_url
+entity_type: paragraph
+bundle: site_switcher_setting
+label: 'HCP Redirect URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

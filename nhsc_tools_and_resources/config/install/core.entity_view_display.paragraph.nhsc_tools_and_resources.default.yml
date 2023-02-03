@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_tools_and_resources.field_nhsc_tools_resources_item
+    - paragraphs.paragraphs_type.nhsc_tools_and_resources
+  module:
+    - entity_reference_revisions
+id: paragraph.nhsc_tools_and_resources.default
+targetEntityType: paragraph
+bundle: nhsc_tools_and_resources
+mode: default
+content:
+  field_nhsc_tools_resources_item:
+    type: entity_reference_revisions_entity_view
+    weight: 5
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  search_api_excerpt: true

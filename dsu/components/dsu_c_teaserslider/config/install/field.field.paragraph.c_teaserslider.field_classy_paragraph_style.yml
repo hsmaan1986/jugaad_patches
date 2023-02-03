@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_classy_paragraph_style
+    - paragraphs.paragraphs_type.c_teaserslider
+id: paragraph.c_teaserslider.field_classy_paragraph_style
+field_name: field_classy_paragraph_style
+entity_type: paragraph
+bundle: c_teaserslider
+label: 'Classy Paragraph Style'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:classy_paragraphs_style'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

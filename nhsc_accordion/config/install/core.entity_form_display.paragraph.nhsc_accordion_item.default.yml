@@ -1,0 +1,65 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_accordion_item.field_body
+    - field.field.paragraph.nhsc_accordion_item.field_cta
+    - field.field.paragraph.nhsc_accordion_item.field_nhsc_accordion_components
+    - field.field.paragraph.nhsc_accordion_item.field_nhsc_show_expanded
+    - field.field.paragraph.nhsc_accordion_item.field_title
+    - paragraphs.paragraphs_type.nhsc_accordion_item
+  module:
+    - link
+    - paragraphs
+    - text
+id: paragraph.nhsc_accordion_item.default
+targetEntityType: paragraph
+bundle: nhsc_accordion_item
+mode: default
+content:
+  field_body:
+    weight: 0
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_cta:
+    weight: 4
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_nhsc_accordion_components:
+    type: entity_reference_paragraphs
+    weight: 3
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_nhsc_show_expanded:
+    weight: 2
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

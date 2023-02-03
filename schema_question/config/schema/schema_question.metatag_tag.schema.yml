@@ -1,0 +1,16 @@
+# The 'type' should be "label" for short meta tags and "text" for ones which
+# could get longer, especially ones which use a textarea field instead of a
+# textfield.
+
+metatag.metatag_tag.schema_question_type:
+  type: text
+  label: '@type'
+metatag.metatag_tag.schema_question_name:
+  type: text
+  label: 'name'
+metatag.metatag_tag.schema_question_text:
+  type: text
+  label: 'text'
+metatag.metatag_tag.schema_question_accepted_answer:
+  type: text
+  label: 'Accepted Answer'

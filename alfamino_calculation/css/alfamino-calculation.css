@@ -1,0 +1,101 @@
+body {
+  background-color: blue;
+}
+
+#alfamino-calculator {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: #454545;
+  font-size: 20px;
+  padding: 20px;
+}
+#alfamino-calculator div {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+@media (min-width: 576px) {
+  #alfamino-calculator div {
+    display: flex;
+  }
+}
+#alfamino-calculator input,
+#alfamino-calculator select {
+  width: 150px;
+  min-width: 150px;
+  border-radius: 13px;
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+  border: none;
+  padding: 6px 20px;
+  font-size: 20px;
+}
+@media (max-width: 576px) {
+  #alfamino-calculator input,
+#alfamino-calculator select {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+#alfamino-calculator input:focus,
+#alfamino-calculator select:focus {
+  outline: none;
+}
+#alfamino-calculator input:not(.editable),
+#alfamino-calculator select:not(.editable) {
+  pointer-events: none;
+  background-color: #eee;
+}
+#alfamino-calculator button {
+  cursor: pointer;
+  border-radius: 13px;
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+  border: none;
+  padding: 10px;
+  width: 50%;
+  margin-top: 30px;
+}
+@media (max-width: 576px) {
+  #alfamino-calculator button {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+@media (min-width: 576px) {
+  #alfamino-calculator button:first-child {
+    margin-right: 10px;
+  }
+  #alfamino-calculator button:last-child {
+    margin-left: 10px;
+  }
+}
+#alfamino-calculator button:focus {
+  outline: none;
+}
+
+#alfamino-result {
+  display: none;
+}
+#alfamino-result ul {
+  list-style: none;
+}
+
+@media print {
+  header,
+h1,
+.region-breadcrumb,
+#alfamino-calculator {
+    display: none;
+  }
+
+  #alfamino-result {
+    display: block;
+  }
+}
+@page {
+  margin: 0.5cm;
+}
+.information .information-div{
+  text-transform: capitalize;
+}
+
+
+/*# sourceMappingURL=alfamino-calculation.css.map */

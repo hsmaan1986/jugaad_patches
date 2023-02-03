@@ -1,0 +1,51 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.main_article_with_date.field_main_description
+    - field.field.paragraph.main_article_with_date.field_main_heading
+    - field.field.paragraph.main_article_with_date.field_main_sub_
+    - field.field.paragraph.main_article_with_date.field_nhsc_article_date
+    - paragraphs.paragraphs_type.main_article_with_date
+id: paragraph.main_article_with_date.default
+targetEntityType: paragraph
+bundle: main_article_with_date
+mode: default
+content:
+  field_main_description:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_main_heading:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_main_sub_:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_nhsc_article_date:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  addtoany: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  search_api_excerpt: true

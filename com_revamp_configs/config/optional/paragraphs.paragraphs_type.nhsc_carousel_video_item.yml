@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: nhsc_carousel_video_item
+label: 'NHSC Carousel Video Item'
+icon_uuid: null
+icon_default: null
+description: 'Add a video slide to the carousel.'
+behavior_plugins: {  }

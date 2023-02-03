@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nhsc_expertise_category
+    - node.type.expertise
+    - taxonomy.vocabulary.expertise_category
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_nhsc_expertise_category
+id: node.expertise.field_nhsc_expertise_category
+field_name: field_nhsc_expertise_category
+entity_type: node
+bundle: expertise
+label: 'Expertise Category'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      expertise_category: expertise_category
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

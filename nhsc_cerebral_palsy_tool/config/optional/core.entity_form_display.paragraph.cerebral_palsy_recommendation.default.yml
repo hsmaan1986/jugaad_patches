@@ -1,0 +1,66 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.cerebral_palsy_recommendation.field_cerebral_palsy_image
+    - field.field.paragraph.cerebral_palsy_recommendation.field_cerebral_palsy_product_des
+    - field.field.paragraph.cerebral_palsy_recommendation.field_cerebral_palsy_size
+    - field.field.paragraph.cerebral_palsy_recommendation.field_cerebral_palsy_title
+    - field.field.paragraph.cerebral_palsy_recommendation.field_recommended_intake
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.cerebral_palsy_recommendation
+  module:
+    - image
+    - paragraphs
+id: paragraph.cerebral_palsy_recommendation.default
+targetEntityType: paragraph
+bundle: cerebral_palsy_recommendation
+mode: default
+content:
+  field_cerebral_palsy_image:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_cerebral_palsy_product_des:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_cerebral_palsy_size:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_cerebral_palsy_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_recommended_intake:
+    type: entity_reference_paragraphs
+    weight: 4
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: teaser_card_220x220_
+label: 'Teaser Card (220X220)'
+effects:
+  983a53f5-4279-4692-ad1d-e79f394fe19b:
+    uuid: 983a53f5-4279-4692-ad1d-e79f394fe19b
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 220
+      height: 220

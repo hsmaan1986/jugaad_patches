@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pc_banner_link
+    - paragraphs.paragraphs_type.pc_product_banner
+  module:
+    - datalayer
+    - link
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_pc_banner_link
+id: paragraph.pc_product_banner.field_pc_banner_link
+field_name: field_pc_banner_link
+entity_type: paragraph
+bundle: pc_product_banner
+label: 'Read more link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

@@ -1,0 +1,43 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.cerebral_palsy_card.field_cerebral_palsy_description
+    - field.field.paragraph.cerebral_palsy_card.field_cerebral_palsy_image
+    - field.field.paragraph.cerebral_palsy_card.field_cerebral_palsy_title
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.cerebral_palsy_card
+  module:
+    - image
+id: paragraph.cerebral_palsy_card.default
+targetEntityType: paragraph
+bundle: cerebral_palsy_card
+mode: default
+content:
+  field_cerebral_palsy_description:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_cerebral_palsy_image:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_cerebral_palsy_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

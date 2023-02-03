@@ -1,0 +1,17 @@
+/{#
+/**
+ * @file
+ * Enroll Block
+ */
+#}
+ <div class="col-sm-3 " id="enroll_block">
+ {% if logged_in %}
+ {% if  status  == false %}
+    <a class='button button--primary js-form-submit ' href="{{ url }}">{{ 'Enroll Now'|t }}</a>
+    {% else %}
+    <a class='button button--primary js-form-submit' href="{{ url }}">{{ 'Unenroll Me'|t }}</a>
+    {% endif %}
+     {% else %}
+     <a class='button button--primary js-form-submit' href="{{ url }}">{{ 'Register'|t }} </a>
+    {% endif %}
+ </div>

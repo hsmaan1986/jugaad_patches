@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for File module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+
+function nhsc_custom_xml_schema() {
+  $schema['customxml'] = [
+    'description' => 'Track where a file is used.',
+    'fields' => [
+      'id' => [
+        'description' => 'File ID.',
+        'type' => 'serial',
+        'unsigned'=>TRUE,
+        'not null' => TRUE,
+      ],
+      'country_xml' => [
+        'description' => 'The country',
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'country_xml_body' => [
+        'description' => 'the country xml',
+        'type' => 'text',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+    ],
+    'primary key' => [
+      'id'
+    ],
+  ];
+
+  return $schema;
+}

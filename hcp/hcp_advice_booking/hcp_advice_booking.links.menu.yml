@@ -1,0 +1,14 @@
+
+# Advice Booking menu items definition
+entity.booking_entity.collection:
+  title: 'Advice Booking Slot list'
+  route_name: entity.booking_entity.collection
+  description: 'List Advice Booking entities'
+  parent: system.admin_structure
+  weight: 100
+
+booking_entity.admin.structure.settings:
+  title: 'Advice Booking settings'
+  description: 'Configure Advice Booking Settings'
+  route_name: booking_entity.settings
+  parent: system.admin_structure

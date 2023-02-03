@@ -1,0 +1,82 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_full_panel.field_panel_alignment
+    - field.field.paragraph.nhsc_full_panel.field_panel_heading
+    - field.field.paragraph.nhsc_full_panel.field_panel_image
+    - field.field.paragraph.nhsc_full_panel.field_panel_image_mobile
+    - field.field.paragraph.nhsc_full_panel.field_panelist_name
+    - field.field.paragraph.nhsc_full_panel.field_panelist_title
+    - paragraphs.paragraphs_type.nhsc_full_panel
+  module:
+    - options
+    - svg_image
+id: paragraph.nhsc_full_panel.default
+targetEntityType: paragraph
+bundle: nhsc_full_panel
+mode: default
+content:
+  field_panel_alignment:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_panel_heading:
+    weight: 4
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_panel_image:
+    weight: 1
+    label: hidden
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_panel_image_mobile:
+    weight: 5
+    label: hidden
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_panelist_name:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_panelist_title:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  addtoany: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  search_api_excerpt: true

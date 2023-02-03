@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * Implements hook_page_attachments().
+ */
+function nhsc_kwit_preprocess_field(array &$variables) {
+//    dump($variables['field_type']);
+    if ($variables['field_type'] == 'field_kwit') {
+
+        $variables['#attached']['library'][] =  'nhsc_kwit/kwit-library';
+        $variables['#attached']['library'][] =  'nhsc_kwit/kwit-connector';
+
+        $kwit_id = $variables['element'][0]['#values']['kwit_id'];
+        $html_id = $variables['element'][0]['#values']['html_id'];
+
+        $variables['#attached']['drupalSettings']['nhsc_kwit'][$html_id] = $kwit_id;
+
+    }
+}
+
+/**
+ * Implements HOOK_preprocess_theme().
+ */
+function nhsc_kwit_theme($existing, $type, $theme, $path) {
+  return [
+    'kwitbutton' => [
+      'variables' => [
+          'html_id' => 0,
+          'brand_id' => null,
+      ]
+    ],
+  ];
+}

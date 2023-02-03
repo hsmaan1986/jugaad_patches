@@ -1,0 +1,6 @@
+name: 'NHSc Cerebral Palsy Tool'
+type: module
+description: 'NHSc My Child with Cerebral Palsy'
+core_version_requirement: ^8.8 || ^9
+package: 'Custom'
+configure: nhsc_cerebral_palsy_tool.settings_form

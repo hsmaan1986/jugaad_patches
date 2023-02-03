@@ -1,0 +1,48 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_cerebral_palsy_paragraphs
+    - paragraphs.paragraphs_type.cerebral_palsy_buttons
+    - paragraphs.paragraphs_type.cerebral_palsy_card
+    - paragraphs.paragraphs_type.cerebral_palsy_more_information
+    - paragraphs.paragraphs_type.cerebral_palsy_recommendation
+    - taxonomy.vocabulary.cerebral_palsy_tool
+  module:
+    - entity_reference_revisions
+id: taxonomy_term.cerebral_palsy_tool.field_cerebral_palsy_paragraphs
+field_name: field_cerebral_palsy_paragraphs
+entity_type: taxonomy_term
+bundle: cerebral_palsy_tool
+label: Paragraphs
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      cerebral_palsy_recommendation: cerebral_palsy_recommendation
+      cerebral_palsy_card: cerebral_palsy_card
+      cerebral_palsy_buttons: cerebral_palsy_buttons
+      cerebral_palsy_more_information: cerebral_palsy_more_information
+    target_bundles_drag_drop:
+      cerebral_palsy_buttons:
+        enabled: true
+        weight: 7
+      cerebral_palsy_card:
+        enabled: true
+        weight: 6
+      cerebral_palsy_more_information:
+        enabled: true
+        weight: 8
+      cerebral_palsy_recommendation:
+        enabled: true
+        weight: 4
+      recommended_intake:
+        weight: 3
+        enabled: false
+field_type: entity_reference_revisions

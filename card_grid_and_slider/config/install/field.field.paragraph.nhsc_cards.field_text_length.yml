@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text_length
+    - paragraphs.paragraphs_type.nhsc_cards
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_text_length
+id: paragraph.nhsc_cards.field_text_length
+field_name: field_text_length
+entity_type: paragraph
+bundle: nhsc_cards
+label: 'Text Length'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

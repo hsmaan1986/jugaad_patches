@@ -1,0 +1,29 @@
+.ons__filters__advanced{
+    &--options{
+        padding: 0;
+        border-top: 1px solid $gray-0;
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: $ease-0;
+        @media #{$min-xs}{
+            grid-template-columns: repeat(3, auto);
+        }
+        @media #{$min-sm}{
+            grid-template-columns: repeat(5, auto);
+        }
+    }
+    &--list{
+        &:not(:last-of-type){
+            margin-bottom: 20px;
+        }
+        ul{
+            li{
+                margin-bottom: 20px;
+                list-style-image: none;
+            }
+        }
+    }
+}

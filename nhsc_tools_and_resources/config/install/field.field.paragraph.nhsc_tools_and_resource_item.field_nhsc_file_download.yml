@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_nhsc_file_download
+    - paragraphs.paragraphs_type.nhsc_tools_and_resource_item
+  module:
+    - datalayer
+    - file
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_nhsc_file_download
+id: paragraph.nhsc_tools_and_resource_item.field_nhsc_file_download
+field_name: field_nhsc_file_download
+entity_type: paragraph
+bundle: nhsc_tools_and_resource_item
+label: Download
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: downloads/tools-resources
+  file_extensions: pdf
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

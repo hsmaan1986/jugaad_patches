@@ -1,0 +1,74 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_cta_block.field_alignement
+    - field.field.paragraph.nhsc_cta_block.field_cta
+    - field.field.paragraph.nhsc_cta_block.field_nhsc_colour
+    - field.field.paragraph.nhsc_cta_block.field_nhsc_text_colors
+    - field.field.paragraph.nhsc_cta_block.field_select_heading
+    - field.field.paragraph.nhsc_cta_block.field_title
+    - paragraphs.paragraphs_type.nhsc_cta_block
+  module:
+    - link_attributes
+id: paragraph.nhsc_cta_block.default
+targetEntityType: paragraph
+bundle: nhsc_cta_block
+mode: default
+content:
+  field_alignement:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_cta:
+    weight: 1
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      enabled_attributes:
+        target: true
+        rel: true
+        class: true
+        id: false
+        name: false
+        accesskey: false
+        aria-label: false
+        title: false
+    third_party_settings: {  }
+    type: link_attributes
+    region: content
+  field_nhsc_colour:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_nhsc_text_colors:
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_select_heading:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

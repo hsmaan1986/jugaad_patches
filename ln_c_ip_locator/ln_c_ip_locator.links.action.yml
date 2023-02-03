@@ -1,0 +1,6 @@
+# Adds a button for redirecting to configuration adding page.
+iplocator.config.add_:
+  route_name: geolocation.settings
+  title: 'Add Configuration'
+  appears_on:
+    - ln_c_ip_locator.overview

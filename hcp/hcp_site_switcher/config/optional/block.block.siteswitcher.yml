@@ -1,0 +1,37 @@
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:site_switcher:951a7ff9-1eca-416c-b614-a054655fdaa8'
+  module:
+    - block_content
+    - rng
+  theme:
+    - nhsc_master
+id: siteswitcher
+theme: nhsc_master
+region: header
+weight: -18
+provider: null
+plugin: 'block_content:951a7ff9-1eca-416c-b614-a054655fdaa8'
+settings:
+  id: 'block_content:951a7ff9-1eca-416c-b614-a054655fdaa8'
+  label: 'Site Switcher'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1534439555'
+    negate: false
+    context_mapping: {  }
+  rng_current_time:
+    id: rng_current_time
+    date: '1534439555'
+    negate: false
+    context_mapping: {  }

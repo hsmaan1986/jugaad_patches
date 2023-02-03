@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.dynamic_surveys
+id: node.dynamic_surveys
+target_entity_type_id: node
+target_bundle: dynamic_surveys
+default_langcode: site_default
+language_alterable: false

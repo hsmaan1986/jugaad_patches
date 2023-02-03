@@ -1,0 +1,4 @@
+name: nhsc_free_sample_form
+type: module
+core_version_requirement: ^8 || ^9
+description: Custom module for Nhsc Free Sample Form.

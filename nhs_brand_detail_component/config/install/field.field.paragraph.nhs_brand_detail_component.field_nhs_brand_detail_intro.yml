@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_nhs_brand_detail_intro
+    - paragraphs.paragraphs_type.nhs_brand_detail_component
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_nhs_brand_detail_intro
+id: paragraph.nhs_brand_detail_component.field_nhs_brand_detail_intro
+field_name: field_nhs_brand_detail_intro
+entity_type: paragraph
+bundle: nhs_brand_detail_component
+label: 'NHS Brand Detail Intro'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

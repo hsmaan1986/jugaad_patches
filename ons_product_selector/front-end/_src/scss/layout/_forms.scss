@@ -1,0 +1,221 @@
+.ons__checkbox {
+  input,
+  label {
+    cursor: pointer;
+  }
+  input {
+    opacity: 0;
+    position: absolute;
+    + label {
+      font-size: 16px;
+      display: block;
+      padding: 0 0 0 25px;
+      transition: $ease-2;
+      color: $color-1;
+      position: relative;
+      line-height: 22px;
+      font-family: $lato-regular;
+      font-weight: 400;
+      &:before {
+        content: "";
+        display: inline-block;
+        transform: rotate(45deg);
+        height: 12px;
+        width: 6px;
+        border-bottom: 1px solid $white;
+        border-right: 1px solid $white;
+        position: absolute;
+        top: 2px;
+        left: 7px;
+        z-index: 1;
+        transition: $ease-2;
+        opacity: 0;
+      }
+      &:after {
+        content: "";
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-radius: 3px;
+        border: 1px solid $gray-1;
+        transition: $ease-2;
+      }
+      &:hover {
+        &:after {
+          border-color: $color-0;
+        }
+      }
+    }
+    &:checked {
+      + label {
+        &:after {
+          background: $color-0;
+          border-color: $color-0;
+        }
+        &:before {
+          opacity: 1;
+        }
+      }
+    }
+    &:disabled {
+      + label {
+        opacity: 0.65;
+      }
+    }
+  }
+
+  &--calculator {
+    position: relative;
+    input {
+      + label {
+        border-radius: 8px;
+        background: $gray-2;
+        padding-left: 50px;
+        position: relative;
+        height: 50px;
+        display: flex !important;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        font-size: 13px;
+        font-weight: 700;
+        color: $color-2;
+        &:after {
+          content: "";
+          width: 14px;
+          height: 14px;
+          position: absolute;
+          left: 15px;
+          top: 18px;
+          border-radius: 4px;
+          border: 2px solid $color-2;
+          transition: $ease-2;
+        }
+        &:before {
+          height: 8px;
+          width: 4px;
+          left: 21px;
+          top: 21px;
+          border-bottom: 2px solid $white;
+          border-right: 2px solid $white;
+        }
+
+        img {
+          width: 20px;
+          height: auto;
+          margin-right: 5px;
+        }
+        &:hover {
+          background: darken($gray-2, $amount: 10);
+        }
+      }
+      &:checked {
+        + label {
+          &:after {
+            background: $color-2;
+            border-color: $color-2;
+          }
+        }
+      }
+    }
+  }
+
+  &--calculator {
+    input {
+      + label {
+        border-radius: 8px;
+        background: $gray-2;
+        padding-left: 50px;
+        position: relative;
+        height: 50px;
+        display: flex !important;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        font-size: 13px;
+        font-weight: 700;
+        color: $color-2;
+        &:after {
+          content: "";
+          width: 14px;
+          height: 14px;
+          position: absolute;
+          left: 15px;
+          top: 18px;
+          border-radius: 4px;
+          border: 2px solid $color-2;
+          transition: $ease-2;
+        }
+        &:before {
+          height: 8px;
+          width: 4px;
+          left: 21px;
+          top: 21px;
+          border-bottom: 2px solid $white;
+          border-right: 2px solid $white;
+        }
+
+        img {
+          width: 20px;
+          height: auto;
+          margin-right: 5px;
+        }
+        &:hover {
+          background: darken($gray-2, $amount: 10);
+        }
+      }
+      &:checked {
+        + label {
+          &:after {
+            background: $color-2;
+            border-color: $color-2;
+          }
+        }
+      }
+    }
+  }
+  &--arrow {
+    opacity: 0;
+    position: absolute;
+    display: none;
+    + label {
+      cursor: pointer;
+      display: block;
+      font-family: $lato-regular;
+      margin: 0;
+      font-weight: 400;
+      &:after {
+        content: "";
+        display: inline-block;
+        transform: rotate(45deg);
+        height: 4px;
+        width: 4px;
+        border-bottom: 1px solid $gray-1;
+        border-right: 1px solid $gray-1;
+        z-index: 1;
+        margin-left: 5px;
+        margin-bottom: 2px;
+        transition: $ease-2;
+      }
+    }
+    &-advanced {
+      + label {
+        font-weight: 700;
+        color: $color-0;
+        &:after {
+          border-bottom: 2px solid $color-0;
+          border-right: 2px solid $color-0;
+        }
+      }
+    }
+    &:checked {
+      + label {
+        &:after {
+          transform: rotate(-135deg);
+        }
+      }
+    }
+  }
+}

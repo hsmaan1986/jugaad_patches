@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_leader_name
+    - node.type.leadership_profile
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_leader_name
+id: node.leadership_profile.field_leader_name
+field_name: field_leader_name
+entity_type: node
+bundle: leadership_profile
+label: 'Leader name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

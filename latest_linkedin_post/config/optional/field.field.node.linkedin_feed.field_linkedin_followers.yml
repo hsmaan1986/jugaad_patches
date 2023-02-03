@@ -1,0 +1,21 @@
+uuid: e9e63742-1bb6-4ed8-a909-8073b8d8fc1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_linkedin_followers
+    - node.type.linkedin_feed
+_core:
+  default_config_hash: oMQVnJP3Iv0WRos6F9CQosZkydriEQeUiMeg9vhFSZ0
+id: node.linkedin_feed.field_linkedin_followers
+field_name: field_linkedin_followers
+entity_type: node
+bundle: linkedin_feed
+label: 'Linkedin Followers'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

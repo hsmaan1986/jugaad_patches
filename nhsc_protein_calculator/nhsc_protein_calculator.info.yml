@@ -1,0 +1,18 @@
+name: 'NHSc Protein Calculator'
+type: module
+description: 'NHSc Protein Calculator'
+core_version_requirement: ^8 || ^9
+package: Custom
+configure: nhsc_protein_calculator.settings
+dependencies:
+  - paragraphs
+  - slick_views
+  - svg_image
+  - node
+  - text
+  - user
+  - link
+  - file
+  - entity_reference_revisions
+  - lightning_workflow
+  - menu_ui

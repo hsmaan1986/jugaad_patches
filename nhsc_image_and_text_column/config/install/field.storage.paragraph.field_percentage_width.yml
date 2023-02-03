@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - options
+    - paragraphs
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: paragraph.field_percentage_width
+field_name: field_percentage_width
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '50'
+      label: 50%
+    -
+      value: '60'
+      label: 60%
+    -
+      value: '70'
+      label: 70%
+    -
+      value: '80'
+      label: 80%
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

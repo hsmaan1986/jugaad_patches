@@ -1,0 +1,47 @@
+nppe_module_event.event_controller_eventlist:
+  path: '/event/list/{token}/{filter}'
+  methods: [GET]
+  defaults:
+    token: null
+    filter: null
+    _controller: '\Drupal\nppe_module_event\Controller\EventController::eventlist'
+    _title: 'Event list'
+  requirements:
+    _permission: 'access content'
+  options:
+    user: \d+
+nppe_module_event.event_controller_agendalist:
+  path: '/agenda/list/{token}/{filter}'
+  methods: [GET]
+  defaults:
+    token: null
+    filter: null
+    _controller: '\Drupal\nppe_module_event\Controller\EventController::agendalist'
+    _title: 'My agenda list'
+  requirements:
+    _user_is_logged_in: 'TRUE'
+  options:
+    user: \d+
+    _title: 'My agenda list'
+    no_cache: 'TRUE'
+
+nppe_module_event.event_controller_myachievementslist:
+  path: '/myachievements'
+  methods: [GET]
+  defaults:
+    _controller: '\Drupal\nppe_module_event\Controller\EventController::myachievements'
+    _title: 'My Achievements'
+  requirements:
+    _user_is_logged_in: 'TRUE'
+  options:
+    user: \d+
+    _title: 'My Achievements'
+    no_cache: 'TRUE'
+
+nppe_module_event.settings:
+  path: '/admin/config/services/nhscwebinar'
+  defaults:
+    _form: '\Drupal\nppe_module_event\Form\WebinarSettingsForm'
+    _title: 'Webinar Settings'
+  requirements:
+    _permission: 'administer site configuration'

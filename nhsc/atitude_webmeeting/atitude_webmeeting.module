@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * @file
+ * Contains atitude_webmeeting.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function atitude_webmeeting_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the atitude_webmeeting module.
+    case 'help.page.atitude_webmeeting':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Atitude Webmeetting API Service Drupal Integration') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function atitude_webmeeting_theme() {
+  return [
+    'atitude_webmeeting' => [
+      'render element' => 'children',
+    ],
+    'video_player' => [
+   'variables' => [
+     'contents' => NULL,
+     'autoplay' => NULL,
+   ]],
+   'webmeeting_enroll'=> [
+  'variables' => [
+    'contents' => NULL,
+  ]],
+
+
+ ];
+}

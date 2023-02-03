@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_brand_segment
+    - node.type.press_release
+    - taxonomy.vocabulary.segment
+  content:
+    - 'taxonomy_term:segment:4113ae06-9e1c-4f4d-87f7-de100572c8ce'
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: 'Brand Segment'
+id: node.press_release.field_brand_segment
+field_name: field_brand_segment
+entity_type: node
+bundle: press_release
+label: 'Brand Segment'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: 4113ae06-9e1c-4f4d-87f7-de100572c8ce
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      segment: segment
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

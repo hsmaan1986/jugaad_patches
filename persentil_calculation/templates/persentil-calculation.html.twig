@@ -1,0 +1,103 @@
+{{ attach_library('persentil_calculation/persentil_calculation') }}
+
+<div id="persentil-calculator">
+	<form>
+		<div id="form">
+
+				<h2>Persentil Hesaplayıcı</h2>
+
+			<div>
+				<label>Cinsiyet</label>
+				<select id="gender-selector">
+					<option value="Erkek" selected="selected">Erkek</option>
+					<option value="Kız">Kız</option>
+				</select>
+			</div>
+			<div>
+				<label>Doğum Tarihi</label><input id="birthday" type="date" min="2002-01-01" value="2021-01-01" max="{{ "now"|date("Y-m-d") }}" required/>
+			</div>
+			<div>
+				<label>Boy</label><input id="height" type="number" min="0" placeholder="100" required>
+			</div>
+			<div>
+				<label>Kilo</label><input id="kilo" type="number" min="0" placeholder="20" required>
+			</div>
+			<div class="bcevre-wrapper">
+				<label>Baş Çevresi</label><input id="bcevre" type="number" min="0" placeholder="50" required>
+			</div>
+			<!-- <div class="vki-wrapper">
+				<label>VKİ</label><input id="vki" type="number" placeholder="20" required>
+			</div> -->
+			<a class="graph-button"data-toggle="modal" data-target="#persentil-graph">Grafik Üzerinde Göster</a>
+
+		</div>
+
+		<div id="result">
+			<div class="z-score-wrapper">
+			<div>
+				Boy Z-Score:
+				<span class="z-score"></span>
+			</div>
+			<div>
+				Kilo Z-Score:
+				<span class="z-score-kilo"></span>
+			</div>
+		</div>
+			<div class="result">
+
+				<div class="results-wrapper">
+					<h3>Profil</h3>
+					<div>
+						Cinsiyeti:
+						<span class="gender"></span>
+					</div>
+					<div>
+						Yaş:
+						<span class="age"></span>
+					</div>
+
+					<div>
+						Boy:
+						<span class="height"></span>
+					</div>
+
+					<div>
+						Kilo:
+						<span class="kilo"></span>
+					</div>
+					<div>
+						Günlük Kalori İhtiyacı:
+						<span class="kcal"></span>
+					</div>
+					<div>
+						VKI:
+						<span class="vki"></span>
+					</div>
+				</div>
+			</div>
+			</div>
+
+		</div>
+	</form>
+
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="persentil-graph" role="dialog">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn btn-default" data-dismiss="modal">X</button>
+			</div>
+			<div class="modal-body">
+				<img src=''>
+			</div>
+			<div class="modal-footer">
+			</div>
+		</div>
+
+	</div>
+</div>

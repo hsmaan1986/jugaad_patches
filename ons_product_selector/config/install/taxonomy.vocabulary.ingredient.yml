@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Ingredient
+vid: ingredient
+description: ''
+weight: 0

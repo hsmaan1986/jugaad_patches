@@ -1,0 +1,6 @@
+name: 'NHSc Custom XML'
+type: module
+description: 'NHSc Custom XML'
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: 'Custom'

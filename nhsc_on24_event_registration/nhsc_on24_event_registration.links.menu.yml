@@ -1,0 +1,6 @@
+nhsc_on24_event_registration.config_form:
+  title: 'NHSc ON24 Event Registration Configuration'
+  route_name: nhsc_on24_event_registration.settings
+  description: 'NHSc ON24 Event Registration Configuration.'
+  parent: system.admin_config_services
+  weight: 99

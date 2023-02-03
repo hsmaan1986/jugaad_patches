@@ -1,0 +1,4 @@
+services:
+  lcp_migrations.migrations_helper:
+    class: Drupal\lcp_migrations\MigrationsHelper
+    arguments: ['@entity_type.manager', '@cache.default', '@state', '@file_system', '@http_client', '@logger.factory', '@config.factory']

@@ -1,0 +1,6 @@
+
+services:
+  nhsc_protein_calculator.protein_calculator_block:
+    class: Drupal\nhsc_protein_calculator\ProteinCalculatorBlock
+    arguments:
+      - '@config.factory'

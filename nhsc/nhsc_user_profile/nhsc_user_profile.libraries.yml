@@ -1,0 +1,24 @@
+user-form:
+  js:
+    js/user-form.js: {}
+  dependencies:
+    - core/jquery
+
+user-profile-mobile:
+  js:
+    js/user-profile-mobile.js: {}
+    js/imask.js: {}
+    js/user.js: {}
+  dependencies:
+    - core/jquery
+
+date-picker-css:
+  css:
+    theme:
+      css/site-datepicker.css: {}
+date-picker-js:
+  js:
+    js/site-datepicker.js: {}
+  dependencies:
+    - core/jquery
+    - jquery_ui_datepicker/datepicker

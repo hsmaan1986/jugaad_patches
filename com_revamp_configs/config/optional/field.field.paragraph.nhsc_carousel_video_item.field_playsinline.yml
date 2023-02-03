@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_playsinline
+    - paragraphs.paragraphs_type.nhsc_carousel_video_item
+id: paragraph.nhsc_carousel_video_item.field_playsinline
+field_name: field_playsinline
+entity_type: paragraph
+bundle: nhsc_carousel_video_item
+label: playsinline
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

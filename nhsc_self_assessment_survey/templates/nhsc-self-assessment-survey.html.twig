@@ -1,0 +1,84 @@
+{#-- home screen --#}
+<div class="nhsc-self-assessment-survey-form">
+    {% set questions = [] %}
+    {% for key, survey in survey_data %}
+        <div class="survey-page" id="self-assessment-step-{{ loop.index  }}">
+            <div class="top-banner">
+                <img class="survey-main-banner" src="{{ main_bunner| raw }}" />
+                <div class="text-wrapper">
+                    {% if loop.index == 1 %}
+                        <h1 class="title">
+                            {{ survey['#title'] }}
+                        </h1>
+                    {% else %}
+                        <div class="title">
+                            {{ survey['#title'] }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="survey-copy">
+                {% if key == 'introduction_page'  %}
+                    <p>
+                        {{ survey["intro_page_copy"]["#description"] }}
+                    </p>
+                {% elseif 'page_' in key %}
+                    {% set page_num = survey['#title'] %}
+                    {% set q_selector = 'question_' ~ page_num  %}
+                    {% set questions = questions|merge([page_num]) %}
+                    <div class="form-options col-md-8">
+                        <p class="question-label">
+                            {{ survey[q_selector]['#title'] | raw }}
+                            <span>{{ survey[q_selector]['#help'] | raw }}</span>
+                        </p>
+                        <div class="question-options">
+
+                            {% for k, option in survey[q_selector]['#options']  %}
+                                {% set option_sel =  q_selector ~ '-' ~ k %}
+                                <div>
+                                    <input type="radio" class="assessment-question" id="{{ option_sel }}" name="{{ q_selector }}" value="{{ k }}" />
+                                    <label for="{{ option_sel }}">{{ option }}</label>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="form-image col-md-4">
+                        {{ survey[q_selector]['#description'] | raw }}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="buttons-bar">
+                {% if loop.last %}
+                    <a class="button orange" id="self-assessment-previous-button-{{ loop.index  }}">{{ survey["#prev_button_label"] }}</a>
+                    <a class="button orange" id="self-assessment-button-submit" href="#results">{{ survey["#next_button_label"] }}</a>
+                {% else %}
+                    <a class="button orange" id="self-assessment-previous-button-{{ loop.index  }}"  href="#results">{{ survey["#prev_button_label"] }}</a>
+                    <a class="button orange" id="self-assessment-next-button-{{ loop.index  }}" href="#results">{{ survey["#next_button_label"] }}</a>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<div class="nhsc-self-assessment-survey-results">
+    {% for r, result in result_data %}
+    <div class="{{ r }} result-list">
+        <div class="top-banner">
+            <img class="results-banner" src="{{ result.banner_image }}" />
+            <div class="text-wrapper results">
+                <h2 class="title">{{ 'Your score is'|t }} <span class="sum-results">0</span>! </h2>
+            </div>
+        </div>
+        <div class="scores">
+            {% for question in questions %}
+                <div class="score">
+                    {{ "Question" |t ~ ' ' ~ question}} : <span class="question_{{ question }}">0</span>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="copy">
+            {{ result.result_copy | raw }}
+        </div>
+    </div>
+    {% endfor %}
+</div>

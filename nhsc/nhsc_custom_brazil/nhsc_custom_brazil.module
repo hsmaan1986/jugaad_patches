@@ -1,0 +1,509 @@
+<?php
+
+/**
+ * @file
+ * Contains nhsc_custom_brazil.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\user\Entity\User;
+use Drupal\Core\Datetime\DrupalDateTime;
+use Drupal\Core\Url;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\Core\Form\FormBase;
+use Drupal\Component\Render\PlainTextOutput;
+use Drupal\Core\Link;
+use Drupal\nhsc_user_profile\Controller\PageController;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\InvokeCommand;
+use Drupal\Core\Ajax\HtmlCommand;
+use Drupal\views\ViewExecutable;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\views\Views;
+
+/**
+ * Implements hook_help().
+ */
+function nhsc_custom_brazil_help($route_name, RouteMatchInterface $route_match) {
+    switch ($route_name) {
+        // Main module help for the nhsc_custom_brazil module.
+        case 'help.page.nhsc_custom_brazil':
+            $output = '';
+            $output .= '<h3>' . t('About') . '</h3>';
+            $output .= '<p>' . t('Customisations for NHSc Brazil') . '</p>';
+            return $output;
+
+        default:
+    }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function nhsc_custom_brazil_form_alter(&$form, FormStateInterface $form_state, $form_id)
+{
+
+    // get module's configs
+    $pageControler          = new PageController();
+    $config                 = $pageControler->getConfigs();
+    $terms_link             = $config->get('terms_link');
+
+    switch ($form_id) {
+        case "user_form":
+            $form['#attached']['library'][] = 'nhsc_custom_brazil/address-autofill';
+            $form['#attached']['library'][] = 'nhsc_custom_brazil/date-picker-css';
+            $form['#attached']['library'][] = 'nhsc_custom_brazil/date-picker-js';
+            $form['#validate'][] = 'nhsc_custom_brazil_user_form_validate';
+
+            $api = \Drupal::service('nhsc_cadastro_unico_api');
+            $user = \Drupal::currentUser();
+
+            $api_fields = $api->getFields('hcp');
+            $user_data = $api->getUser($user->getEmail());
+
+            // modify birtdate
+            $form['field_birth_date']['widget'][0]['value']['#type']                = 'datetime';
+            $form['field_birth_date']['widget'][0]['value']['#placeholder']         = 'dd/mm/yyyy';
+            $form['field_birth_date']['widget'][0]['value']['#date_date_format']    = 'd/m/Y';
+            $form['field_birth_date']['widget'][0]['value']['#date_date_element']   = 'text';
+            $form['field_birth_date']['widget'][0]['value']['#date_time_element']   = 'none';
+            $form['field_birth_date']['widget'][0]['value']['#attributes'] = [
+                    'onkeypress'=> "return false"
+                ];
+
+            if (isset($user_data->CPF)) {
+                $form['field_identification_number']['widget'][0]['value']['#default_value'] = $user_data->CPF;
+            }
+
+            if (isset($user_data->Nome)) {
+                $name = explode(' ', $user_data->Nome, 2);
+                $form['field_first_name']['widget'][0]['value']['#default_value'] = $name[0];
+                $form['field_last_name']['widget'][0]['value']['#default_value'] = $name[1];
+            }
+
+            if (isset($user_data->DataNascimento)) {
+
+                $birth_date =  DrupalDateTime::createFromTimestamp(strtotime((string)$user_data->DataNascimento));
+
+                $form['field_birth_date']['widget'][0]['value']['#default_value'] = $birth_date;
+            }
+
+
+
+
+            // Override fields with data from the API
+            if (isset($form['field_speciality']['widget'][0]['value']) && isset($api_fields['cd_especialidade'])) {
+                $form['field_speciality']['widget'][0]['value']['#type'] = $api_fields['cd_especialidade']['#type'];
+                $form['field_speciality']['widget'][0]['value']['#empty_option'] = t('-- Select --');
+                $form['field_speciality']['widget'][0]['value']['#size'] = $api_fields['cd_especialidade']['#size'];
+                $form['field_speciality']['widget'][0]['value']['#options'] = $api_fields['cd_especialidade']['#options'];
+            }
+
+            if (isset($form['field_institution_type']['widget'][0]['value']) && isset($api_fields['cd_instituicao_medica'])) {
+                $form['field_institution_type']['widget'][0]['value']['#type'] = $api_fields['cd_instituicao_medica']['#type'];
+                $form['field_institution_type']['widget'][0]['value']['#empty_option'] = t('-- Select --');
+                $form['field_institution_type']['widget'][0]['value']['#size'] = $api_fields['cd_instituicao_medica']['#size'];
+                $form['field_institution_type']['widget'][0]['value']['#options'] = $api_fields['cd_instituicao_medica']['#options'];
+            }
+
+            // Set validation rules
+            if (isset($form['field_identification_number']['widget'][0]['value'])) {
+                $form['field_identification_number']['widget'][0]['value']['#pattern'] = "[0-9]{3}[.][0-9]{3}[.][0-9]{3}[-][0-9]{2}";
+            }
+
+            if (isset($form['field_institution_id_number']['widget'][0]['value'])) {
+                $form['field_institution_id_number']['widget'][0]['value']['#pattern'] = "[0-9]{2}[.][0-9]{3}[.][0-9]{3}[/][0-9]{4}[-][0-9]{2}";
+            }
+
+            // format terms and conditions link
+            if (isset($form['field_accept_terms']['widget']['value'])) {
+                $form['field_accept_terms']['widget']['value']['#title'] = t("<a href='" .$terms_link. "' target='_blank'>I agree to Nestle's policies and terms</a>");
+            }
+
+            break;
+        case "user_login_form":
+            array_unshift($form['#validate'],'nhsc_custom_brazil_user_login_form_validate');
+            break;
+        case "nhsc_user_profile_register_form":
+            if ($form_state->getValue('show_message')){
+              \Drupal::messenger()->addMessage('There was a problem creating your account.', 'error', TRUE);
+            }
+            $form['#attached']['library'][] = 'nhsc_custom_brazil/date-picker-css';
+            $form['#attached']['library'][] = 'nhsc_custom_brazil/date-picker-js';
+            $form['#attached']['library'][] = 'nhsc_custom_brazil/cadastro-user-check';
+            $form['#attached']['library'][] = 'nhsc_custom_brazil/brazil-custom-ajax';
+
+            $form['identification_number'] = [
+                '#type' => 'textfield',
+                '#title' => t('Identification Number'),
+                '#pattern' => "[0-9]{3}[.][0-9]{3}[.][0-9]{3}[-][0-9]{2}",
+                '#required' => true,
+                '#weight' => -13,
+                '#data-valid-example' => '333.333.333-22',
+                '#attributes' => [
+                    'class' => ['id-number-mask'],
+                    'data-toggle' => ['tooltip'],
+                    'data-original-title' => t('Format: XXX.XXX.XXX-XX')
+                ],
+            ];
+
+            $form['birth_date'] = [
+                '#title' => t('Birth Date'),
+                '#type' => 'datetime',
+                '#required' => true,
+                '#placeholder' => 'dd/mm/yyyy',
+                '#default_value' => '',
+                '#weight' => -13,
+                '#date_date_format' => 'd/m/Y',
+                '#date_date_element' => 'text',
+                '#date_time_element' => 'none',
+                '#element_validate' => array(),
+                '#attributes' => [
+                    'data-toggle' => ['tooltip'],
+                    'onkeypress'=> "return false"
+                ],
+            ];
+
+            $triggering_element = $form_state->getTriggeringElement();
+            $button_name = $triggering_element['#name'];
+
+            array_unshift($form['#validate'],
+                'nhsc_custom_brazil_password_validate',
+                'nhsc_custom_brazil_dob_validate',
+                'nhsc_custom_brazil_user_validate',
+                ($button_name == 'identification_number') ? '' : 'nhsc_custom_brazil_register_form_validate');
+
+            array_unshift($form['#submit'], 'nhsc_custom_brazil_register_form_submit');
+
+        case "nhsc_cadastro_unico_api_password_reset_form":
+            array_unshift($form['#validate'], 'nhsc_custom_brazil_password_validate');
+            break;
+        case "nhsc_user_profile_password_reset_form":
+            array_unshift($form['#validate'], 'nhsc_custom_brazil_password_validate', 'nhsc_custom_brazil_current_user_validate');
+            $form['actions']['submit']['#submit'][] = 'nhsc_custom_brazil_password_reset_form_submit';
+            break;
+      case "webform_submission_free_sample_webform_add_form":
+        $form['actions']['submit']['#submit'][] = 'nhsc_custom_brazil_free_sample_webform_add_form_submit';
+        break;
+    }
+}
+
+
+function validateCPFCallback (array $form, FormStateInterface $form_state){
+    $api                        = \Drupal::service('nhsc_cadastro_unico_api');
+    $ajax_response              = new AjaxResponse();
+    $values                     = $form_state->getValues();
+    $identification_number      = $values['identification_number'];
+
+    // call to verify id
+    $verify_id                  = $api->getUser($identification_number);
+    if($verify_id->Email){
+
+        // CPF exists  show error
+        $ajax_response->addCommand(new HtmlCommand('.registration-error',
+            '<div class="alert alert-danger alert-dismissible">' .
+            t('Esse CPF já é cadastrado na Nestlé. Faça o seu login usando o e-mail @email no campo usuário.',
+                ['@email' => mask_email($verify_id->Email)]) .
+            "<a href='/user/login' class='button js-form-submit form-submit btn-primary btn icon-before'>Fazer Login</a>".
+            '</div>'));
+
+        // disable other fields
+        $ajax_response->addCommand(new InvokeCommand("#edit-first-name", 'attr', ['disabled', 'true']));
+        $ajax_response->addCommand(new InvokeCommand("#edit-last-name", 'attr', ['disabled', 'true']));
+        $ajax_response->addCommand(new InvokeCommand("#edit-birth-date-date", 'attr', ['disabled', 'true']));
+        $ajax_response->addCommand(new InvokeCommand("#edit-email", 'attr', ['disabled', 'true']));
+        $ajax_response->addCommand(new InvokeCommand("#edit-password-pass1", 'attr', ['disabled', 'true']));
+        $ajax_response->addCommand(new InvokeCommand("#edit-password-pass2", 'attr', ['disabled', 'true']));
+        $ajax_response->addCommand(new InvokeCommand("#edit-occupation", 'attr', ['disabled', 'true']));
+        $ajax_response->addCommand(new InvokeCommand("#edit-submit", 'attr', ['disabled', 'true']));
+
+        return $ajax_response;
+    }
+
+    $ajax_response->addCommand(new HtmlCommand('.registration-error', ''));
+
+    $ajax_response->addCommand(new InvokeCommand("#edit-first-name", 'removeAttr', ['disabled', 'true']));
+    $ajax_response->addCommand(new InvokeCommand("#edit-last-name", 'removeAttr', ['disabled', 'true']));
+    $ajax_response->addCommand(new InvokeCommand("#edit-birth-date-date", 'removeAttr', ['disabled', 'true']));
+    $ajax_response->addCommand(new InvokeCommand("#edit-email", 'removeAttr', ['disabled', 'true']));
+    $ajax_response->addCommand(new InvokeCommand("#edit-password-pass1", 'removeAttr', ['disabled', 'true']));
+    $ajax_response->addCommand(new InvokeCommand("#edit-password-pass2", 'removeAttr', ['disabled', 'true']));
+    $ajax_response->addCommand(new InvokeCommand("#edit-occupation", 'removeAttr', ['disabled', 'true']));
+    $ajax_response->addCommand(new InvokeCommand("#edit-submit", 'removeAttr', ['disabled', 'true']));
+
+    return $ajax_response;
+
+
+
+}
+
+/**
+ * nhsc_custom_brazil_user_form_validate.
+ */
+function nhsc_custom_brazil_user_form_validate(&$form, FormStateInterface $form_state) {
+    $values = $form_state->getValues();
+    $validator = \Drupal::service('nhsc_custom_brazil.validate');
+
+    if (isset($values['field_identification_number'][0]['value']) &&
+        $values['field_identification_number'][0]['value'] != '' &&
+        !$validator->cpf($values['field_identification_number'][0]['value'])) {
+        $form_state->setErrorByName('field_identification_number', t('Identification number is invalid.'));
+    }
+
+    if (isset($values['field_institution_id_number'][0]['value']) &&
+        $values['field_institution_id_number'][0]['value'] != '' &&
+        !$validator->cnpj($values['field_institution_id_number'][0]['value'])) {
+        $form_state->setErrorByName('field_institution_id_number', t('Institution ID number is invalid.'));
+    }
+}
+
+function nhsc_custom_brazil_dob_validate(&$form, FormStateInterface $form_state) {
+    $values = $form_state->getValues();
+    $birth_date = $values['birth_date']['date'];
+
+    if (empty($birth_date)) {
+        $form_state->setErrorByName('birth_date', t('Birth Date is invalid.'));
+    }
+
+}
+
+/**
+ * nhsc_custom_brazil_user_validate.
+ */
+function nhsc_custom_brazil_user_validate(&$form, FormStateInterface $form_state) {
+    $values = $form_state->getValues();
+    $validator = \Drupal::service('nhsc_custom_brazil.validate');
+
+    if (!$validator->password($values['password'])) {
+        $form_state->setErrorByName('password', t('Invalid password. The Password requirements are:<br/>Must be between 8-10 Characters.<br/>Must contain at least 1 uppercase and 1 lowercase character.<br/>Must contain at least 1 number.<br/>Must contain at least 1 symbol (!@#$%)'));
+    }
+}
+
+/**
+ * nhsc_custom_brazil_user_form_validate.
+ */
+function nhsc_custom_brazil_password_validate(&$form, FormStateInterface $form_state) {
+    $values = $form_state->getValues();
+    $validator = \Drupal::service('nhsc_custom_brazil.validate');
+
+    if (!$validator->password($values['password'])) {
+        $form_state->setErrorByName('password', t('Invalid password. The Password requirements are:<br/>Must be between 8-10 Characters.<br/>Must contain at least 1 uppercase and 1 lowercase character.<br/>Must contain at least 1 number.<br/>Must contain at least 1 symbol (!@#$%)'));
+    }
+}
+
+/**
+ * nhsc_custom_brazil_current_user_validate.
+ */
+function nhsc_custom_brazil_current_user_validate(&$form, FormStateInterface $form_state) {
+    $values = $form_state->getValues();
+    $api = \Drupal::service('nhsc_cadastro_unico_api');
+    $uid = \Drupal::currentUser()->id();
+    $user = User::load($uid);
+    $email = $user->getEmail();
+
+    if ($api->validate($email, $values['password_current']) === FALSE) {
+      \Drupal::messenger()->addMessage(t('Invalid password.'), 'error');
+    }
+}
+
+/**
+ * nhsc_custom_brazil_password_reset_form_submit.
+ */
+function nhsc_custom_brazil_password_reset_form_submit(&$form, FormStateInterface $form_state) {
+    $values = $form_state->getValues();
+
+    $api = \Drupal::service('nhsc_cadastro_unico_api');
+    $uid = \Drupal::currentUser()->id();
+    $user = User::load($uid);
+    $email = $user->getEmail();
+
+    if (!$api->changePassword($email, $values['password'], $values['password_current'])) {
+      \Drupal::messenger()->addMessage(t('There was a problem updating your password.'), 'error');
+    }
+}
+
+/**
+ * @param array $form
+ * @param FormStateInterface $form_state
+ * @todo get date of birth and format it
+ */
+
+function nhsc_custom_brazil_register_form_validate(&$form, FormStateInterface $form_state) {
+    $api        = \Drupal::service('nhsc_cadastro_unico_api');
+
+    $values     = $form_state->getValues();
+    $email      = $form_state->getValue('email');
+    $birth_date = $form_state->getValue('birth_date');
+    $dob        = str_replace('/', '-', $birth_date['date']);
+    // change format
+    $birth_date =  date('Y-m-d',strtotime((string)$dob));
+
+    $identification_number = $form_state->getValue('identification_number');
+
+    $verify_email   = $api->getUser($email);
+
+
+    if ($verify_email) {// check if email or id exist
+        // -- Email exists Send forgot password email -- //
+
+        $api->sendPasswordResetEmail($email);// Send forgot password
+
+        $form_state->set('create_account', false);
+        \Drupal::messenger()->addMessage(t('Further instructions have been sent to your e-mail address (%email).'), ['%email' => $email]);
+        // redirect to login page
+        $url = Url::fromRoute('nhsc_user_profile.register_next')->toString();
+        $response =  new RedirectResponse($url, 302);
+        $response->send();
+
+        exit;
+
+    } else {
+        // -- Check if ID number exist but different email -- //
+        $verify_id      = $api->getUser($identification_number);
+        \Drupal::logger('nhsc_cadastro_unico_api')->notice('verify_id: ' .$verify_id->Email);
+
+        if($verify_id->Email){//
+
+            $api->sendPasswordResetEmail($verify_id->Email);// Send forgot password
+
+            $form_state->set('create_account', false);
+            \Drupal::messenger()->addMessage(t('Further instructions have been sent to your e-mail address (%email).'), ['%email' => $verify_id->Email]);
+            // redirect to login page
+            $url = Url::fromRoute('nhsc_user_profile.register_next')->toString();
+            $response =  new RedirectResponse($url, 302);
+            $response->send();
+
+            exit;
+
+        }else{
+            $form_state->set('create_account', true);
+        }
+
+    }
+}
+
+/**
+ * @param array $form
+ * @param FormStateInterface $form_state
+ */
+function nhsc_custom_brazil_register_form_submit(&$form, FormStateInterface $form_state) {
+    if ($form_state->get('create_account')) {
+        $api = \Drupal::service('nhsc_cadastro_unico_api');
+
+        $first_name = $form_state->getValue('first_name');
+        $last_name = $form_state->getValue('last_name');
+        $email = $form_state->getValue('email');
+        $password = $form_state->getValue('password');
+        $identification_number = $form_state->getValue('identification_number');
+        $birth_date = $form_state->getValue('birth_date');
+
+        $api_response = $api->createUser($first_name, $last_name, $email, $password, $identification_number, $birth_date);
+
+        if ($api_response == FALSE) {
+            $form_state->set('api_error', true);
+        }else{
+            $form_state->set('api_error', false);
+        }
+    }
+}
+
+
+function nhsc_custom_brazil_user_login_form_validate(&$form, FormStateInterface $form_state) {
+    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $api = \Drupal::service('nhsc_cadastro_unico_api');
+
+    if ($token = $api->validate($form_state->getValue('name'), $form_state->getValue('pass'))) {
+        $user_data = user_load_by_mail($form_state->getValue('name'));
+
+        $user_auth = \Drupal::service('user.auth');
+
+        if (!$user_data) {
+            $user = User::create();
+
+            // Mandatory.
+            $user->setPassword($form_state->getValue('pass'));
+            $user->enforceIsNew();
+            $user->setEmail($form_state->getValue('name'));
+            $user->setUsername($form_state->getValue('name'));
+
+            // Optional.
+            $user->set('init', 'email');
+            $user->set('langcode', $language);
+            $user->set('preferred_langcode', $language);
+            $user->set('preferred_admin_langcode', $language);
+
+            $user->activate();
+            $user->save();
+        } else {
+            if ($user_auth->authenticate($form_state->getValue('name'), $form_state->getValue('pass')) == false) {
+                $user_data->setPassword($form_state->getValue('pass'));
+                $user_data->save();
+            }
+        }
+    }
+}
+
+function nhsc_custom_brazil_free_sample_webform_add_form_submit(&$form, FormStateInterface $form_state) {
+  $user_id =\Drupal::currentUser()->id();
+  $webform_submission = \Drupal::entityTypeManager()->getStorage('webform_submission')->loadByProperties(
+    [
+      'uid' => $user_id,
+      'webform_id' => 'free_sample_webform'
+    ]
+  );
+
+  $free_sample_data = array();
+  if (!empty($webform_submission)) {
+    foreach ($webform_submission as $key => $value) {
+      $selected_samples = array_filter(explode("\n", $value->getElementData('user_selected_free_samples')));
+      $address = $value->getElementData('receiving_address');
+      $created = date('c', $value->getCreatedTime());
+
+      $free_sample_data[] = array(
+        'products' => $selected_samples,
+        'deliveryAddress' => $address,
+        'dateCreated' => $created,
+      );
+    }
+  }
+
+  $email = \Drupal::currentUser()->getEmail();
+  $api = \Drupal::service('nhsc_cadastro_unico_api');
+  $api->setProperty($email, 'dc_requested_samples', json_encode($free_sample_data));
+}
+
+function mask_email($email)
+{
+    $em   = explode("@",$email);
+    $name = implode(array_slice($em, 0, count($em)-1), '@');
+    $len  = floor(strlen($name)/2);
+
+    return substr($name,0, $len) . str_repeat('*', $len) . "@" . end($em);
+}
+
+/**
+ *
+ * Implements hook_views_pre_render
+ * @param $view
+ *
+ */
+function nhsc_custom_brazil_views_pre_render(\Drupal\views\ViewExecutable $view){
+
+    if ($view->id() == 'user_related_articles_and_events' && $view->current_display == 'block_1'){
+
+        $view->get_total_rows = TRUE;
+
+        $rows           = $view->total_rows;
+        // get users specialty
+        $current_id     = \Drupal::currentUser()->id();
+        $user           = User::load($current_id);
+        $speciality     = $user->get('field_speciality')->getValue()[0]['value'];
+
+        // check if view returns no list
+        if ($rows == 0){
+            // alter argument
+            $view->args[0] = $speciality;
+        }
+    }
+}

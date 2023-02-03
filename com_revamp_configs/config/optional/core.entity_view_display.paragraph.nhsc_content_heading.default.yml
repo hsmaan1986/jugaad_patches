@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_content_heading.field_heading
+    - paragraphs.paragraphs_type.nhsc_content_heading
+  module:
+    - text
+id: paragraph.nhsc_content_heading.default
+targetEntityType: paragraph
+bundle: nhsc_content_heading
+mode: default
+content:
+  field_heading:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  addtoany: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true

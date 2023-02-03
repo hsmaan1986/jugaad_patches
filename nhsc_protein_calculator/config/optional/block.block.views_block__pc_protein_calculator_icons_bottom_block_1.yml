@@ -1,0 +1,42 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.pc_protein_calculator_icons_bottom
+  module:
+    - rng
+    - system
+    - views
+  theme:
+    - nhsc_master
+id: views_block__pc_protein_calculator_icons_bottom_block_1
+theme: nhsc_master
+region: content
+weight: -32
+provider: null
+plugin: 'views_block:pc_protein_calculator_icons_bottom-block_1'
+settings:
+  id: 'views_block:pc_protein_calculator_icons_bottom-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  rng_current_time:
+    id: rng_current_time
+    date: '1620740356'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1620740356'
+    negate: false
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /node/1860
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,4 @@
+product-selector-css:
+  css:
+    theme:
+      css/product-selector-styles.css: {}

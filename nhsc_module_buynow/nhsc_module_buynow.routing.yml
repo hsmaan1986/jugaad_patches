@@ -1,0 +1,7 @@
+nhsc_module_buynow.settings_form:
+  path: '/admin/config/system/nhsc_module_buynow'
+  defaults:
+    _title: 'Buy Now '
+    _form: '\Drupal\nhsc_module_buynow\Form\buynowSettingsForm'
+  requirements:
+    _permission: 'administer Buy Now module'

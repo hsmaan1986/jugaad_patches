@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_slick_slider.field_slide
+    - paragraphs.paragraphs_type.nhsc_slick_slider
+  module:
+    - paragraphs
+id: paragraph.nhsc_slick_slider.default
+targetEntityType: paragraph
+bundle: nhsc_slick_slider
+mode: default
+content:
+  field_slide:
+    type: entity_reference_paragraphs
+    weight: 0
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

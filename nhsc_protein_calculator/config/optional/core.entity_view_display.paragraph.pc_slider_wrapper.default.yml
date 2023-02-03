@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.pc_slider_wrapper
+id: paragraph.pc_slider_wrapper.default
+targetEntityType: paragraph
+bundle: pc_slider_wrapper
+mode: default
+content: {  }
+hidden:
+  addtoany: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  search_api_excerpt: true

@@ -1,0 +1,10 @@
+name: 'NHSc User Profile VIA'
+type: module
+description: 'Nestle Heath Sciences User Profile For Via'
+core_version_requirement: ^8 || ^9
+package: 'Nestle Heath Sciences'
+dependencies:
+  - user
+  - text
+  - image
+

@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: nhsc_content_heading
+label: 'NHSC Content heading'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

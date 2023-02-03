@@ -1,0 +1,48 @@
+.paragraph--type--c-teaserslider .paragraph--type--c-teaser-slide {
+	margin: 0 auto;
+}
+
+.paragraph--type--c-teaserslider .field--name-field-c-teaserslider-image {
+  margin: 0 0 20px;
+}
+
+.paragraph--type--c-teaserslider .field--name-field-c-teaserslider-image img {
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.paragraph--type--c-teaserslider .field--name-field-image-caption {
+  font-weight: 600;
+}
+
+.paragraph--type--c-teaserslider .slick img {
+	max-width: 180px;
+	width: auto;
+}
+
+@media only screen and (min-width: 1024px) {
+  .paragraph--type--c-teaserslider {
+    padding: 25px 0;
+  }
+  .paragraph--type--c-teaserslider .paragraph--type--c-teaser-slide {
+  	max-width: 1170px;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .paragraph--type--c-teaserslider {
+    padding: 25px 0;
+  }
+  .paragraph--type--c-teaserslider .paragraph--type--c-teaser-slide {
+  	max-width: 940px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .paragraph--type--c-teaserslider {
+    padding: 25px 0 15px;
+  }
+  .paragraph--type--c-teaserslider .paragraph--type--c-teaser-slide {
+  	max-width: 748px;
+  }
+}

@@ -1,0 +1,14 @@
+nhsc_mega_menu:
+  version: 1.x
+  js:
+    js/nhsc_mega_menu_settings.js: {}
+    js/nhsc_mega_menu.js: {}
+    js/jquery.hoverIntent.min.js: {}
+  css:
+    theme:
+      css/nhsc_mega_menu-final.css: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings

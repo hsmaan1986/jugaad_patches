@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: nhsc_banner_video
+label: 'NHSC Banner Video'
+icon_uuid: null
+icon_default: null
+description: 'This is for adding a video that uses the HTML video tag.'
+behavior_plugins: {  }

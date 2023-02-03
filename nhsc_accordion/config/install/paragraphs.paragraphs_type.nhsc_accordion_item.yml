@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: nhsc_accordion_item
+label: 'NHSC Accordion Item'
+icon_uuid: null
+icon_default: null
+description: 'This is for adding an accordion item to the accordion.'
+behavior_plugins: {  }

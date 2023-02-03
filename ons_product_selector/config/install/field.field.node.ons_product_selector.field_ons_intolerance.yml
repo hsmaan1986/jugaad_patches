@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ons_intolerance
+    - node.type.ons_product_selector
+    - taxonomy.vocabulary.intolerance
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_ons_intolerance
+id: node.ons_product_selector.field_ons_intolerance
+field_name: field_ons_intolerance
+entity_type: node
+bundle: ons_product_selector
+label: Intolerance
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      intolerance: intolerance
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

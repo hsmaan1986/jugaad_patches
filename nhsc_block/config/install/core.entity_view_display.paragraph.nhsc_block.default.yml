@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_block.bp_block
+    - field.field.paragraph.nhsc_block.field_nhsc_colour
+    - paragraphs.paragraphs_type.nhsc_block
+id: paragraph.nhsc_block.default
+targetEntityType: paragraph
+bundle: nhsc_block
+mode: default
+content:
+  bp_block:
+    weight: 2
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_nhsc_colour:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  addtoany: true
+  created: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  search_api_excerpt: true

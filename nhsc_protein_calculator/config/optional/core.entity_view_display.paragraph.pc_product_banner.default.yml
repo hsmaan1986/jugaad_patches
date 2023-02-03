@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.pc_product_banner.field_pc_banner_buy_now
+    - field.field.paragraph.pc_product_banner.field_pc_banner_description
+    - field.field.paragraph.pc_product_banner.field_pc_banner_link
+    - field.field.paragraph.pc_product_banner.field_pc_banner_prod_img
+    - field.field.paragraph.pc_product_banner.field_pc_banner_sub_title
+    - field.field.paragraph.pc_product_banner.field_pc_banner_title
+    - paragraphs.paragraphs_type.pc_product_banner
+id: paragraph.pc_product_banner.default
+targetEntityType: paragraph
+bundle: pc_product_banner
+mode: default
+content: {  }
+hidden:
+  addtoany: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_pc_banner_buy_now: true
+  field_pc_banner_description: true
+  field_pc_banner_link: true
+  field_pc_banner_prod_img: true
+  field_pc_banner_sub_title: true
+  field_pc_banner_title: true
+  search_api_excerpt: true

@@ -1,0 +1,104 @@
+.youtubecarousel-container {
+  width: 100%;
+}
+.youtubecarousel-container .info-container {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 7px;
+}
+.youtubecarousel-container .info-container .description,
+.youtubecarousel-container .info-container .description .slider,
+.youtubecarousel-container .info-container .description .expand {
+  padding: 5px 0;
+}
+.youtubecarousel-container .info-container .title {
+  font-size: 1.4em;
+  line-height: 1.5em;
+  font-weight: bold;
+}
+.youtubecarousel-container .info-container .description .slider {
+  border-top: solid 1px #CCCCCC;
+  cursor: pointer;
+}
+.youtubecarousel-container .info-container .description .expand {
+  display: none;
+}
+.youtubecarousel-container .carousel-container {
+  position: relative;
+}
+.youtubecarousel-container #youtubecarousel {
+  display: none;
+  width: 90%;
+  margin: 0 auto;
+}
+.youtubecarousel-container #youtubecarousel .item span,
+.youtubecarousel-container #youtubecarousel .item div {
+  word-break: break-all;
+}
+.youtubecarousel-container .owl-theme .owl-controls .owl-buttons .owl-prev,
+.youtubecarousel-container .owl-theme .owl-controls .owl-buttons .owl-next {
+  height: 40px;
+  width: 25px;
+  position: absolute;
+  top: 20px;
+  margin: 0 0;
+  padding: 0 0;
+  -moz-opacity: 1;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.youtubecarousel-container .owl-theme .owl-controls .owl-pagination .owl-page span {
+  -moz-opacity: 1;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.youtubecarousel-container .owl-theme .owl-controls .owl-buttons .owl-prev {
+  background: transparent url('images/owl_custom.png') no-repeat 0 -136px;
+  left: -30px;
+}
+.youtubecarousel-container .owl-theme .owl-controls .owl-buttons .owl-next {
+  background: transparent url('images/owl_custom.png') no-repeat -25px -136px;
+  right: -30px;
+}
+.youtubecarousel-container .owl-theme .owl-controls .owl-buttons .owl-prev:hover,
+.youtubecarousel-container .owl-theme .owl-controls .owl-buttons .owl-next:hover,
+.youtubecarousel-container .owl-theme .owl-controls .owl-pagination .owl-page.active span,
+.youtubecarousel-container .owl-theme .owl-controls .owl-pagination .owl-page span:hover {
+  -moz-opacity: .5;
+  opacity: .5;
+  filter: alpha(opacity=50);
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .youtubecarousel-container #youtubecarousel {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+.youtubecarousel-container .video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  background-color: black;
+}
+.youtubecarousel-container .video-container iframe,
+.youtubecarousel-container .video-container object,
+.youtubecarousel-container .video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.youtubecarousel-container #youtubecarousel .item {
+  margin: 3px;
+  color: #808080;
+}
+.youtubecarousel-container #youtubecarousel .item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+  margin-bottom: 7px;
+}

@@ -1,0 +1,5 @@
+nhsc_bazaarvoice.settings:
+  route_name: nhsc_bazaarvoice.settings
+  title: Bazaarvoice
+  description: 'Configure Bazaarvoice'
+  parent: system.admin_config_services

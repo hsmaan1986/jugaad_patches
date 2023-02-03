@@ -1,0 +1,5 @@
+services:
+  nhsc_mega_menu.nhsc_mega_menu_block:
+    class: Drupal\nhsc_mega_menu\Plugin\Block\NhscMegaMenuBlock
+    arguments:
+      - '@config.factory'

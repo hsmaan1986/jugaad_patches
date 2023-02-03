@@ -1,0 +1,29 @@
+name: 'COM Revamp Configs'
+type: module
+description: 'COM Revamp Configs'
+core_version_requirement: ^8 || ^9
+package: Custom
+dependencies:
+  - lightning_workflow
+  - menu_ui
+  - datetime
+  - node
+  - slick_views
+  - svg_image
+  - user
+  - entity_reference_revisions
+  - options
+  - paragraphs
+  - taxonomy
+  - search_api
+  - text
+  - rng
+  - system
+  - views
+  - block_content
+  - we_megamenu
+  - block_class
+  - better_exposed_filters
+  - link
+  - search_api_pantheon
+  - search_api_solr

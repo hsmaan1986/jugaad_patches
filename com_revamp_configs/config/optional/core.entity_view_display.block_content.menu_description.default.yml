@@ -1,0 +1,43 @@
+uuid: 72f87d1d-f9e4-492a-92a3-04828bdd1030
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.menu_description
+    - field.field.block_content.menu_description.body
+    - field.field.block_content.menu_description.field_cta
+  module:
+    - link
+    - text
+_core:
+  default_config_hash: GU1UqqUOdfyewR-AAblhvRGT_g-Z3rkSdMpXy2fAE6Y
+id: block_content.menu_description.default
+targetEntityType: block_content
+bundle: menu_description
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_cta:
+    type: link
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true
+  search_api_excerpt: true

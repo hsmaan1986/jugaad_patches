@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: nhsc_carousel_image_item
+label: 'NHSC Carousel Image Item'
+icon_uuid: null
+icon_default: null
+description: 'Add an image and text slide to the carousel.'
+behavior_plugins: {  }

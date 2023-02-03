@@ -1,0 +1,77 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.image_browser
+    - field.field.paragraph.pc_product_banner.field_pc_banner_buy_now
+    - field.field.paragraph.pc_product_banner.field_pc_banner_description
+    - field.field.paragraph.pc_product_banner.field_pc_banner_link
+    - field.field.paragraph.pc_product_banner.field_pc_banner_prod_img
+    - field.field.paragraph.pc_product_banner.field_pc_banner_sub_title
+    - field.field.paragraph.pc_product_banner.field_pc_banner_title
+    - paragraphs.paragraphs_type.pc_product_banner
+  module:
+    - entity_browser
+    - link
+id: paragraph.pc_product_banner.default
+targetEntityType: paragraph
+bundle: pc_product_banner
+mode: default
+content:
+  field_pc_banner_buy_now:
+    weight: 5
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_pc_banner_description:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_pc_banner_link:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_pc_banner_prod_img:
+    type: entity_browser_file
+    weight: 4
+    settings:
+      entity_browser: image_browser
+      field_widget_edit: true
+      field_widget_remove: true
+      view_mode: default
+      preview_image_style: thumbnail
+      open: true
+      field_widget_replace: false
+      selection_mode: selection_append
+    region: content
+    third_party_settings: {  }
+  field_pc_banner_sub_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_pc_banner_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

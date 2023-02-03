@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cerebral_palsy_size
+    - paragraphs.paragraphs_type.cerebral_palsy_recommendation
+id: paragraph.cerebral_palsy_recommendation.field_cerebral_palsy_size
+field_name: field_cerebral_palsy_size
+entity_type: paragraph
+bundle: cerebral_palsy_recommendation
+label: Size
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

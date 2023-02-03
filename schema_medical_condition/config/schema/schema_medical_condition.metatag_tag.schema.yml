@@ -1,0 +1,22 @@
+# The 'type' should be "label" for short meta tags and "text" for ones which
+# could get longer, especially ones which use a textarea field instead of a
+# textfield.
+
+metatag.metatag_tag.schema_medical_condition_type:
+  type: text
+  label: '@type'
+metatag.metatag_tag.schema_medical_condition_name:
+  type: text
+  label: 'name'
+metatag.metatag_tag.schema_medical_condition_associated_anatomy:
+  type: text
+  label: 'Associated Anatomy'
+metatag.metatag_tag.schema_medical_condition_cause:
+  type: text
+  label: 'Medical Cause'
+metatag.metatag_tag.schema_medical_condition_risk_factor:
+  type: text
+  label: 'Risk Factor'
+metatag.metatag_tag.schema_medical_condition_symptom:
+  type: text
+  label: 'Sign Or Symptom'

@@ -1,0 +1,6 @@
+nppe_module_where_to_buy_js:
+  js:
+    js/utility.js: {}
+    js/where-to-buy-data-layer.js: {}
+  dependencies:
+    - core/drupal

@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: main_article_with_date
+label: 'NHSC main article with date'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

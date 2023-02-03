@@ -1,0 +1,5 @@
+ons_product_selector.settings:
+  title: 'ONS Product Selector Settings'
+  base_route_name: ons_product_selector.settings
+  names:
+    - ons_product_selector.settings

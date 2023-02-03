@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cerebral_palsy_link
+    - paragraphs.paragraphs_type.cerebral_palsy_buttons
+  module:
+    - link
+id: paragraph.cerebral_palsy_buttons.field_cerebral_palsy_link
+field_name: field_cerebral_palsy_link
+entity_type: paragraph
+bundle: cerebral_palsy_buttons
+label: Link
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

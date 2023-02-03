@@ -1,0 +1,7 @@
+excluded:
+  - block.block.views_block__nhsc_banner_buttons_block_1
+  - block.block.views_block__nhsc_bottom_buttons_block_1
+  - block.block.views_block__people_slider_block_1
+  - user.role.content_manager_whitelabel_
+  - views.view.custom_article_list_
+required: true

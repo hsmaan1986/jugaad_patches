@@ -1,0 +1,9 @@
+services:
+  reward:
+    class: Drupal\hcp_reward_system\EventSubscriber\RewardSubscriber
+    arguments: []
+    tags:
+      - { name: event_subscriber }
+  plugin.manager.reward:
+    class: Drupal\hcp_reward_system\Plugin\RewardManager
+    parent: default_plugin_manager

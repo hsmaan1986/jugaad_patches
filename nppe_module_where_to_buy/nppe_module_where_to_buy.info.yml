@@ -1,0 +1,18 @@
+name: nppe_module_where_to_buy
+type: module
+description: Custom module for Where to buy functionality twigs.
+package: Custom
+version: 1.0
+core_version_requirement: ^8 || ^9
+dependencies:
+  - block
+  - address
+  - field
+  - geolocation
+  - link
+  - menu_ui
+  - node
+  - path
+  - user
+  - views
+  - dsu_store

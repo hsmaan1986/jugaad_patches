@@ -1,0 +1,14 @@
+name: 'Ultimenu '
+description: 'Provide Ultimenu features for nhsc'
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - 'drupal:block'
+  - 'drupal:system'
+  - 'drupal:user'
+  - 'drupal:views'
+  - 'metatag:metatag'
+  - 'nhsc_feutures_ultimenu:nhsc_feutures_ultimenu'
+  - 'rng:rng'
+  - 'ultimenu:ultimenu'
+version: 8.x-1.0

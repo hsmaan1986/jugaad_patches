@@ -1,0 +1,24 @@
+excluded:
+  - autologout.role.content_manager_whitelabel_
+  - block.block.bootstrap_barrio_views_block__nhsc_banner_buttons_block_1
+  - block.block.bootstrap_barrio_views_block__nhsc_bottom_buttons_block_1
+  - block.block.bootstrap_barrio_views_block__nhsc_faq_block_block_1
+  - block.block.bootstrap_barrio_views_block__nhsc_master_icons_block_block_1
+  - block.block.bootstrap_barrio_views_block__nhsc_master_people_slider_block_1
+  - block.block.bootstrap_barrio_views_block__nhsc_new_master_image_slider_top_block_1
+  - block.block.bootstrap_barrio_views_block__people_slider_block_1
+  - metatag.metatag_defaults.node__brand
+  - metatag.metatag_defaults.taxonomy_term__pathology
+  - user.role.content_manager_whitelabel_
+  - views.view.custom_article_list_
+  - core.entity_form_display.paragraph.bazaar.default
+  - core.entity_form_display.paragraph.nhsc_multiple_faq_item.default
+  - core.entity_view_display.paragraph.bazaar.default
+  - core.entity_view_display.paragraph.nhsc_multiple_faq_item.default
+  - field.field.paragraph.bazaar.field_title
+  - field.field.paragraph.hcp_site_switcher.field_hcp
+  - field.field.paragraph.nhsc_full_banner.field_cta
+  - field.field.paragraph.nhsc_multiple_faq.field_title
+  - field.field.paragraph.nhsc_multiple_faq_item.field_body
+  - field.field.paragraph.nhsc_multiple_faq_item.field_title
+required: true

@@ -1,0 +1,15 @@
+name: 'NHSC main article with date'
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - autologout
+  - block
+  - datalayer
+  - field
+  - field_permissions
+  - metatag
+  - paragraphs
+  - rng
+  - system
+  - user
+  - views

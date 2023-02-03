@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains nhsc_clickable_banner.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function nhsc_clickable_banner_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the nhsc_clickable_banner module.
+    case 'help.page.nhsc_clickable_banner':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('nhsc clickable banner Module') . '</p>';
+      return $output;
+
+    default:
+  }
+}

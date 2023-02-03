@@ -1,0 +1,9 @@
+uuid: 125071a0-903b-4dfa-813a-5291888f30cb
+langcode: en
+status: true
+dependencies: {  }
+id: ccg_product_information
+label: 'CCG Product Information'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,8 @@
+name: NHSc Gigya Date Picker
+type: module
+description: This module adds a datepicker on field in a gigya form
+package: Custom
+dependencies:
+  - gigya
+configure: gigya_datepicker.config
+core_version_requirement: ^8 || ^9

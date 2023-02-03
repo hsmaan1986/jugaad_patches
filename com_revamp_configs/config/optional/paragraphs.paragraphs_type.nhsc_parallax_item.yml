@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: nhsc_parallax_item
+label: 'NHSC Parallax Item'
+icon_uuid: null
+icon_default: null
+description: 'Use this to add a parallax item to the parallax section.'
+behavior_plugins: {  }

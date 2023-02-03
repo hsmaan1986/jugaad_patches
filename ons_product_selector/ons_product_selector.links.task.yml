@@ -1,0 +1,4 @@
+ons_product_selector.settings:
+  route_name: ons_product_selector.settings
+  title: Settings
+  base_route: ons_product_selector.settings

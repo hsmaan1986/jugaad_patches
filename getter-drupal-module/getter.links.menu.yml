@@ -1,0 +1,5 @@
+getter.settings_form:
+  title: Getter Configuration
+  description: 'Configure the getter module'
+  parent: system.admin_config_services
+  route_name: getter.settings_form

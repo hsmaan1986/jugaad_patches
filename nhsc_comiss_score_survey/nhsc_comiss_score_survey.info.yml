@@ -1,0 +1,7 @@
+name: Dynamic Survey Comiss Score
+type: module
+description: Dynamic Survey for Comiss Score
+core_version_requirement: ^8 || ^9
+dependencies:
+  - options
+  - webform

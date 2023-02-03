@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_download_class
+    - paragraphs.paragraphs_type.nhsc_tools_and_resource_item
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_download_class
+id: paragraph.nhsc_tools_and_resource_item.field_download_class
+field_name: field_download_class
+entity_type: paragraph
+bundle: nhsc_tools_and_resource_item
+label: 'Download Class'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: hcp-resources-link
+default_value_callback: ''
+settings: {  }
+field_type: string

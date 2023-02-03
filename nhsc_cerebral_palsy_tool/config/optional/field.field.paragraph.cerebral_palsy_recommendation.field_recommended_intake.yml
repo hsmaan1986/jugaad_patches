@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_recommended_intake
+    - paragraphs.paragraphs_type.cerebral_palsy_recommendation
+    - paragraphs.paragraphs_type.recommended_intake
+  module:
+    - entity_reference_revisions
+id: paragraph.cerebral_palsy_recommendation.field_recommended_intake
+field_name: field_recommended_intake
+entity_type: paragraph
+bundle: cerebral_palsy_recommendation
+label: 'Recommended Intake'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      recommended_intake: recommended_intake
+    target_bundles_drag_drop:
+      cerebral_palsy_recommendation:
+        weight: 4
+        enabled: false
+      recommended_intake:
+        enabled: true
+        weight: 3
+field_type: entity_reference_revisions

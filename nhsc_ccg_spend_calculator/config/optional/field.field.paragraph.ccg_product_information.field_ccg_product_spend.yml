@@ -1,0 +1,29 @@
+uuid: 053f2e6e-c822-4db8-bedb-b4cb72a25bfb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ccg_product_spend
+    - paragraphs.paragraphs_type.ccg_product_information
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_ccg_product_spend
+id: paragraph.ccg_product_information.field_ccg_product_spend
+field_name: field_ccg_product_spend
+entity_type: paragraph
+bundle: ccg_product_information
+label: 'CCG Product Spend'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

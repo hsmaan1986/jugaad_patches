@@ -1,0 +1,52 @@
+
+<form {{form.attributes }}>
+  {{ form.form_build_id }}
+  {{ form.form_token }}
+  {{ form.form_id }}
+  {{ form.subject }}
+
+  <div class="protein-calculator">
+    <div class="protein-calculator__wrapper">
+
+      <div class="item-group">{{ form.container }} </div>
+
+      <div class="personal-data">
+        <h2 class="title">{{ form.heading }} </h2>
+        <p class="description">{{ form.description }} </p>
+
+        <div class="tabs-data__wrapper">
+          <div class="item-group units">{{ form.units }}</div>
+        </div>
+
+        <div class="personal-data__wrapper">
+          <div class="item-group gender">{{ form.gender }}</div>
+          <div class="item-group weight">{{ form.weight }}</div>
+          <div class="item-group age">{{ form.age }}</div>
+          <div class="item-group height">{{ form.height }}</div>
+        </div>
+
+      </div>
+
+      <div class="measurement-data">
+        <h2 class="title">{{ form.heading_active }} </h2>
+        <p class="description">{{ form.description_active }} </p>
+
+        <div class="measurement-data__wrapper">
+          <div class="item-group very-active">{{ form.very_active }}</div>
+          <div class="item-group active">{{ form.active }}</div>
+          <div class="item-group low-active">{{ form.low_active }}</div>
+          <div class="item-group sedentary">{{ form.sedentary }}</div>
+        </div>
+
+      </div>
+
+      <div class="submit">{{ form.button }}</div>
+      <div class="submit">{{ form.message }}</div>
+      <div class="read-more">
+        <a href="{{ form.read_more_url }}">
+          {{ form.read_more }}
+        </a>
+      </div>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,10 @@
+
+nhsc_protein_calculator:
+  version: 1.x
+  js:
+    js/nhsc_protein_calculator.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings

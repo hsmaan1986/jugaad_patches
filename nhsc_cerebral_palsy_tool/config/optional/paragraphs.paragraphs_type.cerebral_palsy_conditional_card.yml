@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: cerebral_palsy_conditional_card
+label: 'Cerebral Palsy Conditional Card'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

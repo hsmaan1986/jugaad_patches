@@ -1,0 +1,5 @@
+name: Alfamino Calculation
+type: module
+description: Alfamino Calculation Page.
+package: Drupart
+core_version_requirement: ^8 || ^9

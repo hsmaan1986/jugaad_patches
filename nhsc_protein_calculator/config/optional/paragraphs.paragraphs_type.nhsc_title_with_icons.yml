@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: nhsc_title_with_icons
+label: 'NHSC Title with Icons'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

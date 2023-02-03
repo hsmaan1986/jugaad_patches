@@ -1,0 +1,17 @@
+nhsc_cerebral_palsy_tool: null
+welcome_image:
+  - ''
+welcome_text:
+  value: "<p>Before you proceed, <span>make sure you have made an appropriate nutritional assessment</span> of the child.</p>\r\n"
+  format: rich_text
+more_info_text:
+  value: "I need to learn more about nutritional evaluation"
+  format: rich_text
+more_info_cta_text: 'More Information'
+more_info_cta_link: /node/1
+continue_text:
+  value: "I have already done an appropriate assessment of the child nutritional status of the child"
+  format: rich_text
+continue_cta_text: Continue
+continue_cta_link: /node/1
+welcome_title: Welcome to our solution finder

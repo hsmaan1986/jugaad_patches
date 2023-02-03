@@ -1,0 +1,23 @@
+name: 'NHS Brand Detail Component'
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - autologout
+  - block
+  - content_translation
+  - datalayer
+  - entity_reference_revisions
+  - field
+  - field_permissions
+  - file
+  - image
+  - metatag
+  - nhs_heading_block
+  - nhsc_image_and_text_column
+  - paragraphs
+  - rng
+  - svg_image
+  - system
+  - text
+  - user
+  - views

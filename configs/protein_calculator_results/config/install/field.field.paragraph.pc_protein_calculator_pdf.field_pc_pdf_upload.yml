@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pc_pdf_upload
+    - paragraphs.paragraphs_type.pc_protein_calculator_pdf
+  module:
+    - datalayer
+    - file
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_pc_pdf_upload
+id: paragraph.pc_protein_calculator_pdf.field_pc_pdf_upload
+field_name: field_pc_pdf_upload
+entity_type: paragraph
+bundle: pc_protein_calculator_pdf
+label: 'PDF upload'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt pdf'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

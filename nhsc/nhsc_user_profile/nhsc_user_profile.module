@@ -1,0 +1,829 @@
+<?php
+
+/**
+ * @file
+ * Contains nhsc_user_profile.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormBase;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Component\Render\PlainTextOutput;
+use Drupal\Core\Url;
+use Drupal\Core\Link;
+use Drupal\nhsc_user_profile\Controller\PageController;
+use Drupal\user\Entity\User;
+use Drupal\Core\Render\Markup;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\InvokeCommand;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+/**
+ * Implements hook_element_info_alter().
+ */
+function nhsc_user_profile_element_info_alter(array &$types) {
+    // Add placeholders to password_confirm element.
+    $types['password_confirm']['#process'][] = "_nhsc_user_profile_add_pass_confirm_placeholders";
+}
+
+function _nhsc_user_profile_add_pass_confirm_placeholders(&$element, FormStateInterface $form_state, &$complete_form) {
+    $element['pass1']['#placeholder'] = t('Please enter your password');
+    $element['pass2']['#placeholder'] = t('Please repeat your password');
+
+    return $element;
+}
+
+/**
+ *
+ * Implements hook_js_alter
+ * @param array $types
+ *
+ */
+function nhsc_user_profile_js_alter(&$javascript, \Drupal\Core\Asset\AttachedAssetsInterface $assets)
+{
+
+    $pageControler      = new PageController();
+    $config             = $pageControler->getConfigs();
+    $market_code        = $config->get('market_code');
+
+    foreach ($javascript as $key => $value){
+        if ($key == 'themes/custom/nestlehcp/js/client-side-form-translations.js' AND $market_code == 'UK') { // remove clientside translations from brazil
+            unset($javascript[$key]);
+        }
+    }
+}
+
+/**
+ * Implements hook_page_attachments().
+ *
+ * Insert JavaScript to the appropriate scope/region of the page.
+ */
+function nhsc_user_profile_page_attachments_alter(array &$page)
+{
+    $pageControler      = new PageController();
+    $config             = $pageControler->getConfigs();
+    $id_number_mask     = $config->get('id_number_mask_pattern');
+    $password_tooltip   = $config->get('password_tooltip');
+    $market_code        = $config->get('market_code');
+
+    $config_values ['id_number_mask'] = $id_number_mask;
+    $config_values ['password_tooltip'] = $password_tooltip;
+    $config_values ['market_code'] = $market_code;
+
+    $page['#attached']['drupalSettings']['nhsc_user_profile_configs'] = $config_values;
+}
+
+/**
+ * Implements hook_help().
+ */
+function nhsc_user_profile_help($route_name, RouteMatchInterface $route_match)
+{
+    switch ($route_name) {
+        // Main module help for the nhsc_user_profile module.
+        case 'help.page.nhsc_user_profile':
+            $output = '';
+            $output .= '<h3>' . t('About') . '</h3>';
+            $output .= '<p>' . t('Nestle Heath Sciences User Profile') . '</p>';
+            return $output;
+
+        default:
+    }
+}
+
+/**
+ * Implementation of hook_theme_suggestions_HOOK_alter().
+ */
+function nhsc_user_profile_theme_suggestions_input_alter(array &$suggestions, array $variables)
+{
+    $element = $variables['element'];
+
+    if (isset($element['#array_parents'])) {
+        for ($i = 0; $i < count($element['#array_parents']); $i++) {
+            $parents = array_slice($element['#array_parents'], 0, $i + 1);
+            $suggestions[] = 'input__' . $element['#type'] . '_' . implode('_', $parents);
+        }
+    }
+}
+
+/**
+ * Implements hook_entity_form_display_alter().
+ */
+function nhsc_user_profile_entity_form_display_alter(&$form_display, $context)
+{
+    switch ($form_display->id()) {
+        case 'user.user.default':
+            $uid = \Drupal::currentUser()->id();
+            $storage = \Drupal::entityTypeManager()->getStorage('entity_form_display');
+            $profile = \Drupal::service('user.data')->get('nhsc_user_profile', $uid, 'user_profile');
+            $route_name = \Drupal::routeMatch()->getRouteName();
+
+            switch ($profile) {
+                case "hcp":
+                    $form_display = $storage->load('user.user.user_profile_hcp');
+                    break;
+                case "student":
+                    if ($route_name == 'nhsc_user_profile.upgrade') {
+                        $form_display = $storage->load('user.user.user_profile_hcp');
+                    } else {
+                        $form_display = $storage->load('user.user.user_profile_student');
+                    }
+                    break;
+                case "institute":
+                    $form_display = $storage->load('user.user.user_profile_institution');
+                    break;
+                default:
+                    $form_display = $storage->load('user.user.user_profile_hcp');
+            }
+    }
+
+}
+
+
+
+/**
+ * Set defaults for datetime fields.
+ * @param $element
+ * @return object
+ */
+if (function_exists('_set_datetime_defaults') === false) {
+  function _set_datetime_defaults($element) {
+    // Add placeholders to all datetime fields.
+    $element['date']['#attributes']['data-drupal-date-format'] = ['d/m/Y'];
+    $element['date']['#date_date_format'] = 'd/m/Y';
+    $element['date']['#attributes']['placeholder'] = ["DD-MM-YYY"];
+
+    return $element;
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function nhsc_user_profile_form_alter(&$form, FormStateInterface &$form_state, $form_id)
+{
+    $pageControler  = new PageController();
+    $config         = $pageControler->getConfigs();
+    $market_code    = $config->get('market_code');
+    $id_number_tooltip    = $config->get('id_number_tooltip');
+    $id_number_pattern    = $config->get('id_number_pattern');
+
+    $user_pass_link = URl::fromRoute('user.pass', [], ['absolute' => true])->toString();
+    $register_link = URl::fromRoute('nhsc_user_profile.register', [], ['absolute' => true])->toString();
+
+    switch ($form_id) {
+        case "user_form":
+
+            $form['#attached']['library'][] = 'nhsc_user_profile/user-form';
+            $current_id = \Drupal::currentUser()->id();
+            $user = \Drupal::currentUser();
+
+            $user2 = User::load($current_id);
+
+            $form['field_honorific']['widget'][0]['value']['#type'] = 'select';
+            $form['field_honorific']['widget'][0]['value']['#empty_option'] = t('-- Select --');
+            $form['field_honorific']['widget'][0]['value']['#required'] = ($market_code == 'UK') ? FALSE : TRUE;
+            $form['field_honorific']['widget'][0]['value']['#size'] = 1;
+
+
+            \Drupal::messenger()->addMessage('status', 'status'); // added to remove status
+            $form['heading'] = [
+                '#weight' => -1,
+                '#markup' => '<h1 class="complete-profile-heading">'. t('Please complete your profile'). '</h1>'
+            ];
+
+
+            $profile_type = \Drupal::service('user.data')->get('nhsc_user_profile', $user->id(), 'user_profile');
+            if (isset($form['field_graduation_date']['widget'][0]['value']['#default_value']) && $form['field_graduation_date']['widget'][0]['value']['#default_value'] != '') {
+                $graduation_date = $form['field_graduation_date']['widget'][0]['value']['#default_value']->getTimestamp();
+            } else {
+                $graduation_date = strtotime('+10 years');
+            }
+
+            $route_name = \Drupal::routeMatch()->getRouteName();
+            if ($graduation_date <= time() && $route_name != 'nhsc_user_profile.upgrade' && $profile_type == 'student') {
+                $form['field_graduation_date']['widget'][0]['value']['#suffix'] = Link::createFromRoute(t('Upgrade Profile'),'nhsc_user_profile.upgrade', [], ['attributes' => ['class' => 'btn btn-primary upgrade-profile-button']])->toString();
+            } elseif ($route_name == 'nhsc_user_profile.upgrade') {
+                $form['actions']['submit']['#submit'][] = 'nhsc_user_profile_user_form_submit';
+            }
+
+            $form['email'] = [
+                '#type' => 'textfield',
+                '#title' => t('E-Mail'),
+                '#required' => true,
+                '#weight' => $form['field_birth_date']['#weight'],
+                '#default_value' => $user->getEmail(),
+                '#disabled' => true,
+                '#suffix' => Link::createFromRoute(t('Change Password'),'nhsc_user_profile.password_reset', [], ['attributes' => ['class' => 'btn btn-primary change-password-settings'], ['absolute' => true]])->toString(),
+            ];
+
+            // institution id
+            $form['field_institution_id_number']['widget'][0]['value']['#attributes'] = [
+                'data-toggle' => ['tooltip'],
+                'data-original-title' => t('Format: XX.XXX.XXX/XXXX-XX')
+            ];
+            // hcp number
+            $form['field_hcp_id_number']['widget'][0]['value']['#attributes'] = [
+                'data-toggle' => ['tooltip'],
+                'data-original-title' => t('Numbers Only')
+            ];
+            // institution attributes
+            $form['field_institution_address_zip']['widget'][0]['value']['#attributes'] = [
+                'data-toggle' => ['tooltip'],
+                'data-original-title' => t('Format: XXX.XX-XXX')
+            ];
+
+            // ID Number
+            $form['field_identification_number']['widget'][0]['value']['#attributes'] = [
+                'data-toggle' => ['tooltip'],
+                'data-original-title' => $id_number_tooltip,
+            ];
+
+            if ($market_code == 'BR'){
+                $form['field_identification_number']['widget'][0]['value']['#attributes']['disabled'] = true; // disable ID number for BR
+
+                // HCP ID number type ajax
+                $form['field_hcp_id_number_type']['widget']['#ajax'] = [
+                    'callback' => 'updateSpeciality',
+                    'event' => 'change',
+                    'progress' => ['type' => 'none']
+                ];
+
+            }
+
+            $form['field_identification_number']['widget'][0]['value']['#pattern'] = $id_number_pattern;
+
+            $form['field_profile_complete'] = [
+                '#type' => 'hidden',
+                '#value' => 1,
+            ];
+
+            $form['restricted'] = [
+                '#type' => 'checkbox',
+                '#title' => t("I’m aware that this site is restricted to health professionals and I assume full responsibility for the veracity of the Information above"),
+                '#required' => ($market_code == 'UK') ? FALSE : TRUE,
+                '#default_value' => 1,
+                '#weight' => $form['field_opt_in_communication']['#weight'],
+            ];
+
+            // add custom cancel account button
+
+            if ($user->hasPermission('cancel account')) {
+                $cancel_url = Url::fromRoute('entity.user.cancel_form', ['user' => $current_id], ['absolute' => true])->toString();
+                $form['cancel'] = [
+                    '#type' => 'actions',
+                    '#markup' => '<div class="already-register-login"><a class="" href="'.$cancel_url.'">' . t('Cancel Account') .'</span></a></div>',
+                    '#weight' => 400,
+                ];
+            }
+
+            switch ($market_code){
+                case 'UK':
+                    $form['#attached']['library'][] = 'nhsc_user_profile/date-picker-css';
+                    $form['#attached']['library'][] = 'nhsc_user_profile/date-picker-js';
+
+                    $form['field_birth_date']['widget'][0]['value']['#type']                = 'datetime';
+                    $form['field_birth_date']['widget'][0]['value']['#placeholder']         = 'dd/mm/yyyy';
+                    $form['field_birth_date']['widget'][0]['value']['#date_date_format']    = 'd/m/Y';
+                    $form['field_birth_date']['widget'][0]['value']['#date_date_element']   = 'text';
+                    $form['field_birth_date']['widget'][0]['value']['#date_time_element']   = 'none';
+                    $form['field_identification_number']['widget'][0]['value']['#required']   = false;
+
+                    $form['field_honorific']['widget'][0]['value']['#options'] = [
+                        'Dr' => t('Dr'),
+                        'Prof' => t('Prof'),
+                        'Mr' => t('Mr'),
+                        'Mrs' => t('Mrs'),
+                        'Ms' => t('Ms'),
+                        'Miss' => t('Miss'),
+                    ];
+
+                    $field_subjects     = $user2->get('field_subjects')->getValue();
+                    $profile_complete   = $user2->get('field_profile_complete')->getValue();
+
+                    $subjects = [];
+
+                    foreach ($field_subjects as $subject) {
+                        if (isset($subject['target_id'])) {
+                            $id = $subject['target_id'];
+                            $subjects[$id] = $id;
+                        }
+                    }
+
+                    $field_settings = Drupal::entityTypeManager()->getStorage('field_config')
+                        ->load('user.user.field_subjects')
+                        ->get('settings');
+                    $taxonomies = $field_settings['handler_settings']['target_bundles'];
+
+                    $subject_options = [];
+                    $default_subject = [];
+
+                    foreach ($taxonomies as $taxonomy) {
+                        $query = Drupal::entityQuery('taxonomy_term');
+                        $query->condition('vid', $taxonomy);
+                        $query->sort('weight');
+                        $tids = $query->execute();
+                        $terms = Term::loadMultiple($tids);
+
+                        foreach ($terms as $term) {
+                            $id = $term->id();
+                            $name = $term->getName();
+
+                            $subject_options[$id] = $name;
+                            $default_subject[$id] = $id;
+                        }
+                    }
+
+
+                    $form['subjects'] = [
+                        '#type' => 'value',
+                        '#title' => t('What subjects would you like to know more about?'),
+                        '#options' => $subject_options,
+                        '#weight' => -1,
+                        '#default_value' => ($profile_complete[0]['value'] == 1) ? $subjects : $default_subject,
+                    ];
+
+                    $form['actions']['submit']['#submit'][] = 'profile_complete_form_submit';
+
+                    break;
+
+                case 'BR':
+
+                    $form['field_honorific']['widget'][0]['value']['#options'] = [
+                        'Dr' => t('Dr'),
+                        'Prof' => t('Prof'),
+                        'Mr' => t('Mr'),
+                        'Mrs' => t('Mrs'),
+                        'Ms' => t('Ms'),
+                        'Miss' => t('Miss'),
+                        'Dra' => t('Dra'),
+                        'Profa' => t('Profa'),
+                    ];
+
+                    // set subjects
+                    $field_subjects     = $user2->get('field_subjects')->getValue();
+                    $field_speciality    = $user2->get('field_speciality')->getValue()[0]['value'];
+
+
+                    $subjects = [];
+
+                    foreach ($field_subjects as $subject) {
+                        if (isset($subject['target_id'])) {
+                            $id = $subject['target_id'];
+                            $subjects[$id] = $id;
+                        }
+                    }
+
+                    $field_settings = Drupal::entityTypeManager()->getStorage('field_config')
+                        ->load('user.user.field_subjects')
+                        ->get('settings');
+                    $taxonomies = $field_settings['handler_settings']['target_bundles'];
+
+                    $subject_options = [];
+                    $default_subject = [];
+
+                    foreach ($taxonomies as $taxonomy) {
+                        $query = Drupal::entityQuery('taxonomy_term');
+                        $query->condition('vid', $taxonomy);
+                        $query->sort('weight');
+                        $tids = $query->execute();
+                        $terms = Term::loadMultiple($tids);
+
+                        foreach ($terms as $term) {
+                            $id = $term->id();
+                            $name = $term->getName();
+
+                            $subject_options[$id] = $name;
+                            // default subject
+                            if ($name == $field_speciality){
+                                $default_subject[$id] = $id;
+                            }
+
+                        }
+                    }
+
+
+                    $form['subjects'] = [
+                        '#type' => 'value',// hidden field
+                        '#title' => t('What subjects would you like to know more about?'),
+                        '#options' => $subject_options,
+                        '#weight' => -1,
+                        '#default_value' => (isset($field_subjects)) ? $subjects : $default_subject,
+                    ];
+
+                    $form['actions']['submit']['#submit'][] = 'profile_complete_form_submit';
+
+
+                    break;
+
+            }
+
+
+
+
+
+            break;
+        case "user_login_form":
+            $form['title'] = [
+                '#type' => 'title',
+                '#markup' => '<h1 class="page-title-text login-title">' . t('Login') . '</h1>',
+                '#weight' => -1
+            ];
+
+						// for market
+            switch ($market_code) {
+                case 'BR':
+									// change label for username
+						  		$form['name']['#title'] = t('E-mail');
+									break;
+						}
+
+            $form['#submit'][] = 'nhsc_user_profile_user_login_form_submit';
+            $form['label'] = [
+                '#type' => 'text',
+                '#markup' => '<a class="forgotten-password-login" href="' .$user_pass_link. '">' . t('<span>Have you forgotten your password</span>?') . '</a>',
+            ];
+            $form['already-member'] = [
+                '#type' => 'actions',
+                '#markup' => '<div class="already-register-login"><a class="" href="' .$register_link. '">' . t('<span>Haven\'t registered yet</span>?') . '</a></div>',
+            ];
+            break;
+
+        case "nhsc_user_profile_register_form":
+
+            $form['#theme'] = 'custom_user_register';
+
+            // for market
+            switch ($market_code) {
+                case 'UK':
+                    if(!in_array("_password_policy_user_profile_form_validate", $form['#validate'])){
+                        $form['#validate'][] = '_password_policy_user_profile_form_validate';
+                    }
+
+                    $current_user = \Drupal::currentUser();
+                    $user_config = \Drupal::config('user.settings');
+                    $config = \Drupal::configFactory()->getEditable('user_registrationpassword.settings');
+
+
+                    // Prevent this from being run if approval with password on registration
+                    // form is set and the user is an anonymous user registering to the site.
+                    // When admin users create a user, this does not need to be executed.
+                    // And when this also does not need to be executed 'user_register' is not set
+                    // as 'Visitors can create accounts and no administrator approval is
+                    // required.' User registers, receives user_registrationpass email, would
+                    // not make sense. Cause that will unblock the user Without
+                    // the admin 'approving'.
+                    if ($user_config->get('register') == UserInterface::REGISTER_VISITORS
+                        && $config->get('registration') == UserInterface::USER_REGISTRATIONPASSWORD_VERIFICATION_PASS
+                        && !$current_user->id()) {
+                        // Set the user account to blocked.
+                        $form['account']['status']['#default_value'] = 0;
+                        // Supress any notification.
+                        $form['account']['notify']['#default_value'] = FALSE;
+                        // Register our validate and submit handlers.
+                        //$form['actions']['submit']['#submit'][] = 'user_registrationpassword_form_user_register_submit';
+                    }
+                    break;
+                case 'BR':
+                    $form['#attached']['library'][] = 'nhsc_custom_brazil/cadastro-user-check';
+                    break;
+
+            }
+
+
+            break;
+        case 'nhsc_user_profile_password_reset_form':
+            // for market
+            switch ($market_code) {
+                case 'UK':
+                    if(!in_array("_password_policy_user_profile_form_validate", $form['#validate'])){
+                        $form['#validate'][] = '_password_policy_user_profile_form_validate';
+                    }
+                    break;
+                case 'BR':
+                    break;
+
+            }
+            $form['#validate'][]  = '::validateForm';
+            $form['actions']['submit']['#submit'][] = '::submitForm';
+            $form['actions']['submit']['#submit'][] = 'nhsc_user_profile_password_reset_redirect';
+            break;
+        case 'user_pass_reset':
+
+            switch ($market_code) {
+                case 'UK':
+                    if(!in_array("_password_policy_user_profile_form_validate", $form['#validate'])){
+                        $form['#validate'][] = '_password_policy_user_profile_form_validate';
+                    }
+
+                    break;
+                case 'BR':
+                    break;
+
+            }
+
+            break;
+
+    }
+}
+
+
+
+/**
+ * Implementation of hook_theme().
+ */
+function nhsc_user_profile_theme($existing, $type, $theme, $path)
+{
+    return [
+        'user_welcome_block' => [
+            'variables' => [
+                'edit_url' => NULL,
+                'name' => NULL,
+                'job_type' => NULL,
+                'location' => NULL,
+                'email' => NULL,
+            ],
+        ],
+        'user_login_block' => [
+            'variables' => [],
+        ],
+        'custom_user_register' => [
+            'render element' => 'form',
+        ],
+    ];
+}
+
+function updateSpeciality(array $form, FormStateInterface $form_state){
+    $ajax_response              = new AjaxResponse();
+    $values                     = $form_state->getValues();
+    $hcp_id_number_type         = $values['field_hcp_id_number_type'][0]['value'];
+
+    $selector = '#edit-field-speciality-0-value';
+    $required = false;
+
+    if($hcp_id_number_type == 'CRM'){
+        $required = true;
+    }
+
+    $ajax_response->addCommand(new InvokeCommand($selector, 'attr', ['required', $required]));
+
+    return $ajax_response;
+}
+
+/**
+ * Custom submit handler for login form.
+ */
+function nhsc_user_profile_user_login_form_submit($form, FormStateInterface $form_state)
+{
+	$destination = \Drupal::requestStack()->getCurrentRequest()->get('destination');
+	if (!empty($destination)) {
+		$url = $destination;
+	}else{
+    $url = Url::fromRoute('nhsc_user_profile.page_controller_homepage', [], ['absolute' => true])->toString();
+
+	}
+    $response = new RedirectResponse($url, 302);
+    $response->send();
+
+}
+
+/**
+ * Custom submit handler for login form.
+ */
+function nhsc_user_profile_forgot_pass_form_submit($form, FormStateInterface $form_state)
+{
+    // redirect to confirmation page
+    \Drupal::messenger()->addMessage('error', 'error');
+    \Drupal::messenger()->addMessage('success', 'status');
+    $url = Url::fromRoute('nhsc_user_profile.forgot_password_confirm', [], ['absolute' => true])->toString();
+    $response = new RedirectResponse($url, 302);
+    $response->send();
+}
+
+/**
+ * Custom submit handler for login form.
+ */
+function nhsc_user_profile_password_reset_redirect ($form, FormStateInterface $form_state)
+{
+    $url = Url::fromRoute('user_login_form', [], ['absolute' => true])->toString();
+    $response = new RedirectResponse($url, 302);
+    $response->send();
+}
+
+/**
+ * Custom submit handler for login form.
+ */
+function nhsc_user_profile_user_pass_submit($form, FormStateInterface $form_state)
+{
+    \Drupal::messenger()->addMessage(t('Password Changed'));
+    $destination = \Drupal::requestStack()->getCurrentRequest()->get('destination');
+	if (!empty($destination)) {
+		$url = $destination;
+	}else{
+    $url = Url::fromRoute('nhsc_user_profile.page_controller_homepage', [], ['absolute' => true])->toString();
+
+	}
+    $response = new RedirectResponse($url, 302);
+    $response->send();
+
+}
+
+
+/**
+ * Conditionally create and send a notification email when a certain
+ * operation happens on the given user account.
+ *
+ * @param string $op
+ *   The operation being performed on the account. Possible values:
+ *   - 'register_admin_created': Welcome message for user created by the admin.
+ *   - 'register_no_approval_required': Welcome message when user
+ *     self-registers.
+ *   - 'register_pending_approval': Welcome message, user pending admin
+ *     approval.
+ *   - 'password_reset': Password recovery request.
+ *   - 'status_activated': Account activated.
+ *
+ * @param \Drupal\Core\Session\AccountInterface $account
+ *   The user object of the account being notified. Must contain at
+ *   least the fields 'uid', 'name', and 'mail'.
+ * @param string $langcode
+ *   (optional) Language code to use for the notification, overriding account
+ *   language.
+ *
+ * @return array
+ *   An array containing various information about the message.
+ *   See \Drupal\Core\Mail\MailManagerInterface::mail() for details.
+ *
+ * @see user_mail_tokens()
+ */
+function _nhsc_user_profile_mail_notify($op, $account, $langcode = NULL) {
+    if (\Drupal::config('nhsc_user_profile.config')->get($op . '.subject')) {
+        $params['account'] = $account;
+        $langcode = $langcode ? $langcode : $account->getPreferredLangcode();
+        // Get the custom site notification email to use as the from email address
+        // if it has been set.
+        $site_mail = \Drupal::config('system.site')->get('mail_notification');
+        $site_name = \Drupal::config('system.site')->get('name');
+        // If the custom site notification email has not been set, we use the site
+        // default for this.
+        if (empty($site_mail)) {
+            $site_mail = \Drupal::config('system.site')->get('mail');
+        }
+        if (empty($site_mail)) {
+            $site_mail = ini_get('sendmail_from');
+        }
+
+
+        $mail = \Drupal::service('plugin.manager.mail')->mail('nhsc_user_profile', $op, $account->getEmail(), $langcode, $params, $site_mail);
+    }
+    return empty($mail) ? NULL : $mail['result'];
+}
+
+function _nhsc_user_profile_register_mail_notify ($account, $langcode = NULL) {
+    $params['account'] = $account;
+    \Drupal::service('plugin.manager.mail')->mail('user_registrationpassword', 'register_confirmation_with_pass', $account->getEmail(), $account->getPreferredLangcode(), $params);
+}
+
+/**
+ * Implements hook_mail().
+ */
+function nhsc_user_profile_mail($key, &$message, $params) {
+    $token_service = \Drupal::token();
+    $language_manager = \Drupal::languageManager();
+    $langcode = $message['langcode'];
+    $variables = ['user' => $params['account']];
+
+    $language = $language_manager->getLanguage($params['account']->getPreferredLangcode());
+    $original_language = $language_manager->getConfigOverrideLanguage();
+    $language_manager->setConfigOverrideLanguage($language);
+    $mail_config = \Drupal::config('nhsc_user_profile.config');
+
+    $site_mail = \Drupal::config('system.site')->get('mail');
+    // If the custom site notification email has not been set, we use the site
+    // default for this.
+    if (empty($site_mail)) {
+        $site_mail = \Drupal::config('system.site')->get('mail_notification');
+    }
+    if (empty($site_mail)) {
+        $site_mail = ini_get('sendmail_from');
+    }
+
+    $token_options      = ['langcode' => $langcode, 'callback' => 'user_mail_tokens', 'clear' => TRUE];
+
+
+    $message['subject'] .= PlainTextOutput::renderFromHtml($token_service->replace($mail_config->get($key . '.subject'), $variables, $token_options));
+    $message['body'][]  = $token_service->replace($mail_config->get($key . '.body'), $variables, $token_options);
+
+    $language_manager->setConfigOverrideLanguage($original_language);
+}
+
+/**
+ * Implements hook_mail_alter().
+ */
+function nhsc_user_profile_mail_alter(&$message) {
+    $site_mail          = \Drupal::config('system.site')->get('mail');
+    $site_name          = \Drupal::config('system.site')->get('name');
+    $pageControler      = new PageController();
+    $config             = $pageControler->getConfigs();
+    $market_code        = $config->get('market_code');
+
+    if ($market_code == 'UK') {
+
+        if (empty($site_mail)) {
+            $site_mail = \Drupal::config('system.site')->get('mail_notification');
+        }
+        if (empty($site_mail)) {
+            $site_mail = ini_get('sendmail_from');
+        }
+
+        $mail_from    = "$site_name <$site_mail>";
+
+        $message['from'] = $mail_from;
+        $message['reply-to'] = $site_mail;
+
+        $message['headers']['from'] = $mail_from;
+        $message['headers']['reply-to'] = $site_mail;
+
+        // custom settings for specific emails
+
+        switch ($message['id']){
+            case 'user_registrationpassword_register_confirmation_with_pass':
+
+                $message['headers']['Content-Type'] = 'text/html; charset=UTF-8; format=flowed';
+                // Set the the format to HTML.
+                $message['format'] = 'text/html';
+                // Allow the body to rendered.
+                $message['body'][0] = Markup::create($message['body'][0]);
+
+                break;
+        }
+    }
+
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function nhsc_user_profile_page_attachments(array &$page) {
+    $page['#attached']['library'][] = 'nhsc_user_profile/user-profile-mobile';
+}
+
+/**
+ * nhsc_user_profile_user_form_submit.
+ */
+function nhsc_user_profile_user_form_submit(&$form, FormStateInterface $form_state) {
+    $uid = \Drupal::currentUser()->id();
+    $route_name = \Drupal::routeMatch()->getRouteName();
+
+    if ($route_name == 'nhsc_user_profile.upgrade') {
+        \Drupal::service('user.data')->set('nhsc_user_profile', $uid, 'user_profile', 'hcp');
+    }
+}
+
+/**
+ * profile_complete_form_submit.
+ */
+if (function_exists('profile_complete_form_submit') === false) {
+  function profile_complete_form_submit(&$form, FormStateInterface $form_state) {
+    $user                   = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+    $opt_in_notification    = $form['field_opt_in_communication']['widget']['value']['#value'];
+
+    $values                 = $form_state->getValues();
+    $subjects               = $values['subjects'];
+
+    foreach ($subjects as $key => $subject) {
+      if ($subject == 0) {
+        unset($subjects[$key]);
+      }
+    }
+
+    $user->set('field_subjects', $subjects);
+    $user->set('field_notifications', $opt_in_notification);
+    $user->save();
+
+    // redirect to home page
+    $destination = \Drupal::requestStack()->getCurrentRequest()->get('destination');
+	if (!empty($destination)) {
+		$url = $destination;
+	}else{
+    $url = Url::fromRoute('nhsc_user_profile.page_controller_homepage', [], ['absolute' => true])->toString();
+
+	}
+    $response = new RedirectResponse($url, 302);
+    $response->send();
+  }
+}
+
+//function nhsc_user_profile_form_rng_quick_register_block_form_alter(&$form, &$form_state, $form_id) {
+//    $form['#submit'][] = 'nhsc_user_profile_form_rng_quick_register_block_form_submit';
+//}
+//
+//function nhsc_user_profile_form_rng_quick_register_block_form_submit() {
+//    Drupal::messenger()->deleteAll();
+//    drupal_set_message(t('<div class="title-1">@title1</div><div class="title-2">@title2</div>',[
+//        '@title1' => t('You’ve enrolled to this event.'),
+//        '@title2' => t('Take a look at @link',[
+//            '@link' => Link::createFromRoute('your agenda','nhsc_user_profile.page_controller_agenda')->toString()
+//        ])
+//    ]));
+//}

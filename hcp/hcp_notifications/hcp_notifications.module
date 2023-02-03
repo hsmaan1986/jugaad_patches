@@ -1,0 +1,202 @@
+<?php
+
+/**
+ * @file
+ * Contains hcp_notifications.module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Queue\QueueFactory;
+use Drupal\Core\Queue\QueueInterface;
+use Drupal\Core\Render\Markup;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\node\Entity\Node;
+use Drupal\user\Entity\User;
+
+function hcp_notifications_theme() {
+  return [
+    'content_created_email' => [
+      'variables' => [
+        'url' => null,
+        'name' => null,
+        'contentTitle' => null
+      ],
+
+    ],
+  ];
+}
+
+/**
+ * Implements hook_help().
+ *
+ * @param                                          $route_name
+ * @param \Drupal\Core\Routing\RouteMatchInterface $route_match
+ *
+ * @return string
+ */
+function hcp_notifications_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the hcp_notifications module.
+    case 'help.page.hcp_notifications':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Email notifications for content publishing.') . '</p>';
+
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * @param                                      $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param                                      $form_id
+ */
+function hcp_notifications_form_node_form_alter(
+  &$form,
+  FormStateInterface $form_state,
+  $form_id
+) {
+  $build_info = $form_state->getBuildInfo();
+  $node = $build_info['callback_object']->getEntity();
+
+  $settings = Drupal::configFactory()
+    ->get('hcp_notification.config')
+    ->get('configuration.' . $node->getType());
+
+  if ($settings['enabled']) {
+    $form['hcp_notification'] = [
+      '#type' => 'checkbox',
+      '#default_value' => $node->isNew(),
+      '#title' => t("Notify subscribed users of new content."),
+      '#weight' => 100,
+    ];
+
+    $form['actions']['submit']['#submit'][] = '_hcp_notification_node_submit';
+  }
+}
+
+function _hcp_notification_node_submit(&$form, FormStateInterface $form_state) {
+  if ($form_state->getValue('hcp_notification')) {
+    // TODO: Queue mails
+    $build_info = $form_state->getBuildInfo();
+    $node = $build_info['callback_object']->getEntity();
+    $accounts = _hcp_nofication_get_users($node);
+
+    /** @var QueueFactory $queue_factory */
+    $queue_factory = Drupal::service('queue');
+    /** @var QueueInterface $queue */
+    $queue = $queue_factory->get('cron_node_notifications');
+
+    foreach ($accounts as $account) {
+      $item = new stdClass();
+      $item->nid = $node->id();
+      $item->uid = $account->id();
+      $queue->createItem($item);
+    }
+  }
+}
+
+function _hcp_nofication_get_users($node) {
+  // TODO: Filter to only subscribed users.
+  $user_storage = Drupal::service('entity_type.manager')->getStorage('user');
+
+  $ids = $user_storage->getQuery()
+    ->condition('status', 1)
+    ->execute();
+
+  $users = $user_storage->loadMultiple($ids);
+
+  return $users;
+}
+
+/**
+ * Implements hook_mail().
+ *
+ * @param $key
+ * @param $message
+ * @param $params
+ */
+function hcp_notifications_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'new_content_added':
+      $message['from'] = Drupal::config('system.site')->get('mail');
+      $message['subject'] = t('New content added "@contentTitle"',
+        ['@contentTitle' => $params['contentTitle']]);
+      $emailBody = [
+        '#theme' => 'content_created_email',
+        '#contentTitle' => $params['contentTitle'],
+        '#name' => $params['name'],
+        '#url' => $params['url'],
+      ];
+      $message['body'][] = Drupal::service('renderer')->render($emailBody);
+      break;
+    case 'notify':
+      $node = Node::load($params['node_id']);
+      $user = User::load($params['user_id']);
+      $settings = Drupal::configFactory()
+        ->get('hcp_notification.config')
+        ->get('configuration.' . $node->getType());
+
+      $token_service = Drupal::token();
+
+      $message['subject'] = Markup::create($token_service->replace($settings['subject'],
+        ['user' => $user, 'node' => $node]));
+      $message['body'][] = Markup::create($token_service->replace($settings['body'],
+        ['user' => $user, 'node' => $node]));
+
+      break;
+  }
+}
+
+/**
+ * Implements hook_entity_presave().
+ *
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ */
+function hcp_notifications_entity_insert(Drupal\Core\Entity\EntityInterface $entity) {
+
+  $contentType = $entity->bundle();
+  $sendNotifications = (bool) Drupal::request()->get('hcp_notification');
+  /** @var User $user */
+  $langcode = Drupal::currentUser()->getPreferredLangcode();
+  $link = 'https://www.nplushub.co.uk/';
+  $successes = 0;
+  $failures = 0;
+  $users = getAllUsers();
+  if($sendNotifications && $contentType === 'dsu_article'){
+    foreach ($users as $user) {
+      $email = $user->getEmail();
+      if (is_string($email) && $user->field_notifications->getValue()[0]['value']) {
+        $to = $email;
+        $params['url'] = $link;
+        $params['name'] = $user->getUsername();
+        $params['contentTitle'] = $entity->bundle();
+        $response = Drupal::service('plugin.manager.mail')->mail('hcp_notifications', 'new_content_added', $to, $langcode, $params, NULL, TRUE);
+        $response['result'] ? $successes++ : $failures++;
+
+      }
+
+    }
+    $messenger = Drupal::messenger();
+    $total = $successes + $failures;
+    if($successes){
+      $messenger->addMessage(t('@successes messages sent to the subscribers out of @total', ['@successes' => $successes, '@total' => $total]));
+    }
+    if($failures){
+      $messenger->addMessage(t('@failures messages failed to send', ['@failures' => $failures]), 'error');
+    }
+  }
+}
+
+function getAllUsers() {
+  $ids = Drupal::entityQuery('user')
+    ->condition('status', 1)
+    ->execute();
+
+  return User::loadMultiple($ids);
+}
+
+
+

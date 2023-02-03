@@ -1,0 +1,64 @@
+<?php
+
+
+
+/**
+ * Implements hook_page_attachments().
+ */
+function gigya_datepicker_page_attachments(array &$attachments)
+{
+	$attachments['#attached']['library'][] = 'gigya_datepicker/font_awesome';
+	$attachments['#attached']['library'][] = 'gigya_datepicker/gigya_datepicker_assets';
+}
+
+
+
+/**
+ * Implements hook_page_attachments().
+ *
+ * Insert JavaScript to the appropriate scope/region of the page.
+ */
+function gigya_datepicker_page_attachments_alter(array &$page)
+{
+	$field_selectors = \Drupal::config('gigya_datepicker.config')->get('field_html_selector');
+	$date_format = \Drupal::config('gigya_datepicker.config')->get('date_format');
+
+	$field_selector = preg_replace('#\s+#', ',', trim($field_selectors));
+
+	$config_values ['date_format'] = $date_format;
+	$config_values ['field_selector'] = $field_selector;
+
+	$page['#attached']['drupalSettings']['gigya_datepicker_configs'] = $config_values;
+}
+
+
+function gigya_datepicker_library_info_alter(&$libraries, $extension) {
+
+	if ($extension === 'gigya_datepicker') {
+
+		// get language code
+		$lang_code  = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    // get code from configues
+    $date_format = \Drupal::config('gigya_datepicker.config')->get('date_locale');
+
+    $path_to_file = false;
+    // get language code from configuration //
+    if (!empty($date_format)){
+      $path_to_file = 'js/i18n/datepicker-'.$date_format.'.js';
+    // get language code from site language //
+    }elseif (!empty($lang_code) && $lang_code !== 'en'){
+      $path_to_file = 'js/i18n/datepicker-'.$lang_code.'.js';
+    }
+
+    if ($path_to_file){
+      $alt = [
+        $path_to_file => [],
+        'js/gigya_datepicker.js' => ['preprocess' => false]
+      ];
+
+      $libraries['gigya_datepicker_assets']['js'] = $alt;
+    }
+
+
+	}
+}

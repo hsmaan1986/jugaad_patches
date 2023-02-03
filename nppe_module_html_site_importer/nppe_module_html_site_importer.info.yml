@@ -1,0 +1,5 @@
+name: HTML Site importer
+type: module
+description: 'Scrapes a site and imports it into Drupal'
+core_version_requirement: ^8 || ^9
+version: 8.x-0.1

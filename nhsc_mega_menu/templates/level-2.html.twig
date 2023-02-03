@@ -1,0 +1,24 @@
+
+{% include '@nhsc_mega_menu/level-1.html.twig' %}
+
+<div id="nhsc-mega-menu-filters" class="filter-body">
+
+  <div class="filter-label">{{ config_settings.mega_menu_filter_for }}</div>
+
+  <div class="filter-item">
+    {% for filter in filters %}
+      <div class="js-form-item js-form-type-checkbox checkbox form-check js-form-item-{{ filter.term_id }}">
+        <input data-drupal-selector="js-form-item-{{ filter.term_id }}" type="checkbox" id="js-form-item-{{ filter.term_id }}" name="{{ filter.term_name }}" value="{{ filter.term_id }}" class="form-checkbox form-check-input-brand form-check-input">
+        <label class="form-check-label" for="js-form-item-{{ filter.term_id }}">
+          {{ filter.term_name }}
+        </label>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="action-submit">
+    <button class="button js-form-submit form-submit btn-info btn" type="submit" value="Apply" name="">
+      {{ config_settings.mega_menu_submit }}
+    </button>
+  </div>
+</div>

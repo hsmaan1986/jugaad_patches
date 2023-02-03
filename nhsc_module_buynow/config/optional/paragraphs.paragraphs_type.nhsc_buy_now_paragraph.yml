@@ -1,0 +1,6 @@
+langcode: en
+status: true
+dependencies: {  }
+id: nhsc_buy_now_paragraph
+label: 'Buy Now'
+behavior_plugins: {  }

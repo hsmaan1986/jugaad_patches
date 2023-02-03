@@ -1,0 +1,21 @@
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hcp_modal_copy
+    - paragraphs.paragraphs_type.site_switcher_setting
+  module:
+    - text
+_core:
+  default_config_hash: BapP7dZMSpCBgT2RR-QOUTYELyvBZHKMFrKlYS_4L5E
+id: paragraph.site_switcher_setting.field_hcp_modal_copy
+field_name: field_hcp_modal_copy
+entity_type: paragraph
+bundle: site_switcher_setting
+label: 'HCP Modal Copy'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

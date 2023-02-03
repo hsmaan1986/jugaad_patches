@@ -1,0 +1,44 @@
+.buynow {
+	
+}
+
+.product-buy-now-button-container {
+	display:none;
+}
+
+.product-buy-now-button-container a {
+	
+	
+}
+
+.range-buy-now-button-container a {
+	
+}
+
+.paragraph--type--nhsc-product-gallery-and-intro  .product-buy-now-button-container {
+	/*display: inline-block;
+    min-width: 170px;
+    font-family: 'LatoBlack', Arial, Helvetica, sans-serif;
+    background: #00B0D2;
+    font-size: 20px;
+    border-radius: 5px;
+    padding: 15px 55px;
+    margin: 30px 0 10px 0;
+    color: #FFFFFF;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-transform: capitalize;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    min-width: 478px;*/
+}
+
+.paragraph--type--nhsc-product-gallery-and-intro .product-buy-now-button-container a {
+    
+    /*background: url(/themes/custom/nhsc_master/images/purchase.png) left center no-repeat;
+    background-size: contain;
+    color: #FFFFFF;
+    padding: 5px 40px;*/
+}
+

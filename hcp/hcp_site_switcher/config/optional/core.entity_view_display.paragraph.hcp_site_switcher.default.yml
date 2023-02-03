@@ -1,0 +1,45 @@
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hcp_site_switcher.field_hcp
+    - field.field.paragraph.hcp_site_switcher.field_hcp_modal_copy
+    - field.field.paragraph.hcp_site_switcher.field_hcp_url
+    - paragraphs.paragraphs_type.hcp_site_switcher
+  module:
+    - text
+id: paragraph.hcp_site_switcher.default
+targetEntityType: paragraph
+bundle: hcp_site_switcher
+mode: default
+content:
+  field_hcp:
+    weight: 0
+    label: hidden
+    settings:
+      format: true-false
+      format_custom_true: ''
+      format_custom_false: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_hcp_modal_copy:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_hcp_url:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  addtoany: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  search_api_excerpt: true

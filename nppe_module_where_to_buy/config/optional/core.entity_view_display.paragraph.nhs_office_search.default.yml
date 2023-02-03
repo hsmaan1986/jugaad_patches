@@ -1,0 +1,26 @@
+uuid: b1a47c4e-b4d3-42bb-a57e-94b8887e5eac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhs_office_search.field_office_search
+    - paragraphs.paragraphs_type.nhs_office_search
+  module:
+    - block_field
+id: paragraph.nhs_office_search.default
+targetEntityType: paragraph
+bundle: nhs_office_search
+mode: default
+content:
+  field_office_search:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: block_field
+    region: content
+hidden:
+  addtoany: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true

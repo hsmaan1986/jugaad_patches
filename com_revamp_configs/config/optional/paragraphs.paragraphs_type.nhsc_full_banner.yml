@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: nhsc_full_banner
+label: 'NHSC Full banner'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

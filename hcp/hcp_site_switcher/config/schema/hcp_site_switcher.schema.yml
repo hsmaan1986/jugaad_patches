@@ -1,0 +1,29 @@
+hcp_site_switcher.config:
+  type: config_object
+  label: 'HCP Site Switcher settings'
+  mapping:
+    switcher_id:
+      type: text
+      label: 'Switcher ID'
+    logo:
+      type: string
+      label: 'Modal logo'
+      
+    default_copy:
+      type: text
+      label: 'Default Copy'
+    footer_copy:
+      type: text
+      label: 'Footer Copy'
+    redirect_copy_hcp:
+      type: text
+      label: 'Redirect Copy HCP'
+    redirect_copy_patient:
+      type: text
+      label: 'Redirect Copy Patient'
+    yes_button_text:
+      type: text
+      label: 'Yes Button Text'
+    no_button_text:
+      type: text
+      label: 'No Button Text'

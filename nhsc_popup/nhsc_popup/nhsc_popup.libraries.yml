@@ -1,0 +1,10 @@
+nhsc_popup:
+  version: 1.x
+  js:
+    js/nhsc_popup.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings
+    - core/drupal.ajax

@@ -1,0 +1,6 @@
+nhsc_self_assessment_survey.settings_form:
+  title: 'Dynamic Survey - Self Assessment Configuration'
+  route_name: nhsc_self_assessment_survey.settings_form
+  description: 'Self Assessment Settings'
+  parent: system.admin_config_system
+  weight: 99

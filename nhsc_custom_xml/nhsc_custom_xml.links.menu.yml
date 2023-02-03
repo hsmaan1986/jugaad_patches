@@ -1,0 +1,6 @@
+nhsc_custom_xml.config:
+  route_name: nhsc_custom_xml.admin_settings
+  title: 'country custom xml setting'
+  description: 'Configure your country custom xml settings'
+  parent: system.admin_config_system
+  weight: 10

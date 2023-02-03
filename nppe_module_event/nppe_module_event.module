@@ -1,0 +1,61 @@
+<?php
+
+/**
+ * @file
+ * Contains nppe_module_winning_api.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function nppe_module_event_help($route_name, RouteMatchInterface $route_match)
+{
+    switch ($route_name) {
+        // Main module help for the nppe_module_winning_api module.
+        case 'help.page.nppe_module_event':
+            $output = '';
+            $output .= '<h3>' . t('About') . '</h3>';
+            $output .= '<p>' . t('Nestle Health Science Events.') . '</p>';
+            return $output;
+
+        default:
+    }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function nppe_module_event_theme()
+{
+    return [
+        'nppe_module_event_list' => [
+            'variables' => [
+                'data' => NULL,
+                'eventType' => NULL,
+                'paginationBack' => NULL,
+                'paginationCurrent' => NULL,
+                'paginationNext' => NULL,
+            ],
+            'template' => 'nppe-module-event-list',
+        ],
+        'nppe_module_agenda_list' => [
+            'variables' => [
+                'data' => NULL,
+                'eventType' => NULL,
+                'paginationBack' => NULL,
+                'paginationCurrent' => NULL,
+                'paginationNext' => NULL,
+            ],
+            'template' => 'nppe-module-agenda-list',
+        ],
+        'nppe_module_my_achievements_list' => [
+            'variables' => [
+                'data' => NULL,
+                'blockdata' => NULL,
+            ],
+            'template' => 'nppe-module-my-achievements-list',
+        ],
+    ];
+}

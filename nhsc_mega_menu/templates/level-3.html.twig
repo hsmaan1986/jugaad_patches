@@ -1,0 +1,10 @@
+
+<div class="brand">
+  {% for data in data %}
+    <div data-brands="{{ data.filter_id }}" class="brand__item js-form-item js-form-item-image {{ data.filter_id }}">
+      <a href="{{ data.brand_url }}" title="Link To Brand URL">
+        <img src="{{ data.image.url }}" alt="{{ data.image.alt }}">
+      </a>
+    </div>
+  {% endfor %}
+</div>

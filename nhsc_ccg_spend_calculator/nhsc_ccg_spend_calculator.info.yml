@@ -1,0 +1,20 @@
+name: NHSC CCG Spend Calculator
+type: module
+core_version_requirement: ^8 || ^9
+description: 'Adds NHSC CCG Spend Calculator to the site.'
+configure: nhsc_ccg_spend_calculator.settings_form
+dependencies:
+  - content_moderation
+  - datalayer
+  - dsu_core
+  - entity_reference_revisions
+  - field
+  - field_permissions
+  - language
+  - menu_ui
+  - node
+  - paragraphs
+  - path
+  - taxonomy
+  - text
+  - user

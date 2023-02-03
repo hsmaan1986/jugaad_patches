@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains com_revamp_configs.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function com_revamp_configs_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the com_revamp_configs module.
+    case 'help.page.com_revamp_configs':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('COM Revamp Configs') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function com_revamp_configs_theme() {
+  return [
+    'com_revamp_configs' => [
+      'render element' => 'children',
+    ],
+  ];
+}

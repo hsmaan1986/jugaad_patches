@@ -1,0 +1,3 @@
+flavor-selector-js:
+  js:
+    js/flavor-selector.js: {}

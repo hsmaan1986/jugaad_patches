@@ -1,0 +1,220 @@
+<?php
+
+/**
+ * @file
+ * Contains hcp_advice_booking.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\datetime\Plugin\Field\FieldType\DateTimeItemInterface;
+
+/**
+ * Implements hook_help().
+ */
+function hcp_advice_booking_help($route_name, RouteMatchInterface $route_match)
+{
+    switch ($route_name) {
+        // Main module help for the hcp_advice_booking module.
+        case 'help.page.hcp_advice_booking':
+            $output = '';
+            $output .= '<h3>' . t('About') . '</h3>';
+            $output .= '<p>' . t('Nestle Health Science Advice Booking') . '</p>';
+            return $output;
+
+        default:
+    }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function hcp_advice_booking_theme()
+{
+    return [
+        'hcp_advice_booking_accordion' => [
+            'variables' => ['slots' => NULL],
+        ],
+        'hcp_advice_booking_form' => [
+            'render element' => 'form',
+        ],
+    ];
+}
+
+function hcp_advice_booking_preprocess_hcp_advice_booking_accordion(&$variables)
+{
+    $grouped_slots = array();
+    foreach ($variables['slots'] as $slot) {
+        $month = $slot->booking_start->date->format('F Y');
+        $day = $slot->booking_start->date->format('l j');
+        $timestamp = $slot->booking_start->date->getTimestamp();
+
+        $length = $slot->length->getValue();
+        $starttime = \Drupal::service('date.formatter')->format($timestamp, 'custom', 'H:i', date_default_timezone_get());
+        $endtime = \Drupal::service('date.formatter')->format(($timestamp + (60 * $length[0]['value'])), 'custom', 'H:i', date_default_timezone_get());
+
+        $title = $slot->getName();
+        $url = \Drupal\Core\Url::fromRoute('hcp_advice_booking.booking_form', array('id' => $slot->id()))->toString();
+        $grouped_slots[$month][$day][] = [
+            'start' => $starttime,
+            'end' => $endtime,
+            'title' => $title,
+            'url' => $url,
+        ];
+    }
+    $variables['grouped_slots'] = $grouped_slots;
+}
+
+function _hcp_get_slot_list()
+{
+    $now = new \Drupal\Core\Datetime\DrupalDateTime('now');
+    $query = \Drupal::entityQuery('booking_entity');
+    $query->condition('booking_start', $now->format(DateTimeItemInterface::DATETIME_STORAGE_FORMAT), '>=');
+    $query->notExists('booked_user_id');
+    $query->sort('booking_start', 'ASC');
+    $entity_ids = $query->execute();
+    $booking_slots = \Drupal::entityTypeManager()->getStorage('booking_entity')->loadMultiple($entity_ids);
+    return $booking_slots;
+}
+
+/**
+ * Implements hook_mail().
+ */
+function hcp_advice_booking_mail($key, &$message, $params)
+{
+    switch ($key) {
+        case 'calendar':
+            $body = '';
+            $message['subject'] = t('Expert Advice Booking');
+            $message['body'][] = $body;
+            break;
+        case 'calendar_admin':
+            $booking_slot = $params['booking_slot'];
+            $username = $params['username'];
+            $lastname = $params['lastname'];
+            $time_to = $params['end_time'];
+            $speciality = $params['speciality'];
+
+            $time = $booking_slot->booking_start->date->format('H:i');
+            $date = $booking_slot->booking_start->date->format('l, d F Y');// weekday, day month year
+            $about = $booking_slot->booked_about->value;// What's your inquiry about?
+            $where = $booking_slot->booked_where->value;// Where do you work?
+            $phone = $booking_slot->phone->value;// Mobile Number?
+
+            $user = $booking_slot->booked_user_id->entity;
+            $email = $booking_slot->booked_user_id->entity->mail->value;
+
+            $message['subject'] = t('New Expert Advice Booking Placed');
+            $message['body'][] = t('Você tem uma visita online agendada para ') .$date. t(' das ') . $time . t(' às ') . $time_to;
+
+            $message['body'][] = t('Abaixo as informações referentes ao agendamento para você se preparar para a visita online.');
+
+            $message['body'][] = t('Usuário: ') . $username .' '.$lastname;
+            $message['body'][] = t('Especialidade: ') . $speciality;
+            $message['body'][] = t('Onde trabalha: ') . $where;
+            $message['body'][] = t('Para falar sobre: ') . $about;
+            $message['body'][] = t('Número para contato: ') . $phone;
+            $message['body'][] = t('Email: ') . $email;
+            $message['body'][] = t('Para salvar a reunião no outlook salve o arquivo em anexo.');
+            $message['body'][] = t('Boa visita!');
+            break;
+        case 'reminder':
+            $booking_slot = $params['booking_slot'];
+            $time = $booking_slot->booking_start->date->format('H:i');
+            $date = $booking_slot->booking_start->date->format('l, d F Y');// weekday, day month year
+
+            $message['subject'] = t('Reminder: Expert Advice Appointment');
+            $message['body'][] = t('You have a expert advice appointment on ') . $date . t(' at ') . $time . '. ';
+            break;
+    }
+}
+
+
+function _hcp_generate_ical($booking_slot)
+{
+    $vCalendar = new \Eluceo\iCal\Component\Calendar('NHS');
+    $vCalendar->setTimezone(date_default_timezone_get());
+
+    $vCalendar->setDescription($booking_slot->getName());
+
+    $vEvent = new \Eluceo\iCal\Component\Event();
+
+    $start_dt = new \DateTime();
+    $end_dt = new \DateTime();
+
+    $timestamp_start = $booking_slot->booking_start->date->getTimestamp();
+
+    $timestamp_end = $timestamp_start + 60 * 30;
+
+    $vEvent
+        ->setDtStart($start_dt->setTimestamp($timestamp_start))
+        ->setDtEnd($end_dt->setTimestamp($timestamp_end))
+        ->setSummary($booking_slot->getName())
+        ->setDescription($booking_slot->getName());
+
+    $vCalendar->addComponent($vEvent);
+
+    $generated = $vCalendar->render();
+
+    return $generated;
+}
+
+
+/**
+ * Implements hook_cron().
+ */
+function hcp_advice_booking_cron() {
+    // 5 day before email reminder.
+    $reminder_time = new \Drupal\Core\Datetime\DrupalDateTime('+5 days');
+    $now = new \Drupal\Core\Datetime\DrupalDateTime('now');
+    $query = \Drupal::entityQuery('booking_entity');
+    $query->condition('booking_start', $reminder_time->format(DateTimeItemInterface::DATETIME_STORAGE_FORMAT), '<=');
+    $query->condition('booking_start', $now->format(DateTimeItemInterface::DATETIME_STORAGE_FORMAT), '>=');
+    $query->exists('booked_user_id');
+    $entity_ids = $query->execute();
+    $booking_slots = \Drupal::entityTypeManager()->getStorage('booking_entity')->loadMultiple($entity_ids);
+
+    foreach($booking_slots as $booking) {
+        if(!$booking->five_day_notification->getValue()[0]['value']) {
+            $booking->five_day_notification->setValue(TRUE);
+            $booking->save();
+
+            $account = \Drupal\user\Entity\User::load($booking->booked_user_id->getValue()[0]['target_id']);
+            $account_email = $account->getEmail();
+            $params = array();
+            $params['booking_slot'] = $booking;
+
+            $mail_manager = \Drupal::service('plugin.manager.mail');
+
+            $result = $mail_manager->mail('hcp_advice_booking', 'reminder', $account_email, 'en', $params);
+
+            \Drupal::logger('hcp_advice_booking')->notice('5 day reminder sent for '.$account_email);
+        }
+    }
+
+    // 24 hour before email reminder.
+    $reminder_time = new \Drupal\Core\Datetime\DrupalDateTime('+24 hours');
+    $now = new \Drupal\Core\Datetime\DrupalDateTime('now');
+    $query = \Drupal::entityQuery('booking_entity');
+    $query->condition('booking_start', $reminder_time->format(DateTimeItemInterface::DATETIME_STORAGE_FORMAT), '<=');
+    $query->condition('booking_start', $now->format(DateTimeItemInterface::DATETIME_STORAGE_FORMAT), '>=');
+    $query->exists('booked_user_id');
+    $entity_ids = $query->execute();
+    $booking_slots = \Drupal::entityTypeManager()->getStorage('booking_entity')->loadMultiple($entity_ids);
+
+    foreach($booking_slots as $booking) {
+        if(!$booking->one_day_notification->getValue()[0]['value']) {
+            $booking->one_day_notification->setValue(TRUE);
+            $booking->save();
+
+            $account = \Drupal\user\Entity\User::load($booking->booked_user_id->getValue()[0]['target_id']);
+            $account_email = $account->getEmail();
+            $params = array();
+            $params['booking_slot'] = $booking;
+
+            $mail_manager = \Drupal::service('plugin.manager.mail');
+            $result = $mail_manager->mail('hcp_advice_booking', 'reminder', $account_email, 'en', $params);
+
+            \Drupal::logger('hcp_advice_booking')->notice('24 hour reminder sent for '.$account_email);
+        }
+    }
+}

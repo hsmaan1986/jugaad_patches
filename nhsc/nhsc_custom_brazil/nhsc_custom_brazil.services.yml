@@ -1,0 +1,4 @@
+services:
+  nhsc_custom_brazil.validate:
+    class: Drupal\nhsc_custom_brazil\ValidateService
+    arguments: []

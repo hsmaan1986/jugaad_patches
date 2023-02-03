@@ -1,0 +1,94 @@
+<div class="calculator calculator--nrs" id="nrs">
+	<h2 class="calculator__title">
+		{{ 'Check malnutrition risk with NRS-2002'|t }}
+		<span class="onsTooltip">
+			<span class="onsTooltip__icon">?</span>
+			<span class="onsTooltip__content">{{ 'The NRS-2002 system is to detect the risk of developing malnutrition in the hospital setting Screening tools recommended by ESPEN in hospitalized patients <sup>1</sup>'|t }}</span>
+		</span>
+	</h2>
+	<form method="POST" action="{{data.action}}" id="pre-nrs2002" {{data.hidePre}}>
+		<input type="hidden" name="formIdName" value="pre-nrs2002" />
+		<div class="calculator__form-group calculator__form-group--radio">
+			<p>{{ 'Has the patient had a reduced dietary intake in the last week?'|t }}</p>
+			<div class="item">
+				<input type="radio" id="reduced_dietary_0" name="reduced_dietary" value="1" required>
+				<label for="reduced_dietary_0">{{ 'Yes'|t }}</label>
+			</div>
+			<div class="item">
+				<input type="radio" id="reduced_dietary_1" name="reduced_dietary" value="0" required>
+				<label for="reduced_dietary_1">{{ 'No'|t }}</label>
+			</div>
+		</div>
+
+		<div class="calculator__form-group calculator__form-group--radio">
+			<p>{{ 'Is the patient severely ill? (e.g in intensive therapy)'|t }}</p>
+			<div class="item">
+				<input type="radio" id="severity_ill_0" name="severity_ill" value="1" required>
+				<label for="severity_ill_0">{{ 'Yes'|t }}</label>
+			</div>
+			<div class="item">
+				<input type="radio" id="severity_ill_1" name="severity_ill" value="0" required>
+				<label for="severity_ill_1">{{ 'No'|t }}</label>
+			</div>
+		</div>
+		<span class="onsTooltip onsTooltip--reference">
+			<span class="onsTooltip__text">{{"References"|t}}</span>
+			<span class="onsTooltip__content">
+				{{"1- Kondrup J, et al. Nutritional risk screening (NRS 2002): a new method based on an analysis of controlled clinical trials. Clin Nutr 2003;22(3):321-36. Reproduced with permission from Elsevier"|t}}
+				{{"2- Mcclave SA, Guidelines for the Provision and Assessment of Nutrition"|t}}
+				{{"Support Therapy in the Adult Critically Ill Patient: Society of Critical Care Medicine (SCCM) and American Society for Parenteral and Enteral Nutrition (A.S.P.E.N.) JPEN 2016;40(2):159-211"|t}}
+			</span>
+		</span>
+	</form>
+	<form method="POST" action="{{data.action}}" id="nrs2002" {{ data.hideNrs }}>
+		<div class="calculator__form-group calculator__form-group--radio">
+			<p>{{ 'Food intake in the past week'|t }}</p>
+			<div class="item">
+				<input type="radio" id="intake_past_week_0" name="intake_past_week" value="0" required>
+				<label for="intake_past_week_0">{{ 'None'|t }}</label>
+			</div>
+			<div class="item">
+				<input type="radio" id="intake_past_week_1" name="intake_past_week" value="1" required>
+				<label for="intake_past_week_1">{{ 'Mild: weight loss >5% in 3 months or food intake <50–75% of normal in the past week'|t }}</label>
+			</div>
+			<div class="item">
+				<input type="radio" id="intake_past_week_2" name="intake_past_week" value="2" required>
+				<label for="intake_past_week_2">{{ 'Moderate: weight loss >5% in 2 months or BMI 18.5–20.5 plus impaired general condition or food intake 25–60% of normal in past week'|t }}</label>
+			</div>
+			<div class="item">
+				<input type="radio" id="intake_past_week_3" name="intake_past_week" value="3" required>
+				<label for="intake_past_week_3">{{ 'Severe: weight loss >5% in 1 month (>15% in 3 months) or BMI <18.5 plus impaired general condition or food intake 0–25% of normal in past week'|t }}</label>
+			</div>
+		</div>
+
+		<div class="calculator__form-group calculator__form-group--radio">
+			<p>{{ 'Severity of disease'|t }}</p>
+			<div class="item">
+				<input type="radio" id="severity_of_disease_0" name="severity_of_disease" value="0" required>
+				<label for="severity_of_disease_0">{{ 'Normal nutritional requirements'|t }}</label>
+			</div>
+			<div class="item">
+				<input type="radio" id="severity_of_disease_1" name="severity_of_disease" value="1" required>
+				<label for="severity_of_disease_1">{{ 'Hip fracture, chronic illness (may have acute complications, e.g. cirrhosis or COPD), chronic dialysis, diabetes, cancer'|t }}</label>
+			</div>
+			<div class="item">
+				<input type="radio" id="severity_of_disease_2" name="severity_of_disease" value="2" required>
+				<label for="severity_of_disease_2">{{ 'Major abdominal surgery, stroke, severe pneumonia, hematologic malignancy'|t }}</label>
+			</div>
+			<div class="item">
+				<input type="radio" id="severity_of_disease_3" name="severity_of_disease" value="3" required>
+				<label for="severity_of_disease_3">{{ 'Head injury, bone marrow transplant, ICU patient with APACHE >10'|t }}</label>
+			</div>
+		</div>
+		<span class="onsTooltip onsTooltip--reference">
+			<span class="onsTooltip__text">{{"References"|t}}</span>
+			<span class="onsTooltip__content">
+				{{"1- Kondrup J, et al. Nutritional risk screening (NRS 2002): a new method based on an analysis of controlled clinical trials. Clin Nutr 2003;22(3):321-36. Reproduced with permission from Elsevier"|t}}
+				{{"2- Mcclave SA, Guidelines for the Provision and Assessment of Nutrition"|t}}
+				{{"Support Therapy in the Adult Critically Ill Patient: Society of Critical Care Medicine (SCCM) and American Society for Parenteral and Enteral Nutrition (A.S.P.E.N.) JPEN 2016;40(2):159-211"|t}}
+			</span>
+		</span>
+		<input type="hidden" name="weightloss" value="{{data.weightloss}}" />
+		<input type="hidden" name="bmi" value="{{data.bmi}}" />
+	</form>
+</div>

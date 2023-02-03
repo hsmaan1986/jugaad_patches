@@ -1,0 +1,7 @@
+symptom-checker-form:
+  js:
+    js/symptom-checker.js: {}
+    js/symptom-checker-data-layer.js: {}
+  css:
+    theme:
+      css/symptom-checker.css: {}

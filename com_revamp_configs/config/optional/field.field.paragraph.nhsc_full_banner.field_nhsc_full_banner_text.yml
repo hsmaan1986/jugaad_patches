@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_nhsc_full_banner_text
+    - paragraphs.paragraphs_type.nhsc_full_banner
+  module:
+    - text
+id: paragraph.nhsc_full_banner.field_nhsc_full_banner_text
+field_name: field_nhsc_full_banner_text
+entity_type: paragraph
+bundle: nhsc_full_banner
+label: 'NHSC Full banner text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

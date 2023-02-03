@@ -1,0 +1,51 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_carousel.field_nhsc_carousel_controls
+    - field.field.paragraph.nhsc_carousel.field_nhsc_carousel_indicators
+    - field.field.paragraph.nhsc_carousel.field_nhsc_carousel_interval
+    - field.field.paragraph.nhsc_carousel.field_nhsc_carousel_slides
+    - paragraphs.paragraphs_type.nhsc_carousel
+  module:
+    - paragraphs
+id: paragraph.nhsc_carousel.default
+targetEntityType: paragraph
+bundle: nhsc_carousel
+mode: default
+content:
+  field_nhsc_carousel_controls:
+    weight: 1
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_nhsc_carousel_indicators:
+    weight: 2
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_nhsc_carousel_interval:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_nhsc_carousel_slides:
+    type: entity_reference_paragraphs
+    weight: 0
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

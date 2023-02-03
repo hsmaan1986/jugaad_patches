@@ -1,0 +1,9 @@
+# Custom module library for general purposes.
+persentil_calculation:
+  css:
+    component:
+      css/persentil-calculation.css: {}
+  js:
+    js/persentil-calculation.js: {}
+  dependencies:
+    - core/jquery

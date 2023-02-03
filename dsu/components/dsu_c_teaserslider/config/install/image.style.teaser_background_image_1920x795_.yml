@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: teaser_background_image_1920x795_
+label: 'Teaser Background Image (1920X795)'
+effects:
+  4a8c2f80-91ac-46d4-bc56-bf41a910b618:
+    uuid: 4a8c2f80-91ac-46d4-bc56-bf41a910b618
+    id: image_scale
+    weight: 1
+    data:
+      width: 1920
+      height: 795
+      upscale: true

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_percentage_width
+    - paragraphs.paragraphs_type.nhsc_image_and_text_column
+  module:
+    - options
+id: paragraph.nhsc_image_and_text_column.field_percentage_width
+field_name: field_percentage_width
+entity_type: paragraph
+bundle: nhsc_image_and_text_column
+label: 'Image Width'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: '50'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

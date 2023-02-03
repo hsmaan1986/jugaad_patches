@@ -1,0 +1,294 @@
+uuid: 5c32cf6c-46e2-4033-a123-a3b40cf4a085
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nhsc_landing_components
+    - node.type.landing_page
+    - paragraphs.paragraphs_type.bp_block
+    - paragraphs.paragraphs_type.bp_view
+    - paragraphs.paragraphs_type.nhs_office_search
+    - paragraphs.paragraphs_type.nhsc_button
+    - paragraphs.paragraphs_type.nhsc_flexible_grid
+    - paragraphs.paragraphs_type.nhsc_full_banner
+    - paragraphs.paragraphs_type.nhsc_hero_banner
+    - paragraphs.paragraphs_type.nhsc_separator_line
+    - paragraphs.paragraphs_type.product_selector_section
+    - paragraphs.paragraphs_type.section_title_and_description
+    - paragraphs.paragraphs_type.tag_links
+  module:
+    - entity_reference_revisions
+id: node.landing_page.field_nhsc_landing_components
+field_name: field_nhsc_landing_components
+entity_type: node
+bundle: landing_page
+label: 'NHSC Landing Components'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      section_title_and_description: section_title_and_description
+      nhsc_button: nhsc_button
+      nhsc_full_banner: nhsc_full_banner
+      nhsc_flexible_grid: nhsc_flexible_grid
+      bp_block: bp_block
+      nhsc_hero_banner: nhsc_hero_banner
+      bp_view: bp_view
+      nhs_office_search: nhs_office_search
+      nhsc_separator_line: nhsc_separator_line
+      tag_links: tag_links
+      product_selector_section: product_selector_section
+    target_bundles_drag_drop:
+      image:
+        weight: 43
+        enabled: false
+      image_body:
+        weight: 44
+        enabled: false
+      section_title_and_description:
+        enabled: true
+        weight: 45
+      masthead:
+        weight: 45
+        enabled: false
+      masthead_webaulas:
+        weight: 46
+        enabled: false
+      nhsc_about_us_banner:
+        weight: 47
+        enabled: false
+      nhsc_banner_component:
+        weight: 48
+        enabled: false
+      nhsc_biography_caption:
+        weight: 49
+        enabled: false
+      nhsc_brand_accordion:
+        weight: 50
+        enabled: false
+      nhsc_brand_hero_banner:
+        weight: 51
+        enabled: false
+      nhsc_brand_product_line:
+        weight: 52
+        enabled: false
+      nhsc_button:
+        enabled: true
+        weight: 53
+      nhsc_column_component:
+        weight: 54
+        enabled: false
+      nhsc_column_items:
+        weight: 55
+        enabled: false
+      nhsc_content_heading:
+        weight: 56
+        enabled: false
+      nhsc_content_slider:
+        weight: 57
+        enabled: false
+      nhsc_copy_and_button:
+        weight: 58
+        enabled: false
+      nhsc_expandable_paragraph:
+        weight: 59
+        enabled: false
+      nhsc_faq:
+        weight: 60
+        enabled: false
+      nhsc_full_banner:
+        enabled: true
+        weight: 61
+      nhsc_health_management_landing:
+        weight: 62
+        enabled: false
+      nhsc_image_and_content_slider:
+        weight: 63
+        enabled: false
+      nhsc_image_and_text_column:
+        weight: 64
+        enabled: false
+      nhsc_image_content_slider_top:
+        weight: 65
+        enabled: false
+      nhsc_info_icons:
+        weight: 66
+        enabled: false
+      nhsc_flexible_grid:
+        enabled: true
+        weight: 67
+      bp_accordion:
+        weight: 67
+        enabled: false
+      nhsc_logo_componant:
+        weight: 67
+        enabled: false
+      nhsc_multi_column:
+        weight: 68
+        enabled: false
+      bp_accordion_section:
+        weight: 68
+        enabled: false
+      nhsc_flexible_grid_item:
+        weight: 68
+        enabled: false
+      nhsc_paragraph_icon:
+        weight: 69
+        enabled: false
+      bp_blank:
+        weight: 69
+        enabled: false
+      bp_block:
+        enabled: true
+        weight: 70
+      nhsc_people:
+        weight: 70
+        enabled: false
+      bp_carousel:
+        weight: 71
+        enabled: false
+      nhsc_plain_content:
+        weight: 71
+        enabled: false
+      nhsc_hero_banner:
+        enabled: true
+        weight: 71
+      nhsc_product_comparison:
+        weight: 72
+        enabled: false
+      bp_column_wrapper:
+        weight: 72
+        enabled: false
+      bp_columns:
+        weight: 73
+        enabled: false
+      nhsc_product_comparison_items:
+        weight: 73
+        enabled: false
+      nhsc_product_comparison_labels:
+        weight: 74
+        enabled: false
+      bp_columns_three_uneven:
+        weight: 74
+        enabled: false
+      bp_columns_two_uneven:
+        weight: 75
+        enabled: false
+      nhsc_product_specifications:
+        weight: 75
+        enabled: false
+      bp_image:
+        weight: 76
+        enabled: false
+      nhsc_sub_category_component:
+        weight: 76
+        enabled: false
+      bp_modal:
+        weight: 77
+        enabled: false
+      nhsc_text_and_image:
+        weight: 77
+        enabled: false
+      bp_simple:
+        weight: 78
+        enabled: false
+      nhsc_text_slider:
+        weight: 78
+        enabled: false
+      bp_tab_section:
+        weight: 79
+        enabled: false
+      plain_text:
+        weight: 79
+        enabled: false
+      presenter:
+        weight: 80
+        enabled: false
+      bp_tabs:
+        weight: 80
+        enabled: false
+      simple:
+        weight: 81
+        enabled: false
+      bp_view:
+        enabled: true
+        weight: 81
+      slider:
+        weight: 82
+        enabled: false
+      bp_webform:
+        weight: 82
+        enabled: false
+      slider_items:
+        weight: 83
+        enabled: false
+      nhs_office_search:
+        enabled: true
+        weight: 83
+      topics_and_formats:
+        weight: 84
+        enabled: false
+      bazaar:
+        weight: 84
+        enabled: false
+      nhsc_separator_line:
+        enabled: true
+        weight: 85
+      tag_links:
+        enabled: true
+        weight: 87
+      nhsc_comparison_table:
+        weight: 96
+        enabled: false
+      nhsc_buy_now_paragraph:
+        weight: 107
+        enabled: false
+      nhsc_mobile_expand:
+        weight: 126
+        enabled: false
+      product_selector_section:
+        enabled: true
+        weight: 126
+      nhsc_mobile_expand_component:
+        weight: 127
+        enabled: false
+      nhsc_multiple_faq:
+        weight: 128
+        enabled: false
+      nhsc_multiple_faq_item:
+        weight: 129
+        enabled: false
+      nhsc_nutritional_table:
+        weight: 131
+        enabled: false
+      nhsc_product_gallery_and_intro:
+        weight: 138
+        enabled: false
+      nhsc_product_warning:
+        weight: 140
+        enabled: false
+      nhsc_small_icon_and_heading:
+        weight: 142
+        enabled: false
+      nhsc_thumbnail_items:
+        weight: 146
+        enabled: false
+      nhsc_thumbnail_slider:
+        weight: 147
+        enabled: false
+      nhsc_uneven_columns:
+        weight: 148
+        enabled: false
+      recipe_items:
+        weight: 152
+        enabled: false
+      site_switcher_setting:
+        weight: 160
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,6 @@
+nhsc_cadastro_unico_api.admin:
+  title: 'Cadastro Unico API'
+  description: 'Configure the settings for the Cadastro Unico API'
+  parent: system.admin_config_system
+  route_name: nhsc_cadastro_unico_api.admin
+  weight: 100

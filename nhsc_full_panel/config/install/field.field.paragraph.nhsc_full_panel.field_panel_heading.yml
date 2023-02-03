@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_panel_heading
+    - paragraphs.paragraphs_type.nhsc_full_panel
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_panel_heading
+id: paragraph.nhsc_full_panel.field_panel_heading
+field_name: field_panel_heading
+entity_type: paragraph
+bundle: nhsc_full_panel
+label: panel-heading
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

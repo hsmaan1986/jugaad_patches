@@ -1,0 +1,29 @@
+<div class="modal-calculators">
+	<div class="modal-calculators__container">
+		<div class="modal-calculators__header">
+			<div class="col-logo">
+				<a class="logo" href="/">
+					<img src="/themes/custom/nhsc_master/logo.svg" alt="Nestlé Health Science">
+				</a>
+			</div>
+			<div class="col-breadcrumb" id="calculator-breadcrumbs">
+				<ul class="calculator-breadcrumb">
+					{% for item, breadcrumb in data.breadcrumbs %}
+						<li data-id="{{ item }}">{{ breadcrumb }}</li>
+					{% endfor %}
+				</ul>
+			</div>
+			<div class="col-close">
+				<a class="modal-calculators--btn-close" href="#">
+					{{"Close"|t}}
+					<span>x</span>
+				</a>
+			</div>
+		</div>
+		<div class="progress-bar">
+			<span></span>
+		</div>
+		<div class="modal-calculators__content" id="calculator-placeholder">
+		</div>
+	</div>
+</div>

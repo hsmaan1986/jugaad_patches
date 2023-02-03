@@ -1,0 +1,51 @@
+<?php
+
+/**
+ * @file
+ * Contains hcp_account_notification.module.
+ */
+use Drupal\datetime\Plugin\Field\FieldType\DateTimeItemInterface;
+
+/**
+ * Implements hook_mail().
+ */
+function hcp_account_notification_mail($key, &$message, $params)
+{
+    switch ($key) {
+        case 'notify':
+            $message['subject'] = 'Congratulations on your graduation.';
+            $message['body'][] = '';
+            break;
+    }
+}
+
+/**
+ * Implements hook_cron().
+ */
+function hcp_account_notification_cron() {
+    $now = new \Drupal\Core\Datetime\DrupalDateTime('now');
+    $query = \Drupal::entityQuery('user');
+    $query->condition('field_graduation_date', $now->format(DateTimeItemInterface::DATETIME_STORAGE_FORMAT), '<=');
+    $entity_ids = $query->execute();
+    $accounts = \Drupal\user\Entity\User::loadMultiple($entity_ids);
+
+    foreach($accounts as $account) {
+
+        $profile_type = \Drupal::service('user.data')->get('nhsc_user_profile', $account->id(), 'user_profile');
+
+        $notification_sent = \Drupal::service('user.data')->get('hcp_account_notification', $account->id(), 'graduation_notification');
+        if($profile_type == 'student' && $notification_sent !== 'sent'){
+            \Drupal::service('user.data')->set('hcp_account_notification', $account->id(), 'graduation_notification','sent');
+
+            $account_email = $account->getEmail();
+
+            $params['username'] = $account->field_first_name->getValue();
+
+            $mail_manager = \Drupal::service('plugin.manager.mail');
+            $result = $mail_manager->mail('hcp_account_notification', 'notify', $account_email, 'en', $params);
+
+            \Drupal::logger('hcp_account_notification')->notice('Graduation reminder sent for '.$account_email);
+        }
+    }
+
+}

@@ -1,0 +1,88 @@
+<?php
+
+/**
+ * @file
+ * Contains hcp_reward_system.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+
+
+/**
+ * Implements hook_entity_base_field_info().
+ */
+//function hcp_reward_system_entity_base_field_info(EntityTypeInterface $entity_type) {
+  //$fields = array();
+
+  // Add a 'Highlight' base field to all node types.
+  // if ($entity_type->id() === 'node') {
+  //   $fields['points'] = BaseFieldDefinition::create('boolean')
+  //     ->setLabel(t('Highlight'))
+  //     ->setDescription(t('Whether or not the node is highlighted.'))
+  //     ->setRevisionable(TRUE)
+  //     ->setTranslatable(TRUE)
+  //     ->setDisplayOptions('form', array(
+  //       'type' => 'boolean_checkbox',
+  //       'settings' => array(
+  //         'display_label' => TRUE,
+  //       ),
+  //     ))
+  //     ->setDisplayConfigurable('form', TRUE);
+  // }
+  //
+  // return $fields;
+//}
+
+
+
+/**
+ * Implements hook_help().
+ */
+function hcp_reward_system_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the hcp_reward_system module.
+    case 'help.page.hcp_reward_system':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Reward system with points management and auto-generated certificates  depending on customized  achievements behaviors.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+
+/**
+ * Implements hook_theme().
+ */
+function hcp_reward_system_theme() {
+  $theme = [];
+  $theme['point'] = [
+    'render element' => 'elements',
+    'file' => 'point.page.inc',
+    'template' => 'point',
+  ];
+  $theme['point_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'point.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+* Implements hook_theme_suggestions_HOOK().
+*/
+function hcp_reward_system_theme_suggestions_point(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#point'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'point__' . $sanitized_view_mode;
+  $suggestions[] = 'point__' . $entity->bundle();
+  $suggestions[] = 'point__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'point__' . $entity->id();
+  $suggestions[] = 'point__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}

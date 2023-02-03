@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_nhsc_column_heading_color
+    - paragraphs.paragraphs_type.nhsc_image_and_text_column
+id: paragraph.nhsc_image_and_text_column.field_nhsc_column_heading_color
+field_name: field_nhsc_column_heading_color
+entity_type: paragraph
+bundle: nhsc_image_and_text_column
+label: 'NHSC Column heading color'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

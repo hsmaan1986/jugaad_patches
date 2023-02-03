@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.ingredient
+id: taxonomy_term.ingredient
+target_entity_type_id: taxonomy_term
+target_bundle: ingredient
+default_langcode: site_default
+language_alterable: false

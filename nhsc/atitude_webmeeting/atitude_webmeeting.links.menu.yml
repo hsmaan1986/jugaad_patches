@@ -1,0 +1,6 @@
+atitude_webmeeting.api_settings_form:
+  title: 'Atitude API Settings'
+  route_name: atitude_webmeeting.api_settings_form
+  description: ''
+  parent: system.admin_config_system
+  weight: 99

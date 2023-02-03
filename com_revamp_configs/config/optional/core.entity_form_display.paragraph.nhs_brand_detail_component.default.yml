@@ -1,0 +1,92 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.image_browser
+    - field.field.paragraph.nhs_brand_detail_component.field_heading
+    - field.field.paragraph.nhs_brand_detail_component.field_heading_blocks
+    - field.field.paragraph.nhs_brand_detail_component.field_nhs_brand_detail_copy
+    - field.field.paragraph.nhs_brand_detail_component.field_nhs_brand_detail_copy_two
+    - field.field.paragraph.nhs_brand_detail_component.field_nhs_brand_detail_intro
+    - field.field.paragraph.nhs_brand_detail_component.field_nhs_logo
+    - field.field.paragraph.nhs_brand_detail_component.field_read_more
+    - paragraphs.paragraphs_type.nhs_brand_detail_component
+  module:
+    - entity_browser
+    - link
+    - paragraphs
+    - text
+id: paragraph.nhs_brand_detail_component.default
+targetEntityType: paragraph
+bundle: nhs_brand_detail_component
+mode: default
+content:
+  field_heading:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_heading_blocks:
+    weight: 4
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: nhsc_heading_block
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
+    region: content
+  field_nhs_brand_detail_copy:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_nhs_brand_detail_copy_two:
+    weight: 5
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_nhs_brand_detail_intro:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_nhs_logo:
+    type: entity_browser_file
+    weight: 1
+    settings:
+      entity_browser: image_browser
+      field_widget_edit: true
+      field_widget_remove: true
+      view_mode: default
+      preview_image_style: thumbnail
+      open: true
+      field_widget_replace: false
+      selection_mode: selection_append
+    region: content
+    third_party_settings: {  }
+  field_read_more:
+    weight: 6
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+hidden:
+  created: true
+  status: true

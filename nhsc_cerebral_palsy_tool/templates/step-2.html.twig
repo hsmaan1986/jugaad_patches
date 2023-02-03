@@ -1,0 +1,273 @@
+{# STEP 2#}
+<div class="sticky-wrapper">
+
+<div class="summary__wrap">
+
+{% if summary is not empty %}
+
+  <div class="summary__progress-bar">
+
+    {% for xx in summary %}
+
+      <div class="progress-step">
+
+        <div class="item highlighted-{{ loop.index }}">
+
+          <div class="description">
+
+            {{ xx.value|raw }}
+
+          </div>
+
+          <div class="step-count"></div>
+
+          <div class="step-description"></div>
+
+        </div>
+
+      </div>
+
+    {% endfor %}
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+  {# end modal #}
+
+  <div class="cerebral-palsy-tool-main step-one">
+
+  <div class="wrapper">
+
+    {% if title %}
+
+      <h2 class="cerebral_palsy-tool__h1"{{ title_attributes.addClass('page-header') }}>HELLO{{ title }}</h2>
+
+    {% else %}
+
+      <h2>{{ selected.name }}</h2>
+
+    {% endif %}
+
+    <div class="cerebral-palsy-tool-main__wrapper">
+
+      {% for parent in data %}
+
+        {% if parent.id == selected.first_parent or parent.id == selected.id or parent.id == selected.ancestors %}
+
+          {% for child in parent.children %}
+
+            <div class="btn-standard">
+
+              <label class="radio">
+
+                <span class="radio__input">
+
+                  <input type="radio" class="radio-btn" name="radio" value="{{ child.alias }}" data-link="{{ child.alias }}" data-targeting="{{ child.id }}" />
+
+                    <span class="radio__control"></span>
+
+                  </span>
+
+                <span class="radio__label">{{ child.name }}</span>
+
+              </label>
+
+            </div>
+
+          {% endfor %}
+
+        {% endif %}
+
+      {% endfor %}
+
+    </div>
+
+{# Card #}
+{% for data in selected.card %}
+
+<div class="cp_content_block__wrapper ">
+
+  {% if data.image is not empty %}
+
+    <img class="cp_content-image" src="{{ data.image }}">
+
+  {% endif %}
+
+  <div class="cp_content-title">
+
+    {{ data.title }}
+
+  </div>
+
+  <div class="cp_content-desc">
+
+    {{ data.description|raw }}
+
+  </div>
+
+</div>
+{% endfor %}
+
+{# Conditional Card #}
+{% if selected.children is not empty %}
+
+  {% for ccard in selected.children %}
+
+    {% for card in ccard.conditional_card %}
+
+      <div class="conditional-card-descri-main">
+
+        <div class="cp_content_block__wrapper conditional-card-description radio-description-{{ card.id }} ">
+
+          {% if card.image is not empty %}
+
+            <img class="cp_content-image" src="{{ card.image }}">
+
+          {% endif %}
+
+          <div class="cp_content-title">
+
+            {{ card.title }}
+
+          </div>
+
+          <div class="cp_content-desc">
+
+            {{ card.description|raw }}
+
+          </div>
+
+        </div>
+
+      </div>
+
+    {% endfor %}
+
+  {% endfor %}
+
+{% endif %}
+
+{# Product #}
+<div class="cerebral-palsy-tool-main__solution">
+
+  {% if selected.product_image is not empty %}
+
+  <div class="cerebral-palsy-tool-main__solution-image">
+
+    <img src="{{ selected.product_image }}">
+
+  </div>
+
+  {% endif %}
+
+  <div class="title-size-wrapper">
+
+  {% if selected.recommendation_title is not empty %}
+
+    <div class="cerebral-palsy-tool-main__solution-title">
+
+      {{ selected.recommendation_title }}
+
+    </div>
+
+  {% endif %}
+
+  {% if selected.recommendation_size is not empty %}
+
+    <div class="cerebral-palsy-tool-main__solution-size">
+
+      {{ selected.recommendation_size }}
+
+    </div>
+
+  {% endif %}
+
+  </div>
+
+  {% if selected.recommendation_description is not empty %}
+
+  <div class="cerebral-palsy-tool-main__solution-description">
+
+    {{ selected.recommendation_description|raw }}
+
+  </div>
+
+  {% endif %}
+
+  {# Product icon #}
+  <div class="cerebral-palsy-tool-main__solution-iconwrap">
+
+    {% for data in selected.intake_icon %}
+
+    <div class="{{ data.intake_icon_key }}">
+
+    <div class="icon">
+
+      {{ data.intake_icon }}
+
+    </div>
+
+    <div class="percentage">
+
+      {{ data.percentage_icon }}
+
+    </div>
+
+    </div>
+
+    {% endfor %}
+
+  </div>
+
+</div>
+
+{# More Info #}
+<div class="more-info-wrapper">
+
+  {% for data in selected.more_info %}
+
+  <div class="more-info-wrapper__set">
+
+    <div class="{{ data.icon }}"></div>
+
+    <div class="more-info-wrapper__text">
+
+    <div class="more-info-wrapper__title">
+
+     {{ data.title }}
+
+    </div>
+
+    <div class="more-info-wrapper__desc">
+
+      {{ data.description|raw }}
+
+    </div>
+    </div>
+
+    </div>
+
+  {% endfor %}
+
+</div>
+
+
+{# Continue btn #}
+<div class="sticky-wrapper-step-1">
+  <div class="sticky-step-1">
+  {% if selected.children is not empty %}
+
+    <div class="btn-continue">
+      <a>Next</a>
+    </div>
+
+  {% endif %}
+  </div>
+</div>
+
+</div>
+</div>
+</div>

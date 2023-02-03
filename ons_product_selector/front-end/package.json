@@ -1,0 +1,45 @@
+{
+  "name": "grunt-struct",
+  "title": "Grunt Struct",
+  "description": "An Grunt Struct for website devs",
+  "version": "1.0.0",
+  "author": {
+    "name": "F5 WEB DESIGN E TECNOLOGIA ATUALIZADA",
+    "url": "https://ef5.com.br/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://dev.azure.com/f5web/"
+  },
+  "readmeFile": "README.md",
+  "scripts": {
+    "dev": "grunt",
+    "build": "grunt build",
+    "deploy": "grunt dist"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "compass-mixins": "^0.12.10",
+    "grunt": "^1.5.3",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-babel": "^8.0.0",
+    "grunt-banner": "^0.6.0",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "^2.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-imagemin": "^4.0.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-cwebp": "^3.0.1",
+    "grunt-include-replace": "^5.0.0",
+    "grunt-sass": "^2.0.0",
+    "grunt-spritesmith": "^6.6.0",
+    "imagemin-mozjpeg": "^8.0.0",
+    "jquery": "^3.6.0",
+    "load-grunt-tasks": "^3.5.2",
+    "node-sass": "^4.11.1",
+    "underscore": "1.13.4"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Press category'
+vid: press_category
+description: 'Categories for press release and news events'
+weight: 0

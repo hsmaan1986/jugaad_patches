@@ -1,0 +1,600 @@
+<?php
+
+/**
+ * @file
+ * Contains nhsc_cerebral_palsy_tool.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\file\Entity\File;
+use Drupal\paragraphs\Entity\Paragraph;
+
+/**
+ * Implements hook_help().
+ */
+function nhsc_cerebral_palsy_tool_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the nhsc_cerebral_palsy_tool module.
+    case 'help.page.nhsc_cerebral_palsy_tool':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('NHSc My Child with Cerebral Palsy') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function nhsc_cerebral_palsy_tool_theme($existing, $type, $theme, $path) {
+  return [
+    'nhsc_cerebral_palsy_tool' =>  [
+      'base hook' => 'block',
+      'variables' => [
+        'data' => NULL,
+        'configData' => NULL,
+        'summary' => NULL,
+        'progress' => NULL,
+      ],
+    ],
+    'step_1' =>  [
+      'base hook' => 'block',
+      'variables' => [
+        'data' => NULL,
+        'configData' => NULL,
+        'summary' => NULL,
+        'progress' => NULL,
+      ],
+    ],
+    'step_2' =>  [
+      'base hook' => 'block',
+      'variables' => [
+        'data' => NULL,
+        'configData' => NULL,
+        'summary' => NULL,
+        'progress' => NULL,
+      ],
+    ],
+    'step_3' =>  [
+      'base hook' => 'block',
+      'variables' => [
+        'data' => NULL,
+        'configData' => NULL,
+        'summary' => NULL,
+        'progress' => NULL,
+      ],
+    ],
+    'step_4' =>  [
+      'base hook' => 'block',
+      'variables' => [
+        'data' => NULL,
+        'configData' => NULL,
+        'summary' => NULL,
+        'progress' => NULL,
+      ],
+    ],
+    'step_5' =>  [
+      'base hook' => 'block',
+      'variables' => [
+        'data' => NULL,
+        'configData' => NULL,
+        'summary' => NULL,
+        'progress' => NULL,
+      ],
+    ],
+    'step_6' =>  [
+      'base hook' => 'block',
+      'variables' => [
+        'data' => NULL,
+        'configData' => NULL,
+        'summary' => NULL,
+        'progress' => NULL,
+      ],
+    ],
+    'nhsc_my_child_with_cp_back' => [
+      'variables' => [
+        'url' => NULL,
+      ],
+    ]
+  ];
+}
+
+/**
+ *
+ * Implements hook_preprocess_hook()
+ *
+ * Prepares the variables used by the handlebars template and attaches the library
+ *
+ * @param $variables
+ */
+function nhsc_cerebral_palsy_tool_preprocess_block(&$variables) {
+  $cerebral_palsy_terms = \Drupal::entityTypeManager()
+    ->getStorage('taxonomy_term')
+    ->loadTree('cerebral_palsy_tool');
+
+  $config = \Drupal::config('nhsc_cerebral_palsy_tool.settings');
+
+  $tree = [];
+  foreach ($cerebral_palsy_terms as $tree_object) {
+    $level = 1;
+    nhsc_cerebral_palsy_tool__build_tree($tree, $tree_object, 'cerebral_palsy_tool', $level);
+  }
+
+  $all_tree = [];
+  foreach($tree as $parent):
+    $temp_children = $parent['children'];
+    $all_tree[] = $parent;
+    foreach($temp_children as $child):
+      $temp_child_children = $child['children'];
+      $parent['first_child'] = $temp_children;
+      $all_tree[] = $child;
+      foreach($temp_child_children as $child_child):
+        $all_tree[] = $child_child;
+        $child_children_x = $child_child['children'];
+        foreach($child_children_x as $child_x):
+          $all_tree[] = $child_x;
+          $child_children_y = $child_x['children'];
+          foreach($child_children_y as $child_y):
+            $all_tree[] = $child_y;
+            $child_children_z = $child_y['children'];
+            foreach($child_children_z as $child_z):
+              $all_tree[] = $child_z;
+              $child_children_a = $child_z['children'];
+              foreach($child_children_a as $child_a):
+                $all_tree[] = $child_a;
+                $child_children_b = $child_a['children'];
+                foreach($child_children_b as $child_b):
+                  $all_tree[] = $child_b;
+                  $child_children_c = $child_b['children'];
+                  foreach($child_children_c as $child_c):
+                    $all_tree[] = $child_c;
+                    $child_children_d = $child_c['children'];
+                  endforeach;
+                endforeach;
+              endforeach;
+            endforeach;
+          endforeach;
+        endforeach;
+      endforeach;
+    endforeach;
+  endforeach;
+
+  $flattened_tree = [];
+  foreach($tree as $parent):
+    $temp_children = $parent['children'];
+     unset($parent['children']);
+    $flattened_tree[] = $parent;
+    foreach($temp_children as $child):
+      $temp_child_children = $child['children'];
+      $parent['first_child'] = $temp_children;
+       unset($child['children']);
+      $flattened_tree[] = $child;
+      foreach($temp_child_children as $child_child):
+        $flattened_tree[] = $child_child;
+        $child_children_x = $child_child['children'];
+        unset($child_child['children']);
+        foreach($child_children_x as $child_x):
+          $flattened_tree[] = $child_x;
+          $child_children_y = $child_x['children'];
+          unset($child_x['children']);
+          foreach($child_children_y as $child_y):
+            $flattened_tree[] = $child_y;
+            $child_children_z = $child_y['children'];
+            unset($child_y['children']);
+            foreach($child_children_z as $child_z):
+              $flattened_tree[] = $child_z;
+              $child_children_a = $child_z['children'];
+              unset($child_z['children']);
+              foreach($child_children_a as $child_a):
+                $flattened_tree[] = $child_a;
+                $child_children_b = $child_a['children'];
+                unset($child_a['children']);
+                foreach($child_children_b as $child_b):
+                  $flattened_tree[] = $child_b;
+                  $child_children_c = $child_b['children'];
+                  unset($child_b['children']);
+                  foreach($child_children_c as $child_c):
+                    $flattened_tree[] = $child_c;
+                    $child_children_d = $child_c['children'];
+                    unset($child_b['children']);
+                  endforeach;
+                endforeach;
+              endforeach;
+            endforeach;
+          endforeach;
+        endforeach;
+      endforeach;
+    endforeach;
+  endforeach;
+
+  $configData = $config->getRawData();
+
+  if ($configData['welcome_image'][0]) {
+    $file = File::load($configData['welcome_image'][0]);
+    if ($file) {
+      $path = $file->getFileUri();
+      $configData['welcome_image'] = file_create_url($path);
+    }
+  }
+
+  $variables['step'] = nhsc_cerebral_palsy_tool__get_step($flattened_tree);
+  $variables['selected'] = nhsc_cerebral_palsy_tool__get_selected($all_tree);
+  $variables['summary'] = nhsc_cerebral_palsy_tool__get_summary($flattened_tree);
+  $variables['progress'] = nhsc_cerebral_palsy_tool__get_progress($flattened_tree);
+  $variables['data'] = $tree;
+  $variables['config'] = $configData;
+
+}
+
+/**
+ * Builds the taxnomy tree stucture
+ * @return void
+ */
+function nhsc_cerebral_palsy_tool__build_tree(&$tree, $object, $vocabulary, $level){
+  if ($object->depth != 0) {
+    return;
+  }
+
+  $tree_data = [];
+
+  $term_object = Term::load($object->tid);
+
+  $tree[$object->tid]['id'] = $object->tid;
+  $tree[$object->tid]['level'] = $level;
+  $tree[$object->tid]['name'] = $object->name;
+
+  // Load the paragraphs
+  if ($term_object->field_cerebral_palsy_paragraphs->target_id  != NULL){
+    $target_id = $term_object->field_cerebral_palsy_paragraphs->target_id;
+
+    foreach ($term_object->field_cerebral_palsy_paragraphs  as $cerebral_palsy_paragraphs) {
+
+      $paragraphId = $cerebral_palsy_paragraphs->target_id;
+      $paragraph = Paragraph::load($paragraphId);
+      $type = $paragraph->getType();
+
+      if ($type == 'cerebral_palsy_recommendation') {
+        // Recommended description
+        if ($paragraph->field_cerebral_palsy_product_des->value  != NULL){
+          $tree[$object->tid]['recommendation_description'] = $paragraph->field_cerebral_palsy_product_des->value;
+        }
+
+        // Recommended title
+        if ($paragraph->field_cerebral_palsy_title->value  != NULL){
+          $tree[$object->tid]['recommendation_title'] = $paragraph->field_cerebral_palsy_title->value;
+        }
+
+        // Recommended sizes
+        if ($paragraph->field_cerebral_palsy_size->value  != NULL){
+          $tree[$object->tid]['recommendation_size'] = $paragraph->field_cerebral_palsy_size->value;
+        }
+
+        // Load the image
+        if ($paragraph->field_cerebral_palsy_image->target_id !== NULL){
+          $image_target_id = $paragraph->field_cerebral_palsy_image->target_id;
+          $image_file = File::load($image_target_id);
+          $image_absolute_path = file_create_url($image_file->getFileUri());
+          $tree[$object->tid]['product_image'] = $image_absolute_path;
+        }
+
+        // Recommended Intake
+        if ($paragraph->field_recommended_intake->target_id !== NULL){
+          $intake_target_id = $paragraph->field_recommended_intake->target_id;
+
+          foreach ($paragraph->field_recommended_intake as $intake) {
+            $intakeParagraph = Paragraph::load($intake->target_id);
+
+            // Recommended Intake Icon
+            if ($intakeParagraph->field_cerebral_palsy_icon->value  != NULL){
+              $label = $intakeParagraph->field_cerebral_palsy_icon->getSetting('allowed_values')[$intakeParagraph->field_cerebral_palsy_icon->value];
+              $tree[$object->tid]['intake_icon'][] = [
+                'intake_icon' => $label,
+                'intake_icon_key' => $intakeParagraph->field_cerebral_palsy_icon->value,
+                'percentage_icon' => $intakeParagraph->field_cerebral_palsy_percentage->value,
+              ];
+
+            }
+
+          }
+
+        }
+      }
+
+      if ($type == 'cerebral_palsy_card') {
+
+        // Card Load the image
+        $card_absolute_path = '';
+        if ($paragraph->field_cerebral_palsy_image->target_id !== NULL){
+          $card_target_id = $paragraph->field_cerebral_palsy_image->target_id;
+          $card_file = File::load($card_target_id);
+          $card_absolute_path = file_create_url($card_file->getFileUri());
+        }
+
+        $tree[$object->tid]['card'][] = [
+          'description' => $paragraph->field_cerebral_palsy_description->value ?: '', // Card description
+          'title' => $paragraph->field_cerebral_palsy_title->value ?: '', // Card title
+          'image' => $card_absolute_path ?: '', // Card title
+        ];
+
+      }
+
+      if ($type == 'cerebral_palsy_conditional_card') {
+
+        // Card Load the image
+        $card_c_absolute_path = '';
+        if ($paragraph->field_cerebral_palsy_c_image->target_id !== NULL){
+          $card_c_target_id = $paragraph->field_cerebral_palsy_c_image->target_id;
+          $card_c_file = File::load($card_c_target_id);
+          $card_c_absolute_path = file_create_url($card_c_file->getFileUri());
+        }
+
+        $tree[$object->tid]['conditional_card'][] = [
+          'description' => $paragraph->field_cerebral_palsy_c_desc->value ?: '', // Card description
+          'title' => $paragraph->field_cerebral_palsy_c_title->value ?: '', // Card title
+          'image' => $card_c_absolute_path ?: '', // Card title
+          'id' => $object->tid ?: '', // Card title
+        ];
+      }
+
+      if ($type == 'cerebral_palsy_buttons') {
+
+        $tree[$object->tid]['button'][] = [
+          'description' => ($paragraph->field_cerebral_palsy_description->value) ?: '', // Buttons description
+          'url' => $paragraph->field_cerebral_palsy_link->uri ?: '', // Buttons link
+          'text' => $paragraph->field_cerebral_palsy_link->title ?: '', // Buttons title
+          'type' => $paragraph->field_cerebral_palsy_type->value ?: '', // Buttons type
+        ];
+      }
+
+      if ($type == 'cerebral_palsy_more_information') {
+
+        $tree[$object->tid]['more_info'][] = [
+          'title' => $paragraph->field_cerebral_palsy_title->value ?: '', // More Information
+          'icon' => $paragraph->field_cerebral_palsy_fontawesome->value ?: '', // More Icon
+          'description' => $paragraph->field_cerebral_palsy_description->value ?: '', // More Description
+        ];
+      }
+
+    }
+
+  }
+
+  // Summary text
+  if ($term_object->field_summary_title->value  != NULL){
+    $tree[$object->tid]['summary_text'] = $term_object->field_summary_title->value;
+  }
+
+  // Summary taxonomy
+  if ($term_object->field_sub_category->target_id  != NULL){
+    $summary_category_id = $term_object->field_sub_category->target_id;
+    $summary_category_name = Term::load($summary_category_id)->get('name')->value;
+    $tree[$object->tid]['summary_category'] = $summary_category_name;
+    $tree[$object->tid]['summary_category_id'] = $summary_category_id;
+  }
+
+  // Load the title
+  if ($term_object->field_title->value  != NULL){
+    $tree[$object->tid]['title'] = $term_object->field_title->value;
+  }
+
+  // Load the author
+  if ($term_object->field_author->value  != NULL){
+    $tree[$object->tid]['author'] = $term_object->field_author->value;
+  }
+
+  // Load the image
+  // Author image
+  if ($term_object->field_author_image->entity !== NULL){
+    $absolute_path_author = file_create_url($term_object->field_author_image->entity->getFileUri());
+    $tree[$object->tid]['image_author'] = $absolute_path_author;
+  }
+
+  // Load the image
+  // Body image
+  if ($term_object->field_image->entity !== NULL){
+    $absolute_path_image = file_create_url($term_object->field_image->entity->getFileUri());
+    $tree[$object->tid]['image'] = $absolute_path_image;
+  }
+
+  // Load the image
+  // Body image
+  if ($term_object->field_cerebral_palsy_button_icon->entity !== NULL){
+    $absolute_path_icon = file_create_url($term_object->field_cerebral_palsy_button_icon->entity->getFileUri());
+    $tree[$object->tid]['button_icon_image'] = $absolute_path_icon;
+  }
+
+  $ancestors = \Drupal::entityTypeManager()->getStorage("taxonomy_term")->loadAllParents($object->tid);
+  $list = [];
+  foreach ($ancestors as $term) {
+    $list[] = $term->id();
+  }
+
+  $lastElement = end($list);
+  if ($lastElement) {
+    $ancestorsTerm = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($lastElement);
+    $tree[$object->tid]['ancestors'] = $ancestorsTerm->id();
+  }
+
+  $tree[$object->tid]['first_parent'] = $list[1];
+
+  $aliasManager = \Drupal::service('path_alias.manager');
+  $alias = $aliasManager->getAliasByPath('/taxonomy/term/' . $object->tid);
+  $tree[$object->tid]['alias'] = $alias;
+  $tree[$object->tid]['description'] = $term_object->description->value;
+
+  $children = \Drupal::entityTypeManager()
+    ->getStorage('taxonomy_term')
+    ->loadChildren($object->tid);
+
+  if (!$children) {
+    return;
+  }
+
+  $object_children = &$tree[$object->tid]['children'];
+  $tree[$object->tid]['children'] = [];
+
+  $child_tree_objects = \Drupal::entityTypeManager()
+    ->getStorage('taxonomy_term')
+    ->loadTree($vocabulary, $object->tid);
+
+  $level++;
+  foreach ($children as $child) {
+    foreach ($child_tree_objects as $child_tree_object) {
+      if ($child_tree_object->tid == $child->id()) {
+        nhsc_cerebral_palsy_tool__build_tree($object_children, $child_tree_object, $vocabulary, $level);
+      }
+    }
+  }
+}
+
+/**
+ * Gets the current step
+ *
+ * @param array $tree
+ * @return int
+ */
+function nhsc_cerebral_palsy_tool__get_step($flattened_tree){
+  $current_path = \Drupal::service('path.current')->getPath();
+  $path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+  $step = 1;
+
+  foreach ($flattened_tree as $item):
+    if ($item['alias'] == $path_alias){
+      $step = $item['level'] + 1;
+      break;
+    }
+  endforeach;
+
+  return $step;
+}
+
+/**
+ * Gets the selected item or NULL
+ *
+ * @param $flattened_tree
+ * @return int|NULL
+ */
+function nhsc_cerebral_palsy_tool__get_selected($all_tree){
+  $current_path = \Drupal::service('path.current')->getPath();
+  $path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+
+  $selected = NULL;
+
+  foreach ($all_tree as $item):
+    if ($item['alias'] == $path_alias){
+      $selected = $item;
+      break;
+    }
+  endforeach;
+
+  return $selected;
+}
+
+/**
+ * Gets the summary of selected tree
+ *
+ * @param $flattened_tree
+ * @return int|NULL
+ */
+function nhsc_cerebral_palsy_tool__get_summary($flattened_tree){
+  $current_path = \Drupal::service('path.current')->getPath();
+  $path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+
+  $selected = NULL;
+
+  foreach ($flattened_tree as $item):
+    if ($item['alias'] == $path_alias){
+      $selected = $item;
+      break;
+    }
+  endforeach;
+
+  $listTrail = [];
+  $listAnswers = [];
+  if (isset($selected['id'])) {
+    $selected_id = $selected['id'];
+    $parents = \Drupal::service('entity_type.manager')->getStorage("taxonomy_term")->loadAllParents($selected_id);
+    $depth = count($parents);
+
+    foreach ($parents as $term) {
+
+      if ($term->field_sub_category->target_id) {
+        $sub_category_id = $term->field_sub_category->target_id;
+        if (!empty($sub_category_id)) {
+          $sub_category_name = Term::load($sub_category_id)->get('name')->value;
+        }
+        $listAnswers[$depth] = ($sub_category_name) ?: '';
+      }
+
+      if ($term->field_summary_title->value) {
+        $listTrail[$depth] = [
+          'value' => ($term->field_summary_title->value) ?: '',
+          'label' => $listAnswers[$depth] = ($sub_category_name) ?: ''
+        ];
+      }
+
+      $depth--;
+    }
+  }
+
+  return array_reverse($listTrail);
+
+}
+
+/**
+ * Gets the Progress of selected tree
+ *
+ * @param $flattened_tree
+ * @return int|NULL
+ */
+function nhsc_cerebral_palsy_tool__get_progress($flattened_tree){
+  $current_path = \Drupal::service('path.current')->getPath();
+  $path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+
+  $selected = NULL;
+
+  foreach ($flattened_tree as $item):
+    if ($item['alias'] == $path_alias){
+      $selected = $item;
+      break;
+    }
+  endforeach;
+
+  $listAnswers = [];
+  if (isset($selected['id'])) {
+    $selected_id = $selected['id'];
+    $parents = \Drupal::service('entity_type.manager')->getStorage("taxonomy_term")->loadAllParents($selected_id);
+    $depth = count($parents);
+
+    foreach ($parents as $term) {
+
+      if ($term->field_sub_category->target_id) {
+        $sub_category_id = $term->field_sub_category->target_id;
+        if (!empty($sub_category_id)) {
+          $sub_category_name = Term::load($sub_category_id)->get('name')->value;
+        }
+        $listAnswers[$depth] = ($sub_category_name) ?: '';
+      }
+
+
+      $depth--;
+    }
+  }
+
+  return $listAnswers;
+
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function nhsc_cerebral_palsy_tool_page_attachments(array &$page) {
+  $page['#attached']['library'][] = 'nhsc_cerebral_palsy_tool/nhsc_cerebral_palsy_tool';
+}
+
+function nhsc_cerebral_palsy_tool_update_8207() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'nhsc_cerebral_palsy_tool');
+}

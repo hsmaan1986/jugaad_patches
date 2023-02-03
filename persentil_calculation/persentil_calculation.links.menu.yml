@@ -1,0 +1,6 @@
+persentil_calculation.settings_form:
+  title: persentil_calculation
+  description: Configure persentil_calculation.
+  parent: system.admin_config_system
+  route_name: persentil_calculation.settings_form
+  weight: 10

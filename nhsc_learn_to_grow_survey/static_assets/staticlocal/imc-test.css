@@ -1,0 +1,164 @@
+a.button {
+    background-color: #00549f;
+}
+
+.imc-form{
+    background-color: #f3fbfd;
+    padding: 20px;
+    margin: 20px 0px;
+}
+.imc-form span{
+    margin-right: 2%;
+}
+.imc-form input{
+	margin-right: 2%;
+	margin-bottom: 15px;
+}
+.resultados{
+	color: #00549f;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.resultados-content{
+	color: #00a2ca;
+    font-weight: bold;
+}
+
+.table.nhs_table{
+	 margin-top: 20px;
+}
+
+.kalory-test {position: relative; margin-top:30px }
+.kalory-test img{width: 100%}
+.kalory-test .text-wrapper.kal-calc{position: absolute;left: 53%;    top: 20%;}
+.kalory-test .text-wrapper.left-side{position: absolute;right: 58%; left: 4%;   top: 20%;}
+
+.kalory-test .text-wrapper.left-side .title{
+    color:white;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.kalory-test .text-wrapper.left-side .content{
+    color:white;
+    font-size:15px;
+    margin-top:12px
+}
+
+.kalory-test .text-wrapper.kal-calc .title{
+    color: #00549f;
+    font-size:20px;
+}
+
+#kal-calc{
+    margin-left: 2%;
+}
+
+.form-line-desk{
+	display:block;
+}
+
+.ErrorMessage{
+	text-align: center;
+}
+
+.ErrorMessage p{
+	padding: 20px 0px;
+}
+
+.table-header{
+	width: 75%;
+	background-color: #00a3cc;
+    color: white;
+    margin: 0 auto;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 0px;
+}
+
+.table-header p{
+	padding: 0px 10px;
+	font-size: 1.13em;
+}
+
+table.nhs_table{
+	margin: 0 auto;
+	width: 75%;
+}
+
+table.nhs_table tr td{
+	border:  0px none black;
+	border-bottom: 1px solid #c2c6ce;
+}
+
+table.nhs_table tr:nth-child(1) td{	
+	background-color: white !important;
+}
+
+table.nhs_table tr:nth-child(3) td{	
+	background-color: white !important;
+}
+
+table.nhs_table tr:nth-child(odd) td{	
+	background-color: #ecfafb;
+}
+
+table.nhs_table tr.header td{	
+	background-color: #00a3cc;
+	color: white
+}
+
+table.nhs_table tr:first-child td{
+	font-weight: normal;
+	font-size: inherit;
+}
+
+@media only screen and (max-width: 480px){
+	.form-line {
+	    display:block;
+	    text-align :center;
+	    margin-top:10px
+	}
+
+	.button{
+	    display:block;
+	    text-align :center;
+	    margin-top:20px
+	}
+
+	.kalory-test .image_mobile{
+	    display:none;
+	}
+	.text-wrapper.left-side{
+	    position: relative !important;
+	    display: block;
+	    width:100%;
+	    right: inherit !important;
+	    left: inherit !important;
+	}
+
+	.text-wrapper.left-side .title{
+		color:#00549f  !important ;
+	}
+
+	.text-wrapper.left-side .content{
+	    color: black !important;
+	}
+
+	.text-wrapper.kal-calc{
+	    position: relative !important;
+	    display: block;
+	    width:100%;
+	    right: inherit !important;
+	    left: inherit !important;
+	}
+
+	.table-header{
+		width: 100%;
+	}
+	
+	table.nhs_table{
+		width: 100%;
+	}
+}

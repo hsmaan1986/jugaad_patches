@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_nhsc_heading_underline
+    - paragraphs.paragraphs_type.nhsc_image_and_text_column
+id: paragraph.nhsc_image_and_text_column.field_nhsc_heading_underline
+field_name: field_nhsc_heading_underline
+entity_type: paragraph
+bundle: nhsc_image_and_text_column
+label: 'Heading Underline'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

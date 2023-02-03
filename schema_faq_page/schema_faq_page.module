@@ -1,0 +1,184 @@
+<?php
+
+/**
+ * @file
+ * Contains schema_faq_page.module.
+ */
+
+/**
+ * Implements hook_token_info().
+ */
+function schema_faq_page_token_info() {
+    $type = [
+        'name' => t('FAQ Tokens'),
+        'description' => t('Tokens for FAQs.'),
+    ];
+
+    $node['questions'] = [
+        'name' => t("Questions"),
+        'description' => t('List of questions'),
+    ];
+
+    $node['answers'] = [
+        'name' => t("Answers"),
+        'description' => t('List of answers'),
+    ];
+
+    return [
+        'types' => ['FAQ_token' => $type],
+        'tokens' => ['FAQ_token' => $node],
+    ];
+}
+
+/**
+ * Implements hook_tokens().
+ */
+function schema_faq_page_tokens($type, $tokens, array $data, array $options, \Drupal\Core\Render\BubbleableMetadata $bubbleable_metadata) {
+    $replacements = [];
+
+    $node = Drupal::routeMatch()->getParameter('node');
+    $main_titles = [];
+    $faq_questions = [];
+    $faq_answers = [];
+
+    if ($node instanceof \Drupal\node\NodeInterface ) {
+
+        if ($node->hasField('field_nhsc_faq')) {
+
+            $field = $node->get('field_nhsc_faq');
+            $paragraphs = $field->referencedEntities();
+
+            foreach ($paragraphs as $paragraph) {
+
+
+                if ($paragraph->getType() === 'nhsc_multiple_faq'){
+                    //field_nhsc_multiple_faq_item
+                    $main_title = $paragraph->get('field_title')->value;
+
+                    $main_titles[] = $main_title;
+
+                    // slider items
+                    $sliders = $paragraph->get('field_nhsc_multiple_faq_item')->referencedEntities();
+                    foreach ($sliders as $slider) {
+                        $faq_title = $slider->get('field_title')->value;
+                        $faq_body = $slider->get('field_body')->value;
+
+                        $faq_questions[] = $faq_title;
+                        $faq_answers[]   = $faq_body;
+                    }
+
+                }
+
+            }
+
+        }
+
+
+    }
+
+    if ($type == 'FAQ_token' && !empty($data['node'])) {
+        foreach ($tokens as $name => $original) {
+
+            switch ($name) {
+
+                case 'questions':
+//                    $replacements[$original][1] = implode(',', $faq_questions);
+                    $replacements[$original] = $faq_questions;
+                    break;
+                case 'answers':
+
+//                    $replacements[$original] = implode(',', $faq_answers);
+                    $replacements[$original] = $faq_answers;
+                    break;
+            }
+        }
+
+    }
+    return $replacements;
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function schema_faq_page_page_attachments (&$page) {
+
+    $javascript_header = [
+        "@context" => "https://schema.org",
+        "@graph" => [
+            "@type" => "FAQPage",
+            "mainEntity" => getFAQdata(),
+        ],
+    ];
+
+    $page['#attached']['html_head'][] = [
+        // The data.
+        [
+            // Add a <script> tag.
+            '#tag' => 'script',
+            // Add JavaScript to the <script> tag.
+            '#value' =>  \Drupal\Core\Render\Markup::create(
+                json_encode($javascript_header,
+                JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_LINE_TERMINATORS
+                )),
+            // Give weight so it appears after meta tags, etc.
+            '#weight' => -1,
+            '#attributes' => [
+                'type' => 'application/ld+json'
+            ]
+        ],
+        // A key, to make it possible to recognize this HTML <HEAD> element when altering.
+        'key'
+    ];
+}
+
+if (function_exists('getFAQdata') === false) {
+  function getFAQdata (){
+
+    $node = Drupal::routeMatch()->getParameter('node');
+
+    $question_answers = [];
+    if ($node instanceof \Drupal\node\NodeInterface ) {
+
+      if ($node->hasField('field_nhsc_faq')) {
+
+        $field = $node->get('field_nhsc_faq');
+        $paragraphs = $field->referencedEntities();
+
+
+        foreach ($paragraphs as $paragraph) {
+
+          if ($paragraph->getType() === 'nhsc_multiple_faq'){
+            //field_nhsc_multiple_faq_item
+            $main_title = $paragraph->get('field_title')->value;
+
+            $main_titles[] = $main_title;
+
+            // slider items
+            $sliders = $paragraph->get('field_nhsc_multiple_faq_item')->referencedEntities();
+            foreach ($sliders as $slider) {
+              $faq_title = $slider->get('field_title')->value;
+              $faq_body = $slider->get('field_body')->value;
+
+              $question_answers[] = [
+                "@type" => "Question",
+                "name" => $faq_title,
+                "acceptedAnswer" => [
+                  "@type" => "Answer",
+                  "text" =>$faq_body,
+                ]
+              ];
+
+            }
+
+          }
+
+        }
+
+      }
+
+
+    }
+
+    return $question_answers;
+  }
+}

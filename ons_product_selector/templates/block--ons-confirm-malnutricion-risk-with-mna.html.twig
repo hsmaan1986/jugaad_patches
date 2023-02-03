@@ -1,0 +1,86 @@
+<div class="calculator calculator--mna" id="mna">
+	<h2 class="calculator__title">
+		{{ 'Confirm malnutrition risk with MNA'|t }}
+		<span class="onsTooltip">
+			<span class="onsTooltip__icon">?</span>
+<span class="onsTooltip__content">{{ 'MNA® questionnaire  detects the presence of malnutrition and risk of developing malnutrition among the elderly in home-care programmes, nursing homes and hospitals.<br />Screening tool recommended by ESPEN in elderly population<sup>1</sup>'|t }}</span>
+
+		</span>
+	</h2>
+
+	<form method="POST" action="{{data.action}}" id="mna">
+	<input type="hidden" name="weightloss" value="{{data.formData.weightloss}}">
+  <input type="hidden" name="weightlossPercentage" value="{{data.formData.weightlossPercentage}}" >
+	<input type="hidden" name="bmi" value="{{data.formData.bmi}}">
+		<div class="calculator__form-group calculator__form-group--radio">
+			<p>{{ 'Has food intake declined over the past 3 months due to loss of appetite, digestive problems, chewing or swallowing difficultes?'|t }}</p>
+			<div class="item">
+				<input type="radio" id="intake_0" name="intake" value="0">
+				<label for="intake_0">{{ 'Severe decrease in food intake'|t }}</label>
+			</div>
+			<div class="item">
+				<input type="radio" id="intake_1" name="intake" value="1">
+				<label for="intake_1">{{ 'Moderate decrease in food intake'|t }}</label>
+			</div>
+			<div class="item">
+				<input type="radio" id="intake_2" name="intake" value="2">
+				<label for="intake_2">{{ 'No decrease in food intake'|t }}</label>
+			</div>
+		</div>
+
+		<div class="calculator__form-group calculator__form-group--radio">
+			<p>{{ 'Mobility'|t }}</p>
+			<div class="item">
+				<input type="radio" id="mobility_0" name="mobility" value="0">
+				<label for="mobility_0">{{ 'Bed or chair bound'|t }}</label>
+			</div>
+			<div class="item">
+				<input type="radio" id="mobility_1" name="mobility" value="1">
+				<label for="mobility_1">{{ 'Able to get out bed/chair but does not go out'|t }}</label>
+			</div>
+			<div class="item">
+				<input type="radio" id="mobility_2" name="mobility" value="2">
+				<label for="mobility_2">{{ 'Goes out'|t }}</label>
+			</div>
+		</div>
+
+		<div class="calculator__form-group calculator__form-group--radio">
+			<p>{{ 'Has suffered psychological stress or acute disease in the past 3 months?'|t }}</p>
+			<div class="item">
+				<input type="radio" id="psychological_0" name="psychological" value="0">
+				<label for="psychological_0">{{ 'Yes'|t }}</label>
+			</div>
+			<div class="item">
+				<input type="radio" id="psychological_1" name="psychological" value="2">
+				<label for="psychological_1">{{ 'No'|t }}</label>
+			</div>
+		</div>
+
+		<div class="calculator__form-group calculator__form-group--radio">
+			<p>{{ 'Neuropsychogical problems'|t }}</p>
+			<div class="item">
+				<input type="radio" id="neuropsychological_0" name="neuropsychological" value="0">
+				<label for="neuropsychological_0">{{ 'Severe dementia or depression'|t }}</label>
+			</div>
+			<div class="item">
+				<input type="radio" id="neuropsychological_1" name="neuropsychological" value="1">
+				<label for="neuropsychological_1">{{ 'Mild dementia'|t }}</label>
+			</div>
+			<div class="item">
+				<input type="radio" id="neuropsychological_2" name="neuropsychological" value="2">
+				<label for="neuropsychological_2">{{ 'No psychological problems'|t }}</label>
+			</div>
+		</div>
+		<span class="onsTooltip onsTooltip--reference">
+			<span class="onsTooltip__text">{{"References"|t}}</span>
+			<span class="onsTooltip__content">
+				{{'1 - Vellas B et al. Overview of the MNA® - Its History and Challenges. J Nutr Health Aging 2006;10:456-465.'|t}}<br/>
+				{{'2 - Rubenstein LZ et al. Screening for Undernutrition in Geriatric Practice: Developing the Short-Form Mini Nutritional Assessment (MNA-SF). J. Geront 2001;56A: M366-377.'|t}}<br/>
+				{{'3 - Guigoz Y. The Mini-Nutritional Assessment (MNA®) Review of the Literature - What does it tell us? J Nutr Health Aging 2006; 10:466-487.'|t}}<br/>
+				{{'4 - Kaiser MJ et al. Validation of the Mini Nutritional Assessment Short-Form (MNA®-SF): A practical tool for identification of nutritional status. J Nutr Health Aging 2009; 13:782-788.'|t}}<br/>
+				{{'® Société des Produits Nestlé SA, Trademark Owners'|t}}<br/>
+				{{'© Société des Produits Nestlé SA 1994, Revision 2009. For more information: www.mna-elderly.com'|t}}
+			</span>
+		</span>
+	</form>
+</div>

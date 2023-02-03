@@ -1,0 +1,24 @@
+excluded:
+  - block.block.corporate_vitaflo_views_block__nhsc_banner_buttons_block_1
+  - block.block.corporate_vitaflo_views_block__nhsc_bottom_buttons_block_1
+  - block.block.corporate_vitaflo_views_block__nhsc_faq_block_block_1
+  - block.block.corporate_vitaflo_views_block__nhsc_master_icons_block_block_1
+  - block.block.corporate_vitaflo_views_block__nhsc_master_people_slider_block_1
+  - block.block.corporate_vitaflo_views_block__nhsc_new_master_image_slider_top_block_1
+  - block.block.corporate_vitaflo_views_block__people_slider_block_1
+  - block.block.nestlehcp_views_block__nhsc_banner_buttons_block_1
+  - block.block.nestlehcp_views_block__nhsc_bottom_buttons_block_1
+  - block.block.nestlehcp_views_block__nhsc_faq_block_block_1
+  - block.block.nestlehcp_views_block__nhsc_master_icons_block_block_1
+  - block.block.nestlehcp_views_block__nhsc_master_people_slider_block_1
+  - block.block.nestlehcp_views_block__nhsc_new_master_image_slider_top_block_1
+  - block.block.nestlehcp_views_block__people_slider_block_1
+  - block.block.views_block__nhsc_banner_buttons_block_1
+  - block.block.views_block__nhsc_bottom_buttons_block_1
+  - block.block.views_block__nhsc_faq_block_block_1
+  - block.block.views_block__nhsc_master_icons_block_block_1
+  - block.block.views_block__nhsc_master_people_slider_block_1
+  - block.block.views_block__nhsc_new_master_image_slider_top_block_1
+  - block.block.views_block__people_slider_block_1
+  - user.role.content_manager_whitelabel_
+required: true

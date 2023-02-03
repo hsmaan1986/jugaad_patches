@@ -1,0 +1,18 @@
+nhsc_linked_in_feed.config_form:
+  path: '/admin/config/content/nhsc_linked_in_feed'
+  defaults:
+    _title: 'Get Linkedin Feed settings'
+    _form: '\Drupal\nhsc_linked_in_feed\Form\GetLinkedinFeedSettings'
+  requirements:
+    _permission: 'administer content types'
+  options:
+    _admin_route: true
+
+nhsc_linked_in_feed.get_token_linkedin:
+  path: '/admin/config/content/nhsc_linked_in_feed/token'
+  defaults:
+    _controller: '\Drupal\nhsc_linked_in_feed\Controller\GetTokenLinkedin::getToken'
+  requirements:
+    _permission: 'administer content types'
+  options:
+    _admin_route: true

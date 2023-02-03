@@ -1,0 +1,26 @@
+form_id: nhsc_comiss_score_survey_settings_form
+comiss_score_webform_name: comiss_score
+comiss_score_content: "<h1>PURPOSE</h1>\r\n\r\n<p>The CoMiSS<sup>TM</sup>&nbsp;is a simple, fast and easy-to-use awareness tool for non-IgE mediated cows' milk-related symptoms. It increases awareness of the most common symptoms of cows' milk allergy (CMA) that in turn can aid an earlier diagnosis. CoMiSS<sup>TM</sup>&nbsp;can also be used to evaluate and quantify the evolution of symptoms during a therapeutic intervention.</p>\r\n\r\n<h2>THE CoMiSS<sup>TM</sup>&nbsp;SCORING</h2>\r\n\r\n<p>The CoMiSS<sup>TM</sup>&nbsp;score ranges from 0 to 33.<br />\r\n<br />\r\nEach symptom has a maximal score of six, with the exception of respiratory symptoms (maximal score of three).<br />\r\n<br />\r\nAn arbitrary cut-off value of ≥12 was selected as the criterion to pick up infants at risk of CMA. A score of 12 requires the presence of at least two severe symptoms and a score higher than 12 requires the presence of at least three symptoms and the involvement of two organ systems.<br />\r\n<br />\r\nPublished data using the CoMiSS in clinical trials show that the predictive value of the tool is 80% if the score is &gt;12 at the start and decreases to &lt; 6 within 2 weeks under an elimination diet with an extensiviley hydrolysed formula.</p>\r\n\r\n<p>CoMiSS<sup>TM</sup>&nbsp;is not a diagnostic tool. CMA diagnosis can only be confirmed by an elimination diet followed by an oral food challenge.</p>\r\n\r\n<hr />\r\n<p>&nbsp;</p>\r\n\r\n<h1>THE CoMiSS<sup>TM</sup>&nbsp;SCORING FORM</h1>\r\n\r\n<p><strong>Now rate the observed/reported symptoms by choosing the most appropriate score for each type of symptom or download the blank scoring form.</strong></p>\r\n\r\n<hr />"
+comiss_score_cutoff_value: '12'
+comiss_score_below_cutoff: "<p>A total score of &lt; 12 indicates the symptoms are less likely to be related to<br />\r\ncow’s milk. Look for other causes.<br />\r\n<br />\r\n<br />\r\nPrint full test results via your browser or share link with detailed results.</p>\r\n"
+comiss_score_above_cutoff: "<p>A total score of ≥ 12 indicates the symptoms are likely cow's milk-related.</p>\r\n\r\n<p>This could potentially be cow's milk protein allergy (CMPA). However, a CMPA<br />\r\ndiagnosis can only be confirmed by an elimination diet followed by a oral food<br />\r\nchallenge.</p>\r\n\r\n<p><br />\r\nPrint full test results via your browser or share link with detailed results.<br />\r\n&nbsp;</p>\r\n"
+comiss_score_total_score: '32'
+above_first_cta_link: 'https://www.nestlehealthscience.co.uk/health-management/food-allergy/diagnosis-support-for-cmpa'
+above_first_cta_text: 'Diagnostic support'
+above_second_cta_link: 'https://www.nestlehealthscience.co.uk/brands/althera-and-alfamino'
+above_second_cta_text: 'Choose the right solution'
+below_first_cta_link: 'https://www.nestlehealthscience.co.uk/health-management/food-allergy/diagnosis-support-for-cmpa'
+below_first_cta_text: 'Diagnostic support'
+below_second_cta_link: 'https://www.nestlehealthscience.co.uk/health-management/food-allergy/pediatric-allergy-hcp'
+below_second_cta_text: 'Read more about CMPA'
+comiss_survey_title: 'CoMiSS: Cow’s Milk-related Symptom Score'
+purpose_copy: "<p>The CoMiSS is a simple, fast and easy-to-use awareness tool for cow’s milk-related symptoms. It increases awareness of the most common symptoms of cow’s milk protein allergy (CMPA) that in turn can aid an earlier diagnosis. CoMiSS can also be used to evaluate and quantify the evolution of symptoms during a therapeutic intervention.</p>\r\n"
+reading_results_copy: "<p>The scoring ranges from 0 to 33. Each symptom has a maximal score of 6, except respiratory symptoms where the maximal score is 3. If final score ≥ 12, the symptoms are likely cow’s milk related. This could potentially be CMPA. If final score &lt;12, the symptoms are less likely related to cow’s milk. Look for other causes. CMPA diagnosis can only be confirmed by an elimination diet followed by an oral food challenge.</p>\r\n"
+pdf_form_location: ''
+company_logo_location: '2353'
+copy_right_text: '© 2015 Nestlé Health Science'
+instructions_copy: "<p>If there is a suspicion of cow’s milk-related symptoms, rate the observed/reported symptoms by choosing the most appropriate score for each type of symptom. Once completed, add the scores together and put the total in the box at the bottom of the scoring form.</p>\r\n"
+reading_results_title: 'READING THE RESULT'
+purpose_title: PURPOSE
+instructions_title: INSTRUCTIONS
+form_print_footer: "<p>Vandenplas, Y., Dupont, C., Eigenmann, P., Host, A., Kuitunen, M., Ribes-Koninck, C., Shah, N., Shamir, R., Staiano, A., Szajewska, H. and Von Berg, A. (2015), A workshop report on the development of the Cow’s Milk-related Symptom Score awareness tool for young children. Acta Paediatrica. doi: 10.1111/apa.12902</p>\r\n"

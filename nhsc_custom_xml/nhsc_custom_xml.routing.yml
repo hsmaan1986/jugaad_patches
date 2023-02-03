@@ -1,0 +1,379 @@
+nhsc_custom_xml.form:
+  path: '/nhsc_custom_xml'
+  defaults:
+    _form: '\Drupal\nhsc_custom_xml\siteMapsForm'
+    _title: 'Insert country site maps'
+  requirements:
+    _permission: 'administer site configuration'
+
+nhsc_custom_xml.admin_settings:
+  path: '/admin/config/content/nhsc_custom_xml'
+  defaults:
+    _form: '\Drupal\nhsc_custom_xml\Form\siteMapsSettingsForm'
+    _title: 'Insert country site maps settings'
+  requirements:
+    _permission: 'administer site configuration'
+
+
+
+global:
+  path: '/global.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML'
+
+
+australia:
+  path: '/australia.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML'
+ 
+austria:
+  path: '/austria.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML'
+
+
+brazil:
+  path: '/brazil.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML'
+
+
+canada:
+  path: '/canada.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML'
+
+
+china:
+  path: '/china.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML'
+
+
+czech:
+  path: '/czech.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML'
+
+denmark:
+  path: '/denmark.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML'
+
+
+finland:
+  path: '/finland.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML'
+
+
+france:
+  path: '/france.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML'
+
+germany:
+  path: '/germany.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML'
+
+hongkong:
+  path: '/hongkong.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML'
+
+
+india:
+  path: '/india.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML'
+
+indonesia:
+  path: '/indonesia.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML'
+
+italy:
+  path: '/italy.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML'
+
+japan:
+  path: '/japan.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML'
+
+malaysia:
+  path: '/malaysia.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML'
+
+mexico:
+  path: '/mexico.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML'
+
+netherlands:
+  path: '/netherlands.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML'
+
+
+philippines:
+  path: '/philippines.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML'
+
+
+poland:
+  path: '/poland.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML'
+
+portugal:
+  path: '/portugal.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML'
+
+romania:
+  path: '/romania.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML'
+
+
+russia:
+  path: '/russia.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML'
+
+singapore:
+  path: '/singapore.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML'  
+
+southafrica:
+  path: '/southafrica.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML'  
+
+spain:
+  path: '/spain.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML' 
+
+srilanka:
+  path: '/srilanka.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML' 
+
+
+sweden:
+  path: '/sweden.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML' 
+    
+
+switzerland:
+  path: '/switzerland.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML' 
+
+
+taiwan:
+  path: '/taiwan.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML' 
+
+
+thailand:
+  path: '/thailand.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML' 
+
+turkey:
+  path: '/turkey.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML' 
+
+
+
+uae:
+  path: '/uae.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML' 
+
+
+unitedkingdom:
+  path: '/unitedkingdom.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML' 
+
+
+unitedstates:
+  path: '/unitedstates.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML' 
+
+
+vietnam:
+  path: '/vietnam.xml'
+  defaults: { _controller: '\Drupal\nhsc_custom_xml\Controller\CountrySitemapsController::xml' }
+
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+    _title: 'NHSc Custom XML' 
+
+
+nhsc_custom_xml.settings:
+  path: '/admin/config/custom_xml/settings'
+  defaults:
+    _form: '\Drupal\nhsc_custom_xml\Form\CustomXmlForm'
+    _title: 'Custom XML Settings Form'
+  requirements:
+    _permission: 'administer site configuration'

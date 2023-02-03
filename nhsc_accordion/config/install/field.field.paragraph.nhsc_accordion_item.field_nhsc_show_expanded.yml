@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_nhsc_show_expanded
+    - paragraphs.paragraphs_type.nhsc_accordion_item
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_nhsc_show_expanded
+id: paragraph.nhsc_accordion_item.field_nhsc_show_expanded
+field_name: field_nhsc_show_expanded
+entity_type: paragraph
+bundle: nhsc_accordion_item
+label: 'Show expanded'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,16 @@
+name: 'NHSC full page video'
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - 'autologout:autologout'
+  - 'datalayer:datalayer'
+  - 'drupal:block'
+  - 'drupal:field'
+  - 'drupal:system'
+  - 'drupal:user'
+  - 'drupal:views'
+  - 'field_permissions:field_permissions'
+  - 'metatag:metatag'
+  - 'paragraphs:paragraphs'
+  - 'rng:rng'
+  - 'video_embed_field:video_embed_field'

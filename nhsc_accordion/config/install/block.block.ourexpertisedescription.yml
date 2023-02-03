@@ -1,0 +1,37 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:menu_description:dbd96d2d-dfa5-4c83-99f2-12cdb839cbcb'
+  module:
+    - block_content
+    - rng
+  theme:
+    - nhsc_com
+id: ourexpertisedescription
+theme: nhsc_com
+region: menu_blocks
+weight: 0
+provider: null
+plugin: 'block_content:dbd96d2d-dfa5-4c83-99f2-12cdb839cbcb'
+settings:
+  id: 'block_content:dbd96d2d-dfa5-4c83-99f2-12cdb839cbcb'
+  label: 'Our Expertise'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  rng_current_time:
+    id: rng_current_time
+    date: '1625510656'
+    negate: false
+    context_mapping: {  }
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1625510656'
+    negate: false
+    context_mapping: {  }

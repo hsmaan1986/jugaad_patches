@@ -1,0 +1,4 @@
+hcp_site_switcher.adminsettings_tab:
+  route_name: hcp_site_switcher.config_form
+  title: Settings
+  base_route: hcp_site_switcher.config_form

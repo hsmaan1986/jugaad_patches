@@ -1,0 +1,11 @@
+{
+  "name": "drupal/nhsc_sticky_buttons",
+  "description": "This module allows sites to display social icons and links to other social sites.",
+  "type": "drupal-module",
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/nhsc_sticky_buttons",
+  "minimum-stability": "dev",
+  "require": {
+      "drupal/fontawesome": "8.*"
+    }
+}

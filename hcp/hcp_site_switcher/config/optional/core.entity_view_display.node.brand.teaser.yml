@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.brand.field_category
+    - field.field.node.brand.field_filtrar_por
+    - field.field.node.brand.field_images
+    - field.field.node.brand.field_meta_tags
+    - field.field.node.brand.field_nhsc_brand_components
+    - field.field.node.brand.field_nhsc_summary
+    - field.field.node.brand.field_section
+    - field.field.node.brand.field_site_switcher_settings
+    - field.field.node.brand.field_subtitle
+    - node.type.brand
+  module:
+    - user
+id: node.brand.teaser
+targetEntityType: node
+bundle: brand
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_category: true
+  field_filtrar_por: true
+  field_images: true
+  field_meta_tags: true
+  field_nhsc_brand_components: true
+  field_nhsc_summary: true
+  field_section: true
+  field_site_switcher_settings: true
+  field_subtitle: true
+  langcode: true

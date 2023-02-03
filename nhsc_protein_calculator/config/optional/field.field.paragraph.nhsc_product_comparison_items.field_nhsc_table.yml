@@ -1,0 +1,174 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_nhsc_table
+    - paragraphs.paragraphs_type.nhsc_comparison_table
+    - paragraphs.paragraphs_type.nhsc_product_comparison_items
+  module:
+    - entity_reference_revisions
+id: paragraph.nhsc_product_comparison_items.field_nhsc_table
+field_name: field_nhsc_table
+entity_type: paragraph
+bundle: nhsc_product_comparison_items
+label: 'NHSC table'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      nhsc_comparison_table: nhsc_comparison_table
+    target_bundles_drag_drop:
+      nhsc_comparison_table:
+        enabled: true
+        weight: 50
+      image:
+        weight: 51
+        enabled: false
+      image_body:
+        weight: 52
+        enabled: false
+      masthead:
+        weight: 53
+        enabled: false
+      masthead_webaulas:
+        weight: 54
+        enabled: false
+      nhsc_about_us_banner:
+        weight: 55
+        enabled: false
+      nhsc_banner_component:
+        weight: 56
+        enabled: false
+      nhsc_biography_caption:
+        weight: 57
+        enabled: false
+      nhsc_brand_accordion:
+        weight: 58
+        enabled: false
+      nhsc_brand_hero_banner:
+        weight: 59
+        enabled: false
+      nhsc_brand_product_line:
+        weight: 60
+        enabled: false
+      nhsc_button:
+        weight: 61
+        enabled: false
+      nhsc_column_component:
+        weight: 62
+        enabled: false
+      nhsc_column_items:
+        weight: 63
+        enabled: false
+      nhsc_content_heading:
+        weight: 64
+        enabled: false
+      nhsc_content_slider:
+        weight: 65
+        enabled: false
+      nhsc_copy_and_button:
+        weight: 66
+        enabled: false
+      nhsc_expandable_paragraph:
+        weight: 67
+        enabled: false
+      nhsc_faq:
+        weight: 68
+        enabled: false
+      nhsc_flexible_grid:
+        weight: 69
+        enabled: false
+      nhsc_flexible_grid_item:
+        weight: 70
+        enabled: false
+      nhsc_full_banner:
+        weight: 71
+        enabled: false
+      nhsc_health_management_landing:
+        weight: 72
+        enabled: false
+      nhsc_hero_banner:
+        weight: 73
+        enabled: false
+      nhsc_image_and_content_slider:
+        weight: 74
+        enabled: false
+      nhsc_image_and_text_column:
+        weight: 75
+        enabled: false
+      nhsc_image_content_slider_top:
+        weight: 76
+        enabled: false
+      nhsc_info_icons:
+        weight: 77
+        enabled: false
+      nhsc_logo_componant:
+        weight: 78
+        enabled: false
+      nhsc_multi_column:
+        weight: 79
+        enabled: false
+      nhsc_paragraph_icon:
+        weight: 80
+        enabled: false
+      nhsc_people:
+        weight: 81
+        enabled: false
+      nhsc_plain_content:
+        weight: 82
+        enabled: false
+      nhsc_product_comparison:
+        weight: 83
+        enabled: false
+      nhsc_product_comparison_items:
+        weight: 84
+        enabled: false
+      nhsc_product_comparison_labels:
+        weight: 85
+        enabled: false
+      nhsc_product_specifications:
+        weight: 86
+        enabled: false
+      nhsc_separator_line:
+        weight: 87
+        enabled: false
+      nhsc_sub_category_component:
+        weight: 88
+        enabled: false
+      nhsc_text_and_image:
+        weight: 89
+        enabled: false
+      nhsc_text_slider:
+        weight: 90
+        enabled: false
+      plain_text:
+        weight: 91
+        enabled: false
+      presenter:
+        weight: 92
+        enabled: false
+      section_title_and_description:
+        weight: 93
+        enabled: false
+      simple:
+        weight: 94
+        enabled: false
+      slider:
+        weight: 95
+        enabled: false
+      slider_items:
+        weight: 96
+        enabled: false
+      tag_links:
+        weight: 97
+        enabled: false
+      topics_and_formats:
+        weight: 98
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,137 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_data_layer_brand
+    - node.type.press_release
+    - taxonomy.vocabulary.data_layer_brand
+  content:
+    - 'taxonomy_term:data_layer_brand:bf1e35b1-3809-4eab-9a85-03a76ffbf1bd'
+  module:
+    - datalayer
+    - dynamic_entity_reference
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: Brand
+id: node.press_release.field_data_layer_brand
+field_name: field_data_layer_brand
+entity_type: node
+bundle: press_release
+label: 'Data Layer Brand'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_type: taxonomy_term
+    target_uuid: bf1e35b1-3809-4eab-9a85-03a76ffbf1bd
+default_value_callback: ''
+settings:
+  taxonomy_term:
+    handler: 'default:taxonomy_term'
+    handler_settings:
+      target_bundles:
+        data_layer_brand: data_layer_brand
+      sort:
+        field: name
+        direction: asc
+      auto_create: false
+      auto_create_bundle: ''
+  booking_entity:
+    handler: 'default:booking_entity'
+    handler_settings: {  }
+  comment:
+    handler: 'default:comment'
+    handler_settings: {  }
+  consumer:
+    handler: 'default:consumer'
+    handler_settings: {  }
+  contact_message:
+    handler: 'default:contact_message'
+    handler_settings: {  }
+  node:
+    handler: 'default:node'
+    handler_settings: {  }
+  content_moderation_state:
+    handler: 'default:content_moderation_state'
+    handler_settings: {  }
+  crop:
+    handler: 'default:crop'
+    handler_settings: {  }
+  block_content:
+    handler: 'default:block_content'
+    handler_settings: {  }
+  menu_link_content:
+    handler: 'default:menu_link_content'
+    handler_settings: {  }
+  courier_email:
+    handler: 'default:courier_email'
+    handler_settings: {  }
+  rng_rule:
+    handler: 'default:rng_rule'
+    handler_settings: {  }
+  rng_rule_component:
+    handler: 'default:rng_rule_component'
+    handler_settings: {  }
+  entity_embed_fake_entity:
+    handler: 'default:entity_embed_fake_entity'
+    handler_settings: {  }
+  file:
+    handler: 'default:file'
+    handler_settings: {  }
+  courier_template_collection:
+    handler: 'default:courier_template_collection'
+    handler_settings: {  }
+  media:
+    handler: 'default:media'
+    handler_settings: {  }
+  courier_message_queue_item:
+    handler: 'default:courier_message_queue_item'
+    handler_settings: {  }
+  oauth2_token:
+    handler: 'default:oauth2_token'
+    handler_settings: {  }
+  paragraph:
+    handler: 'default:paragraph'
+    handler_settings: {  }
+  point:
+    handler: 'default:point'
+    handler_settings: {  }
+  redirect:
+    handler: 'default:redirect'
+    handler_settings: {  }
+  registrant:
+    handler: 'default:registrant'
+    handler_settings: {  }
+  registration:
+    handler: 'default:registration'
+    handler_settings: {  }
+  registration_group:
+    handler: 'default:registration_group'
+    handler_settings: {  }
+  rng_rule_scheduler:
+    handler: 'default:rng_rule_scheduler'
+    handler_settings: {  }
+  search_api_task:
+    handler: 'default:search_api_task'
+    handler_settings: {  }
+  shortcut:
+    handler: 'default:shortcut'
+    handler_settings: {  }
+  user:
+    handler: 'default:user'
+    handler_settings: {  }
+  vote:
+    handler: 'default:vote'
+    handler_settings: {  }
+  vote_result:
+    handler: 'default:vote_result'
+    handler_settings: {  }
+  webform_submission:
+    handler: 'default:webform_submission'
+    handler_settings: {  }
+  path_alias:
+    handler: 'default:path_alias'
+    handler_settings: {  }
+field_type: dynamic_entity_reference

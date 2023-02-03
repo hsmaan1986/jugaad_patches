@@ -1,0 +1,45 @@
+.ons__filters {
+  &__header {
+    .ons__title--header {
+      margin-bottom: 20px;
+    }
+    .ons__checkbox--arrow {
+      &:checked {
+        // + label {
+        //   margin-bottom: 20px;
+        // }
+        ~ .ons__filters__advanced--options {
+          max-height: 100vh;
+          margin-top: 10px;
+          padding: 10px 0;
+          opacity: 1;
+          visibility: visible;
+
+          .ons__checkbox input + label span {
+            color: $gray-1;
+          }
+        }
+      }
+    }
+  }
+  @media #{$min-xs} {
+    &__header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      .ons__title--header {
+        margin: 0;
+        width: 50%;
+      }
+      .ons__checkbox--arrow {
+        + label {
+          margin: 0;
+        }
+      }
+      .ons__filters__advanced--options {
+        width: 100%;
+      }
+    }
+  }
+}

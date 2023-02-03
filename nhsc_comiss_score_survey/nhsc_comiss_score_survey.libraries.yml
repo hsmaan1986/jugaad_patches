@@ -1,0 +1,21 @@
+comiss-score-form:
+  js:
+    js/comiss_score_js.js: {}
+    js/comiss_score_data_layer.js: {}
+  css:
+    theme:
+      css/nhsc-comiss-score-survey.css: {}
+  dependencies:
+    - core/jquery
+    - jquery_ui_datepicker/datepicker
+
+comiss-score-pdf:
+  js:
+    js/comiss_score_pdf.js: {}
+    https://unpkg.com/jspdf@latest/dist/jspdf.min.js: {type: external, minified: true}
+    http://html2canvas.hertzen.com/dist/html2canvas.min.js: {type: external, minified: true}
+    https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js: {type: external, minified: true}
+  dependencies:
+    - core/jquery
+    - jquery_ui_datepicker/datepicker
+

@@ -1,0 +1,7 @@
+nhsc_user_profile.config_form:
+  title: 'NHSc User Profile'
+  route_name: nhsc_user_profile.config_form
+  description: 'User Profile Customisations.'
+  parent: system.admin_config_system
+  weight: 99
+

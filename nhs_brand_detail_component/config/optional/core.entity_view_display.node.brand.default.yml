@@ -1,0 +1,97 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.brand.condition
+    - field.field.node.brand.field_active_lifestyle
+    - field.field.node.brand.field_ar
+    - field.field.node.brand.field_brand_business_area
+    - field.field.node.brand.field_brand_business_category
+    - field.field.node.brand.field_brand_segment
+    - field.field.node.brand.field_category
+    - field.field.node.brand.field_data_layer_brand
+    - field.field.node.brand.field_data_layer_brand_name
+    - field.field.node.brand.field_filtrar_por
+    - field.field.node.brand.field_images
+    - field.field.node.brand.field_meta_tags
+    - field.field.node.brand.field_nhsc_brand_components
+    - field.field.node.brand.field_nhsc_summary
+    - field.field.node.brand.field_open_in
+    - field.field.node.brand.field_section
+    - field.field.node.brand.field_site_switcher_settings
+    - field.field.node.brand.field_subtitle
+    - node.type.brand
+  module:
+    - entity_reference_revisions
+    - options
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.brand.default
+targetEntityType: node
+bundle: brand
+mode: default
+content:
+  field_nhsc_brand_components:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_open_in:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_site_switcher_settings:
+    type: entity_reference_revisions_entity_view
+    weight: 4
+    region: content
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_subtitle:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  condition: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_active_lifestyle: true
+  field_ar: true
+  field_brand_business_area: true
+  field_brand_business_category: true
+  field_brand_segment: true
+  field_category: true
+  field_data_layer_brand: true
+  field_data_layer_brand_name: true
+  field_filtrar_por: true
+  field_images: true
+  field_meta_tags: true
+  field_nhsc_summary: true
+  field_section: true
+  langcode: true
+  search_api_excerpt: true

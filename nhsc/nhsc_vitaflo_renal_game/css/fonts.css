@@ -1,0 +1,20 @@
+@font-face {
+    font-family: "vag_rounded";
+    font-style: normal;
+    font-weight: 600;
+    src: url("../asset/fonts/vag_rounded.otf")
+}
+
+@font-face {
+    font-family: "trash_hand";
+    font-style: normal;
+    font-weight: 600;
+    src: url("../asset/fonts/trash_hand.ttf")
+}
+
+@font-face {
+    font-family: "nickelodeon";
+    font-style: normal;
+    font-weight: 600;
+    src: url("../asset/fonts/nickelodeon.ttf")
+}

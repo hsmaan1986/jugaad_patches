@@ -1,0 +1,13 @@
+{
+    "name": "com_revamp_configs",
+    "type": "drupal-module",
+    "description": "COM Revamp Configs",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/com_revamp_configs",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/com_revamp_configs",
+        "source": "http://cgit.drupalcode.org/com_revamp_configs"
+    }
+}

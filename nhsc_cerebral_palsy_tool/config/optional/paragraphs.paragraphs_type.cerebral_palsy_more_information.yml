@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: cerebral_palsy_more_information
+label: 'Cerebral Palsy More Information'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

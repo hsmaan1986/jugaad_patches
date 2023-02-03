@@ -1,0 +1,8 @@
+
+nhsc_missing_alt_text.settings:
+  path: '/admin/config/nhsc-missing-alt-text/settings'
+  defaults:
+    _form: '\Drupal\nhsc_missing_alt_text\Form\NhscMissingAltTextCronForm'
+    _title: 'NHSc Missing Alt Text Cron Settings'
+  requirements:
+    _permission: 'administer site configuration'

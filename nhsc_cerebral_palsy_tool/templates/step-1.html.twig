@@ -1,0 +1,57 @@
+{# STEP 1#}
+<div class="cerebral-palsy-card card">
+
+  <div class="wrapper">
+
+      {% if title %}
+
+        <h2 class="cerebral_palsy-tool__h1"{{ title_attributes.addClass('page-header') }}> {{ title }}</h2>
+
+      {% else %}
+
+        <h2>{{ selected.name }}</h2>
+
+      {% endif %}
+
+  <div class="cerebral-palsy-welcome">
+
+    <div class="cerebral-palsy-welcome__wrapper step-welcome">
+
+      <div class="cerebral-palsy-welcome__info">
+
+        <div class="desc">{{ config.more_info_text.value|raw }}</div>
+
+        <div>
+
+          <a href="{{ config.more_info_cta_link }}">
+
+            {{ config.more_info_cta_text }}
+
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="cerebral-palsy-welcome__continue">
+
+        <div class="desc">{{ config.continue_text.value|raw }}</div>
+
+        <div>
+
+          <a href="{{ parent.alias }}">
+
+            {{ config.continue_cta_text }}
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+ </div>
+</div>
+

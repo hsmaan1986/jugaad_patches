@@ -1,0 +1,4 @@
+nhsc_mega_menu.default_form:
+  route_name: nhsc_mega_menu.default_form
+  title: Settings
+  base_route: nhsc_mega_menu.default_form

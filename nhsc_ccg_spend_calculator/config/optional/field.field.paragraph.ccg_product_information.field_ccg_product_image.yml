@@ -1,0 +1,34 @@
+uuid: 9984228f-9ba3-4d97-8ec6-8fc40b0a64bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ccg_product_image
+    - media.type.image
+    - paragraphs.paragraphs_type.ccg_product_information
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_ccg_product_image
+id: paragraph.ccg_product_information.field_ccg_product_image
+field_name: field_ccg_product_image
+entity_type: paragraph
+bundle: ccg_product_information
+label: 'Product Image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

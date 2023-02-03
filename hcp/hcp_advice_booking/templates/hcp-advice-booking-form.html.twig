@@ -1,0 +1,44 @@
+{{ attach_library('hcp_advice_booking/form') }}
+<div class="form-title">
+    <h3>{{ "You've chosen:"|t }}</h3>
+</div>
+<div class="date-confirm">
+    <h2>{{ form.date }}<br>{{ form.time }}</h2>
+</div>
+{% if form.finish %}
+    <div class="thank-you">
+        {{ "Thank you! Your appointment is confirmed!"|t }}
+    </div>
+    <div>
+        <p>{{ "We've sent the appointment along with connection details to"|t }} {{ form.email }}</p>
+
+        <p>{{ "Please check your junk folder."|t }}</p>
+    </div>
+    <div>
+        <p></p>
+    </div>
+    {{ form.home }}
+{% else %}
+    <div class="about-select">
+        <label>{{ "What's your inquiry about?"|t }}</label>
+        {{ form.about }}
+    </div>
+    <div class="where-select">
+        <label>{{ "Where do you work?"|t }}</label>
+        {{ form.where }}
+    </div>
+    <div class="phone-text">
+        <label>{{ "Mobile Number"|t }}</label>
+        {{ form.phone }}
+    </div>
+    <div class="actions">
+        {{ form.back }}
+        {{ form.confirm }}
+    </div>
+{% endif %}
+
+
+{{ form.form_build_id }} {# required #}
+{{ form.form_token }}{# required #}
+{{ form.form_id }} {# required #}
+{{ form.actions }} {# will render the action buttons in the form #}

@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_duality_slider.field_nhsc_duality_slider
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.nhsc_duality_slider
+  module:
+    - svg_image
+id: paragraph.nhsc_duality_slider.default
+targetEntityType: paragraph
+bundle: nhsc_duality_slider
+mode: default
+content:
+  field_nhsc_duality_slider:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ * Update scripts for the Schema Item List module.
+ */
+
+use Drupal\metatag\Entity\MetatagDefaults;
+
+/**
+ * Implementions of hook_update_N().
+ */
+
+/**
+ * Update item list id.
+ *
+ * The "schema_question" and "schema_question_element" meta tags are renamed
+ * to the correct "schema_question_item_list_element".
+ */
+function schema_question_update_8101() {
+  /* @var $configs Drupal\metatag\Entity\MetatagDefaults */
+  $configs = MetatagDefaults::loadMultiple();
+
+  foreach ($configs as $config) {
+    $tags = $config->get('tags');
+
+    if (array_key_exists("schema_question_element", $tags)) {
+      $tags['schema_question_item_list_element'] = $tags['schema_question_element'];
+      unset($tags['schema_question_element']);
+      $config->set("tags", $tags);
+      $config->save();
+    }
+    if (array_key_exists("schema_question", $tags)) {
+      $tags['schema_question_item_list_element'] = $tags['schema_question'];
+      unset($tags['schema_question']);
+      $config->set("tags", $tags);
+      $config->save();
+    }
+  }
+}

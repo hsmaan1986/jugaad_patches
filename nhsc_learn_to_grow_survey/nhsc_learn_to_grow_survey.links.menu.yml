@@ -1,0 +1,6 @@
+nhsc_learn_to_grow_survey.settings_form:
+  title: 'Dynamic Survey - Learn to Grow Questionnaire Configuration'
+  route_name: nhsc_learn_to_grow_survey.settings_form
+  description: 'Learn to Grow Survey Settings'
+  parent: system.admin_config_system
+  weight: 99

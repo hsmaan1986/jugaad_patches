@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+html {
+  body {
+    &.lock-scroll {
+      @media screen {
+        overflow: hidden;
+        height: 100vh;
+      }
+
+      @media #{$max-xs} {
+        position: fixed;
+        width: 100%;
+      }
+    }
+  }
+}
+
+#block-onscalculatorsblock {
+  font-family: $open;
+}
+
+.sr-only {
+  position: relative !important;
+  display: block;
+  top: 0 !important;
+  left: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 0 !important;
+  overflow: hidden !important;
+}
+
+.intoleranceBadge {
+  cursor: default;
+}
+
+#illnessCombo {
+  top: -25px;
+}
+
+div.ons__modal__description__product--info {
+}
+
+.ons__result--recommandation .ons__card-product__content__img {
+  width: auto;
+  height: auto;
+}
+
+.off-canvas-wrapper {
+  @media print {
+    display: none;
+  }
+}

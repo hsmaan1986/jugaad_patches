@@ -1,0 +1,6 @@
+alfamino_calculation.settings_form:
+  title: alfamino_calculation
+  description: Configure alfamino_calculation.
+  parent: system.admin_config_system
+  route_name: alfamino_calculation.settings_form
+  weight: 10

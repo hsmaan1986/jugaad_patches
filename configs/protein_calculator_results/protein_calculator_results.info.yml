@@ -1,0 +1,21 @@
+name: 'Protein calculator results'
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - block
+  - datalayer
+  - dsu_c_core
+  - entity_browser
+  - field
+  - field_permissions
+  - file
+  - image
+  - link
+  - node
+  - paragraphs
+  - rng
+  - svg_image
+  - system
+  - text
+  - user
+  - views

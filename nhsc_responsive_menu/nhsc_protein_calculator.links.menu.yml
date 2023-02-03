@@ -1,0 +1,12 @@
+
+nhsc_protein_calculator.admin:
+  title: NHSc Protein Calculator
+  parent: system.admin_config
+  route_name: nhsc_protein_calculator.admin
+  weight: 70
+
+nhsc_protein_calculator.settings:
+  title: NHSc Protein Calculator Settings
+  parent: nhsc_protein_calculator.admin
+  route_name: nhsc_protein_calculator.settings
+  weight: 10

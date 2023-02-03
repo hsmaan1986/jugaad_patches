@@ -1,0 +1,7 @@
+gigya_datepicker_assets:
+  js:
+    js/gigya_datepicker.js: { preprocess: false }
+  dependencies:
+    - core/jquery
+    - jquery_ui_datepicker/datepicker
+    - core/drupal.locale.datepicker

@@ -1,0 +1,14 @@
+{
+  "name": "drupal/nhsc_user_profile",
+  "type": "drupal-module",
+  "description": "Nestle Heath Sciences User Profile",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/nhsc_user_profile",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/nhsc_user_profile",
+    "source": "http://cgit.drupalcode.org/nhsc_user_profile"
+  },
+  "require": { }
+}

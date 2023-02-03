@@ -1,0 +1,7 @@
+nhsc_bazaarvoice.settings:
+  path: '/admin/config/services/bazaarvoice'
+  defaults:
+    _form: '\Drupal\nhsc_bazaarvoice\Form\BazaarvoiceSettingsForm'
+    _title: 'Bazaarvoice'
+  requirements:
+    _permission: 'administer bazaarvoice'

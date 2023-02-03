@@ -1,0 +1,6 @@
+services:
+  nppe_auth_redirect_module.redirect_auth:
+    class: Drupal\nppe_auth_redirect_module\EventSubscriber\RedirectAuthSubscriber
+    arguments: ['@config.factory', '@path.current', '@request_stack']
+    tags:
+      - { name: event_subscriber }

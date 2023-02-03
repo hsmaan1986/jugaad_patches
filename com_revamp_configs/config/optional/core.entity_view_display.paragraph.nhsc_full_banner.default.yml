@@ -1,0 +1,81 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_full_banner.field_cta
+    - field.field.paragraph.nhsc_full_banner.field_nhsc_full_banner_heading
+    - field.field.paragraph.nhsc_full_banner.field_nhsc_full_banner_image
+    - field.field.paragraph.nhsc_full_banner.field_nhsc_full_banner_layout
+    - field.field.paragraph.nhsc_full_banner.field_nhsc_full_banner_link
+    - field.field.paragraph.nhsc_full_banner.field_nhsc_full_banner_text
+    - paragraphs.paragraphs_type.nhsc_full_banner
+  module:
+    - image
+    - link
+    - options
+    - text
+id: paragraph.nhsc_full_banner.default
+targetEntityType: paragraph
+bundle: nhsc_full_banner
+mode: default
+content:
+  field_cta:
+    weight: 5
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_nhsc_full_banner_heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_nhsc_full_banner_image:
+    weight: 3
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_nhsc_full_banner_layout:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+  field_nhsc_full_banner_link:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_nhsc_full_banner_text:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  addtoany: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true

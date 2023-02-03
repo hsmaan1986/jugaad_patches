@@ -1,0 +1,38 @@
+hcp_reward_system.achivements_entity.*:
+  type: config_entity
+  label: 'Achievements entity config'
+  mapping:
+    name:
+      type: string
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string
+    description:
+      type: string
+    status:
+      type: integer
+    content_types:
+      type: string
+    pont_types:
+      type: string
+    image:
+      type: file
+    rewards:
+      type: sequence
+      sequence:
+        type: mapping
+        mapping:
+          id:
+            type: string
+          type:
+            type: string
+          data:
+            type: reward.[%parent.id]
+          points:
+            type: integer
+          node:
+            type: string
+        uuid:
+            type: uuid

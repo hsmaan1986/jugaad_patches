@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * @file
+ * Installation functions for gigya_client module.
+ */
+
+function gigya_client_install() {
+    $key =  getKeyFile('/private/gigyaKeySig/keyFile.key');
+
+    //set key sig config
+    \Drupal::configFactory()
+        ->getEditable('gigya.global')//editable config because we are changing it and we want original value
+        ->set('gigya.keyPath', $key)
+        ->save();
+}
+
+function gigya_client_uninstall() {
+
+}
+
+
+function getKeyFile($file){
+    $drupalRoot = DRUPAL_ROOT;
+    $drupalRoot = explode('/', $drupalRoot);
+    unset($drupalRoot[count($drupalRoot)-1]);
+
+    $pathToKey = $drupalRoot.join("/",$drupalRoot);
+    $pathToKey= str_replace("Array","", $pathToKey);
+    $pathToKey .= $file;
+
+    return $pathToKey;
+
+}

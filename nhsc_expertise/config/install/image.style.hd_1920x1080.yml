@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: hd_1920x1080
+label: 'HD (1920x1080)'
+effects:
+  5fc264ca-1540-4f55-9fb9-52daa752fb5f:
+    uuid: 5fc264ca-1540-4f55-9fb9-52daa752fb5f
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1920
+      height: 1080
+      crop_type: focal_point

@@ -1,0 +1,67 @@
+<?php
+
+/**
+ * @file
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\hcp_site_switcher\Controller\SiteToggleController;
+
+/**
+ * Implements hook_help().
+ */
+function nhsc_ccg_spend_calculator_help($route_name, RouteMatchInterface $route_match)
+{
+    switch ($route_name) {
+        case 'help.page.nhsc_ccg_spend_calculator':
+            $output = '';
+            $output .= '<h3>' . t('About') . '</h3>';
+            $output .= '<p>' . t('Nestle Health Science CCG Spend Calculator.') . '</p>';
+            return $output;
+
+        default:
+    }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function nhsc_ccg_spend_calculator_theme()
+{
+    return [
+        'nhsc_ccg_spend_calculator' => [
+            'variables' => [
+                'form' => NULL,
+                'calculatorData' => [],
+            ],
+            'template' => 'nhsc-ccg-spend-calculator',
+        ],
+    ];
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function nhsc_ccg_spend_calculator_page_attachments(array &$page) {
+    $config = \Drupal::config('nhsc_ccg_spend_calculator.config');
+
+
+
+    $page['#attached']['library'][] = 'nhsc_ccg_spend_calculator/nhsc-ccg-spend-calculator-assets';
+
+
+}
+
+function nhsc_ccg_spend_calculator_preprocess_block(&$variables)
+{
+
+
+//    if ($variables['elements']['#plugin_id'] == 'nhsc_ccg_spend_calculator') {
+//        $config = \Drupal::config('nhsc_ccg_spend_calculator.config');
+//        $variables['calculatorData'] = [
+//            'ccg_footer_copy' => $config->get('ccg_footer_copy'),
+//            'ccg_currency' => $config->get('ccg_currency'),
+//        ];
+//    }
+
+}

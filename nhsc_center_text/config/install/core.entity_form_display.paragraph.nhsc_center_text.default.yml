@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_center_text.field_column_text
+    - paragraphs.paragraphs_type.nhsc_center_text
+id: paragraph.nhsc_center_text.default
+targetEntityType: paragraph
+bundle: nhsc_center_text
+mode: default
+content:
+  field_column_text:
+    weight: 0
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+hidden:
+  created: true
+  status: true

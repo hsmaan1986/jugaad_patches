@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: nhsc_tab_slide
+label: 'NHSc Tab Slide'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

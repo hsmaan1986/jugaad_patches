@@ -1,0 +1,170 @@
+<div class="modal-calculators active">
+  <div class="modal-calculators__container">
+    <div class="modal-calculators__header">
+      <div class="col-logo"> <a class="logo" href="/"> <img src="/themes/custom/nhsc_master/logo.svg" alt="Nestlé Health Science"> </a> </div>
+      <div class="col-breadcrumb" id="calculator-breadcrumbs">
+        <ul class="calculator-breadcrumb">
+          <li data-id="patient_data" class="">Patient data</li>
+          <li data-id="patient_location" class="">Patient location</li>
+          <li data-id="malnutrition" class="active">Check malnutrition risk</li>
+          <li data-id="check_dysphagia_risk_with_eat_10">Check dysphagie risk</li>
+          <li data-id="calculate_nutritional_needs">Calculate the nutritional needs</li>
+          <li data-id="results">Result</li>
+        </ul>
+      </div>
+      <div class="col-close"> <a class="modal-calculators--btn-close" href="#"> Close <span>x</span> </a> </div>
+    </div>
+    <div class="progress-bar"> <span style="width: 50%;"></span> </div>
+    <div class="modal-calculators__content wizard clearfix" id="calculator-placeholder" role="application">
+      <div class="steps clearfix">
+        <ul role="tablist">
+          <li role="tab" class="first done" aria-disabled="false" aria-selected="false"><a id="calculator-placeholder-t-0" href="#calculator-placeholder-h-0" aria-controls="calculator-placeholder-p-0"><span class="number">1.</span> Patient data</a></li>
+          <li role="tab" class="done" aria-disabled="false" aria-selected="false"><a id="calculator-placeholder-t-1" href="#calculator-placeholder-h-1" aria-controls="calculator-placeholder-p-1"><span class="number">2.</span> Patient location</a></li>
+          <li role="tab" class="current" aria-disabled="false" aria-selected="true"><a id="calculator-placeholder-t-2" href="#calculator-placeholder-h-2" aria-controls="calculator-placeholder-p-2"><span class="current-info audible">current step: </span><span class="number">3.</span> Check malnutrition risk</a></li>
+          <li role="tab" class="disabled" aria-disabled="true"><a id="calculator-placeholder-t-3" href="#calculator-placeholder-h-3" aria-controls="calculator-placeholder-p-3"><span class="number">4.</span> Check dysphagie risk</a></li>
+          <li role="tab" class="disabled" aria-disabled="true"><a id="calculator-placeholder-t-4" href="#calculator-placeholder-h-4" aria-controls="calculator-placeholder-p-4"><span class="number">5.</span> Calculate the nutritional needs</a></li>
+        </ul>
+      </div>
+      <div class="content clearfix">
+        <h1 id="calculator-placeholder-h-2" tabindex="-1" class="title current">Check malnutrition risk</h1>
+        <div id="calculator-placeholder-p-2" role="tabpanel" aria-labelledby="calculator-placeholder-h-2" class="body current" aria-hidden="false" style="display: block;">
+          <div class="calculator calculator--nrs" id="nrs">
+            <h2 class="calculator__title">Check malnutrition risk with NRS-2002
+              <span class="onsTooltip">
+                <span class="onsTooltip__icon">?</span>
+                <span class="onsTooltip__content">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</span>
+              </span>
+            </h2>
+            <form method="POST" action="/ons_product_selector/calc/nrs_2002" id="malnutrition">
+              <div class="calculator__form-group calculator__form-group--radio">
+                <p>Food intake in the past week</p>
+                <div class="item"> <input type="radio" id="intake_past_week_1" name="intake_past_week" value="0"> <label for="intake_past_week_1">None</label> </div>
+                <div class="item"> <input type="radio" id="intake_past_week_0" name="intake_past_week" value="1"> <label for="intake_past_week_0">&gt; 50 - 75% of normal</label> </div>
+                <div class="item"> <input type="radio" id="intake_past_week_0" name="intake_past_week" value="2"> <label for="intake_past_week_0">&gt; 25 - 60% of normal</label> </div>
+                <div class="item"> <input type="radio" id="intake_past_week_0" name="intake_past_week" value="3"> <label for="intake_past_week_0">&gt; 0 - 25% of normal</label> </div>
+              </div>
+              <div class="calculator__form-group calculator__form-group--radio">
+                <p>Severity of disease</p>
+                <div class="item"> <input type="radio" id="severity_of_disease_1" name="severity_of_disease" value="0"> <label for="severity_of_disease_1">Normal nutritional requirements</label> </div>
+                <div class="item"> <input type="radio" id="severity_of_disease_0" name="severity_of_disease" value="1"> <label for="severity_of_disease_0">Hip fracture* Chronic patients, in particular with acute complications: cirrhosis*, COPD*. Chronic hemodialysis, diabetes, oncology</label> </div>
+                <div class="item"> <input type="radio" id="severity_of_disease_0" name="severity_of_disease" value="2"> <label for="severity_of_disease_0">Major abdominal surgery* Stroke* Severe pneumonia, hematologic malignancy</label> </div>
+                <div class="item"> <input type="radio" id="severity_of_disease_0" name="severity_of_disease" value="3"> <label for="severity_of_disease_0">Head injury* Bone marrow transplantation* Intensive care patients (APACHE410).</label> </div>
+              </div>
+              <span class="onsTooltip onsTooltip--reference">
+                <span class="onsTooltip__text">Reference</span>
+                <span class="onsTooltip__content">{{ 'Help to find the best nutritional formula intended specifically for the selected disease'|t }}</span>
+              </span>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="actions clearfix">
+        <ul role="menu" aria-label="Pagination">
+          <li class="" aria-disabled="false"><a href="#previous" role="menuitem">Previous</a></li>
+          <li aria-hidden="false" class="" aria-disabled="false" style="display: list-item;"><a href="#next" role="menuitem">Next</a></li>
+          <li aria-hidden="true" style="display: none;"><a href="#finish" role="menuitem">Finish</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!---------------------------------------->
+<!---------------- RESULT ---------------->
+<!---------------------------------------->
+<!-- <div class="modal-calculators active">
+  <div class="modal-calculators__container">
+    <div class="modal-calculators__header">
+      <div class="col-logo"> <a class="logo" href="/"> <img src="/themes/custom/nhsc_master/logo.svg" alt="Nestlé Health Science"> </a> </div>
+      <div class="col-breadcrumb" id="calculator-breadcrumbs">
+        <ul class="calculator-breadcrumb">
+          <li data-id="patient_data">Patient data</li>
+          <li data-id="patient_location">Patient location</li>
+          <li data-id="malnutrition">Check malnutrition risk</li>
+          <li data-id="check_dysphagia_risk_with_eat_10">Check dysphagie risk</li>
+          <li data-id="calculate_nutritional_needs">Calculate the nutritional needs</li>
+          <li data-id="results">Result</li>
+        </ul>
+      </div>
+      <div class="col-close"> <a class="modal-calculators--btn-close" href="#"> Close <span>x</span> </a> </div>
+    </div>
+    <div class="progress-bar"> <span></span> </div>
+    <div class="modal-calculators__content">
+      <div class="calculator calculator--result" id="result">
+        <h2 class="calculator__title">Result</h2>
+        <ul class="calculator--result__buttons">
+          <li><a href="#"><span class="icon-print"></span>Print</a></li>
+          <li><a href="#"><span class="icon-email"></span>Send by mail</a></li>
+          <li><a href="#"><span class="icon-download"></span>Download</a></li>
+        </ul>
+        <div class="calculator--result__bmiBox">
+          <div class="calculator--result__bmiBox__result">
+            <img src="" alt="">
+            <div class="text">
+              <span class="text--label">BMI</span>
+              <span class="text--result">17.6</span>
+              <span class="text--info">Underweight</span>
+            </div>
+          </div>
+          <div class="calculator--result__bmiBox__infos">
+            <div class="short-infos">
+              <div class="info">
+                <span>Age</span>
+                66 years
+              </div>
+              <div class="info">
+                <span>Height</span>
+                160 cm
+              </div>
+              <div class="info">
+                <span>Weight</span>
+                45kg
+              </div>
+            </div>
+            <div class="info">
+              <span>Weight loss during the last 3 months</span>
+              5.6%
+            </div>
+          </div>
+        </div>
+        <div class="calculator--result__resultInfos">
+          <p class="calculator--result__resultInfos__title">Score and recommendation</p>
+          <div class="calculator--result__resultInfos__boxes">
+            <div class="box">
+              <p class="title">MNA® Score</p>
+              <p>9 points</p>
+              <p class="title">Risk of malnutrition</p>
+              <p>Close weight monitoring and rescreen every 3 months. Implement local policies: Diet enhancement and oral nutritional supplementation, Further in-depth nutrition assessment.</p>
+            </div>
+            <div class="box">
+              <p class="title">MNA® Score</p>
+              <p>9 points</p>
+              <p class="title">Risk of malnutrition</p>
+              <p>Close weight monitoring and rescreen every 3 months. Implement local policies: Diet enhancement and oral nutritional supplementation, Further in-depth nutrition assessment.</p>
+            </div>
+          </div>
+        </div>
+        <div class="calculator--result__resultInfos">
+          <p class="calculator--result__resultInfos__title">Score and recommendation</p>
+          <div class="calculator--result__resultInfos__boxes">
+            <div class="box">
+              <p class="title">MNA® Score</p>
+              <p>9 points</p>
+              <p class="title">Risk of malnutrition</p>
+              <p>Close weight monitoring and rescreen every 3 months. Implement local policies: Diet enhancement and oral nutritional supplementation, Further in-depth nutrition assessment.</p>
+            </div>
+            <div class="box">
+              <p class="title">MNA® Score</p>
+              <p>9 points</p>
+              <p class="title">Risk of malnutrition</p>
+              <p>Close weight monitoring and rescreen every 3 months. Implement local policies: Diet enhancement and oral nutritional supplementation, Further in-depth nutrition assessment.</p>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="calculator--result__btnBack btn btn-primary">
+          BACK HOME
+        </a>
+      </div>
+    </div>
+  </div>
+</div> -->

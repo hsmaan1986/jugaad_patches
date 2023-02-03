@@ -1,0 +1,7 @@
+gigya_datepicker.config:
+  path: '/admin/config/gigya/datepicker'
+  defaults:
+    _form: 'Drupal\gigya_datepicker\Form\DatePickerConfigForm'
+    _title: 'Gigya Date Picker settings'
+  requirements:
+    _permission: 'administer site configuration'

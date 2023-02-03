@@ -1,0 +1,170 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_image_and_text_column.field_align
+    - field.field.paragraph.nhsc_image_and_text_column.field_background_color
+    - field.field.paragraph.nhsc_image_and_text_column.field_body
+    - field.field.paragraph.nhsc_image_and_text_column.field_nhs_logo
+    - field.field.paragraph.nhsc_image_and_text_column.field_nhsc_colour
+    - field.field.paragraph.nhsc_image_and_text_column.field_nhsc_column_heading
+    - field.field.paragraph.nhsc_image_and_text_column.field_nhsc_column_heading_color
+    - field.field.paragraph.nhsc_image_and_text_column.field_nhsc_column_image
+    - field.field.paragraph.nhsc_image_and_text_column.field_nhsc_column_link
+    - field.field.paragraph.nhsc_image_and_text_column.field_nhsc_column_text
+    - field.field.paragraph.nhsc_image_and_text_column.field_nhsc_heading_underline
+    - field.field.paragraph.nhsc_image_and_text_column.field_nhsc_reverse_columns
+    - field.field.paragraph.nhsc_image_and_text_column.field_nhsc_video
+    - field.field.paragraph.nhsc_image_and_text_column.field_percentage_width
+    - field.field.paragraph.nhsc_image_and_text_column.field_title
+    - paragraphs.paragraphs_type.nhsc_image_and_text_column
+  module:
+    - file
+    - link
+    - options
+    - svg_image
+    - text
+id: paragraph.nhsc_image_and_text_column.default
+targetEntityType: paragraph
+bundle: nhsc_image_and_text_column
+mode: default
+content:
+  field_align:
+    weight: 14
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_background_color:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_body:
+    weight: 10
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_nhs_logo:
+    weight: 12
+    label: hidden
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_nhsc_colour:
+    weight: 6
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_nhsc_column_heading:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_nhsc_column_heading_color:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_nhsc_column_image:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_nhsc_column_link:
+    weight: 5
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_nhsc_column_text:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_nhsc_heading_underline:
+    weight: 11
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_nhsc_reverse_columns:
+    weight: 8
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_nhsc_video:
+    weight: 13
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_percentage_width:
+    weight: 7
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_title:
+    weight: 9
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  addtoany: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  search_api_excerpt: true

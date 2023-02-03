@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_panelist_name
+    - paragraphs.paragraphs_type.nhsc_full_panel
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_panelist_name
+id: paragraph.nhsc_full_panel.field_panelist_name
+field_name: field_panelist_name
+entity_type: paragraph
+bundle: nhsc_full_panel
+label: panelist-name
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

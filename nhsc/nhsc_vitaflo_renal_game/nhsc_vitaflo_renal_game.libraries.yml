@@ -1,0 +1,6 @@
+game-assets:
+  js:
+    js/app.js: {}
+  css:
+    theme:
+      css/fonts.css: {}

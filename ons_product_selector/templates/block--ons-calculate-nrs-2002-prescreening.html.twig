@@ -1,0 +1,43 @@
+<div class="calculator calculator--nrs" id="nrs">
+	<h2 class="calculator__title">
+		{{ 'Check malnutrition risk with NRS-2002'|t }}
+		<span class="onsTooltip">
+			<span class="onsTooltip__icon">?</span>
+			<span class="onsTooltip__content">{{ 'The NRS-2002 system is to detect the risk of developing malnutrition in the hospital setting Screening tools recommended by ESPEN in hospitalized patients <sup>1</sup>'|t }}</span>
+		</span>
+	</h2>
+
+	<form method="POST" action="{{data.action}}" id="pre-nrs2002">
+		<div class="calculator__form-group calculator__form-group--radio">
+			<p>{{ 'Has the patient had a reduced dietary intake in the last week?'|t }}</p>
+			<div class="item">
+				<input type="radio" id="reduced_dietary_0" name="reduced_dietary" value="1" required>
+				<label for="reduced_dietary_0">{{ 'Yes'|t }}</label>
+			</div>
+			<div class="item">
+				<input type="radio" id="reduced_dietary_1" name="reduced_dietary" value="0" required>
+				<label for="reduced_dietary_1">{{ 'no'|t }}</label>
+			</div>
+		</div>
+
+		<div class="calculator__form-group calculator__form-group--radio">
+			<p>{{ 'Is the patient severely ill? (e.g in intensive therapy)'|t }}</p>
+			<div class="item">
+				<input type="radio" id="severity_ill_0" name="severity_ill" value="1" required>
+				<label for="severity_ill_0">{{ 'Yes'|t }}</label>
+			</div>
+			<div class="item">
+				<input type="radio" id="severity_ill_1" name="severity_ill" value="0" required>
+				<label for="severity_ill_1">{{ 'No'|t }}</label>
+			</div>
+		</div>
+		<span class="onsTooltip onsTooltip--reference">
+			<span class="onsTooltip__text">{{"References"|t}}</span>
+			<span class="onsTooltip__content">
+				{{'1- Kondrup J, et al. Nutritional risk screening (NRS 2002): a new method based on an analysis of controlled clinical trials. Clin Nutr 2003;22(3):321-36. Reproduced with permission from Elsevier'|t}}<br/>
+				{{'2- Mcclave SA, Guidelines for the Provision and Assessment of Nutrition'|t}}<br/>
+				{{'Support Therapy in the Adult Critically Ill Patient: Society of Critical Care Medicine (SCCM) and American Society for Parenteral and Enteral Nutrition (A.S.P.E.N.) JPEN 2016;40(2):159-211'|t}}
+			</span>
+		</span>
+	</form>
+</div>

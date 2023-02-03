@@ -1,0 +1,10 @@
+name: 'NHSc Mega Menu'
+type: module
+description: 'NHSc Mega Menu - Website'
+core_version_requirement: ^8 || ^9
+package: 'Custom'
+configure: nhsc_mega_menu.default_form
+dependencies:
+  - simplify_menu
+  - drupal:locale
+  - config_translation

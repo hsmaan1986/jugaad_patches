@@ -1,0 +1,5 @@
+name: 'nhsc_clickable_banner'
+type: module
+description: 'nhsc clickable banner module'
+core_version_requirement: ^8 || ^9
+package: 'Custom'

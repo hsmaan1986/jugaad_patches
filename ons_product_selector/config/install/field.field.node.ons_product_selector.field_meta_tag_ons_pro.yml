@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meta_tag_ons_pro
+    - node.type.ons_product_selector
+  module:
+    - datalayer
+    - metatag
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_meta_tag_ons_pro
+id: node.ons_product_selector.field_meta_tag_ons_pro
+field_name: field_meta_tag_ons_pro
+entity_type: node
+bundle: ons_product_selector
+label: 'Meta Tag Ons Product'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

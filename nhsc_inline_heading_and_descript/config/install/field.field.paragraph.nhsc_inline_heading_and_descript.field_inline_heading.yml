@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_inline_heading
+    - paragraphs.paragraphs_type.nhsc_inline_heading_and_descript
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_inline_heading
+id: paragraph.nhsc_inline_heading_and_descript.field_inline_heading
+field_name: field_inline_heading
+entity_type: paragraph
+bundle: nhsc_inline_heading_and_descript
+label: 'inline heading'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

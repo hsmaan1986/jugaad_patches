@@ -1,0 +1,9 @@
+name: Mobile Search
+type: module
+description: Adds a Mobile Search button
+package: custom
+core_version_requirement: ^8 || ^9
+configure: mobile_search.settings
+dependencies:
+  - drupal:block
+  - drupal:node

@@ -1,0 +1,141 @@
+<div class="learn-to-grow-container">
+{#    <div class="main-navbar">#}
+{#        <div class="main-navbar-inner">#}
+{#            <div class="icons">#}
+{#                <img class="meritene-logo" src="{{ nav_bar_logo }}">#}
+{#                <a class="hamburger-menu-button" href="#"><img class="hamburger-menu" src="/img/hamburger-circle.png"></a>#}
+{#            </div>#}
+{#        </div>#}
+
+{#        <div class="navbar-menu" style="display: none;">#}
+{#            <div class="menu-inner">#}
+{#                <p class="menu-home">#}
+{#                    <a href="{{ home_url }}">{{ home_url_text }}</a>#}
+{#                </p>#}
+{#                <div class="menu-separator"></div>#}
+{#                {% for key, m in menu %}#}
+{#                    <p class="menu-{{ key }}">#}
+{#                        <a href="{{ m.url }}">#}
+{#                            {{ m.menu_title }}#}
+{#                        </a>#}
+{#                    </p>#}
+{#                {% endfor %}#}
+{#                <div class="menu-separator"></div>#}
+{#                <p class="menu-tips hidden">#}
+{#                    <a id="menu-item-tips" href="{{ tips_url }}">{{ tips_url_text }}</a>#}
+{#                </p>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#    <div class="learn-to-grow-menu">#}
+{#        <div class="arrows-container">#}
+{#            #}{# Sub menu#}
+{#            {% for key, m in menu %}#}
+{#            <div class="arrow">#}
+{#                <a href="{{ m.url }}">#}
+{#                    {{ m.menu_title }}#}
+{#                </a>#}
+{#            </div>#}
+{#            {% endfor %}#}
+{#        </div>#}
+{#    </div>#}
+    <div class="col-xs-12 questinnaire-info">
+        <div class="questinnaire-title">
+            {{ survey_data.survey_title }}
+        </div>
+        <div class="questinnaire-body">
+            {{ survey_data.instructions_copy|raw }}
+        </div>
+    </div>
+    <div class="intro-form-area">
+        <div class="intro-form-title">
+
+        </div>
+        {{ intro_form }}
+    </div>
+
+    <div class="questinnaire-title col-xs-12 ">
+        {{ survey_data.survey_sub_title }}
+    </div>
+
+    <div class="col-xs-12 question-tabs">
+        <nav>
+            <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                {% for q, question in questions %}
+                    {% if loop.first %}
+                        {% set active='active' %}
+                    {% else %}
+                        {% set active='' %}
+                    {% endif %}
+
+                    <a class="nav-item nav-link" id="nav-question-{{ q }}-tab"
+                       data-toggle="tab" href="#nav-question-{{ q }}" role="tab" aria-controls="nav--question-{{ q }}">
+                        {{ question.title }}
+                        <span id="question-{{ q }}-count">0</span>/{{ question.questions|length }}
+                    </a>
+
+                {% endfor %}
+            </div>
+        </nav>
+        <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+
+            {% for q, question in questions %}
+
+                {% if loop.first %}
+                    {% set active='active' %}
+                    {% set show='show' %}
+                {% else %}
+                    {% set active='' %}
+                    {% set show='' %}
+                {% endif %}
+
+                <div class="tab-pane fade " id="nav-question-{{ q }}" role="tabpanel" aria-labelledby="nav-home-tab">
+                    {#  Loop through questions #}
+                    <div class="questions owl-carousel">
+                        {% for q, this_question in question.questions %}
+                            <div class="question-container col-xs-3 ">
+                                <div class="question-item ">
+                                    <div class="question-image">
+                                        {{ this_question.field['#description']|raw }}
+                                    </div>
+                                    <div class="question-title">
+                                        {{ this_question.field['#title'] }}
+                                    </div>
+                                    <div class="question-list">
+                                        <select id="{{ this_question.name }}" class="question-select-box">
+                                            {% for o, option in this_question.field['#options'] %}
+                                                <option value="{{ o }}">{{ option }}</option>
+                                            {% endfor %}
+                                        </select>
+                                        <div class="question-tooltip">
+                                            <button class="tootip" role="tooltip" data-toggle="tooltip" title="{{ this_question.field['#help'] }}"><span class="glyphicon glyphicon-info-sign icon_info" title="info"></span></button>
+                                        </div>
+                                        <div class="question-switcher">
+                                            <div class="question-switcher-label-top">{{ question.switchers[q]["sub-title"] }}</div>
+                                            <div class="question-switch-me">
+                                                <label class="switch">
+                                                    <input type="checkbox" id="hcp-site-switcher" />
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                            <div class="question-switcher-label-bottom">{{ question.switchers[q]["title"] }}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+    <div class="results-button-wraper">
+        {{ submit_button_form }}
+    </div>
+
+</div>

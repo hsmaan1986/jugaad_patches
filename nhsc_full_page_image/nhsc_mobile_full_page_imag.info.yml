@@ -1,0 +1,16 @@
+name: nhsc_mobile_full_page_imag
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - autologout
+  - block
+  - field
+  - field_permissions
+  - file
+  - image
+  - metatag
+  - paragraphs
+  - rng
+  - system
+  - user
+  - views

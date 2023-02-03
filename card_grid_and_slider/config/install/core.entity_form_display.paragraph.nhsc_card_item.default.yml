@@ -1,0 +1,65 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_card_item.field_body
+    - field.field.paragraph.nhsc_card_item.field_cta
+    - field.field.paragraph.nhsc_card_item.field_image
+    - field.field.paragraph.nhsc_card_item.field_title
+    - field.field.paragraph.nhsc_card_item.field_topic
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.nhsc_card_item
+  module:
+    - link
+    - svg_image
+    - text
+id: paragraph.nhsc_card_item.default
+targetEntityType: paragraph
+bundle: nhsc_card_item
+mode: default
+content:
+  field_body:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_cta:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_image:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_topic:
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * Contains nhsc_protein_calculator.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function nhsc_protein_calculator_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the nhsc_protein_calculator module.
+    case 'help.page.nhsc_protein_calculator':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('NHSc Protein Calculator') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function nhsc_protein_calculator_theme() {
+  return [
+    'nhsc_protein_calculator' => [
+      'render element' => 'form',
+      '#data' => NULL
+    ],
+  ];
+}
+
+function nhsc_protein_calculator_page_attachments(array &$attachments) {
+
+  $attachments['#attached']['library'][] = 'nhsc_protein_calculator/nhsc_protein_calculator';
+
+}

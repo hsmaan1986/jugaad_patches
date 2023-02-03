@@ -1,0 +1,9 @@
+nhsc_content_manager.add_content:
+  path: '/content/article/add/{speciality}'
+  defaults:
+    _title: 'Add Article Content '
+    _form: '\Drupal\nhsc_content_manager\Form\AddArticleContentForm'
+  requirements:
+    _user_is_logged_in: 'TRUE'
+  options:
+      no_cache: 'TRUE'

@@ -1,0 +1,169 @@
+uuid: 2b5ab256-9bfd-417f-abcd-67b6c927b6fc
+langcode: en
+status: open
+dependencies: {  }
+open: null
+close: null
+weight: 0
+uid: 1
+template: false
+archive: false
+id: self_assessment
+title: self-assessment
+description: ''
+category: ''
+elements: "introduction_page:\n  '#type': webform_wizard_page\n  '#title': 'Do you feel tired and lack energy?'\n  '#next_button_label': 'Get Started'\n  intro_page_copy:\n    '#type': label\n    '#description': 'While nothing can replace the expert advice of your doctor or pharmacist, this simple self-assessment can provide ideas on how to improve your energy levels to help you do the things you enjoy every day! Receive tips and links to helpful information.'\npage_1:\n  '#type': webform_wizard_page\n  '#title': '1'\n  '#next_button_label': Next\n  question_1:\n    '#type': radios\n    '#title': 'Do you tire quickly during modest physical effort ? (e.g. climbing a flight of stairs)'\n    '#description': '<img alt=\"\" src=\"https://www.nestlehealthscience.co.uk/asset-library/PublishingImages/health-managment/aging/self-assessment/q1.jpg\" />'\n    '#options':\n      - 'No'\n      - Sometimes\n      - Always\npage_2:\n  '#type': webform_wizard_page\n  '#title': '2'\n  '#prev_button_label': Previous\n  '#next_button_label': Next\n  question_2:\n    '#type': radios\n    '#title': 'Do you experience a lack of strength or energy during daily activities? (e.g. carrying shopping bags)'\n    '#description': '<img alt=\"\" src=\"https://www.nestlehealthscience.co.uk/asset-library/PublishingImages/health-managment/aging/self-assessment/q2.jpg\" />'\n    '#options':\n      - 'No'\n      - Sometimes\n      - Always\npage_3:\n  '#type': webform_wizard_page\n  '#title': '3'\n  '#prev_button_label': Previous\n  '#next_button_label': Next\n  question_3:\n    '#type': radios\n    '#title': 'How many servings of protein are you eating per day (e.g. meat, fish, eggs, dairy products, pulses, nuts)'\n    '#description': '<img alt=\"\" src=\"https://www.nestlehealthscience.co.uk/asset-library/PublishingImages/health-managment/aging/self-assessment/q3.jpg\" />'\n    '#options':\n      - 0-1\n      - 1-2\n      - 2-3\npage_4:\n  '#type': webform_wizard_page\n  '#title': '4'\n  '#prev_button_label': Previous\n  '#next_button_label': Next\n  question_4:\n    '#type': radios\n    '#title': ' Do you know the sources of B vitamins and iron in your diet?'\n    '#description': '<img alt=\"\" src=\"https://www.nestlehealthscience.co.uk/asset-library/PublishingImages/health-managment/aging/self-assessment/q4.jpg\" />'\n    '#options':\n      - 'No'\n      - Unsure\n      - 'Yes'\npage_5:\n  '#type': webform_wizard_page\n  '#title': '5'\n  '#prev_button_label': Previous\n  '#next_button_label': Submit\n  question_5:\n    '#type': radios\n    '#title': ' Do you drink at least 2 litres of water daily?'\n    '#description': '<img alt=\"\" src=\"https://www.nestlehealthscience.co.uk/asset-library/PublishingImages/health-managment/aging/self-assessment/q5.jpg\" />'\n    '#options':\n      - 'No'\n      - Unsure\n      - 'Yes'"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_title: both
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_remote_addr: true
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  submission_label: ''
+  submission_log: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: page
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_url: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }

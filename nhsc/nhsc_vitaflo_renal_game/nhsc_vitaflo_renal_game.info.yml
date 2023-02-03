@@ -1,0 +1,5 @@
+name: 'NHSc Vitaflo Rena Game'
+type: module
+description: 'Vitaflo Renal Game'
+core_version_requirement: ^8 || ^9
+package: 'Nestle Heath Sciences'

@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_accordion.field_nhsc_accordion_item
+    - field.field.paragraph.nhsc_accordion.field_nhsc_accordion_multiple
+    - paragraphs.paragraphs_type.nhsc_accordion
+  module:
+    - paragraphs
+id: paragraph.nhsc_accordion.default
+targetEntityType: paragraph
+bundle: nhsc_accordion
+mode: default
+content:
+  field_nhsc_accordion_item:
+    type: entity_reference_paragraphs
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_nhsc_accordion_multiple:
+    weight: 0
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,6 @@
+# yaml file to define local tasks for admin settings form
+nhsc_free_sample_form.links.config_form:
+  route_name: nhsc_free_sample_form.config_form
+  title: Nhsc Free Sample Configuration Settings 
+  base_route: nhsc_free_sample_form.config_form
+  weight: 0

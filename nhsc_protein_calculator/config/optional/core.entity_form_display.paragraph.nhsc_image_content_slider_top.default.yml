@@ -1,0 +1,58 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.image_browser
+    - field.field.paragraph.nhsc_image_content_slider_top.field_nhsc_heading_font
+    - field.field.paragraph.nhsc_image_content_slider_top.field_nhsc_slider_content
+    - field.field.paragraph.nhsc_image_content_slider_top.field_nhsc_slider_heading
+    - field.field.paragraph.nhsc_image_content_slider_top.field_nhsc_slider_image
+    - paragraphs.paragraphs_type.nhsc_image_content_slider_top
+  module:
+    - entity_browser
+    - text
+id: paragraph.nhsc_image_content_slider_top.default
+targetEntityType: paragraph
+bundle: nhsc_image_content_slider_top
+mode: default
+content:
+  field_nhsc_heading_font:
+    weight: 103
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_nhsc_slider_content:
+    weight: 101
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_nhsc_slider_heading:
+    weight: 102
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_nhsc_slider_image:
+    type: entity_browser_file
+    weight: 104
+    settings:
+      entity_browser: image_browser
+      field_widget_edit: true
+      field_widget_remove: true
+      view_mode: default
+      preview_image_style: thumbnail
+      open: true
+      selection_mode: selection_append
+      field_widget_replace: false
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

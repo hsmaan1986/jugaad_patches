@@ -1,0 +1,10 @@
+name: Buy Now
+type: module
+description: "Configure Buy Now Module"
+core_version_requirement: ^8 || ^9
+version: 8.x-1.0
+configure: nhsc_module_buynow.settings_form
+package: NHSC Custom Modules (Wunderman)
+dependencies:
+  - field
+  - paragraphs

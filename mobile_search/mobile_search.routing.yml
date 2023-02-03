@@ -1,0 +1,7 @@
+mobile_search.settings:
+  path: '/admin/config/user-interface/mobile_search'
+  defaults:
+    _form: '\Drupal\mobile_search\Form\ConfigForm'
+    _title: 'Mobile Search Settings'
+  requirements:
+    _permission: 'administer site configuration'

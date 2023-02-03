@@ -1,0 +1,14 @@
+{
+  "name": "drupal/nhsc_custom_brazil",
+  "type": "drupal-module",
+  "description": "Customisations for NHSc Brazil",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/nhsc_custom_brazil",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/nhsc_custom_brazil",
+    "source": "http://cgit.drupalcode.org/nhsc_custom_brazil"
+  },
+  "require": { }
+}

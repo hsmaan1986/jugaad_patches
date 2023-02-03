@@ -1,0 +1,8 @@
+name: 'Getter API'
+description: 'Getter'
+type: module
+core_version_requirement: ^8 || ^9
+package: custom
+configure: getter.settings_form
+dependencies:
+  - node

@@ -1,0 +1,5 @@
+name: Persentil Calculation
+type: module
+description: Persentil Calculation Page.
+package: Drupart
+core_version_requirement: ^8 || ^9

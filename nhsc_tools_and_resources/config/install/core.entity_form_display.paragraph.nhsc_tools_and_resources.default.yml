@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_tools_and_resources.field_nhsc_tools_resources_item
+    - paragraphs.paragraphs_type.nhsc_tools_and_resources
+  module:
+    - paragraphs
+id: paragraph.nhsc_tools_and_resources.default
+targetEntityType: paragraph
+bundle: nhsc_tools_and_resources
+mode: default
+content:
+  field_nhsc_tools_resources_item:
+    type: entity_reference_paragraphs
+    weight: 5
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

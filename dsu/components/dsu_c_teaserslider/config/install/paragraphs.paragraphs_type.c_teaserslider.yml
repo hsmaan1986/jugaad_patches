@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: c_teaserslider
+label: 'Teaser Card/Slider'
+icon_uuid: null
+description: null
+behavior_plugins: {  }

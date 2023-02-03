@@ -1,0 +1,12 @@
+nhsc_ccg_spend_calculator.settings_form:
+  title: 'CCG Spend Calculator Configuration'
+  route_name: nhsc_ccg_spend_calculator.settings_form
+  description: 'CCG Spend Calculator Settings'
+  parent: system.admin_config_system
+  weight: 99
+
+nhsc_ccg_spend_calculator.import_ccg:
+  title: 'Import CCGs'
+  route_name: nhsc_ccg_spend_calculator.import_form
+  parent: system.admin_content
+  description: 'Import ccg content'

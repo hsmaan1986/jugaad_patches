@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: c_teaser_slide
+label: 'Teaser Slide'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

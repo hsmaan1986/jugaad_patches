@@ -1,0 +1,16 @@
+<?php
+/**
+* @file
+* A description of what your module does.
+*/
+
+
+/**
+ * Implements hook_uninstall().
+ */
+function nppe_module_html_site_importer_uninstall()
+{
+    Drupal::configFactory()->getEditable('field.field.node.raw_html_page.field_nppe_field_html_importer_b')->delete();
+    Drupal::configFactory()->getEditable('field.storage.node.field_nppe_field_html_importer_b')->delete();
+    Drupal::configFactory()->getEditable('node.type.raw_html_page')->delete();
+}

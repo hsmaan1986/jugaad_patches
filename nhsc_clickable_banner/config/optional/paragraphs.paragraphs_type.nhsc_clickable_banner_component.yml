@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: nhsc_clickable_banner_component
+label: 'nhsc clickable banner component'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

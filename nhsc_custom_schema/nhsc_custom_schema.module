@@ -1,0 +1,107 @@
+<?php
+
+/**
+ * @file
+ * Contains nhsc_custom_schema.module.
+ */
+
+/**
+ * Implements hook_page_attachments().
+ */
+function nhsc_custom_schema_page_attachments (&$page) {
+
+    $node = Drupal::routeMatch()->getParameter('node');
+    if ($node instanceof \Drupal\node\NodeInterface ) {
+
+        if ($node_type = $node->getType()){
+
+            $graph = [];
+
+            switch ($node_type) {
+                case 'accordion':
+                    $graph = [
+                        "@type" => "FAQPage",
+                        "mainEntity" => getFAQdata($node),
+                    ];
+                    break;
+            }
+
+            if (!empty($graph)) {
+
+                $javascript_header = [
+                    "@context" => "https://schema.org",
+                    "@graph" => $graph,
+                ];
+
+                $page['#attached']['html_head'][] = [
+                    // The data.
+                    [
+                        // Add a <script> tag.
+                        '#tag' => 'script',
+                        // Add JavaScript to the <script> tag.
+                        '#value' => \Drupal\Core\Render\Markup::create(
+                            json_encode($javascript_header,
+                                JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_LINE_TERMINATORS
+                            )),
+                        // Give weight so it appears after meta tags, etc.
+                        '#weight' => -1,
+                        '#attributes' => [
+                            'type' => 'application/ld+json'
+                        ]
+                    ],
+                    // A key, to make it possible to recognize this HTML <HEAD> element when altering.
+                    'key'
+                ];
+
+            }
+
+        }
+    }
+}
+
+if (function_exists('getFAQdata') === false) {
+  function getFAQdata ($node){
+
+    $question_answers = [];
+
+    if ($node->hasField('field_nhsc_faq')) {
+
+      $field = $node->get('field_nhsc_faq');
+      $paragraphs = $field->referencedEntities();
+
+
+      foreach ($paragraphs as $paragraph) {
+
+        if ($paragraph->getType() === 'nhsc_multiple_faq'){
+          //field_nhsc_multiple_faq_item
+          $main_title = $paragraph->get('field_title')->value;
+
+          $main_titles[] = $main_title;
+
+          // slider items
+          $sliders = $paragraph->get('field_nhsc_multiple_faq_item')->referencedEntities();
+          foreach ($sliders as $slider) {
+            $faq_title = $slider->get('field_title')->value;
+            $faq_body = $slider->get('field_body')->value;
+
+            $question_answers[] = [
+              "@type" => "Question",
+              "name" => $faq_title,
+              "acceptedAnswer" => [
+                "@type" => "Answer",
+                "text" =>$faq_body,
+              ]
+            ];
+
+          }
+
+        }
+
+      }
+
+    }
+
+
+    return $question_answers;
+  }
+}

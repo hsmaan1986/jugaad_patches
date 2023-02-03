@@ -1,0 +1,89 @@
+status: true
+dependencies:
+  config:
+    - field.field.node.product.body
+    - field.field.node.product.field_brand
+    - field.field.node.product.field_buy_now_kwit
+    - field.field.node.product.field_bv_product_id
+    - field.field.node.product.field_condition
+    - field.field.node.product.field_filtrar_por
+    - field.field.node.product.field_flavours
+    - field.field.node.product.field_images
+    - field.field.node.product.field_meta_tags
+    - field.field.node.product.field_nhsc_product_components
+    - field.field.node.product.field_presentation
+    - field.field.node.product.field_site_switcher_settings
+    - field.field.node.product.field_specific_condition
+    - node.type.product
+  module:
+    - entity_reference_revisions
+    - nhsc_bazaarvoice
+    - nhsc_kwit
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.product.default
+targetEntityType: node
+bundle: product
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_buy_now_kwit:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: kwit_formatter
+    region: content
+  field_bv_product_id:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: bazaarvoice_review
+    region: content
+  field_nhsc_product_components:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_site_switcher_settings:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_brand: true
+  field_condition: true
+  field_filtrar_por: true
+  field_flavours: true
+  field_images: true
+  field_meta_tags: true
+  field_presentation: true
+  field_specific_condition: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

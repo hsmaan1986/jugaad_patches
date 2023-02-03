@@ -1,0 +1,149 @@
+<?php
+
+/**
+ * @file
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function ons_product_selector_help($route_name, RouteMatchInterface $route_match)
+{
+    switch ($route_name) {
+        // Main module help for the nppe_module_winning_api module.
+        case 'help.page.ons_product_selector':
+            $output = '';
+            $output .= '<h3>' . t('About') . '</h3>';
+            $output .= '<p>' . t('Nestle Health Science Product Selector.') . '</p>';
+            return $output;
+
+        default:
+    }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function ons_product_selector_theme()
+{
+    return [
+        'ons_product_selector' => [
+            'variables' => [
+                'form' => NULL,
+            ],
+            'template' => 'ons-product-selector',
+        ],
+        'ons_product_taxonomy_selector_block' => [
+            'variables' => [
+                'taxonomies' => []
+            ],
+            'template' => 'block--ons-product-taxonomy-selector-block'
+        ],
+        'ons_product_selector_card' => [
+            'variables' => [
+                'data' => [],
+                'count' => 0,
+                'selected_taxonomies' => []
+            ],
+            'template' => 'block--ons-product-selector-card'
+        ],
+
+        'ons_calc_patient_data' => [
+            'variables' => ['data' => []],
+            'template' => 'block--ons-calc-patient-data'
+        ],
+
+        'ons_calc_patient_location' => [
+            'variables' => ['data' => []],
+            'template' => 'block--ons-calc-patient-location'
+        ],
+        'ons_malnutrition' => [
+          'variables' => ['data' => []],
+          'template' => 'block--ons-malnutrition'
+        ],
+
+
+        'confirm_malnutricion_risk_with_mna' => [
+            'variables' => ['data' => []],
+            'template' => 'block--ons-confirm-malnutricion-risk-with-mna'
+        ],
+
+        'steps' => [
+            'variables' => ['data' => []],
+            'template' => 'block--ons-steps'
+        ],
+
+        'check_dysphagia_risk_with_eat_10' => [
+            'variables' => ['data' => []],
+            'template' => 'block--ons-check-dysphagia-risk-with-eat-10'
+        ],
+
+        'step_2_completed' => [
+            'variables' => ['data' => []],
+            'template' => 'block--ons-step-2-completed'
+        ],
+
+        'calculate_nutritional_needs' => [
+            'variables' => ['data' => []],
+            'template' => 'block--ons-calculate-nutritional-needs'
+        ],
+
+        'results' => [
+            'variables' => ['data' => []],
+            'template' => 'block--ons-calculate-results'
+        ],
+        'ons_calculators_start' => [
+            'variables' => ['data' => []],
+            'template' => 'block--ons-calculators-start'
+        ],
+        'calculate_must' => [
+            'variables' => ['data' => []],
+            'template' => 'block--ons-calculate-must'
+        ],
+        'calculate_nrs_2002' => [
+            'variables' => ['data' => []],
+            'template' => 'block--ons-calculate-nrs-2002'
+        ],
+        'calculate_nrs_2002_prescreening' => [
+            'variables' => ['data' => []],
+            'template' => 'block--ons-calculate-nrs-2002-prescreening'
+        ],
+        'calculators' => [
+            'variables' => ['data' => []],
+            'template' => 'block--ons-calculators'
+        ],
+        'mail_ons' => [
+            'template' => 'mail--ons-product-selector'
+        ],
+        'ons_calc_screening_tool' => [
+            'variables' => ['data' => []],
+            'template' => 'block--ons-calc-screening-tool'
+        ],
+    ];
+}
+
+/**
+ * Implements hook_mail().
+ */
+ function ons_product_selector_mail($key, &$message, $params) {
+    switch ($key) {
+        case 'ons_product_selector':
+            $message['from'] = \Drupal::config('system.site')->get('mail');
+            $message['subject'] = t('ONS Product Selector');
+            $message['params']['file'] = $params['attachments'];
+            $message['headers']['Content-Type'] = 'text/html; charset=UTF-8; format=flowed; delsp=yes';
+            $bodyData = [
+                '#theme' => 'mail_ons',
+            ];
+            $message['body'][] = \Drupal::service('renderer')->render($bodyData);
+
+        break;
+    }
+ }
+
+function ons_product_selector_preprocess(&$variables) {
+    global $base_url;
+    $variables['theme_path'] = $base_url . '/modules/custom/ons_product_selector/front-end/Content/img';
+}

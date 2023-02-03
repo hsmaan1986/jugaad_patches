@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_select_heading
+    - paragraphs.paragraphs_type.nhsc_cta_block
+  module:
+    - datalayer
+    - options
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_select_heading
+id: paragraph.nhsc_cta_block.field_select_heading
+field_name: field_select_heading
+entity_type: paragraph
+bundle: nhsc_cta_block
+label: 'Select heading'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,15 @@
+style:
+  css:
+    base:
+      libraries/css/style.css: {}
+scripts:
+  js:
+    libraries/js/sha1.js: {weight: -1}
+    libraries/js/gigya-client.js: {weight: 0}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery
+    - core/jquery.ui
+    - core/jquery.form
+

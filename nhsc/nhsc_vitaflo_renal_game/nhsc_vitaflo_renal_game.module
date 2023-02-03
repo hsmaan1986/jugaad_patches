@@ -1,0 +1,93 @@
+<?php
+/**
+ * @file
+ * Contains nhsc_vitaflo_renal_game.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormBase;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Component\Render\PlainTextOutput;
+use Drupal\Core\Url;
+use Drupal\Core\Link;
+use Drupal\user\Entity\User;
+use Drupal\Core\Render\Markup;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\InvokeCommand;
+
+/**
+ * Implements hook_help().
+ */
+function nhsc_vitaflo_renal_game_help($route_name, RouteMatchInterface $route_match)
+{
+    switch ($route_name) {
+        // Main module help for the nhsc_vitaflo_renal_game module.
+        case 'help.page.nhsc_vitaflo_renal_game':
+            $output = '';
+            $output .= '<h3>' . t('About') . '</h3>';
+            $output .= '<p>' . t('Nestle Heath Sciences Renal Game') . '</p>';
+            return $output;
+
+        default:
+    }
+}
+
+
+/**
+ * Implements hook_page_attachments().
+ */
+function nhsc_vitaflo_renal_game_page_attachments(array &$page) {
+
+    $description = [
+        '#tag' => 'meta',
+        '#attributes' => [
+            'name' => 'description',
+            'content' => "Play Vitaflo\'s Food Smash Game and learn about the foods you should avoid the foods you should aim to incorporate.",
+
+        ],
+    ];
+    $page['#attached']['html_head'][] = [$description, 'description'];
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function nhsc_vitaflo_renal_game_preprocess_block (&$variables) {
+
+    if ($variables['elements']['#id'] == 'renalgameblock') {
+        $variables['#attached']['library'][] = 'nhsc_vitaflo_renal_game/game-assets';
+
+        $asset_path = drupal_get_path('module', 'nhsc_vitaflo_renal_game');
+
+        $data = [
+            'asset_path' => $asset_path,
+        ];
+
+        $variables['#attached']['drupalSettings']['renal_game_data'] = $data;
+    }
+}
+
+
+/**
+ * Implementation of hook_theme().
+ */
+function nhsc_vitaflo_renal_game_theme($existing, $type, $theme, $path)
+{
+    return [
+        'renal_game_block' => [
+            'variables' => [],
+        ],
+    ];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function nhsc_vitaflo_renal_game_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+
+    if ($node = \Drupal::routeMatch()->getParameter('node')) {
+        $content_type = $node->bundle();
+        $suggestions[] = 'page__'.$content_type;
+    }
+}

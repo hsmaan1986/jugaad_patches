@@ -1,0 +1,52 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.a11y_paragraphs_tabs_panel.field_a11y_para_tabs_tab_content
+    - field.field.paragraph.a11y_paragraphs_tabs_panel.field_a11y_para_tabs_tab_title
+    - field.field.paragraph.a11y_paragraphs_tabs_panel.field_tab_image
+    - paragraphs.paragraphs_type.a11y_paragraphs_tabs_panel
+  module:
+    - entity_reference_revisions
+    - svg_image
+    - text
+id: paragraph.a11y_paragraphs_tabs_panel.default
+targetEntityType: paragraph
+bundle: a11y_paragraphs_tabs_panel
+mode: default
+content:
+  field_a11y_para_tabs_tab_content:
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_a11y_para_tabs_tab_title:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_tab_image:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  addtoany: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  search_api_excerpt: true

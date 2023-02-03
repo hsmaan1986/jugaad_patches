@@ -1,0 +1,74 @@
+<div class="symptoms-checker">
+    <div class="question-area">
+        <div class="introduction">
+            <a id="start"></a>
+            <img alt="{{ 'Symptoms Checker'|t }}" class="symptom-checker-banner" src="{{ main_bunner| raw }}" />
+            <div class="intro-copy">
+                {{ result_data.home_copy|raw }}
+            </div>
+            <a class="button start-button" href="#{{ first_question }}">{{ 'START'|t }}</a>
+        </div>
+
+        <div class="questions">
+            {% for key, survey in survey_data %}
+                {% set q_selector = key  %}
+                <div class="question" id="question-{{ loop.index }}">
+                    <a id="{{ key }}"></a>
+
+                    <div class="question-banner">
+                        {{ survey['#description']|raw }}
+                    </div>
+                    <p class="question-title">{{ survey['#title'] }}</p>
+                    <div class="question-options">
+                        {% for k, option in survey['#options']  %}
+                            {% set option_sel =  q_selector ~ '-' ~ k %}
+                            {% set tooltip =  option|split('--')%}
+                            <div>
+                                <input type="checkbox" class="symptom-option" name="{{ q_selector ~ '_' ~ k|replace({' ':'_'})|lower }}" value="{{ k }}" />
+                                <label data-tooltip="{{ tooltip[1] }}">{{ k }}</label>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="submit-button-area">
+                <a class="button symptoms-submit-button" id="submit" href="#results">{{ 'SUBMIT'|t }}</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="results results-area">
+        <a id="results"></a>
+        <img alt="{{ 'Symptoms Checker'|t }}" class="symptom-checker-banner" src="{{ main_bunner| raw }}" />
+        <div class="results-list">
+            <span class="result-title">{{ 'Symptoms you reported about your child'|t }}:</span>
+            <ul class="result-list">
+
+            </ul>
+        </div>
+        <div class="results-copy">
+            {{ result_data.results_copy|raw }}
+        </div>
+        <div class="results-cta">
+            <a href="{{ result_data.call_to_action_link }}" target="_blank">{{ result_data.call_to_action_text }}</a>
+        </div>
+        <div class="results-disclaimer">
+            {{ result_data.disclaimer_copy|raw }}
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade question-modal" id="OptionModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <a type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></a>
+                <div class="modal-body">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

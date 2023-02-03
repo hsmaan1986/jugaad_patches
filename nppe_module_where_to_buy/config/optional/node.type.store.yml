@@ -1,0 +1,19 @@
+uuid: a8d72e19-bcec-4e67-b512-4a4fd6870edc
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+_core:
+  default_config_hash: 4tR5rdkcZlJxURViOPJN1iE7_-XqaLYyL5aJebZ6pks
+name: Store
+type: store
+description: 'Add store with store location and store details from this content type.'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_full_page_video.field_nhsc_full_page_video
+    - paragraphs.paragraphs_type.nhsc_full_page_video
+  module:
+    - video_embed_field
+id: paragraph.nhsc_full_page_video.default
+targetEntityType: paragraph
+bundle: nhsc_full_page_video
+mode: default
+content:
+  field_nhsc_full_page_video:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: video_embed_field_textfield
+    region: content
+hidden:
+  created: true
+  status: true

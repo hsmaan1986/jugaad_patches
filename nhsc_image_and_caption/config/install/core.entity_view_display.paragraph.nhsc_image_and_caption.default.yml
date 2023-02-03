@@ -1,0 +1,64 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_image_and_caption.field_alignment
+    - field.field.paragraph.nhsc_image_and_caption.field_news_image
+    - field.field.paragraph.nhsc_image_and_caption.field_news_image_caption
+    - field.field.paragraph.nhsc_image_and_caption.field_news_image_mobile
+    - paragraphs.paragraphs_type.nhsc_image_and_caption
+  module:
+    - options
+    - svg_image
+id: paragraph.nhsc_image_and_caption.default
+targetEntityType: paragraph
+bundle: nhsc_image_and_caption
+mode: default
+content:
+  field_alignment:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_news_image:
+    weight: 0
+    label: hidden
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_news_image_caption:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_news_image_mobile:
+    weight: 1
+    label: hidden
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  addtoany: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  search_api_excerpt: true

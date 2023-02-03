@@ -1,0 +1,5 @@
+name: 'Reward System'
+type: module
+description: 'Reward system with points management and auto-generated certificates  depending on customized  achievements behaviors.'
+core_version_requirement: ^8 || ^9
+package: 'Nestle HCP'

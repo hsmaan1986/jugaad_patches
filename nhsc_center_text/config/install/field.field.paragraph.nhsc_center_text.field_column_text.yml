@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_column_text
+    - paragraphs.paragraphs_type.nhsc_center_text
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_column_text
+id: paragraph.nhsc_center_text.field_column_text
+field_name: field_column_text
+entity_type: paragraph
+bundle: nhsc_center_text
+label: 'column text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

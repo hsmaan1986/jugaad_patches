@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_brand_links.field_buy_now_text
+    - field.field.paragraph.nhsc_brand_links.field_country_websites
+    - paragraphs.paragraphs_type.nhsc_brand_links
+  module:
+    - paragraphs
+id: paragraph.nhsc_brand_links.default
+targetEntityType: paragraph
+bundle: nhsc_brand_links
+mode: default
+content:
+  field_buy_now_text:
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: nhsc_heading_and_button
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
+    region: content
+  field_country_websites:
+    weight: 0
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: nhsc_heading_and_dropdown
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
+    region: content
+hidden:
+  created: true
+  status: true

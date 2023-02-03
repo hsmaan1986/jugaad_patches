@@ -1,0 +1,54 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_view.field_nhsc_full_width
+    - field.field.paragraph.nhsc_view.field_nhsc_view
+    - field.field.paragraph.nhsc_view.field_nhsc_view_filter
+    - field.field.paragraph.nhsc_view.field_title
+    - paragraphs.paragraphs_type.nhsc_view
+  module:
+    - viewsreference
+id: paragraph.nhsc_view.default
+targetEntityType: paragraph
+bundle: nhsc_view
+mode: default
+content:
+  field_nhsc_full_width:
+    weight: 3
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_nhsc_view:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: viewsreference_autocomplete
+    region: content
+  field_nhsc_view_filter:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

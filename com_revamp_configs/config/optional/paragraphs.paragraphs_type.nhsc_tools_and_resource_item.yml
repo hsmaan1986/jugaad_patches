@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: nhsc_tools_and_resource_item
+label: 'NHSC Tools and Resource Item'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

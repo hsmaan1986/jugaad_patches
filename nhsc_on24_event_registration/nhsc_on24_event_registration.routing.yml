@@ -1,0 +1,7 @@
+nhsc_on24_event_registration.settings:
+  path: '/admin/config/services/nhsc-on24-event'
+  defaults:
+    _form: '\Drupal\nhsc_on24_event_registration\Form\WebinarSettingsForm'
+    _title: 'ON24 Webinar Settings'
+  requirements:
+    _permission: 'administer site configuration'

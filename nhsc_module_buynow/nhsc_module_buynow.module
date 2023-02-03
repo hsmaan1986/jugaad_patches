@@ -1,0 +1,221 @@
+<?php
+use \Drupal\Core\Routing\RouteMatchInterface;
+
+
+
+
+function nhsc_module_buynow_theme($existing, $type, $theme, $path)
+{
+
+    return [
+        'nhsc_module_buynow_html' => [
+            'variables' => [
+                'buynow_rangebtn_status' => FALSE,
+                'buynow_rangebtn_label' => FALSE,
+                'buynow_rangebtn_id' => FALSE,
+                'buynow_rangebtn_class' => FALSE,
+                'buynow_rangebtn_buttonid' => FALSE,
+                'buynow_rangebtn_ext_url' => FALSE,
+            ],
+        ],
+    ];
+}
+// alter 
+function nhsc_module_buynow_theme_registry_alter(&$theme_registry) {
+  $theme_registry['paragraph--nhsc-buy-now-paragraph--default'] = array(
+    'variables' => array(
+      'view'    => NULL,
+      'options' => NULL,
+      'rows'    => NULL,
+      'title'   => NULL,
+    ),
+  
+    'template' => 'test',
+    'path' => drupal_get_path('module', 'nhsc_module_buynow') . '/templates',
+  );
+}
+
+
+function nhsc_module_buynow_page_bottom(array &$page) {
+    $node = \Drupal::routeMatch()->getParameter('node');
+    $user = \Drupal::currentUser()->getRoles();
+    // get fields set in the backend
+    $config = \Drupal::config('nhsc_module_buynow.settings');
+
+   
+    // general configurations
+    $buynow_brand = $config->get('buynow_brand');
+    $buynow_unit  = $config->get('buynow_unit');
+    $buynow_environment = $config->get('buynow_environment');
+    $buynow_country = $config->get('buynow_country');
+    $buynow_language = $config->get('buynow_language');
+    $buynow_showprice = $config->get('buynow_showprice');
+    $buynow_version = $config->get('buynow_version');
+
+    // styling configurations
+    $buynow_styling_background = $config->get('buynow_styling_background');
+    $buynow_styling_backgroundopacity = $config->get('buynow_styling_backgroundopacity');
+    $buynow_styling_backgroundimg = $config->get('buynow_styling_backgroundimg');
+    $buynow_styling_backgroundimgopacity = $config->get('buynow_styling_backgroundimgopacity');
+    $buynow_styling_borderwidth = $config->get('buynow_styling_borderwidth');
+    $buynow_styling_borderradius = $config->get('buynow_styling_borderradius');
+    $buynow_styling_img_position = $config->get('buynow_styling_img_position');
+    $buynow_styling_fontfamily = $config->get('buynow_styling_fontfamily');
+    $buynow_styling_fontsize = $config->get('buynow_styling_fontsize');
+    $buynow_styling_ctacolor = $config->get('buynow_styling_ctacolor');
+    $buynow_styling_ctafontcolor = $config->get('buynow_styling_ctafontcolor');
+    $buynow_styling_ctahovercolor = $config->get('buynow_styling_ctahovercolor');
+    $buynow_styling_ctafonthovercolor = $config->get('buynow_styling_ctafonthovercolor');
+
+    // click and collect settings
+    $buynow_cac_geolocate = $config->get('buynow_cac_geolocate');
+    $buynow_cac_autocomplete = $config->get('buynow_cac_autocomplete');
+    $buynow_cac_storelocation = $config->get('buynow_cac_storelocation');
+    $buynow_cac_map = $config->get('buynow_cac_map');
+    $buynow_cac_dualtable = $config->get('buynow_cac_dualtable');
+    $buynow_cac_filter = $config->get('buynow_cac_filter');
+ 
+    // range stuff
+    $buynow_rangebtn_status = $config->get('buynow_rangebtn_status');
+    $buynow_rangebtn_label = $config->get('buynow_rangebtn_label');
+    $buynow_rangebtn_id = $config->get('buynow_rangebtn_id');
+    $buynow_rangebtn_class = $config->get('buynow_rangebtn_class');
+    $buynow_rangebtn_buttonid = $config->get('buynow_rangebtn_buttonid');
+    $buynow_rangebtn_ext_url = $config->get('buynow_rangebtn_ext_url');
+
+    // product stuff
+    $buynow_productbtn_status = $config->get('buynow_productbtn_status');
+    $buynow_productbtn_label= $config->get('buynow_productbtn_label');
+    $buynow_productbtn_class = $config->get('buynow_productbtn_class');
+    $buynow_productbtn_external_url = $config->get('buynow_productbtn_external_url');
+
+
+   
+    
+    
+
+
+    
+    if (\Drupal::moduleHandler()->moduleExists('token')) {
+
+       
+            if($buynow_version == 1){
+                $page['#attached']['library'][] = 'nhsc_module_buynow/nhsc_module_buynow';
+            }
+
+            if($buynow_version == 2){
+                $page['#attached']['library'][] = 'nhsc_module_buynow/nhsc_module_buynow_v2';
+            }
+       
+    }
+    
+
+    $page['html_head'] = [
+        // the general settings
+        [
+            '#type' => 'html_tag',
+            '#tag' => 'span',
+            // set attributes like src to load a file
+            '#attributes' => array(
+                'id' => 'nhsc-buynow-general-settings',
+                'data-brand' => $buynow_brand,
+                'data-unit'  => $buynow_unit,
+                'data-environment' => $buynow_environment,
+                'data-country' => $buynow_country,
+                'data-language' => $buynow_language,
+                'data-showprice' => $buynow_showprice,
+                'data-version'  => $buynow_version
+            ),
+        ],
+
+        // the style settings
+        [
+            '#type' => 'html_tag',
+            '#tag' => 'span',
+            // set attributes like src to load a file
+            '#attributes' => array(
+                'id' => 'nhsc-buynow-style-settings',
+                'data-background'=>$buynow_styling_background,
+                'data-background-opacity'=>$buynow_styling_backgroundopacity,
+                'data-background-image'=>$buynow_styling_backgroundimg,
+                'data-background-image-opacity'=>$buynow_styling_backgroundimgopacity,
+                'data-border-width'=>$buynow_styling_borderwidth,
+                'data-border-radius'=>$buynow_styling_borderradius,                
+                'data-product-image-position'=>$buynow_styling_borderradius,
+                'data-font-family'=>$buynow_styling_fontfamily,
+                'data-font-size'=>$buynow_styling_fontsize,
+                'data-cta-color'=>$buynow_styling_ctacolor,
+                'data-cta-font-color'=>$buynow_styling_ctacolor,
+                'data-cta-color-hover'=>$buynow_styling_ctahovercolor,
+                'data-cta-font-color-hover'=>$buynow_styling_ctafonthovercolor
+
+
+                
+            ),
+        ],
+
+
+        // the cac settings
+        [
+            '#type' => 'html_tag',
+            '#tag' => 'span',
+            // set attributes like src to load a file
+            '#attributes' => array(
+                'id' => 'nhsc-buynow-cac-settings',
+                'data-cac-geolocate'=>$buynow_cac_geolocate,
+                'data-cac-autocomplete'=>$buynow_cac_autocomplete,
+                'data-cac-storelocation'=>$buynow_cac_storelocation,
+                'data-cac-map'=>$buynow_cac_map,
+                'data-cac-dualtbl'=>$buynow_cac_dualtable,
+                'data-cac-filter'=>$buynow_cac_filter
+
+
+                
+            ),
+        ],
+
+
+         // the cac settings
+        [
+            '#type' => 'html_tag',
+            '#tag' => 'span',
+            // set attributes like src to load a file
+            '#attributes' => array(
+                'id' => 'nhsc-buynow-range-settings',
+                'data-range-status'=>$buynow_rangebtn_status,
+                'data-range-label'=>$buynow_rangebtn_label,
+                'data-range-id'=>$buynow_rangebtn_id,
+                'data-range-btn-class'=>$buynow_rangebtn_class,
+                'data-range-btn-id'=>$buynow_rangebtn_buttonid,
+                'data-range-ext-url'=>$buynow_rangebtn_ext_url
+
+
+                
+            ),
+        ],
+
+         // the product settings
+        [
+            '#type' => 'html_tag',
+            '#tag' => 'span',
+            // set attributes like src to load a file
+            '#attributes' => array(
+                'id' => 'nhsc-buynow-product-settings',
+                'data-product-status'=>$buynow_productbtn_status,
+                'data-product-btn-label'=>$buynow_productbtn_label,
+                'data-product-btn-class'=>$buynow_productbtn_class,
+                'data-product-ext-url'=>$buynow_productbtn_external_url
+
+
+                
+            ),
+        ],
+
+
+
+
+    ];
+
+
+
+}

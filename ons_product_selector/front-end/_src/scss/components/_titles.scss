@@ -1,0 +1,73 @@
+.ons__title {
+  font-family: $lato-regular;
+  font-size: 20px;
+  color: $color-2;
+  &--list {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 15px;
+  }
+  &--modal {
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0 0 30px;
+    text-align: center;
+  }
+  &--recommandation {
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 30px 0;
+    text-align: center;
+    color: $color-0;
+  }
+  &--recommandation-result {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: 700;
+    padding: 10px;
+    text-align: center;
+    color: $color-0;
+    background: $white;
+  }
+  &__modal--infos {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    border-bottom: 1px solid $gray-0;
+    padding: 0 0 10px;
+    margin: 0 0 15px;
+  }
+  &__modal--product {
+    margin-bottom: 5px;
+    a {
+      font-family: $lato-regular;
+      font-size: 16px;
+      font-weight: 700;
+      color: $color-1;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: $ease-0;
+      &:hover {
+        color: $color-0;
+      }
+    }
+  }
+  &--toolbox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    img {
+      width: 30px;
+      height: auto;
+      margin-right: 5px;
+    }
+  }
+}

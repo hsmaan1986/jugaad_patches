@@ -1,0 +1,221 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.ons_product_selector.field_meta_tag_ons_pro
+    - field.field.node.ons_product_selector.field_ons_description
+    - field.field.node.ons_product_selector.field_ons_energy
+    - field.field.node.ons_product_selector.field_ons_flavours
+    - field.field.node.ons_product_selector.field_ons_format_search
+    - field.field.node.ons_product_selector.field_ons_format_size
+    - field.field.node.ons_product_selector.field_ons_ingredient
+    - field.field.node.ons_product_selector.field_ons_intolerance
+    - field.field.node.ons_product_selector.field_ons_kcal
+    - field.field.node.ons_product_selector.field_ons_low_glycemic_index
+    - field.field.node.ons_product_selector.field_ons_p_cho_f_
+    - field.field.node.ons_product_selector.field_ons_pathology
+    - field.field.node.ons_product_selector.field_ons_pipcode
+    - field.field.node.ons_product_selector.field_ons_product
+    - field.field.node.ons_product_selector.field_ons_protein
+    - field.field.node.ons_product_selector.field_ons_protein_search
+    - field.field.node.ons_product_selector.field_ons_taste
+    - field.field.node.ons_product_selector.field_ons_type
+    - node.type.ons_product_selector
+  module:
+    - content_moderation
+    - dynamic_entity_reference
+    - path
+id: node.ons_product_selector.default
+targetEntityType: node
+bundle: ons_product_selector
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_ons_description:
+    weight: 12
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_ons_energy:
+    weight: 25
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_ons_flavours:
+    weight: 17
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_ons_format_search:
+    weight: 22
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_ons_format_size:
+    weight: 16
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_ons_ingredient:
+    weight: 19
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_ons_intolerance:
+    weight: 20
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_ons_kcal:
+    weight: 13
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_ons_low_glycemic_index:
+    weight: 21
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_ons_p_cho_f_:
+    weight: 15
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_ons_pathology:
+    weight: 24
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_ons_pipcode:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_ons_product:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 40
+      placeholder: ''
+    third_party_settings: {  }
+    type: dynamic_entity_reference_default
+    region: content
+  field_ons_protein:
+    weight: 14
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_ons_protein_search:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_ons_taste:
+    weight: 23
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_ons_type:
+    weight: 18
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  langcode:
+    type: language_select
+    weight: 3
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 10
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 6
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 11
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 7
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_meta_tag_ons_pro: true

@@ -1,0 +1,5 @@
+name: NHSc Missing Alt Text
+description: Adds Drush 9 Commands to add missing alt text on images
+core_version_requirement: ^8 || ^9
+type: module
+package: custom

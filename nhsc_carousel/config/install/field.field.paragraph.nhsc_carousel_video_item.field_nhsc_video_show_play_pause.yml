@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_nhsc_video_show_play_pause
+    - paragraphs.paragraphs_type.nhsc_carousel_video_item
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_nhsc_video_show_play_pause
+id: paragraph.nhsc_carousel_video_item.field_nhsc_video_show_play_pause
+field_name: field_nhsc_video_show_play_pause
+entity_type: paragraph
+bundle: nhsc_carousel_video_item
+label: 'Show Play/Pause'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

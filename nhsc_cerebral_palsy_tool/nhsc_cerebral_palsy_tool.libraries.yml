@@ -1,0 +1,9 @@
+nhsc_cerebral_palsy_tool:
+  version: 1.x
+  js:
+    js/nhsc_cerebral_palsy_tool.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings

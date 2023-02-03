@@ -1,0 +1,48 @@
+hcp_calculators.settings_form:
+  path: '/admin/config/system/hcp_calculators'
+  defaults:
+    _title: 'HCP Calculators'
+    _form: '\Drupal\hcp_calculators\Form\hcp_calculatorsSettingsForm'
+  requirements:
+    _permission: 'administer hcp calculators'
+
+hcp_calculators.calculators:
+  path: 'node/3'
+  defaults:
+    _controller: '\Drupal\hcp_calculators\Controller\CalculatorController::page'
+    _title: 'Calculators'
+  requirements:
+    _user_is_logged_in: 'TRUE'
+
+hcp_calculators.bmi_calculator:
+  path: 'node/5'
+  defaults:
+    _controller: '\Drupal\hcp_calculators\Controller\CalculatorController::page'
+    _title: 'BMI Calculator'
+  requirements:
+    _user_is_logged_in: 'TRUE'
+
+hcp_calculators.nrs_calculator:
+  path: 'node/7'
+  defaults:
+    _controller: '\Drupal\hcp_calculators\Controller\CalculatorController::page'
+    _title: 'NRS Calculator'
+  requirements:
+    _user_is_logged_in: 'TRUE'
+
+hcp_calculators.protein_calculator:
+  path: 'node/6'
+  defaults:
+    _controller: '\Drupal\hcp_calculators\Controller\CalculatorController::page'
+    _title: 'Protein Calculator'
+  requirements:
+    _user_is_logged_in: 'TRUE'
+
+hcp_calculators.mna_calculator:
+  path: 'node/29'
+  defaults:
+    _controller: '\Drupal\hcp_calculators\Controller\CalculatorController::page'
+    _title: 'NRS Calculator'
+  requirements:
+    _user_is_logged_in: 'TRUE'
+

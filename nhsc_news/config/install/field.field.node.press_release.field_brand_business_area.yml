@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_brand_business_area
+    - node.type.press_release
+    - taxonomy.vocabulary.business_area
+  content:
+    - 'taxonomy_term:business_area:6965a08e-4307-498d-ad23-cb82af9b12df'
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: 'Business Area'
+id: node.press_release.field_brand_business_area
+field_name: field_brand_business_area
+entity_type: node
+bundle: press_release
+label: 'Brand Business Area'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: 6965a08e-4307-498d-ad23-cb82af9b12df
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      business_area: business_area
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

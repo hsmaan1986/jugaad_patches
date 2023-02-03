@@ -1,0 +1,64 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_full_page_image.field_image_mobile
+    - field.field.paragraph.nhsc_full_page_image.field_nhsc_image_full_page
+    - field.field.paragraph.nhsc_full_page_image.field_nhsc_mobile_full_page_imag
+    - paragraphs.paragraphs_type.nhsc_full_page_image
+  module:
+    - svg_image
+id: paragraph.nhsc_full_page_image.default
+targetEntityType: paragraph
+bundle: nhsc_full_page_image
+mode: default
+content:
+  field_image_mobile:
+    weight: 2
+    label: above
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_nhsc_image_full_page:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+      svg_render_as_image: true
+      svg_attributes:
+        width: null
+        height: null
+    third_party_settings:
+      lazy:
+        placeholder_style: ''
+        lazy_image: '0'
+        data_uri: false
+    type: image
+    region: content
+  field_nhsc_mobile_full_page_imag:
+    weight: 1
+    label: hidden
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  addtoany: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  search_api_excerpt: true

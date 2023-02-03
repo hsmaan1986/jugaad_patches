@@ -1,0 +1,418 @@
+{#
+/**
+ * @file
+ * Block containing bmi calculator
+ */
+#}
+<div class="calculator-container">
+
+    <!-- 1 Main titles of this calculator -->
+    <div class="calculator-title calculator-title-large calculator-title-center">
+      {% if title|length %}
+        <h1>
+         {{ title1 }}
+        </h1>
+      {% endif %}
+    </div>
+
+
+    <!-- CHOOSE THE CALCULATOR -->
+    <div class="calculator-tab" id="js-calc-type">
+
+        <div class="spacer"></div>
+
+        <div class="form-step-title">
+            {{ title2 }}
+        </div>
+
+        <div class="spacer"></div>
+
+        <div class="container-fullwidth container-result" style="cursor:pointer;" onclick="showCalculator('hr')">
+            <div class="result-text result-large">
+                {{ title3 }}
+            </div>
+        </div>
+
+        <div class="spacer"></div>
+
+        <div class="container-fullwidth container-result" style="cursor:pointer;" onclick="showCalculator('pocket')">
+            <div class="result-text result-large">
+                {{ title4 }}
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- HARRIS BENEDICT CALCULATOR -->
+    <form class="calculator-form" id="harrisbenedict-form" action="">
+
+        <!-- Form indicators -->
+        <div class="calculator-indicators">
+            <span class="calculator-step js-calculator-step">1</span>
+            <span class="calculator-step js-calculator-step">2</span>
+            <span class="calculator-step js-calculator-step">3</span>
+            <span class="calculator-step js-calculator-step"><i class="fas fa-angle-right"></i></span>
+        </div>
+
+
+        <!-- STEP 1 - Gender -->
+        <div class="calculator-tab js-calculator-tab">
+
+            <div class="form-step-title">
+                {{ title3 }}
+            </div>
+
+            <!-- Option 1 -->
+            <div class="container-fullwidth container-border">
+                <div class="container-80 input-question">
+                    {{ hb_q1_option1 }}
+                </div>
+
+                <div class="container-20">
+                    <input class="input-radio" type="radio" id="hr-question1-1" name="hr-question1" value="male" checked>
+                    <label for="hr-question1-1"></label>
+                </div>
+            </div>
+
+            <!-- Option 2 -->
+            <div class="container-fullwidth">
+                <div class="container-80 input-question">
+                    {{ hb_q1_option2 }}
+                </div>
+
+                <div class="container-20">
+                    <input class="input-radio" type="radio" id="hr-question1-2" name="hr-question1" value="female">
+                    <label for="hr-question1-2"></label>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- STEP 2 - PERSONAL DETAILS -->
+        <div class="calculator-tab js-calculator-tab">
+
+            <div class="form-step-title">
+                {{ title3 }}
+            </div>
+
+            <div class="container-fullwidth">
+                <label class="text-label" for="hr-question2">{{ hb_question2 }}</label>
+                <input class="input-text js-input" type="number" placeholder="{{ hb_q2_placeholder }}" name="hr-question2" id="hr-question2" required>
+
+                <label class="text-label" for="hr-question3">{{ hb_question3 }}</label>
+                <input class="input-text js-input" type="number" placeholder="{{ hb_q3_placeholder }}" name="hr-question3" id="hr-question3" required>
+
+                <label class="text-label" for="hr-question4">{{ hb_question4 }}</label>
+                <input class="input-text js-input" type="number" placeholder="{{ hb_q4_placeholder }}" name="hr-question4" id="hr-question4" required>
+            </div>
+
+        </div>
+
+
+        <!-- STEP 3 - MORE DETAILS -->
+        <div class="calculator-tab js-calculator-tab">
+
+            <div class="form-step-title">
+                {{ title3 }}
+            </div>
+
+            <div class="container-fullwidth">
+                <label class="text-label" for="hr-question5">{{ hb_question5 }}</label>
+                <div class="calc-select-wrapper">
+                  <select class="input-text js-input input-select" name="hr-question5" id="hr-question5" required>
+                      <option value="" selected disabled hidden>{{ hb_q5_placeholder }}</option>
+                      <option value="1.2">{{ hb_q5_option1 }}</option>
+                      <option value="1.3">{{ hb_q5_option2 }}</option>
+                      <option value="1.5">{{ hb_q5_option3 }}</option>
+                  </select>
+                </div>
+
+                <label class="text-label" for="hr-question6">{{ hb_question6 }}</label>
+                <div class="calc-select-wrapper">
+                  <select class="input-text js-input input-select" name="hr-question6" id="hr-question6" onchange="selectInjuryFactor()" required>
+                      <option value="" selected disabled hidden>{{ hb_q6_placeholder }}</option>
+                      <option value="{{ hb_q6_option1 }}">{{ hb_q6_option1 }}</option>
+                      <option value="{{ hb_q6_option2 }}">{{ hb_q6_option2 }}</option>
+                      <option value="{{ hb_q6_option3 }}">{{ hb_q6_option3 }}</option>
+                      <option value="{{ hb_q6_option4 }}">{{ hb_q6_option4 }}</option>
+                      <option value="{{ hb_q6_option5 }}">{{ hb_q6_option5 }}</option>
+                      <option value="{{ hb_q6_option6 }}">{{ hb_q6_option6 }}</option>
+                      <option value="{{ hb_q6_option7 }}">{{ hb_q6_option7 }}</option>
+                      <option value="{{ hb_q6_option8 }}">{{ hb_q6_option8 }}</option>
+                      <option value="{{ hb_q6_option9 }}">{{ hb_q6_option9 }}</option>
+                      <option value="{{ hb_q6_option10 }}">{{ hb_q6_option10 }}</option>
+                      <option value="{{ hb_q6_option11 }}">{{ hb_q6_option11 }}</option>
+                      <option value="{{ hb_q6_option12 }}">{{ hb_q6_option12 }}</option>
+                  </select>
+                </div>
+
+                <label class="text-label" for="js-injury-range" id="js-range-label">{{ 'Severity of Injury Factor' |t }}</label>
+                <div class="slidecontainer" id="js-range-container">
+                  <span class="range-start-label" id="js-range-start-label">1.0</span>
+                  <span class="range-end-label" id="js-range-end-label">2.0</span>
+                  <input type="range" min="1.0" max="2.0" step="0.1" value="1.5" class="slider" name="hr-question6-range" id="js-injury-range" onchange="updateValueLabel()">
+
+                  <span class="range-value-label">{{'Value'|t}}: &nbsp;</span><span class="range-value-label" id="js-range-value">1.5</span>
+                </div>
+
+                <label class="text-label" for="hr-question7">{{ hb_question7 }}</label>
+                <div class="calc-select-wrapper">
+                  <select class="input-text js-input input-select" name="hr-question7" id="hr-question7" required>
+                      <option value="" selected disabled hidden>{{ hb_q7_placeholder }}</option>
+                      <option value="1.1">{{ hb_q7_option1 }}</option>
+                      <option value="1.2">{{ hb_q7_option2 }}</option>
+                      <option value="1.3">{{ hb_q7_option3 }}</option>
+                      <option value="1.4">{{ hb_q7_option4 }}</option>
+                  </select>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- STEP 5: RESULT -->
+        <div class="calculator-tab js-calculator-tab" id="js-results">
+
+            <div class="form-step-title">
+                {{ title3 }}
+            </div>
+
+            <div class="spacer"></div>
+
+            <div class="container-fullwidth container-result">
+                <div class="result-text result-large" id="js-hr-result">
+                    0
+                </div>
+                <div class="result-text result-medium">
+                    {{ eerlabel }}
+                </div>
+            </div>
+
+            <div class="container-fullwidth container-center">
+                <span class="calculator-fineprint">{{ legal }}</span>
+            </div>
+
+            <div class="spacer"></div>
+
+            <div class="buttons-container">
+                <div class="buttons-center">
+                    <button class="calculator-button calculator-button-white" type="button" onclick="resetForm()">
+                        {{ reset_btn }}
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Form navigation buttons -->
+        <div class="buttons-container" id="js-navigation-buttons">
+
+            <div class="buttons-center">
+                <button class="calculator-button calculator-button-blue" type="button" id="prevBtn" onclick="nextPrev(-1)">
+                    <i class="fas fa-arrow-left"></i> {{ 'Anterior' |t }}
+                </button>
+                <button class="calculator-button calculator-button-blue" type="button" id="PróximoBtn" onclick="nextPrev(1)">
+                    {{ 'Próximo' |t }} <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+        </div>
+
+
+    </form>
+
+    <form class="calculator-form" id="pocketformula-form" action="">
+
+        <!-- Form indicators -->
+        <div class="calculator-indicators">
+            <span class="calculator-step js-calculator-step">1</span>
+            <span class="calculator-step js-calculator-step"><i class="fas fa-angle-right"></i></span>
+        </div>
+
+        <!-- STEP 1 - DETAILS -->
+        <div class="calculator-tab js-calculator-tab">
+
+            <div class="form-step-title">
+                {{ title4 }}
+            </div>
+
+            <div class="container-fullwidth">
+                <label class="text-label" for="pf-question1">{{ pf_question1 }}</label>
+                <input class="input-text js-input" type="number" placeholder="{{ pf_q1_placeholder }}" name="pf-question1" id="pf-question1" required>
+
+                <label class="text-label" for="pf-question2">{{ pf_question2 }}</label>
+                <input class="input-text js-input" type="number" placeholder="{{ pf_q2_placeholder }}" name="pf-question2" id="pf-question2" required>
+
+                <label class="text-label" for="pf-question3">{{ pf_question3 }}</label>
+                <input class="input-text js-input" type="number" placeholder="{{ pf_q3_placeholder }}" name="pf-question3" id="pf-question3" required>
+            </div>
+
+        </div>
+
+        <!-- STEP 2: RESULT -->
+        <div class="calculator-tab js-calculator-tab" id="js-results">
+
+            <div class="form-step-title">
+                Pocket
+            </div>
+
+            <div class="spacer"></div>
+
+            <div class="container-fullwidth container-result">
+                <div class="result-text result-large" id="js-pf-result-1">
+                    0
+                </div>
+                <div class="result-text result-medium">
+                    {{ eerlabel }}
+                </div>
+            </div>
+
+            <div class="spacer"></div>
+
+            <div class="container-fullwidth container-result">
+                <div class="result-text result-large" id="js-pf-result-2">
+                    0
+                </div>
+                <div class="result-text result-medium">
+                    {{ 'Estimated Protein Requirement' |t }}
+                </div>
+            </div>
+
+
+            <div class="container-fullwidth container-center">
+                <span class="calculator-fineprint">{{ legal }}</span>
+            </div>
+
+            <div class="spacer"></div>
+
+            <div class="buttons-container">
+                <div class="buttons-center">
+                    <button class="calculator-button calculator-button-white" type="button" onclick="resetForm()">
+                        {{ reset_btn }}
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Form navigation buttons -->
+        <div class="buttons-container" id="js-navigation-buttons">
+
+            <div class="buttons-center">
+                <button class="calculator-button calculator-button-blue" type="button" id="prevBtn" onclick="nextPrev(-1)">
+                    <i class="fas fa-arrow-left"></i> {{ 'Previous' |t }}
+                </button>
+                <button class="calculator-button calculator-button-blue" type="button" id="nextBtn" onclick="nextPrev(1)">
+                    {{ 'Próximo' |t }} <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+        </div>
+
+    </form>
+
+    <div class="reference-table"
+      id="js-reference-table">
+
+      <h3>{{ 'Tabela de referência' |t }}</h3>
+
+      <!-- Tab links -->
+      <div class="tab-links">
+        <div class="tab">
+          <button class="tablinks" id="defaultOpen" onclick="openTab(event, 'js-calories')">
+            {{ 'Calorias' |t }}
+          </button>
+          <button class="tablinks" onclick="openTab(event, 'js-proteins')">
+            {{ 'Proteínas' |t }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Tab content -->
+      <div id="js-calories" class="tabcontent">
+
+          <div class="table-responsive">
+            <table class="table">
+
+              <tr>
+                <th>
+                  {{ 'KCal/KG/Day' |t }}
+                </th>
+                <th>
+                  {{ 'Injúria/Condição Patológica' |t }}
+                </th>
+              </tr>
+
+              <tr>
+                <td class="reference-label">
+                  20 {{ 'até' |t }} 25
+                </td>
+                <td class="reference-description">
+                  {{ 'Fase aguda, doença crítica, SIRS moderada a grave, Sepse.' |t }}
+                </td>
+              </tr>
+              <tr>
+                <td class="reference-label">
+                  25 {{ 'até' |t }} 30
+                </td>
+                <td class="reference-description">
+                  {{ 'Fase de Estabilização / Recuperação' |t }}
+                </td>
+              </tr>
+              <tr>
+                <td class="reference-label">
+                  30 {{ 'até' |t }} 35
+                </td>
+                <td class="reference-description">
+                  {{ 'Cirugias de médio e grande portes' |t }}
+                </td>
+              </tr>
+
+            </table>
+          </div>
+
+      </div>
+
+      <div id="js-proteins" class="tabcontent">
+
+        <div class="table-responsive">
+            <table class="table">
+
+              <tr>
+                <td class="reference-label no-border">
+                  {{ 'Paciente crítico' |t }} (IMC &lt; 30)
+                </td>
+                <td class="reference-description no-border">
+                  1.2g/kg/{{ 'dia' |t }} e 2.0g/kg/{{ 'dia' |t }} {{ 'de proteína (peso ideal)' |t }}
+                </td>
+              </tr>
+              <tr>
+                <td class="reference-label">
+                  {{ 'Paciente crítico' |t }} (IMC &ge; 30)
+                </td>
+                <td class="reference-description">
+                  IMC 30 a 40: 2.0g/kg/{{ 'dia' |t }} {{ 'de proteína (peso ideal)' |t }} <br />
+                  IMC &ge; 40: até 2.5g/kg/{{ 'dia' |t }} {{ 'de proteína (peso ideal)' |t }}
+                </td>
+              </tr>
+              <tr>
+                <td class="reference-label">
+                  {{ 'Idosos' |t }}
+                </td>
+                <td class="reference-description">
+                  1.0 {{ 'a' |t }} 1.5 g/kg/{{ 'de peso/dia podendo variar de acordo com a condição clinica' |t }}
+                </td>
+              </tr>
+
+            </table>
+          </div>
+
+      </div>
+
+    </div>
+
+</div>

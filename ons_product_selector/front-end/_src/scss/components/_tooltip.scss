@@ -1,0 +1,133 @@
+.onsTooltip {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  cursor: pointer;
+
+  &__button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    .onsTooltip__content {
+      right: -10px;
+      &:before {
+        right: 10px;
+      }
+    }
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    display: block;
+    border: 1px solid $color-1;
+    font-size: 16px;
+    border-radius: 100%;
+    font-family: $lato-regular;
+    text-align: center;
+    color: $color-1;
+  }
+
+  &__content {
+    position: absolute;
+    top: 100%;
+    right: -60px;
+    background: $color-1;
+    color: $white;
+    display: none;
+    z-index: 10;
+    box-shadow: 0 0 6px rgba($black, 0.2);
+    border-radius: 6px;
+    width: 290px;
+    max-width: 80vw;
+    padding: 10px;
+    font-size: 12px;
+    font-family: $lato-regular;
+    margin-top: 14px;
+    margin-bottom: 20px;
+
+    &::before {
+      bottom: 100%;
+      right: 60px;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-color: rgba($color-1, 0);
+      border-bottom-color: $color-1;
+      border-width: 10px;
+      margin-left: -10px;
+    }
+  }
+
+  &.active {
+    .onsTooltip {
+      &__icon {
+        background: $color-1;
+        color: $white;
+      }
+      &__content {
+        display: block;
+      }
+    }
+  }
+
+  &--fromLeft {
+    .onsTooltip__content {
+      right: auto;
+      left: -60px;
+
+      &:before {
+        right: auto;
+        left: 70px;
+      }
+    }
+  }
+
+  &--reference {
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    margin-top: 50px;
+    margin-left: 30px;
+
+    @media #{$max-xs} {
+      display: block;
+      text-align: center;
+      margin: 120px auto 20px;
+      left: 0;
+      right: 0;
+    }
+
+    .onsTooltip__text {
+      color: $gray-1;
+      font-size: 16px;
+      text-decoration: underline;
+    }
+
+    .onsTooltip__content {
+      right: -34px;
+    }
+
+    &.active {
+      .onsTooltip__text {
+        color: $color-2;
+      }
+      .onsTooltip__content {
+        @media #{$max-xs} {
+          right: 50%;
+          transform: translateX(50%);
+          margin-bottom: 20px;
+
+          &:before {
+            right: 50%;
+            margin-right: -10px;
+          }
+        }
+      }
+    }
+  }
+}

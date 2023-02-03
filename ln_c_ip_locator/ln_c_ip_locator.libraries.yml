@@ -1,0 +1,13 @@
+ln_c_ip_locator:
+  version: 1.x
+  css:
+    theme:
+      css/ln_c_ip_locator.css: {}
+  js:
+    js/script.js: {}
+  dependencies:
+      - core/jquery
+      - core/drupal
+      - core/jquery.once
+      - core/drupal.dialog.ajax
+      - core/jquery.cookie

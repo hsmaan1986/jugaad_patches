@@ -1,0 +1,6 @@
+nhsc_symptom_checker.settings_form:
+  title: 'Dynamic Survey - Symptom Checker'
+  route_name: nhsc_symptom_checker.settings_form
+  description: 'Symptom Checker'
+  parent: system.admin_config_system
+  weight: 99

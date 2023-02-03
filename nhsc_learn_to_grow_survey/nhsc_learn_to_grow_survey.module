@@ -1,0 +1,81 @@
+<?php
+
+/**
+ * @file
+ * Contains nhsc_custom_schema.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
+use Drupal\nhsc_learn_to_grow_survey\Controller\SelfAssessmentController;
+
+/**
+ * Implements hook_help().
+ */
+function nhsc_learn_to_grow_survey_help($route_name, RouteMatchInterface $route_match) {
+    $output = '';
+    switch ($route_name) {
+        case 'help.page.nhsc_learn_to_grow_survey':
+            $output = '';
+            $output .= '<h3>' . t('Learn To Grow Survey') . '</h3>';
+            $output .= '<h4>' . t('Usage: ') . '</h4>';
+            $output .= '<ul>';
+            $output .= '</ul>';
+
+    }
+
+    return $output;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function nhsc_learn_to_grow_survey_theme() {
+    return [
+        'nhsc_learn_to_grow_survey' => [
+            'variables' => [
+                'survey_data' => NULL,
+                'intro_title' => NULL,
+                'intro_form' => NULL,
+                'submit_button_form' => NULL,
+                'questions' => NULL,
+                'menu' => NULL,
+                'result_data' => NULL,
+            ],
+            'template' => 'nhsc-learn-to-grow-survey',
+        ],
+        'nhsc_learn_to_grow_survey_results' => [
+            'variables' => [],
+            'template' => 'nhsc-learn-to-grow-survey-results',
+        ],
+    ];
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function nhsc_learn_to_grow_survey_page_attachments(array &$page) {
+
+    $route_name = \Drupal::routeMatch()->getRouteName();
+
+    if ($route_name === 'nhsc_learn_to_grow_survey.results_page'){
+        $page['#attached']['library'][] = 'nhsc_learn_to_grow_survey/learn-to-grow-survey-static-assets';
+    }
+}
+
+function nhsc_learn_to_grow_survey_preprocess_block(&$variables, $hook) {
+
+    // add library to blocks
+    if (($variables['elements']['#plugin_id'] === 'learn_to_grow_survey_block') ||
+        ($variables['elements']['#plugin_id'] === 'learn_to_grow_results_block')) {
+
+        $module_path = drupal_get_path('module', 'nhsc_learn_to_grow_survey');
+        $variables['#attached']['library'][] = 'nhsc_learn_to_grow_survey/learn-to-grow-survey-static-assets';
+
+        $data = [
+            'module_path' => $module_path
+        ];
+
+        $variables['#attached']['drupalSettings']['nhsc_learn_to_grow_survey'] = $data;
+    }
+}

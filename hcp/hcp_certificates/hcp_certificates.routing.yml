@@ -1,0 +1,21 @@
+hcp_certificates.html:
+  path: '/certificate/html/{key}'
+  defaults:
+    _controller: '\Drupal\hcp_certificates\Controller\HTMLCertificateController::page'
+    _title: 'Expert Advice'
+  requirements:
+    _access: 'TRUE'
+hcp_certificates.pdf:
+  path: '/certificate/pdf-old/{key}'
+  defaults:
+    _controller: '\Drupal\hcp_certificates\Controller\PDFCertificateController::page'
+    _title: 'Expert Advice'
+  requirements:
+    _access: 'TRUE'
+hcp_certificates.image:
+  path: '/certificate/pdf/{key}'
+  defaults:
+    _controller: '\Drupal\hcp_certificates\Controller\ImagePDFCertificateController::page'
+    _title: 'Expert Advice'
+  requirements:
+    _access: 'TRUE'

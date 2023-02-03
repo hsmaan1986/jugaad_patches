@@ -1,0 +1,7 @@
+webform_name: symptom_checker_survey
+survey_title: 'Symptom Checker'
+home_copy: "<h1>CHECK YOUR CHILD'S SYMPTOMS</h1>\r\n\r\n<p>Is your baby suffering from signs and symptoms that could be linked to Cow's Milk Allergy (CMA) or other food allergies?</p>\r\n\r\n<p>Prepare for your next health visit, learn about common symptoms, and help your doctor make a correct diagnosis.</p>\r\n"
+results_copy: "<p>If you reported two or more symptoms, your child could be experiencing symptoms that may be related to Cows' Milk Allergy. Set up an appointment with your child’s doctor to discuss further.</p>\r\n\r\n<p>Even if you reported only one symptom, talk with your child’s doctor to discuss any concerns you may have.</p>\r\n"
+call_to_action_text: 'Learn more about the symptoms of CMA'
+call_to_action_link: 'https://www.nestlehealthscience.co.uk/health-management/paediatrics-food-allergy/cow-milk-allergy/signs-symptoms'
+disclaimer_copy: "<p>Disclaimer:<br />\r\nAlways refer to a healthcare professional for diagnosis. Do not start to experiment with a cow's milk free diet or any specialized formula without a recommendation and guidance from a healthcare professional.</p>\r\n"

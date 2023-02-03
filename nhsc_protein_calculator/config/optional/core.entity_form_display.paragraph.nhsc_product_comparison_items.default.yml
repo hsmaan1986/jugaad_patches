@@ -1,0 +1,90 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_product_comparison_items.field_brand_product_buy_link
+    - field.field.paragraph.nhsc_product_comparison_items.field_brand_product_info
+    - field.field.paragraph.nhsc_product_comparison_items.field_brand_product_more
+    - field.field.paragraph.nhsc_product_comparison_items.field_brand_product_name
+    - field.field.paragraph.nhsc_product_comparison_items.field_comparison_buy_now
+    - field.field.paragraph.nhsc_product_comparison_items.field_nhsc_table
+    - field.field.paragraph.nhsc_product_comparison_items.field_product_image
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.nhsc_product_comparison_items
+  module:
+    - image
+    - link
+    - paragraphs
+id: paragraph.nhsc_product_comparison_items.default
+targetEntityType: paragraph
+bundle: nhsc_product_comparison_items
+mode: default
+content:
+  field_brand_product_buy_link:
+    weight: 6
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_brand_product_info:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_brand_product_more:
+    weight: 5
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_brand_product_name:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_comparison_buy_now:
+    type: entity_reference_paragraphs
+    weight: 7
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_nhsc_table:
+    type: entity_reference_paragraphs
+    weight: 4
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_product_image:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

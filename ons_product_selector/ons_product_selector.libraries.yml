@@ -1,0 +1,23 @@
+ons-product-selector-css:
+  css:
+    theme:
+      front-end/Content/css/main.css: {preprocess: false}
+  js:
+    https://cdn.polyfill.io/v2/polyfill.min.js: {type: external}
+    front-end/Content/js/lazyload.js: {}
+    front-end/Content/js/jquery.steps.min.js: {}
+    front-end/Content/js/html2pdf.bundle.min.js: {}
+    front-end/Content/js/main.js: {}
+    https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js: {type: external}
+    https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/additional-methods.min.js: {type: external}
+
+ons-product-selector-calculator-v1:
+  js:
+    front-end/Content/js/v1/calculators.js: {}
+
+ons-product-selector-calculator-v2:
+  js:
+    front-end/Content/js/v2/calculators.js: {}
+ons-product-selector-calculator-v3:
+  js:
+    front-end/Content/js/v3/calculators.js: {}

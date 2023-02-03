@@ -1,0 +1,4 @@
+name: Learning To Grow Dynamic Survey
+type: module
+description: Dynamic Survey for Learning To Grow
+core_version_requirement: ^8 || ^9

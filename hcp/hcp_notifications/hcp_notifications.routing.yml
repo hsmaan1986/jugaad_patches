@@ -1,0 +1,11 @@
+
+hcp_notifications.config_form:
+  path: '/admin/config/content/hcp_notifications'
+  defaults:
+    _form: '\Drupal\hcp_notifications\Form\ConfigForm'
+    _title: 'ConfigForm'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+

@@ -1,0 +1,14 @@
+nhsc_mega_menu.admin:
+  path: '/admin/config/nhsc_mega_menu'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+  requirements:
+    _permission: 'administer site configuration'
+
+nhsc_mega_menu.default_form:
+  path: '/admin/config/nhsc_mega_menu/default'
+  defaults:
+    _form: '\Drupal\nhsc_mega_menu\Form\DefaultForm'
+    _title: 'NHSc Mega Menu Configuration Form'
+  requirements:
+    _permission: 'administer site configuration'

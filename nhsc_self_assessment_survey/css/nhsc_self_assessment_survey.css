@@ -1,0 +1,11 @@
+.nhsc-self-assessment-survey-results .result-list {
+    display: none;
+}
+
+div[id^="self-assessment-step-"]{
+    display: none;
+}
+
+.nhsc-self-assessment-survey-form .title {
+    font-size: 55px;
+}

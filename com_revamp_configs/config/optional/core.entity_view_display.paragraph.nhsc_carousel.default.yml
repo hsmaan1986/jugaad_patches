@@ -1,0 +1,59 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_carousel.field_nhsc_carousel_controls
+    - field.field.paragraph.nhsc_carousel.field_nhsc_carousel_indicators
+    - field.field.paragraph.nhsc_carousel.field_nhsc_carousel_interval
+    - field.field.paragraph.nhsc_carousel.field_nhsc_carousel_slides
+    - paragraphs.paragraphs_type.nhsc_carousel
+  module:
+    - entity_reference_revisions
+    - options
+id: paragraph.nhsc_carousel.default
+targetEntityType: paragraph
+bundle: nhsc_carousel
+mode: default
+content:
+  field_nhsc_carousel_controls:
+    weight: 0
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_nhsc_carousel_indicators:
+    weight: 3
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_nhsc_carousel_interval:
+    weight: 5
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_nhsc_carousel_slides:
+    type: entity_reference_revisions_entity_view
+    weight: 4
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  search_api_excerpt: true

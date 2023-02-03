@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_honorific
+  module:
+    - user
+_core:
+  default_config_hash: 0wi96YJ57WEIN8Ie1NXvr3J1sISNHI-uS_HEX6OFpdM
+id: user.user.field_honorific
+field_name: field_honorific
+entity_type: user
+bundle: user
+label: Honorific
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.pc_protein_calculator_pdf.field_pc_image_image
+    - field.field.paragraph.pc_protein_calculator_pdf.field_pc_image_title
+    - field.field.paragraph.pc_protein_calculator_pdf.field_pc_pdf_icon
+    - field.field.paragraph.pc_protein_calculator_pdf.field_pc_pdf_title
+    - field.field.paragraph.pc_protein_calculator_pdf.field_pc_pdf_upload
+    - paragraphs.paragraphs_type.pc_protein_calculator_pdf
+id: paragraph.pc_protein_calculator_pdf.default
+targetEntityType: paragraph
+bundle: pc_protein_calculator_pdf
+mode: default
+content: {  }
+hidden:
+  addtoany: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_pc_image_image: true
+  field_pc_image_title: true
+  field_pc_pdf_icon: true
+  field_pc_pdf_title: true
+  field_pc_pdf_upload: true
+  search_api_excerpt: true

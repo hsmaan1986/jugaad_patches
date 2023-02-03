@@ -1,0 +1,7 @@
+name: Dynamic Survey Self Assessment
+type: module
+description: Dynamic Survey for Self Assessment
+core_version_requirement: ^8 || ^9
+dependencies:
+  - options
+  - webform

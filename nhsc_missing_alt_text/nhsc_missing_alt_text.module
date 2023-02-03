@@ -1,0 +1,14 @@
+<?php
+
+use Symfony\Component\Process\Process;
+use Symfony\Component\Process\Exception\ProcessFailedException;
+
+/**
+ * Implements hook_cron().
+ */
+function nhsc_missing_alt_text_cron() {
+
+  $service = \Drupal::service('nhsc_missing_alt_text.update');
+  $service->updateAltText();
+
+}

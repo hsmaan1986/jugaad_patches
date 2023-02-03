@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_nhs_kwit_button
+    - paragraphs.paragraphs_type.buy_now_kwit
+  module:
+    - nhsc_kwit
+id: paragraph.buy_now_kwit.field_nhs_kwit_button
+field_name: field_nhs_kwit_button
+entity_type: paragraph
+bundle: buy_now_kwit
+label: 'NHS Kwit Button'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: field_kwit

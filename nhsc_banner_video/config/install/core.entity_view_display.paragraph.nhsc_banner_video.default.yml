@@ -1,0 +1,97 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_banner_video.field_image
+    - field.field.paragraph.nhsc_banner_video.field_nhsc_video
+    - field.field.paragraph.nhsc_banner_video.field_nhsc_video_autoplay
+    - field.field.paragraph.nhsc_banner_video.field_nhsc_video_loop
+    - field.field.paragraph.nhsc_banner_video.field_nhsc_video_muted
+    - field.field.paragraph.nhsc_banner_video.field_nhsc_video_show_mute
+    - field.field.paragraph.nhsc_banner_video.field_nhsc_video_show_play_pause
+    - paragraphs.paragraphs_type.nhsc_banner_video
+  module:
+    - file
+    - svg_image
+id: paragraph.nhsc_banner_video.default
+targetEntityType: paragraph
+bundle: nhsc_banner_video
+mode: default
+content:
+  field_image:
+    weight: 6
+    label: above
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_nhsc_video:
+    weight: 0
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_nhsc_video_autoplay:
+    weight: 1
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_nhsc_video_loop:
+    weight: 5
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_nhsc_video_muted:
+    weight: 3
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_nhsc_video_show_mute:
+    weight: 4
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_nhsc_video_show_play_pause:
+    weight: 2
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+hidden:
+  addtoany: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  search_api_excerpt: true

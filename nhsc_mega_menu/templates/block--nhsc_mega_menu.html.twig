@@ -1,0 +1,142 @@
+{#
+/**
+ * @file
+ * NHSc Mega Menu block.
+ */
+#}
+{{ attach_library('nhsc_mega_menu/nhsc_mega_menu') }}
+
+{# Get menu items #}
+{% set items = simplify_menu('main') %}
+
+
+
+{% macro menu_links(items) %}
+
+    {% import _self as macros %}
+
+    {% for item in items %}
+
+        <li class="menu-item menu-item-has-children">
+
+            <a href="{{ item.url }}" class="submenu-link" title="{{ item.text }}">{{ item.text }}</a>
+
+            {% if item.submenu %}
+
+                <ul class="sub-menu">
+                    <li class="back back-button-js"><a href="#" title="Back">{{ config_settings.mega_menu_back_text }}</a></li>
+                    <li class="menu-item">
+
+                        <div class="parent-item">
+                            <a href="{{ item.url }}" title="{{ item.text }}">{{ item.text }}</a>
+                        </div>
+
+                        {{ macros.menu_links(item.submenu) }}
+
+
+                    </li>
+
+                </ul>
+
+            {% endif %}
+
+        </li>
+
+    {% endfor %}
+
+{% endmacro %}
+
+{% import _self as macros %}
+
+{% set items = simplify_menu('main') %}
+
+<nav id="nhsc-mega-menu__wrapper">
+
+    <div class="over-menu"></div>
+
+    <div id="wrap">
+
+        <div class="header" id="header-sroll">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="desk-menu">
+
+                        <nav class="box-menu">
+
+                            <div class="menu-container">
+
+                                <div class="nhsc-new-search">
+
+                                    {{ drupal_block('views_exposed_filter_block:search-search', wrapper=false) }}
+                                </div>
+
+                                <div class="menu-header-container">
+
+                                    <ul id="cd-primary-nav" class="menu">
+
+                                        {% if config_settings.configure_menu == 'show_menu' %}
+
+                                          <li class="menu-item menu-item-has-children brand-menu menu-position-order">
+
+                                            <a href="{{ config_settings.menu_item_url }}"  class="submenu-link" title="{{ config_settings.menu_item_name }}">{{ config_settings.menu_item_name }}</a>
+
+                                            <ul class="sub-menu-bak sub-menu brand-sub-menu">
+                                              <li class="back brands"><a href="#" title="Back">{{ config_settings.mega_menu_back_text }}</a></li>
+
+                                              <li class="menu-item">
+
+                                                <div class="parent-item">
+                                                  <a href="#" title="{{ config_settings.menu_item_name }}">{{ config_settings.menu_item_name }}</a>
+                                                </div>
+
+                                                {{ macros.menu_links(item.submenu) }}
+
+                                              </li>
+                                              <li>
+
+                                                {% if config_settings.show_hide_filters == 'show_filters' %}
+
+                                                  {% include '@nhsc_mega_menu/level-2.html.twig' with {filters: filters} %}
+
+                                                {% endif %}
+
+                                                {% include '@nhsc_mega_menu/level-3.html.twig' with {data: data} %}
+
+                                              </li>
+
+                                            </ul>
+
+                                          </li>
+
+                                        {% endif %}
+
+                                        {{ macros.menu_links(items.menu_tree) }}
+
+                                    </ul>
+
+                                </div>
+
+                            </div>
+
+                            <div class="hamburger-menu">
+
+                                <div class="bar"></div>
+
+                            </div>
+
+                        </nav>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</nav>

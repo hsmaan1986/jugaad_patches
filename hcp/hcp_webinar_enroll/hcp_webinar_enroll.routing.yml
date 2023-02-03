@@ -1,0 +1,16 @@
+
+hcp_webinar_enroll.enroll_user:
+  path: '/enroll/{node}/user/{user}'
+  defaults:
+    _controller: '\Drupal\hcp_webinar_enroll\Controller\EnrollController::hcp_webinar_enroll_user'
+    _title: 'enroll_user'
+  requirements:
+    _permission: 'access content'
+    user: '^[a-zA-Z0-9_]+'
+hcp_webinar_enroll.remove_user_subscription:
+  path: '/enroll/remove/{node}/user/{user}'
+  defaults:
+    _controller: '\Drupal\hcp_webinar_enroll\Controller\EnrollController::remove_user_subscription'
+    _title: 'remove_user_subscription'
+  requirements:
+    _permission: 'access content'

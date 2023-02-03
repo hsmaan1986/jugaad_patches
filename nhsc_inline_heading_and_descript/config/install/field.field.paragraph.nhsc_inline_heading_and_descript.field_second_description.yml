@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_second_description
+    - paragraphs.paragraphs_type.nhsc_inline_heading_and_descript
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_second_description
+id: paragraph.nhsc_inline_heading_and_descript.field_second_description
+field_name: field_second_description
+entity_type: paragraph
+bundle: nhsc_inline_heading_and_descript
+label: 'second description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

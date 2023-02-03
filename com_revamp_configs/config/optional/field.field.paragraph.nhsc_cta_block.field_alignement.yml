@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_alignement
+    - paragraphs.paragraphs_type.nhsc_cta_block
+  module:
+    - options
+id: paragraph.nhsc_cta_block.field_alignement
+field_name: field_alignement
+entity_type: paragraph
+bundle: nhsc_cta_block
+label: Alignement
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

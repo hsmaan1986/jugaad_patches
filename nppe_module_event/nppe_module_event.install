@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * @file
+ * nppe_module_event installation routines.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+use Drupal\Core\Database\Database;
+
+
+function nppe_module_event_schema()
+{
+    /*$schema['event'] = [];
+        'description' => 'Record ID',
+        'fields' => [
+            'id' => [
+                'type' => 'serial',
+                'not null' => TRUE,
+                'description' => "Record ID.",
+            ],
+          ];
+    return $schema;*/
+}
+
+//we need to add the revision_default field to the RNG Registrtion table
+function nppe_module_event_update_8501() {
+    $registrationTable = "registration_revision";
+    $columnToAdd = 'revision_default';
+    $spec = array(
+        'type' => 'int',
+        'size' => 'tiny',
+        'description' => "nppe_module_event_update_8501",
+        'not null' => FALSE
+    );
+    $schema = Database::getConnection()->schema();
+    if (! $schema->fieldExists($registrationTable, $columnToAdd )){
+        $schema->addField($registrationTable, $columnToAdd, $spec);
+
+    }
+}

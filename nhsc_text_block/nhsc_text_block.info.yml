@@ -1,0 +1,22 @@
+name: 'NHSC Text Block'
+description: 'Adds a text block with some layout options.'
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - 'autologout:autologout'
+  - 'datalayer:datalayer'
+  - 'drupal:block'
+  - 'drupal:field'
+  - 'drupal:image'
+  - 'drupal:options'
+  - 'drupal:system'
+  - 'drupal:taxonomy'
+  - 'drupal:text'
+  - 'drupal:user'
+  - 'drupal:views'
+  - 'field_permissions:field_permissions'
+  - 'metatag:metatag'
+  - 'paragraphs:paragraphs'
+  - 'parallax_scroller:parallax_scroller'
+  - 'rng:rng'
+version: 8.x-1.0

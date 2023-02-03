@@ -1,0 +1,5 @@
+name: 'HCP Certificates'
+type: module
+description: 'Nestle Health Science Certificates'
+core_version_requirement: ^8 || ^9
+package: 'Custom'

@@ -1,0 +1,43 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.cerebral_palsy_buttons.field_cerebral_palsy_description
+    - field.field.paragraph.cerebral_palsy_buttons.field_cerebral_palsy_link
+    - field.field.paragraph.cerebral_palsy_buttons.field_cerebral_palsy_type
+    - paragraphs.paragraphs_type.cerebral_palsy_buttons
+  module:
+    - link
+    - options
+id: paragraph.cerebral_palsy_buttons.default
+targetEntityType: paragraph
+bundle: cerebral_palsy_buttons
+mode: default
+content:
+  field_cerebral_palsy_description:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_cerebral_palsy_link:
+    weight: 2
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_cerebral_palsy_type:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden: {  }

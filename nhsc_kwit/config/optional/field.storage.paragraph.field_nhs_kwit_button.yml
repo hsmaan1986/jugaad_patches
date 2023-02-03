@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - nhsc_kwit
+    - paragraphs
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: paragraph.field_nhs_kwit_button
+field_name: field_nhs_kwit_button
+entity_type: paragraph
+type: field_kwit
+settings: {  }
+module: nhsc_kwit
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

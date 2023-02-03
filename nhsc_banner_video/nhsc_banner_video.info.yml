@@ -1,0 +1,21 @@
+name: 'NHSC Banner Video'
+description: 'Component for adding full width HTML5 Video section with optional controls.'
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - autologout
+  - block
+  - content_translation
+  - datalayer
+  - field
+  - field_permissions
+  - file
+  - image
+  - metatag
+  - paragraphs
+  - rng
+  - svg_image
+  - system
+  - user
+  - views
+version: 8.x-1.0

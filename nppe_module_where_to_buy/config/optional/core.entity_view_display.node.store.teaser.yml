@@ -1,0 +1,42 @@
+uuid: e7e7de5b-7c1c-4d57-a718-3dc86f39d68b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.store.field_address
+    - field.field.node.store.field_country
+    - field.field.node.store.field_location
+    - field.field.node.store.field_phone
+    - field.field.node.store.field_store_country
+    - field.field.node.store.field_store_type
+    - field.field.node.store.field_town
+    - field.field.node.store.field_website
+    - field.field.node.store.field_zip_code
+    - node.type.store
+  module:
+    - user
+_core:
+  default_config_hash: '-GmyFobBmIb4CWHeZj0zNbdAi0ACRqXxCpvovR_dlEc'
+id: node.store.teaser
+targetEntityType: node
+bundle: store
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_address: true
+  field_country: true
+  field_location: true
+  field_phone: true
+  field_store_country: true
+  field_store_type: true
+  field_town: true
+  field_website: true
+  field_zip_code: true
+  langcode: true

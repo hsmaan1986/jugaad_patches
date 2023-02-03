@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cerebral_palsy_description
+    - paragraphs.paragraphs_type.cerebral_palsy_more_information
+id: paragraph.cerebral_palsy_more_information.field_cerebral_palsy_description
+field_name: field_cerebral_palsy_description
+entity_type: paragraph
+bundle: cerebral_palsy_more_information
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

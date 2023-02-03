@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pc_food_grams
+    - paragraphs.paragraphs_type.pc_protein_calculator_food
+  module:
+    - datalayer
+    - text
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_pc_food_grams
+id: paragraph.pc_protein_calculator_food.field_pc_food_grams
+field_name: field_pc_food_grams
+entity_type: paragraph
+bundle: pc_protein_calculator_food
+label: grams
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

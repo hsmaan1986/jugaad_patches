@@ -1,0 +1,24 @@
+{{ attach_library('hcp_advice_booking/accordion') }}
+{% if slots|length == 0 %}
+    <div id="no-slots">{{ "There are currently no available slots to be booked."|t }}</div>
+{% else %}
+    <div class="booking-year-accordion">
+        {% for month,days in grouped_slots %}
+            <h3 class="month-title">{{ month }}</h3>
+            <div class="booking-day-accordion">
+                {% for day,slots in days %}
+                    <h3 class="day-title">{{ day }} <span> {{ slots|length }} {{ 'available appointments'|t }}</span></h3>
+                    <div>
+                        {% for slot in slots %}
+                            <div class="slot">
+                                <a href="{{ slot.url }}" class="slot-link">{{ slot.start }} - {{ slot.end }}</a>
+                                - {{ slot.title }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+
+{% endif %}

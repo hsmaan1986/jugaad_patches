@@ -1,0 +1,107 @@
+<?php
+
+/**
+ * @file
+ * Contains nhsc_find_and_replace.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\node\Entity\Node;
+
+/**
+ * Implements hook_help().
+ */
+function nhsc_find_and_replace_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the nhsc_find_and_replace module.
+    case 'help.page.nhsc_find_and_replace':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('NHSc Find all images and add class to the image tag') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+function nhsc_find_and_replace_update_8051() {
+  $nodes = Node::loadMultiple();
+
+  $nodeIds = [];
+  $contentTypes = [];
+  $fieldTypes = [];
+  $fieldNames = [];
+
+  foreach ($nodes as $node) {
+    $nodeIds[] = $node->id();
+    $contentTypes[] = $node->bundle();
+  }
+
+  foreach ($contentTypes as $contentType) {
+    $definitions = \Drupal::service('entity_field.manager')->getFieldDefinitions('node', $contentType);
+    foreach (array_keys($definitions) as $key) {
+      $label = $definitions[$key]->getLabel();
+      $name = $definitions[$key]->getName();
+      $type = $definitions[$key]->getType();
+
+      if ($type == 'text_with_summary' || $type == 'string_long' || $type == 'string' || $type == 'text_long') {
+        $fieldTypes[] = $type;
+        $fieldNames[] = $name;
+      }
+
+
+      print $definitions[$key]->getLabel() . ' ';
+      echo $definitions[$key]->getName() . ' ';
+      echo $definitions[$key]->getType() . ' === ' . $definitions[$key]->getName() . '> ';
+    }
+  }
+
+  echo 'Count ' . count($nodeIds);
+
+  if (array_filter($nodeIds) !== []) {
+
+    echo 'NOT EMPTY';
+  }
+
+  foreach ($nodes as $item) {
+    $node = Node::load($item->id());
+
+    foreach ($fieldNames as $value) {
+      //$placeholder[$key] = $node->get($value);
+      echo ' placeholder value ' . $node->get('field_test_hello')->value;
+      echo ' placeholder ' . $value;
+
+      $dom = new DOMDocument();
+      $dom->loadHTML($value);
+
+      $imgs = $dom->getElementsByTagName('img');
+
+      $newValue = '';
+      if(preg_match('/<img/', $value)) {
+            foreach ($imgs as $img) {
+              $newValue = $img->setAttribute('class', 'img-responsive');
+              \Drupal::messenger()->addMessage(print_r($newValue, TRUE));
+            }
+
+      $node->set($value, 'hhhkkk');
+      $node->save();
+      }
+
+      // In some custom code.
+      \Drupal::messenger()->addMessage('Say something else');
+
+      // When trying to print out a simple var.
+      \Drupal::messenger()->addMessage(print_r($value, TRUE));
+
+    }
+
+  }
+
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function nhsc_find_and_replace_page_attachments(array &$page) {
+  $page['#attached']['library'][] = 'nhsc_find_and_replace/nhsc_find_and_replace';
+}

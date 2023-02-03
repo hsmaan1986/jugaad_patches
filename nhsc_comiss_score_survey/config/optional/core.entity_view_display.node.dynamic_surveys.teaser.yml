@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.dynamic_surveys.field_survey_type
+    - node.type.dynamic_surveys
+  module:
+    - user
+id: node.dynamic_surveys.teaser
+targetEntityType: node
+bundle: dynamic_surveys
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_survey_type: true
+  langcode: true

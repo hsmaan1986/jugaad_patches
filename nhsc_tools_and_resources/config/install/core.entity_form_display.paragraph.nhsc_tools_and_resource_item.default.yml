@@ -1,0 +1,61 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_tools_and_resource_item.field_cta
+    - field.field.paragraph.nhsc_tools_and_resource_item.field_hcp
+    - field.field.paragraph.nhsc_tools_and_resource_item.field_image
+    - field.field.paragraph.nhsc_tools_and_resource_item.field_nhsc_file_download
+    - field.field.paragraph.nhsc_tools_and_resource_item.field_title
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.nhsc_tools_and_resource_item
+  module:
+    - file
+    - link
+    - svg_image
+id: paragraph.nhsc_tools_and_resource_item.default
+targetEntityType: paragraph
+bundle: nhsc_tools_and_resource_item
+mode: default
+content:
+  field_cta:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_hcp:
+    weight: 4
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_image:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_nhsc_file_download:
+    weight: 3
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

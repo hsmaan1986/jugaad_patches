@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.share_with_your_network.field_share_heading
+    - field.field.paragraph.share_with_your_network.field_share_heading_right
+    - paragraphs.paragraphs_type.share_with_your_network
+id: paragraph.share_with_your_network.default
+targetEntityType: paragraph
+bundle: share_with_your_network
+mode: default
+content:
+  field_share_heading:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_share_heading_right:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

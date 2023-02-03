@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains custom_gigya_raas_links.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function custom_gigya_raas_links_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the custom_gigya_raas_links module.
+    case 'help.page.custom_gigya_raas_links':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Adds the gigya links block') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function custom_gigya_raas_links_theme() {
+  return [
+    'custom_gigya_raas_links' => [
+      'render element' => 'children',
+    ],
+  ];
+}

@@ -1,0 +1,79 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_full_banner.field_cta
+    - field.field.paragraph.nhsc_full_banner.field_nhsc_full_banner_heading
+    - field.field.paragraph.nhsc_full_banner.field_nhsc_full_banner_image
+    - field.field.paragraph.nhsc_full_banner.field_nhsc_full_banner_layout
+    - field.field.paragraph.nhsc_full_banner.field_nhsc_full_banner_link
+    - field.field.paragraph.nhsc_full_banner.field_nhsc_full_banner_text
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.nhsc_full_banner
+  module:
+    - image
+    - link
+    - link_attributes
+    - text
+id: paragraph.nhsc_full_banner.default
+targetEntityType: paragraph
+bundle: nhsc_full_banner
+mode: default
+content:
+  field_cta:
+    weight: 106
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_nhsc_full_banner_heading:
+    weight: 101
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_nhsc_full_banner_image:
+    type: image_image
+    weight: 104
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    region: content
+    third_party_settings: {  }
+  field_nhsc_full_banner_layout:
+    weight: 105
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_nhsc_full_banner_link:
+    weight: 103
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      enabled_attributes:
+        id: false
+        name: false
+        target: true
+        rel: true
+        class: true
+        accesskey: false
+    third_party_settings: {  }
+    type: link_attributes
+    region: content
+  field_nhsc_full_banner_text:
+    weight: 102
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

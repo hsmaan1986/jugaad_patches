@@ -1,0 +1,3 @@
+bazaarvoice_env: staging
+bazaarvoice_client_name: client-name
+bazaarvoice_locale: en_GB

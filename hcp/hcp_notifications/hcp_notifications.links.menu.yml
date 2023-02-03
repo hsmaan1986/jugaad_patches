@@ -1,0 +1,7 @@
+hcp_notifications.config_form:
+  title: 'HCP Content  Notifications'
+  route_name: hcp_notifications.config_form
+  description: 'Email notifications for content publishing.'
+  parent: system.admin_config_content
+  weight: 99
+

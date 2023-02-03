@@ -1,0 +1,124 @@
+<?php
+
+use Drupal\views\Views;
+use Drupal\Core\Url;
+use Drupal\block\Entity\Block;
+use Drupal\Core\Entity\EntityInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+
+/**
+ * Implements hook_views_data
+ */
+function nhsc_polling_views_data() {
+	$data = [];
+	// Base data.
+
+
+	$data['poll_vote'] =[
+		'table' => [
+			'group' => t('Poll Vote'),
+			'provider' => 'poll',
+			'base' => [
+				'field' => 'name',
+				'title' => t('Poll Vote'),
+				'help' => t('Overview for all the poll submissions'),
+			],
+			'join' => [
+				'poll' => [
+					'left_field' => 'id',
+					'field' => 'pid',
+				],
+				'users' => [
+					'left_field' => 'uid',
+					'field' => 'uid',
+				],
+				'choice' => [
+					'left_field' => 'id',
+					'field' => 'chid',
+				]
+			]
+		],
+		// fields
+		'question' => [
+			'title' => t('Question'),
+			'help' => t('Question of poll.'),
+			'relationship' => [
+				'title' => t('Poll table question'),
+				'group' => t('Poll'),
+				'label' => t('The question from poll table'),
+				'help' => t('Display question information of poll table.'),
+				'base' => 'poll_field_data', // database table
+				'base field' => 'id', //database field to join on
+				'relationship field' => 'pid', //relationship to join with
+				'id' => 'standard',
+			],
+			// filter
+			'filter' => [
+				'title' => t('Poll Question'),
+				'group' => t('Poll'),
+				'help' => t('Filter report by question title.'),
+				'field' => 'question',
+				'id' => 'poll_question_filter',// filter class
+			],
+		],
+		'name' => [
+			'title' => t('Username'),
+			'help' => t('Username of voter.'),
+			'relationship' => [
+				'title' => t('Poll table user'),
+				'group' => t('Users'),
+				'label' => t('The user from poll table'),
+				'help' => t('Display user informations of poll.'),
+				'base' => 'users_field_data', // database table
+				'base field' => 'uid', //database field to join on
+				'relationship field' => 'uid', //relationship to join with
+				'id' => 'standard',
+			],
+		],
+		'chid' => [
+			'title' => t('Poll Choice'),
+			'help' => t('Choice of voter.'),
+			'relationship' => [
+				'title' => t('Poll table choice'),
+				'group' => t('Poll'),
+				'label' => t('The choice from poll table'),
+				'help' => t('Display choice informations of poll.'),
+				'base' => 'poll_choice_field_data', // database table
+				'base field' => 'id', //database field to join on
+				'relationship field' => 'chid', //relationship to join with
+				'id' => 'standard',
+			],
+			'field' => [
+				'id' => 'vote_choice',
+			]
+		],
+		'timestamp' => [
+			'title' => t('Vote Date'),
+			'help' => t('Date poll was taken'),
+			'click_sortable' => TRUE,
+			'relationship' => [
+				'title' => t('Poll table timestamp'),
+				'group' => t('Poll'),
+				'label' => t('The timestamp from poll table'),
+				'help' => t('Display timestamp information of poll table.'),
+				'base' => 'poll_field_data', // database table
+				'base field' => 'id', //database field to join on
+				'relationship field' => 'pid', //relationship to join with
+				'id' => 'standard',
+			],
+			'field' => [
+				'id' => 'vote_date',
+			]
+		],
+
+	];
+
+
+
+	return $data;
+}
+
+function nhsc_polling_page_attachments(&$variables){
+	$variables['#attached']['library'][] = 'nhsc_polling/nhsc_polling';
+}

@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: nhsc_cards
+label: 'NHSC Cards'
+icon_uuid: null
+icon_default: null
+description: 'This is for adding card items that can be shown as columns or a slider.'
+behavior_plugins: {  }

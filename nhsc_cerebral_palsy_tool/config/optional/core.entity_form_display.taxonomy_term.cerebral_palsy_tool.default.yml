@@ -1,0 +1,104 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.cerebral_palsy_tool.field_author
+    - field.field.taxonomy_term.cerebral_palsy_tool.field_author_image
+    - field.field.taxonomy_term.cerebral_palsy_tool.field_cerebral_palsy_button_icon
+    - field.field.taxonomy_term.cerebral_palsy_tool.field_cerebral_palsy_paragraphs
+    - field.field.taxonomy_term.cerebral_palsy_tool.field_image
+    - field.field.taxonomy_term.cerebral_palsy_tool.field_title
+    - image.style.thumbnail
+    - taxonomy.vocabulary.cerebral_palsy_tool
+  module:
+    - image
+    - paragraphs
+    - path
+    - text
+id: taxonomy_term.cerebral_palsy_tool.default
+targetEntityType: taxonomy_term
+bundle: cerebral_palsy_tool
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 5
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  field_author:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_author_image:
+    weight: 3
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_cerebral_palsy_button_icon:
+    weight: 9
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_cerebral_palsy_paragraphs:
+    type: entity_reference_paragraphs
+    weight: 8
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_image:
+    weight: 2
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 7
+    region: content
+    third_party_settings: {  }
+hidden: {  }

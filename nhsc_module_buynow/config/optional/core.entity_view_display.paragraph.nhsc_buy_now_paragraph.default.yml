@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_buy_now_paragraph.field_nhsc_buynow_external
+    - field.field.paragraph.nhsc_buy_now_paragraph.field_nhsc_buynow_fusepumpid
+    - field.field.paragraph.nhsc_buy_now_paragraph.field_nhsc_buynow_label
+    - paragraphs.paragraphs_type.nhsc_buy_now_paragraph
+id: paragraph.nhsc_buy_now_paragraph.default
+targetEntityType: paragraph
+bundle: nhsc_buy_now_paragraph
+mode: default
+content:
+  field_nhsc_buynow_external:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_nhsc_buynow_fusepumpid:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_nhsc_buynow_label:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden: {  }

@@ -1,0 +1,345 @@
+@font-face {
+  font-family: "DIN";
+  src: url("../fonts/d-din.bold.ttf?ap7gec") format("truetype"),url("../fonts/d-din.exp.ttf?ap7gec") format("truetype"),url("../fonts/d-din.regular.ttf?ap7gec") format("truetype"),
+       url("../fonts/d-din.otf?ap7gec") format("otf"), url("../fonts/d-din.exp.otf?ap7gec") format("otf"), url("../fonts/d-din.regular.otf?ap7gec") format("otf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+body {
+  --persentil-calculator-color: #4186f3;
+}
+#persentil-calculator{
+  font-family: "DIN", "Times New Roman", serif !important;
+  background: url("/modules/custom/persentil_calculation/images/pestile-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#persentil-calculator form {
+  color: #454545;
+  font-size: 20px;
+  background: url("/modules/custom/persentil_calculation/images/pestile-back-bg.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  flex-direction: column;
+  min-height: 1150px;
+}
+#persentil-calculator .result{
+  display: flex;
+  justify-content: center;
+}
+#persentil-calculator .z-score-wrapper{
+  display: flex;
+  width: 320px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  justify-content: center;
+}
+@media (max-width: 576px) {
+  #persentil-calculator .z-score-wrapper{
+    width: 300px;
+  }
+}
+#persentil-calculator .z-score-wrapper > div{
+  width: 100%;
+  padding: 20px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: white;
+  margin: 5px;
+  margin-left: 0;
+  font-size: 18px;
+  height: 90px;
+}
+#persentil-calculator .z-score-wrapper > div:last-child{
+  margin-right: 0;
+}
+
+@media (max-width: 992px) {
+  #persentil-calculator form {
+    background: url("/modules/custom/persentil_calculation/images/mobile-bg.png");
+    background-size: cover;
+  }
+}
+/* @media (min-width: 992px) { */
+  #persentil-calculator form {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    padding-top: 175px;
+  }
+
+  #persentil-calculator h2{
+    text-shadow: -1px 0 white, 0 -1px white, 1px 0 white, 0 1px white;
+    color: #ff8400;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 26px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    bottom: 75px;
+  }
+  #persentil-calculator h2:after{
+    content: ".";
+    width: calc(100% + 60px );
+    height: 2px;
+    background: url("/modules/custom/persentil_calculation/images/line.png");
+    background-size: contain;
+    position: absolute;
+    left: -30px;
+    bottom: -30px;
+    font-size: 0;
+  }
+  @media (max-width: 576px) {
+    #persentil-calculator{
+      margin: 15px 0;
+    }
+    #persentil-calculator h2{
+      display: none;
+    }
+    #persentil-calculator form {
+      padding-top: 0;
+    }
+  }
+
+  #persentil-calculator form #form,
+#persentil-calculator form .results-wrapper {
+    width: 320px !important;
+  }
+  @media (max-width: 576px) {
+    #persentil-calculator form #form,
+  #persentil-calculator form .results-wrapper {
+      width: 300px !important;
+    }
+  }
+/* } */
+#persentil-calculator form #form {
+  box-sizing: border-box;
+}
+/* @media (min-width: 992px) { */
+  #persentil-calculator form #form {
+    padding: 15px 0;
+  }
+/* } */
+#persentil-calculator form #form div {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+@media (min-width: 576px) {
+  #persentil-calculator form #form div {
+    display: flex;
+  }
+}
+#persentil-calculator form #form ul.gender-selector {
+  list-style: none;
+  width: 160px;
+  display: flex;
+  justify-content: space-evenly;
+}
+#persentil-calculator form #form ul.gender-selector li {
+  cursor: pointer;
+  float: left;
+}
+#persentil-calculator form #form ul.gender-selector li.active {
+  filter: drop-shadow(1px 2px 4px #ccc);
+  pointer-events: none;
+}
+#persentil-calculator form #form ul.gender-selector li:not(.active) {
+  filter: opacity(0.5);
+}
+#persentil-calculator form #form ul.gender-selector li:nth-child(2) {
+  margin-left: 25px;
+}
+#persentil-calculator form #form ul.gender-selector svg {
+  width: 64px;
+  height: 64px;
+}
+#persentil-calculator form #form ul.gender-selector input {
+  display: none;
+}
+#persentil-calculator form #form input,
+#persentil-calculator form #form select,
+#persentil-calculator form #form textarea {
+  font-size: 14px;
+  color: #333;
+  width: 160px;
+  min-width: 160px;
+  border-radius: 13px;
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+  box-sizing: border-box;
+  border: none;
+  padding: 6px 20px;
+  height: 40px;
+}
+@media (max-width: 576px) {
+  #persentil-calculator form #form input,
+#persentil-calculator form #form select,
+#persentil-calculator form #form textarea {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+#persentil-calculator form #form input:focus,
+#persentil-calculator form #form select:focus,
+#persentil-calculator form #form textarea:focus {
+  outline: none;
+}
+#persentil-calculator form #form textarea {
+  width: 100%;
+  resize: none;
+}
+#persentil-calculator form #form label {
+  margin-right: 20px;
+  font-size: 18px;
+  color: #fff;
+}
+/* @media (max-width: 992px) { */
+  #persentil-calculator form #form a {
+    margin: 0 0 10px;
+  }
+/* } */
+#persentil-calculator form .results-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  background: white;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 0;
+}
+#persentil-calculator form .results-wrapper h3 {
+  font-size: 20px;
+  color: #FF9800;
+  margin-bottom: 20px;
+}
+#persentil-calculator form .results-wrapper div {
+  font-size: 16px;
+  line-height: 20px;
+  color: #fbc066;
+  padding-bottom: 8px;
+}
+#persentil-calculator form .results-wrapper span {
+  color: #6bc2da;
+  letter-spacing: 1px;
+}
+
+
+
+#persentil-calculator form .results-wrapper #height-z,
+#persentil-calculator form .results-wrapper #kilo-z {
+  display: none;
+}
+#persentil-calculator form .results-wrapper > #head {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--persentil-calculator-color);
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 30px;
+  color: #fff;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+#persentil-calculator form .results-wrapper > #head span {
+  font-weight: lighter;
+  font-size: 18px;
+}
+#persentil-calculator form .results-wrapper > div {
+  display: flex;
+  /* align-items: center; */
+}
+#persentil-calculator form .results-wrapper > div:nth-child(3) div {
+  border: solid 1px #ccc;
+  border-radius: 20px;
+  padding: 10px;
+  width: 100%;
+}
+#persentil-calculator form .results-wrapper > div:nth-child(3) div:first-child {
+  margin-right: 10px;
+}
+#persentil-calculator form .results-wrapper > div:nth-child(3) div:last-child {
+  margin-left: 10px;
+}
+#persentil-calculator form .results-wrapper > div svg {
+  height: 128px;
+  width: 128px;
+  margin-right: 20px;
+}
+@media (max-width: 460px) {
+  #persentil-calculator form .results-wrapper > div svg {
+    display: none;
+  }
+}
+#persentil-calculator form .results-wrapper > div span {
+  font-weight: bold;
+  padding-left: 5px;
+}
+#persentil-calculator form .results-wrapper a {
+  margin: 25px 0 10px;
+}
+#persentil-calculator form a {
+  background-color: #FF9800;
+  color: #fff;
+  /* margin-top: 10px; */
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+  border: 2px solid white;
+  padding: 5px 10px;
+  font-size: 14px;
+  width: 100%;
+  margin-top: 20px !important;
+  display: block;
+  text-align: center;
+}
+#persentil-calculator form a:focus {
+  outline: none;
+}
+
+#persentil-result {
+  display: none;
+}
+#persentil-result ul {
+  list-style: none;
+}
+
+@media print {
+  header,
+h1,
+.region-breadcrumb,
+#persentil-calculator {
+    display: none;
+  }
+
+  #persentil-result {
+    display: block;
+  }
+}
+@page {
+  margin: 0.5cm;
+}
+
+@media (min-width: 768px){
+  #persentil-graph .modal-dialog {
+      width: 831px !important;
+  }
+}
+@media (max-width: 768px){
+  #persentil-graph .modal-content{
+    overflow: scroll;
+  }
+  #persentil-graph .modal-body{
+    min-width: 831px;
+    min-height: 957px;
+  }
+}

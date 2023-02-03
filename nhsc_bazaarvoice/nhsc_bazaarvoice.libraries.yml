@@ -1,0 +1,7 @@
+bazaarvoice_product_id:
+  version: 1.0.3
+  js:
+    js/bazaarvoice.js: {}
+  dependencies:
+    - nhsc_bazaarvoice/bazaarvoice
+    - core/drupalSettings

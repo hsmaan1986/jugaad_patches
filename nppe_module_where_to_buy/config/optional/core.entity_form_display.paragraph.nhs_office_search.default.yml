@@ -1,0 +1,26 @@
+uuid: 97046cb7-7c98-455d-a710-8d0e04fb9008
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhs_office_search.field_office_search
+    - paragraphs.paragraphs_type.nhs_office_search
+  module:
+    - block_field
+id: paragraph.nhs_office_search.default
+targetEntityType: paragraph
+bundle: nhs_office_search
+mode: default
+content:
+  field_office_search:
+    weight: 0
+    settings:
+      plugin_id: ''
+      settings: {  }
+      configuration_form: full
+    third_party_settings: {  }
+    type: block_field_default
+    region: content
+hidden:
+  created: true
+  status: true

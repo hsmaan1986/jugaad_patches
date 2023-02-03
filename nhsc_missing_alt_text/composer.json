@@ -1,0 +1,17 @@
+{
+  "name": "drupal/nhsc_missing_alt_text",
+  "description": "Adds Drush 9 Commands to add missing alt text on images",
+  "type": "drupal-module",
+  "autoload": {
+	"psr-4": {
+	  "Drupal\\nhsc_missing_alt_text\\": "src/"
+	}
+  },
+  "extra": {
+	"drush": {
+	  "services": {
+		"drush.services.yml": "^9"
+	  }
+	}
+  }
+}

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_graduation_date
+  module:
+    - datetime
+    - user
+id: user.user.field_graduation_date
+field_name: field_graduation_date
+entity_type: user
+bundle: user
+label: 'Graduation Date'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

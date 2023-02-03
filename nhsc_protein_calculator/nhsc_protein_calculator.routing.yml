@@ -1,0 +1,25 @@
+
+nhsc_protein_calculator.admin:
+  path: '/admin/config/protein_calculator'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+  requirements:
+    _permission: 'access administration configuration'
+
+nhsc_protein_calculator.settings:
+  path: '/admin/config/protein_calculator/settings'
+  defaults:
+    _form: '\Drupal\nhsc_protein_calculator\Form\SettingsForm'
+    _title: 'Protein Calculator Settings Form'
+  requirements:
+    _permission: 'administer site configuration'
+
+nhsc_protein_calculator.protein_calculator_form:
+  path: '/admin/config/protein_calculator/form'
+  defaults:
+    _form: '\Drupal\nhsc_protein_calculator\Form\ProteinCalculatorForm'
+    _title: 'Protein Calculator Form'
+  requirements:
+    _permission: 'access administration configuration'
+  options:
+    _admin_route: TRUE

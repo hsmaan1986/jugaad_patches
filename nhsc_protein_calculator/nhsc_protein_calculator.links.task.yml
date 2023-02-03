@@ -1,0 +1,5 @@
+
+nhsc_protein_calculator.protein_calculator_form:
+  route_name: nhsc_protein_calculator.settings
+  title: NHSc Protein Calculator Settings
+  base_route: nhsc_protein_calculator.settings

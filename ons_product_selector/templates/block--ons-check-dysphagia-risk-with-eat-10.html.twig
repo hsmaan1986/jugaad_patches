@@ -1,0 +1,32 @@
+<div class="calculator calculator--dysphagiaRisk" id="dysphagiaRisk">
+	<h2 class="calculator__title">
+		{{ 'Check dysphagia risk with EAT-10'|t }}
+		<span class="onsTooltip">
+			<span class="onsTooltip__icon">?</span>
+			<span class="onsTooltip__content">{{ 'EAT-10 helps to measure swallowing difficulties'|t }}</span>
+		</span>
+	</h2>
+	<form method="POST" action="{{data.action}}" id="eat_10">
+		{% for key, title in data.questions %}
+			<div class="calculator__form-group calculator__form-group--rate">
+				<p>{{ title }}</p>
+				<div class="rate-obs">
+					<p>{{"No problem"|t}}</p>
+					<p>{{"Severe problem"|t}}</p>
+				</div>
+				<div class="rate-items">
+					{% for i in 0..4 %}
+						<div class="item">
+							<input type="radio" id="{{key}}_{{i}}" name="{{key}}" required value="{{i}}">
+							<label for="{{key}}_{{i}}">{{i}}</label>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		{% endfor %}
+		<span class="onsTooltip onsTooltip--reference">
+			<span class="onsTooltip__text">{{"References"|t}}</span>
+			<span class="onsTooltip__content">{{ 'The validity and reliability of EAT-10 has been determined. Belafsky PC, Mouadeb DA, Rees CJ, Pryor JC, Postma GN, Allen J, Leonard RJ. Validity and Reliability of the Eating Assessment Tool (EAT-10). Annals of Otology Rhinology & Laryngology 2008;117(12):919-924.'|t }}</span>
+		</span>
+	</form>
+</div>

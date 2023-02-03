@@ -1,0 +1,25 @@
+<div class="calculator calculator--patientLocation" id="patient-screening_tool">
+	<h2 class="calculator__title">{{"Screening Tool for Malnutrition"|t}}
+		<span class="onsTooltip">
+			<span class="onsTooltip__icon">?</span>
+			<span class="onsTooltip__content">
+				{{ 'MNA<sup>&reg;</sup> questionnaire detects the presence of malnutrition and risk of developing malnutrition among elderity in home-care programmes, nursing homes and hospitals'|t }}<br/><br/>
+				{{ 'The NRS-2002 system is to detect the risk of developing malnutrition in the hospital setting Screening tools recommended by ESPEN in hospitalized patients<sup>1</sup>'|t }}<br/><br/>
+				{{ 'Screening tool recommended by ESPEN in elderly population<sup>1</sup>'|t}}
+			</span>
+		</h2>
+	</span>
+	<form method="post" id="patient_screening_tool" action="{{data.action}}">
+		<div class="calculator__form-group calculator__form-group--radio">
+			<p>{{"Tool"|t}}</p>
+			<div class="item">
+				<input type="radio" name="screening_tool" value="mna" id="patient-mna" {{data.screening_tool == 'mna' ? 'checked'}} required/>
+				<label for="patient-mna">{{"MNA"|t }}</label>
+			</div>
+			<div class="item">
+				<input type="radio" name="screening_tool" value="nrs2002" id="patient-nrs2002" {{data.patient_location == 'nrs2002' ? 'checked'}} required/>
+				<label for="patient-nrs2002">{{"NRS-2002"|t}}</label>
+			</div>
+		</div>
+	</form>
+</div>

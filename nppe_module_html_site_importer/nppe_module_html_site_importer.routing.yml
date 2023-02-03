@@ -1,0 +1,7 @@
+nppe_module_html_site_importer.config:
+  path: '/admin/config/importer/config'
+  defaults:
+    _form: '\Drupal\nppe_module_html_site_importer\Form\SiteImporterConfigForm'
+    _title: 'Site importer'
+  requirements:
+    _permission: 'administer site configuration'

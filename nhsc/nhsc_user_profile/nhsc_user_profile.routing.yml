@@ -1,0 +1,98 @@
+nhsc_user_profile.register:
+  path: '/register'
+  defaults:
+    _form: '\Drupal\nhsc_user_profile\Form\RegisterForm'
+    _title: 'Register'
+  requirements:
+    _permission: 'access user registration'
+
+nhsc_user_profile.register_next:
+  path: '/register/next'
+  defaults:
+    _controller: '\Drupal\nhsc_user_profile\Controller\PageController::registerNext'
+    _title: 'Next Step'
+  requirements:
+    _access: 'TRUE'
+
+nhsc_user_profile.edit:
+  path: '/my-profile'
+  defaults:
+    _controller: '\Drupal\nhsc_user_profile\Controller\PageController::profile'
+    _title: 'Please complete your profile'
+  requirements:
+    _permission: 'access user profile'
+
+nhsc_user_profile.upgrade:
+  path: '/my-profile/upgrade'
+  defaults:
+    _controller: '\Drupal\nhsc_user_profile\Controller\PageController::profileUpgrade'
+    _title: 'Please update your profile'
+  requirements:
+    _permission: 'access user profile'
+
+nhsc_user_profile.password_reset:
+  path: '/my-profile/password'
+  defaults:
+    _form: '\Drupal\nhsc_user_profile\Form\PasswordResetForm'
+    _title: 'Change your password'
+  requirements:
+    _permission: 'access user profile'
+
+nhsc_user_profile.page_controller_homepage:
+  path: '/my-homepage'
+  defaults:
+    _controller: '\Drupal\nhsc_user_profile\Controller\PageController::homepage'
+    _title: 'My Homepage'
+  requirements:
+    _permission: 'access user profile'
+
+nhsc_user_profile.page_controller_agenda:
+  path: '/my-agenda'
+  defaults:
+    _controller: '\Drupal\nhsc_user_profile\Controller\PageController::agenda'
+    _title: 'My Agenda'
+  requirements:
+    _permission: 'access user profile'
+
+nhsc_user_profile.page_controller_achievements:
+  path: '/my-achievements'
+  defaults:
+    _controller: '\Drupal\nhsc_user_profile\Controller\PageController::achievements'
+    _title: 'My Achievements'
+  requirements:
+    _permission: 'access user profile'
+
+nhsc_user_profile.page_controller_settings:
+  path: '/my-settings'
+  defaults:
+    _controller: '\Drupal\nhsc_user_profile\Controller\PageController::settings'
+    _title: 'My Settings'
+  requirements:
+    _permission: 'access user profile'
+
+nhsc_user_profile.config_form:
+  path: '/admin/config/system/nhsc_user_profile'
+  defaults:
+    _form: '\Drupal\nhsc_user_profile\Form\ConfigForm'
+    _title: 'NHSc User Profile'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+
+
+nhsc_user_profile.page_controller_registerNext:
+  path: '/register/next'
+  defaults:
+    _controller: '\Drupal\nhsc_user_profile\Controller\PageController::registerNext'
+    _title: 'registerNext'
+  requirements:
+    _permission: 'access content'
+
+nhsc_user_profile.forgot_password_confirm:
+  path: '/forgot-password/confirm'
+  defaults:
+    _controller: '\Drupal\nhsc_user_profile\Controller\PageController::forgotPasswordConfirm'
+    _title: 'forgotPasswordConfirm'
+  requirements:
+    _permission: 'access content'

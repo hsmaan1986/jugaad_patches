@@ -1,0 +1,12 @@
+nhsc_mega_menu.admin:
+  title: NHSc Mega Menu
+  parent: system.admin_config
+  route_name: nhsc_mega_menu.admin
+  weight: 70
+
+nhsc_mega_menu.default_form:
+  title: 'Configure NHSc Mega Menu Link'
+  route_name: nhsc_mega_menu.default_form
+  description: 'Configure NHSc Mega Menu Link'
+  parent: nhsc_mega_menu.admin
+  weight: 10

@@ -1,0 +1,412 @@
+block.settings.bmi_calculator_block:
+  type: block_settings
+  label: 'BMI Calculator Block'
+  mapping:
+    bmi_calculator_block_title_label:
+      type: label
+      label: 'Label of the title field'
+    bmi_calculator_block_height_label:
+      type: label
+      label: 'Label of the  height field'
+    bmi_calculator_block_weight_label:
+      type: label
+      label: 'Label of the  weight field'
+    bmi_calculator_block_legal_label:
+      type: label
+      label: 'Label of the legal field'
+    bmi_calculator_block_homepage_btn_label:
+      type: label
+      label: 'Label of the hompage buton field'
+    bmi_calculator_block_height_placeholder_label:
+      type: label
+      label: 'Label of the height_placeholder_label'
+    bmi_calculator_block_weight_placeholder_label:
+      type: label
+      label: 'Label of the _weight_placeholder_label'
+    bmi_calculator_block_calculate_btn_label:
+      type: label
+      label: 'Label of the calculate_btn_label'
+block.settings.protein_calculator_block:
+  type: block_settings
+  label: 'MNA Calculator Block'
+  mapping:
+    protein_calculator_block_title1_label:
+      type: label
+      label: " title1 Label"
+    protein_calculator_block_title2_label:
+      type: label
+      label: " title2 Label"
+    protein_calculator_block_title3_label:
+      type: label
+      label: " title3 Label"
+    protein_calculator_block_title4_label:
+      type: label
+      label: " title4 Label"
+    protein_calculator_block_hb_q1_option1_label:
+      type: label
+      label: " hb_q1_option Label"
+    protein_calculator_block_hb_q1_option2_label:
+      type: label
+      label: " hb_q1_option Label"
+    protein_calculator_block_hb_question2_label:
+      type: label
+      label: " hb_question2 Label"
+    protein_calculator_block_hb_q2_placeholder_label:
+      type: label
+      label: " hb_q2_placeholder Label"
+    protein_calculator_block_hb_question3_label:
+      type: label
+      label: " hb_question3 Label"
+    protein_calculator_block_hb_q3_placeholder_label:
+      type: label
+      label: " hb_q3_placeholder Label"
+    protein_calculator_block_hb_question4_label:
+      type: label
+      label: " hb_question4 Label"
+    protein_calculator_block_hb_q4_placeholder_label:
+      type: label
+      label: " hb_q4_placeholder Label"
+    protein_calculator_block_hb_question5_label:
+      type: label
+      label: " hb_question5 Label"
+    protein_calculator_block_hb_q5_placeholder_label:
+      type: label
+      label: " hb_q5_placeholder Label"
+    protein_calculator_block_hb_q5_option1_label:
+      type: label
+      label: " hb_q5_option Label"
+    protein_calculator_block_hb_q5_option2_label:
+      type: label
+      label: " hb_q5_option Label"
+    protein_calculator_block_hb_q5_option3_label:
+      type: label
+      label: " hb_q5_option Label"
+    protein_calculator_block_hb_question6_label:
+      type: label
+      label: " hb_question6 Label"
+    protein_calculator_block_hb_q6_placeholder_label:
+      type: label
+      label: " hb_q6_placeholder Label"
+    protein_calculator_block_hb_q6_option1_label:
+      type: label
+      label: " hb_q6_option Label"
+    protein_calculator_block_hb_q6_option2_label:
+      type: label
+      label: " hb_q6_option Label"
+    protein_calculator_block_hb_q6_option3_label:
+      type: label
+      label: " hb_q6_option Label"
+    protein_calculator_block_hb_q6_option4_label:
+      type: label
+      label: " hb_q6_option Label"
+    protein_calculator_block_hb_q6_option5_label:
+      type: label
+      label: " hb_q6_option Label"
+    protein_calculator_block_hb_q6_option6_label:
+      type: label
+      label: " hb_q6_option Label"
+    protein_calculator_block_hb_q6_option7_label:
+      type: label
+      label: " hb_q6_option Label"
+    protein_calculator_block_hb_q6_option8_label:
+      type: label
+      label: " hb_q6_option Label"
+    protein_calculator_block_hb_q6_option9_label:
+      type: label
+      label: " hb_q6_option Label"
+    protein_calculator_block_hb_q6_option10_label:
+      type: label
+      label: " hb_q6_option Label"
+    protein_calculator_block_hb_q6_option11_label:
+      type: label
+      label: " hb_q6_option Label"
+    protein_calculator_block_hb_q6_option12_label:
+      type: label
+      label: " hb_q6_option Label"
+    protein_calculator_block_hb_question7_label:
+      type: label
+      label: " hb_question7 Label"
+    protein_calculator_block_hb_q7_placeholder_label:
+      type: label
+      label: " hb_q7_placeholder Label"
+    protein_calculator_block_hb_q7_option1_label:
+      type: label
+      label: " hb_q7_option Label"
+    protein_calculator_block_hb_q7_option2_label:
+      type: label
+      label: " hb_q7_option Label"
+    protein_calculator_block_hb_q7_option3_label:
+      type: label
+      label: " hb_q7_option Label"
+    protein_calculator_block_hb_q7_option4_label:
+      type: label
+      label: " hb_q7_option Label"
+    protein_calculator_block_pf_question1_label:
+      type: label
+      label: " pf_question1 Label"
+    protein_calculator_block_pf_q1_placeholder_label:
+      type: label
+      label: " pf_q1_placeholder Label"
+    protein_calculator_block_pf_question2_label:
+      type: label
+      label: " pf_question2 Label"
+    protein_calculator_block_pf_q2_placeholder_label:
+      type: label
+      label: " pf_q2_placeholder Label"
+    protein_calculator_block_pf_question3_label:
+      type: label
+      label: " pf_question3 Label"
+    protein_calculator_block_pf_q3_placeholder_label:
+      type: label
+      label: " pf_q3_placeholder Label"
+    protein_calculator_block_eerlabel_label:
+      type: label
+      label: " eerlabel Label"
+    protein_calculator_block_protein_label_label:
+      type: label
+      label: " protein_label Label"
+    protein_calculator_block_legal_label:
+      type: label
+      label: " legal Label"
+    protein_calculator_block_home_btn_label:
+      type: label
+      label: " home_btn Label"
+block.settings.mna_calculator_block:
+  type: block_settings
+  label: 'MNA Calculator Block'
+  mapping:
+    mna_calculator_block_title1_label:
+        type: label
+        label: "title1 Label"
+    mna_calculator_block_title2_label:
+        type: label
+        label: " title2 Label"
+    mna_calculator_block_question1_label:
+        type: label
+        label: "question1 Label"
+    mna_calculator_block_q1_option1_label:
+        type: label
+        label: "q1_option1 Label"
+    mna_calculator_block_q1_option2_label:
+        type: label
+        label: "q1_option2 Label"
+    mna_calculator_block_q1_option3_label:
+        type: label
+        label: "q1_option1 Label"
+    mna_calculator_block_question2_label:
+        type: label
+        label: "question2 Label"
+    mna_calculator_block_q2_option1_label:
+        type: label
+        label: " q2_option1 Label"
+    mna_calculator_block_q2_option2_label:
+        type: label
+        label: "q2_option2 Label"
+    mna_calculator_block_q2_option3_label:
+        type: label
+        label: "q2_option3 Label"
+    mna_calculator_block_q2_option4_label:
+        type: label
+        label: "q2_option4 Label"
+    mna_calculator_block_question3_label:
+        type: label
+        label: "question3 Label"
+    mna_calculator_block_q3_option1_label:
+        type: label
+        label: " q3_option1 Label"
+    mna_calculator_block_q3_option2_label:
+        type: label
+        label: "q3_option2 Label"
+    mna_calculator_block_q3_option3_label:
+        type: label
+        label: " q3_option3 Label"
+    mna_calculator_block_question4_label:
+        type: label
+        label: "question4_ Label"
+    mna_calculator_block_q4_option1_label:
+        type: label
+        label: "q4_option1 Label"
+    mna_calculator_block_q4_option2_label:
+        type: label
+        label: "q4_option2 Label"
+    mna_calculator_block_question5_label:
+        type: label
+        label: "question5 Label"
+    mna_calculator_block_q5_option1_label:
+        type: label
+        label: "q5_option1 Label"
+    mna_calculator_block_q5_option2_label:
+        type: label
+        label: " q5_option2 Label"
+    mna_calculator_block_q5_option3_label:
+        type: label
+        label: "q5_option3  Label"
+    mna_calculator_block_question6_1_label:
+        type: label
+        label: "question6_1_ Label"
+    mna_calculator_block_q6_1_option1_label:
+        type: label
+        label: "q6_1_option1 Label"
+    mna_calculator_block_q6_1_option2_label:
+        type: label
+        label: "q6_1_option2 Label"
+    mna_calculator_block_q6_1_option3_label:
+        type: label
+        label: "q6_1_option3 Label"
+    mna_calculator_block_q6_1_option4_label:
+        type: label
+        label: "q6_1_option4 Label"
+    mna_calculator_block_question6_2_label:
+        type: label
+        label: "question6_2 Label"
+    mna_calculator_block_q6_2_option1_label:
+        type: label
+        label: "q6_2_option1 Label"
+    mna_calculator_block_q6_2_option2_label:
+        type: label
+        label: "q6_2_option2 Label"
+    mna_calculator_block_switchlink_1_label:
+        type: label
+        label: "switchlink_1_ Label"
+    mna_calculator_block_switchlink_2_label:
+        type: label
+        label: "switchlink_2_ Label"
+    mna_calculator_block_result_label:
+        type: label
+        label: "result Label"
+    mna_calculator_block_classification1_part1_label:
+        type: label
+        label: "classification1_part1 Label"
+    mna_calculator_block_classification1_part2_label:
+        type: label
+        label: "classification1_part2 Label"
+    mna_calculator_block_classification2_part1_label:
+        type: label
+        label: "classification2_part1 Label"
+    mna_calculator_block_classification2_part2_label:
+        type: label
+        label: "classification2_part2_ Label"
+    mna_calculator_block_classification3_part1_label:
+        type: label
+        label: "classification3_part1 Label"
+    mna_calculator_block_classification3_part2_label:
+        type: label
+        label: "classification3_part2 Label"
+    mna_calculator_block_legal_label:
+        type: label
+        label: "legal Label"
+    mna_calculator_block_home_btn_label:
+        type: label
+        label: "home_btn Label"
+block.settings.nrs_calculator_block:
+  type: block_settings
+  label: 'NRS Calculator Block'
+  mapping:
+    nrs_calculator_block_title1_label:
+        type: label
+        label: "title1 Label"
+    nrs_calculator_block_title2_label:
+        type: label
+        label: "title2 Label"
+    nrs_calculator_block_step1_title_label:
+        type: label
+        label: " step1_title Label"
+    nrs_calculator_block_question1_label:
+        type: label
+        label: "question1 Label"
+    nrs_calculator_block_question2_label:
+        type: label
+        label: "question2 Label"
+    nrs_calculator_block_question3_label:
+        type: label
+        label: "question3 Label"
+    nrs_calculator_block_question4_label:
+        type: label
+        label: "question4 Label"
+    nrs_calculator_block_step2_title_label:
+        type: label
+        label: "step2_title Label"
+    nrs_calculator_block_q5_option1_part1_label:
+        type: label
+        label: "q5_option1_part1 Label"
+    nrs_calculator_block_q5_option1_part2_label:
+        type: label
+        label: "q5_option1_part2 Label"
+    nrs_calculator_block_q5_option2_part1_label:
+        type: label
+        label: "q5_option2_part1 Label"
+    nrs_calculator_block_q5_option2_part2_label:
+        type: label
+        label: "q5_option2_part2 Label"
+    nrs_calculator_block_q5_option3_part1_label:
+        type: label
+        label: "q5_option3_part1 Label"
+    nrs_calculator_block_q5_option3_part2_label:
+        type: label
+        label: "q5_option3_part2 Label"
+    nrs_calculator_block_q5_option4_part1_label:
+        type: label
+        label: "q5_option4_part1 Label"
+    nrs_calculator_block_q5_option4_part2_label:
+        type: label
+        label: "q5_option4_part2 Label"
+    nrs_calculator_block_step3_title_label:
+        type: label
+        label: "step3_title Label"
+    nrs_calculator_block_q6_option1_part1_label:
+        type: label
+        label: "q6_option1_part1 Label"
+    nrs_calculator_block_q6_option1_part2_label:
+        type: label
+        label: "q6_option1_part2 Label"
+    nrs_calculator_block_q6_option2_part1_label:
+        type: label
+        label: "q6_option2_part1 Label"
+    nrs_calculator_block_q6_option2_part2_label:
+        type: label
+        label: " q6_option2_part2 Label"
+    nrs_calculator_block_q6_option3_part1_label:
+        type: label
+        label: "q6_option3_part1 Label"
+    nrs_calculator_block_q6_option3_part2_label:
+        type: label
+        label: "q6_option3_part2 Label"
+    nrs_calculator_block_q6_option4_part1_label:
+        type: label
+        label: "q6_option4_part1 Label"
+    nrs_calculator_block_q6_option4_part2_label:
+        type: label
+        label: "q6_option4_part2 Label"
+    nrs_calculator_block_step4_title_label:
+        type: label
+        label: "step4_title Label"
+    nrs_calculator_block_question_7_label:
+        type: label
+        label: "question_7 Label"
+    nrs_calculator_block_step5_title_label:
+        type: label
+        label: "step5_title Label"
+    nrs_calculator_block_classification1_part1_label:
+        type: label
+        label: "classification1_part1 Label"
+    nrs_calculator_block_classification1_part2_label:
+        type: label
+        label: "classification1_part2 Label"
+    nrs_calculator_block_classification2_part1_label:
+        type: label
+        label: "classification2_part1 Label"
+    nrs_calculator_block_classification2_part2_label:
+        type: label
+        label: "classification2_part2 Label"
+    nrs_calculator_block_alternative_part1_label:
+        type: label
+        label: "alternative_part1 Label"
+    nrs_calculator_block_alternative_part2_label:
+        type: label
+        label: "alternative_part2 Label"
+    nrs_calculator_block_legal_label:
+        type: label
+        label: "legal Label"
+    nrs_calculator_block_home_btn_label:
+        type: label
+        label: "home_btn Label"

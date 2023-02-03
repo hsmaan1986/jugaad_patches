@@ -1,0 +1,10 @@
+
+nppe_auth_redirect_module.auth_redirect_form:
+  path: '/admin/config/nppe_auth_redirect_module/authredirect'
+  defaults:
+    _form: '\Drupal\nppe_auth_redirect_module\Form\AuthRedirectForm'
+    _title: 'Disable auth form'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE

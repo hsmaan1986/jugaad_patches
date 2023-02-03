@@ -1,0 +1,59 @@
+{# {{  selected.id  }} :: SELECT ID
+{{  selected.name  }} :: SELECT NAME #}
+{{ attach_library('nhsc_cerebral_palsy_tool/nhsc_cerebral_palsy_tool') }}
+
+{% if step == 1 %}
+
+  <div class="cerebral_palsy-tool step-1">
+    <div class="cerebral_palsy-tool__wrapper">
+
+      <h3 class="cerebral_palsy-tool__title">{{ config.welcome_title }}</h3>
+
+
+
+      <div class="cerebral_palsy-tool__image">
+        <img src="{{ config.welcome_image }}" alt="{{ config.welcome_title }}"> </div>
+
+      <div class="cerebral_palsy-tool__description">{{ config.welcome_text.value|raw }}</div>
+
+      <div class="row">
+        {% for parent in data %}
+          {% include '@nhsc_cerebral_palsy_tool/step-1.html.twig' with {data: parent} %}
+
+          <div class="content-box">
+
+            {{ paragraph.field_cerebral_palsy_paragraphs.value }}
+
+          </div>
+
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+{% endif %}
+
+{% if step == 2 %}
+
+  {% include '@nhsc_cerebral_palsy_tool/step-2.html.twig' %}
+
+{% endif %}
+
+{% if step == 3 %}
+
+  {% include '@nhsc_cerebral_palsy_tool/step-3.html.twig' %}
+
+{% endif %}
+
+{% if step == 4 %}
+
+  {% include '@nhsc_cerebral_palsy_tool/step-4.html.twig' %}
+
+{% endif %}
+
+{% if step >= 5 %}
+
+  {% include '@nhsc_cerebral_palsy_tool/step-5.html.twig' %}
+
+{% endif %}
+

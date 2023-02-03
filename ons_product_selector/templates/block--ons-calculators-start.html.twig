@@ -1,0 +1,47 @@
+<section class="ons__calculator">
+	<p class="ons__sub-ons__title">{{ 'Find the most appropriate solutions for your patients nutritional needs'|t }}</p>
+	<div class="ons__calculator__header">
+		<h1 class="ons__title ons__title--header">{{ 'Select what you want to check'|t }}</h1>
+		<span class="error" style="display:none">{{ 'Select at least one option'|t }}</span>
+	</div>
+	<form id="calculators_types">
+		<div class="ons__calculator__buttons">
+			<div class="ons__checkbox ons__checkbox--calculator">
+				<input type="checkbox" id="checkbox__malnutrition" name="calculator[]" value="malnutrition">
+				<label for="checkbox__malnutrition">
+					<img src="/modules/custom/ons_product_selector/front-end/Content/img/svg/check-malnutrition.svg" alt="">
+					<span>{{ 'Check malnutrition risk'|t }}</span>
+				</label>
+				<span class="onsTooltip onsTooltip__button">
+					<span class="onsTooltip__icon">?</span>
+					<span class="onsTooltip__content">{{ 'This tool could help you to identify those adult patients at risk of malnutrition and who would benefit from a further comprehensive nutritional assessment and a nutritional action plan. The results suggested are not a substitute for clinical judgment.'|t }}</span>
+				</span>
+			</div>
+			<div class="ons__checkbox ons__checkbox--calculator">
+				<input type="checkbox" id="checkbox__dysphagie" name="calculator[]" value="check_dysphagia_risk_with_eat_10">
+				<label for="checkbox__dysphagie">
+					<img src="/modules/custom/ons_product_selector/front-end/Content/img/svg/check-dysphagie.svg" alt="">
+					<span>{{ 'Check dysphagia risk'|t }}</span>
+				</label>
+				<span class="onsTooltip onsTooltip__button">
+					<span class="onsTooltip__icon">?</span>
+					<span class="onsTooltip__content">{{ 'This online tool could help you to identify those adults at risk of dysphagia who would benefit from a further comprehensive swallowing assessment and a nutritional action plan. The results suggested are not a substitute for clinical judgment.'|t }}</span>
+				</span>
+			</div>
+			<div class="ons__checkbox ons__checkbox--calculator">
+				<input type="checkbox" id="checkbox__nutritional" name="calculator[]" value="calculate_nutritional_needs">
+				<label for="checkbox__nutritional">
+					<img src="/modules/custom/ons_product_selector/front-end/Content/img/svg/check-nutritional.svg" alt="">
+					<span>{{ 'Calculate nutritional needs'|t }}</span>
+				</label>
+				<span class="onsTooltip onsTooltip__button">
+					<span class="onsTooltip__icon">?</span>
+					<span class="onsTooltip__content">{{ 'The nutritional needs calculator for adult patients could help you to estimate total calories and proteins based on predictive equations and vitamins and minerals based on the Recommended Dietary Allowance (RDA).'|t }}</span>
+				</span>
+			</div>
+		</div>
+	</form>
+  <a class="ons__btn ons__btn--light" href="{{data.action}}" id="startCalculators">{{ 'Start'|t }}</a>
+
+</section>
+<div id="calculatorsTest"></div>

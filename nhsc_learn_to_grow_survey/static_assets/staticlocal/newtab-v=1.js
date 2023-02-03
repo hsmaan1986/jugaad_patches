@@ -1,0 +1,1 @@
+$(document).ready(function(){$('.homecarousel a[title="inicar-sesión"]').attr('target','_blank');$('.homecarousel a[title="amantes-del-camino"]').attr('target','_blank');});

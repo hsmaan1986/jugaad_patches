@@ -1,0 +1,45 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:262f9495-5d58-496c-8532-f71b18572050'
+  module:
+    - block_content
+    - rng
+    - system
+  theme:
+    - nhsc_com
+id: hcppopuprevamp
+theme: nhsc_com
+region: header_left
+weight: 0
+provider: null
+plugin: 'block_content:262f9495-5d58-496c-8532-f71b18572050'
+settings:
+  id: 'block_content:262f9495-5d58-496c-8532-f71b18572050'
+  label: 'HCP pop up Revamp'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  rng_rule_scheduler:
+    id: rng_rule_scheduler
+    rng_rule_component: null
+    rng_rule_scheduler: null
+    date: '1629963364'
+    negate: false
+    context_mapping: {  }
+    enable: false
+  rng_current_time:
+    id: rng_current_time
+    date: '1629963364'
+    negate: false
+    context_mapping: {  }
+    enable: false
+  request_path:
+    id: request_path
+    pages: "/our-expertise/gut-health\r\n/our-expertise/gut-health-hcp\r\n/our-expertise/cellular-nutrition\r\n/our-expertise/cellular-nutrition-hcp\r\n/our-expertise/healthy-aging\r\n/our-expertise/healthy-aging-hcp\r\n/our-expertise/muscle-bone-and-joint-health\r\n/our-expertise/muscle-bone-and-joint-health-hcp\r\n/our-expertise/mild-cognitive-impairment\r\n/our-expertise/mild-cognitive-impairment-hcp\r\n/our-expertise/cerebral-palsy\r\n/our-expertise/cerebral-palsy-hcp\r\n/our-expertise/critical-care\r\n/our-expertise/critical-care-hcp\r\n/our-expertise/dysphagia\r\n/our-expertise/dysphagia-hcp\r\n/our-expertise/pediatric-food-allergies\r\n/our-expertise/pediatric-food-allergies-hcp\r\n/our-expertise/malnutrition\r\n/our-expertise/malnutrition-hcp\r\n/our-expertise/obesity\r\n/our-expertise/obesity-hcp\r\n/our-expertise/oncology\r\n/our-expertise/oncology-hcp\r\n/brands/alfare-hmo\r\n/brands/alfare-hmo-hcp\r\n/node/9043\r\n/brands/althera-hmo\r\n/brands/althera-hmo-hcp\r\n/brands/alfamino-hmo\r\n/brands/alfamino-hmo-hcp"
+    negate: false
+    context_mapping: {  }

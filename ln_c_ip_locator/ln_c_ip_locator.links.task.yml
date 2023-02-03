@@ -1,0 +1,29 @@
+ln_c_ip_locator.overview_tab:
+  route_name: ln_c_ip_locator.overview
+  title: Overview
+  base_route: geolocation.settings
+  weight: -1
+
+geolocation.settings_form_tab:
+  route_name: geolocation.settings
+  title: Geolocation Redirections
+  base_route: geolocation.settings
+  weight: 1
+
+popupsettings.settings_form_tab:
+  route_name: popupconfig.settings
+  title: Popup Block Config
+  base_route: geolocation.settings
+  weight: 2
+
+cdnserviceconfig.settings_form_tab:
+  route_name: cdnserviceconfig.settings
+  title: CDN Service
+  base_route: geolocation.settings
+  weight: 3
+
+gioipserviceconfig.settings_form_tab:
+  route_name: gioipserviceconfig.settings
+  title: Third Party Geo IP Location Services
+  base_route: geolocation.settings
+  weight: 4

@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_bordered_description
+    - paragraphs.paragraphs_type.nhsc_heading_and_description_wit
+  module:
+    - datalayer
+third_party_settings:
+  datalayer:
+    expose: 0
+    label: field_bordered_description
+id: paragraph.nhsc_heading_and_description_wit.field_bordered_description
+field_name: field_bordered_description
+entity_type: paragraph
+bundle: nhsc_heading_and_description_wit
+label: 'bordered description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

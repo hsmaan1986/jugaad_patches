@@ -1,0 +1,5 @@
+lcp_migrations.configurations:
+  title: 'Migrations Configurations'
+  description: 'Configurations for Migrations.'
+  parent: lcp_global_configurations.settings
+  route_name: lcp_migrations.configurations

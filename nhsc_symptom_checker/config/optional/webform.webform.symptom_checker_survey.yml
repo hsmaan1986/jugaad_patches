@@ -1,0 +1,169 @@
+uuid: 298015e2-ca51-42b7-b078-9c2a2f8df65b
+langcode: en
+status: open
+dependencies: {  }
+open: null
+close: null
+weight: 0
+uid: 1
+template: false
+archive: false
+id: symptom_checker_survey
+title: 'Symptom Checker Survey'
+description: ''
+category: ''
+elements: "question_1:\n  '#type': checkboxes\n  '#title': 'Has your child experienced digestive or gastrointestinal symptoms?'\n  '#description': '<img alt=\"\" src=\"https://www.nestlehealthscience.co.uk/asset-library/PublishingImages/health-managment/food-allergy/symptoms-checker/u149.jpg\" />'\n  '#options':\n    'Reflux and spit up': 'Reflux and spit up -- Reflux occurs when a baby brings up milk during or shortly after feeding. Spit up is the backwards flow of milk from the stomach into the mouth.'\n    Diarrhoea: 'Diarrhoea -- Passing of three or more loose or liquid stools per day, lasting up to two weeks. It is more the change in stool consistency rather than stool number that is a sign of baby diarrhoea. Normal or healthy baby stools are soft and loose.'\n    Constipation: 'Constipation -- Constipation is a delay or difficulty in passing stools, present for two or more weeks. Every baby has his or her own stool pattern; it is common for a baby to have occasional, hard stools and some breastfed babies may only have one bowel movement a week.'\nquestion_2:\n  '#type': checkboxes\n  '#title': 'Has your child experienced respiratory symptoms?'\n  '#description': '<img alt=\"\" src=\"https://www.nestlehealthscience.co.uk/asset-library/PublishingImages/health-managment/food-allergy/symptoms-checker/u152.jpg\" />'\n  '#options':\n    'Wheezing / noisy breathing': 'Wheezing / noisy breathing -- A high-pitched, whistling sound which happens when the small airways become narrow, making it difficult for a baby to breathe.'\n    'Runny nose or sneezing': 'Runny nose or sneezing -- A runny nose can be identified as streaming mucous from baby’s nostril. Can appear as soon as 30 minutes after having cow’s milk. Sneezing is a natural reflex mechanism used to clear airborne substances and congestion from the respiratory and nasal passages. A runny nose or sneezing is very common in babies and not usually something to cause concern.'\n    'Persistent cough': 'Persistent cough -- A daily cough lasting for more than three to four weeks.'\nquestion_3:\n  '#type': checkboxes\n  '#title': 'Has your child experienced respiratory symptoms?'\n  '#description': '<img alt=\"\" src=\"https://www.nestlehealthscience.co.uk/asset-library/PublishingImages/health-managment/food-allergy/symptoms-checker/u152.jpg\" />'\n  '#options':\n    'Wheezing / noisy breathing': 'Wheezing / noisy breathing -- A high-pitched, whistling sound which happens when the small airways become narrow, making it difficult for a baby to breathe.'\n    'Runny nose or sneezing': 'Runny nose or sneezing -- A runny nose can be identified as streaming mucous from baby’s nostril. Can appear as soon as 30 minutes after having cow’s milk. Sneezing is a natural reflex mechanism used to clear airborne substances and congestion from the respiratory and nasal passages. A runny nose or sneezing is very common in babies and not usually something to cause concern.'\n    'Persistent cough': 'Persistent cough -- A daily cough lasting for more than three to four weeks.'\nquestion_4:\n  '#type': checkboxes\n  '#title': 'Has your child experienced skin symptoms?'\n  '#description': '<img alt=\"\" src=\"https://www.nestlehealthscience.co.uk/asset-library/PublishingImages/health-managment/food-allergy/symptoms-checker/u154.jpg\" />'\n  '#options':\n    Hives: 'Hives -- Hives is characterized by well-formed itchy welts and swelling of the skin surface. Hives can occur anywhere on the body, but in infants are usually short-lived.'\n    Eczema: 'Eczema -- Eczema is a highly itchy, common inflammatory skin condition characterized by red or brownish, dry, cracked and scaly skin, which is especially itchy at night. In babies, it usually appears on the face, scalp and outer surfaces of the limbs.'\n    Rash: 'Rash -- Rash can be extremely common and perfectly normal in babies. They can develop from as early as a few days after birth and are usually the result of baby’s sensitive skin adapting to a new and very different environment. Most rashes are harmless and will usually go away on their own.'\nquestion_5:\n  '#type': checkboxes\n  '#title': 'Has your child experienced general symptoms?'\n  '#description': '<img alt=\"\" src=\"https://www.nestlehealthscience.co.uk/asset-library/PublishingImages/health-managment/food-allergy/symptoms-checker/u147.jpg\" />'\n  '#options':\n    'Inconsolable crying': 'Inconsolable crying -- Crying is a normal behaviour for a baby; however inconsolable crying is the sort of cry that may be very difficult for a parent to understand. Nothing you can do can help your baby when he or she has an inconsolable cry. Inconsolable crying is very common in babies under three months.'\n    ' Colic': ' Colic -- Colic can be described as unexplained crying and predictable periods of distress in an otherwise healthy, well-fed baby. It is usually short-lived and starts when a baby is a few weeks old. In most cases, it will have resolved by five months.'\n    'Poor sleeping': 'Poor sleeping -- Many babies have difficulty falling or staying asleep during their first year of life and maybe even beyond. A baby begins to adapt to the normal night-day cycle during the first month of life and it is perfectly normal that a baby will not have a full night of sleep before they reach three months of age.'\n    'Refusal to feed': 'Refusal to feed -- Usually starts when a baby is six to nine months old. A baby may have an extreme food refusal and seem to have a lack of appetite, which can lead to growth problems.'"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_title: both
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_remote_addr: true
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  submission_label: ''
+  submission_log: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: page
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_url: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }

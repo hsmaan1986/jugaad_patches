@@ -1,0 +1,19 @@
+ons_product_selector.settings:
+  type: config_object
+  label: 'ONS Product Selector Config Settings'
+  mapping:
+    product_hide:
+      label: 'Hide products recommendation'
+      type: boolean
+    pip_hide:
+      label: 'Hide PIP code'
+      type: boolean
+    dri:
+      label: 'DRI'
+      type: text
+    product_disclaimer:
+      label: 'Product Disclaimer'
+      type: text
+    language:
+      type: string
+      label: 'Language code'

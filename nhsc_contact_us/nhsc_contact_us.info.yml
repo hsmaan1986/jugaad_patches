@@ -1,0 +1,15 @@
+name: 'NHSC Contact Us'
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - autologout
+  - block
+  - facets
+  - metatag
+  - rng
+  - system
+  - taxonomy
+  - user
+  - views
+  - webform
+version: 8.x-1.0

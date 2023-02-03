@@ -1,0 +1,103 @@
+<div class="calculator calculator--nutritionalNeeds" id="nutritionalNeeds">
+	<h2 class="calculator__title">
+		{{ 'Calculate nutritional needs'|t }}
+		<span class="onsTooltip">
+			<span class="onsTooltip__icon">?</span>
+			<span class="onsTooltip__content">{{ 'This tool could help to estimate energy, proteins and micronutrients needs of your patients.'|t }}</span>
+		</span>
+	</h2>
+	<form method="POST" action="{{ data.currentUrl }}" id="nutritional_needs">
+		<div class="calculator__form-group calculator__form-group--radio">
+			<p>
+				{{ 'Gender'|t }}
+			</p>
+			<div class="item">
+				<input type="radio" id="gender_0" name="gender" value="m" required>
+				<label for="gender_0">{{ 'Male'|t }}</label>
+			</div>
+			<div class="item">
+				<input type="radio" id="gender_1" name="gender" value="f" required>
+				<label for="gender_1">{{ 'Female'|t }}</label>
+			</div>
+		</div>
+
+		<div class="calculator__form-group calculator__form-group--radio">
+			<p>
+				{{ 'Activity'|t }}
+				<span class="onsTooltip onsTooltip--fromLeft">
+					<span class="onsTooltip__icon">?</span>
+					<span class="onsTooltip__content">{{ 'Physical activity is the most important variable to determine energy needs. Bedrest:  self around bed; Mild activity: mobilizing frequently on ward or home; Moderate activity; continuous movement/slow walking'|t }}</span>
+				</span>
+			</p>
+			<div class="item">
+				<input type="radio" id="activity_0" name="activity" value="0" required>
+				<label for="activity_0">{{ 'Sedentary'|t }}</label>
+			</div>
+			<div class="item">
+				<input type="radio" id="activity_1" name="activity" value="1" required>
+				<label for="activity_1">{{ 'Low Active (30-60 min of daily moderate activity)'|t }}</label>
+			</div>
+			<div class="item">
+				<input type="radio" id="activity_2" name="activity" value="2" required>
+				<label for="activity_2">{{ 'Active (>60min of daily moderate activity)'|t }}</label>
+			</div>
+			<div class="item">
+				<input type="radio" id="activity_3" name="activity" value="3" required>
+				<label for="activity_3">{{ 'Very Active (180 min of daily moderate activity or 60 min daily moderate plus 60min vigorous activity)'|t }}</label>
+			</div>
+			{# {% endif %} #}
+		</div>
+
+		<div class="calculator__form-group calculator__form-group--radio calculator__form-group--two-collumns">
+			<p>
+				{{ 'Illness severity'|t }}
+				<span class="onsTooltip">
+					<span class="onsTooltip__icon">?</span>
+					<span class="onsTooltip__content">{{ 'Protein and energy requirements increase considerably with illness severity.'|t }}</span>
+				</span>
+			</p>
+			{# {% if data.calc_version == 'v1' %} #}
+			{# <div class="item">
+												        <input type="radio" id="illness_severity_0" name="stress" value="str00" required>
+												        <label for="illness_severity_0">{{ 'No Injury or stress'|t }}</label>
+												      </div>
+												      <div class="item">
+												        <input type="radio" id="illness_severity_1" name="stress" value="str01" required>
+												        <label for="illness_severity_1">{{ 'Mild'|t }}</label>
+												      </div>
+												      <div class="item">
+												        <input type="radio" id="illness_severity_2" name="stress" value="str02" required>
+												        <label for="illness_severity_2">{{ 'Moderate'|t }}</label>
+												      </div>
+												      <div class="item">
+												        <input type="radio" id="illness_severity_3" name="stress" value="str03" required>
+												        <label for="illness_severity_3">{{ 'Severe'|t }}</label>
+												      </div> #}
+			{# {% endif %} #}
+			{# {% if data.calc_version == 'v2' %} #}
+				<div class="item"> <input type="radio" id="illness_severity_0" name="stress" value="0.8" required>
+				<label for="illness_severity_0">{{ 'No Illness or no Injured'|t }}</label>
+			</div>
+			<div class="item">
+				<input type="radio" id="illness_severity_1" name="stress" value="1.25" required>
+				<label for="illness_severity_1">{{ 'Illness or Injured & >65years'|t }}</label>
+
+			</div>
+			<div class="item">
+				<input type="radio" id="illness_severity_2" name="stress" value="1.35" required>
+				<label for="illness_severity_2">{{ 'Mild-moderate'|t }}</label>
+
+			</div>
+			<div class="item">
+				<input type="radio" id="illness_severity_3" name="stress" value="1.5" required>
+				<label for="illness_severity_3">{{ 'Severe'|t }}</label>
+			</div>
+			{# {% endif %} #}
+		</div>
+		<span class="onsTooltip onsTooltip--reference">
+			<span class="onsTooltip__text">{{"References"|t}}</span>
+			<span class="onsTooltip__content">{{ '1-Ferrie S et al. Back to basics: Estimating energy requirements for adult hospital patients. Nutrition & Dietetics 2007; 64: 192–199<br/>
+      2-Bauer J et al. Evidence-Based Recommendations for Optimal Dietary Protein Intake in Older People: A Position Paper From the PROT-AGE Study Group. JAMDA 2013;14: 542e559'|t }}</span>
+		</span>
+	</form>
+</div>

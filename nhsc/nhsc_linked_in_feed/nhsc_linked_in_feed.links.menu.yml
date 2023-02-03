@@ -1,0 +1,5 @@
+nhsc_linked_in_feed.config:
+  title: 'Get Linkedin Feed Settings'
+  description: 'Get Linkedin Feed Settings.'
+  parent: system.admin_config_services
+  route_name: nhsc_linked_in_feed.config_form

@@ -1,0 +1,21 @@
+hcp_advice_booking.booking_form:
+  path: '/expert-advice/book/{id}'
+  defaults:
+    _form: '\Drupal\hcp_advice_booking\Form\BookingForm'
+    _title: 'Expert Advice'
+  requirements:
+    _role: 'authenticated'
+hcp_advice_booking.booking_list_controller_page:
+  path: '/expert-advice/book'
+  defaults:
+    _controller: '\Drupal\hcp_advice_booking\Controller\BookingListController::page'
+    _title: 'Expert Advice'
+  requirements:
+    _role: 'authenticated'
+hcp_advice_booking.calendar_file:
+  path: '/download-ics'
+  defaults:
+    _controller: '\Drupal\hcp_advice_booking\Controller\CalendarFileController::generate'
+    _title: 'Download'
+  requirements:
+    _permission: 'access content'

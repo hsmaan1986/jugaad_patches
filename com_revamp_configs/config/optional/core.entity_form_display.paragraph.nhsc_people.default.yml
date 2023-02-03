@@ -1,0 +1,44 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_people.field_nhsc_people_image
+    - field.field.paragraph.nhsc_people.field_nhsc_people_text
+    - field.field.paragraph.nhsc_people.field_nhsc_people_title
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.nhsc_people
+  module:
+    - image
+id: paragraph.nhsc_people.default
+targetEntityType: paragraph
+bundle: nhsc_people
+mode: default
+content:
+  field_nhsc_people_image:
+    weight: 101
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_nhsc_people_text:
+    weight: 103
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_nhsc_people_title:
+    weight: 102
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

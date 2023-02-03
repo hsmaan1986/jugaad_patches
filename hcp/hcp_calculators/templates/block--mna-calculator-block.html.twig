@@ -1,0 +1,436 @@
+{#
+/**
+ * @file
+ * Block containing bmi calculator
+ */
+#}
+<div class="calculator-container">
+
+    <!-- 1 Main titles of this calculator -->
+    <div class="calculator-title calculator-title-medium calculator-title-center">
+      {% if title1|length %}
+        <h1>
+            {{ title1 }}
+        </h1>
+      {% endif %}
+    </div>
+    <div class="calculator-title calculator-title-large calculator-title-center">
+        {{ title2 }}
+    </div>
+
+    <!-- 2 Main form of calculator -->
+    <form class="calculator-form" id="mnacalc-form" action="">
+
+        <!-- Form indicators -->
+        <div class="calculator-indicators">
+            <span class="calculator-step js-calculator-step">1</span>
+            <span class="calculator-step js-calculator-step">2</span>
+            <span class="calculator-step js-calculator-step">3</span>
+            <span class="calculator-step js-calculator-step">4</span>
+            <span class="calculator-step js-calculator-step">5</span>
+            <span class="calculator-step js-calculator-step">6</span>
+            <span class="calculator-step js-calculator-step"><i class="fas fa-angle-right"></i></span>
+        </div>
+
+
+        <!-- STEP 1 -->
+        <div class="calculator-tab js-calculator-tab">
+
+            <!-- Question 1 -->
+            <div class="form-step-title">
+                {{ question1 |raw}}
+            </div>
+
+            <!-- Option 1 -->
+            <div class="container-fullwidth container-border">
+                <div class="container-80 input-question">
+                    {{ q1_option1 }}
+                </div>
+                <div class="container-20">
+                    <input class="input-radio" type="radio" name="mna-question1" id="mna-question1-1" value="0" checked>
+                    <label for="mna-question1-1"></label>
+                </div>
+            </div>
+
+            <!-- Option 2 -->
+            <div class="container-fullwidth container-border">
+                <div class="container-80 input-question">
+                    {{ q1_option2 }}
+                </div>
+                <div class="container-20">
+                    <input class="input-radio" type="radio" name="mna-question1" id="mna-question1-2" value="1">
+                    <label for="mna-question1-2"></label>
+                </div>
+            </div>
+
+            <!-- Option 3 -->
+            <div class="container-fullwidth">
+                <div class="container-80 input-question">
+                    {{ q1_option3 }}
+                </div>
+                <div class="container-20">
+                    <input class="input-radio" type="radio" name="mna-question1" id="mna-question1-3" value="2">
+                    <label for="mna-question1-3"></label>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="calculator-tab js-calculator-tab">
+
+            <!-- Question 2 -->
+            <div class="form-step-title">
+                {{ question2 |raw}}
+            </div>
+
+            <!-- Option 1 -->
+            <div class="container-fullwidth container-border">
+                <div class="container-80 input-question">
+                    {{ q2_option1 }}
+                </div>
+                <div class="container-20">
+                    <input class="input-radio" type="radio" name="mna-question2" id="mna-question2-1" value="0" checked>
+                    <label for="mna-question2-1"></label>
+                </div>
+            </div>
+
+            <!-- Option 2 -->
+            <div class="container-fullwidth container-border">
+                <div class="container-80 input-question">
+                    {{ q2_option2 }}
+                </div>
+                <div class="container-20">
+                    <input class="input-radio" type="radio" name="mna-question2" id="mna-question2-2" value="1">
+                    <label for="mna-question2-2"></label>
+                </div>
+            </div>
+
+            <!-- Option 3 -->
+            <div class="container-fullwidth container-border">
+                <div class="container-80 input-question">
+                    {{ q2_option3 |raw}}
+                </div>
+                <div class="container-20">
+                    <input class="input-radio" type="radio" name="mna-question2" id="mna-question2-3" value="2">
+                    <label for="mna-question2-3"></label>
+                </div>
+            </div>
+
+            <!-- Option 4 -->
+            <div class="container-fullwidth">
+                <div class="container-80 input-question">
+                    {{ q2_option4 }}
+                </div>
+                <div class="container-20">
+                    <input class="input-radio" type="radio" name="mna-question2" id="mna-question2-4" value="3">
+                    <label for="mna-question2-4"></label>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="calculator-tab js-calculator-tab">
+
+            <!-- Question 3 -->
+            <div class="form-step-title">
+                {{ question3 |raw}}
+            </div>
+
+            <!-- Option 1 -->
+            <div class="container-fullwidth container-border">
+                <div class="container-80 input-question">
+                    {{ q3_option1 }}
+                </div>
+                <div class="container-20">
+                    <input class="input-radio" type="radio" name="mna-question3" id="mna-question3-1" value="0" checked>
+                    <label for="mna-question3-1"></label>
+                </div>
+            </div>
+
+            <!-- Option 2 -->
+            <div class="container-fullwidth container-border">
+                <div class="container-80 input-question">
+                    {{ q3_option2 }}
+                </div>
+                <div class="container-20">
+                    <input class="input-radio" type="radio" name="mna-question3" id="mna-question3-2" value="1">
+                    <label for="mna-question3-2"></label>
+                </div>
+            </div>
+
+            <!-- Option 3 -->
+            <div class="container-fullwidth">
+                <div class="container-80 input-question">
+                    {{ q3_option3 }}
+                </div>
+                <div class="container-20">
+                    <input class="input-radio" type="radio" name="mna-question3" id="mna-question3-3" value="2">
+                    <label for="mna-question3-3"></label>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="calculator-tab js-calculator-tab">
+
+            <!-- Question 4 -->
+            <div class="form-step-title">
+                {{ question4 |raw}}
+            </div>
+
+            <!-- Option 1 -->
+            <div class="container-fullwidth container-border">
+                <div class="container-80 input-question">
+                    {{ q4_option1 }}
+                </div>
+                <div class="container-20">
+                    <input class="input-radio" type="radio" name="mna-question4" id="mna-question4-1" value="0" checked>
+                    <label for="mna-question4-1"></label>
+                </div>
+            </div>
+
+            <!-- Option 2 -->
+            <div class="container-fullwidth">
+                <div class="container-80 input-question">
+                    {{ q4_option2 }}
+                </div>
+                <div class="container-20">
+                    <input class="input-radio" type="radio" name="mna-question4" id="mna-question4-2" value="2">
+                    <label for="mna-question4-2"></label>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- STEP 5 -->
+        <div class="calculator-tab js-calculator-tab">
+
+            <!-- Question 5 -->
+            <div class="form-step-title">
+                {{ question5 |raw}}
+            </div>
+
+            <!-- Option 1 -->
+            <div class="container-fullwidth container-border">
+                <div class="container-80 input-question">
+                    {{ q5_option1 }}
+                </div>
+                <div class="container-20">
+                    <input class="input-radio" type="radio" name="mna-question5" id="mna-question5-1" value="0" checked>
+                    <label for="mna-question5-1"></label>
+                </div>
+            </div>
+
+            <!-- Option 2 -->
+            <div class="container-fullwidth container-border">
+                <div class="container-80 input-question">
+                    {{ q5_option2 }}
+                </div>
+                <div class="container-20">
+                    <input class="input-radio" type="radio" name="mna-question5" id="mna-question5-2" value="1">
+                    <label for="mna-question5-2"></label>
+                </div>
+            </div>
+
+            <!-- Option 3 -->
+            <div class="container-fullwidth">
+                <div class="container-80 input-question">
+                    {{ q5_option3 }}
+                </div>
+                <div class="container-20">
+                    <input class="input-radio" type="radio" name="mna-question5" id="mna-question5-3" value="2">
+                    <label for="mna-question5-3"></label>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- STEP 6 -->
+        <div class="calculator-tab js-calculator-tab">
+
+            <div class="js-alt-question" id="js-bmi-question">
+
+                <!-- Question 6 - 1 -->
+                <div class="form-step-title">
+                    {{ question6_1 |raw}}
+                </div>
+
+                <!-- Option 1 -->
+                <div class="container-fullwidth container-border">
+                    <div class="container-80 input-question">
+                        {{ q6_1_option1 }}
+                    </div>
+                    <div class="container-20">
+                        <input class="input-radio" type="radio" name="mna-question6" id="mna-question6-1" value="0" checked>
+                        <label for="mna-question6-1"></label>
+                    </div>
+                </div>
+
+                <!-- Option 2 -->
+                <div class="container-fullwidth container-border">
+                    <div class="container-80 input-question">
+                        {{ q6_1_option2 }}
+                    </div>
+                    <div class="container-20">
+                        <input class="input-radio" type="radio" name="mna-question6" id="mna-question6-2" value="1">
+                        <label for="mna-question6-2"></label>
+                    </div>
+                </div>
+
+                <!-- Option 3 -->
+                <div class="container-fullwidth container-border">
+                    <div class="container-80 input-question">
+                        {{ q6_1_option3 }}
+                    </div>
+                    <div class="container-20">
+                        <input class="input-radio" type="radio" name="mna-question6" id="mna-question6-3" value="2">
+                        <label for="mna-question6-3"></label>
+                    </div>
+                </div>
+
+                <!-- Option 4 -->
+                <div class="container-fullwidth">
+                    <div class="container-80 input-question">
+                        {{ q6_1_option4 }}
+                    </div>
+                    <div class="container-20">
+                        <input class="input-radio" type="radio" name="mna-question6" id="mna-question6-4" value="3">
+                        <label for="mna-question6-4"></label>
+                    </div>
+                </div>
+
+                <div class="container-fullwidth">
+                    <div class="question-link" onclick="switchIndexType('cc')">
+                        {{ switchlink_1 }}
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="js-alt-question" id="js-cc-question">
+
+                <!-- Question 6 - 2 -->
+                <div class="form-step-title">
+                    {{ question6_2 |raw}}
+                </div>
+
+                <!-- Option 1 -->
+                <div class="container-fullwidth container-border">
+                    <div class="container-80 input-question">
+                        {{ q6_2_option1 }}
+                    </div>
+                    <div class="container-20">
+                        <input class="input-radio" type="radio" name="mna-question6" id="mna-question6-5" value="0">
+                        <label for="mna-question6-5"></label>
+                    </div>
+                </div>
+
+                <!-- Option 2 -->
+                <div class="container-fullwidth">
+                    <div class="container-80 input-question">
+                        {{ q6_2_option2 }}
+                    </div>
+                    <div class="container-20">
+                        <input class="input-radio" type="radio" name="mna-question6" id="mna-question6-6" value="3">
+                        <label for="mna-question6-6"></label>
+                    </div>
+                </div>
+
+
+                <div class="container-fullwidth">
+                    <div class="question-link" onclick="switchIndexType('bmi')">
+                        {{ switchlink_2 }}
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- STEP 7: RESULT -->
+        <div class="calculator-tab js-calculator-tab" id="js-results">
+
+            <div class="form-step-title">
+                {{ result }}
+            </div>
+
+            <div class="spacer"></div>
+
+            <div class="container-fullwidth container-result">
+
+                <div class="result-text result-large" id="js-mna-result">
+                    0
+                </div>
+
+                <!-- Classification 1 - Normal nutritional status -->
+                <div class="mna-results" id="js-mna-normal">
+                    <div class="result-text result-medium">
+                        {{ classification1_part1 }}
+                    </div>
+                    <div class="result-text result-small">
+                        {{ classification1_part2 }}
+                    </div>
+                </div>
+
+                <!-- Classification 2 - At risk -->
+                <div class="mna-results" id="js-mna-atrisk">
+                    <div class="result-text result-medium">
+                        {{ classification2_part1 }}
+                    </div>
+                    <div class="result-text result-small">
+                        {{ classification2_part2 }}
+                    </div>
+                </div>
+
+                <!-- Classification 3 - Malnourished -->
+                <div class="mna-results" id="js-mna-malnourished">
+                    <div class="result-text result-medium">
+                        {{ classification3_part1 }}
+                    </div>
+                    <div class="result-text result-small">
+                        {{ classification3_part2 }}
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="container-fullwidth container-center">
+                <span class="calculator-fineprint">{{ legal }}</span>
+            </div>
+
+            <div class="spacer"></div>
+
+            <div class="buttons-container">
+                <div class="buttons-center">
+                    <button class="calculator-button calculator-button-white" type="button" onclick="resetForm()">
+                        {{ reset_btn }}
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Form navigation buttons -->
+        <div class="buttons-container"
+             id="js-navigation-buttons">
+
+            <div class="buttons-center">
+                <button class="calculator-button calculator-button-blue" type="button" id="prevBtn" onclick="nextPrev(-1)">
+                    <i class="fas fa-arrow-left"></i> {{ 'Previous' |t }}
+                </button>
+                <button class="calculator-button calculator-button-blue" type="button" id="nextBtn" onclick="nextPrev(1)">
+                    {{ 'Next' |t }} <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+        </div>
+
+
+    </form>
+
+</div>

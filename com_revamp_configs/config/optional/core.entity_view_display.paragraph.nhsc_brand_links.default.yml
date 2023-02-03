@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.nhsc_brand_links.field_buy_now_text
+    - field.field.paragraph.nhsc_brand_links.field_country_websites
+    - paragraphs.paragraphs_type.nhsc_brand_links
+  module:
+    - entity_reference_revisions
+id: paragraph.nhsc_brand_links.default
+targetEntityType: paragraph
+bundle: nhsc_brand_links
+mode: default
+content:
+  field_buy_now_text:
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_country_websites:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+hidden:
+  addtoany: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  search_api_excerpt: true

@@ -1,0 +1,5 @@
+entity.booking_entity.add_form:
+  route_name: entity.booking_entity.add_form
+  title: 'Add Advice Booking Slot'
+  appears_on:
+    - entity.booking_entity.collection

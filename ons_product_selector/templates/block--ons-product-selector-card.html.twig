@@ -1,0 +1,107 @@
+<section class="ons__result">
+	<div class="ons__result__header">
+		<p>{{"Selection for your patient:"|t}}
+			{% set ct_group = 0 %}
+			{% if selected_taxonomies %}
+				{% for k, group in selected_taxonomies %}
+					{% if ct_group > 0 %}
+						,
+					{% endif %}
+					{% set ct_group = ct_group+1 %}
+					{{ k }}:
+
+					{% set ct_tax = 0 %}
+					{% for tax in group %}
+						{% if ct_tax > 0 %}
+							|
+						{% endif %}
+						{% set ct_tax = ct_tax+1 %}
+						<span>{{ tax['name'] }}</span>
+					{% endfor %}
+				{% endfor %}
+			{% else %}
+				<span>{{"All products"|t}}</span>
+			{% endif %}
+		</p>
+		<p class="ons__obsText">{{"* per 100ml or 100g"|t}}</p>
+	</div>
+	<div class="ons__result__compare">
+		<span>{{ data.products | length }}
+			{{"results"|t}}</span>
+		{% if data.disable_compare %}
+			<a class="ons__btn ons__btn--outline ons__btn--reset off">{{"Reset"|t}}</a>
+			<a class="ons__btn ons__btn--compare disable">{{"Compare"|t}}</a>
+		{% endif %}
+	</div>
+</section>
+{% if data|length == 0 %}
+	<div class="ons__no-result on">
+		<p>{{"No products satisfied your filter criteria. Remove some filter and try again."|t}}</p>
+	</div>
+{% else %}
+	<section class="ons__container">
+		{% for rec in data.products %}
+			<div class="ons__card-product" data-id="{{rec.nid}}">
+				<h2 class="ons__card-product__title">
+					<a href="{{ rec['node_url'] }}">{{ rec.title|replace({'®': '<sup>®</sup>'})|raw }}</a>
+
+				</h2>
+				<div class="ons__card-product__content">
+					<div class="ons__card-product__content__img">
+						<img data-src="{{ rec['media_uri'] }}" alt="">
+					</div>
+					<div class="ons__card-product__infos">
+						<dl>
+							<dt>{{ 'Energy*'|t }}</dt>
+							<dd>{{ rec.field_ons_kcal }}</dd>
+
+							<dt>{{ 'Protein*'|t }}</dt>
+							<dd>{{ rec.field_ons_protein }}</dd>
+
+							<dt>{{ 'P/CHO/F%*'|t }}</dt>
+							<dd>
+								<span class="percentil">{{ rec.field_ons_p_cho_f_ }}</span>
+							</dd>
+
+							<dt>{{"Format"|t}}</dt>
+							<dd>
+								<span class="percentil">{{ rec.field_ons_format_size|raw }}</span>
+							</dd>
+
+							<dt>{{"Flavours"|t}}</dt>
+							<dd class="ons__card-product__infos__flavours">
+								<input type="checkbox" id="checkbox__flavours-{{rec['nid']}}" name="checkbox__flavours" class="ons__checkbox--arrow">
+								<label for="checkbox__flavours-{{rec['nid']}}">{{ rec.field_ons_flavours | length }}</label>
+								<div class="ons__card-product__infos__flavours__list">
+									<ul>
+										{% for flavor in rec.field_ons_flavours %}
+											<li>{{ flavor }}</li>
+										{% endfor %}
+									</ul>
+								</div>
+							</dd>
+						</dl>
+						<div class="ons__card-product__intolerance">
+							{% for intolerance in rec.field_ons_intolerance %}
+								<div class="ons__card-product__intolerance__badget">
+									<a title="{{ intolerance.name }}" onclick="return false">
+										<image width="35" height="30" src="{{ intolerance.url }}" alt="{{ intolerance.name }}"></image>
+								</a>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+			<div class="ons__card-product__footer">
+				<div class="ons__checkbox">
+					{% if data.disable_compare %}
+						<input type="checkbox" id="ons_product[{{ rec['nid'] }}]" data-id="compare-product" name="ons_product[{{ rec['nid'] }}]" value="{{rec['nid']}}">
+						<label for="ons_product[{{ rec['nid'] }}]">{{"Compare"|t}}</label>
+					{% endif %}
+				</div>
+				<a href="{{ rec['node_url'] }}" class="ons__card-product__footer__find">>
+					{{"Find out more"|t}}</a>
+			</div>
+		</div>
+	{% endfor %}
+</section>{% endif %}

@@ -1,0 +1,19 @@
+name: 'Brand listing'
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - autologout
+  - better_exposed_filters
+  - block
+  - facets
+  - metatag
+  - node
+  - rng
+  - search_api
+  - search_api_solr
+  - svg_image
+  - system
+  - taxonomy
+  - user
+  - views
+version: 8.x-1.0

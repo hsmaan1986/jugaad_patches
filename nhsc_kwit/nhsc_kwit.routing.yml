@@ -1,0 +1,7 @@
+nhsc_kwit.config:
+  path: '/admin/config/kwit/config'
+  defaults:
+    _form: '\Drupal\nhsc_kwit\Form\KwitConfigForm'
+    _title: 'Kwit Connector'
+  requirements:
+    _permission: 'administer site configuration'

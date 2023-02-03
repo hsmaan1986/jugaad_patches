@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_linkedin_followers
+    - node.type.linkedin_feed
+id: node.linkedin_feed.field_linkedin_followers
+field_name: field_linkedin_followers
+entity_type: node
+bundle: linkedin_feed
+label: 'Linkedin Followers'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

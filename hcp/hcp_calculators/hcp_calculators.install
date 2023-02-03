@@ -1,0 +1,10 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the dsu_ghostery module.
+ */
+
+/**
+ * Implements hook_install().
+ */

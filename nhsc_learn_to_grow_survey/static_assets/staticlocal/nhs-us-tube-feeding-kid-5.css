@@ -1,0 +1,272 @@
+#header .inner-header{display:none}
+
+.youtubecarousel-container{max-width: 980px;margin:0 auto;}
+
+.inner-wrapper{border:0;margin-top:0px;width:100%;background: transparent url('../asset-library/PublishingImages/my-tube-feeding-kid/bg-top.jpg') repeat-x 0px 0px;max-width:inherit}
+#main_header .nse-live-body{margin:0;}
+.wrapper{background:none!important}
+#header .nhs-localisation{display: none}
+#inner-header .breadcrumb{display:none}
+.page-content{display:none}
+
+
+.site_selector{text-align: right;    margin-right: 25px;}
+.site_selector a.sel{color:#6BB73B;font-weight: bold}
+
+.cart{
+    display: inline-block;
+    width: 54px;
+    height: 64px;
+    background: transparent url("https://www.nestlehealthscience.es/asset-library/PublishingImages/my-tube-feeding-kid/cart.jpg") no-repeat 0px 0px;
+   }
+.fb-icon{
+background: transparent url("https://www.nestlehealthscience.es/asset-library/PublishingImages/my-tube-feeding-kid/fb.jpg") no-repeat 0px 0px;
+  display: inline-block;
+    width: 64px;
+    height: 64px;
+   }
+@media only screen and (max-device-width: 480px) and (min-device-width: 320px){
+	.mtfk_header .logo{width: 95%;margin: 0 auto;display: block;}
+}
+
+.homeCarousel .homecarousel .description{font-size:1.188em;font-weight:bold;}
+
+.mtfk_header{max-width: 980px;margin:20px auto;margin-bottom: 10px; text-align: center;}
+.mtfk_header a{vertical-align: middle;display: inline-block;}
+.mtfk_header h1{display:inline}
+.mtfk_header .mtfk_nav{float:right;margin-top:20px;}
+.mtfk_header .mtfk_nav ul{list-style-type:none}
+.mtfk_header .mtfk_nav ul li {text-align:center;color:#8a8c8e;display:inline-block;vertical-align:middle;margin: 0 12px;}
+.mtfk_header .mtfk_nav ul li a{color:#8a8c8e;font-size:0.9em;font-weight: bold;}
+.mtfk_header .mtfk_nav ul li .cart{display:inline-block;width:54px;height:64px;background: transparent url('https://www.nestlehealthscience.es/asset-library/PublishingImages/my-tube-feeding-kid/cart.jpg') no-repeat 0px 0px;}
+.mtfk_header .mtfk_nav ul li.selected a, .mtfk_header .mtfk_nav ul li a:hover, .mtfk_header .mtfk_nav ul li a:active {color:#00afd2;}
+
+@media only screen and (max-device-width: 480px) and (min-device-width: 320px){
+	.mtfk_header .mtfk_nav ul{text-align: center}
+	.mtfk_header .mtfk_nav ul li{margin-bottom: 15px;}
+}
+
+.homeCarousel, #inner-header,
+.mtfk_pushes, .HealthyTips .Tips,
+.mtfk_youtubes-inner, .socials,
+.mtfk_banner_header,
+.mtfk_mainContent,
+#footer .extra-footer .inner-extra-footer{max-width: 980px;margin-left: auto;margin-right: auto;}
+
+@media only screen and (max-device-width: 480px){}
+
+.mtfk_pushes_outer{background-color:#00a2ca;width:100%;position:relative;}
+.mtfk_pushes_outer .color-bar{height: 10px;background-color: #6ebe44;width: 100%;position: absolute;top: 0;left: 0;}
+.mtfk_pushes .BrandPushBlock{float:left;margin-right:2.7%;border:none;max-width:none;width:31.5%;}
+.mtfk_pushes .BrandPushBlock:last-child{float:right;margin-right:0}
+.mtfk_pushes .BrandPushBlock .text-wrapper{top: 0px;}
+
+.mtfk_pushes .BrandPushBlock .text-content{text-align:center;padding: 0 10px;margin-top:10px}
+.mtfk_pushes .BrandPushBlock .text-content a{color:#fff;text-decoration: underline;}
+.mtfk_pushes .BrandPushBlock .color-panel{height:10px;background-color: #6ebe44}
+.mtfk_pushes .BrandPushBlock .title{text-transform:none}
+@media only screen and (max-device-width: 480px){
+	.mtfk_pushes .BrandPushBlock{margin:0 2.7%;margin-bottom:2.7%;float: none;width:auto;}
+	.mtfk_pushes .BrandPushBlock:last-child{float: none}
+	.mtfk_pushes .BrandPushBlock:last-child{margin-right: 2.7%;right: 0% !important;}
+}
+
+.HealthyTips {background: transparent url('../asset-library/PublishingImages/my-tube-feeding-kid/bg-tips.jpg') repeat-x 0px 0px;background-size: 100% 100%;}
+.HealthyTips .Tips {background: transparent url('https://www.nestlehealthscience.es/asset-library/PublishingImages/my-tube-feeding-kid/inside-tips.png') no-repeat 520px 130px;padding: 40px 0;}
+.HealthyTips .tip .picture{position:relative;left:45px;z-index:1;}
+.HealthyTips .tip .text-wrapper .title{padding-left:20px;font-size:2em;color:#000000;font-style:italic;font-family: 'Satisfy';text-transform: none;}
+.HealthyTips .tip .text-wrapper .description{padding-left:40px;color:#000000;line-height: normal;}
+.HealthyTips .tip .text-wrapper{width: 60%;padding:20px;background-color: #ffffff;opacity: 0.9;filter: alpha(opacity=90);}
+.nhs-root .HealthyTips .owl-theme .owl-controls .owl-buttons div.owl-prev, .nhs-root .HealthyTips .owl-theme .owl-controls .owl-buttons div.owl-next{top:60px;}
+@media only screen and (max-device-width: 480px){
+	.HealthyTips .tip .text-wrapper{width: auto;padding: 0 2.7%;}
+	.HealthyTips{height: 600px}
+}
+
+.mtfk_youtubes {background-color:#00a1cb;padding: 50px 0;}
+.mtfk_youtubes .youtubes-block {float:left;margin-right:2.9%;width:31.4%}
+.mtfk_youtubes .youtubes-block:last-child{float:right;margin-right:0}
+.mtfk_youtubes .youtubes-block .text-wrapper {font-size:0.875em;color:#000;margin-top:10px}
+.mtfk_youtubes .youtubes-block .text-wrapper a.more{color:#000}
+@media only screen and (max-device-width: 480px){
+	.mtfk_youtubes-inner{margin:0 2.7%;}
+	.mtfk_youtubes .youtubes-block{float: none;margin: 0 0 2.7% 0;width: 100%}
+	.mtfk_youtubes .youtubes-block:last-child{float: none;}
+}
+
+.mtfk-extlinks-container {max-width:none;background-color: #ffffff;text-align: center;padding-bottom: 20px;border-bottom: 1px solid #00a2ca;}
+.mtfk-extlinks-container .mtfk-extlinks {max-width:980px;margin:auto;}
+.mtfk-extlinks-container .mtfk-extlinks span{display: block;}
+.mtfk-extlinks-container .mtfk-extlinks a {display:inline-block;margin-top:15px;text-decoration:underline;width:24%;font-size: 1.1em;color:#848788;}
+.mtfk-extlinks-container .mtfk-extlinks a img {margin-top:10px;}
+
+@media only screen and (max-device-width: 480px){
+	.mtfk-extlinks-container .mtfk-extlinks a{display: block; padding-left: 2.7%;}
+
+}
+
+#footer{background: transparent url('../asset-library/PublishingImages/my-tube-feeding-kid/bg-bottom.jpg') repeat-x 0px 0px;margin-top:0px}
+#footer .links li a, #footer .nhs-copyright-sentence{color:#7a838b}
+#footer .links{margin-left:20px;width:75%;padding-bottom: 40px;}
+#footer .links li{width:auto;margin-right:40px}
+#footer .copyrights{margin-top:19px}
+#footer .nhs-copyright-sentence{display:none}
+#footer .extra-links{text-align:center;padding-bottom: 41px;}
+#footer .extra-links a{margin:0 17px;text-decoration:underline}
+
+#footer .extra-footer{border-top:solid 20px #f79824;font-size: 0.875em;color: #000;text-align: left;}
+#footer .extra-footer .inner-extra-footer {padding:20px;max-width: 1200px;}
+
+#footer .infinity{width:30px;vertical-align: middle;}
+
+@media only screen and (max-device-width: 480px){
+	#footer{background-position: 0px bottom;}
+	#footer .extra-links{margin-left:20px;}
+	#footer .extra-links a{margin:0px;display:block;text-decoration:underline;text-align:left;margin-bottom: 10px;}
+}
+
+.nhs-root .HealthyTips .owl-theme .owl-controls .owl-buttons div.owl-prev{background: transparent url('https://www.nestlehealthscience.es/asset-library/PublishingImages/my-tube-feeding-kid/tips-arrows.png') no-repeat 0px 0px;width:24px;height:76px}
+.nhs-root .HealthyTips .owl-theme .owl-controls .owl-buttons div.owl-next{background: transparent url('https://www.nestlehealthscience.es/asset-library/PublishingImages/my-tube-feeding-kid/tips-arrows.png') no-repeat -24px 0px;width:24px;height:76px}
+
+.socials{text-align:center}
+.socials a {
+    display: inline-block;
+    vertical-align: middle;
+    background-color: white;
+    width: 23px;
+    height: 23px;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0 5px;
+}
+.socials a.facebook {background: white url('https://www.nestlehealthscience.es/asset-library/PublishingImages/my-tube-feeding-kid/socials.png') no-repeat 0px 0px;}
+.socials a.twitter {background: white url('https://www.nestlehealthscience.es/asset-library/PublishingImages/my-tube-feeding-kid/socials.png') no-repeat -28px 0px;}
+.socials a.linkedin {background: white url('https://www.nestlehealthscience.es/asset-library/PublishingImages/my-tube-feeding-kid/socials.png') no-repeat -56px 0px;}
+
+.mtfk_banner_header{background-color:#00a2cb;position:relative}
+.mtfk_banner_header img{width:50%;float:left}
+.mtfk_banner_header .text-wrapper{font-weight:bold;width:50%;float:left;color:#fff;}
+.mtfk_banner_header .text-wrapper .title{font-size:2.313em;padding-left:10%;padding-top: 20px;padding-right:20px}
+.mtfk_banner_header .text-wrapper .description{position:absolute;bottom:30px;padding-left:5%;font-size:1.1em;padding-right:20px;line-height: 1.5em;font-weight: normal}
+@media only screen and (max-device-width: 480px){
+	.mtfk_banner_header{min-height: 435px;}
+	.mtfk_banner_header img{width:100%;float:none}
+	.mtfk_banner_header .text-wrapper{width: auto;float: none;position: absolute;top:182px;}
+	.mtfk_banner_header .text-wrapper .title{padding:2.7%;padding-bottom: 5%;}
+	.mtfk_banner_header .text-wrapper .description{position: relative;padding:2.7%;}
+}
+
+.mtfk_mainContent .blue-title{font-size:1.500em;color:#00a2cb;font-weight: bold}
+.mtfk_mainContent .green-title{font-size:1.500em;color:#6ab505;width:100%;border-bottom:#6ab505 solid 2px;padding-bottom:10px;margin-bottom:20px}
+.mtfk_mainContent > p {line-height: 1.750em;padding-bottom: 20px;padding-left: 7%;}
+.mtfk_mainContent .video-p p{width:75%;float:left}
+.mtfk_mainContent .video-p span{font-weight:bold;color:#047f9e;text-transform: uppercase;}
+.mtfk_mainContent .video-p img{float:right}
+.mtfk_mainContent .print-guide{margin-left: 7%;margin-bottom: 20px;}
+.mtfk_mainContent .print-guide img{display:inline-block;vertical-align:middle}
+.mtfk_mainContent .print-guide p{display:inline-block;vertical-align:middle;margin-left:40px}
+.mtfk_mainContent .infinity{position:absolute;top:0px;right:25px}
+.mtfk_mainContent .products a{text-decoration: underline;}
+
+.mtfk_mainContent .formula{width:100%;    margin: 20px 0;}
+.mtfk_mainContent .formula img{display: inline-block;vertical-align: top;width: auto;}
+.mtfk_mainContent .formula .text-content{display: inline-block;vertical-align: top;width: 86%;background-color: #e9f4fa}
+.mtfk_mainContent .formula .text-content .header{background-color: #1e91d0;font-size:1.3em;color:#fff;font-style: italic;padding-left: 25px;letter-spacing: 1px;}
+.mtfk_mainContent .formula.green .text-content .header{background-color: #6fbe44;}
+.mtfk_mainContent .formula.orange .text-content .header{background-color: #f79727;}
+.mtfk_mainContent .formula.purple .text-content .header{background-color: #6d2c6a;}
+.mtfk_mainContent .formula.red .text-content .header{background-color: #db3a40;}
+.mtfk_mainContent .formula .text-content ul{list-style-type: none;list-style-image: none;margin:0;    line-height: 1.2em;}
+.mtfk_mainContent .formula .text-content ul .label{width: 17%;display: inline-block; vertical-align: top;text-align: right;font-weight: bold;color:#1e91d0;margin-top: 7px;}
+.mtfk_mainContent .formula.green .text-content ul .label{color:#6fbe44;}
+.mtfk_mainContent .formula.orange .text-content ul .label{color:#f79727;}
+.mtfk_mainContent .formula.purple .text-content ul .label{color:#6d2c6a;}
+.mtfk_mainContent .formula.red .text-content ul .label{color:#db3a40;}
+.mtfk_mainContent .formula .text-content ul .content{display: inline-block;width: 74%;color:#757982;    margin-left: 35px;margin-top: 7px;}
+.mtfk_mainContent .formula .header sup{vertical-align: super;}
+
+@media only screen and (max-device-width: 480px){
+	.mtfk_mainContent .formula{text-align: center;}
+	.mtfk_mainContent .formula .text-content ul .label{width: 22%}
+	.mtfk_mainContent .formula .text-content ul .content{width: 59%}
+	.mtfk_mainContent .formula .text-content ul li{margin-bottom: 10px}
+}
+
+.mtfk_mainContent .fpt-recipes{display: inline-block;width:49%;vertical-align: top;text-align: center}
+.mtfk_mainContent .fpt-recipes div{font-weight: bold;margin-bottom:5px;}
+
+@media only screen and (max-device-width: 480px){
+	.mtfk_mainContent{margin:0 2.7%;}
+	.mtfk_mainContent .print-guide{margin-left: 0}
+	.mtfk_mainContent .print-guide img{width: auto}
+	.mtfk_mainContent .print-guide p{width: 69%;margin-left: 10px}
+	.mtfk_mainContent .infinity{position: relative;;margin-bottom:-130px;width: 87%;right:0px;}
+}
+
+.accordeon{border: none;padding-left: 7%;}
+.accordeon:last-child{border:none;padding-left: 7%;}
+.accordeon .accordeon-header{position:relative}
+.accordeon .accordeon-header .title, .accordeon.expanded .accordeon-header .title {color: #047f9e;}
+.accordeon .accordeon-header .cross{position:absolute;left:-45px; top: -1px;width:28px;height:28px;background: transparent url('../asset-library/PublishingImages/my-tube-feeding-kid/accordeons-arrows.png') no-repeat -28px 0px;}
+.accordeon.expanded .accordeon-header .cross{background: transparent url('../asset-library/PublishingImages/my-tube-feeding-kid/accordeons-arrows.png') no-repeat 0px 0px;}
+.accordeon-content ul, .accordeon-content ol{margin-left:6%;list-style-position: outside;}
+
+
+
+.sub-accordeon{border: none;padding:10px 0px;padding-left: 3%;}
+.sub-accordeon:last-child{padding:10px 0px;border:none;padding-left: 3%;}
+.sub-accordeon .sub-accordeon-header{cursor:pointer;position:relative}
+.sub-accordeon .sub-accordeon-header .title, .sub-accordeon.expanded .sub-accordeon-header .title {color: #757982;font-weight: bold;font-size: 1.1em;}
+.sub-accordeon .sub-accordeon-header .cross{position:absolute;left:-30px; top: -1px;width:28px;height:28px;background: transparent url('../asset-library/PublishingImages/my-tube-feeding-kid/accordeons-arrows.png') no-repeat -84px 0px;}
+.sub-accordeon.expanded .sub-accordeon-header .cross{background: transparent url('../asset-library/PublishingImages/my-tube-feeding-kid/accordeons-arrows.png') no-repeat -56px 0px;}
+.sub-accordeon .sub-accordeon-content{display:none;margin-top: 10px;line-height:1.750em;}
+.sub-accordeon-content ul, .sub-accordeon-content ol{margin-left:4%}
+
+
+.blue{color:#00a2cb;}
+.img-right{float:right;}
+
+
+.nhs-freestyle-content ul, ul.nhs-dot, .accordeon-content ul, .HealthyTips .description ul, .KeyFactBlock .text-content ul, .Product .product-info-top .text-wrapper .description ul{list-style-image: url('https://www.nestlehealthscience.es/asset-library/PublishingImages/my-tube-feeding-kid/iconBullet.png');}
+ul.primary{padding-left: 7%;}
+@media only screen and (max-device-width: 480px){
+	.accordeon .accordeon-header .cross{left:-29px;}
+}
+
+.ft-types img{float:left;margin-top:50px}
+.ft-types p{float:right;width:60%;margin-top:53px;line-height:1.750em}
+.ft-types span{text-transform:uppercase;font-weight:bold;color:#047f9e}
+@media only screen and (max-device-width: 480px){
+	.ft-types p{float: none;width:auto;}
+}
+
+#footer .nhs-copyright {
+    background: transparent url("../asset-library/PublishingImages/info/logo-header.png") no-repeat 0 0 !important;
+}
+
+@media only screen and (min-device-width: 480px){
+	.mtfk_pushes .BrandPushBlock.left {margin-left: 18%;margin-right: 0%;}
+	.mtfk_pushes .BrandPushBlock.right {margin-right: 18%;margin-left: 0%;}
+}
+
+#static_header{display:none;}
+
+@media only screen and (max-device-width: 480px){
+	.mtfk_banner_header .text-wrapper {
+	    margin-top: 6%;
+	}
+}
+
+@media only screen and (min-device-width: 668px) and (max-device-width: 980px){
+	.mtfk_banner_header .text-wrapper .description {
+	    margin-bottom: -8%;
+    	position: absolute;
+	}
+}
+
+@media only screen and (min-device-width: 480px) and (max-device-width: 667px){
+	.mtfk_banner_header .text-wrapper .description {
+	    display:none;
+	}
+}
